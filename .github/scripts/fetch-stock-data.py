@@ -67,18 +67,18 @@ def fetch_investor_net_volume(code):
 
         target = None
         for t in tables:
+            # Naver's table has a 2-row header (e.g. ('외국인','순매매량')), so
+            # columns come back as tuples; str()-ing one gives "('외국인', '순매매량')"
+            # - note the leading "('", which breaks a naive startswith("외국인").
             cols = ["".join(str(c).split()) for c in t.columns]
             has_date = any("날짜" in c for c in cols)
             has_inst = any("기관" in c and "순매매" in c for c in cols)
-            has_frgn = any(c.startswith("외국인") and "순매매" in c for c in cols)
+            has_frgn = any("외국인" in c and "순매매" in c for c in cols)
             if has_date and has_inst and has_frgn:
                 target = t.copy()
                 target.columns = cols
                 break
         if target is None or target.empty:
-            if page == 1:
-                diag = " | ".join(",".join(str(c) for c in t.columns) for t in tables) or "(no tables at all)"
-                print(f"debug {code} p1: status={resp.status_code} len={len(resp.text)} tables={len(tables)} cols=[{diag}] head={resp.text[:200]!r}", file=sys.stderr)
             break
         frames.append(target)
 
@@ -88,7 +88,7 @@ def fetch_investor_net_volume(code):
     df = pd.concat(frames, ignore_index=True)
     date_col = next(c for c in df.columns if "날짜" in c)
     inst_col = next(c for c in df.columns if "기관" in c and "순매매" in c)
-    frgn_col = next(c for c in df.columns if c.startswith("외국인") and "순매매" in c)
+    frgn_col = next(c for c in df.columns if "외국인" in c and "순매매" in c)
 
     df = df[[date_col, inst_col, frgn_col]].dropna()
     df[date_col] = pd.to_datetime(df[date_col], format="%Y.%m.%d", errors="coerce")
