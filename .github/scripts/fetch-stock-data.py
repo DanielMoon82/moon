@@ -76,6 +76,9 @@ def fetch_investor_net_volume(code):
                 target.columns = cols
                 break
         if target is None or target.empty:
+            if page == 1:
+                diag = " | ".join(",".join(str(c) for c in t.columns) for t in tables) or "(no tables at all)"
+                print(f"debug {code} p1: status={resp.status_code} len={len(resp.text)} tables={len(tables)} cols=[{diag}] head={resp.text[:200]!r}", file=sys.stderr)
             break
         frames.append(target)
 
