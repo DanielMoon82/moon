@@ -1,0 +1,44 @@
+name: Fetch KR stock data
+
+on:
+  schedule:
+    # every 15min during KRX market hours, 09:00-15:59 KST, Mon-Fri
+    - cron: "*/15 0-6 * * 1-5"
+    # 17:00 KST run to pick up the confirmed end-of-day investor flow data
+    - cron: "0 8 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-stocks
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pykrx matplotlib
+
+      - name: Fetch stock data
+        run: python3 .github/scripts/fetch-stock-data.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/stocks-kr.json data/stocks/
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update KR stock data"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
