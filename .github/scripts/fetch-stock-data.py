@@ -10,6 +10,7 @@ banner because of a flaky upstream source.
 """
 import json
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -35,6 +36,8 @@ PERIOD_DAYS = 20
 CHART_LOOKBACK_DAYS = 60
 UP_COLOR = "#E5484D"
 DOWN_COLOR = "#3B82F6"
+FLOW_RETRIES = 3
+FLOW_RETRY_DELAY = 5
 
 
 def fetch_one(code):
@@ -73,12 +76,19 @@ def fetch_one(code):
         "chart": f"stocks/{code}.png",
     }
 
-    try:
-        flow = stock.get_market_trading_value_by_date(fromdate, todate, code)
-        flow = flow.dropna(subset=["외국인합계", "기관합계"])
-    except Exception as exc:  # confirmed supply/demand not posted yet, or schema drift
-        print(f"flow unavailable for {code}, keeping price-only: {exc}", file=sys.stderr)
-        flow = None
+    flow = None
+    for attempt in range(1, FLOW_RETRIES + 1):
+        try:
+            flow = stock.get_market_trading_value_by_date(fromdate, todate, code)
+            flow = flow.dropna(subset=["외국인합계", "기관합계"])
+            break
+        except Exception as exc:  # KRX's official-source endpoint is flaky; retry a few times
+            print(f"flow attempt {attempt}/{FLOW_RETRIES} failed for {code}: {exc}", file=sys.stderr)
+            flow = None
+            if attempt < FLOW_RETRIES:
+                time.sleep(FLOW_RETRY_DELAY)
+    if flow is None:
+        print(f"flow unavailable for {code} after {FLOW_RETRIES} attempts, keeping price-only", file=sys.stderr)
 
     if flow is not None and not flow.empty:
         flow_last = flow.iloc[-1]
