@@ -1,5 +1,60 @@
 {
-  "updated_at": null,
-  "as_of_date": null,
-  "stocks": []
+  "updated_at": "2026-08-29T12:23:23.503869+00:00",
+  "as_of_date": "2026-08-28",
+  "stocks": [
+    {
+      "code": "005930",
+      "close": 257000,
+      "change": -9000,
+      "change_pct": -3.38,
+      "volume": 14698877,
+      "as_of_date": "2026-08-28",
+      "foreign_net_value": null,
+      "institution_net_value": null,
+      "flow_as_of_date": null,
+      "period": {
+        "days": 0,
+        "foreign_net_value_sum": null,
+        "institution_net_value_sum": null
+      },
+      "chart": "stocks/005930.png",
+      "name": "삼성전자"
+    },
+    {
+      "code": "000660",
+      "close": 1653000,
+      "change": -77000,
+      "change_pct": -4.45,
+      "volume": 2796942,
+      "as_of_date": "2026-08-28",
+      "foreign_net_value": null,
+      "institution_net_value": null,
+      "flow_as_of_date": null,
+      "period": {
+        "days": 0,
+        "foreign_net_value_sum": null,
+        "institution_net_value_sum": null
+      },
+      "chart": "stocks/000660.png",
+      "name": "SK하이닉스"
+    },
+    {
+      "code": "005380",
+      "close": 399500,
+      "change": 1500,
+      "change_pct": 0.38,
+      "volume": 438365,
+      "as_of_date": "2026-08-28",
+      "foreign_net_value": null,
+      "institution_net_value": null,
+      "flow_as_of_date": null,
+      "period": {
+        "days": 0,
+        "foreign_net_value_sum": null,
+        "institution_net_value_sum": null
+      },
+      "chart": "stocks/005380.png",
+      "name": "현대차"
+    }
+  ]
 }
