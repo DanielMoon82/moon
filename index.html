@@ -938,7 +938,7 @@
       <h2>오늘의 시황</h2>
       <p>삼성전자·SK하이닉스·현대차 3종목의 종가, 거래량, 수급을 매일 자동으로 갱신합니다.</p>
     </div>
-    <p class="stock-note"><span class="trend-live">LIVE</span> — 한국거래소(KRX) 공개 데이터를 기준으로 장 마감 후 하루 한 번 자동 갱신됩니다. 투자 판단의 참고 자료일 뿐이며 매수·매도를 권유하지 않습니다.</p>
+    <p class="stock-note"><span class="trend-live">LIVE</span> — 가격·거래량은 장중 15분마다 갱신됩니다. 다만 외국인·기관 순매수는 한국거래소(KRX)가 장 마감 후에만 확정치를 공개하므로 하루 한 번만 갱신되며, 장중에는 전일 확정치가 표시됩니다. 투자 판단의 참고 자료일 뿐이며 매수·매도를 권유하지 않습니다.</p>
 
     <div class="stock-grid">
       <article class="stock-card rise" data-code="005930">
@@ -1275,7 +1275,13 @@
         setField(card, 'foreign-period', fmtWon(periodSum), flowClass(periodSum));
 
         var asofEl = card.querySelector('[data-field="asof"]');
-        if (asofEl) asofEl.textContent = (s.as_of_date || data.as_of_date || '') + ' 종가 기준';
+        if (asofEl) {
+          var priceDate = s.as_of_date || data.as_of_date || '';
+          var flowDate = s.flow_as_of_date;
+          asofEl.textContent = flowDate && flowDate !== priceDate
+            ? (priceDate + ' 가격 · 수급은 ' + flowDate + ' 확정치')
+            : (priceDate + ' 종가 기준');
+        }
 
         var img = card.querySelector('.stock-chart');
         if (img && s.chart) {

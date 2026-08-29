@@ -38,27 +38,26 @@ DOWN_COLOR = "#3B82F6"
 
 
 def fetch_one(code):
+    """Price/volume can be an in-progress intraday row (this job runs every
+    15min during market hours). Investor net-buying is only posted by KRX
+    once confirmed after market close, so it's tracked separately and may
+    legitimately lag the price row by one trading day while the market is
+    open — that's a data-source limitation, not a bug.
+    """
     today = datetime.now(KST).date()
     fromdate = (today - timedelta(days=120)).strftime("%Y%m%d")
     todate = today.strftime("%Y%m%d")
 
-    ohlcv = stock.get_market_ohlcv_by_date(fromdate, todate, code)
-    flow = stock.get_market_trading_value_by_date(fromdate, todate, code)
+    ohlcv = stock.get_market_ohlcv_by_date(fromdate, todate, code).dropna(subset=["종가"])
     if ohlcv.empty or len(ohlcv) < 2:
         raise ValueError(f"no OHLCV rows for {code}")
 
-    df = ohlcv.join(flow[["기관합계", "외국인합계"]], how="left").dropna(subset=["종가"])
-    if len(df) < 2:
-        raise ValueError(f"not enough joined rows for {code}")
-
-    last = df.iloc[-1]
-    prev = df.iloc[-2]
+    last = ohlcv.iloc[-1]
+    prev = ohlcv.iloc[-2]
     close = int(last["종가"])
     prev_close = int(prev["종가"])
     change = close - prev_close
     change_pct = (change / prev_close * 100) if prev_close else 0.0
-
-    period_df = df.tail(PERIOD_DAYS)
 
     result = {
         "code": code,
@@ -66,19 +65,36 @@ def fetch_one(code):
         "change": change,
         "change_pct": round(change_pct, 2),
         "volume": int(last["거래량"]),
-        "foreign_net_value": int(last["외국인합계"]) if "외국인합계" in df.columns else None,
-        "institution_net_value": int(last["기관합계"]) if "기관합계" in df.columns else None,
-        "as_of_date": df.index[-1].strftime("%Y-%m-%d"),
-        "period": {
-            "days": len(period_df),
-            "foreign_net_value_sum": int(period_df["외국인합계"].sum()) if "외국인합계" in df.columns else None,
-            "institution_net_value_sum": int(period_df["기관합계"].sum()) if "기관합계" in df.columns else None,
-        },
+        "as_of_date": ohlcv.index[-1].strftime("%Y-%m-%d"),
+        "foreign_net_value": None,
+        "institution_net_value": None,
+        "flow_as_of_date": None,
+        "period": {"days": 0, "foreign_net_value_sum": None, "institution_net_value_sum": None},
         "chart": f"stocks/{code}.png",
     }
 
-    chart_df = df.tail(CHART_LOOKBACK_DAYS)
-    render_chart(chart_df, code)
+    try:
+        flow = stock.get_market_trading_value_by_date(fromdate, todate, code)
+        flow = flow.dropna(subset=["외국인합계", "기관합계"])
+    except Exception as exc:  # confirmed supply/demand not posted yet, or schema drift
+        print(f"flow unavailable for {code}, keeping price-only: {exc}", file=sys.stderr)
+        flow = None
+
+    if flow is not None and not flow.empty:
+        flow_last = flow.iloc[-1]
+        period_df = flow.tail(PERIOD_DAYS)
+        result.update({
+            "foreign_net_value": int(flow_last["외국인합계"]),
+            "institution_net_value": int(flow_last["기관합계"]),
+            "flow_as_of_date": flow.index[-1].strftime("%Y-%m-%d"),
+            "period": {
+                "days": len(period_df),
+                "foreign_net_value_sum": int(period_df["외국인합계"].sum()),
+                "institution_net_value_sum": int(period_df["기관합계"].sum()),
+            },
+        })
+
+    render_chart(ohlcv.tail(CHART_LOOKBACK_DAYS), code)
     return result
 
 
