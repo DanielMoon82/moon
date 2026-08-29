@@ -28,7 +28,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install pykrx matplotlib
+        run: pip install pykrx matplotlib lxml
 
       - name: Fetch stock data
         run: python3 .github/scripts/fetch-stock-data.py
