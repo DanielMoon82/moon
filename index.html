@@ -17,6 +17,8 @@
     --accent-bright:#C2761A;
     --accent-soft:rgba(176,106,21,.11);
     --jade:#2F6F62;
+    --up:#E5484D;
+    --down:#3B82F6;
     --grid-dot:rgba(15,23,41,.13);
     --shadow:0 1px 2px rgba(15,23,41,.05), 0 12px 28px -18px rgba(15,23,41,.35);
 
@@ -542,6 +544,59 @@
   }
   .trend-card.disabled:hover{transform:none;box-shadow:none;border-color:var(--line);}
 
+  /* ---------- stocks ---------- */
+  .stock-note{margin:0 0 22px;font-size:.82rem;color:var(--ink-3);}
+  .stock-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:clamp(14px,2vw,20px);
+  }
+  .stock-card{
+    display:flex;flex-direction:column;gap:10px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    background:var(--surface);
+    padding:20px clamp(16px,2vw,22px) 22px;
+  }
+  .stock-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
+  .stock-name{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1.05rem;letter-spacing:-.02em;
+    color:var(--ink);margin:0;
+  }
+  .stock-code{font-family:var(--f-mono);font-size:.7rem;color:var(--ink-3);}
+  .stock-chart{
+    width:100%;height:auto;aspect-ratio:2.3/1;
+    border-radius:2px;background:var(--surface-2);
+    display:block;object-fit:contain;
+  }
+  .stock-chart.is-empty{visibility:hidden;}
+  .stock-price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .stock-price{
+    font-family:var(--f-mono);font-size:1.3rem;font-weight:600;
+    color:var(--ink);font-variant-numeric:tabular-nums;
+  }
+  .stock-change{font-family:var(--f-mono);font-size:.82rem;font-weight:600;font-variant-numeric:tabular-nums;}
+  .stock-change.up{color:var(--up);}
+  .stock-change.down{color:var(--down);}
+  .stock-metrics{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;
+    margin-top:4px;padding-top:12px;
+    border-top:1px solid var(--line-soft);
+  }
+  .stock-metric{display:flex;flex-direction:column;gap:2px;}
+  .stock-metric .label{
+    font-family:var(--f-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-3);
+  }
+  .stock-metric .value{
+    font-family:var(--f-mono);font-size:.84rem;color:var(--ink-2);
+    font-variant-numeric:tabular-nums;
+  }
+  .stock-metric .value.up{color:var(--up);}
+  .stock-metric .value.down{color:var(--down);}
+  .stock-asof{margin:2px 0 0;font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);}
+
   /* ---------- footer ---------- */
   .foot{
     border-top:1px solid var(--line);
@@ -577,6 +632,7 @@
       <a href="#flights">비행 기록</a>
       <a href="#notes">짐과 습관</a>
       <a href="#gear">여행용품</a>
+      <a href="#stocks">주식 시황</a>
       <a href="#trends">실시간 이슈</a>
     </div>
   </div>
@@ -876,6 +932,109 @@
       </div>
     </div>
   </section>
+
+  <section class="section wrap" id="stocks">
+    <div class="section-head">
+      <h2>오늘의 시황</h2>
+      <p>삼성전자·SK하이닉스·현대차 3종목의 종가, 거래량, 수급을 매일 자동으로 갱신합니다.</p>
+    </div>
+    <p class="stock-note"><span class="trend-live">LIVE</span> — 한국거래소(KRX) 공개 데이터를 기준으로 장 마감 후 하루 한 번 자동 갱신됩니다. 투자 판단의 참고 자료일 뿐이며 매수·매도를 권유하지 않습니다.</p>
+
+    <div class="stock-grid">
+      <article class="stock-card rise" data-code="005930">
+        <div class="stock-head">
+          <h3 class="stock-name">삼성전자</h3>
+          <span class="stock-code mono">005930</span>
+        </div>
+        <img class="stock-chart is-empty" src="./data/stocks/005930.png" alt="삼성전자 최근 60거래일 주가·거래량 차트" loading="lazy" onerror="this.classList.add('is-empty')" onload="this.classList.remove('is-empty')">
+        <div class="stock-price-row">
+          <span class="stock-price mono" data-field="price">-</span>
+          <span class="stock-change mono" data-field="change">-</span>
+        </div>
+        <div class="stock-metrics">
+          <div class="stock-metric">
+            <span class="label">거래량</span>
+            <span class="value mono" data-field="volume">-</span>
+          </div>
+          <div class="stock-metric">
+            <span class="label">외국인 순매수(당일)</span>
+            <span class="value mono" data-field="foreign">-</span>
+          </div>
+          <div class="stock-metric">
+            <span class="label">기관 순매수(당일)</span>
+            <span class="value mono" data-field="institution">-</span>
+          </div>
+          <div class="stock-metric">
+            <span class="label">외국인 20일 누적</span>
+            <span class="value mono" data-field="foreign-period">-</span>
+          </div>
+        </div>
+        <p class="stock-asof" data-field="asof">데이터 준비 중</p>
+      </article>
+
+      <article class="stock-card rise" data-code="000660">
+        <div class="stock-head">
+          <h3 class="stock-name">SK하이닉스</h3>
+          <span class="stock-code mono">000660</span>
+        </div>
+        <img class="stock-chart is-empty" src="./data/stocks/000660.png" alt="SK하이닉스 최근 60거래일 주가·거래량 차트" loading="lazy" onerror="this.classList.add('is-empty')" onload="this.classList.remove('is-empty')">
+        <div class="stock-price-row">
+          <span class="stock-price mono" data-field="price">-</span>
+          <span class="stock-change mono" data-field="change">-</span>
+        </div>
+        <div class="stock-metrics">
+          <div class="stock-metric">
+            <span class="label">거래량</span>
+            <span class="value mono" data-field="volume">-</span>
+          </div>
+          <div class="stock-metric">
+            <span class="label">외국인 순매수(당일)</span>
+            <span class="value mono" data-field="foreign">-</span>
+          </div>
+          <div class="stock-metric">
+            <span class="label">기관 순매수(당일)</span>
+            <span class="value mono" data-field="institution">-</span>
+          </div>
+          <div class="stock-metric">
+            <span class="label">외국인 20일 누적</span>
+            <span class="value mono" data-field="foreign-period">-</span>
+          </div>
+        </div>
+        <p class="stock-asof" data-field="asof">데이터 준비 중</p>
+      </article>
+
+      <article class="stock-card rise" data-code="005380">
+        <div class="stock-head">
+          <h3 class="stock-name">현대차</h3>
+          <span class="stock-code mono">005380</span>
+        </div>
+        <img class="stock-chart is-empty" src="./data/stocks/005380.png" alt="현대차 최근 60거래일 주가·거래량 차트" loading="lazy" onerror="this.classList.add('is-empty')" onload="this.classList.remove('is-empty')">
+        <div class="stock-price-row">
+          <span class="stock-price mono" data-field="price">-</span>
+          <span class="stock-change mono" data-field="change">-</span>
+        </div>
+        <div class="stock-metrics">
+          <div class="stock-metric">
+            <span class="label">거래량</span>
+            <span class="value mono" data-field="volume">-</span>
+          </div>
+          <div class="stock-metric">
+            <span class="label">외국인 순매수(당일)</span>
+            <span class="value mono" data-field="foreign">-</span>
+          </div>
+          <div class="stock-metric">
+            <span class="label">기관 순매수(당일)</span>
+            <span class="value mono" data-field="institution">-</span>
+          </div>
+          <div class="stock-metric">
+            <span class="label">외국인 20일 누적</span>
+            <span class="value mono" data-field="foreign-period">-</span>
+          </div>
+        </div>
+        <p class="stock-asof" data-field="asof">데이터 준비 중</p>
+      </article>
+    </div>
+  </section>
 </main>
 
 <footer class="foot">
@@ -1059,5 +1218,71 @@
       }
     })
     .catch(function () { /* data/trends-kr.json이 아직 없거나 fetch 실패 시 기본 문구 유지 */ });
+})();
+</script>
+
+<script>
+(function () {
+  var cards = [].slice.call(document.querySelectorAll('.stock-card[data-code]'));
+  if (!cards.length) return;
+
+  function fmtInt(n) {
+    return typeof n === 'number' ? n.toLocaleString('ko-KR') : '-';
+  }
+
+  function fmtWon(n) {
+    if (typeof n !== 'number') return '-';
+    var sign = n > 0 ? '+' : (n < 0 ? '-' : '');
+    var abs = Math.abs(n);
+    if (abs >= 1e8) return sign + (abs / 1e8).toFixed(1) + '억원';
+    if (abs >= 1e4) return sign + Math.round(abs / 1e4).toLocaleString('ko-KR') + '만원';
+    return sign + abs.toLocaleString('ko-KR') + '원';
+  }
+
+  function flowClass(n) {
+    return typeof n === 'number' ? (n > 0 ? 'up' : (n < 0 ? 'down' : null)) : null;
+  }
+
+  function setField(card, field, text, cls) {
+    var el = card.querySelector('[data-field="' + field + '"]');
+    if (!el) return;
+    el.textContent = text;
+    el.classList.remove('up', 'down');
+    if (cls) el.classList.add(cls);
+  }
+
+  fetch('./data/stocks-kr.json', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (data) {
+      if (!data || !Array.isArray(data.stocks) || !data.stocks.length) return;
+
+      data.stocks.forEach(function (s) {
+        var card = cards.filter(function (c) { return c.dataset.code === s.code; })[0];
+        if (!card) return;
+
+        setField(card, 'price', fmtInt(s.close) + '원');
+
+        var changeCls = s.change > 0 ? 'up' : (s.change < 0 ? 'down' : null);
+        var arrow = s.change > 0 ? '▲' : (s.change < 0 ? '▼' : '-');
+        var pct = typeof s.change_pct === 'number' ? (s.change_pct > 0 ? '+' : '') + s.change_pct.toFixed(2) + '%' : '-';
+        setField(card, 'change', arrow + ' ' + fmtInt(Math.abs(s.change)) + ' (' + pct + ')', changeCls);
+
+        setField(card, 'volume', fmtInt(s.volume) + '주');
+        setField(card, 'foreign', fmtWon(s.foreign_net_value), flowClass(s.foreign_net_value));
+        setField(card, 'institution', fmtWon(s.institution_net_value), flowClass(s.institution_net_value));
+
+        var periodSum = s.period && s.period.foreign_net_value_sum;
+        setField(card, 'foreign-period', fmtWon(periodSum), flowClass(periodSum));
+
+        var asofEl = card.querySelector('[data-field="asof"]');
+        if (asofEl) asofEl.textContent = (s.as_of_date || data.as_of_date || '') + ' 종가 기준';
+
+        var img = card.querySelector('.stock-chart');
+        if (img && s.chart) {
+          img.src = './data/' + s.chart + '?v=' + encodeURIComponent(data.updated_at || '');
+        }
+      });
+    })
+    .catch(function () { /* data/stocks-kr.json이 아직 없거나 fetch 실패 시 기본 문구 유지 */ });
 })();
 </script>
