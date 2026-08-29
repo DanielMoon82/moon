@@ -475,25 +475,52 @@
     border:1px solid var(--line-soft);
     border-radius:3px;
   }
+  .trend-live{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:var(--f-mono);
+    font-size:.66rem;letter-spacing:.1em;
+    color:var(--jade);
+  }
+  .trend-live::before{
+    content:"";
+    width:6px;height:6px;border-radius:50%;
+    background:var(--jade);
+    box-shadow:0 0 0 0 color-mix(in srgb, var(--jade) 60%, transparent);
+    animation:trend-pulse 1.8s ease-out infinite;
+  }
+  @keyframes trend-pulse{
+    0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--jade) 55%, transparent);}
+    70%{box-shadow:0 0 0 7px color-mix(in srgb, var(--jade) 0%, transparent);}
+    100%{box-shadow:0 0 0 0 color-mix(in srgb, var(--jade) 0%, transparent);}
+  }
   .trend-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:clamp(14px,2vw,20px);
   }
   .trend-card{
+    --brand:var(--accent);
+    position:relative;
     display:flex;flex-direction:column;gap:8px;
     border:1px solid var(--line);
+    border-top:3px solid var(--brand);
     border-radius:3px;
-    background:var(--surface);
+    background:linear-gradient(180deg, color-mix(in srgb, var(--brand) 7%, var(--surface)) 0%, var(--surface) 60%);
     padding:20px clamp(16px,2vw,22px) 22px;
     text-decoration:none;
-    transition:border-color .15s ease, transform .15s ease;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
   }
-  .trend-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .trend-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px -14px color-mix(in srgb, var(--brand) 55%, transparent);
+    border-color:var(--brand);
+    border-top-color:var(--brand);
+  }
   .trend-cat{
     font-family:var(--f-mono);
     font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--jade);
+    color:var(--brand);
+    font-weight:600;
   }
   .trend-card h3{
     font-family:var(--f-display);
@@ -505,10 +532,15 @@
     margin-top:4px;
     font-family:var(--f-mono);
     font-size:.7rem;letter-spacing:.06em;
-    color:var(--accent);
+    color:var(--brand);
+    font-weight:500;
   }
-  .trend-card.disabled{opacity:.55;}
-  .trend-card.disabled:hover{border-color:var(--line);transform:none;}
+  .trend-card.disabled{
+    --brand:var(--ink-3);
+    opacity:.55;
+    background:var(--surface);
+  }
+  .trend-card.disabled:hover{transform:none;box-shadow:none;border-color:var(--line);}
 
   /* ---------- footer ---------- */
   .foot{
@@ -799,38 +831,38 @@
       <h2>실시간 이슈</h2>
       <p>포털별 실시간 트렌드를 한 화면에서 바로 넘어가 볼 수 있게 모았습니다.</p>
     </div>
-    <p class="trend-note">각 카드는 해당 포털의 실시간 페이지로 바로 연결돼요. 순위를 이 페이지 안에 그대로 옮겨오지 않는 건, 포털들이 실시간 데이터를 외부에 심을 수 있는 공식 방법을 제공하지 않아서예요 — 그래서 클릭해서 보는 게 가장 정확합니다.</p>
+    <p class="trend-note"><span class="trend-live">LIVE</span> — 각 카드는 해당 포털의 실시간 페이지로 바로 연결돼요. 순위를 이 페이지 안에 그대로 옮겨오지 않는 건, 포털들이 실시간 데이터를 외부에 심을 수 있는 공식 방법을 제공하지 않아서예요 — 그래서 클릭해서 보는 게 가장 정확합니다.</p>
 
     <div class="trend-grid">
-      <a class="trend-card rise" href="https://www.daum.net/" target="_blank" rel="noopener">
+      <a class="trend-card rise" style="--brand:#1968E8" href="https://www.daum.net/" target="_blank" rel="noopener">
         <span class="trend-cat">Daum</span>
         <h3>다음 실시간 트렌드</h3>
         <p>2026년 3월, 6년 만에 부활한 실검. 메인 검색창 옆에 1~10위가 뜬다.</p>
         <span class="trend-go">daum.net →</span>
       </a>
 
-      <a class="trend-card rise" href="https://www.nate.com/" target="_blank" rel="noopener">
+      <a class="trend-card rise" style="--brand:#FF5A36" href="https://www.nate.com/" target="_blank" rel="noopener">
         <span class="trend-cat">Nate</span>
         <h3>네이트 실시간 검색어</h3>
         <p>다음과 검색엔진을 공유해서 순위가 사실상 같이 움직인다.</p>
         <span class="trend-go">nate.com →</span>
       </a>
 
-      <a class="trend-card rise" href="https://zum.com/" target="_blank" rel="noopener">
+      <a class="trend-card rise" style="--brand:#2FAE4E" href="https://zum.com/" target="_blank" rel="noopener">
         <span class="trend-cat">Zum</span>
         <h3>줌 AI 이슈 트렌드</h3>
         <p>뉴스·커뮤니티를 함께 분석해 지금 뜨는 이슈를 보여준다.</p>
         <span class="trend-go">zum.com →</span>
       </a>
 
-      <a class="trend-card rise" href="https://gall.dcinside.com/board/lists/?id=dcbest" target="_blank" rel="noopener">
+      <a class="trend-card rise" style="--brand:#6C5CE7" href="https://gall.dcinside.com/board/lists/?id=dcbest" target="_blank" rel="noopener">
         <span class="trend-cat">DCinside</span>
         <h3>디시인사이드 실시간 베스트</h3>
         <p>전체 갤러리에서 지금 가장 반응이 뜨거운 글들을 모아 보여준다.</p>
         <span class="trend-go">dcinside.com →</span>
       </a>
 
-      <a class="trend-card rise" href="https://trends.google.com/trends/?geo=KR" target="_blank" rel="noopener">
+      <a class="trend-card rise" style="--brand:#4285F4" href="https://trends.google.com/trends/?geo=KR" target="_blank" rel="noopener">
         <span class="trend-cat">Google</span>
         <h3>구글 트렌드 (대한민국)</h3>
         <p>대한민국 기준 인기 급상승 검색어를 볼 수 있다.</p>
