@@ -8,6 +8,7 @@ Run on a schedule by .github/workflows/fetch-stocks.yml. On any failure
 known-good data in place and exits 0, so the site never shows a broken
 banner because of a flaky upstream source.
 """
+import io
 import json
 import sys
 import time
@@ -18,6 +19,8 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import pandas as pd
+import requests
 from pykrx import stock
 
 ROOT = Path(__file__).resolve().parent.parent.parent
@@ -38,12 +41,69 @@ UP_COLOR = "#E5484D"
 DOWN_COLOR = "#3B82F6"
 FLOW_RETRIES = 3
 FLOW_RETRY_DELAY = 5
+FLOW_PAGES = 4  # ~10 rows/page; need >= PERIOD_DAYS trading days
+
+FRGN_URL = "https://finance.naver.com/item/frgn.naver"
+FRGN_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; moon-stock-bot/1.0)"}
+
+
+def fetch_investor_net_volume(code):
+    """Net buy/sell VOLUME (shares, not KRW) by institutions/foreigners, from
+    Naver Finance's investor-trend page. KRX's own official API for this
+    (get_market_trading_value_by_date) is blocked outright for GitHub
+    Actions' IP ranges (verified: every retry returns an empty body), while
+    Naver Finance is reachable — it's the same source pykrx itself uses for
+    OHLCV. Table columns are matched by header keywords rather than a fixed
+    index/position, since Naver's markup isn't a stable contract.
+    """
+    frames = []
+    for page in range(1, FLOW_PAGES + 1):
+        resp = requests.get(
+            FRGN_URL, params={"code": code, "page": page}, headers=FRGN_HEADERS, timeout=10
+        )
+        resp.raise_for_status()
+        resp.encoding = "euc-kr"
+        tables = pd.read_html(io.StringIO(resp.text))
+
+        target = None
+        for t in tables:
+            cols = ["".join(str(c).split()) for c in t.columns]
+            has_date = any("날짜" in c for c in cols)
+            has_inst = any("기관" in c and "순매매" in c for c in cols)
+            has_frgn = any(c.startswith("외국인") and "순매매" in c for c in cols)
+            if has_date and has_inst and has_frgn:
+                target = t.copy()
+                target.columns = cols
+                break
+        if target is None or target.empty:
+            break
+        frames.append(target)
+
+    if not frames:
+        raise ValueError(f"no investor-flow table found for {code}")
+
+    df = pd.concat(frames, ignore_index=True)
+    date_col = next(c for c in df.columns if "날짜" in c)
+    inst_col = next(c for c in df.columns if "기관" in c and "순매매" in c)
+    frgn_col = next(c for c in df.columns if c.startswith("외국인") and "순매매" in c)
+
+    df = df[[date_col, inst_col, frgn_col]].dropna()
+    df[date_col] = pd.to_datetime(df[date_col], format="%Y.%m.%d", errors="coerce")
+    for c in (inst_col, frgn_col):
+        df[c] = pd.to_numeric(df[c].astype(str).str.replace(",", ""), errors="coerce")
+    df = df.dropna(subset=[date_col, inst_col, frgn_col])
+    if df.empty:
+        raise ValueError(f"investor-flow table parsed empty for {code}")
+
+    df = df.set_index(date_col).sort_index()
+    df = df[~df.index.duplicated(keep="first")]  # overshooting the last page repeats rows
+    return df.rename(columns={inst_col: "기관순매매량", frgn_col: "외국인순매매량"})
 
 
 def fetch_one(code):
     """Price/volume can be an in-progress intraday row (this job runs every
-    15min during market hours). Investor net-buying is only posted by KRX
-    once confirmed after market close, so it's tracked separately and may
+    15min during market hours). Investor net-buying is only posted once
+    confirmed after market close, so it's tracked separately and may
     legitimately lag the price row by one trading day while the market is
     open — that's a data-source limitation, not a bug.
     """
@@ -69,38 +129,36 @@ def fetch_one(code):
         "change_pct": round(change_pct, 2),
         "volume": int(last["거래량"]),
         "as_of_date": ohlcv.index[-1].strftime("%Y-%m-%d"),
-        "foreign_net_value": None,
-        "institution_net_value": None,
+        "foreign_net_volume": None,
+        "institution_net_volume": None,
         "flow_as_of_date": None,
-        "period": {"days": 0, "foreign_net_value_sum": None, "institution_net_value_sum": None},
+        "period": {"days": 0, "foreign_net_volume_sum": None, "institution_net_volume_sum": None},
         "chart": f"stocks/{code}.png",
     }
 
     flow = None
     for attempt in range(1, FLOW_RETRIES + 1):
         try:
-            flow = stock.get_market_trading_value_by_date(fromdate, todate, code)
-            flow = flow.dropna(subset=["외국인합계", "기관합계"])
+            flow = fetch_investor_net_volume(code)
             break
-        except Exception as exc:  # KRX's official-source endpoint is flaky; retry a few times
+        except Exception as exc:  # flaky upstream: retry a few times before giving up
             print(f"flow attempt {attempt}/{FLOW_RETRIES} failed for {code}: {exc}", file=sys.stderr)
             flow = None
             if attempt < FLOW_RETRIES:
                 time.sleep(FLOW_RETRY_DELAY)
     if flow is None:
         print(f"flow unavailable for {code} after {FLOW_RETRIES} attempts, keeping price-only", file=sys.stderr)
-
-    if flow is not None and not flow.empty:
+    else:
         flow_last = flow.iloc[-1]
         period_df = flow.tail(PERIOD_DAYS)
         result.update({
-            "foreign_net_value": int(flow_last["외국인합계"]),
-            "institution_net_value": int(flow_last["기관합계"]),
+            "foreign_net_volume": int(flow_last["외국인순매매량"]),
+            "institution_net_volume": int(flow_last["기관순매매량"]),
             "flow_as_of_date": flow.index[-1].strftime("%Y-%m-%d"),
             "period": {
                 "days": len(period_df),
-                "foreign_net_value_sum": int(period_df["외국인합계"].sum()),
-                "institution_net_value_sum": int(period_df["기관합계"].sum()),
+                "foreign_net_volume_sum": int(period_df["외국인순매매량"].sum()),
+                "institution_net_volume_sum": int(period_df["기관순매매량"].sum()),
             },
         })
 
