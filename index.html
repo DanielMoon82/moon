@@ -465,6 +465,51 @@
   }
   .gear-cta:hover{background:var(--accent-bright);}
 
+  /* ---------- trends ---------- */
+  .trend-note{
+    margin:-8px 0 clamp(24px,3.6vw,36px);
+    font-size:.76rem;
+    color:var(--ink-3);
+    padding:10px 14px;
+    background:var(--surface);
+    border:1px solid var(--line-soft);
+    border-radius:3px;
+  }
+  .trend-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:clamp(14px,2vw,20px);
+  }
+  .trend-card{
+    display:flex;flex-direction:column;gap:8px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    background:var(--surface);
+    padding:20px clamp(16px,2vw,22px) 22px;
+    text-decoration:none;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .trend-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .trend-cat{
+    font-family:var(--f-mono);
+    font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--jade);
+  }
+  .trend-card h3{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1.05rem;letter-spacing:-.02em;
+    margin:0;color:var(--ink);
+  }
+  .trend-card p{margin:0;font-size:.84rem;color:var(--ink-2);}
+  .trend-go{
+    margin-top:4px;
+    font-family:var(--f-mono);
+    font-size:.7rem;letter-spacing:.06em;
+    color:var(--accent);
+  }
+  .trend-card.disabled{opacity:.55;}
+  .trend-card.disabled:hover{border-color:var(--line);transform:none;}
+
   /* ---------- footer ---------- */
   .foot{
     border-top:1px solid var(--line);
@@ -500,6 +545,7 @@
       <a href="#flights">비행 기록</a>
       <a href="#notes">짐과 습관</a>
       <a href="#gear">여행용품</a>
+      <a href="#trends">실시간 이슈</a>
     </div>
   </div>
 </nav>
@@ -745,6 +791,57 @@
           <a class="gear-cta" href="https://link.coupang.com/a/gAyDu31F92" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
         </div>
       </article>
+    </div>
+  </section>
+
+  <section class="section wrap" id="trends">
+    <div class="section-head">
+      <h2>실시간 이슈</h2>
+      <p>포털별 실시간 트렌드를 한 화면에서 바로 넘어가 볼 수 있게 모았습니다.</p>
+    </div>
+    <p class="trend-note">각 카드는 해당 포털의 실시간 페이지로 바로 연결돼요. 순위를 이 페이지 안에 그대로 옮겨오지 않는 건, 포털들이 실시간 데이터를 외부에 심을 수 있는 공식 방법을 제공하지 않아서예요 — 그래서 클릭해서 보는 게 가장 정확합니다.</p>
+
+    <div class="trend-grid">
+      <a class="trend-card rise" href="https://www.daum.net/" target="_blank" rel="noopener">
+        <span class="trend-cat">Daum</span>
+        <h3>다음 실시간 트렌드</h3>
+        <p>2026년 3월, 6년 만에 부활한 실검. 메인 검색창 옆에 1~10위가 뜬다.</p>
+        <span class="trend-go">daum.net →</span>
+      </a>
+
+      <a class="trend-card rise" href="https://www.nate.com/" target="_blank" rel="noopener">
+        <span class="trend-cat">Nate</span>
+        <h3>네이트 실시간 검색어</h3>
+        <p>다음과 검색엔진을 공유해서 순위가 사실상 같이 움직인다.</p>
+        <span class="trend-go">nate.com →</span>
+      </a>
+
+      <a class="trend-card rise" href="https://zum.com/" target="_blank" rel="noopener">
+        <span class="trend-cat">Zum</span>
+        <h3>줌 AI 이슈 트렌드</h3>
+        <p>뉴스·커뮤니티를 함께 분석해 지금 뜨는 이슈를 보여준다.</p>
+        <span class="trend-go">zum.com →</span>
+      </a>
+
+      <a class="trend-card rise" href="https://gall.dcinside.com/board/lists/?id=dcbest" target="_blank" rel="noopener">
+        <span class="trend-cat">DCinside</span>
+        <h3>디시인사이드 실시간 베스트</h3>
+        <p>전체 갤러리에서 지금 가장 반응이 뜨거운 글들을 모아 보여준다.</p>
+        <span class="trend-go">dcinside.com →</span>
+      </a>
+
+      <a class="trend-card rise" href="https://trends.google.com/trends/?geo=KR" target="_blank" rel="noopener">
+        <span class="trend-cat">Google</span>
+        <h3>구글 트렌드 (대한민국)</h3>
+        <p>대한민국 기준 인기 급상승 검색어를 볼 수 있다.</p>
+        <span class="trend-go">trends.google.com →</span>
+      </a>
+
+      <div class="trend-card disabled rise">
+        <span class="trend-cat">Naver</span>
+        <h3>네이버 실시간 검색어</h3>
+        <p>2021년 2월 서비스가 폐지됐고, 네이버는 재도입 계획이 없다고 밝혔다. 그래서 링크를 걸지 않았다.</p>
+      </div>
     </div>
   </section>
 </main>
