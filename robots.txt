@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://danielmoon82.github.io/moon/sitemap.xml
