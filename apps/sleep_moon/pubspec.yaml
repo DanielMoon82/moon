@@ -1,0 +1,24 @@
+name: sleep_moon
+description: 30분 수면 유도 세션 - 실시간 합성 앰비언트 음악과 한국어 수면 유도 멘트.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  just_audio: ^0.10.0
+  just_audio_background: ^0.0.1-beta.15
+  flutter_tts: ^4.2.0
+  path_provider: ^2.1.4
+  shared_preferences: ^2.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
