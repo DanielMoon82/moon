@@ -61,28 +61,52 @@
 
 ## 실행 방법
 
-이 폴더에는 `lib/`, `test/`, `pubspec.yaml` 만 들어 있다.
-플랫폼 폴더는 각자 환경에서 만든다.
+이 저장소에는 `lib/`, `test/`, `tool/`, `pubspec.yaml` 만 들어 있다.
+플랫폼 폴더(`android/`, `ios/`)는 플러터 버전에 따라 내용이 달라지므로
+저장소에 넣지 않고 각자 환경에서 만든다. 아래 한 줄이면 생성부터
+설정 등록까지 끝난다.
 
 ```bash
 cd apps/sleep_moon
-flutter create . --platforms=android,ios --org com.moon --project-name sleep_moon
-flutter pub get
+bash tool/setup_platforms.sh
 flutter run
 ```
 
+스크립트가 하는 일:
+
+1. `flutter create . --platforms=android,ios --org com.moon` 로 플랫폼 폴더 생성
+2. `flutter pub get`
+3. `tool/patch_platforms.py` 로 아래 설정을 **자동 등록**
+4. `flutter test`
+
+몇 번을 실행해도 결과가 같다. 나중에 `flutter create` 를 다시 돌려
+매니페스트가 덮어써졌다면 `python3 tool/patch_platforms.py` 만 다시 실행하면 된다.
+
+### 자동으로 등록되는 것
+
+| 플랫폼 | 등록 내용 | 이유 |
+| --- | --- | --- |
+| 안드로이드 | `WAKE_LOCK`, `FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_MEDIA_PLAYBACK`, `POST_NOTIFICATIONS` 권한 | 화면을 끈 뒤에도 재생을 이어 가기 위해 |
+| 안드로이드 | `com.ryanheise.audioservice.AudioService` 서비스와 `MediaButtonReceiver` | 백그라운드 재생과 잠금화면 조작 |
+| 안드로이드 | `MainActivity` 를 `AudioServiceActivity` 상속으로 교체 | 위 서비스와 액티비티를 연결 |
+| 안드로이드 | `<queries>` 에 `android.speech.tts.TTS_SERVICE` | 안드로이드 11+ 에서 기기의 TTS 엔진을 찾으려면 필요 |
+| iOS | `UIBackgroundModes` 에 `audio` | 화면을 끈 뒤에도 소리가 이어지게 |
+
+`POST_NOTIFICATIONS` 는 선언만 해 둔다. 안드로이드 13+ 에서 사용자가
+알림을 거부해도 재생은 정상이고, 재생 알림만 보이지 않는다.
+
 버전 충돌이 나면 `flutter pub upgrade --major-versions` 로 한 번 정리하면 된다.
 
-### 안드로이드 추가 설정
+### 수동으로 등록하려면
 
-화면을 끄고 잠들어도 소리가 이어지려면 `android/app/src/main/AndroidManifest.xml`
-에 아래를 넣는다.
+`python3` 이 없거나 직접 넣고 싶다면 `android/app/src/main/AndroidManifest.xml` 에:
 
 ```xml
 <manifest xmlns:tools="http://schemas.android.com/tools" ...>
   <uses-permission android:name="android.permission.WAKE_LOCK"/>
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
   <application ...>
     <!-- ... 기존 activity ... -->
@@ -100,13 +124,17 @@ flutter run
       </intent-filter>
     </receiver>
   </application>
+
+  <queries>
+    <intent>
+      <action android:name="android.speech.tts.TTS_SERVICE"/>
+    </intent>
+  </queries>
 </manifest>
 ```
 
 `MainActivity` 는 `FlutterActivity` 대신
 `com.ryanheise.audioservice.AudioServiceActivity` 를 상속해야 한다.
-
-### iOS 추가 설정
 
 `ios/Runner/Info.plist` 에:
 
@@ -117,10 +145,12 @@ flutter run
 </array>
 ```
 
-기기에 한국어 시리 음성이 없으면 멘트가 나오지 않는다.
-설정 > 손쉬운 사용 > 음성 콘텐츠에서 한국어 음성을 내려받으면 된다.
-안드로이드는 설정 > 접근성 > TTS 출력에서 한국어 음성을 받는다.
-음성이 없는 기기에서는 앱이 첫 화면에 안내를 띄우고 음악만 재생한다.
+### 기기의 한국어 음성
+
+기기에 한국어 TTS 음성이 없으면 멘트가 나오지 않는다.
+iOS 는 설정 > 손쉬운 사용 > 음성 콘텐츠, 안드로이드는 설정 > 접근성 >
+TTS 출력에서 한국어 음성을 내려받으면 된다. 음성이 없는 기기에서는
+앱이 첫 화면에 안내를 띄우고 음악만 재생한다.
 
 ## 테스트
 
@@ -131,6 +161,13 @@ flutter test
 - `test/script_test.dart` - 멘트 간격, 순서, 짧은 세션 압축, 단계 전환
 - `test/soundscape_test.dart` - 합성 결과의 음량과 **루프 이음매 연속성**
   (딸깍 소리가 나지 않는지 샘플 차이로 검사)
+
+플랫폼 설정 등록은 플러터 없이도 검증할 수 있다. 플러터가 만드는 것과
+같은 모양의 스캐폴딩을 임시 폴더에 세우고 패치를 돌려 본다.
+
+```bash
+python3 tool/test_patch_platforms.py
+```
 
 ## 고쳐 쓰기
 
@@ -145,6 +182,10 @@ flutter test
 ## 폴더
 
 ```
+tool/
+  setup_platforms.sh              플랫폼 폴더 생성 + 설정 등록 한 번에
+  patch_platforms.py              매니페스트 / Info.plist 등록 (멱등)
+  test_patch_platforms.py         위 등록 스크립트의 회귀 테스트
 lib/
   main.dart                       앱 진입점, 백그라운드 재생 초기화
   app_theme.dart                  밤 전용 어두운 테마
