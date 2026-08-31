@@ -28,11 +28,18 @@
 
 ### ③ OAuth 클라이언트 ID 발급
 
-1. **API 및 서비스 → 사용자 인증 정보 → 사용자 인증 정보 만들기 → OAuth 클라이언트 ID**
-2. 애플리케이션 유형: **데스크톱 앱** 선택 (중요)
-3. 만들어지면 **클라이언트 ID**와 **클라이언트 보안 비밀번호**를 복사해 둡니다
+**API 및 서비스 → 사용자 인증 정보 → 사용자 인증 정보 만들기 → OAuth 클라이언트 ID**
 
-### ④ 리프레시 토큰 받기 (본인 PC에서 1회)
+애플리케이션 유형은 ④에서 어떤 방법으로 토큰을 받을지에 따라 다릅니다.
+
+| ④에서 쓸 방법 | 선택할 유형 | 추가 설정 |
+|---|---|---|
+| PC 스크립트 | **데스크톱 앱** | 없음 |
+| 휴대폰(OAuth Playground) | **웹 애플리케이션** | 승인된 리디렉션 URI에 `https://developers.google.com/oauthplayground` 추가 |
+
+만들어지면 **클라이언트 ID**와 **클라이언트 보안 비밀번호**를 복사해 둡니다.
+
+### ④-A 리프레시 토큰 받기 — PC가 있을 때
 
 본인 컴퓨터 터미널에서 실행하세요. 브라우저가 열리고 구글 로그인 → 권한 허용하면 토큰이 출력됩니다.
 
@@ -41,7 +48,24 @@ pip install requests
 python3 .github/scripts/blogger-get-token.py <클라이언트ID> <클라이언트보안비밀번호>
 ```
 
-출력된 `BLOGGER_REFRESH_TOKEN` 값을 복사해 둡니다. (비밀번호나 마찬가지이니 외부에 공유하지 마세요.)
+### ④-B 리프레시 토큰 받기 — 휴대폰만 있을 때
+
+PC 없이 브라우저만으로 받는 방법입니다. (③에서 **웹 애플리케이션** 유형 + playground 리디렉션 URI 등록이 되어 있어야 합니다.)
+
+1. 휴대폰 브라우저로 https://developers.google.com/oauthplayground 접속
+   - 크롬 메뉴에서 **데스크톱 사이트**로 보기를 켜면 조작이 쉽습니다
+2. 우측 상단 **톱니바퀴(⚙)** → **Use your own OAuth credentials** 체크
+   → 클라이언트 ID / 보안 비밀번호 입력
+3. 좌측 **Step 1** 입력칸에 스코프를 직접 입력
+   ```
+   https://www.googleapis.com/auth/blogger
+   ```
+   → **Authorize APIs** 클릭
+4. 구글 로그인 → 권한 허용 (②에서 테스트 사용자로 등록한 계정이어야 합니다)
+5. **Step 2** → **Exchange authorization code for tokens** 클릭
+6. 화면에 나오는 **Refresh token** 값을 복사
+
+어느 방법이든 얻은 값이 `BLOGGER_REFRESH_TOKEN` 입니다. (비밀번호나 마찬가지이니 외부에 공유하지 마세요.)
 
 ### ⑤ GitHub에 비밀값 등록
 
