@@ -555,6 +555,50 @@
   }
   .trend-card.disabled:hover{transform:none;box-shadow:none;border-color:var(--line);}
 
+  /* ---------- reviews ---------- */
+  .review-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:clamp(16px,2.4vw,26px);
+  }
+  .review-card{
+    display:flex;flex-direction:column;
+    border:1px solid var(--line);
+    border-radius:3px;
+    background:var(--surface);
+    text-decoration:none;
+    overflow:hidden;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .review-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--accent);
+    box-shadow:0 10px 24px -14px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+  .review-thumb{
+    width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 22%;
+    display:block;background:var(--surface-2);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .review-body{display:flex;flex-direction:column;gap:8px;padding:20px clamp(16px,2vw,22px) 22px;}
+  .review-cat{
+    font-family:var(--f-mono);
+    font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;
+  }
+  .review-card h3{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1.05rem;letter-spacing:-.02em;
+    margin:0;color:var(--ink);
+  }
+  .review-card p{margin:0;font-size:.86rem;color:var(--ink-2);}
+  .review-go{
+    margin-top:6px;
+    font-family:var(--f-mono);
+    font-size:.7rem;letter-spacing:.06em;
+    color:var(--accent);font-weight:500;
+  }
+
   /* ---------- stocks ---------- */
   .stock-note{margin:0 0 22px;font-size:.82rem;color:var(--ink-3);}
   .stock-grid{
@@ -643,6 +687,7 @@
       <a href="#flights">비행 기록</a>
       <a href="#notes">짐과 습관</a>
       <a href="#gear">여행용품</a>
+      <a href="#reviews">영화·리뷰</a>
       <a href="#stocks">주식 시황</a>
       <a href="#trends">실시간 이슈</a>
     </div>
@@ -890,6 +935,25 @@
           <a class="gear-cta" href="https://link.coupang.com/a/gAyDu31F92" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
         </div>
       </article>
+    </div>
+  </section>
+
+  <section class="section wrap" id="reviews">
+    <div class="section-head">
+      <h2>영화·리뷰</h2>
+      <p>극장에서 보고 온 것들, 보러 가기 전 알아두면 좋았던 것들.</p>
+    </div>
+
+    <div class="review-grid">
+      <a class="review-card rise" href="./posts/odyssey.html">
+        <img class="review-thumb" src="./posts/images/odyssey-cover.png" alt="영화 오디세이 총정리" loading="lazy">
+        <div class="review-body">
+          <span class="review-cat">Film</span>
+          <h3>영화 오디세이 총정리</h3>
+          <p>개봉일·출연진부터 아이맥스 70mm 관람 포인트까지. 2시간 52분을 예매하기 전에 알아둘 것들.</p>
+          <span class="review-go">읽어보기 →</span>
+        </div>
+      </a>
     </div>
   </section>
 
