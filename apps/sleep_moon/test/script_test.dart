@@ -12,8 +12,14 @@ void main() {
       }
     });
 
-    test('30분 세션의 멘트는 26분 안에 모두 끝난다', () {
-      expect(kSleepScript.last.atSeconds, lessThan(26 * 60));
+    test('마지막 멘트는 페이드아웃이 시작되기 전에 끝난다', () {
+      // SessionController 는 남은 시간이 페이드아웃 구간(전체의 10%,
+      // 최대 3분)에 들어오면 멘트를 넣지 않는다. 그 전에 대본이
+      // 끝나야 마지막 멘트가 통째로 잘리지 않는다.
+      const int total = 30 * 60;
+      const int fadeWindow = 180;
+      const int fadeStart = total - fadeWindow;
+      expect(kSleepScript.last.atSeconds, lessThanOrEqualTo(fadeStart - 30));
     });
 
     test('짧은 세션은 핵심 멘트만 남기고 길이 안에 들어온다', () {

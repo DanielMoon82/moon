@@ -61,26 +61,23 @@
 
 ## 실행 방법
 
-이 저장소에는 `lib/`, `test/`, `tool/`, `pubspec.yaml` 만 들어 있다.
-플랫폼 폴더(`android/`, `ios/`)는 플러터 버전에 따라 내용이 달라지므로
-저장소에 넣지 않고 각자 환경에서 만든다. 아래 한 줄이면 생성부터
-설정 등록까지 끝난다.
-
 ```bash
 cd apps/sleep_moon
-bash tool/setup_platforms.sh
+flutter pub get
 flutter run
 ```
 
-스크립트가 하는 일:
+`android/`, `ios/` 폴더는 저장소에 들어 있고 백그라운드 재생과 TTS 에 필요한
+설정도 이미 등록돼 있다(아래 표). 플랫폼 폴더를 지웠거나 `flutter create` 를
+다시 돌려 설정이 덮어써졌다면 아래로 되살린다.
 
-1. `flutter create . --platforms=android,ios --org com.moon` 로 플랫폼 폴더 생성
-2. `flutter pub get`
-3. `tool/patch_platforms.py` 로 아래 설정을 **자동 등록**
-4. `flutter test`
+```bash
+bash tool/setup_platforms.sh      # 생성 + 등록 + 테스트 한 번에
+python3 tool/patch_platforms.py   # 등록만 다시 (멱등)
+```
 
-몇 번을 실행해도 결과가 같다. 나중에 `flutter create` 를 다시 돌려
-매니페스트가 덮어써졌다면 `python3 tool/patch_platforms.py` 만 다시 실행하면 된다.
+확인한 환경: Flutter 3.47.2 / Dart 3.13.2 에서 `flutter analyze` 무결점,
+`flutter test` 11개 통과, 120초 루프 렌더링 1.2~2.1초 / 14.6MB.
 
 ### 자동으로 등록되는 것
 
@@ -162,6 +159,13 @@ flutter test
 - `test/soundscape_test.dart` - 합성 결과의 음량과 **루프 이음매 연속성**
   (딸깍 소리가 나지 않는지 샘플 차이로 검사)
 
+소리를 직접 들어 보려면 앱과 같은 합성기로 WAV 를 뽑는다. 기기 없이
+렌더링 시간을 재 볼 때도 쓴다.
+
+```bash
+dart run tool/render_preview.dart build/preview
+```
+
 플랫폼 설정 등록은 플러터 없이도 검증할 수 있다. 플러터가 만드는 것과
 같은 모양의 스캐폴딩을 임시 폴더에 세우고 패치를 돌려 본다.
 
@@ -186,6 +190,7 @@ tool/
   setup_platforms.sh              플랫폼 폴더 생성 + 설정 등록 한 번에
   patch_platforms.py              매니페스트 / Info.plist 등록 (멱등)
   test_patch_platforms.py         위 등록 스크립트의 회귀 테스트
+  render_preview.dart             앱과 같은 합성기로 WAV 뽑기
 lib/
   main.dart                       앱 진입점, 백그라운드 재생 초기화
   app_theme.dart                  밤 전용 어두운 테마

@@ -43,7 +43,7 @@ void main() {
         final int seamJump = (pcm[0] - pcm[(frames - 1) * 2]).abs();
 
         expect(seamJump, lessThan((innerJump * 6).clamp(24, 40000)),
-            reason: '이음매 ${seamJump}, 평균 ${innerJump.toStringAsFixed(1)}');
+            reason: '이음매 $seamJump, 평균 ${innerJump.toStringAsFixed(1)}');
       });
     }
   });
