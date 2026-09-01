@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-01T09:14:05.840122+00:00",
+  "updated_at": "2026-09-01T12:59:46.746102+00:00",
   "as_of_date": "2026-09-01",
   "stocks": [
     {
@@ -9,13 +9,13 @@
       "change_pct": 0.38,
       "volume": 12765827,
       "as_of_date": "2026-09-01",
-      "foreign_net_volume": -2293,
-      "institution_net_volume": -2349842,
-      "flow_as_of_date": "2026-08-31",
+      "foreign_net_volume": -707536,
+      "institution_net_volume": -339843,
+      "flow_as_of_date": "2026-09-01",
       "period": {
         "days": 20,
-        "foreign_net_volume_sum": -4962035,
-        "institution_net_volume_sum": -18411991
+        "foreign_net_volume_sum": -1773082,
+        "institution_net_volume_sum": -13711880
       },
       "chart": "stocks/005930.png",
       "name": "삼성전자"
@@ -27,13 +27,13 @@
       "change_pct": 1.14,
       "volume": 2481959,
       "as_of_date": "2026-09-01",
-      "foreign_net_volume": -211935,
-      "institution_net_volume": -314294,
-      "flow_as_of_date": "2026-08-31",
+      "foreign_net_volume": 91835,
+      "institution_net_volume": -142669,
+      "flow_as_of_date": "2026-09-01",
       "period": {
         "days": 20,
-        "foreign_net_volume_sum": -4209964,
-        "institution_net_volume_sum": -1941919
+        "foreign_net_volume_sum": -3010772,
+        "institution_net_volume_sum": -1796576
       },
       "chart": "stocks/000660.png",
       "name": "SK하이닉스"
@@ -45,13 +45,13 @@
       "change_pct": -0.74,
       "volume": 377740,
       "as_of_date": "2026-09-01",
-      "foreign_net_volume": 140275,
-      "institution_net_volume": -4415,
-      "flow_as_of_date": "2026-08-31",
+      "foreign_net_volume": -4991,
+      "institution_net_volume": -99644,
+      "flow_as_of_date": "2026-09-01",
       "period": {
         "days": 20,
-        "foreign_net_volume_sum": -278425,
-        "institution_net_volume_sum": -928488
+        "foreign_net_volume_sum": -374168,
+        "institution_net_volume_sum": -960693
       },
       "chart": "stocks/005380.png",
       "name": "현대차"
