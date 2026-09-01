@@ -47,7 +47,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/blogger-published.json
+          # The state file only exists once a publish has actually happened,
+          # so a bare `git add` of it fails the job while setup is pending.
+          if [ -f data/blogger-published.json ]; then
+            git add data/blogger-published.json
+          fi
           git diff --staged --quiet && exit 0
           git commit -m "chore: record Blogger publish state"
           git pull --rebase origin "${GITHUB_REF_NAME}"
