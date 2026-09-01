@@ -73,17 +73,14 @@ def parse_post(path):
     return meta, body.strip()
 
 
-def access_token():
-    missing = [
+def missing_credentials():
+    return [
         k for k in ("BLOGGER_CLIENT_ID", "BLOGGER_CLIENT_SECRET", "BLOGGER_REFRESH_TOKEN")
         if not os.environ.get(k)
     ]
-    if missing:
-        raise SystemExit(
-            "missing credentials: " + ", ".join(missing) +
-            "\nSet them as GitHub repository secrets (see blogger-posts/README.md)."
-        )
 
+
+def access_token():
     resp = requests.post(
         TOKEN_URL,
         data={
@@ -146,6 +143,17 @@ def publish(session, blog_id, meta, body, existing):
 
 
 def main():
+    # Until the OAuth secrets are configured this is a no-op rather than a
+    # failure, so scheduled runs don't report red every day while setup is
+    # still pending.
+    absent = missing_credentials()
+    if absent:
+        print(
+            "skipping: Blogger credentials not configured yet (" + ", ".join(absent) + ").\n"
+            "See blogger-posts/README.md to finish setup."
+        )
+        return 0
+
     only = os.environ.get("ONLY_SLUG", "").strip()
 
     if not POSTS_DIR.exists():
