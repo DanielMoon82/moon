@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>숨은 보험금·미환급금 조회하는 법 — 야간비행 일지</title>
+<meta name="description" content="이름도 잊고 있던 보험금, 통신비 보증금, 카드 포인트까지. 한 번에 조회하고 신청까지 끝내는 방법을 정리했습니다.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://danielmoon82.github.io/moon/posts/hidden-money.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="숨은 보험금·미환급금 5분 만에 조회하는 법 (2026년 최신)">
+<meta property="og:description" content="이름도 잊고 있던 보험금, 통신비 보증금, 카드 포인트까지. 한 번에 조회하고 신청까지 끝내는 방법을 정리했습니다.">
+<meta property="og:image" content="https://danielmoon82.github.io/moon/posts/images/hidden-money-cover.png">
+<meta property="og:url" content="https://danielmoon82.github.io/moon/posts/hidden-money.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#E7EBF1;
+    --surface:#F4F6FA;
+    --surface-2:#DCE2EC;
+    --ink:#0F1729;
+    --ink-2:#3D4A63;
+    --ink-3:#6B7891;
+    --line:#C6CEDB;
+    --line-soft:#D6DCE6;
+    --accent:#B06A15;
+    --accent-bright:#C2761A;
+    --accent-soft:rgba(176,106,21,.11);
+
+    --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    --f-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+
+    --pad:clamp(20px,5vw,64px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1120;
+      --surface:#121A2C;
+      --surface-2:#1A2439;
+      --ink:#E9EEF7;
+      --ink-2:#A9B5C9;
+      --ink-3:#72809A;
+      --line:#26314A;
+      --line-soft:#1D2739;
+      --accent:#E8A33D;
+      --accent-bright:#F0B45C;
+      --accent-soft:rgba(232,163,61,.13);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1120;
+    --surface:#121A2C;
+    --surface-2:#1A2439;
+    --ink:#E9EEF7;
+    --ink-2:#A9B5C9;
+    --ink-3:#72809A;
+    --line:#26314A;
+    --line-soft:#1D2739;
+    --accent:#E8A33D;
+    --accent-bright:#F0B45C;
+    --accent-soft:rgba(232,163,61,.13);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-weight:300;
+    font-size:16px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--accent-bright);outline-offset:3px;border-radius:2px;}
+  img{max-width:100%;height:auto;}
+
+  .wrap{max-width:720px;margin:0 auto;padding-inline:var(--pad);}
+
+  .nav{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;}
+  .brand{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1rem;letter-spacing:-.02em;
+    text-decoration:none;color:var(--ink);
+  }
+  .back{
+    font-family:var(--f-mono);
+    font-size:.72rem;letter-spacing:.06em;
+    color:var(--ink-3);text-decoration:none;
+  }
+  .back:hover{color:var(--accent);}
+
+  .article{padding-block:clamp(40px,7vw,72px) clamp(56px,9vw,96px);}
+  .eyebrow{
+    font-family:var(--f-mono);
+    font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 14px;
+  }
+  h1{
+    font-family:var(--f-display);
+    font-weight:800;font-size:clamp(1.7rem,4.6vw,2.5rem);
+    line-height:1.28;letter-spacing:-.03em;
+    margin:0 0 16px;
+  }
+  .lede{margin:0 0 10px;font-size:1rem;color:var(--ink-2);}
+  .byline{
+    font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+    padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:34px;
+  }
+
+  .hero{
+    width:100%;border-radius:4px;border:1px solid var(--line-soft);
+    margin-bottom:38px;display:block;
+  }
+
+  h2{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1.3rem;letter-spacing:-.02em;
+    margin:46px 0 14px;
+  }
+  p{margin:0 0 18px;color:var(--ink-2);}
+  .article strong{color:var(--ink);font-weight:600;}
+
+  .spec{
+    list-style:none;margin:0 0 22px;padding:20px clamp(16px,3vw,24px);
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+  }
+  .spec li{
+    display:flex;gap:14px;padding:7px 0;
+    border-bottom:1px solid var(--line-soft);
+    font-size:.92rem;color:var(--ink-2);
+  }
+  .spec li:last-child{border-bottom:0;}
+  .spec b{
+    flex:0 0 88px;font-weight:500;color:var(--ink-3);
+    font-family:var(--f-mono);font-size:.74rem;letter-spacing:.04em;
+    padding-top:3px;text-transform:uppercase;
+  }
+
+  ul.bullets{margin:0 0 20px;padding-left:20px;color:var(--ink-2);}
+  ul.bullets li{margin-bottom:8px;}
+
+  figure{margin:32px 0;}
+  figure img{border-radius:4px;border:1px solid var(--line-soft);display:block;}
+  figcaption{
+    margin-top:10px;font-family:var(--f-mono);font-size:.7rem;
+    color:var(--ink-3);text-align:center;
+  }
+
+  .callout{
+    margin:30px 0;padding:18px clamp(16px,3vw,22px);
+    border-left:3px solid var(--accent);
+    background:var(--accent-soft);border-radius:0 3px 3px 0;
+  }
+  .callout p{margin:0;font-size:.9rem;color:var(--ink-2);}
+
+  .foot{
+    border-top:1px solid var(--line);background:var(--surface);
+    padding-block:32px 40px;margin-top:20px;
+  }
+  .foot p{margin:0;font-size:.8rem;color:var(--ink-3);}
+  .foot .sig{
+    font-family:var(--f-display);font-weight:600;font-size:1rem;
+    color:var(--ink);letter-spacing:-.02em;margin-bottom:4px;
+  }
+</style>
+
+<style>
+  /* 원본이 1080x1350 세로형 카드 이미지라, 본문 폭을 다 채우면 지나치게 커진다. */
+  .hero{max-width:480px;margin-inline:auto;}
+  figure img{max-width:440px;margin-inline:auto;}
+
+  .article a[href^="http"]{
+    color:var(--accent);text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  .article a[href^="http"]:hover{border-bottom-color:var(--accent);}
+
+  .table-wrap{overflow-x:auto;margin:0 0 22px;border:1px solid var(--line);border-radius:3px;background:var(--surface);}
+  table{border-collapse:collapse;width:100%;min-width:420px;font-size:.9rem;}
+  th,td{padding:11px 16px;text-align:left;border-bottom:1px solid var(--line-soft);color:var(--ink-2);}
+  thead th{
+    font-family:var(--f-mono);font-weight:500;font-size:.68rem;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);
+    border-bottom:1px solid var(--line);
+  }
+  tbody tr:last-child td{border-bottom:0;}
+  td:first-child{color:var(--ink);}
+
+  ul.check{list-style:none;margin:0 0 20px;padding:0;}
+  ul.check li{
+    position:relative;padding:7px 0 7px 30px;
+    font-size:.94rem;color:var(--ink-2);
+    border-bottom:1px solid var(--line-soft);
+  }
+  ul.check li:last-child{border-bottom:0;}
+  ul.check li::before{
+    content:"";position:absolute;left:2px;top:12px;
+    width:13px;height:13px;border:1.5px solid var(--ink-3);border-radius:2px;
+  }
+
+  .aff{margin-top:46px;padding-top:30px;border-top:1px solid var(--line);}
+  .aff h2{margin-top:0;}
+  .aff-note{
+    font-size:.78rem;color:var(--ink-3);
+    border:1px dashed var(--line);border-radius:3px;
+    padding:11px 15px;margin:0 0 20px;
+  }
+  .aff-list{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+  .aff-list li{
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+    padding:15px 18px;
+  }
+  .aff-list a{
+    font-weight:500;display:inline-block;margin-bottom:4px;
+    color:var(--accent);text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  .aff-list a:hover{border-bottom-color:var(--accent);}
+  .aff-list span{display:block;font-size:.87rem;color:var(--ink-2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html">야간비행 일지</a>
+    <a class="back" href="../index.html#posts">← 목록으로</a>
+  </div>
+</nav>
+
+<main class="wrap article">
+  <p class="eyebrow">생활정보</p>
+  <h1>나도 몰랐던 내 돈 찾기 — 숨은 보험금·미환급금 5분 만에 조회하는 법</h1>
+  <p class="lede">이름도 잊고 있던 보험금, 통신비 보증금, 카드 포인트까지. 조회처별로 순서대로 정리했습니다.</p>
+  <p class="byline">2026.08 · 생활정보 · 2026년 기준</p>
+
+  <img class="hero" src="./images/hidden-money-cover.png" alt="숨은 보험금·미환급금 조회하는 법">
+
+  <p>주변에서 숨은 보험금이나 미환급금을 찾았다는 이야기, 한 번쯤 들어보셨을 거예요. 이사를 자주 다니거나, 예전에 가입했던 보험을 잊고 있거나, 통신사를 여러 번 바꾼 분이라면 본인도 모르는 사이에 찾아가지 않은 돈이 쌓여 있을 가능성이 높습니다. 딱 5분이면 끝나는 조회 방법을 순서대로 정리했습니다.</p>
+
+  <figure>
+    <img src="./images/hidden-money-checklist.png" alt="조회처 다섯 곳 한눈에 보기" loading="lazy">
+    <figcaption>조회처 다섯 곳 한눈에 보기</figcaption>
+  </figure>
+
+  <h2>1. 숨은 보험금 — 내보험찾아줌</h2>
+  <ul class="bullets">
+    <li>금융감독원 통합연금포털 산하 <a href="https://cont.insure.or.kr/" target="_blank" rel="noopener">내보험찾아줌</a>에서 조회합니다.</li>
+    <li>공동인증서 또는 카카오·네이버 등 간편인증으로 로그인합니다.</li>
+    <li>본인 명의로 가입된 전체 보험 계약을 조회한 뒤 만기·중도·휴면 보험금을 확인할 수 있습니다.</li>
+    <li>보험사가 지급 통지를 했지만 계좌 변경 등으로 못 받은 경우가 의외로 많습니다.</li>
+  </ul>
+
+  <div class="callout">
+    <p>부모님 세대는 종신보험을 여러 개 중복 가입한 경우가 많습니다. 명절에 가족이 모였을 때 같이 조회해보는 걸 추천합니다.</p>
+  </div>
+
+  <h2>2. 휴면예금·계좌 — 어카운트인포</h2>
+  <ul class="bullets">
+    <li><a href="https://www.accountinfo.or.kr/" target="_blank" rel="noopener">계좌정보통합관리서비스(어카운트인포)</a>에서 은행·저축은행·카드사·보험사에 흩어진 계좌를 한 번에 조회합니다.</li>
+    <li>잔액이 일정 금액 이하이고 오래 거래가 없는 휴면계좌는 그 자리에서 해지·환급 신청까지 됩니다.</li>
+    <li>카드 포인트 소멸 예정 내역도 같은 화면에서 확인됩니다.</li>
+  </ul>
+
+  <h2>3. 국세·지방세 미환급금</h2>
+  <ul class="bullets">
+    <li><strong>국세</strong> — <a href="https://www.hometax.go.kr/" target="_blank" rel="noopener">홈택스</a> → 조회/발급 → 세금신고납부 → 국세환급금 조회</li>
+    <li><strong>지방세</strong> — <a href="https://www.wetax.go.kr/" target="_blank" rel="noopener">위택스</a> → 환급금 찾기</li>
+    <li>과오납한 세금, 연말정산 후 남은 환급금 등을 조회할 수 있습니다.</li>
+  </ul>
+
+  <h2>4. 통신비 보증금·명의 점검</h2>
+  <ul class="bullets">
+    <li>통신 3사 해지 시 냈던 가입 보증금을 안 찾아간 경우가 많습니다.</li>
+    <li>각 통신사 고객센터 앱이나 대리점 방문으로 확인할 수 있습니다.</li>
+    <li>명의도용 방지 서비스 <a href="https://www.msafer.or.kr/" target="_blank" rel="noopener">엠세이퍼</a>에서 본인 명의 회선도 함께 점검하면 좋습니다.</li>
+  </ul>
+
+  <figure>
+    <img src="./images/hidden-money-highlight.png" alt="사이트별 소요시간 요약" loading="lazy">
+    <figcaption>사이트별 소요시간 요약</figcaption>
+  </figure>
+
+  <h2>5. 정리 체크리스트</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>항목</th><th>사이트</th><th>소요시간</th></tr></thead>
+      <tbody>
+        <tr><td>숨은 보험금</td><td>내보험찾아줌</td><td>2분</td></tr>
+        <tr><td>휴면예금 · 카드포인트</td><td>어카운트인포</td><td>2분</td></tr>
+        <tr><td>국세 환급금</td><td>홈택스</td><td>3분</td></tr>
+        <tr><td>지방세 환급금</td><td>위택스</td><td>2분</td></tr>
+        <tr><td>통신비 보증금</td><td>통신사 앱</td><td>3분</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure>
+    <img src="./images/hidden-money-summary.png" alt="한 번 조회했다면 주기적으로" loading="lazy">
+    <figcaption>한 번 조회했다면 주기적으로</figcaption>
+  </figure>
+
+  <h2>마무리</h2>
+  <p>한 번 조회해두면 매년 정기적으로 확인하는 습관을 들이는 게 좋습니다. 특히 이사나 이직, 통신사 변경 직후에는 꼭 체크해보세요.</p>
+<!-- 제휴 링크 자리: RFID 차단 카드지갑 / 가계부 다이어리 / 서류 파일 정리함
+     링크가 만들어지면 04·05번 글의 .aff 블록과 같은 형식으로 넣으면 됩니다. -->
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="sig">야간비행 일지</p>
+    <p>제도와 조회 절차는 확인 시점 기준이며, 최종 내용은 각 기관 공지를 따릅니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>

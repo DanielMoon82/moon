@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>가정용 태풍 대비 체크리스트 — 야간비행 일지</title>
+<meta name="description" content="8~9월은 태풍 발생이 가장 잦은 시기입니다. 태풍특보가 뜨기 전 집에서 미리 챙겨야 할 대비 체크리스트를 정리했습니다.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://danielmoon82.github.io/moon/posts/typhoon.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="태풍 대비 체크리스트 — 실외 점검부터 정전 대비까지">
+<meta property="og:description" content="8~9월은 태풍 발생이 가장 잦은 시기입니다. 태풍특보가 뜨기 전 집에서 미리 챙겨야 할 대비 체크리스트를 정리했습니다.">
+<meta property="og:image" content="https://danielmoon82.github.io/moon/posts/images/typhoon-cover.png">
+<meta property="og:url" content="https://danielmoon82.github.io/moon/posts/typhoon.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#E7EBF1;
+    --surface:#F4F6FA;
+    --surface-2:#DCE2EC;
+    --ink:#0F1729;
+    --ink-2:#3D4A63;
+    --ink-3:#6B7891;
+    --line:#C6CEDB;
+    --line-soft:#D6DCE6;
+    --accent:#B06A15;
+    --accent-bright:#C2761A;
+    --accent-soft:rgba(176,106,21,.11);
+
+    --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    --f-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+
+    --pad:clamp(20px,5vw,64px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1120;
+      --surface:#121A2C;
+      --surface-2:#1A2439;
+      --ink:#E9EEF7;
+      --ink-2:#A9B5C9;
+      --ink-3:#72809A;
+      --line:#26314A;
+      --line-soft:#1D2739;
+      --accent:#E8A33D;
+      --accent-bright:#F0B45C;
+      --accent-soft:rgba(232,163,61,.13);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1120;
+    --surface:#121A2C;
+    --surface-2:#1A2439;
+    --ink:#E9EEF7;
+    --ink-2:#A9B5C9;
+    --ink-3:#72809A;
+    --line:#26314A;
+    --line-soft:#1D2739;
+    --accent:#E8A33D;
+    --accent-bright:#F0B45C;
+    --accent-soft:rgba(232,163,61,.13);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-weight:300;
+    font-size:16px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--accent-bright);outline-offset:3px;border-radius:2px;}
+  img{max-width:100%;height:auto;}
+
+  .wrap{max-width:720px;margin:0 auto;padding-inline:var(--pad);}
+
+  .nav{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;}
+  .brand{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1rem;letter-spacing:-.02em;
+    text-decoration:none;color:var(--ink);
+  }
+  .back{
+    font-family:var(--f-mono);
+    font-size:.72rem;letter-spacing:.06em;
+    color:var(--ink-3);text-decoration:none;
+  }
+  .back:hover{color:var(--accent);}
+
+  .article{padding-block:clamp(40px,7vw,72px) clamp(56px,9vw,96px);}
+  .eyebrow{
+    font-family:var(--f-mono);
+    font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 14px;
+  }
+  h1{
+    font-family:var(--f-display);
+    font-weight:800;font-size:clamp(1.7rem,4.6vw,2.5rem);
+    line-height:1.28;letter-spacing:-.03em;
+    margin:0 0 16px;
+  }
+  .lede{margin:0 0 10px;font-size:1rem;color:var(--ink-2);}
+  .byline{
+    font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+    padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:34px;
+  }
+
+  .hero{
+    width:100%;border-radius:4px;border:1px solid var(--line-soft);
+    margin-bottom:38px;display:block;
+  }
+
+  h2{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1.3rem;letter-spacing:-.02em;
+    margin:46px 0 14px;
+  }
+  p{margin:0 0 18px;color:var(--ink-2);}
+  .article strong{color:var(--ink);font-weight:600;}
+
+  .spec{
+    list-style:none;margin:0 0 22px;padding:20px clamp(16px,3vw,24px);
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+  }
+  .spec li{
+    display:flex;gap:14px;padding:7px 0;
+    border-bottom:1px solid var(--line-soft);
+    font-size:.92rem;color:var(--ink-2);
+  }
+  .spec li:last-child{border-bottom:0;}
+  .spec b{
+    flex:0 0 88px;font-weight:500;color:var(--ink-3);
+    font-family:var(--f-mono);font-size:.74rem;letter-spacing:.04em;
+    padding-top:3px;text-transform:uppercase;
+  }
+
+  ul.bullets{margin:0 0 20px;padding-left:20px;color:var(--ink-2);}
+  ul.bullets li{margin-bottom:8px;}
+
+  figure{margin:32px 0;}
+  figure img{border-radius:4px;border:1px solid var(--line-soft);display:block;}
+  figcaption{
+    margin-top:10px;font-family:var(--f-mono);font-size:.7rem;
+    color:var(--ink-3);text-align:center;
+  }
+
+  .callout{
+    margin:30px 0;padding:18px clamp(16px,3vw,22px);
+    border-left:3px solid var(--accent);
+    background:var(--accent-soft);border-radius:0 3px 3px 0;
+  }
+  .callout p{margin:0;font-size:.9rem;color:var(--ink-2);}
+
+  .foot{
+    border-top:1px solid var(--line);background:var(--surface);
+    padding-block:32px 40px;margin-top:20px;
+  }
+  .foot p{margin:0;font-size:.8rem;color:var(--ink-3);}
+  .foot .sig{
+    font-family:var(--f-display);font-weight:600;font-size:1rem;
+    color:var(--ink);letter-spacing:-.02em;margin-bottom:4px;
+  }
+</style>
+
+<style>
+  /* 원본이 1080x1350 세로형 카드 이미지라, 본문 폭을 다 채우면 지나치게 커진다. */
+  .hero{max-width:480px;margin-inline:auto;}
+  figure img{max-width:440px;margin-inline:auto;}
+
+  .article a[href^="http"]{
+    color:var(--accent);text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  .article a[href^="http"]:hover{border-bottom-color:var(--accent);}
+
+  .table-wrap{overflow-x:auto;margin:0 0 22px;border:1px solid var(--line);border-radius:3px;background:var(--surface);}
+  table{border-collapse:collapse;width:100%;min-width:420px;font-size:.9rem;}
+  th,td{padding:11px 16px;text-align:left;border-bottom:1px solid var(--line-soft);color:var(--ink-2);}
+  thead th{
+    font-family:var(--f-mono);font-weight:500;font-size:.68rem;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);
+    border-bottom:1px solid var(--line);
+  }
+  tbody tr:last-child td{border-bottom:0;}
+  td:first-child{color:var(--ink);}
+
+  ul.check{list-style:none;margin:0 0 20px;padding:0;}
+  ul.check li{
+    position:relative;padding:7px 0 7px 30px;
+    font-size:.94rem;color:var(--ink-2);
+    border-bottom:1px solid var(--line-soft);
+  }
+  ul.check li:last-child{border-bottom:0;}
+  ul.check li::before{
+    content:"";position:absolute;left:2px;top:12px;
+    width:13px;height:13px;border:1.5px solid var(--ink-3);border-radius:2px;
+  }
+
+  .aff{margin-top:46px;padding-top:30px;border-top:1px solid var(--line);}
+  .aff h2{margin-top:0;}
+  .aff-note{
+    font-size:.78rem;color:var(--ink-3);
+    border:1px dashed var(--line);border-radius:3px;
+    padding:11px 15px;margin:0 0 20px;
+  }
+  .aff-list{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+  .aff-list li{
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+    padding:15px 18px;
+  }
+  .aff-list a{
+    font-weight:500;display:inline-block;margin-bottom:4px;
+    color:var(--accent);text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  .aff-list a:hover{border-bottom-color:var(--accent);}
+  .aff-list span{display:block;font-size:.87rem;color:var(--ink-2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html">야간비행 일지</a>
+    <a class="back" href="../index.html#posts">← 목록으로</a>
+  </div>
+</nav>
+
+<main class="wrap article">
+  <p class="eyebrow">안전</p>
+  <h1>태풍 오기 전 5분 점검 — 가정용 태풍 대비 체크리스트</h1>
+  <p class="lede">특보가 뜨고 나면 준비 시간이 넉넉하지 않습니다. 미리 훑어둘 목록.</p>
+  <p class="byline">2026.08 · 안전 · 여름·가을철</p>
+
+  <img class="hero" src="./images/typhoon-cover.png" alt="가정용 태풍 대비 체크리스트">
+
+  <p>기상청 통계를 보면 우리나라에 영향을 주는 태풍의 절반 이상이 8~9월에 집중됩니다. 뉴스에 예상 경로가 뜨기 시작하면 그때부터는 준비 시간이 넉넉하지 않으니, 미리 체크리스트를 만들어두는 게 가장 확실한 대비법입니다.</p>
+
+  <h2>1. 실외 점검</h2>
+  <ul class="bullets">
+    <li>베란다·옥상의 화분, 빨래건조대, 자전거 등 날아갈 수 있는 물건은 실내로 옮깁니다.</li>
+    <li>창문틀 사이는 신문지나 문풍지로 빗물 유입을 막고, 창문은 테이프로 가로·세로 고정합니다.</li>
+    <li>배수구·하수구의 낙엽과 쓰레기를 미리 제거해 역류를 막습니다.</li>
+    <li>차량은 지하주차장이나 침수 우려가 없는 고지대로 미리 옮깁니다.</li>
+  </ul>
+
+  <figure>
+    <img src="./images/typhoon-checklist.png" alt="실내 준비물 체크리스트" loading="lazy">
+    <figcaption>실내 준비물 체크리스트</figcaption>
+  </figure>
+
+  <h2>2. 실내 준비물</h2>
+  <ul class="check">
+    <li>손전등과 여분 건전지</li>
+    <li>보조배터리 — 완충 상태 확인</li>
+    <li>생수 1인당 2~3일분</li>
+    <li>비상식량 — 즉석밥, 통조림 등 조리가 필요 없는 것 위주</li>
+    <li>상비약, 반창고 등 구급용품</li>
+    <li>현금 소액권 — 정전 시 카드결제 불가 대비</li>
+    <li>라디오 또는 스마트폰 재난문자 알림 설정 확인</li>
+  </ul>
+
+  <h2>3. 정전 대비</h2>
+  <ul class="bullets">
+    <li>정전되면 냉장고 문 여닫는 횟수를 최소화해 내부 온도 유지 시간을 늘립니다.</li>
+    <li>휴대용 랜턴 위치를 가족 모두가 알고 있어야 합니다.</li>
+    <li>엘리베이터 이용 중 정전에 대비해, 고층 거주자는 태풍 예보 시 외출을 줄이세요.</li>
+  </ul>
+
+  <h2>4. 침수 취약 지역이라면</h2>
+  <ul class="bullets">
+    <li>지하주차장·반지하 거주 시 모래주머니나 물막이판을 미리 배치합니다.</li>
+    <li>아파트 관리사무소 비상연락망을 확인해둡니다.</li>
+    <li><a href="https://www.safekorea.go.kr/" target="_blank" rel="noopener">국민재난안전포털</a>과 지자체 안전 문자 수신 설정을 켜두세요.</li>
+  </ul>
+
+  <figure>
+    <img src="./images/typhoon-highlight.png" alt="실외 점검 포인트 요약" loading="lazy">
+    <figcaption>실외 점검 포인트 요약</figcaption>
+  </figure>
+
+  <h2>5. 태풍이 지나간 후</h2>
+  <ul class="bullets">
+    <li>침수 흔적이 있는 콘센트·전기시설은 감전 위험이 있으니 만지지 말고 관리사무소나 전문가에게 확인을 요청하세요.</li>
+    <li>강풍에 흔들린 간판, 나무 등 2차 사고 위험 지역은 우회합니다.</li>
+    <li>보험에 가입한 시설물 피해는 사진을 찍어두고 보험사에 즉시 접수합니다.</li>
+  </ul>
+
+  <figure>
+    <img src="./images/typhoon-summary.png" alt="매년 여름 시작 전에 한 번씩" loading="lazy">
+    <figcaption>매년 여름 시작 전에 한 번씩</figcaption>
+  </figure>
+
+  <h2>마무리</h2>
+  <p>태풍은 예보가 나온 순간부터 준비해도 늦지 않습니다. 다만 매번 허둥대지 않으려면 체크리스트를 한 번 정리해두고 매년 여름철 시작 전에 훑어보는 습관이 좋습니다.</p>
+
+  <section class="aff">
+    <h2>함께 쓰면 좋은 것</h2>
+    <p class="aff-note">이 글의 일부 링크는 쿠팡 파트너스 활동의 일환으로, 이를 통해 발생한 수익의 일정액을 제공받을 수 있습니다.</p>
+    <ul class="aff-list">
+      <li><a href="https://link.coupang.com/a/gBoEGtkEUe" target="_blank" rel="nofollow sponsored noopener">대용량 보조배터리</a><span>정전 시 통신수단을 확보하려면 대용량 보조배터리는 사실상 필수입니다.</span></li>
+    </ul>
+<!-- 제휴 링크 자리(추가 예정): LED 손전등+건전지 세트 / 비상식량 세트 / 방수 파우치 -->
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="sig">야간비행 일지</p>
+    <p>재난 상황에서는 기상청·국민재난안전포털과 지자체 안내를 우선 따르세요.</p>
+  </div>
+</footer>
+
+</body>
+</html>
