@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>마흔에 떠난 나 홀로 세계여행 — 일본·중국·터키·독일·체코·오스트리아</title>
+<meta name="description" content="사십 대에 혼자 떠난 세계여행 기록. 일본 지바~오사카 열차 종단, 중국 칭다오·베이징, 터키, 독일, 체코, 오스트리아까지. 나라별 비자·결제·교통 정보와 혼자 다닐 때 주의할 점을 정리했습니다.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://danielmoon82.github.io/moon/travel/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="마흔에 떠난 나 홀로 세계여행">
+<meta property="og:description" content="일본·중국·터키·독일·체코·오스트리아. 혼자 다니며 정리한 나라별 실전 정보와 주의할 점.">
+<meta property="og:url" content="https://danielmoon82.github.io/moon/travel/">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="마흔에 떠난 나 홀로 세계여행">
+<meta name="twitter:description" content="일본·중국·터키·독일·체코·오스트리아. 혼자 다니며 정리한 나라별 실전 정보와 주의할 점.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#E7EBF1;
+    --surface:#F4F6FA;
+    --surface-2:#DCE2EC;
+    --ink:#0F1729;
+    --ink-2:#3D4A63;
+    --ink-3:#6B7891;
+    --line:#C6CEDB;
+    --line-soft:#D6DCE6;
+    --accent:#B06A15;
+    --accent-bright:#C2761A;
+    --accent-soft:rgba(176,106,21,.11);
+    --jade:#2F6F62;
+    --warn:#B3261E;
+    --warn-soft:rgba(179,38,30,.10);
+    --grid-dot:rgba(15,23,41,.13);
+    --shadow:0 1px 2px rgba(15,23,41,.05), 0 12px 28px -18px rgba(15,23,41,.35);
+
+    --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    --f-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+
+    --measure:64ch;
+    --pad:clamp(20px,5vw,64px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1120;
+      --surface:#121A2C;
+      --surface-2:#1A2439;
+      --ink:#E9EEF7;
+      --ink-2:#A9B5C9;
+      --ink-3:#72809A;
+      --line:#26314A;
+      --line-soft:#1D2739;
+      --accent:#E8A33D;
+      --accent-bright:#F0B45C;
+      --accent-soft:rgba(232,163,61,.13);
+      --jade:#5FB39F;
+      --warn:#F2857C;
+      --warn-soft:rgba(242,133,124,.12);
+      --grid-dot:rgba(233,238,247,.11);
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 18px 40px -24px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1120;
+    --surface:#121A2C;
+    --surface-2:#1A2439;
+    --ink:#E9EEF7;
+    --ink-2:#A9B5C9;
+    --ink-3:#72809A;
+    --line:#26314A;
+    --line-soft:#1D2739;
+    --accent:#E8A33D;
+    --accent-bright:#F0B45C;
+    --accent-soft:rgba(232,163,61,.13);
+    --jade:#5FB39F;
+    --warn:#F2857C;
+    --warn-soft:rgba(242,133,124,.12);
+    --grid-dot:rgba(233,238,247,.11);
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 18px 40px -24px rgba(0,0,0,.8);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-weight:300;
+    font-size:clamp(15px,.55vw + 13.6px,16.5px);
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;}
+  a{color:inherit;}
+  .wrap{max-width:1140px;margin-inline:auto;padding-inline:var(--pad);}
+  .mono{font-family:var(--f-mono);}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:40;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(1.4) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:13px;}
+  .brand{
+    font-family:var(--f-display);font-weight:800;font-size:1.02rem;
+    letter-spacing:-.03em;text-decoration:none;color:var(--ink);
+    display:flex;align-items:baseline;gap:9px;white-space:nowrap;
+  }
+  .brand span{font-family:var(--f-mono);font-weight:400;font-size:.64rem;letter-spacing:.1em;color:var(--ink-3);}
+  .nav-links{display:flex;gap:clamp(10px,1.6vw,22px);overflow-x:auto;scrollbar-width:none;}
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links a{
+    font-size:.8rem;color:var(--ink-2);text-decoration:none;white-space:nowrap;
+    padding-bottom:2px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;
+  }
+  .nav-links a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;isolation:isolate;overflow:hidden;
+    min-height:clamp(430px,66vh,620px);
+    display:flex;align-items:flex-end;
+    background:
+      radial-gradient(120% 90% at 78% 22%, #2A3A63 0%, rgba(42,58,99,0) 58%),
+      radial-gradient(90% 70% at 12% 78%, #6B3B1F 0%, rgba(107,59,31,0) 62%),
+      linear-gradient(168deg, #060B16 0%, #101B33 46%, #1D2A45 78%, #3A2A22 100%);
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background-image:radial-gradient(rgba(255,255,255,.5) .8px, transparent .9px);
+    background-size:38px 38px;
+    opacity:.16;
+  }
+  .hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;}
+  .hero-scrim{
+    position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(to top, rgba(6,11,22,.86) 0%, rgba(6,11,22,.34) 42%, rgba(6,11,22,.12) 100%);
+  }
+  .hero-in{position:relative;z-index:3;padding-block:clamp(48px,8vh,84px);width:100%;}
+  .eyebrow{
+    margin:0 0 16px;font-family:var(--f-mono);font-size:.7rem;
+    letter-spacing:.16em;text-transform:uppercase;color:#F7C56E;
+  }
+  .hero h1{
+    font-family:var(--f-display);font-weight:800;
+    font-size:clamp(2.1rem,6.2vw,4rem);line-height:1.14;letter-spacing:-.045em;
+    margin:0 0 20px;color:#FFF8EC;
+    text-wrap:balance;
+  }
+  .hero h1 em{font-style:normal;color:#F7C56E;}
+  .hero-lede{
+    margin:0 0 24px;max-width:46ch;
+    color:rgba(255,246,232,.84);font-size:1.02rem;line-height:1.75;
+  }
+  .hero-meta{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{
+    font-family:var(--f-mono);font-size:.7rem;letter-spacing:.04em;
+    color:rgba(255,246,232,.9);
+    border:1px solid rgba(255,246,232,.3);border-radius:100px;
+    padding:5px 13px;background:rgba(6,11,22,.35);
+  }
+  .chip b{color:#F7C56E;font-weight:500;}
+
+  /* ---------- stats ---------- */
+  .stats{border-bottom:1px solid var(--line);background:var(--surface);}
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    margin:0;
+  }
+  .stat{
+    padding:26px 4px 28px;border-right:1px solid var(--line-soft);
+  }
+  .stat:last-child{border-right:0;}
+  .stat dt{
+    font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;
+  }
+  .stat dd{
+    margin:0;font-family:var(--f-display);font-weight:600;
+    font-size:clamp(1.6rem,3.4vw,2.15rem);letter-spacing:-.03em;color:var(--ink);
+  }
+  .stat dd small{font-size:.42em;font-weight:400;color:var(--ink-3);margin-left:4px;letter-spacing:0;}
+
+  /* ---------- sections ---------- */
+  .section{padding-block:clamp(56px,8vw,96px);border-bottom:1px solid var(--line);}
+  .section-head{margin-bottom:clamp(28px,4vw,44px);max-width:var(--measure);}
+  .section-head h2{
+    font-family:var(--f-display);font-weight:800;
+    font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:-.04em;
+    margin:0 0 10px;color:var(--ink);
+  }
+  .section-head p{margin:0;color:var(--ink-2);font-size:.95rem;}
+  .callout{
+    border:1px solid var(--line);border-left:3px solid var(--accent);
+    background:var(--accent-soft);
+    border-radius:3px;padding:14px 18px;margin:0 0 30px;
+    font-size:.88rem;color:var(--ink-2);max-width:var(--measure);
+  }
+  .callout b{color:var(--ink);font-weight:500;}
+
+  /* ---------- route log ---------- */
+  .log{display:flex;flex-direction:column;gap:clamp(18px,2.4vw,26px);}
+  .entry{display:grid;grid-template-columns:78px 1fr;gap:clamp(12px,2vw,24px);align-items:start;}
+  .entry-rail{
+    display:flex;flex-direction:column;gap:3px;padding-top:6px;
+    font-family:var(--f-mono);
+  }
+  .entry-rail .seq{font-size:1.15rem;font-weight:500;color:var(--accent);letter-spacing:-.02em;}
+  .entry-rail .region{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);}
+  .card{
+    border:1px solid var(--line);border-radius:4px;
+    background:var(--surface);box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .band{
+    height:7px;
+    background:linear-gradient(90deg,var(--c1) 0%,var(--c2) 55%,var(--c3) 100%);
+  }
+  .card-body{padding:clamp(20px,2.6vw,30px);}
+  .place{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;margin-bottom:4px;}
+  .place h3{
+    font-family:var(--f-display);font-weight:600;
+    font-size:clamp(1.2rem,2.4vw,1.5rem);letter-spacing:-.035em;
+    margin:0;color:var(--ink);
+  }
+  .place .country{
+    font-family:var(--f-mono);font-size:.63rem;letter-spacing:.14em;
+    color:var(--ink-3);text-transform:uppercase;
+  }
+  .cities{
+    margin:0 0 14px;font-family:var(--f-mono);font-size:.78rem;color:var(--ink-2);
+  }
+  .cities .sep{color:var(--ink-3);margin-inline:5px;}
+  .cities .soon{color:var(--ink-3);}
+  .lede{margin:0 0 18px;color:var(--ink-2);max-width:var(--measure);font-size:.95rem;}
+  .facts{
+    list-style:none;margin:0 0 16px;padding:16px 0 0;
+    border-top:1px solid var(--line-soft);
+    display:grid;gap:11px;
+  }
+  .facts li{display:grid;grid-template-columns:74px 1fr;gap:12px;align-items:start;font-size:.88rem;}
+  .facts .k{
+    font-family:var(--f-mono);font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--ink-3);padding-top:5px;
+  }
+  .facts .v{color:var(--ink-2);margin:0;}
+  .facts .v b{color:var(--ink);font-weight:500;}
+  .tags{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0;}
+  .tags li{
+    font-family:var(--f-mono);font-size:.66rem;letter-spacing:.03em;
+    color:var(--ink-2);background:var(--surface-2);
+    border-radius:100px;padding:4px 11px;
+  }
+  .tags li.pending{
+    background:transparent;border:1px dashed var(--line);color:var(--ink-3);
+  }
+
+  /* ---------- reference table ---------- */
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--surface);}
+  table{border-collapse:collapse;width:100%;min-width:620px;font-size:.88rem;}
+  caption{
+    text-align:left;padding:16px clamp(14px,2vw,20px) 0;
+    font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-3);
+  }
+  th,td{padding:13px clamp(10px,1.6vw,18px);text-align:left;border-bottom:1px solid var(--line-soft);}
+  thead th{
+    font-family:var(--f-mono);font-weight:500;font-size:.65rem;
+    letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);
+    border-bottom:1px solid var(--line);
+  }
+  tbody tr:last-child td{border-bottom:0;}
+  td.num,th.num{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;}
+  td.route{font-family:var(--f-mono);color:var(--ink);white-space:nowrap;}
+  td.route i{font-style:normal;color:var(--accent);margin-inline:5px;}
+  td.via{color:var(--ink-3);font-size:.82rem;}
+
+  /* ---------- generic card grids ---------- */
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:clamp(14px,2vw,20px);}
+  .note-card{
+    border:1px solid var(--line);border-radius:4px;background:var(--surface);
+    padding:24px clamp(18px,2vw,24px) 26px;
+  }
+  .note-card .kicker{
+    font-family:var(--f-mono);font-size:.62rem;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--accent);
+  }
+  .note-card h3{
+    font-family:var(--f-display);font-weight:600;font-size:1.08rem;
+    letter-spacing:-.03em;margin:9px 0 10px;color:var(--ink);
+  }
+  .note-card p{margin:0;color:var(--ink-2);font-size:.9rem;}
+
+  /* ---------- cautions ---------- */
+  .caution-list{
+    list-style:none;margin:0;padding:0;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:clamp(14px,2vw,20px);
+  }
+  .caution-list li{
+    border:1px solid var(--line);border-radius:4px;background:var(--surface);
+    border-top:3px solid var(--warn);
+    padding:22px clamp(18px,2vw,24px) 24px;
+  }
+  .caution-list h3{
+    font-family:var(--f-display);font-weight:600;font-size:1.02rem;
+    letter-spacing:-.03em;margin:0 0 9px;color:var(--ink);
+  }
+  .caution-list p{margin:0 0 10px;color:var(--ink-2);font-size:.89rem;}
+  .caution-list p:last-child{margin-bottom:0;}
+  .caution-list .flag{
+    display:inline-block;font-family:var(--f-mono);font-size:.6rem;
+    letter-spacing:.11em;text-transform:uppercase;color:var(--warn);
+    background:var(--warn-soft);border-radius:2px;padding:2px 7px;margin-bottom:10px;
+  }
+  .caution-list a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent);}
+  .caution-list a:hover{border-bottom-color:var(--accent);}
+
+  /* ---------- gear ---------- */
+  .disclosure{
+    font-size:.78rem;color:var(--ink-3);
+    border:1px dashed var(--line);border-radius:3px;
+    padding:11px 15px;margin:0 0 24px;max-width:var(--measure);
+  }
+  .gear-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:clamp(14px,2vw,20px);}
+  .gear-card{
+    display:flex;flex-direction:column;
+    border:1px solid var(--line);border-radius:4px;background:var(--surface);
+    padding:22px clamp(18px,2vw,24px) 24px;
+  }
+  .gear-cat{
+    font-family:var(--f-mono);font-size:.62rem;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--jade);
+  }
+  .gear-card h3{
+    font-family:var(--f-display);font-weight:600;font-size:1.02rem;
+    letter-spacing:-.03em;margin:9px 0 10px;color:var(--ink);
+  }
+  .gear-note{margin:0 0 18px;color:var(--ink-2);font-size:.88rem;flex:1;}
+  .gear-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .gear-price{font-size:.78rem;color:var(--ink-3);}
+  .gear-cta{
+    font-family:var(--f-mono);font-size:.74rem;letter-spacing:.03em;
+    text-decoration:none;color:var(--accent);font-weight:500;
+    border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
+    border-radius:2px;padding:6px 13px;transition:background .2s,border-color .2s;
+  }
+  .gear-cta:hover{background:var(--accent-soft);border-color:var(--accent);}
+
+  /* ---------- instagram ---------- */
+  .insta{
+    display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    border:1px solid var(--line);border-radius:4px;background:var(--surface);
+    padding:clamp(22px,3vw,32px);
+  }
+  .insta h3{
+    font-family:var(--f-display);font-weight:600;font-size:1.15rem;
+    letter-spacing:-.03em;margin:0 0 7px;color:var(--ink);
+  }
+  .insta p{margin:0;color:var(--ink-2);font-size:.9rem;max-width:52ch;}
+  .insta a{
+    font-family:var(--f-mono);font-size:.8rem;letter-spacing:.03em;
+    text-decoration:none;color:var(--paper);background:var(--ink);
+    border-radius:3px;padding:11px 20px;white-space:nowrap;font-weight:500;
+  }
+  .insta a:hover{background:var(--accent);}
+
+  /* ---------- footer ---------- */
+  .foot{background:var(--surface);padding-block:36px 46px;}
+  .foot-in{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;}
+  .foot p{margin:0;font-size:.82rem;color:var(--ink-3);}
+  .foot .sig{
+    font-family:var(--f-display);font-weight:600;font-size:1.05rem;
+    color:var(--ink);letter-spacing:-.03em;margin-bottom:5px;
+  }
+  .foot-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:9px;}
+  .foot-links a{font-size:.8rem;color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line);}
+  .foot-links a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+
+  /* ---------- motion ---------- */
+  .rise{opacity:1;transform:none;}
+  html.js-reveal .rise{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s cubic-bezier(.22,.7,.3,1);}
+  html.js-reveal .rise.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    html.js-reveal .rise{opacity:1;transform:none;transition:none;}
+    *{animation-duration:.001ms !important;transition-duration:.001ms !important;}
+  }
+
+  @media (max-width:560px){
+    .entry{grid-template-columns:1fr;gap:8px;}
+    .entry-rail{flex-direction:row;align-items:baseline;gap:10px;padding-top:0;}
+    .facts li{grid-template-columns:1fr;gap:2px;}
+    .facts .k{padding-top:0;}
+    .stat{border-right:0;border-bottom:1px solid var(--line-soft);padding-block:20px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">마흔의 세계여행<span>SOLO · ICN</span></a>
+    <div class="nav-links">
+      <a href="#route">여행 루트</a>
+      <a href="#flights">비행 정보</a>
+      <a href="#cautions">주의할 점</a>
+      <a href="#habits">짐과 습관</a>
+      <a href="#gear">여행용품</a>
+      <a href="#log">기록</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="routes" aria-hidden="true"></canvas>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="eyebrow">Solo travel log · 40s · ICN base</p>
+    <h1>마흔에,<br>혼자 <em>여섯 나라</em>를 지났다</h1>
+    <p class="hero-lede">일본에서 시작해 중국, 터키를 지나 독일·체코·오스트리아까지. 일정표가 아니라, 혼자 다녀보고 알게 된 것들을 순서대로 적어두는 곳입니다.</p>
+    <div class="hero-meta">
+      <span class="chip">루트 <b>JPN → CHN → TUR → DEU → CZE → AUT</b></span>
+      <span class="chip">형태 <b>나 홀로</b></span>
+      <span class="chip">기록 <b>정리 중</b></span>
+    </div>
+  </div>
+</header>
+
+<section class="stats" aria-label="여정 요약">
+  <div class="wrap">
+    <dl class="stats-grid">
+      <div class="stat"><dt>방문 국가</dt><dd>6<small>개국</small></dd></div>
+      <div class="stat"><dt>아시아</dt><dd>3<small>개국</small></dd></div>
+      <div class="stat"><dt>유럽</dt><dd>3<small>개국</small></dd></div>
+      <div class="stat"><dt>여행 구간</dt><dd>6<small>편</small></dd></div>
+    </dl>
+  </div>
+</section>
+
+<main>
+
+  <!-- =====================================================================
+       여행 루트
+       각 구간 카드에서 직접 고쳐 쓰는 곳:
+         · <p class="cities"> — 다녀온 도시를 순서대로
+         · <p class="lede">   — 그 구간의 소감 / 기억나는 것
+         · <ul class="tags">  — 키워드 (pending 클래스가 붙은 칩은 채운 뒤 지우면 됩니다)
+       facts 목록의 비자·결제·이동 정보는 사실 정보이므로 그대로 두어도 됩니다.
+       ===================================================================== -->
+  <section class="section wrap" id="route">
+    <div class="section-head">
+      <h2>여행 루트</h2>
+      <p>다녀온 순서대로. 각 구간에는 그 나라에서 실제로 필요했던 것들 — 비자, 결제, 이동 — 을 함께 적었습니다.</p>
+    </div>
+
+    <p class="callout"><b>정리 중입니다.</b> 지금은 루트와 나라별 실전 정보 위주이고, 구간별 날짜와 소감은 체코부터 정리해둔 타임라인을 옮기면서 차례로 채웁니다.</p>
+
+    <div class="log">
+
+      <article class="entry rise">
+        <div class="entry-rail"><span class="seq">01</span><span class="region">Asia</span></div>
+        <div class="card">
+          <div class="band" style="--c1:#1B2A4A;--c2:#B8443A;--c3:#F0B3A0"></div>
+          <div class="card-body">
+            <div class="place"><h3>일본</h3><span class="country">Japan</span></div>
+            <p class="cities">지바 <span class="sep">→</span> 오사카 <span class="sep">·</span> 전 구간 열차 이동</p>
+            <p class="lede">지바에서 출발해 오사카까지 열차로만 내려온 구간. 비행기로 건너뛰지 않으면 나라가 어떻게 이어져 있는지가 창밖으로 보입니다. 혼자라 시간표를 내 마음대로 바꿀 수 있었던 게 이 구간의 가장 큰 장점이었습니다.</p>
+            <ul class="facts">
+              <li><span class="k">입국</span><p class="v">한국 여권 <b>무비자 90일</b>. 출발 전 <b>Visit Japan Web</b>에 입국심사·세관을 미리 등록하면 QR 하나로 통과합니다.</p></li>
+              <li><span class="k">결제</span><p class="v">교통카드(스이카·이코카)에 충전해두면 열차부터 편의점까지 대부분 해결됩니다. 다만 현금만 받는 작은 가게가 아직 많습니다.</p></li>
+              <li><span class="k">이동</span><p class="v">JR패스는 <b>장거리를 여러 번</b> 탈 때만 이득입니다. 지바~오사카 편도 한 번이라면 구간별로 사는 쪽이 더 쌉니다.</p></li>
+              <li><span class="k">전기</span><p class="v">100V · A타입. 한국 220V 기기는 <b>어댑터만으로 부족</b>할 수 있으니 프리볼트(100–240V) 표기를 확인하세요.</p></li>
+            </ul>
+            <ul class="tags"><li>열차 종단</li><li>Visit Japan Web</li><li>IC 교통카드</li><li class="pending">경유 도시 추가 예정</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry rise">
+        <div class="entry-rail"><span class="seq">02</span><span class="region">Asia</span></div>
+        <div class="card">
+          <div class="band" style="--c1:#5A1B1B;--c2:#C2761A;--c3:#F2D28C"></div>
+          <div class="card-body">
+            <div class="place"><h3>중국</h3><span class="country">China</span></div>
+            <p class="cities">칭다오 <span class="sep">·</span> 베이징</p>
+            <p class="lede">인천에서 가장 가까운 해외 중 하나인 칭다오에서 시작해 베이징까지. 준비 없이 가면 가장 크게 막히는 나라이기도 합니다. 지도도, 메신저도, 결제도 한국에서 쓰던 게 그대로 통하지 않습니다.</p>
+            <ul class="facts">
+              <li><span class="k">입국</span><p class="v">한국 포함 45개국 대상 <b>무비자 30일</b>(관광·상용)이 <b>2026년 12월 31일</b>까지 시행 중입니다. 연장·조건이 자주 바뀌므로 출발 전 주한중국대사관 공지를 꼭 다시 확인하세요.</p></li>
+              <li><span class="k">결제</span><p class="v">현금과 해외 신용카드가 잘 통하지 않습니다. <b>알리페이 또는 위챗페이에 해외카드를 미리 등록</b>해두고 가는 것이 사실상 필수입니다.</p></li>
+              <li><span class="k">통신</span><p class="v">구글·카카오톡·인스타그램 등 상당수 서비스가 차단됩니다. 한국 통신사 <b>국제 로밍</b>을 쓰면 대개 평소처럼 열리므로, 현지 유심보다 로밍이 편할 때가 많습니다.</p></li>
+              <li><span class="k">이동</span><p class="v">칭다오–베이징은 <b>고속철로 3시간 안팎</b>. 실명제라 표 구입과 탑승 모두 여권이 필요합니다.</p></li>
+            </ul>
+            <ul class="tags"><li>무비자 30일</li><li>알리페이</li><li>고속철</li><li>로밍 준비</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry rise">
+        <div class="entry-rail"><span class="seq">03</span><span class="region">Asia</span></div>
+        <div class="card">
+          <div class="band" style="--c1:#3A1218;--c2:#B02A2A;--c3:#E8B45C"></div>
+          <div class="card-body">
+            <div class="place"><h3>터키</h3><span class="country">Türkiye</span></div>
+            <p class="cities"><span class="soon">도시 기록 정리 중</span></p>
+            <p class="lede">아시아 구간의 끝이자 유럽으로 넘어가는 길목. 혼자 다닐 때 말을 가장 많이 걸어오는 나라였고, 그래서 친절과 호객을 구분하는 감각이 필요했던 구간입니다.</p>
+            <ul class="facts">
+              <li><span class="k">입국</span><p class="v">한국 여권 <b>180일 중 90일 무비자</b>. 여권 잔여 유효기간이 넉넉해야 합니다.</p></li>
+              <li><span class="k">결제</span><p class="v">리라(TRY) 가치 변동이 커서 같은 가게라도 가격이 자주 바뀝니다. 환전은 공항보다 <b>시내 환전소(Döviz)</b>가 유리하고, 수수료를 반드시 먼저 물어보세요.</p></li>
+              <li><span class="k">이동</span><p class="v">이스탄불은 <b>이스탄불카드</b> 한 장으로 트램·메트로·버스·페리가 전부 해결됩니다.</p></li>
+              <li><span class="k">전기</span><p class="v">220–230V · C/F 타입으로 <b>한국 플러그와 호환</b>됩니다.</p></li>
+            </ul>
+            <ul class="tags"><li>90일 무비자</li><li>이스탄불카드</li><li>환전 주의</li><li class="pending">도시·소감 추가 예정</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry rise">
+        <div class="entry-rail"><span class="seq">04</span><span class="region">Europe</span></div>
+        <div class="card">
+          <div class="band" style="--c1:#141821;--c2:#8A2B2B;--c3:#E6C15C"></div>
+          <div class="card-body">
+            <div class="place"><h3>독일</h3><span class="country">Germany</span></div>
+            <p class="cities"><span class="soon">도시 기록 정리 중</span></p>
+            <p class="lede">유럽 구간의 시작. 여기서부터 독일·체코·오스트리아가 하나의 이동으로 이어지고, 체류 일수도 세 나라를 <b>합쳐서</b> 계산됩니다.</p>
+            <ul class="facts">
+              <li><span class="k">입국</span><p class="v">솅겐 협약국. <b>180일 중 90일</b> 무비자이며, 이 90일은 뒤에 나오는 체코·오스트리아와 <b>합산</b>됩니다.</p></li>
+              <li><span class="k">결제</span><p class="v">유로(EUR). 유럽 중에서도 <b>현금 선호</b>가 강한 편이라 카드를 안 받는 식당·상점이 아직 있습니다.</p></li>
+              <li><span class="k">이동</span><p class="v">독일철도(DB)는 연착이 잦습니다. <b>환승 시간을 넉넉히</b> 잡으세요. 지역열차와 시내교통을 묶은 월 정액권이 있으니 체류가 길면 계산해볼 만합니다.</p></li>
+              <li><span class="k">주의</span><p class="v">개찰구가 없어도 <b>무임승차 단속</b>이 수시로 있고 벌금이 큽니다. 일요일에는 대부분의 상점이 문을 닫습니다.</p></li>
+            </ul>
+            <ul class="tags"><li>솅겐 90/180</li><li>DB 연착</li><li>일요일 휴무</li><li class="pending">도시·소감 추가 예정</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry rise">
+        <div class="entry-rail"><span class="seq">05</span><span class="region">Europe</span></div>
+        <div class="card">
+          <div class="band" style="--c1:#16233A;--c2:#B04A2A;--c3:#E9C89A"></div>
+          <div class="card-body">
+            <div class="place"><h3>체코</h3><span class="country">Czechia</span></div>
+            <p class="cities"><span class="soon">타임라인 반영 예정</span></p>
+            <p class="lede">여기서부터는 따로 정리해둔 타임라인이 있어서, 날짜 단위로 옮겨 붙일 예정인 구간입니다.</p>
+            <ul class="facts">
+              <li><span class="k">입국</span><p class="v">솅겐 협약국. 독일·오스트리아와 <b>90일을 함께</b> 씁니다. 국경에서 별도 심사는 없습니다.</p></li>
+              <li><span class="k">결제</span><p class="v"><b>유로가 아니라 코루나(CZK)</b>를 씁니다. 유로를 받아주는 가게도 있지만 환율이 크게 불리합니다.</p></li>
+              <li><span class="k">환전</span><p class="v">프라하 구시가의 사설 환전소는 <b>사기로 악명이 높습니다.</b> "수수료 0%" 간판을 조심하고, 은행이나 평이 확인된 곳에서 바꾼 뒤 영수증과 받은 금액을 그 자리에서 확인하세요.</p></li>
+              <li><span class="k">이동</span><p class="v">프라하 대중교통은 시간권(30분·90분·24시간·72시간). <b>탈 때 개찰기에 각인</b>하지 않으면 무표로 간주됩니다.</p></li>
+            </ul>
+            <ul class="tags"><li>코루나(CZK)</li><li>환전 사기 주의</li><li>시간권 각인</li><li class="pending">타임라인 반영 예정</li></ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry rise">
+        <div class="entry-rail"><span class="seq">06</span><span class="region">Europe</span></div>
+        <div class="card">
+          <div class="band" style="--c1:#1A2B24;--c2:#4E7A4C;--c3:#D8C98A"></div>
+          <div class="card-body">
+            <div class="place"><h3>오스트리아</h3><span class="country">Austria</span></div>
+            <p class="cities"><span class="soon">타임라인 반영 예정</span></p>
+            <p class="lede">지금까지의 마지막 구간. 체코와 마찬가지로 정리해둔 타임라인을 옮겨 채울 예정입니다.</p>
+            <ul class="facts">
+              <li><span class="k">입국</span><p class="v">솅겐 협약국. 독일·체코와 합쳐 <b>180일 중 90일</b>.</p></li>
+              <li><span class="k">결제</span><p class="v">유로(EUR). 체코에서 넘어왔다면 <b>남은 코루나를 미리 정리</b>하고 오는 편이 낫습니다.</p></li>
+              <li><span class="k">이동</span><p class="v">ÖBB 열차로 프라하·뮌헨과 바로 연결됩니다. 빈 시내는 24·48·72시간권이 편합니다.</p></li>
+              <li><span class="k">주의</span><p class="v">인기 명소는 <b>온라인 사전 예약</b>이 사실상 필수입니다. 시내에서 시대 의상을 입고 다가오는 클래식 공연 티켓 호객은 값이 부풀려진 경우가 많습니다.</p></li>
+            </ul>
+            <ul class="tags"><li>솅겐 90/180</li><li>사전 예약</li><li>ÖBB</li><li class="pending">타임라인 반영 예정</li></ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section wrap" id="flights">
+    <div class="section-head">
+      <h2>비행 정보</h2>
+      <p>인천에서 각 나라까지의 대략적인 거리와 직항 기준 소요 시간입니다. 항공권을 가늠할 때 쓰는 참고표이고, 실제 탑승 기록은 아닙니다.</p>
+    </div>
+    <div class="table-scroll rise">
+      <table>
+        <caption>ICN 기준 참고 · 대권항로 근사치</caption>
+        <thead>
+          <tr>
+            <th scope="col">구간</th>
+            <th scope="col">도착지</th>
+            <th scope="col" class="num">직선거리</th>
+            <th scope="col" class="num">직항 소요</th>
+            <th scope="col">시차</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="route">ICN <i>→</i> NRT</td><td class="via">일본 · 도쿄권(지바 인접)</td><td class="num">약 1,260 km</td><td class="num">2시간 30분</td><td>없음</td></tr>
+          <tr><td class="route">ICN <i>→</i> KIX</td><td class="via">일본 · 오사카</td><td class="num">약 870 km</td><td class="num">1시간 50분</td><td>없음</td></tr>
+          <tr><td class="route">ICN <i>→</i> TAO</td><td class="via">중국 · 칭다오</td><td class="num">약 630 km</td><td class="num">1시간 30분</td><td>-1시간</td></tr>
+          <tr><td class="route">ICN <i>→</i> PEK</td><td class="via">중국 · 베이징</td><td class="num">약 950 km</td><td class="num">2시간</td><td>-1시간</td></tr>
+          <tr><td class="route">ICN <i>→</i> IST</td><td class="via">터키 · 이스탄불</td><td class="num">약 7,900 km</td><td class="num">11시간 30분</td><td>-6시간</td></tr>
+          <tr><td class="route">ICN <i>→</i> FRA</td><td class="via">독일 · 프랑크푸르트</td><td class="num">약 8,570 km</td><td class="num">12시간</td><td>-8시간 / 서머타임 -7시간</td></tr>
+          <tr><td class="route">ICN <i>→</i> PRG</td><td class="via">체코 · 프라하</td><td class="num">약 8,300 km</td><td class="num">11시간 30분</td><td>-8시간 / 서머타임 -7시간</td></tr>
+          <tr><td class="route">ICN <i>→</i> VIE</td><td class="via">오스트리아 · 빈</td><td class="num">약 8,300 km</td><td class="num">11시간 30분</td><td>-8시간 / 서머타임 -7시간</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section wrap" id="cautions">
+    <div class="section-head">
+      <h2>주의할 점</h2>
+      <p>혼자 다니면 누가 대신 챙겨주지 않습니다. 이 루트를 도는 동안 실제로 문제가 될 수 있는 것들만 골랐습니다.</p>
+    </div>
+
+    <ul class="caution-list">
+      <li class="rise">
+        <span class="flag">Visa</span>
+        <h3>유럽 3개국은 90일을 나눠 쓰는 게 아니라 합쳐 씁니다</h3>
+        <p>독일·체코·오스트리아는 모두 솅겐 지역입니다. 나라마다 90일이 아니라 <strong>세 나라를 통틀어 180일 중 90일</strong>이며, 국경을 넘을 때 도장을 안 찍어도 일수는 계속 쌓입니다.</p>
+        <p>2026년 4월부터 유럽 출입국시스템(EES)이 전면 시행되어 <strong>지문·얼굴을 등록</strong>합니다. 첫 입국 때 심사 줄이 길어질 수 있으니 환승 시간을 여유 있게 잡으세요.</p>
+      </li>
+      <li class="rise">
+        <span class="flag">Scam</span>
+        <h3>ETIAS는 아직 시행 전입니다</h3>
+        <p>사전여행허가 ETIAS는 <strong>2026년 4분기 도입 예정</strong>으로 현재 미시행 상태입니다. 지금 "ETIAS를 발급해준다"며 결제를 요구하는 사이트는 사기이거나 불필요한 대행입니다.</p>
+        <p>시행되면 신청은 EU 공식 사이트에서만 하면 됩니다. 출발 전 <a href="https://www.0404.go.kr/" target="_blank" rel="noopener">외교부 해외안전여행</a>에서 최신 공지를 확인하세요.</p>
+      </li>
+      <li class="rise">
+        <span class="flag">Money</span>
+        <h3>체코에서는 유로가 통화가 아닙니다</h3>
+        <p>독일·오스트리아는 유로, <strong>체코는 코루나(CZK)</strong>입니다. 유로로 계산해주는 관광지 가게는 환율을 크게 얹습니다.</p>
+        <p>프라하 구시가 환전소 사기가 특히 흔합니다. "수수료 0%"는 대개 환율에 숨겨져 있으니, <strong>받을 금액을 먼저 계산해 확인한 뒤</strong> 돈을 건네세요.</p>
+      </li>
+      <li class="rise">
+        <span class="flag">China</span>
+        <h3>중국은 도착해서 준비하면 늦습니다</h3>
+        <p>알리페이·위챗페이 해외카드 등록, 지도 앱, 로밍은 <strong>한국에서 미리</strong> 끝내야 합니다. 현지에서는 앱 설치와 인증에 필요한 서비스 자체가 막힐 수 있습니다.</p>
+        <p>무비자 30일은 <strong>2026년 12월 31일까지 시행</strong>으로 예고된 조치입니다. 기간과 조건이 바뀔 수 있으니 출발 직전 대사관 공지를 다시 보세요.</p>
+      </li>
+      <li class="rise">
+        <span class="flag">Health</span>
+        <h3>사십 대의 여행자보험은 고지가 절반입니다</h3>
+        <p>기저질환이나 복용 중인 약을 고지하지 않으면 정작 필요할 때 보상에서 빠집니다. 가입할 때 <strong>있는 그대로 적는 편</strong>이 결국 유리합니다.</p>
+        <p>솅겐 지역은 규정상 <strong>3만 유로 이상의 의료 보장</strong>을 요구합니다. 상비약은 영문 처방전이나 성분명을 함께 챙기세요.</p>
+      </li>
+      <li class="rise">
+        <span class="flag">Solo</span>
+        <h3>가진 것을 한 곳에 두지 않습니다</h3>
+        <p>혼자면 잃어버렸을 때 빌릴 사람이 없습니다. <strong>다른 브랜드 카드 두 장</strong>, 소액 현금, 비상금을 각각 다른 가방에 나눠 넣으세요.</p>
+        <p>여권 사진면 스캔본을 클라우드와 종이 사본으로 각각 두고, 여권용 사진 2장을 챙깁니다. 영사콜센터 <strong>+82-2-3210-0404</strong>는 미리 저장해두세요.</p>
+      </li>
+      <li class="rise">
+        <span class="flag">Transit</span>
+        <h3>유럽 열차는 개찰구가 없어도 무표는 무표입니다</h3>
+        <p>독일·체코·오스트리아 모두 개찰구 없이 타는 구간이 많습니다. 대신 검표원이 수시로 돌고 <strong>벌금이 표값의 수십 배</strong>입니다.</p>
+        <p>체코의 시간권은 승차 전 개찰기에 각인해야 유효합니다. 각인하지 않은 새 표는 무표로 처리됩니다.</p>
+      </li>
+      <li class="rise">
+        <span class="flag">Pace</span>
+        <h3>하루에 한 곳, 사흘에 한 번은 아무것도 안 하는 날</h3>
+        <p>스무 살 때처럼 짜면 일주일 만에 무너집니다. 특히 유럽 구간은 시차가 8시간이라 <strong>첫 이틀은 일정을 비워두는 편</strong>이 전체를 살립니다.</p>
+        <p>도착 첫날 야간 이동은 피하세요. 숙소는 역에서 걸어갈 수 있고 밤에도 불이 켜진 길에 있는 곳으로 고릅니다.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section wrap" id="habits">
+    <div class="section-head">
+      <h2>짐과 습관</h2>
+      <p>여섯 나라를 지나면서 매번 그대로 지키게 된 것들.</p>
+    </div>
+    <div class="grid-3">
+      <div class="note-card rise">
+        <span class="kicker">Power</span>
+        <h3>대륙이 바뀌면 콘센트도 바뀐다</h3>
+        <p>일본은 100V A타입, 중국은 220V에 A·C·I가 섞여 있고, 터키·독일·체코·오스트리아는 230V C/F로 한국과 같습니다. 이 루트를 한 번에 돌려면 멀티 어댑터 하나가 사실상 필수입니다.</p>
+      </div>
+      <div class="note-card rise">
+        <span class="kicker">Packing</span>
+        <h3>열차 위주면 바퀴보다 어깨</h3>
+        <p>일본은 지바에서 오사카까지, 유럽은 세 나라 사이가 전부 열차였습니다. 구시가의 자갈길과 승강기 없는 역 계단에서는 캐리어 바퀴가 오히려 짐이 됩니다.</p>
+      </div>
+      <div class="note-card rise">
+        <span class="kicker">Journal</span>
+        <h3>하루의 마지막 10분만 적는다</h3>
+        <p>사진은 쌓이는데 기억은 안 남습니다. 본 것 하나, 먹은 것 하나, 틀렸다고 생각한 것 하나. 이 페이지의 글도 전부 그 10분에서 나옵니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="gear">
+    <div class="section-head">
+      <h2>여행용품</h2>
+      <p>여섯 나라를 도는 동안 계속 가방에 남았던 것들만 골랐습니다.</p>
+    </div>
+    <p class="disclosure">이 페이지의 일부 링크는 쿠팡 파트너스 활동의 일환으로, 이를 통해 발생한 수익의 일정액을 제공받을 수 있습니다.</p>
+
+    <div class="gear-grid">
+      <article class="gear-card rise">
+        <span class="gear-cat">Adapter</span>
+        <h3>해외여행용 멀티 트래블 어댑터</h3>
+        <p class="gear-note">일본 A타입, 중국 A·C·I, 유럽 C/F까지 플러그 모양이 전부 다릅니다. 이 루트를 한 번에 도는 동안 계속 쓴 물건입니다.</p>
+        <div class="gear-foot">
+          <span class="gear-price mono">약 ₩15,000~40,000대</span>
+          <a class="gear-cta" href="https://link.coupang.com/a/gAyDu31F92" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
+        </div>
+      </article>
+
+      <article class="gear-card rise">
+        <span class="gear-cat">Power</span>
+        <h3>20000mAh 보조배터리 (100Wh 이하)</h3>
+        <p class="gear-note">기내 반입 규정(100Wh 이하) 안에서 최대치로 골랐습니다. 열차로 하루를 다 보내는 날에는 이게 없으면 지도부터 끊깁니다.</p>
+        <div class="gear-foot">
+          <span class="gear-price mono">약 ₩32,500~</span>
+          <a class="gear-cta" href="https://link.coupang.com/a/gAyxltbhIG" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
+        </div>
+      </article>
+
+      <article class="gear-card rise">
+        <span class="gear-cat">Packing</span>
+        <h3>여행용 압축 파우치 세트</h3>
+        <p class="gear-note">여러 나라를 이어서 다니면 짐을 매일 풀었다 쌉니다. 세탁 전후로 나눠 넣으면 숙소에서 가방을 뒤질 일이 없습니다.</p>
+        <div class="gear-foot">
+          <span class="gear-price mono">약 ₩15,000~30,000대</span>
+          <a class="gear-cta" href="https://link.coupang.com/a/gAyvvBtTgG" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
+        </div>
+      </article>
+
+      <article class="gear-card rise">
+        <span class="gear-cat">Long-haul</span>
+        <h3>파우치형 메모리폼 목베개</h3>
+        <p class="gear-note">인천에서 유럽까지는 11~12시간입니다. 접으면 손바닥만 해져서 가방 옆주머니에 넣고 다닐 수 있는 형태로 골랐습니다.</p>
+        <div class="gear-foot">
+          <span class="gear-price mono">약 ₩19,800~</span>
+          <a class="gear-cta" href="https://link.coupang.com/a/gAycFdGwp2" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
+        </div>
+      </article>
+
+      <article class="gear-card rise">
+        <span class="gear-cat">Long-haul</span>
+        <h3>노이즈캔슬링 무선이어폰</h3>
+        <p class="gear-note">엔진 소음이 사라지면 옆자리 대화도 같이 사라집니다. 장거리 야간편에서 가장 회수율이 높았던 물건입니다.</p>
+        <div class="gear-foot">
+          <span class="gear-price mono">약 ₩20,000~50,000대</span>
+          <a class="gear-cta" href="https://link.coupang.com/a/gAyrK1FuRU" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
+        </div>
+      </article>
+
+      <article class="gear-card rise">
+        <span class="gear-cat">Carry-on</span>
+        <h3>20인치 기내용 캐리어</h3>
+        <p class="gear-note">위탁 수하물을 부치지 않으면 도착 직후 한 시간이 통째로 남습니다. 혼자 다닐 때는 그 한 시간이 꽤 큽니다.</p>
+        <div class="gear-foot">
+          <span class="gear-price mono">약 ₩200,000대~</span>
+          <a class="gear-cta" href="https://link.coupang.com/a/gAx5egxhim" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section wrap" id="log">
+    <div class="section-head">
+      <h2>기록</h2>
+      <p>사진과 그날의 짧은 기록은 인스타그램에 먼저 올립니다.</p>
+    </div>
+    <div class="insta rise">
+      <div>
+        <h3>@kucoom7</h3>
+        <p>여섯 나라를 지나며 찍은 사진들. 여기 정리해둔 구간별 소감은 이 계정의 기록을 옮겨 오면서 채워갈 예정입니다.</p>
+      </div>
+      <a href="https://www.instagram.com/kucoom7/" target="_blank" rel="noopener">인스타그램에서 보기 →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="sig">마흔의 세계여행</p>
+      <p>일본 · 중국 · 터키 · 독일 · 체코 · 오스트리아 — 다음 구간은 정해지는 대로 추가합니다.</p>
+      <div class="foot-links">
+        <a href="https://www.instagram.com/kucoom7/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.0404.go.kr/" target="_blank" rel="noopener">외교부 해외안전여행</a>
+      </div>
+    </div>
+    <p class="mono">ICN 37.4602°N 126.4407°E</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var canvas = document.getElementById('routes');
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // 인천을 허브로 두고 여섯 나라를 서→동 순으로 배치한 장식용 노선도.
+  // 좌표는 실제 위경도가 아니라 노선도 자체의 0~1 공간이고,
+  // 히어로 안에서는 아래 layout()이 잡아주는 인셋 박스로 옮겨 그린다.
+  // (히어로 텍스트는 좌하단에 붙으므로 박스를 그 위/오른쪽으로 피한다.)
+  var HUB = { x: 0.86, y: 0.44, code: 'ICN' };
+  var NODES = [
+    { x: 1.00, y: 0.66, code: 'JPN' },
+    { x: 0.70, y: 0.24, code: 'CHN' },
+    { x: 0.39, y: 0.86, code: 'TUR' },
+    { x: 0.00, y: 0.42, code: 'DEU' },
+    { x: 0.17, y: 0.00, code: 'CZE' },
+    { x: 0.09, y: 0.72, code: 'AUT' }
+  ];
+
+  var W = 0, H = 0, dpr = 1, t0 = 0, raf = 0;
+  // 히어로는 사이트 테마와 무관하게 어두운 야경 그라디언트로 고정이라,
+  // 노선도 색도 테마 변수가 아니라 이 팔레트로 고정한다.
+  var tone = { line: 'rgba(255,255,255,.5)', accent: '#F7C56E', ink: 'rgba(255,244,224,.85)' };
+
+  function resize() {
+    var r = canvas.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = Math.max(r.width, 1);
+    H = Math.max(r.height, 1);
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  // 화면이 좁으면 텍스트가 히어로 폭을 다 쓰므로 노선도를 상단 띠로,
+  // 넓으면 텍스트 오른쪽 위 공간으로 보낸다.
+  var box = { x0: 0, x1: 1, y0: 0, y1: 1 };
+  function layout() {
+    box = W < 760
+      ? { x0: 0.10, x1: 0.86, y0: 0.09, y1: 0.27 }
+      : { x0: 0.50, x1: 0.90, y0: 0.15, y1: 0.46 };
+  }
+
+  function pt(n) {
+    return { x: (box.x0 + n.x * (box.x1 - box.x0)) * W,
+             y: (box.y0 + n.y * (box.y1 - box.y0)) * H };
+  }
+
+  function control(a, b) {
+    var mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+    var dx = b.x - a.x, dy = b.y - a.y;
+    var len = Math.sqrt(dx * dx + dy * dy) || 1;
+    return { x: mx + (dy / len) * len * 0.17, y: my - (dx / len) * len * 0.17 };
+  }
+
+  function quad(a, c, b, s) {
+    var u = 1 - s;
+    return { x: u * u * a.x + 2 * u * s * c.x + s * s * b.x,
+             y: u * u * a.y + 2 * u * s * c.y + s * s * b.y };
+  }
+
+  function draw(now) {
+    var el = (now - t0) / 1000;
+    ctx.clearRect(0, 0, W, H);
+
+    var hub = pt(HUB);
+
+    NODES.forEach(function (n, i) {
+      var p = pt(n), c = control(hub, p);
+
+      ctx.save();
+      ctx.setLineDash([2, 6]);
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = tone.line;
+      ctx.beginPath();
+      ctx.moveTo(hub.x, hub.y);
+      ctx.quadraticCurveTo(c.x, c.y, p.x, p.y);
+      ctx.stroke();
+      ctx.restore();
+
+      if (!reduce.matches) {
+        var s = ((el * 0.12) + i * 0.166) % 1;
+        var q = quad(hub, c, p, s);
+        var fade = Math.sin(Math.PI * s);
+        ctx.globalAlpha = 0.25 + 0.65 * fade;
+        ctx.fillStyle = tone.accent;
+        ctx.beginPath();
+        ctx.arc(q.x, q.y, 2.4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+
+      ctx.fillStyle = tone.line;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = tone.accent;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 6.5, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.fillStyle = tone.ink;
+      ctx.font = '500 10px "IBM Plex Mono", monospace';
+      var flip = n.x > 0.72;
+      ctx.textAlign = flip ? 'right' : 'left';
+      ctx.fillText(n.code, p.x + (flip ? -12 : 12), p.y + 3.5);
+    });
+
+    ctx.fillStyle = tone.accent;
+    ctx.beginPath();
+    ctx.arc(hub.x, hub.y, 4, 0, Math.PI * 2);
+    ctx.fill();
+    if (!reduce.matches) {
+      var ring = (el % 3) / 3;
+      ctx.globalAlpha = 1 - ring;
+      ctx.strokeStyle = tone.accent;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(hub.x, hub.y, 5 + ring * 26, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+    ctx.fillStyle = tone.ink;
+    ctx.font = '500 10px "IBM Plex Mono", monospace';
+    ctx.textAlign = 'right';
+    ctx.fillText('ICN', hub.x - 13, hub.y + 3.5);
+
+    if (!reduce.matches) raf = requestAnimationFrame(draw);
+  }
+
+  function start() {
+    cancelAnimationFrame(raf);
+    resize();
+    layout();
+    t0 = performance.now();
+    raf = requestAnimationFrame(draw);
+  }
+
+  start();
+  window.addEventListener('resize', function () { resize(); layout(); if (reduce.matches) draw(performance.now()); });
+  if (reduce.addEventListener) reduce.addEventListener('change', start);
+
+  var risers = [].slice.call(document.querySelectorAll('.rise'));
+  function revealAll() { risers.forEach(function (el) { el.classList.add('in'); }); }
+
+  if ('IntersectionObserver' in window && risers.length) {
+    document.documentElement.classList.add('js-reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    risers.forEach(function (el) { io.observe(el); });
+    // 관찰이 어떤 이유로든 동작하지 않아도 본문은 반드시 보이도록.
+    setTimeout(revealAll, 1600);
+  }
+})();
+</script>
+
+</body>
+</html>
