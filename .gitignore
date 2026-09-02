@@ -1,0 +1,14 @@
+# 구글 타임라인/위치기록 원본 — 집·직장을 포함한 전체 이동 기록이라
+# 공개 저장소에 올라가면 안 된다. 실수로 커밋되지 않도록 막아둔다.
+Timeline.json
+Records.json
+location-history.json
+Takeout/
+**/Semantic Location History/
+[0-9][0-9][0-9][0-9]_*.json
+
+# tools/timeline-extract.py 의 출력물 — 올릴지 말지 직접 보고 정하도록 기본은 무시
+timeline-trip.json
+timeline-trip.txt
+
+.DS_Store
