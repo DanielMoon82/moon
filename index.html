@@ -660,6 +660,43 @@
   }
   .stock-report a:hover{border-bottom-color:var(--accent);}
 
+  /* ---------- 다른 사이트로 나가는 링크 ---------- */
+  .nav-links a.ext{color:var(--accent);font-weight:500;}
+  .nav-links a.ext:hover{border-bottom-color:var(--accent);}
+
+  .hub{padding-block:clamp(30px,4vw,44px);border-bottom:1px solid var(--line);}
+  .hub-card{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;flex-wrap:wrap;
+    border:1px solid var(--line);
+    border-left:3px solid var(--accent);
+    border-radius:3px;
+    background:linear-gradient(100deg, var(--accent-soft) 0%, var(--surface) 55%);
+    padding:clamp(20px,2.6vw,28px) clamp(18px,2.4vw,30px);
+    text-decoration:none;
+    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .hub-card:hover{
+    transform:translateY(-2px);
+    border-color:var(--accent);
+    box-shadow:0 12px 26px -16px color-mix(in srgb, var(--accent) 60%, transparent);
+  }
+  .hub-cat{
+    font-family:var(--f-mono);font-size:.64rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent);font-weight:600;
+  }
+  .hub-card h3{
+    font-family:var(--f-display);font-weight:600;font-size:1.2rem;
+    letter-spacing:-.03em;margin:7px 0 8px;color:var(--ink);
+  }
+  .hub-card p{margin:0;font-size:.87rem;color:var(--ink-2);max-width:56ch;}
+  .hub-go{
+    font-family:var(--f-mono);font-size:.76rem;letter-spacing:.04em;
+    color:var(--paper);background:var(--ink);
+    border-radius:3px;padding:11px 20px;white-space:nowrap;font-weight:500;
+  }
+  .hub-card:hover .hub-go{background:var(--accent);}
+
   /* ---------- footer ---------- */
   .foot{
     border-top:1px solid var(--line);
@@ -691,6 +728,7 @@
   <div class="wrap nav-in">
     <a class="brand" href="#top">야간비행 일지<span>2023—2025</span></a>
     <div class="nav-links">
+      <a class="ext" href="./travel/">세계여행</a>
       <a href="#log">여행 일지</a>
       <a href="#flights">비행 기록</a>
       <a href="#notes">짐과 습관</a>
@@ -730,6 +768,18 @@
 </section>
 
 <main>
+
+  <section class="hub wrap" aria-label="다른 사이트">
+    <a class="hub-card" href="./travel/">
+      <div>
+        <span class="hub-cat">Travel</span>
+        <h3>마흔의 세계여행</h3>
+        <p>일본 · 중국 · 터키 · 독일 · 체코 · 오스트리아. 혼자 다니며 정리한 나라별 비자·결제·교통 정보와 주의할 점을 따로 모아둔 사이트입니다.</p>
+      </div>
+      <span class="hub-go">바로 가기 →</span>
+    </a>
+  </section>
+
   <section class="section wrap" id="log">
     <div class="section-head">
       <h2>여행 일지</h2>
@@ -1126,6 +1176,7 @@
     <div>
       <p class="sig">야간비행 일지</p>
       <p>마지막 갱신 2026.08 · 다음 편은 정해지는 대로 추가합니다.</p>
+      <p><a href="./travel/">마흔의 세계여행 →</a></p>
     </div>
     <p class="mono">ICN 37.4602°N 126.4407°E</p>
   </div>
