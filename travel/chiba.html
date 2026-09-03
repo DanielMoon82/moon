@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>지바에서 시작했다 — 하프미러 탑 위의 첫날</title>
+<meta name="description" content="2026년 3월 지바. 지바미나토역에서 지바 포트타워와 포트파크까지, 오사카까지 이어질 열차 종단의 첫날 기록과 실전 정보.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://danielmoon82.github.io/moon/travel/chiba.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="지바에서 시작했다 — 하프미러 탑 위의 첫날">
+<meta property="og:description" content="2026년 3월, 오사카까지 이어질 열차 종단이 시작된 곳. 지바 포트타워에서 내려다본 도쿄만.">
+<meta property="og:image" content="https://danielmoon82.github.io/moon/travel/images/chiba/04-observation-west.jpg">
+<meta property="og:url" content="https://danielmoon82.github.io/moon/travel/chiba.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#E7EBF1; --surface:#F4F6FA; --surface-2:#DCE2EC;
+    --ink:#0F1729; --ink-2:#3D4A63; --ink-3:#6B7891;
+    --line:#C6CEDB; --line-soft:#D6DCE6;
+    --accent:#B06A15; --accent-soft:rgba(176,106,21,.11);
+    --jade:#2F6F62;
+    --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    --f-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+    --pad:clamp(20px,5vw,64px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1120; --surface:#121A2C; --surface-2:#1A2439;
+      --ink:#E9EEF7; --ink-2:#A9B5C9; --ink-3:#72809A;
+      --line:#26314A; --line-soft:#1D2739;
+      --accent:#E8A33D; --accent-soft:rgba(232,163,61,.13); --jade:#5FB39F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1120; --surface:#121A2C; --surface-2:#1A2439;
+    --ink:#E9EEF7; --ink-2:#A9B5C9; --ink-3:#72809A;
+    --line:#26314A; --line-soft:#1D2739;
+    --accent:#E8A33D; --accent-soft:rgba(232,163,61,.13); --jade:#5FB39F;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--f-body);font-weight:300;font-size:16.5px;line-height:1.82;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;height:auto;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  .wrap{max-width:760px;margin-inline:auto;padding-inline:var(--pad);}
+
+  .nav{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(1.4) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;}
+  .brand{font-family:var(--f-display);font-weight:800;font-size:1rem;letter-spacing:-.03em;
+         text-decoration:none;color:var(--ink);white-space:nowrap;}
+  .back{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.05em;color:var(--ink-3);
+        text-decoration:none;white-space:nowrap;}
+  .back:hover{color:var(--accent);}
+
+  .cover{margin:0;}
+  .cover img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;}
+
+  .article{padding-block:clamp(36px,6vw,64px) clamp(56px,9vw,96px);}
+  .eyebrow{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+           color:var(--accent);margin:0 0 14px;}
+  h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.8rem,5vw,2.6rem);
+     line-height:1.25;letter-spacing:-.04em;margin:0 0 18px;text-wrap:balance;}
+  .lede{margin:0 0 12px;font-size:1.05rem;color:var(--ink-2);}
+  .byline{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+          padding-bottom:24px;border-bottom:1px solid var(--line);margin:0 0 34px;}
+
+  h2{font-family:var(--f-display);font-weight:600;font-size:clamp(1.25rem,3vw,1.5rem);
+     letter-spacing:-.03em;margin:52px 0 16px;}
+  h3{font-family:var(--f-display);font-weight:600;font-size:1.08rem;letter-spacing:-.02em;
+     margin:34px 0 12px;}
+  p{margin:0 0 20px;color:var(--ink-2);}
+  .article strong{color:var(--ink);font-weight:500;}
+
+  figure{margin:34px 0;}
+  figure img{border-radius:4px;border:1px solid var(--line-soft);display:block;width:100%;}
+  figcaption{margin-top:10px;font-family:var(--f-mono);font-size:.7rem;color:var(--ink-3);
+             text-align:center;line-height:1.7;}
+  figcaption b{color:var(--ink-2);font-weight:500;}
+
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media (max-width:560px){ .pair{grid-template-columns:1fr;} }
+
+  blockquote{margin:30px 0;padding:18px clamp(16px,3vw,24px);
+    border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 3px 3px 0;}
+  blockquote p{margin:0;font-size:.94rem;}
+
+  .facts{list-style:none;margin:0 0 22px;padding:20px clamp(16px,3vw,24px);
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);}
+  .facts li{display:grid;grid-template-columns:82px 1fr;gap:14px;padding:9px 0;
+    border-bottom:1px solid var(--line-soft);font-size:.92rem;}
+  .facts li:last-child{border-bottom:0;}
+  .facts b{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:500;padding-top:5px;}
+  .facts span{color:var(--ink-2);}
+  @media (max-width:560px){ .facts li{grid-template-columns:1fr;gap:2px;} .facts b{padding-top:0;} }
+
+  ul.bullets{margin:0 0 22px;padding-left:20px;color:var(--ink-2);}
+  ul.bullets li{margin-bottom:10px;}
+
+  .foot{border-top:1px solid var(--line);background:var(--surface);padding-block:32px 44px;}
+  .foot p{margin:0 0 6px;font-size:.82rem;color:var(--ink-3);}
+  .foot .sig{font-family:var(--f-display);font-weight:600;font-size:1rem;color:var(--ink);
+             letter-spacing:-.03em;}
+  .foot a{color:var(--ink-2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="./">마흔의 세계여행</a>
+    <a class="back" href="./#journal">← 여행기 목록</a>
+  </div>
+</nav>
+
+<figure class="cover">
+  <img src="./images/chiba/04-observation-west.jpg"
+       alt="지바 포트타워 전망층에서 유리창 너머로 내려다본 도쿄만과 망원경">
+</figure>
+
+<main class="wrap article">
+  <p class="eyebrow">Japan · 2026</p>
+  <h1>지바에서 시작했다 — 하프미러 탑 위의 첫날</h1>
+  <p class="lede">오사카까지 열차로만 내려갈 참이었습니다. 그 긴 줄의 <strong>첫 칸</strong>이 지바였습니다. 2026년 3월 4일의 기록입니다.</p>
+  <p class="byline">2026.03.04 · 지바시 · 사진 5장</p>
+
+  <p>일본 여행의 출발점을 도쿄로 잡지 않았습니다. <strong>지바</strong>였습니다. 특별한 이유가 있었다기보다, 도착해서 바로 큰 도시로 들어가는 대신 하루를 옆에 두고 시작하고 싶었습니다.</p>
+
+  <p>지바는 도쿄 바로 옆인데도 성격이 꽤 다릅니다. 도쿄만을 끼고 있고, 그 만의 안쪽은 공업지대입니다. 관광지로 유명한 도시는 아니지만, 그래서 오히려 <strong>여행의 첫날에 어울리는 곳</strong>이었습니다. 아무것도 안 봐도 손해 보는 기분이 들지 않는 도시니까요.</p>
+
+  <h2>지바미나토 — 표지석부터</h2>
+
+  <figure>
+    <img src="./images/chiba/01-chiba-minato.jpg" loading="lazy"
+         alt="CHIBA MINATO 라고 새겨진 표지석과 그 뒤로 아파트 단지, 야자수, 줄무늬 구름이 깔린 파란 하늘">
+    <figcaption><b>2026.03.04</b> — CHIBA MINATO, 닻 하나가 박혀 있다</figcaption>
+  </figure>
+
+  <p>첫 사진이 표지석입니다. 화강암 덩어리에 <strong>CHIBA MINATO</strong>라고 크게 새기고, 두 단어 사이에 파란 <strong>닻</strong>을 하나 박아 놓았습니다. 미나토(港)는 항구라는 뜻이니, 이름과 그림이 같은 말을 두 번 하는 셈입니다.</p>
+
+  <p>뒤로는 아파트 단지가 늘어서 있고, 야자수가 한 그루 서 있고, 그 위로 <strong>줄무늬처럼 길게 늘어진 구름</strong>이 하늘을 가로지릅니다. 3월 초의 공기는 사진에서도 차게 보입니다. 도로변 잔디는 아직 누렇고, 나무는 잎이 없습니다.</p>
+
+  <p><strong>지바미나토역</strong>은 JR 게이요선과 지바 도시 모노레일이 만나는 역입니다. 도쿄역에서 게이요선으로 사십 분쯤이면 닿습니다. 역에서 나와 바다 쪽으로 십 분만 걸으면 오늘의 목적지가 통째로 보입니다.</p>
+
+  <h2>은색 탑</h2>
+
+  <figure>
+    <img src="./images/chiba/02-port-tower.jpg" loading="lazy"
+         alt="아래에서 올려다본 지바 포트타워. 좁고 긴 유리 탑 꼭대기에 해가 걸려 있다">
+    <figcaption><b>2026.03.04</b> — 지바 포트타워, 꼭대기에 해가 얹혔다</figcaption>
+  </figure>
+
+  <p><strong>지바 포트타워</strong>입니다. 아래에서 올려다보니 탑 꼭대기에 해가 정확히 얹혀 있었습니다. 렌즈 안에서 빛이 갈라지고, 그 아래로 좁고 긴 유리 기둥이 서 있습니다.</p>
+
+  <p>이 탑은 유리로 덮여 있습니다. 그냥 유리가 아니라 <strong>열선반사유리 5,571장</strong>을 붙인 하프미러입니다. 그래서 낮에는 탑이 스스로를 드러내는 대신 하늘과 구름을 그대로 비춥니다. 사진에서도 탑의 표면과 하늘의 경계가 애매합니다.</p>
+
+  <p>높이는 <strong>125.15미터</strong>. 1983년에 지바현 인구가 500만 명을 넘은 것을 기념해 짓기 시작했고, 지바현민의 날인 <strong>1986년 6월 15일</strong>에 문을 열었습니다. 도시가 어떤 숫자를 넘었다는 이유로 탑을 세우던 시대의 건물입니다.</p>
+
+  <h2>물가까지 걸어가는 길</h2>
+
+  <figure>
+    <img src="./images/chiba/03-port-park.jpg" loading="lazy"
+         alt="풀밭 사이로 난 길 끝에 바다가 반짝이고, 물가에 사람 하나가 실루엣으로 서 있다">
+    <figcaption><b>2026.03.04</b> — 길 끝에 사람이 하나 서 있었다</figcaption>
+  </figure>
+
+  <p>탑은 <strong>지바 포트파크</strong> 안에 있습니다. 잔디밭 사이로 벽돌 깔린 길이 나 있고, 그 길이 끝나는 자리가 바로 물가입니다.</p>
+
+  <p>사진 한가운데, 반짝이는 수면을 배경으로 <strong>사람이 하나 서 있습니다.</strong> 실루엣이라 나이도 표정도 안 보이고, 그냥 서 있다는 것만 보입니다. 건너편에는 붉고 흰 크레인과 굴뚝, 공장 건물이 늘어서 있습니다. 관광엽서에 나올 풍경은 아닙니다. 그런데 <strong>공업지대를 마주 보고 바다를 보는 공원</strong>이라는 게, 이 도시를 꽤 정직하게 보여줍니다.</p>
+
+  <p>하늘의 절반을 구름이 덮고 있고, 나무는 아직 겨울 가지 그대로입니다. 3월 초의 간토는 낮에 걸을 만하지만 <strong>바닷바람이 셉니다.</strong> 물가에서는 체감이 확 떨어집니다.</p>
+
+  <h2>전망층 — WEST</h2>
+
+  <figure>
+    <img src="./images/chiba/04-observation-west.jpg" loading="lazy"
+         alt="전망층 유리창에 WEST 라고 적혀 있고, 코인 망원경 두 대 너머로 도쿄만과 유조선, 유류 탱크가 보인다">
+    <figcaption><b>2026.03.04</b> — 유리에 WEST, 그 너머는 전부 도쿄만</figcaption>
+  </figure>
+
+  <p>탑에 올라가면 유리창에 방위가 적혀 있습니다. 사진 속 글자는 <strong>WEST</strong>. 서쪽 창이니 이 너머가 도쿄 방향입니다.</p>
+
+  <p>창턱을 따라 파란 안내판이 붙어 있는데, 어느 방향에 무엇이 있는지 알려주는 표시입니다. 맑은 날에는 여기서 <strong>후지산</strong>이 보인다고 합니다. 이날은 수평선 위로 도시의 실루엣이 아주 흐리게 걸려 있는 정도였습니다.</p>
+
+  <p>아래로는 도쿄만이 통째로 펼쳐집니다. 유조선이 정박해 있고, 방파제가 길게 뻗어 있고, 오른쪽으로는 <strong>흰 원통형 유류 탱크</strong>가 수십 개 늘어서 있습니다. 물은 오후 햇빛을 받아 은박지처럼 잘게 부서집니다.</p>
+
+  <p>왼쪽에는 <strong>코인 망원경</strong> 두 대. 한 대는 오래된 크림색 쌍안경이고, 다른 한 대는 화면이 달린 파란 기계입니다. 그 앞에서 모자를 쓴 사람이 망원경 대신 카메라를 들고 창밖을 찍고 있습니다. 천장에는 크리스마스 장식으로 보이는 전구줄이 아직 걸려 있습니다. 3월인데요.</p>
+
+  <h2>연인의 성지에 혼자</h2>
+
+  <figure>
+    <img src="./images/chiba/05-heart-sofa.jpg" loading="lazy"
+         alt="유리창 앞에 놓인 커다란 하트 모양 자주색 소파. 창밖으로 도시가 내려다보인다">
+    <figcaption><b>2026.03.04</b> — 하트 모양 소파, 뒤로는 도시</figcaption>
+  </figure>
+
+  <p>같은 층 모퉁이에 <strong>하트 모양 소파</strong>가 놓여 있습니다. 자주색 벨벳에, 사람 둘이 나란히 앉으라고 가운데가 갈라져 있고, 가느다란 금속 다리가 넷. 뒤로는 유리창이 코너를 돌아가고, 그 너머로 도시가 낮게 깔려 있습니다.</p>
+
+  <p>이 탑은 <strong>2011년에 '연인의 성지'로 선정</strong>됐습니다. 일본 각지의 전망대나 공원을 그렇게 지정하는 제도가 있고, 지정되면 대개 이런 하트 조형물이 하나씩 들어섭니다. 이듬해에는 야경 유산으로도 뽑혔습니다.</p>
+
+  <p>혼자 다니면 이런 자리에서 잠깐 멈추게 됩니다. 앉으라고 만든 자리인데 둘이 앉으라고 만든 자리라서요. 그렇다고 못 앉을 것도 없습니다. 사진에는 소파만 찍혀 있습니다.</p>
+
+  <h2>여기서 오사카까지, 어떻게 내려가나</h2>
+
+  <p>서쪽 창 너머가 앞으로 갈 길이라고 썼는데, 실제로 그 길을 가는 방법은 크게 셋입니다. 첫날에 정리해두면 이후 일정이 편해집니다.</p>
+
+  <ul class="bullets">
+    <li><strong>신칸센</strong> — 도쿄에서 신오사카까지 도카이도 신칸센으로 두 시간 반 안팎. 가장 빠르고 가장 비쌉니다. 지바에서 도쿄까지 사십 분을 더하면 반나절이 안 걸립니다.</li>
+    <li><strong>재래선 이어타기</strong> — 보통열차만 갈아타며 내려가면 아홉 시간에서 열 시간. 봄·여름·겨울의 정해진 기간에는 <strong>청춘18킷푸</strong>로 하루 종일 보통열차를 탈 수 있어, 값으로만 보면 압도적으로 쌉니다. 대신 하루가 통째로 들어갑니다.</li>
+    <li><strong>중간에 끊어 가기</strong> — 도쿄, 나고야, 교토처럼 중간 도시에서 하루씩 자면서 내려가는 방식. 시간은 가장 오래 걸리지만, 열차로 종단하는 의미는 이쪽이 가장 큽니다.</li>
+  </ul>
+
+  <p>세 방법의 값 차이가 꽤 큽니다. <strong>JR패스를 살지 말지는 여기서 갈립니다.</strong> 중간 도시를 여러 번 오르내릴 계획이면 패스가 이득이고, 서쪽으로 한 번 훑고 마는 일정이면 구간별로 사는 편이 쌉니다. 도쿄–신오사카 편도 한 번은 패스 값에 한참 못 미칩니다.</p>
+
+  <h2>첫날을 돌아보고 — 실전 정보</h2>
+
+  <ul class="facts">
+    <li><b>날짜</b><span>2026년 3월 4일 · 지바시</span></li>
+    <li><b>동선</b><span>지바미나토역 → 지바 포트파크 → 지바 포트타워 전망층</span></li>
+    <li><b>가는 법</b><span>도쿄역에서 JR 게이요선 약 40분, 역에서 도보 10분 남짓</span></li>
+    <li><b>날씨</b><span>3월 초. 낮에는 걸을 만하지만 바닷바람이 차다</span></li>
+    <li><b>입국</b><span>한국 여권 무비자 90일. Visit Japan Web 사전 등록 권장</span></li>
+  </ul>
+
+  <h3>1. 첫날은 큰 도시를 피한다</h3>
+  <p>도착한 날 바로 도쿄로 들어가면 시차도 없는데 이상하게 지칩니다. 사람 많은 곳에서 짐을 끌고 길을 찾는 일이 겹치기 때문입니다. <strong>지바처럼 한 정거장 옆</strong>에서 하루를 보내면, 다음 날 도쿄를 훨씬 가볍게 들어갑니다. 나리타에서 지바 시내는 도쿄보다 오히려 가깝습니다.</p>
+
+  <h3>2. 열차 종단은 첫날부터 IC카드로</h3>
+  <p>지바에서 오사카까지 열차로 내려갈 계획이라면 <strong>스이카·파스모 같은 IC카드</strong>를 첫날 손에 넣는 게 좋습니다. 게이요선이든 모노레일이든 찍고 타면 되고, 편의점 결제도 됩니다. 반면 <strong>JR패스는 신중하게</strong> 계산해야 합니다. 지바–오사카를 편도로 한 번 내려가는 정도라면 구간별로 사는 쪽이 대체로 쌉니다.</p>
+
+  <h3>3. 탑은 해가 있을 때와 진 뒤가 다르다</h3>
+  <p>포트타워는 하프미러라 낮에는 하늘을 비추고, 밤에는 조명이 들어옵니다. 야경 유산으로 뽑힌 것도 밤 쪽입니다. 시간이 허락하면 <strong>해 지기 전에 올라가 어두워질 때까지</strong> 머무는 편이 한 번에 둘 다 보는 방법입니다.</p>
+
+  <h3>4. 3월 초 간토는 겉옷이 필요하다</h3>
+  <p>사진 속 하늘은 봄 같지만 나무에는 잎이 없습니다. 낮 기온이 올라가도 <strong>바다 쪽은 바람이 셉니다.</strong> 전망층은 실내라 괜찮은데, 공원에서 물가까지 걸어 나가는 십 분이 춥습니다. 바람을 막아주는 겉옷 하나가 체감을 크게 바꿉니다.</p>
+
+  <h2>남는 것</h2>
+
+  <p>첫날에 대단한 걸 본 건 아닙니다. 표지석 하나, 유리로 덮인 탑 하나, 공장이 보이는 바다. 그런데 여행의 첫 사진이 <strong>도시 이름이 새겨진 돌</strong>이었다는 게 나중에 보니 마음에 들었습니다. 여기서 시작했다는 표시가 그것 말고 또 있을까 싶어서요.</p>
+
+  <p>이 탑에서 서쪽 창으로 본 방향이 앞으로 갈 길이기도 했습니다. 도쿄를 지나 서쪽으로, 계속 서쪽으로 내려가면 오사카가 나옵니다. 비행기로 건너뛰면 두 시간이면 되는 거리를, 굳이 땅에 붙어서 가보기로 한 여행의 첫날이었습니다.</p>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="sig">마흔의 세계여행</p>
+    <p>사진은 인스타그램 게시물에서 옮겨 온 것으로, 열한 장 가운데 다섯 장입니다. 시설 정보와 운영 시간은 확인 시점 기준이며, 방문 전 현지 공지를 확인하세요.</p>
+    <p><a href="./">전체 루트 보기 →</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
