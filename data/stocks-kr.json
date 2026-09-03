@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T12:31:03.870434+00:00",
+  "updated_at": "2026-09-03T21:25:48.994899+00:00",
   "as_of_date": "2026-09-03",
   "stocks": [
     {
@@ -18,6 +18,148 @@
         "institution_net_volume_sum": -11526164
       },
       "chart": "stocks/005930.png",
+      "history": [
+        {
+          "date": "2026-08-06",
+          "close": 230500,
+          "volume": 26101823,
+          "foreign": -3134136,
+          "institution": -1220335
+        },
+        {
+          "date": "2026-08-07",
+          "close": 231000,
+          "volume": 20546010,
+          "foreign": -1737367,
+          "institution": 36604
+        },
+        {
+          "date": "2026-08-10",
+          "close": 230000,
+          "volume": 16327805,
+          "foreign": -4394465,
+          "institution": 625055
+        },
+        {
+          "date": "2026-08-11",
+          "close": 239500,
+          "volume": 23310969,
+          "foreign": 2462529,
+          "institution": 319290
+        },
+        {
+          "date": "2026-08-12",
+          "close": 255500,
+          "volume": 27102479,
+          "foreign": 5802466,
+          "institution": 776871
+        },
+        {
+          "date": "2026-08-13",
+          "close": 268000,
+          "volume": 35530867,
+          "foreign": -401379,
+          "institution": 5544777
+        },
+        {
+          "date": "2026-08-14",
+          "close": 274500,
+          "volume": 21669476,
+          "foreign": 4913433,
+          "institution": -1830920
+        },
+        {
+          "date": "2026-08-18",
+          "close": 268500,
+          "volume": 24464621,
+          "foreign": 577859,
+          "institution": -941461
+        },
+        {
+          "date": "2026-08-19",
+          "close": 247500,
+          "volume": 22788552,
+          "foreign": -4177513,
+          "institution": -2923301
+        },
+        {
+          "date": "2026-08-20",
+          "close": 271000,
+          "volume": 26095919,
+          "foreign": 4221606,
+          "institution": 599886
+        },
+        {
+          "date": "2026-08-21",
+          "close": 281500,
+          "volume": 27746471,
+          "foreign": 1567349,
+          "institution": 1306652
+        },
+        {
+          "date": "2026-08-24",
+          "close": 257000,
+          "volume": 32451940,
+          "foreign": -6882379,
+          "institution": -6269240
+        },
+        {
+          "date": "2026-08-25",
+          "close": 257000,
+          "volume": 21617407,
+          "foreign": -5003317,
+          "institution": 203484
+        },
+        {
+          "date": "2026-08-26",
+          "close": 261500,
+          "volume": 19532523,
+          "foreign": 2518326,
+          "institution": 503532
+        },
+        {
+          "date": "2026-08-27",
+          "close": 266000,
+          "volume": 16829395,
+          "foreign": 1381786,
+          "institution": -97433
+        },
+        {
+          "date": "2026-08-28",
+          "close": 257000,
+          "volume": 15106746,
+          "foreign": -1927155,
+          "institution": -1652437
+        },
+        {
+          "date": "2026-08-31",
+          "close": 260000,
+          "volume": 18270969,
+          "foreign": -2293,
+          "institution": -2349842
+        },
+        {
+          "date": "2026-09-01",
+          "close": 261000,
+          "volume": 15319615,
+          "foreign": -707536,
+          "institution": -339843
+        },
+        {
+          "date": "2026-09-02",
+          "close": 250500,
+          "volume": 15176841,
+          "foreign": -1321536,
+          "institution": -2977902
+        },
+        {
+          "date": "2026-09-03",
+          "close": 250000,
+          "volume": 13723105,
+          "foreign": 91825,
+          "institution": -839601
+        }
+      ],
       "name": "삼성전자"
     },
     {
@@ -36,6 +178,148 @@
         "institution_net_volume_sum": -2269768
       },
       "chart": "stocks/000660.png",
+      "history": [
+        {
+          "date": "2026-08-06",
+          "close": 1495000,
+          "volume": 5498295,
+          "foreign": -1101883,
+          "institution": -275040
+        },
+        {
+          "date": "2026-08-07",
+          "close": 1422000,
+          "volume": 5002539,
+          "foreign": -56357,
+          "institution": 32908
+        },
+        {
+          "date": "2026-08-10",
+          "close": 1420000,
+          "volume": 3295283,
+          "foreign": -286575,
+          "institution": 68099
+        },
+        {
+          "date": "2026-08-11",
+          "close": 1425000,
+          "volume": 3817655,
+          "foreign": -210592,
+          "institution": 68354
+        },
+        {
+          "date": "2026-08-12",
+          "close": 1504000,
+          "volume": 4566672,
+          "foreign": 559854,
+          "institution": 193626
+        },
+        {
+          "date": "2026-08-13",
+          "close": 1593000,
+          "volume": 4680347,
+          "foreign": 649842,
+          "institution": 159109
+        },
+        {
+          "date": "2026-08-14",
+          "close": 1645000,
+          "volume": 4520990,
+          "foreign": 747508,
+          "institution": -334859
+        },
+        {
+          "date": "2026-08-18",
+          "close": 1662000,
+          "volume": 5139000,
+          "foreign": 441470,
+          "institution": -73791
+        },
+        {
+          "date": "2026-08-19",
+          "close": 1500000,
+          "volume": 4223067,
+          "foreign": -1199222,
+          "institution": -311406
+        },
+        {
+          "date": "2026-08-20",
+          "close": 1691000,
+          "volume": 5452970,
+          "foreign": 312973,
+          "institution": -13214
+        },
+        {
+          "date": "2026-08-21",
+          "close": 1730000,
+          "volume": 4274294,
+          "foreign": 6014,
+          "institution": 66258
+        },
+        {
+          "date": "2026-08-24",
+          "close": 1671000,
+          "volume": 3994599,
+          "foreign": -913265,
+          "institution": -173328
+        },
+        {
+          "date": "2026-08-25",
+          "close": 1678000,
+          "volume": 4029660,
+          "foreign": -1234309,
+          "institution": 197025
+        },
+        {
+          "date": "2026-08-26",
+          "close": 1688000,
+          "volume": 2923810,
+          "foreign": -227762,
+          "institution": 2290
+        },
+        {
+          "date": "2026-08-27",
+          "close": 1730000,
+          "volume": 3264042,
+          "foreign": -159385,
+          "institution": -140329
+        },
+        {
+          "date": "2026-08-28",
+          "close": 1653000,
+          "volume": 3531892,
+          "foreign": -190235,
+          "institution": -796000
+        },
+        {
+          "date": "2026-08-31",
+          "close": 1674000,
+          "volume": 3980661,
+          "foreign": -211935,
+          "institution": -314294
+        },
+        {
+          "date": "2026-09-01",
+          "close": 1693000,
+          "volume": 2727724,
+          "foreign": 91835,
+          "institution": -142669
+        },
+        {
+          "date": "2026-09-02",
+          "close": 1613000,
+          "volume": 2568478,
+          "foreign": -651507,
+          "institution": -295219
+        },
+        {
+          "date": "2026-09-03",
+          "close": 1596000,
+          "volume": 2628539,
+          "foreign": -234626,
+          "institution": -187288
+        }
+      ],
       "name": "SK하이닉스"
     },
     {
@@ -54,6 +338,148 @@
         "institution_net_volume_sum": -1280128
       },
       "chart": "stocks/005380.png",
+      "history": [
+        {
+          "date": "2026-08-06",
+          "close": 400000,
+          "volume": 527513,
+          "foreign": 19913,
+          "institution": 16996
+        },
+        {
+          "date": "2026-08-07",
+          "close": 395500,
+          "volume": 415672,
+          "foreign": 885,
+          "institution": -28035
+        },
+        {
+          "date": "2026-08-10",
+          "close": 408000,
+          "volume": 458584,
+          "foreign": 100751,
+          "institution": 28053
+        },
+        {
+          "date": "2026-08-11",
+          "close": 403000,
+          "volume": 327064,
+          "foreign": -6879,
+          "institution": -46597
+        },
+        {
+          "date": "2026-08-12",
+          "close": 409500,
+          "volume": 411565,
+          "foreign": 90750,
+          "institution": -52331
+        },
+        {
+          "date": "2026-08-13",
+          "close": 418500,
+          "volume": 590756,
+          "foreign": 53713,
+          "institution": -112407
+        },
+        {
+          "date": "2026-08-14",
+          "close": 453000,
+          "volume": 1203960,
+          "foreign": 94285,
+          "institution": 60614
+        },
+        {
+          "date": "2026-08-18",
+          "close": 435000,
+          "volume": 864881,
+          "foreign": -182749,
+          "institution": 3843
+        },
+        {
+          "date": "2026-08-19",
+          "close": 414000,
+          "volume": 552901,
+          "foreign": -54475,
+          "institution": -55825
+        },
+        {
+          "date": "2026-08-20",
+          "close": 417500,
+          "volume": 421243,
+          "foreign": 64885,
+          "institution": -111758
+        },
+        {
+          "date": "2026-08-21",
+          "close": 415000,
+          "volume": 373056,
+          "foreign": 8059,
+          "institution": 23640
+        },
+        {
+          "date": "2026-08-24",
+          "close": 414000,
+          "volume": 349740,
+          "foreign": -26620,
+          "institution": -5521
+        },
+        {
+          "date": "2026-08-25",
+          "close": 421000,
+          "volume": 570222,
+          "foreign": -143319,
+          "institution": -42330
+        },
+        {
+          "date": "2026-08-26",
+          "close": 408000,
+          "volume": 949402,
+          "foreign": -245225,
+          "institution": -103092
+        },
+        {
+          "date": "2026-08-27",
+          "close": 398000,
+          "volume": 1150372,
+          "foreign": -294735,
+          "institution": -425952
+        },
+        {
+          "date": "2026-08-28",
+          "close": 399500,
+          "volume": 438365,
+          "foreign": -12634,
+          "institution": -3463
+        },
+        {
+          "date": "2026-08-31",
+          "close": 403500,
+          "volume": 626542,
+          "foreign": 140275,
+          "institution": -4415
+        },
+        {
+          "date": "2026-09-01",
+          "close": 400500,
+          "volume": 383747,
+          "foreign": -4991,
+          "institution": -99644
+        },
+        {
+          "date": "2026-09-02",
+          "close": 378000,
+          "volume": 818127,
+          "foreign": -139276,
+          "institution": -324711
+        },
+        {
+          "date": "2026-09-03",
+          "close": 383500,
+          "volume": 465891,
+          "foreign": 77716,
+          "institution": 2807
+        }
+      ],
       "name": "현대차"
     }
   ]
