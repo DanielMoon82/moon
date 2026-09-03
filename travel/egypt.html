@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>이집트, 나흘 — 강을 따라 내려가며 신전을 하나씩</title>
+<meta name="description" content="2025년 10월 이집트 나흘. 아부심벨에서 시작해 콤옴보, 에드푸, 왕가의 계곡, 달빛 아래 룩소르 신전까지. 나일강을 따라 내려간 기록과 실전 정보.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://danielmoon82.github.io/moon/travel/egypt.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="이집트, 나흘 — 강을 따라 내려가며 신전을 하나씩">
+<meta property="og:description" content="2025년 10월, 아부심벨에서 룩소르까지 나일강을 따라 내려간 나흘의 기록.">
+<meta property="og:image" content="https://danielmoon82.github.io/moon/travel/images/egypt/14-luxor-night.jpg">
+<meta property="og:url" content="https://danielmoon82.github.io/moon/travel/egypt.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#E7EBF1; --surface:#F4F6FA; --surface-2:#DCE2EC;
+    --ink:#0F1729; --ink-2:#3D4A63; --ink-3:#6B7891;
+    --line:#C6CEDB; --line-soft:#D6DCE6;
+    --accent:#B06A15; --accent-soft:rgba(176,106,21,.11);
+    --jade:#2F6F62;
+    --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    --f-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+    --pad:clamp(20px,5vw,64px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1120; --surface:#121A2C; --surface-2:#1A2439;
+      --ink:#E9EEF7; --ink-2:#A9B5C9; --ink-3:#72809A;
+      --line:#26314A; --line-soft:#1D2739;
+      --accent:#E8A33D; --accent-soft:rgba(232,163,61,.13); --jade:#5FB39F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1120; --surface:#121A2C; --surface-2:#1A2439;
+    --ink:#E9EEF7; --ink-2:#A9B5C9; --ink-3:#72809A;
+    --line:#26314A; --line-soft:#1D2739;
+    --accent:#E8A33D; --accent-soft:rgba(232,163,61,.13); --jade:#5FB39F;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--f-body);font-weight:300;font-size:16.5px;line-height:1.82;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;height:auto;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  .wrap{max-width:760px;margin-inline:auto;padding-inline:var(--pad);}
+
+  .nav{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(1.4) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;}
+  .brand{font-family:var(--f-display);font-weight:800;font-size:1rem;letter-spacing:-.03em;
+         text-decoration:none;color:var(--ink);white-space:nowrap;}
+  .back{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.05em;color:var(--ink-3);
+        text-decoration:none;white-space:nowrap;}
+  .back:hover{color:var(--accent);}
+
+  .cover{margin:0;}
+  .cover img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;}
+
+  .article{padding-block:clamp(36px,6vw,64px) clamp(56px,9vw,96px);}
+  .eyebrow{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+           color:var(--accent);margin:0 0 14px;}
+  h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.8rem,5vw,2.6rem);
+     line-height:1.25;letter-spacing:-.04em;margin:0 0 18px;text-wrap:balance;}
+  .lede{margin:0 0 12px;font-size:1.05rem;color:var(--ink-2);}
+  .byline{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+          padding-bottom:24px;border-bottom:1px solid var(--line);margin:0 0 34px;}
+
+  h2{font-family:var(--f-display);font-weight:600;font-size:clamp(1.25rem,3vw,1.5rem);
+     letter-spacing:-.03em;margin:52px 0 16px;}
+  h3{font-family:var(--f-display);font-weight:600;font-size:1.08rem;letter-spacing:-.02em;
+     margin:34px 0 12px;}
+  p{margin:0 0 20px;color:var(--ink-2);}
+  .article strong{color:var(--ink);font-weight:500;}
+
+  figure{margin:34px 0;}
+  figure img{border-radius:4px;border:1px solid var(--line-soft);display:block;width:100%;}
+  figcaption{margin-top:10px;font-family:var(--f-mono);font-size:.7rem;color:var(--ink-3);
+             text-align:center;line-height:1.7;}
+  figcaption b{color:var(--ink-2);font-weight:500;}
+
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media (max-width:560px){ .pair{grid-template-columns:1fr;} }
+
+  blockquote{margin:30px 0;padding:18px clamp(16px,3vw,24px);
+    border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 3px 3px 0;}
+  blockquote p{margin:0;font-size:.94rem;}
+
+  .facts{list-style:none;margin:0 0 22px;padding:20px clamp(16px,3vw,24px);
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);}
+  .facts li{display:grid;grid-template-columns:82px 1fr;gap:14px;padding:9px 0;
+    border-bottom:1px solid var(--line-soft);font-size:.92rem;}
+  .facts li:last-child{border-bottom:0;}
+  .facts b{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:500;padding-top:5px;}
+  .facts span{color:var(--ink-2);}
+  @media (max-width:560px){ .facts li{grid-template-columns:1fr;gap:2px;} .facts b{padding-top:0;} }
+
+  ul.bullets{margin:0 0 22px;padding-left:20px;color:var(--ink-2);}
+  ul.bullets li{margin-bottom:10px;}
+
+  .foot{border-top:1px solid var(--line);background:var(--surface);padding-block:32px 44px;}
+  .foot p{margin:0 0 6px;font-size:.82rem;color:var(--ink-3);}
+  .foot .sig{font-family:var(--f-display);font-weight:600;font-size:1rem;color:var(--ink);
+             letter-spacing:-.03em;}
+  .foot a{color:var(--ink-2);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="./">마흔의 세계여행</a>
+    <a class="back" href="./#journal">← 여행기 목록</a>
+  </div>
+</nav>
+
+<figure class="cover">
+  <img src="./images/egypt/14-luxor-night.jpg"
+       alt="밤에 조명을 받은 룩소르 신전의 열주와 그 위에 뜬 보름달">
+</figure>
+
+<main class="wrap article">
+  <p class="eyebrow">Egypt · 2025</p>
+  <h1>이집트, 나흘 — 강을 따라 내려가며 신전을 하나씩</h1>
+  <p class="lede">아부심벨에서 시작해 콤옴보, 에드푸를 지나 룩소르까지. 나일강을 거슬러 오르는 게 아니라 <strong>따라 내려가는</strong> 나흘이었습니다. 2025년 10월의 기록입니다.</p>
+  <p class="byline">2025.10.05 – 10.08 · 아스완 · 콤옴보 · 에드푸 · 룩소르 · 사진 16장</p>
+
+  <p>부다페스트에서 이틀을 보내고 곧장 넘어온 구간입니다. 유럽의 가을에서 사하라의 한낮으로 하루 만에 건너뛰었으니, 몸이 먼저 알아차렸습니다.</p>
+
+  <p>이집트 남부를 도는 일정은 대개 방향이 정해져 있습니다. <strong>아스완에서 시작해 룩소르에서 끝납니다.</strong> 나일강이 남에서 북으로 흐르기 때문에, 강을 따라 내려가면 자연스럽게 아스완 → 콤옴보 → 에드푸 → 룩소르 순서가 됩니다. 이 글도 그 순서를 그대로 따라갑니다.</p>
+
+  <h2>첫째 날 — 옮겨진 산</h2>
+
+  <figure>
+    <img src="./images/egypt/01-abu-simbel-hall.jpg" loading="lazy"
+         alt="아부심벨 대신전 내부. 오시리스 모습의 람세스 2세 기둥이 좌우로 늘어서 있다">
+    <figcaption><b>10월 5일 13:45</b> — 아부심벨 대신전, 기둥이 곧 왕이다</figcaption>
+  </figure>
+
+  <p><strong>아부심벨</strong>의 내부는 사진으로 본 것과 달랐습니다. 밖에서 보는 거대한 좌상 넷이 워낙 유명해서 안은 좁을 거라 생각했는데, 들어서면 <strong>오시리스 모습을 한 람세스 2세 기둥</strong>이 좌우로 도열해 있습니다. 팔을 가슴 앞에 교차하고, 흰 왕관을 쓰고, 이름을 새긴 카르투슈를 몸에 달고 있습니다. 천장에는 독수리가, 벽에는 전차를 몬 왕이 새겨져 있습니다.</p>
+
+  <p>기원전 13세기에 산을 파서 만든 신전입니다. 그런데 지금 서 있는 자리는 원래 자리가 아닙니다. 1960년대 아스완 하이댐이 지어지면서 이 일대가 물에 잠기게 되자, <strong>신전을 통째로 잘라 옮겼습니다.</strong> 블록 단위로 해체해 60미터 높은 곳에 다시 조립한 것입니다. 지금 보고 있는 이음매 중 일부는 3천 년 전 것이 아니라 60년 전 것입니다.</p>
+
+  <p>그렇게까지 해서 지킨 이유 중 하나는 방향입니다. 이 신전은 1년에 두 번, 아침 햇빛이 정문에서 지성소까지 60미터를 곧장 들어가도록 설계돼 있습니다. 옮길 때도 그 각도를 맞췄습니다.</p>
+
+  <figure>
+    <img src="./images/egypt/02-temple-window.jpg" loading="lazy"
+         alt="신전 내부에서 바깥으로 난 문. 갈라비야를 입은 사람이 앙크를 들고 서 있다">
+    <figcaption><b>10월 5일 13:54</b> — 앙크를 들고 서 있던 사람</figcaption>
+  </figure>
+
+  <p>안쪽 방에서 밖으로 난 문을 보면 빛이 하얗게 넘어옵니다. 그 문턱에 <strong>갈라비야를 입은 사람</strong>이 서서, 손잡이가 달린 십자가 모양의 물건을 들어 보이고 있습니다. <strong>앙크(ʿnḫ)</strong>입니다. 벽에 새겨진 신들이 손에 쥐고 있는 것과 같은 모양이고, '생명'을 뜻합니다.</p>
+
+  <p>이집트 유적에서 이런 장면은 자주 마주칩니다. 관리인이 다가와 좋은 자리를 알려주거나, 사진을 찍어주겠다고 합니다. 대개 끝에 <strong>박시시</strong>가 따라옵니다. 강요는 아니지만 기대는 있습니다. 소액 지폐를 미리 나눠 넣어 두면 서로 편합니다.</p>
+
+  <figure class="pair">
+    <img src="./images/egypt/03-aswan-mural.jpg" loading="lazy"
+         alt="아스완 거리의 대형 벽화. LAND OF GOLD 라는 글자와 웃는 인물, 펠루카 돛배가 그려져 있다">
+    <img src="./images/egypt/04-hotel-pool.jpg" loading="lazy"
+         alt="야자수 사이로 조명이 켜진 호텔 수영장의 밤 풍경">
+  </figure>
+  <figcaption style="margin:-24px 0 34px;font-family:var(--f-mono);font-size:.7rem;color:var(--ink-3);text-align:center;"><b>10월 5일 18:43 · 21:13</b> — 황금의 땅, 그리고 그날 밤</figcaption>
+
+  <p>저녁에는 도시 한복판에서 커다란 벽화를 만났습니다. 건물 옆면을 통째로 쓴 그림인데, 활짝 웃는 사람 얼굴 아래로 <strong>펠루카</strong> 돛배와 강, 사막 언덕이 이어집니다. 큰 글씨로 <strong>LAND OF GOLD</strong>. 이 지역을 가리키던 옛 이름 <strong>누비아</strong>가 '황금의 땅'이라는 뜻이라는 설명과 겹칩니다. 벽화 앞 흙바닥에서는 아이들이 뛰어놀고 있었습니다.</p>
+
+  <p>그날 밤 숙소의 정원에는 야자수마다 전구를 감아두었고, 수영장 물이 혼자 파랗게 빛나고 있었습니다. 낮에 사막에서 데워진 몸이 그제야 식었습니다.</p>
+
+  <h2>둘째 날 아침 — 큰 솥과 얇은 빵</h2>
+
+  <figure class="pair">
+    <img src="./images/egypt/05-street-food-pot.jpg" loading="lazy"
+         alt="길가 노점에서 남자가 커다란 솥의 내용물을 젓고 있고 옆에 발라디 빵이 쌓여 있다">
+    <img src="./images/egypt/06-taameya-sandwich.jpg" loading="lazy"
+         alt="양철 접시에 담긴 발라디 빵 샌드위치. 토마토와 오이, 절임 채소가 함께 놓여 있다">
+  </figure>
+  <figcaption style="margin:-24px 0 34px;font-family:var(--f-mono);font-size:.7rem;color:var(--ink-3);text-align:center;"><b>10월 6일 07:20 · 07:23</b> — 삼 분 만에 나온 아침</figcaption>
+
+  <p>아침 일곱 시 이십 분. 길가 노점 앞에 커다란 알루미늄 솥이 걸려 있고, 흰 수염이 난 남자가 긴 국자로 안을 젓고 있습니다. 노랗고 걸쭉한 것이 가득합니다. 그 옆 쟁반에는 <strong>아이시 발라디</strong>가 산더미로 쌓여 있습니다. 이집트의 기본 빵으로, 통밀로 구워 가운데가 부풀었다가 식으면서 주머니처럼 비는 납작빵입니다.</p>
+
+  <p>삼 분 뒤 나온 것이 오른쪽 사진입니다. 빵을 반으로 갈라 속을 채우고, 토마토와 오이를 썰어 얹고, 당근과 오이 절임을 곁들였습니다. 접시는 양철, 테이블은 페인트가 벗겨진 파란 나무판입니다. <strong>풀</strong>(삶은 잠두콩)이나 <strong>타아메야</strong>(잠두로 만든 이집트식 팔라펠)로 채운 이 조합이 이 나라의 아침입니다.</p>
+
+  <p>덧붙이자면 타아메야는 팔라펠과 비슷하게 생겼지만 재료가 다릅니다. 중동의 팔라펠이 병아리콩으로 만드는 반면, 이집트는 <strong>잠두</strong>를 씁니다. 그래서 속이 더 초록빛이고 부드럽습니다.</p>
+
+  <figure>
+    <img src="./images/egypt/07-stationery-stall.jpg" loading="lazy"
+         alt="길가 문구 노점. 공책이 빼곡히 깔려 있고 주인과 소년이 서 있다">
+    <figcaption><b>10월 6일 07:44</b> — 개학 무렵의 문구 노점</figcaption>
+  </figure>
+
+  <p>조금 걸으니 인도 위에 공책을 깔아놓은 노점이 나왔습니다. 스프링 공책이 수십 권, 표지에는 미키마우스와 열대어와 수박이 인쇄돼 있고, 그중 하나에는 영어로 <strong>"SUCCESS COMES ONLY IF YOU DON'T STOP TRYING"</strong>이라고 적혀 있습니다. 색연필과 샤프도 나란히 진열돼 있습니다.</p>
+
+  <p>파란 티셔츠를 입은 소년이 진열대 앞에 서 있고, 주인은 손가락으로 뭔가를 가리키며 웃고 있습니다. 관광지에서 조금만 벗어나면 이런 시간이 흐릅니다. 유적 앞의 이집트와 등굣길의 이집트는 완전히 다른 나라처럼 보입니다.</p>
+
+  <h2>둘째 날 낮 — 신 둘, 그리고 악어</h2>
+
+  <figure>
+    <img src="./images/egypt/08-kom-ombo.jpg" loading="lazy"
+         alt="콤옴보 신전의 돌기둥과 벽면. 상형문자가 빼곡하고 문이 겹쳐 뚫려 있다">
+    <figcaption><b>10월 6일 10:30</b> — 콤옴보, 문이 겹쳐 뚫려 있다</figcaption>
+  </figure>
+
+  <p><strong>콤옴보 신전</strong>은 구조가 특이합니다. 이집트 신전은 보통 한 신을 모시는데, 여기는 <strong>둘</strong>입니다. 악어 머리를 한 <strong>소베크</strong>와 매의 머리를 한 <strong>하로에리스</strong>. 그래서 축이 하나가 아니라 둘이고, 문도 방도 좌우로 나란히 두 벌씩 있습니다. 한쪽 신전을 다 보고 나면 거울처럼 같은 구조가 한 번 더 반복됩니다.</p>
+
+  <p>사진에서도 문이 겹쳐 뚫려 있어 저 끝으로 야자수 한 그루와 하늘이 보입니다. 벽은 위에서 아래까지 상형문자로 빼곡하고, 그늘의 경계가 칼처럼 선명합니다. 오전 열 시 반인데 이미 그림자가 짧습니다.</p>
+
+  <figure class="pair">
+    <img src="./images/egypt/10-croc-museum.jpg" loading="lazy"
+         alt="THE CROCODILE MUSEUM 이라고 새겨진 사암 건물 외벽">
+    <img src="./images/egypt/09-croc-mummies.jpg" loading="lazy"
+         alt="유리 너머 모래 위에 나란히 놓인 악어 미라 여러 구">
+  </figure>
+  <figcaption style="margin:-24px 0 34px;font-family:var(--f-mono);font-size:.7rem;color:var(--ink-3);text-align:center;"><b>10월 6일 10:46 · 10:47</b> — 신전 바로 옆, 악어 박물관</figcaption>
+
+  <p>신전에서 몇 걸음 떨어진 곳에 <strong>악어 박물관(The Crocodile Museum)</strong>이 있습니다. 사암 블록을 쌓아 만든 낮고 단정한 건물이고, 벽에 아랍어와 영어로 이름만 새겨 놓았습니다.</p>
+
+  <p>안으로 들어가면 유리 너머 모래 위에 <strong>악어 미라</strong>가 줄지어 놓여 있습니다. 큰 것은 사람 키를 훌쩍 넘고, 등의 비늘 결까지 남아 있습니다. 이 지역에서 소베크는 나일강 그 자체였고, 사람들은 악어를 신의 몸으로 여겨 미라로 만들어 묻었습니다. 신전 옆에서 수백 구가 나왔습니다.</p>
+
+  <blockquote>
+    <p>신전만 보고 지나치기 쉬운데, 박물관은 신전 티켓으로 함께 들어갑니다. 냉방이 되고 십 분이면 다 봅니다. <strong>한낮의 더위를 피하는 자리</strong>로도 요긴합니다.</p>
+  </blockquote>
+
+  <figure>
+    <img src="./images/egypt/11-edfu-boys.jpg" loading="lazy"
+         alt="에드푸 호루스 신전 앞마당. 교복을 입은 소년 넷이 손을 들고 웃고 있다">
+    <figcaption><b>10월 6일 14:03</b> — 에드푸, 신전보다 먼저 다가온 쪽</figcaption>
+  </figure>
+
+  <p>오후 두 시의 <strong>에드푸 호루스 신전</strong>. 왼쪽으로 기둥이 늘어선 열주랑이, 가운데로 거대한 탑문이 서 있고, 오른쪽에는 흙벽돌이 무너져 쌓인 언덕이 있습니다. 저 언덕은 자연 지형이 아니라 <strong>옛 도시가 무너져 쌓인 것</strong>입니다. 사람이 살고 무너지고 그 위에 다시 살기를 반복하면 땅이 저렇게 높아집니다.</p>
+
+  <p>그런데 사진의 주인공은 신전이 아닙니다. 민트색·분홍색·초록색 폴로 티를 입은 <strong>소년 넷</strong>이 손가락으로 브이를 그리며 웃고 있습니다. 학교에서 단체로 온 모양이었고, 카메라를 보자마자 저렇게 섰습니다. 삼천 년 된 신전 앞에서 가장 최근에 만들어진 장면입니다.</p>
+
+  <figure>
+    <img src="./images/egypt/12-visitor-center-dogs.jpg" loading="lazy"
+         alt="VISITOR CENTER 표지가 붙은 건물 계단에 개 예닐곱 마리가 늘어져 자고 있다">
+    <figcaption><b>10월 6일 14:08</b> — 그늘의 주인들</figcaption>
+  </figure>
+
+  <p>오 분 뒤. <strong>VISITOR CENTER</strong>라고 적힌 문 앞 계단에 개가 예닐곱 마리 늘어져 있습니다. 검은 놈, 흰 놈, 누런 놈이 각자 계단 한 칸씩 차지하고 배를 깔고 잡니다. 건물이 만드는 그늘이 딱 그만큼입니다.</p>
+
+  <p>한낮의 이집트 남부에서 그늘은 자원입니다. 사람도 개도 같은 계산을 합니다. 이 사진 한 장이 그날의 기온을 어떤 숫자보다 잘 설명합니다.</p>
+
+  <h2>셋째 날 — 무덤과 달</h2>
+
+  <figure>
+    <img src="./images/egypt/13-valley-of-kings.jpg" loading="lazy"
+         alt="왕가의 계곡 입구. Valley of the Kings 안내판과 줄지어 선 사람들, 뒤로 바위산">
+    <figcaption><b>10월 7일 10:18</b> — 왕가의 계곡, 안내판이 먼저 규칙을 말한다</figcaption>
+  </figure>
+
+  <p><strong>왕가의 계곡</strong> 입구입니다. 나무 그늘막 아래 안내판이 걸려 있고, 그 너머로 사람들이 길게 줄지어 서 있습니다. 뒤로는 풀 한 포기 없는 석회암 산이 통째로 서 있습니다. 신왕국의 파라오들이 피라미드 대신 이 골짜기의 바위를 파고 들어가 묻힌 곳입니다.</p>
+
+  <p>안내판에는 이렇게 적혀 있습니다. <strong>"무덤을 보호하고 혼잡을 줄이기 위해 무덤 안에서의 설명은 허용되지 않습니다."</strong> 가이드가 무덤 밖에서 미리 설명을 끝내고, 안에서는 각자 조용히 보고 나오라는 뜻입니다. 아래쪽에는 무덤 번호가 적힌 표가 붙어 있고, 오른쪽에 <strong>EXTRA TICKET</strong> 칸이 따로 있습니다.</p>
+
+  <blockquote>
+    <p>기본 입장권으로 들어갈 수 있는 무덤 수는 정해져 있고, 투탕카멘 같은 몇몇 무덤은 <strong>별도 티켓</strong>입니다. 현장 안내판의 목록이 그날 실제로 열린 무덤을 알려주니, 표를 사기 전에 한 번 보는 게 낫습니다. 무덤은 돌아가며 닫고 열립니다.</p>
+  </blockquote>
+
+  <figure>
+    <img src="./images/egypt/14-luxor-night.jpg" loading="lazy"
+         alt="밤의 룩소르 신전. 조명을 받은 거대한 열주 사이로 보름달이 떠 있다">
+    <figcaption><b>10월 7일 19:50</b> — 룩소르 신전, 기둥 사이에 달</figcaption>
+  </figure>
+
+  <p>그리고 이 여행에서 가장 오래 서 있었던 자리. <strong>룩소르 신전</strong>의 밤입니다.</p>
+
+  <p>기둥이 사람 여럿이 팔을 벌려야 안길 만큼 굵고, 아래에서 쏘는 조명을 받아 아이보리색으로 떠 있습니다. 하늘은 완전히 검푸르고, 열주 사이 정확히 가운데에 <strong>보름달</strong>이 걸려 있습니다. 오른쪽 뒤로는 현대식 건물의 불빛이, 왼쪽으로는 모스크의 미나레트가 보입니다. 3천 년 된 기둥과 어제 켜진 형광등이 한 화면에 들어옵니다.</p>
+
+  <p>룩소르 신전이 특별한 이유는 <strong>밤에 연다</strong>는 점입니다. 낮에는 그늘이 없어 걷기 힘든 유적인데, 해가 지면 조명이 들어오고 공기가 식습니다. 사람도 훨씬 적습니다. 룩소르에서 하루를 짠다면 신전은 밤으로 미루는 편이 낫습니다.</p>
+
+  <figure>
+    <img src="./images/egypt/15-dinner.jpg" loading="lazy"
+         alt="식탁에 놓인 은박지에 싸인 구운 닭, 감자튀김과 채소, 볶은 쌀, 검은 토기에 담긴 타진">
+    <figcaption><b>10월 7일 20:55</b> — 그날의 저녁</figcaption>
+  </figure>
+
+  <p>신전을 나와 먹은 저녁입니다. 은박지에 싸인 구운 닭 반 마리, 감자튀김과 삶은 채소 한 접시, 그리고 <strong>버미첼리를 섞어 볶은 쌀</strong>. 오른쪽 검은 토기에 담긴 것이 <strong>타진</strong>인데, 모로코의 그 뾰족한 뚜껑 타진이 아니라 이집트식으로 <strong>오븐에 그대로 넣어 익히는 작은 항아리 요리</strong>입니다.</p>
+
+  <p>쌀에 국수를 부숴 넣고 함께 볶는 방식은 처음엔 낯설었는데, 며칠 지나니 이게 없으면 허전했습니다. 여행지의 음식은 대개 사흘째부터 익숙해집니다.</p>
+
+  <h2>넷째 날 — 대리석 마당</h2>
+
+  <figure>
+    <img src="./images/egypt/16-mosque.jpg" loading="lazy"
+         alt="해질 무렵의 대형 모스크. 두 개의 높은 미나레트와 여러 개의 돔, 넓은 대리석 마당">
+    <figcaption><b>10월 8일 18:33</b> — 마지막 저녁, 넓은 마당</figcaption>
+  </figure>
+
+  <p>마지막 사진은 유적이 아닙니다. 해가 막 넘어간 시각, 아주 넓은 <strong>대리석 마당</strong>과 그 끝의 모스크입니다. 미나레트 두 개가 좌우에서 하늘로 솟고, 가운데로 크고 작은 돔이 여러 개 이어집니다. 벽면의 격자 창에는 이미 불이 들어와 있고, 젖은 듯 반들거리는 바닥이 그 빛을 길게 반사합니다.</p>
+
+  <p>마당을 지나는 사람들의 옷차림이 눈에 띕니다. 반바지와 샌들, 손에 든 쇼핑백. 신전 앞의 옷차림과 다릅니다. 유적을 도는 여정이 끝나고 <strong>바다가 있는 도시</strong>로 넘어왔다는 게 사람들 차림에서 먼저 보입니다.</p>
+
+  <h2>나흘을 돌아보고 — 실전 정보</h2>
+
+  <ul class="facts">
+    <li><b>기간</b><span>2025년 10월 5일 ~ 8일 (부다페스트 다음 구간)</span></li>
+    <li><b>동선</b><span>아스완 · 아부심벨 → 콤옴보 → 에드푸 → 룩소르 → 홍해 방면</span></li>
+    <li><b>날씨</b><span>10월인데도 한낮은 35도 안팎. 그늘이 거의 없다</span></li>
+    <li><b>통화</b><span>이집트 파운드(EGP). 소액 지폐를 늘 지니는 게 좋다</span></li>
+    <li><b>입국</b><span>한국 여권은 도착비자 또는 전자비자. 여권 잔여 유효기간 6개월 이상</span></li>
+  </ul>
+
+  <h3>1. 방향은 강이 정해준다</h3>
+  <p>나일강은 남에서 북으로 흐릅니다. 그래서 아스완에서 시작해 룩소르에서 끝내는 편이 이동이 자연스럽고, 콤옴보와 에드푸가 중간에 자연스럽게 걸립니다. 반대로 짜면 같은 길을 두 번 지나게 됩니다. <strong>남 → 북</strong>만 기억하면 일정의 절반은 정해집니다.</p>
+
+  <h3>2. 한낮을 어떻게 피하느냐가 전부다</h3>
+  <p>이 나흘의 사진을 보면 오전 열 시대와 해가 진 뒤에 몰려 있습니다. 오후 두 시의 사진에는 <strong>그늘에서 자는 개들</strong>이 찍혔습니다. 유적에는 나무가 없습니다. 모자, 선글라스, 물은 선택이 아니라 장비입니다. 아부심벨처럼 먼 곳은 새벽에 출발하는 일정이 흔한데, 힘들어도 그게 맞습니다.</p>
+
+  <h3>3. 룩소르 신전은 밤에 간다</h3>
+  <p>같은 유적이 낮과 밤에 완전히 다릅니다. 조명이 들어오면 부조의 음영이 살아나고, 무엇보다 걸을 만해집니다. <strong>낮에는 왕가의 계곡이나 박물관, 밤에는 신전</strong> 순서를 권합니다.</p>
+
+  <h3>4. 소액 지폐를 나눠 넣는다</h3>
+  <p>화장실, 사진, 길 안내에 이르기까지 <strong>박시시</strong>가 일상적으로 오갑니다. 큰 지폐만 들고 다니면 거스름돈 문제로 매번 곤란해집니다. 소액권을 주머니마다 나눠 두면 실랑이가 크게 줍니다. 원하지 않으면 웃으며 <strong>"라, 슈크란"</strong>(아니요, 고맙습니다) 한마디면 대체로 정리됩니다.</p>
+
+  <h3>5. 티켓 구조를 미리 알아둔다</h3>
+  <p>왕가의 계곡처럼 <strong>기본 입장권 + 별도 티켓</strong>으로 나뉜 곳이 많습니다. 어떤 무덤이 그날 열려 있는지는 입구 안내판이 가장 정확합니다. 콤옴보의 악어 박물관처럼 신전 티켓에 포함된 곳도 있으니, 표를 살 때 무엇까지 되는지 한 번 확인하세요.</p>
+
+  <h3>6. 유적 밖으로 열 걸음</h3>
+  <p>이 여행에서 기억에 남은 사진 절반은 유적이 아니라 <strong>길</strong>에서 나왔습니다. 아침 노점의 큰 솥, 공책을 깔아놓은 문구 좌판, 신전 앞에서 브이를 그리던 아이들. 유적은 3천 년째 그 자리에 있지만 그 앞의 생활은 오늘 하루치입니다. 일정에 <strong>아무것도 안 정한 아침 한 시간</strong>을 넣어두길 권합니다.</p>
+
+  <h2>남는 것</h2>
+
+  <p>가장 오래 서 있었던 자리는 룩소르 신전의 열주 사이였습니다. 기둥이 너무 굵어서 고개를 한참 젖혀야 끝이 보였고, 그 사이로 달이 정확히 가운데 걸려 있었습니다. 3천 년 전에 이 기둥을 세운 사람들도 같은 달을 봤을 거라는 생각이, 그 자리에서는 상투적으로 느껴지지 않았습니다.</p>
+
+  <p>이집트는 유적의 규모로 기억되는 나라지만, 정작 나흘 뒤에 남은 건 크기가 아니라 <strong>대비</strong>였습니다. 3천 년 된 벽과 오늘 아침의 빵, 파라오의 무덤과 그늘에서 자는 개, 신전 앞에서 브이를 그리는 아이들. 그 둘이 나란히 있는 게 이 나라의 인상이었습니다.</p>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="sig">마흔의 세계여행</p>
+    <p>사진에 남은 촬영 시각을 따라 정리한 기록입니다. 입장·티켓 정보와 개방 여부는 확인 시점 기준이며, 방문 전 현지 공지를 확인하세요.</p>
+    <p><a href="./">전체 루트 보기 →</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
