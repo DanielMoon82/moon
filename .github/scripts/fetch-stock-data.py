@@ -103,6 +103,25 @@ def fetch_investor_net_volume(code):
     return df.rename(columns={inst_col: "기관순매매량", frgn_col: "외국인순매매량"})
 
 
+def build_history(ohlcv, flow):
+    """Last PERIOD_DAYS trading days of price/volume joined with investor
+    flow, so the report generator can derive moving averages, volume
+    ratios and flow streaks without refetching anything."""
+    joined = ohlcv.join(flow, how="left").tail(PERIOD_DAYS)
+    rows = []
+    for date, row in joined.iterrows():
+        entry = {
+            "date": date.strftime("%Y-%m-%d"),
+            "close": int(row["종가"]),
+            "volume": int(row["거래량"]),
+        }
+        for key, col in (("foreign", "외국인순매매량"), ("institution", "기관순매매량")):
+            value = row.get(col)
+            entry[key] = int(value) if pd.notna(value) else None
+        rows.append(entry)
+    return rows
+
+
 def fetch_one(code):
     """Price/volume can be an in-progress intraday row (this job runs every
     15min during market hours). Investor net-buying is only posted once
@@ -158,6 +177,7 @@ def fetch_one(code):
             "foreign_net_volume": int(flow_last["외국인순매매량"]),
             "institution_net_volume": int(flow_last["기관순매매량"]),
             "flow_as_of_date": flow.index[-1].strftime("%Y-%m-%d"),
+            "history": build_history(ohlcv, flow),
             "period": {
                 "days": len(period_df),
                 "foreign_net_volume_sum": int(period_df["외국인순매매량"].sum()),

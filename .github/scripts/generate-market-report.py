@@ -46,6 +46,184 @@ def flow_word(n):
     return "순매수" if n > 0 else "순매도"
 
 
+def analyze(s):
+    """Derive the indicators an analyst would actually cite, straight from
+    the stored 20-day history. Returns None when history isn't available
+    yet, so callers fall back to the plain factual sentence."""
+    hist = [h for h in (s.get("history") or []) if isinstance(h.get("close"), int)]
+    if len(hist) < 5:
+        return None
+
+    closes = [h["close"] for h in hist]
+    volumes = [h["volume"] for h in hist]
+    close = s["close"]
+
+    ma5 = sum(closes[-5:]) / 5
+    ma20 = sum(closes) / len(closes)
+    hi, lo = max(closes), min(closes)
+    band = hi - lo
+
+    def streak(key):
+        """Consecutive days at the end with the same flow direction."""
+        vals = [h.get(key) for h in hist if isinstance(h.get(key), int)]
+        if not vals:
+            return 0, 0
+        sign = 1 if vals[-1] > 0 else (-1 if vals[-1] < 0 else 0)
+        if sign == 0:
+            return 0, 0
+        n = 0
+        for v in reversed(vals):
+            if (v > 0) == (sign > 0) and v != 0:
+                n += 1
+            else:
+                break
+        return sign, n
+
+    f_sign, f_streak = streak("foreign")
+    i_sign, i_streak = streak("institution")
+    f_vals = [h["foreign"] for h in hist if isinstance(h.get("foreign"), int)]
+
+    return {
+        "ma5": ma5,
+        "ma20": ma20,
+        "vs_ma5": (close / ma5 - 1) * 100 if ma5 else 0.0,
+        "vs_ma20": (close / ma20 - 1) * 100 if ma20 else 0.0,
+        "high": hi,
+        "low": lo,
+        "range_pos": ((close - lo) / band * 100) if band else 50.0,
+        "vol_ratio": (s["volume"] / (sum(volumes) / len(volumes))) if volumes else 1.0,
+        "avg_volume": sum(volumes) / len(volumes),
+        "foreign_streak": (f_sign, f_streak),
+        "institution_streak": (i_sign, i_streak),
+        "foreign_buy_days": sum(1 for v in f_vals if v > 0),
+        "flow_days": len(f_vals),
+        "days": len(hist),
+    }
+
+
+def trend_phrase(vs_ma20):
+    if vs_ma20 >= 5:
+        return "20일 이동평균을 크게 웃도는 자리"
+    if vs_ma20 >= 1:
+        return "20일 이동평균 위"
+    if vs_ma20 > -1:
+        return "20일 이동평균에 바짝 붙은 자리"
+    if vs_ma20 > -5:
+        return "20일 이동평균 아래"
+    return "20일 이동평균을 크게 밑도는 자리"
+
+
+def volume_phrase(ratio):
+    if ratio >= 1.5:
+        return f"20일 평균의 {ratio:.1f}배로 크게 늘었습니다"
+    if ratio >= 1.15:
+        return f"20일 평균보다 {(ratio - 1) * 100:.0f}% 많았습니다"
+    if ratio >= 0.85:
+        return "20일 평균과 비슷한 수준이었습니다"
+    return f"20일 평균의 {ratio:.0%} 수준으로 줄었습니다"
+
+
+def streak_phrase(label, sign, days):
+    if not sign or days < 2:
+        return None
+    word = "순매수" if sign > 0 else "순매도"
+    return f"{label}은 {days}거래일 연속 {word}"
+
+
+def analysis_paragraphs(s, m):
+    """Two paragraphs per ticker: where the price sits, then what the flow
+    is doing. Interpretation stays inside what the numbers support."""
+    close = s["close"]
+    direction = "상승" if s["change"] > 0 else ("하락" if s["change"] < 0 else "보합")
+
+    p1 = (
+        f"{s['name']}는 {s['change_pct']:+.2f}% {direction}한 {fmt_int(close)}원에 거래를 마쳤습니다. "
+        f"현재가는 {trend_phrase(m['vs_ma20'])}로, 20일 이동평균({fmt_int(round(m['ma20']))}원) 대비 "
+        f"{m['vs_ma20']:+.1f}%, 5일 이동평균({fmt_int(round(m['ma5']))}원) 대비 {m['vs_ma5']:+.1f}% 수준입니다. "
+        f"최근 {m['days']}거래일 저점 {fmt_int(m['low'])}원과 고점 {fmt_int(m['high'])}원이 만든 구간에서는 "
+        f"위쪽으로 {m['range_pos']:.0f}% 지점에 위치해 있습니다. "
+        f"거래량은 {fmt_int(s['volume'])}주로 {volume_phrase(m['vol_ratio'])}."
+    )
+
+    fnv, inv = s.get("foreign_net_volume"), s.get("institution_net_volume")
+    if isinstance(fnv, int) and isinstance(inv, int):
+        bits = [
+            f"수급에서는 외국인이 {fmt_int(abs(fnv))}주 {flow_word(fnv)}, "
+            f"기관이 {fmt_int(abs(inv))}주 {flow_word(inv)}했습니다."
+        ]
+        streaks = [
+            phrase for phrase in (
+                streak_phrase("외국인", *m["foreign_streak"]),
+                streak_phrase("기관", *m["institution_streak"]),
+            ) if phrase
+        ]
+        if streaks:
+            bits.append(", ".join(streaks) + " 중입니다.")
+        if m["flow_days"]:
+            bits.append(
+                f"최근 {m['flow_days']}거래일 가운데 외국인이 순매수한 날은 {m['foreign_buy_days']}일이며, "
+                f"누적으로는 외국인 {fmt_signed(s['period'].get('foreign_net_volume_sum'))}, "
+                f"기관 {fmt_signed(s['period'].get('institution_net_volume_sum'))}입니다."
+            )
+        if (fnv > 0) != (inv > 0):
+            bits.append("두 주체가 서로 반대 방향으로 움직인 하루였습니다.")
+        p2 = " ".join(bits)
+    else:
+        p2 = "수급 확정치는 아직 집계되지 않았습니다."
+
+    return [p1, p2]
+
+
+def overview_paragraph(stocks, metrics):
+    """Opening read across the three names."""
+    ups = [s["name"] for s in stocks if s["change"] > 0]
+    strongest = max(stocks, key=lambda s: s["change_pct"])
+    weakest = min(stocks, key=lambda s: s["change_pct"])
+
+    above = [s["name"] for s, m in zip(stocks, metrics) if m and m["vs_ma20"] > 0]
+    heavy = [s["name"] for s, m in zip(stocks, metrics) if m and m["vol_ratio"] >= 1.15]
+    f_sell = [
+        s["name"] for s in stocks
+        if isinstance(s.get("foreign_net_volume"), int) and s["foreign_net_volume"] < 0
+    ]
+
+    parts = [
+        f"{len(ups)}개 종목이 오르고 {len(stocks) - len(ups)}개가 내렸습니다. "
+        f"상대적으로 가장 강했던 종목은 {strongest['name']}({strongest['change_pct']:+.2f}%), "
+        f"가장 부진했던 종목은 {weakest['name']}({weakest['change_pct']:+.2f}%)입니다."
+    ]
+    if above:
+        parts.append(f"20일 이동평균 위에서 마감한 종목은 {'·'.join(above)}입니다.")
+    else:
+        parts.append("세 종목 모두 20일 이동평균을 밑돌며 마감했습니다.")
+    if heavy:
+        parts.append(f"거래량이 평소보다 뚜렷하게 늘어난 종목은 {'·'.join(heavy)}였습니다.")
+    if f_sell:
+        parts.append(
+            f"외국인은 {'·'.join(f_sell)}에서 순매도했습니다."
+            if len(f_sell) < len(stocks) else "외국인은 세 종목 모두에서 순매도했습니다."
+        )
+    return " ".join(parts)
+
+
+def checkpoints(stocks, metrics):
+    """Concrete levels to watch tomorrow - all arithmetic from the data,
+    no targets or recommendations."""
+    items = []
+    for s, m in zip(stocks, metrics):
+        if not m:
+            continue
+        if m["vs_ma20"] >= 0:
+            items.append(
+                f"{s['name']}: 20일선 {fmt_int(round(m['ma20']))}원이 아래쪽 지지 여부를 가늠할 기준선입니다."
+            )
+        else:
+            items.append(
+                f"{s['name']}: 20일선 {fmt_int(round(m['ma20']))}원 회복 여부가 단기 흐름의 분기점입니다."
+            )
+    return items
+
+
 def stock_sentence(s):
     """One factual paragraph per ticker: price move, volume, both flows,
     then the 20-day cumulative direction as context."""
@@ -110,7 +288,24 @@ def table_rows_html(stocks):
 
 def body_html(date, stocks):
     """Shared article body used by Blogger and Tistory."""
-    paragraphs = "\n".join(f"<p>{stock_sentence(s)}</p>" for s in stocks)
+    metrics = [analyze(s) for s in stocks]
+    intro = overview_paragraph(stocks, metrics) if any(metrics) else summary_line(stocks)
+
+    blocks = []
+    for s, m in zip(stocks, metrics):
+        blocks.append(f"<h3>{s['name']} ({s['code']})</h3>")
+        if m:
+            blocks.extend(f"<p>{p}</p>" for p in analysis_paragraphs(s, m))
+        else:
+            blocks.append(f"<p>{stock_sentence(s)}</p>")
+    paragraphs = "\n".join(blocks)
+
+    checks = checkpoints(stocks, metrics)
+    check_html = (
+        "<h2>내일 확인할 지점</h2>\n<ul>\n"
+        + "\n".join(f"  <li>{c}</li>" for c in checks)
+        + "\n</ul>\n"
+    ) if checks else ""
     charts = "\n".join(
         f'<div style="text-align:center;margin:18px 0;">'
         f'<img src="{SITE}/data/stocks/{s["code"]}.png" alt="{s["name"]} 최근 60거래일 주가·거래량" style="max-width:100%;height:auto;" />'
@@ -119,6 +314,9 @@ def body_html(date, stocks):
         for s in stocks
     )
     return f"""<p>{date} 국내 증시 주요 3종목의 마감 결과를 정리했습니다. {summary_line(stocks)}</p>
+
+<h2>총평</h2>
+<p>{intro}</p>
 
 <h2>한눈에 보기</h2>
 <table style="width:100%;border-collapse:collapse;font-size:0.95em;">
@@ -137,9 +335,10 @@ def body_html(date, stocks):
   </tbody>
 </table>
 
-<h2>종목별 정리</h2>
+<h2>종목별 분석</h2>
 {paragraphs}
 
+{check_html}
 <h2>차트</h2>
 {charts}
 
@@ -158,7 +357,25 @@ def write_homepage_article(date, stocks, slug):
         f"<td class=\"num\">{fmt_signed(s.get('institution_net_volume'))}</td></tr>"
         for s in stocks
     )
-    paragraphs = "\n  ".join(f"<p>{stock_sentence(s)}</p>" for s in stocks)
+    metrics = [analyze(s) for s in stocks]
+    intro = overview_paragraph(stocks, metrics) if any(metrics) else summary_line(stocks)
+
+    blocks = []
+    for s, m in zip(stocks, metrics):
+        blocks.append(f'<h3>{s["name"]} <span class="code">{s["code"]}</span></h3>')
+        if m:
+            blocks.extend(f"<p>{p}</p>" for p in analysis_paragraphs(s, m))
+        else:
+            blocks.append(f"<p>{stock_sentence(s)}</p>")
+    paragraphs = "\n  ".join(blocks)
+
+    checks = checkpoints(stocks, metrics)
+    check_block = (
+        "<h2>내일 확인할 지점</h2>\n  <ul class=\"checks\">\n    "
+        + "\n    ".join(f"<li>{c}</li>" for c in checks)
+        + "\n  </ul>"
+    ) if checks else ""
+
     charts = "\n  ".join(
         f'<figure><img src="../data/stocks/{s["code"]}.png" alt="{s["name"]} 최근 60거래일 주가·거래량">'
         f'<figcaption>{s["name"]} · 최근 60거래일</figcaption></figure>'
@@ -210,7 +427,12 @@ def write_homepage_article(date, stocks, slug):
   .byline{{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
     padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:32px;}}
   h2{{font-family:var(--f-display);font-weight:600;font-size:1.25rem;letter-spacing:-.02em;margin:42px 0 14px;}}
+  h3{{font-family:var(--f-display);font-weight:600;font-size:1.05rem;letter-spacing:-.02em;
+    margin:30px 0 10px;padding-top:14px;border-top:1px solid var(--line-soft);}}
+  h3 .code{{font-family:var(--f-mono);font-size:.7rem;font-weight:400;color:var(--ink-3);margin-left:6px;}}
   p{{margin:0 0 18px;color:var(--ink-2);}}
+  ul.checks{{margin:0 0 18px;padding-left:20px;color:var(--ink-2);}}
+  ul.checks li{{margin-bottom:8px;font-size:.94rem;}}
   table{{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:8px;}}
   th{{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--ink-3);text-align:right;padding:8px 6px;border-bottom:1px solid var(--line);}}
@@ -243,6 +465,9 @@ def write_homepage_article(date, stocks, slug):
 
   <p>{summary_line(stocks)}</p>
 
+  <h2>총평</h2>
+  <p>{intro}</p>
+
   <h2>한눈에 보기</h2>
   <div class="scroll">
     <table>
@@ -253,8 +478,10 @@ def write_homepage_article(date, stocks, slug):
     </table>
   </div>
 
-  <h2>종목별 정리</h2>
+  <h2>종목별 분석</h2>
   {paragraphs}
+
+  {check_block}
 
   <h2>차트</h2>
   {charts}
@@ -288,17 +515,20 @@ def write_manual_exports(date, stocks, slug):
     out = EXPORT_DIR / slug
     out.mkdir(parents=True, exist_ok=True)
 
+    metrics = [analyze(s) for s in stocks]
+    intro = overview_paragraph(stocks, metrics) if any(metrics) else summary_line(stocks)
+
     lines = [
         "════════════════════════════════════════",
         "네이버 블로그용 (붙여넣기)",
         "════════════════════════════════════════",
         "",
         "[제목란]",
-        f"{date} 마감 시황 | 삼성전자 SK하이닉스 현대차 종가 수급 정리",
+        f"{date} 마감 시황 | 삼성전자 SK하이닉스 현대차 종가 수급 분석",
         "",
         "[본문]",
         "",
-        f"{date} 국내 증시 주요 3종목의 마감 결과를 정리했습니다. {summary_line(stocks)}",
+        f"{date} 국내 증시 주요 3종목의 마감 결과를 정리했습니다. {intro}",
         "",
         "■ 한눈에 보기",
         "",
@@ -309,9 +539,18 @@ def write_manual_exports(date, stocks, slug):
             f"({s['change_pct']:+.2f}%) / 거래량 {fmt_int(s['volume'])}주 / "
             f"외국인 {fmt_signed(s.get('foreign_net_volume'))} / 기관 {fmt_signed(s.get('institution_net_volume'))}"
         )
-    lines += ["", "■ 종목별 정리", ""]
-    for s in stocks:
-        lines += [stock_sentence(s), ""]
+
+    lines += ["", "■ 종목별 분석", ""]
+    for s, m in zip(stocks, metrics):
+        lines.append(f"[{s['name']} {s['code']}]")
+        if m:
+            lines += analysis_paragraphs(s, m) + [""]
+        else:
+            lines += [stock_sentence(s), ""]
+
+    checks = checkpoints(stocks, metrics)
+    if checks:
+        lines += ["■ 내일 확인할 지점", ""] + checks + [""]
     lines += [
         "▶ 차트 이미지 3장 첨부 (data/stocks/ 폴더의 005930.png, 000660.png, 005380.png)",
         "",
