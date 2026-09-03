@@ -141,7 +141,12 @@
     transition:color .18s, border-color .18s;
   }
   .nav-links a:hover{color:var(--ink);border-bottom-color:var(--accent);}
-  @media (max-width:640px){ .nav-links a:nth-child(3){display:none;} }
+  @media (max-width:640px){
+    .nav-links a:nth-child(3){display:none;}
+    .nav-links{gap:16px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+    .nav-links::-webkit-scrollbar{display:none;}
+    .nav-links a{white-space:nowrap;}
+  }
 
   /* ---------- hero ---------- */
   .hero{position:relative;border-bottom:1px solid var(--line);overflow:hidden;background:#141221;}
@@ -696,6 +701,7 @@
       <a href="#notes">짐과 습관</a>
       <a href="#gear">여행용품</a>
       <a href="#reviews">영화·리뷰</a>
+      <a href="#life">생활·정책</a>
       <a href="#stocks">주식 시황</a>
       <a href="#trends">실시간 이슈</a>
     </div>
@@ -959,6 +965,25 @@
           <span class="review-cat">Film</span>
           <h3>영화 오디세이 총정리</h3>
           <p>개봉일·출연진부터 아이맥스 70mm 관람 포인트까지. 2시간 52분을 예매하기 전에 알아둘 것들.</p>
+          <span class="review-go">읽어보기 →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section wrap" id="life">
+    <div class="section-head">
+      <h2>생활·정책</h2>
+      <p>한 번쯤 찾아보게 되는 제도들. 공고를 대신 읽고 필요한 것만 정리했습니다.</p>
+    </div>
+
+    <div class="review-grid">
+      <a class="review-card rise" href="./posts/consumer-coupon.html">
+        <img class="review-thumb" src="./posts/images/consumer-coupon-cover.png" alt="민생회복 소비쿠폰 총정리" loading="lazy">
+        <div class="review-body">
+          <span class="review-cat">Policy</span>
+          <h3>민생회복 소비쿠폰 총정리</h3>
+          <p>1차·2차 소비쿠폰부터 2026년 고유가 피해지원금까지. 지급액과 신청 방법, 사용처와 사용 기한을 한 번에.</p>
           <span class="review-go">읽어보기 →</span>
         </div>
       </a>
