@@ -1,0 +1,260 @@
+<title>삼성전자 주가 전망 — 사상 최대 실적인데 PER은 6배 — 야간비행 일지</title>
+<meta name="description" content="삼성전자 2026년 2분기 매출 171.5조·영업이익 89.5조 사상 최대 실적을 분해하고, HBM4·파운드리 흑자전환·주주환원 90조를 근거로 2028년까지 매출 전망과 목표주가 세 가지 시나리오를 제시합니다.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://danielmoon82.github.io/moon/posts/samsung-2026-09-04.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#E7EBF1;--surface:#F4F6FA;--surface-2:#DCE2EC;
+    --ink:#0F1729;--ink-2:#3D4A63;--ink-3:#6B7891;
+    --line:#C6CEDB;--line-soft:#D6DCE6;--accent:#B06A15;--accent-bright:#C2761A;
+    --up:#E5484D;--down:#3B82F6;
+    --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    --f-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+    --pad:clamp(20px,5vw,64px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1120;--surface:#121A2C;--surface-2:#1A2439;
+      --ink:#E9EEF7;--ink-2:#A9B5C9;--ink-3:#72809A;
+      --line:#26314A;--line-soft:#1D2739;--accent:#E8A33D;--accent-bright:#F0B45C;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1120;--surface:#121A2C;--surface-2:#1A2439;
+    --ink:#E9EEF7;--ink-2:#A9B5C9;--ink-3:#72809A;
+    --line:#26314A;--line-soft:#1D2739;--accent:#E8A33D;--accent-bright:#F0B45C;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);
+    font-weight:300;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;
+    word-break:keep-all;}
+  a{color:inherit;}
+  img{max-width:100%;height:auto;}
+  .wrap{max-width:760px;margin:0 auto;padding-inline:var(--pad);}
+  .nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .brand{font-family:var(--f-display);font-weight:600;font-size:1rem;letter-spacing:-.02em;text-decoration:none;}
+  .back{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);text-decoration:none;}
+  .article{padding-block:clamp(40px,7vw,72px) clamp(56px,9vw,96px);}
+  .eyebrow{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 14px;}
+  h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,4.4vw,2.3rem);
+    line-height:1.3;letter-spacing:-.03em;margin:0 0 16px;text-wrap:balance;}
+  .byline{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+    padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:32px;}
+  .lede{font-size:1.02rem;color:var(--ink-2);margin:0 0 28px;}
+  h2{font-family:var(--f-display);font-weight:600;font-size:1.25rem;letter-spacing:-.02em;margin:42px 0 14px;}
+  h3{font-family:var(--f-display);font-weight:600;font-size:1.05rem;letter-spacing:-.02em;
+    margin:30px 0 10px;padding-top:14px;border-top:1px solid var(--line-soft);}
+  p{margin:0 0 18px;color:var(--ink-2);}
+  strong{font-weight:600;color:var(--ink);}
+  ul.checks{margin:0 0 18px;padding-left:20px;color:var(--ink-2);}
+  ul.checks li{margin-bottom:10px;font-size:.94rem;}
+  table{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:8px;}
+  th{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-3);text-align:right;padding:8px 6px;border-bottom:1px solid var(--line);}
+  th:first-child{text-align:left;}
+  td{padding:10px 6px;border-bottom:1px solid var(--line-soft);color:var(--ink-2);}
+  td.num{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums;}
+  td.up{color:var(--up);} td.down{color:var(--down);}
+  tr.emph td{background:var(--surface);font-weight:500;color:var(--ink);}
+  .scroll{overflow-x:auto;}
+  .tcap{font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);margin:0 0 26px;line-height:1.6;}
+
+  /* 지표 요약 스트립 */
+  .snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    border:1px solid var(--line);background:var(--surface);margin:0 0 30px;}
+  .snap div{padding:12px 14px;border-right:1px solid var(--line);}
+  .snap div:last-child{border-right:0;}
+  .snap .k{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-3);display:block;margin-bottom:2px;}
+  .snap .v{font-family:var(--f-mono);font-size:1.12rem;font-weight:500;color:var(--ink);
+    font-variant-numeric:tabular-nums;display:block;line-height:1.35;}
+  .snap .s{font-family:var(--f-mono);font-size:.66rem;color:var(--ink-3);}
+
+  /* 연간 매출 막대 */
+  .bars{margin:22px 0 8px;display:flex;flex-direction:column;gap:7px;}
+  .brow{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:center;}
+  .brow .yr{font-family:var(--f-mono);font-size:.74rem;color:var(--ink-3);font-variant-numeric:tabular-nums;}
+  .btrack{height:26px;background:var(--surface-2);}
+  .bfill{height:100%;background:var(--accent);display:flex;align-items:center;justify-content:flex-end;
+    padding-right:8px;border-radius:0 3px 3px 0;}
+  .bfill.est{background:var(--accent-bright);opacity:.72;}
+  .bfill span{font-family:var(--f-mono);font-size:.72rem;font-weight:500;color:#FFF8EC;
+    font-variant-numeric:tabular-nums;}
+
+  /* 목표주가 밴드 */
+  .band{position:relative;height:3px;background:var(--line);margin:44px 0 76px;}
+  .band i{position:absolute;top:-6px;width:3px;height:15px;background:var(--ink-3);}
+  .band i.now{background:var(--ink);height:24px;top:-10px;}
+  .band i.bull{background:var(--up);height:19px;top:-8px;}
+  .band i.bear{background:var(--down);height:19px;top:-8px;}
+  .band b{position:absolute;top:16px;font-family:var(--f-mono);font-size:.72rem;font-weight:500;
+    font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink-2);}
+  .band b em{display:block;font-style:normal;font-size:.6rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-3);}
+
+  .faq{border-top:1px solid var(--line-soft);padding-top:14px;margin-top:6px;}
+  .faq h3{border-top:0;padding-top:0;margin:20px 0 6px;}
+  .note{margin-top:34px;padding:16px 18px;border-left:3px solid var(--accent);
+    background:var(--surface);border-radius:0 3px 3px 0;}
+  .note p{margin:0;font-size:.85rem;color:var(--ink-3);}
+  .foot{border-top:1px solid var(--line);background:var(--surface);padding-block:30px 38px;}
+  .foot p{margin:0;font-size:.8rem;color:var(--ink-3);}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+</style>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html">야간비행 일지</a>
+    <a class="back" href="../index.html#stocks">← 시황으로</a>
+  </div>
+</nav>
+
+<main class="wrap article">
+  <p class="eyebrow">Stock · 005930</p>
+  <h1>사상 최대 실적인데 PER은 6배 — 삼성전자 목표주가를 다시 계산했습니다</h1>
+  <p class="byline">2026-09-04 (금) 작성 · 주가 250,000원(09-03 종가) 기준 · 시가총액 1,473조 원</p>
+
+  <p class="lede">2분기 영업이익이 89.5조 원입니다. 분기 기준 사상 최대이고 영업이익률은 52%입니다. 그런데 PER은 6배대입니다. 이익을 내는 회사가 이 정도로 싸게 거래되는 상황은 흔치 않습니다. 시장이 묻는 것은 하나입니다. "이 사이클이 언제 끝나느냐." 이 글은 그 질문에 숫자로 답합니다.</p>
+
+  <div class="snap">
+    <div><span class="k">주가</span><span class="v">250,000</span><span class="s">원 · 09-03 종가</span></div>
+    <div><span class="k">시가총액</span><span class="v">1,473조</span><span class="s">코스피 1위</span></div>
+    <div><span class="k">PER 2026E</span><span class="v">6~7배</span><span class="s">트레일링 11.3배</span></div>
+    <div><span class="k">PBR</span><span class="v">2.1배</span><span class="s">10년 평균 1.5배</span></div>
+  </div>
+
+  <h2>2분기 실적이 바꿔놓은 것</h2>
+  <p>삼성전자는 2026년 2분기 <strong>매출 171.5조 원, 영업이익 89.5조 원</strong>을 발표했습니다. 전분기 대비 매출은 28%, 영업이익은 56% 늘었습니다. 영업이익률 52%는 매출 170조 원대 제조 기업에서 나오기 어려운 숫자입니다.</p>
+  <p>동력은 분명합니다. 메모리를 담당하는 DS 부문 매출이 127.5조 원으로 전년 동기 대비 세 자릿수 증가했고, 서버향 비중이 전체 믹스에서 사상 최고를 기록했습니다. AI 데이터센터가 소비하는 HBM, 서버 SSD, 고용량 DDR5가 회사의 손익 구조 자체를 바꿔놓았습니다.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>구분 (조 원)</th><th>1Q26</th><th>2Q26</th><th>3Q26E</th><th>4Q26E</th></tr></thead>
+      <tbody>
+        <tr><td>매출</td><td class="num">134.0</td><td class="num">171.5</td><td class="num">195</td><td class="num">215</td></tr>
+        <tr><td>영업이익</td><td class="num">57.4</td><td class="num">89.5</td><td class="num">105</td><td class="num">118</td></tr>
+        <tr class="emph"><td>영업이익률</td><td class="num">42.8%</td><td class="num">52.2%</td><td class="num">53.8%</td><td class="num">54.9%</td></tr>
+        <tr><td>DS 부문 매출</td><td class="num">81.7</td><td class="num">127.5</td><td class="num">148</td><td class="num">165</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tcap">1Q26·2Q26은 회사 발표 확정치 및 공시 기반 역산치. 3Q26 이후는 필자 추정치입니다.</p>
+
+  <h2>투자 매력도를 만드는 다섯 개의 축</h2>
+
+  <h3>1. HBM4 — 물량이 아니라 믹스가 바뀌었습니다</h3>
+  <p>HBM은 일반 DRAM 대비 단가가 5~8배입니다. 삼성전자는 2분기에 HBM4 양산 판매를 본격화했고, 업계 최초로 HBM4E 샘플을 주요 고객사에 출하했습니다. 회사는 3분기 HBM4 매출이 전분기 대비 3배 이상 늘고, 하반기 전체 HBM 매출의 60% 이상을 HBM4가 차지할 것으로 보고 있습니다.</p>
+  <p>여기서 중요한 건 출하량이 아니라 <strong>제품 믹스</strong>입니다. 같은 웨이퍼로 5~8배 비싼 제품을 만들면, 감가상각비가 고정된 상태에서 마진은 기하급수적으로 벌어집니다. 2분기 영업이익률 52%는 이 레버리지가 이미 작동하고 있다는 증거입니다.</p>
+
+  <h3>2. 파운드리 — 4년 적자의 종료</h3>
+  <p>시장이 가장 덜 반영한 축입니다. 삼성 파운드리는 <strong>2026년 3분기 흑자전환</strong>이 유력합니다. 4년 만입니다. 2나노 관련 신규 수주 건수가 전년 대비 130% 이상 늘어날 것으로 회사는 전망하고 있고, 2025년 7월 체결한 테슬라와의 22.8조 원 규모 자율주행 칩 장기 공급계약이 실적에 잡히기 시작합니다. 텍사스 테일러 팹도 계획대로 가동에 들어갔습니다.</p>
+  <p>파운드리는 그동안 연간 수조 원대 적자로 전사 이익을 깎아먹던 부문입니다. 이 부문이 손익분기점만 넘겨도 전사 이익에 미치는 영향은 산술적 개선분의 두 배입니다. 적자 소멸과 이익 발생이 동시에 일어나기 때문입니다.</p>
+
+  <h3>3. 밸류에이션 — 이익이 주가보다 빨리 뛰었습니다</h3>
+  <p>2026년 예상 순이익 200~250조 원을 적용하면 현재 시가총액 1,473조 원 기준 <strong>PER은 6~7배</strong>입니다. 코스피 평균의 절반 수준이고 글로벌 반도체 대형주 대비로는 3분의 1 이하입니다. PBR 2.1배가 10년 평균 1.5배를 웃돌지만, 이는 자기자본이익률(ROE)이 과거 10%대에서 30%대로 올라선 결과를 반영한 것이라 과열로 보기는 어렵습니다.</p>
+  <p>주가는 올해 많이 올랐습니다. 그런데 이익이 더 빨리 올랐습니다. 그래서 배수는 오히려 내려갔습니다. 지금 삼성전자 투자 매력도의 본질이 여기 있습니다.</p>
+
+  <h3>4. 주주환원 — 시가총액의 6~7%</h3>
+  <p>회사는 2026년 주주환원 규모를 <strong>90조~110조 원</strong>으로 제시했습니다. 이 중 약 30조 원이 배당이고 나머지가 자사주 매입·소각입니다. 현재 시가총액 대비 총주주환원수익률은 6~7% 수준입니다. 배당수익률만 보면 2% 남짓이지만, 자사주 소각은 주당 가치를 직접 끌어올립니다.</p>
+
+  <h3>5. 수급 — 외국인 매도가 만든 공백</h3>
+  <p>역설적인 지점입니다. 외국인은 연초 이후 삼성전자를 약 42조 원 순매도했습니다. 주가가 오르는데도 팝니다. 2026년 들어 주가와 외국인 지분율의 상관계수는 -70%까지 역전됐습니다. 차익 실현과 신흥국 비중 조절이 겹친 결과로, 펀더멘털 판단과는 다른 이야기입니다.</p>
+  <p>이 매물을 받아낸 쪽은 국내 기관과 개인입니다. 뒤집어 말하면 <strong>외국인 매도가 진정되는 순간 주가를 누르던 상시 압력이 사라집니다.</strong> 리스크라기보다 대기 중인 촉매에 가깝습니다.</p>
+
+  <h2>2028년까지의 매출 전망</h2>
+  <p>메모리 3사(삼성전자·SK하이닉스·마이크론)는 이미 <strong>2027년 공급분을 사실상 완판</strong>했습니다. SK하이닉스 CEO는 2027년이 업계 사상 최악의 공급 부족이 될 수 있다고 언급했고, 삼성전자는 부족이 2028년까지 이어질 가능성을 시사했습니다. DRAM 가격은 2025년부터 2027년까지 275~300% 상승이 전망되는데, 전설로 불리는 2017~2018년 슈퍼사이클(약 90% 상승)의 세 배가 넘습니다.</p>
+  <p>공급 쪽에도 브레이크가 없습니다. 삼성전자와 SK하이닉스의 신규 팹은 <strong>2027년 하반기 이전에 램프업하지 않습니다.</strong> 마이크론의 200조 원대 미국 투자도 아이다호 팹 DRAM 양산이 2027년 중반입니다. 2027년 말 이전에 의미 있는 신규 공급은 물리적으로 나올 수 없습니다.</p>
+
+  <div class="bars">
+    <div class="brow"><span class="yr">2025</span><div class="btrack"><div class="bfill" style="width:34%"><span>301</span></div></div></div>
+    <div class="brow"><span class="yr">2026E</span><div class="btrack"><div class="bfill est" style="width:81%"><span>716</span></div></div></div>
+    <div class="brow"><span class="yr">2027E</span><div class="btrack"><div class="bfill est" style="width:94%"><span>830</span></div></div></div>
+    <div class="brow"><span class="yr">2028E</span><div class="btrack"><div class="bfill est" style="width:88%"><span>775</span></div></div></div>
+  </div>
+  <p class="tcap">연간 매출 전망 (단위: 조 원) · 2025년은 확정, 2026E 이후는 필자 추정</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>구분 (조 원)</th><th>2025</th><th>2026E</th><th>2027E</th><th>2028E</th></tr></thead>
+      <tbody>
+        <tr><td>매출</td><td class="num">301</td><td class="num">716</td><td class="num">830</td><td class="num">775</td></tr>
+        <tr><td>영업이익</td><td class="num">36</td><td class="num">370</td><td class="num">425</td><td class="num">360</td></tr>
+        <tr class="emph"><td>영업이익률</td><td class="num">12.0%</td><td class="num">51.7%</td><td class="num">51.2%</td><td class="num">46.5%</td></tr>
+        <tr><td>순이익</td><td class="num">28</td><td class="num">265</td><td class="num">305</td><td class="num">258</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tcap">2027년까지는 수급 격차 확대에 따른 판가 상승과 HBM4·HBM4E 믹스 개선을 반영. 2028년은 사이클 변곡을 가정한 정상화 국면입니다.</p>
+
+  <h2>목표주가 — 세 개의 시나리오</h2>
+  <p>시장의 목표주가는 극단적으로 갈려 있습니다. 보수적인 하우스가 33만 원, 공격적인 컨센서스 집계는 49만 원까지 나옵니다. 편차가 크다는 건 <strong>사이클 지속 기간에 대한 가정 차이</strong>가 그만큼 크다는 뜻입니다. 배수가 아니라 가정을 봐야 합니다.</p>
+
+  <div class="band">
+    <i class="bear" style="left:0"></i>
+    <i class="now" style="left:33.3%"></i>
+    <i style="left:69.2%"></i>
+    <i class="bull" style="left:calc(100% - 3px)"></i>
+    <b style="left:0"><em>약세</em>185,000</b>
+    <b style="left:33.3%;transform:translateX(-50%);top:22px"><em>현재</em>250,000</b>
+    <b style="left:69.2%;transform:translateX(-50%)"><em>기본</em>320,000</b>
+    <b style="right:0;text-align:right"><em>강세</em>380,000</b>
+  </div>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>시나리오</th><th>목표주가</th><th>상승여력</th><th style="text-align:left">핵심 가정</th></tr></thead>
+      <tbody>
+        <tr><td>강세</td><td class="num">380,000원</td><td class="num up">+52%</td><td>공급 부족 2028년까지 연장, 파운드리 두 자릿수 마진</td></tr>
+        <tr class="emph"><td>기본</td><td class="num">320,000원</td><td class="num">+28%</td><td>2027년 피크아웃, 2027E PER 6배 적용</td></tr>
+        <tr><td>약세</td><td class="num">185,000원</td><td class="num down">−26%</td><td>2027년 하반기 공급 급증, 2028년 이익 40% 감소</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tcap">12개월 기준. 강세·약세는 시장에서 제시된 밴드 상·하단을 채택했고, 기본 시나리오는 필자 추정 순이익에 사이클 피크 배수를 적용해 산출했습니다.</p>
+
+  <p>기본 시나리오의 계산은 이렇습니다. 2027년 추정 순이익 305조 원에 시가총액 1,880조 원을 적용하면 PER 6.2배입니다. 사이클 정점에서 메모리 기업이 받아온 배수 대역의 중간값이고, 이때 주가는 <strong>32만 원</strong>입니다. 현재가 대비 28% 상승 여력입니다.</p>
+  <p>눈여겨볼 점은 <strong>약세 시나리오조차 파국이 아니라는 것</strong>입니다. 18.5만 원은 2028년 이익이 40% 꺾이는 것을 전제한 가격인데, 그 상태에서도 PER은 8배대입니다. 하방이 이익의 붕괴가 아니라 정상화 수준에서 제한된다는 점이 이번 사이클과 과거 사이클의 결정적 차이입니다. 3사 모두 과거와 달리 투기적 증설을 자제하는 자본 규율을 유지하고 있기 때문입니다.</p>
+
+  <h2>주의해서 볼 점 네 가지</h2>
+  <ul class="checks">
+    <li><strong>2027년 하반기 공급 유입.</strong> 삼성·하이닉스·마이크론 신규 팹이 동시에 램프업하면 2028년 가격 하락 폭이 예상보다 커질 수 있습니다. 이 글의 가장 큰 변수입니다.</li>
+    <li><strong>AI 캐펙스 둔화.</strong> 빅테크의 데이터센터 투자 계획이 축소되면 HBM 수요 전제 자체가 흔들립니다. 분기별 하이퍼스케일러 가이던스를 확인해야 합니다.</li>
+    <li><strong>MX(모바일) 부문 부진.</strong> 2분기 모바일 사업부는 적자로 전환했습니다. 메모리 원가 상승이 자사 세트 사업을 압박하는 구조적 딜레마입니다.</li>
+    <li><strong>환율과 지정학.</strong> 원화 강세는 수출 채산성을 직접 훼손하고, 미·중 반도체 규제 변화는 중국 팹 운영에 영향을 줍니다.</li>
+  </ul>
+
+  <h2>어떻게 접근할까</h2>
+  <p>가장 흔한 실수는 <strong>"너무 올랐다"는 이유로 피하는 것</strong>입니다. 주가는 올랐지만 배수는 내려갔습니다. 이 상황에서 절대 가격만 보고 판단하면 사이클 전체를 놓칩니다.</p>
+  <p>그렇다고 한 번에 전량 매수를 권하지도 않습니다. 시나리오 편차가 20만 원에 달하는 자산입니다. 현실적으로는 <strong>분할 매수로 평균 단가를 관리하면서, 2027년 하반기 공급 지표를 기준으로 비중을 조절</strong>하는 접근이 합리적입니다. 확인할 지표는 세 가지입니다. 분기 DRAM 계약가 방향, 빅테크 캐펙스 가이던스, 파운드리 부문 분기 영업이익률.</p>
+  <p>이 세 가지가 유지되는 한 삼성전자의 투자 매력도는 훼손되지 않습니다. 셋 중 둘이 꺾이는 시점이 비중을 줄일 때입니다.</p>
+
+  <h2>자주 묻는 질문</h2>
+  <div class="faq">
+    <h3>삼성전자 주가, 지금 사도 될까요?</h3>
+    <p>2026년 예상 PER 6~7배는 이익 규모 대비 역사적 저평가 구간입니다. 다만 사이클 산업이므로 일시 매수보다 분할 접근이 적절합니다. 기본 시나리오 목표주가는 320,000원으로 현재가 대비 28% 상승 여력입니다.</p>
+    <h3>2026년 삼성전자 예상 매출과 영업이익은 얼마인가요?</h3>
+    <p>추정 기준 매출 약 716조 원, 영업이익 약 370조 원입니다. 상반기 확정 실적(매출 305.5조, 영업이익 146.9조)에 HBM4 출하 확대와 파운드리 흑자전환을 반영한 수치입니다.</p>
+    <h3>메모리 슈퍼사이클은 언제 끝나나요?</h3>
+    <p>2027년 하반기 이전에는 의미 있는 신규 공급이 나오기 어렵습니다. 신규 팹 램프업 일정을 감안하면 2027년 말에서 2028년이 변곡점이 될 가능성이 높습니다.</p>
+    <h3>외국인이 계속 파는데 괜찮은가요?</h3>
+    <p>연초 이후 약 42조 원 순매도가 있었지만 주가는 상승했습니다. 신흥국 비중 조절과 차익 실현 성격이며, 매도세가 진정되면 오히려 수급 부담이 해소되는 구조입니다.</p>
+    <h3>삼성전자 배당은 얼마나 되나요?</h3>
+    <p>2026년 주주환원 규모는 90조~110조 원, 이 중 배당이 약 30조 원입니다. 배당수익률은 약 2%, 자사주 매입·소각을 포함한 총주주환원수익률은 6~7% 수준입니다.</p>
+  </div>
+
+  <div class="note">
+    <p>실적 수치는 삼성전자 발표 및 공시, 언론 보도를 바탕으로 정리했습니다. 3분기 이후 실적과 목표주가는 가정에 기반한 필자 추정치로 실제와 상당한 차이가 발생할 수 있습니다. 본 글은 참고용 분석이며 특정 종목의 매수·매도를 권유하지 않습니다. 투자 판단의 최종 책임은 투자자 본인에게 있으며 원금 손실이 발생할 수 있습니다.</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><p>야간비행 일지 · 마감 시황은 장 종료 후 자동 갱신됩니다.</p></div>
+</footer>
