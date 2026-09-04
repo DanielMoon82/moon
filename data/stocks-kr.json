@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-09-04T03:14:28.813822+00:00",
+  "updated_at": "2026-09-04T08:03:29.976083+00:00",
   "as_of_date": "2026-09-04",
   "stocks": [
     {
       "code": "005930",
-      "close": 254500,
-      "change": 4500,
-      "change_pct": 1.8,
-      "volume": 5845884,
+      "close": 255500,
+      "change": 5500,
+      "change_pct": 2.2,
+      "volume": 14031862,
       "as_of_date": "2026-09-04",
       "foreign_net_volume": 91825,
       "institution_net_volume": -839601,
@@ -154,8 +154,8 @@
         },
         {
           "date": "2026-09-04",
-          "close": 254500,
-          "volume": 5845884,
+          "close": 255500,
+          "volume": 14031862,
           "foreign": null,
           "institution": null
         }
@@ -164,10 +164,10 @@
     },
     {
       "code": "000660",
-      "close": 1643000,
-      "change": 47000,
-      "change_pct": 2.94,
-      "volume": 1313840,
+      "close": 1647000,
+      "change": 51000,
+      "change_pct": 3.2,
+      "volume": 2827725,
       "as_of_date": "2026-09-04",
       "foreign_net_volume": -234626,
       "institution_net_volume": -187288,
@@ -314,8 +314,8 @@
         },
         {
           "date": "2026-09-04",
-          "close": 1643000,
-          "volume": 1313840,
+          "close": 1647000,
+          "volume": 2827725,
           "foreign": null,
           "institution": null
         }
@@ -324,10 +324,10 @@
     },
     {
       "code": "005380",
-      "close": 382500,
-      "change": -1000,
-      "change_pct": -0.26,
-      "volume": 199887,
+      "close": 383500,
+      "change": 0,
+      "change_pct": 0.0,
+      "volume": 358567,
       "as_of_date": "2026-09-04",
       "foreign_net_volume": 77716,
       "institution_net_volume": 2807,
@@ -474,8 +474,8 @@
         },
         {
           "date": "2026-09-04",
-          "close": 382500,
-          "volume": 199887,
+          "close": 383500,
+          "volume": 358567,
           "foreign": null,
           "institution": null
         }
