@@ -1,0 +1,129 @@
+<title>2026-09-04 마감 시황 — 야간비행 일지</title>
+<meta name="description" content="2026-09-04 삼성전자·SK하이닉스·현대차 마감 시황. 종가, 거래량, 외국인·기관 수급을 정리했습니다.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://danielmoon82.github.io/moon/posts/market-2026-09-04.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#E7EBF1;--surface:#F4F6FA;--surface-2:#DCE2EC;
+    --ink:#0F1729;--ink-2:#3D4A63;--ink-3:#6B7891;
+    --line:#C6CEDB;--line-soft:#D6DCE6;--accent:#B06A15;--accent-bright:#C2761A;
+    --up:#E5484D;--down:#3B82F6;
+    --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    --f-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+    --pad:clamp(20px,5vw,64px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1120;--surface:#121A2C;--surface-2:#1A2439;
+      --ink:#E9EEF7;--ink-2:#A9B5C9;--ink-3:#72809A;
+      --line:#26314A;--line-soft:#1D2739;--accent:#E8A33D;--accent-bright:#F0B45C;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);
+    font-weight:300;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  img{max-width:100%;height:auto;}
+  .wrap{max-width:760px;margin:0 auto;padding-inline:var(--pad);}
+  .nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .brand{font-family:var(--f-display);font-weight:600;font-size:1rem;letter-spacing:-.02em;text-decoration:none;}
+  .back{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);text-decoration:none;}
+  .article{padding-block:clamp(40px,7vw,72px) clamp(56px,9vw,96px);}
+  .eyebrow{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 14px;}
+  h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,4.4vw,2.3rem);
+    line-height:1.3;letter-spacing:-.03em;margin:0 0 16px;}
+  .byline{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+    padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:32px;}
+  h2{font-family:var(--f-display);font-weight:600;font-size:1.25rem;letter-spacing:-.02em;margin:42px 0 14px;}
+  h3{font-family:var(--f-display);font-weight:600;font-size:1.05rem;letter-spacing:-.02em;
+    margin:30px 0 10px;padding-top:14px;border-top:1px solid var(--line-soft);}
+  h3 .code{font-family:var(--f-mono);font-size:.7rem;font-weight:400;color:var(--ink-3);margin-left:6px;}
+  p{margin:0 0 18px;color:var(--ink-2);}
+  ul.checks{margin:0 0 18px;padding-left:20px;color:var(--ink-2);}
+  ul.checks li{margin-bottom:8px;font-size:.94rem;}
+  table{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:8px;}
+  th{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-3);text-align:right;padding:8px 6px;border-bottom:1px solid var(--line);}
+  th:first-child{text-align:left;}
+  td{padding:10px 6px;border-bottom:1px solid var(--line-soft);color:var(--ink-2);}
+  td.num{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums;}
+  td.up{color:var(--up);} td.down{color:var(--down);}
+  .scroll{overflow-x:auto;}
+  figure{margin:22px 0;}
+  figure img{display:block;border-radius:3px;background:var(--surface-2);}
+  figcaption{margin-top:8px;font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);text-align:center;}
+  .note{margin-top:34px;padding:16px 18px;border-left:3px solid var(--accent);
+    background:var(--surface);border-radius:0 3px 3px 0;}
+  .note p{margin:0;font-size:.85rem;color:var(--ink-3);}
+  .foot{border-top:1px solid var(--line);background:var(--surface);padding-block:30px 38px;}
+  .foot p{margin:0;font-size:.8rem;color:var(--ink-3);}
+</style>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html">야간비행 일지</a>
+    <a class="back" href="../index.html#stocks">← 시황으로</a>
+  </div>
+</nav>
+
+<main class="wrap article">
+  <p class="eyebrow">Market</p>
+  <h1>2026-09-04 마감 시황</h1>
+  <p class="byline">삼성전자 · SK하이닉스 · 현대차 · 종가 기준</p>
+
+  <p>삼성전자·SK하이닉스가 상승, 현대차가 보합 마감했습니다.</p>
+
+  <h2>총평</h2>
+  <p>2개 종목이 오르고 1개가 내렸습니다. 상대적으로 가장 강했던 종목은 SK하이닉스(+3.20%), 가장 부진했던 종목은 현대차(+0.00%)입니다. 20일 이동평균 위에서 마감한 종목은 SK하이닉스입니다. 외국인은 삼성전자·현대차에서 순매도했습니다.</p>
+
+  <h2>한눈에 보기</h2>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>종목</th><th>종가</th><th>등락</th><th>거래량</th><th>외국인</th><th>기관</th></tr></thead>
+      <tbody>
+<tr><td>삼성전자</td><td class="num">255,500원</td><td class="num up">▲ 5,500 (+2.20%)</td><td class="num">14,031,862주</td><td class="num">-115,377주</td><td class="num">+2,489,812주</td></tr>
+<tr><td>SK하이닉스</td><td class="num">1,647,000원</td><td class="num up">▲ 51,000 (+3.20%)</td><td class="num">2,827,725주</td><td class="num">+308,833주</td><td class="num">+96,776주</td></tr>
+<tr><td>현대차</td><td class="num">383,500원</td><td class="num ">― 0 (+0.00%)</td><td class="num">358,567주</td><td class="num">-60,899주</td><td class="num">-53,849주</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>종목별 분석</h2>
+  <h3>삼성전자 <span class="code">005930</span></h3>
+  <p>삼성전자는 +2.20% 상승한 255,500원에 거래를 마쳤습니다. 현재가는 20일 이동평균에 바짝 붙은 자리로, 20일 이동평균(257,125원) 대비 -0.6%, 5일 이동평균(255,400원) 대비 +0.0% 수준입니다. 최근 20거래일 저점 230,000원과 고점 281,500원이 만든 구간에서는 위쪽으로 50% 지점에 위치해 있습니다. 거래량은 14,031,862주로 20일 평균의 66% 수준으로 줄었습니다.</p>
+  <p>수급에서는 외국인이 115,377주 순매도, 기관이 2,489,812주 순매수했습니다. 최근 20거래일 가운데 외국인이 순매수한 날은 9일이며, 누적으로는 외국인 -3,133,138주, 기관 -7,816,017주입니다. 두 주체가 서로 반대 방향으로 움직인 하루였습니다.</p>
+  <h3>SK하이닉스 <span class="code">000660</span></h3>
+  <p>SK하이닉스는 +3.20% 상승한 1,647,000원에 거래를 마쳤습니다. 현재가는 20일 이동평균 위로, 20일 이동평균(1,611,750원) 대비 +2.2%, 5일 이동평균(1,644,600원) 대비 +0.1% 수준입니다. 최근 20거래일 저점 1,420,000원과 고점 1,730,000원이 만든 구간에서는 위쪽으로 73% 지점에 위치해 있습니다. 거래량은 2,827,725주로 20일 평균의 73% 수준으로 줄었습니다.</p>
+  <p>수급에서는 외국인이 308,833주 순매수, 기관이 96,776주 순매수했습니다. 최근 20거래일 가운데 외국인이 순매수한 날은 8일이며, 누적으로는 외국인 -2,457,441주, 기관 -1,897,952주입니다.</p>
+  <h3>현대차 <span class="code">005380</span></h3>
+  <p>현대차는 +0.00% 보합한 383,500원에 거래를 마쳤습니다. 현재가는 20일 이동평균을 크게 밑도는 자리로, 20일 이동평균(407,925원) 대비 -6.0%, 5일 이동평균(389,800원) 대비 -1.6% 수준입니다. 최근 20거래일 저점 378,000원과 고점 453,000원이 만든 구간에서는 위쪽으로 7% 지점에 위치해 있습니다. 거래량은 358,567주로 20일 평균의 61% 수준으로 줄었습니다.</p>
+  <p>수급에서는 외국인이 60,899주 순매도, 기관이 53,849주 순매도했습니다. 최근 20거래일 가운데 외국인이 순매수한 날은 9일이며, 누적으로는 외국인 -540,483주, 기관 -1,350,973주입니다.</p>
+
+  <h2>내일 확인할 지점</h2>
+  <ul class="checks">
+    <li>삼성전자: 20일선 257,125원 회복 여부가 단기 흐름의 분기점입니다.</li>
+    <li>SK하이닉스: 20일선 1,611,750원이 아래쪽 지지 여부를 가늠할 기준선입니다.</li>
+    <li>현대차: 20일선 407,925원 회복 여부가 단기 흐름의 분기점입니다.</li>
+  </ul>
+
+  <h2>차트</h2>
+  <figure><img src="../data/stocks/005930.png" alt="삼성전자 최근 60거래일 주가·거래량"><figcaption>삼성전자 · 최근 60거래일</figcaption></figure>
+  <figure><img src="../data/stocks/000660.png" alt="SK하이닉스 최근 60거래일 주가·거래량"><figcaption>SK하이닉스 · 최근 60거래일</figcaption></figure>
+  <figure><img src="../data/stocks/005380.png" alt="현대차 최근 60거래일 주가·거래량"><figcaption>현대차 · 최근 60거래일</figcaption></figure>
+
+  <div class="note">
+    <p>한국거래소·네이버금융 공개 데이터를 바탕으로 매일 자동 생성되는 기록입니다. 투자 판단의 참고 자료일 뿐, 매수·매도를 권유하지 않습니다.</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><p>야간비행 일지 · 마감 시황은 장 종료 후 자동 갱신됩니다.</p></div>
+</footer>
