@@ -7,6 +7,11 @@ on:
     # 17:00 KST run to pick up the confirmed end-of-day investor flow data
     - cron: "0 8 * * 1-5"
   workflow_dispatch:
+    inputs:
+      probe_index_sources:
+        description: "지수 소스만 확인하고 파일은 쓰지 않음 (장 시간 밖에서도 실행됨)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -30,15 +35,26 @@ jobs:
       - name: Install dependencies
         run: pip install pykrx matplotlib lxml
 
+      - name: Probe index sources
+        if: inputs.probe_index_sources
+        run: python3 .github/scripts/fetch-index-intraday.py --probe
+
       - name: Fetch stock data
+        if: ${{ !inputs.probe_index_sources }}
         run: python3 .github/scripts/fetch-stock-data.py
 
+      - name: Fetch intraday index data
+        if: ${{ !inputs.probe_index_sources }}
+        run: python3 .github/scripts/fetch-index-intraday.py
+
       - name: Commit if changed
+        if: ${{ !inputs.probe_index_sources }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/stocks-kr.json data/stocks/
+          if [ -f data/index-intraday.json ]; then git add data/index-intraday.json; fi
           git diff --staged --quiet && exit 0
-          git commit -m "chore: update KR stock data"
+          git commit -m "chore: update KR stock & index data"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
