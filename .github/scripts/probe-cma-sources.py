@@ -1,19 +1,16 @@
 #!/usr/bin/env python3
-"""Probe 6차 — 메타 파일에서 CMA 서비스와 DTO 를 찾는다.
+"""Probe 7차 — 전자공시에 CMA 항목이 아예 있는지 못박는다.
 
-5차에서 알아낸 것 (4차의 판단을 뒤집는다)
-  - /wq/compann/*.xml 은 사실 정상으로 열린다(200 application/xml). 다만
-    1,700자짜리 껍데기고 내용은 자바스크립트가 채운다. 4차에서 '튕겼다'고
-    본 건 내 걸러내기가 잘못된 것이었다.
-  - gnb.xml(27KB)에도 CMA 는 없고 경로도 2개뿐이다. 메뉴는 /js/menu/gnb.js 와
-    /js/menu/service.js 가 만든다.
-  - 화면들이 공통으로 부르는 파일이 보인다:
-      /js/com/callProframe.js   프레임 호출을 만드는 곳
-      /js/meta/disMetaDtoInfo.js, /js/meta/disMeta.js   DTO 메타 정보
-      /js/menu/service.js       메뉴와 서비스 대응
-    서비스 이름과 DTO 모양이 여기 적혀 있을 것이다.
+6차에서 알아낸 것
+  - 화면은 껍데기고 진짜 내용은 /wq/<구역>/inc/<이름>.xml 에 있다.
+  - 왼쪽 메뉴는 /wq/com/snb.xml 이다(gnb.xml 은 상단 메뉴였다).
+  - DTO 메타 145개 중 이름에 CMA 가 들어간 것이 하나도 없다.
+    대신 DISCustDpsUseRateListDTO(증권사별 고객예탁금 이용료율)가 있다.
+    전자공시가 CMA 금리를 공시하지 않을 가능성이 크다는 뜻이다.
 
-아무것도 쓰지 않는다.
+그래서 이번엔 (1) 전체 메뉴를 열어 CMA 항목이 있는지 못박고,
+(2) inc 파일에서 실제 호출 방법을 읽어 (3) 그대로 불러 결과를 본다.
+증권사별 금리표가 실제로 나오는지 확인하려는 것이다. 아무것도 쓰지 않는다.
 """
 import re
 import sys
@@ -30,14 +27,6 @@ S.headers.update({
     "Referer": BASE + "/websquare/index.jsp?w2xPath=/wq/main/main.xml",
 })
 
-FILES = [
-    "/js/menu/service.js",
-    "/js/menu/gnb.js",
-    "/js/meta/disMeta.js",
-    "/js/meta/disMetaDtoInfo.js",
-    "/js/com/callProframe.js",
-]
-
 
 def get(path):
     try:
@@ -49,42 +38,47 @@ def get(path):
     return r.text if r.status_code == 200 else ""
 
 
-def contexts(body, pattern, width=260, limit=8):
-    out = []
-    for m in re.finditer(pattern, body, re.I):
-        s = max(0, m.start() - width)
-        out.append(re.sub(r"\s+", " ", body[s:m.start() + width]))
-        if len(out) >= limit:
-            break
-    return out
-
-
 def main():
-    print("### 1. 메타·메뉴 파일을 받는다")
-    bodies = {p: get(p) for p in FILES}
+    print("### 1. 왼쪽 메뉴 전체 (snb.xml) 에 CMA 가 있는가")
+    snb = get("/wq/com/snb.xml")
+    if snb:
+        hits = re.findall(r"[^<>]{0,40}(?:CMA|종합자산관리|씨엠에이)[^<>]{0,40}", snb, re.I)
+        print(f"  CMA 언급: {hits if hits else '(없음)'}")
+        names = sorted(set(re.findall(r'label="([^"]{2,30})"', snb)))
+        print(f"  메뉴 이름 {len(names)}개: {names[:60]}")
+        for m in re.finditer(r"(?:이자율|금리|이용료)", snb):
+            s = max(0, m.start() - 200)
+            print("    ..." + re.sub(r"\s+", " ", snb[s:m.start() + 120]))
 
-    print("\n### 2. 각 파일에서 CMA 가 나오는 자리")
-    for p, body in bodies.items():
-        if not body:
-            continue
-        hits = contexts(body, r"CMA|종합자산관리|씨엠에이")
-        print(f"\n  --- {p} : {len(hits)}건 ---")
-        for h in hits:
-            print(f"    ...{h}")
+    print("\n### 2. 실제 내용 파일에서 호출 방법을 읽는다")
+    inc = get("/wq/compann/inc/DISCustDpsUseRate.xml")
+    if inc:
+        svcs = sorted(set(re.findall(r"[\"']([A-Za-z0-9_]*(?:SO|SVC)\d*)[\"']", inc)))
+        dtos = sorted(set(re.findall(r"(DIS[A-Za-z0-9_]*DTO)", inc)))
+        subs = sorted(set(re.findall(r'id="(sub[A-Za-z0-9_]*)"', inc)))
+        print(f"  서비스 후보={svcs}\n  DTO={dtos}\n  submission={subs}")
+        for key in ("pfmSvcName", "callProframe", "action=", "wframe"):
+            for m in list(re.finditer(re.escape(key), inc))[:3]:
+                s = max(0, m.start() - 250)
+                print(f"    [{key}] ..." + re.sub(r"\s+", " ", inc[s:m.start() + 350]))
 
-    print("\n### 3. 파일에 적힌 서비스 이름 (DIS로 시작하는 것)")
-    for p, body in bodies.items():
-        if not body:
-            continue
-        names = sorted(set(re.findall(r"\b(DIS[A-Za-z0-9_]{4,})\b", body)))
-        cma = [n for n in names if "cma" in n.lower()]
-        print(f"  {p}: 총 {len(names)}개, CMA 관련 {cma}")
-        if p.endswith("service.js") or p.endswith("disMetaDtoInfo.js"):
-            print(f"    앞 40개: {names[:40]}")
-
-    print("\n### 4. 껍데기 화면 하나를 통째로 (구조 파악용)")
-    body = get("/wq/compann/DISCustDpsUseRate.xml")
-    print(body[:1800])
+    print("\n### 3. 읽어낸 서비스를 실제로 불러 본다")
+    for svc in sorted(set(re.findall(r"[\"']([A-Za-z0-9_]*SO)[\"']", inc or ""))):
+        body = ('<?xml version="1.0" encoding="utf-8"?><message>'
+                '<proframeHeader><pfmAppName>FS-DIS2</pfmAppName>'
+                f'<pfmSvcName>{svc}</pfmSvcName><pfmFnName>select</pfmFnName>'
+                '</proframeHeader><systemHeader></systemHeader>'
+                '<DISCondFuncDTO><tmpV30>0</tmpV30></DISCondFuncDTO></message>')
+        try:
+            r = S.post(BASE + "/proframeWeb/XMLSERVICES/", data=body.encode("utf-8"),
+                       headers={"Content-Type": "application/xml; charset=UTF-8"},
+                       timeout=TIMEOUT)
+            found = "is not found" not in r.text
+            print(f"  [{svc}] {r.status_code} {len(r.text)}자 존재={found}")
+            if found:
+                print("    " + r.text[:1200].replace("\n", "\n    "))
+        except Exception as exc:  # noqa: BLE001
+            print(f"  [{svc}] 실패: {exc}")
     return 0
 
 
