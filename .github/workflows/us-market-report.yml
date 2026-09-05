@@ -1,0 +1,47 @@
+name: US market report
+
+on:
+  schedule:
+    # 23:00 UTC on weekdays — US close is 20:00 UTC (EDT) / 21:00 UTC (EST),
+    # so this clears both and lands at 08:00 KST the next morning.
+    - cron: "0 23 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: us-market-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install matplotlib requests
+
+      - name: Fetch US market data
+        run: python3 .github/scripts/fetch-us-market.py
+
+      - name: Generate report
+        run: python3 .github/scripts/generate-us-market-report.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/us-market.json data/us/ data/latest-us-report.json \
+                  posts/ blogger-posts/ blog-exports/
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: add US market report"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
