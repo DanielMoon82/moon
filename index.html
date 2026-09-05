@@ -354,6 +354,45 @@
   .pop-title{grid-area:title;font-size:.92rem;color:var(--ink);line-height:1.45;}
   .pop-desc{grid-area:desc;font-size:.78rem;color:var(--ink-3);line-height:1.5;}
 
+  /* ---------- 암호화폐 ---------- */
+  .coin-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:clamp(14px,2vw,20px);
+  }
+  .coin-card{
+    display:flex;flex-direction:column;gap:12px;
+    border:1px solid var(--line);border-radius:3px;
+    background:var(--surface);
+    padding:20px clamp(16px,2vw,22px) 18px;
+  }
+  .coin-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
+  .coin-name{
+    font-family:var(--f-display);font-weight:600;font-size:1.05rem;
+    letter-spacing:-.02em;color:var(--ink);margin:0;
+  }
+  .coin-sym{font-family:var(--f-mono);font-size:.7rem;color:var(--ink-3);}
+  .coin-price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .coin-price{
+    font-family:var(--f-mono);font-size:1.5rem;font-weight:600;
+    color:var(--ink);font-variant-numeric:tabular-nums;line-height:1;
+  }
+  /* 등락은 색만으로 구분하지 않는다. 화살표와 부호가 함께 붙는다. */
+  .coin-change{font-family:var(--f-mono);font-size:.82rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink-3);}
+  .coin-change.up{color:var(--up);}
+  .coin-change.down{color:var(--down);}
+  .coin-spark{display:block;width:100%;height:auto;}
+  .coin-foot{
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .coin-empty{
+    display:flex;align-items:center;justify-content:center;
+    aspect-ratio:4/1;border:1px dashed var(--line);border-radius:2px;
+    font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+  }
+
   /* ---------- 카테고리 묶음 머리 ---------- */
   .cat-group{border-top:1px solid var(--line);}
   .cat-band{padding-block:clamp(34px,5vw,52px) 0;}
@@ -919,6 +958,7 @@
       <a href="#invest">투자</a>
       <a href="#life">생활·건강</a>
       <a href="#news">뉴스</a>
+      <a href="#crypto">암호화폐</a>
     </div>
     <search class="nav-search">
       <label class="sr-only" for="site-q">사이트 안에서 찾기</label>
@@ -999,6 +1039,11 @@
         <span class="cat-icon" aria-hidden="true">🏠</span>
         <h3>생활·건강</h3>
         <ul><li>영화·리뷰</li><li class="is-soon">건강정보 준비 중</li></ul>
+      </a>
+      <a class="cat-card" href="#crypto">
+        <span class="cat-icon" aria-hidden="true">🪙</span>
+        <h3>암호화폐</h3>
+        <ul><li>비트코인 · 이더리움 · 리플</li><li>업비트 원화 시세</li></ul>
       </a>
       <a class="cat-card" href="#news">
         <span class="cat-icon" aria-hidden="true">📰</span>
@@ -1351,6 +1396,70 @@
 
   </section>  </div>
 
+  <div class="cat-group" id="crypto">
+    <div class="wrap cat-band">
+      <h2 class="cat-band-title"><span aria-hidden="true">🪙</span> 암호화폐</h2>
+      <p class="cat-band-desc">업비트 원화 시장 기준 주요 3종목.</p>
+    </div>
+
+  <section class="section wrap" id="coins">
+    <div class="section-head">
+      <h2>실시간 시세</h2>
+      <p>비트코인·이더리움·리플. 화면을 열어두면 계속 갱신됩니다.</p>
+    </div>
+    <p class="stock-note"><span class="trend-live">LIVE</span> — 업비트 원화 시장 시세를 15초마다 직접 받아옵니다. 그래프는 최근 24시간(1시간 봉)입니다. 투자 판단의 참고 자료일 뿐이며 매수·매도를 권유하지 않습니다.</p>
+
+    <div class="coin-grid">
+      <article class="coin-card rise" data-market="KRW-BTC">
+        <div class="coin-head">
+          <h3 class="coin-name">비트코인</h3>
+          <span class="coin-sym mono">BTC</span>
+        </div>
+        <div class="coin-price-row">
+          <span class="coin-price mono" data-field="price">-</span>
+          <span class="coin-change mono" data-field="change">-</span>
+        </div>
+        <div class="coin-chart-wrap"><div class="coin-empty">불러오는 중</div></div>
+        <div class="coin-foot">
+          <span data-field="range"></span>
+          <span data-field="asof">시세 준비 중</span>
+        </div>
+      </article>
+      <article class="coin-card rise" data-market="KRW-ETH">
+        <div class="coin-head">
+          <h3 class="coin-name">이더리움</h3>
+          <span class="coin-sym mono">ETH</span>
+        </div>
+        <div class="coin-price-row">
+          <span class="coin-price mono" data-field="price">-</span>
+          <span class="coin-change mono" data-field="change">-</span>
+        </div>
+        <div class="coin-chart-wrap"><div class="coin-empty">불러오는 중</div></div>
+        <div class="coin-foot">
+          <span data-field="range"></span>
+          <span data-field="asof">시세 준비 중</span>
+        </div>
+      </article>
+      <article class="coin-card rise" data-market="KRW-XRP">
+        <div class="coin-head">
+          <h3 class="coin-name">리플</h3>
+          <span class="coin-sym mono">XRP</span>
+        </div>
+        <div class="coin-price-row">
+          <span class="coin-price mono" data-field="price">-</span>
+          <span class="coin-change mono" data-field="change">-</span>
+        </div>
+        <div class="coin-chart-wrap"><div class="coin-empty">불러오는 중</div></div>
+        <div class="coin-foot">
+          <span data-field="range"></span>
+          <span data-field="asof">시세 준비 중</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  </div>
+
   <div class="cat-group" id="life">
     <div class="wrap cat-band">
       <h2 class="cat-band-title"><span aria-hidden="true">🏠</span> 생활·건강</h2>
@@ -1499,6 +1608,123 @@
     el.classList.remove('up', 'down');
     if (cls) el.classList.add(cls);
   }
+
+  // ---------- 암호화폐 (업비트 원화) ----------
+  // 업비트 공개 API 는 CORS 를 허용해서 브라우저가 직접 부를 수 있다.
+  // 중간에 파일을 두지 않으므로 화면에 뜨는 값이 곧 현재 시세다.
+  (function () {
+    var cards = [].slice.call(document.querySelectorAll('.coin-card[data-market]'));
+    if (!cards.length) return;
+
+    var markets = cards.map(function (c) { return c.dataset.market; });
+    var TICKER = 'https://api.upbit.com/v1/ticker?markets=' + markets.join(',');
+    var REFRESH_MS = 15000;
+    var sparks = {};   // 24시간 봉은 자주 바뀌지 않아 따로, 덜 자주 받는다
+
+    function won(n) {
+      if (typeof n !== 'number') return '-';
+      // 1원 미만 코인도 있으므로 자릿수를 값 크기에 맞춘다.
+      var digits = n >= 1000 ? 0 : (n >= 1 ? 2 : 4);
+      return n.toLocaleString('ko-KR', { minimumFractionDigits: digits, maximumFractionDigits: digits });
+    }
+
+    function drawSpark(wrap, closes, dir) {
+      if (!wrap || closes.length < 2) return;
+      var W = Math.max(wrap.clientWidth || 260, 200), H = Math.round(W / 4.2);
+      var pad = 3;
+      var lo = Math.min.apply(null, closes), hi = Math.max.apply(null, closes);
+      var span = (hi - lo) || Math.max(hi * 0.001, 1e-8);
+      var stroke = dir > 0 ? 'var(--up)' : (dir < 0 ? 'var(--down)' : 'var(--ink-3)');
+      var pts = closes.map(function (c, i) {
+        var x = pad + i / (closes.length - 1) * (W - pad * 2);
+        var y = pad + (hi - c) / span * (H - pad * 2);
+        return x.toFixed(1) + ' ' + y.toFixed(1);
+      });
+      var line = 'M' + pts.join(' L');
+      var last = pts[pts.length - 1].split(' ');
+      wrap.innerHTML =
+        '<svg class="coin-spark" viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '"' +
+        ' role="img" aria-label="최근 24시간 시세 흐름">' +
+        '<path d="' + line + '" fill="none" stroke="' + stroke + '" stroke-width="2"' +
+        ' stroke-linejoin="round" stroke-linecap="round"/>' +
+        '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="3" fill="' + stroke + '"/>' +
+        '</svg>';
+    }
+
+    function paint(rows) {
+      rows.forEach(function (r) {
+        var card = cards.filter(function (c) { return c.dataset.market === r.market; })[0];
+        if (!card) return;
+        var dir = r.signed_change_price > 0 ? 1 : (r.signed_change_price < 0 ? -1 : 0);
+
+        var priceEl = card.querySelector('[data-field="price"]');
+        if (priceEl) priceEl.textContent = won(r.trade_price) + '원';
+
+        var chEl = card.querySelector('[data-field="change"]');
+        if (chEl) {
+          chEl.classList.remove('up', 'down');
+          var arrow = dir > 0 ? '▲' : (dir < 0 ? '▼' : '–');
+          var pct = (r.signed_change_rate * 100);
+          chEl.textContent = arrow + ' ' + won(Math.abs(r.signed_change_price)) +
+            ' (' + (pct > 0 ? '+' : '') + pct.toFixed(2) + '%)';
+          if (dir > 0) chEl.classList.add('up');
+          if (dir < 0) chEl.classList.add('down');
+        }
+
+        var rangeEl = card.querySelector('[data-field="range"]');
+        if (rangeEl) rangeEl.textContent = '고 ' + won(r.high_price) + ' · 저 ' + won(r.low_price);
+
+        var asofEl = card.querySelector('[data-field="asof"]');
+        if (asofEl && r.trade_timestamp) {
+          var d = new Date(r.trade_timestamp);
+          asofEl.textContent = String(d.getHours()).padStart(2, '0') + ':' +
+            String(d.getMinutes()).padStart(2, '0') + ':' +
+            String(d.getSeconds()).padStart(2, '0') + ' 기준';
+        }
+
+        var wrap = card.querySelector('.coin-chart-wrap');
+        if (sparks[r.market]) drawSpark(wrap, sparks[r.market], dir);
+        else if (wrap && !wrap.querySelector('svg')) {
+          wrap.innerHTML = '<div class="coin-empty">시세만 표시 중</div>';
+        }
+      });
+    }
+
+    function loadTicker() {
+      return fetch(TICKER, { cache: 'no-store' })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(paint)
+        .catch(function () {
+          cards.forEach(function (c) {
+            var el = c.querySelector('[data-field="asof"]');
+            if (el && el.textContent === '시세 준비 중') el.textContent = '시세를 받지 못했습니다';
+          });
+        });
+    }
+
+    function loadSparks() {
+      // 1시간 봉 24개 = 최근 하루. 종목마다 한 번씩 부른다.
+      return Promise.all(markets.map(function (m) {
+        return fetch('https://api.upbit.com/v1/candles/minutes/60?market=' + m + '&count=24',
+                     { cache: 'no-store' })
+          .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+          .then(function (rows) {
+            // 업비트는 최신순으로 주므로 뒤집어 시간순으로 만든다.
+            sparks[m] = rows.map(function (x) { return x.trade_price; }).reverse();
+          })
+          .catch(function () { /* 그래프만 빠지고 시세는 계속 나온다 */ });
+      }));
+    }
+
+    loadSparks().then(loadTicker);
+    setInterval(function () { if (!document.hidden) loadTicker(); }, REFRESH_MS);
+    setInterval(function () { if (!document.hidden) loadSparks(); }, 10 * 60 * 1000);
+    // 탭으로 돌아오면 곧바로 최신값을 보여 준다.
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) loadTicker(); });
+    var t; window.addEventListener('resize', function () {
+      clearTimeout(t); t = setTimeout(loadTicker, 250);
+    });
+  })();
 
   // ---------- 포털 실시간 검색어 ----------
   // 워크플로가 30분마다 다섯 포털에서 받아 둔 파일을 읽는다. 브라우저에서
