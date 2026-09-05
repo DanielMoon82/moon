@@ -382,7 +382,8 @@ def write_homepage_article(date, stocks, slug):
         for s in stocks
     )
 
-    html = f"""<title>{date} 마감 시황 — 야간비행 일지</title>
+    html = f"""<meta charset="utf-8">
+<title>{date} 마감 시황 — 야간비행 일지</title>
 <meta name="description" content="{date} 삼성전자·SK하이닉스·현대차 마감 시황. 종가, 거래량, 외국인·기관 수급을 정리했습니다.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="{SITE}/posts/{slug}.html">

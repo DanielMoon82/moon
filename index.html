@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>야간비행 일지</title>
 <meta name="google-site-verification" content="w87TbfP01azITcUF1V9ykFkj-lqvdzWHMQ--hlyEm5k" />
 <meta name="description" content="인천에서 출발한 여섯 번의 장거리 여행 기록. 여행 일지, 비행 구간, 짐 싸는 습관, 실제 써본 여행용품 리뷰, 실시간 이슈 검색어까지 모아둔 개인 여행 아카이브.">
@@ -660,6 +661,137 @@
   }
   .stock-report a:hover{border-bottom-color:var(--accent);}
 
+  /* ---------- oil & weather ---------- */
+  /* 색은 사이트 테마 토큰에 물려두어 라이트/다크 모두에서 같이 바뀐다. */
+  .nfx{
+    --nfx-bg:var(--paper);
+    --nfx-panel:var(--surface);
+    --nfx-line:var(--line);
+    --nfx-text:var(--ink);
+    --nfx-muted:var(--ink-3);
+    --nfx-wti:var(--accent);
+    --nfx-brent:var(--jade);
+    --nfx-up:var(--up);
+    --nfx-down:var(--down);
+  }
+  .nfx-note{margin:.9rem 0 0;color:var(--nfx-muted);font-size:.78rem;}
+  .nfx-card{
+    background:var(--nfx-panel);
+    border:1px solid var(--nfx-line);
+    border-radius:3px;
+    padding:1.35rem 1.35rem 1.15rem;
+  }
+  .nfx-card + .nfx-card{margin-top:1.25rem;}
+
+  .nfx-head{
+    display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;
+    align-items:baseline;justify-content:space-between;
+    margin-bottom:1.1rem;
+  }
+  .nfx-stats{display:flex;flex-wrap:wrap;gap:1.75rem;}
+  .nfx-stat-label{
+    display:flex;align-items:center;gap:.4rem;
+    font-family:var(--f-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--nfx-muted);margin-bottom:.3rem;
+  }
+  .nfx-swatch{width:.55rem;height:.55rem;border-radius:50%;flex:none;}
+  .nfx-price{
+    font-family:var(--f-mono);font-size:1.3rem;font-weight:600;letter-spacing:-.02em;
+    color:var(--nfx-text);font-variant-numeric:tabular-nums;
+  }
+  .nfx-price small{font-size:.68rem;font-weight:400;color:var(--nfx-muted);margin-left:.35rem;}
+  .nfx-delta{font-family:var(--f-mono);font-size:.8rem;font-variant-numeric:tabular-nums;margin-top:.2rem;}
+  .nfx-delta.up{color:var(--nfx-up);}
+  .nfx-delta.down{color:var(--nfx-down);}
+  .nfx-delta.flat{color:var(--nfx-muted);}
+
+  .nfx-ranges{display:flex;gap:.3rem;}
+  .nfx-ranges button{
+    font:inherit;font-family:var(--f-mono);font-size:.72rem;
+    padding:.3rem .7rem;border-radius:999px;
+    border:1px solid var(--nfx-line);
+    background:transparent;color:var(--nfx-muted);
+    cursor:pointer;
+  }
+  .nfx-ranges button[aria-pressed="true"]{
+    background:var(--nfx-text);border-color:var(--nfx-text);color:var(--nfx-bg);
+  }
+  .nfx-ranges button:focus-visible,
+  .nfx input:focus-visible,.nfx button:focus-visible{
+    outline:2px solid var(--nfx-wti);outline-offset:2px;
+  }
+
+  .nfx-chart{position:relative;}
+  .nfx-chart svg{display:block;width:100%;height:auto;touch-action:pan-y;}
+  .nfx-readout{
+    min-height:1.2rem;margin-bottom:.5rem;
+    font-family:var(--f-mono);font-size:.76rem;color:var(--nfx-muted);
+    font-variant-numeric:tabular-nums;
+  }
+  .nfx-readout b{color:var(--nfx-text);font-weight:600;}
+  .nfx-empty{padding:2.5rem 1rem;text-align:center;color:var(--nfx-muted);font-size:.88rem;}
+
+  .nfx-search{display:flex;gap:.5rem;margin-bottom:.9rem;}
+  .nfx-search input{
+    flex:1;min-width:0;font:inherit;font-size:.92rem;
+    padding:.6rem .8rem;border-radius:3px;
+    border:1px solid var(--nfx-line);
+    background:var(--nfx-bg);color:var(--nfx-text);
+  }
+  .nfx-search input::placeholder{color:var(--nfx-muted);}
+  .nfx-search button{
+    font:inherit;font-size:.88rem;padding:.6rem 1.05rem;
+    border-radius:3px;border:1px solid var(--nfx-text);
+    background:var(--nfx-text);color:var(--nfx-bg);
+    font-weight:600;cursor:pointer;flex:none;
+  }
+  .nfx-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.1rem;}
+  .nfx-chips button{
+    font:inherit;font-size:.78rem;padding:.3rem .7rem;
+    border-radius:999px;border:1px solid var(--nfx-line);
+    background:transparent;color:var(--nfx-muted);cursor:pointer;
+  }
+  .nfx-chips button[aria-pressed="true"]{color:var(--nfx-text);border-color:var(--nfx-muted);}
+
+  .nfx-results{list-style:none;margin:0 0 1rem;padding:0;}
+  .nfx-results li + li{border-top:1px solid var(--nfx-line);}
+  .nfx-results button{
+    width:100%;text-align:left;font:inherit;font-size:.88rem;
+    padding:.6rem .2rem;background:none;border:0;
+    color:var(--nfx-text);cursor:pointer;
+  }
+  .nfx-results span{color:var(--nfx-muted);font-size:.8rem;margin-left:.45rem;}
+
+  .nfx-now{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;}
+  .nfx-glyph{font-size:2.4rem;line-height:1;color:var(--nfx-brent);}
+  .nfx-now-temp{
+    font-family:var(--f-mono);font-size:2rem;font-weight:600;letter-spacing:-.02em;
+    color:var(--nfx-text);font-variant-numeric:tabular-nums;
+  }
+  .nfx-now-city{font-size:.95rem;font-weight:600;color:var(--nfx-text);}
+  .nfx-now-meta{font-size:.8rem;color:var(--nfx-muted);}
+
+  .nfx-days{
+    display:grid;grid-template-columns:repeat(7,minmax(0,1fr));
+    gap:.4rem;margin-top:1.25rem;
+    padding-top:1.1rem;border-top:1px solid var(--nfx-line);
+  }
+  .nfx-day{text-align:center;font-size:.76rem;}
+  .nfx-day-name{color:var(--nfx-muted);margin-bottom:.3rem;}
+  .nfx-day .nfx-glyph{font-size:1.15rem;margin-bottom:.3rem;}
+  .nfx-day-hi{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;color:var(--nfx-text);}
+  .nfx-day-lo{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--nfx-muted);}
+
+  .nfx-head-sub{margin-top:clamp(36px,5vw,56px);}
+
+  @media (max-width:640px){
+    .nfx-stats{gap:1.25rem;}
+    .nfx-days{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:1rem;}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .nfx-ranges button,.nfx-chips button{transition:background-color .15s, color .15s;}
+  }
+
   /* ---------- footer ---------- */
   .foot{
     border-top:1px solid var(--line);
@@ -697,6 +829,7 @@
       <a href="#gear">여행용품</a>
       <a href="#reviews">영화·리뷰</a>
       <a href="#stocks">주식 시황</a>
+      <a href="#oil-weather">유가·날씨</a>
       <a href="#trends">실시간 이슈</a>
     </div>
   </div>
@@ -1023,6 +1156,8 @@
     </div>
     <p class="stock-note"><span class="trend-live">LIVE</span> — 가격·거래량은 장중 15분마다 갱신됩니다. 외국인·기관 순매수량은 거래 확정 이후에만 집계되어 하루 한 번만 갱신되며, 장중에는 전일 확정치가 표시됩니다. 투자 판단의 참고 자료일 뿐이며 매수·매도를 권유하지 않습니다.</p>
     <p class="stock-report" hidden><a id="latest-report-link" href="#">마감 시황 리포트 읽기 →</a></p>
+    <p class="stock-report" hidden><a id="latest-us-report-link" href="#">미국증시 마감 시황 읽기 →</a></p>
+    <p class="stock-report"><a href="./posts/us-market-2026-09-04.html">2026-09-04 미국증시 마감 시황 — 고용 서프라이즈에 3대 지수 하락 →</a></p>
     <p class="stock-report"><a href="./posts/samsung-2026-09-04.html">삼성전자 주가 전망 — 사상 최대 실적인데 PER은 6배 →</a></p>
     <p class="stock-report"><a href="./posts/theme-2026-09-04.html">2026-09-04 강세 테마 정리 — 어제 1위 손해보험이 오늘 꼴찌 →</a></p>
     <p class="stock-report"><a href="./posts/sky-2026-09-04.html">스카이랩스 주가 전망 — 상장 첫날 8,200원에서 28,750원 →</a></p>
@@ -1120,6 +1255,46 @@
         </div>
         <p class="stock-asof" data-field="asof">데이터 준비 중</p>
       </article>
+    </div>
+  </section>
+
+  <section class="section wrap nfx" id="oil-weather">
+    <div class="section-head">
+      <h2>유가</h2>
+      <p>WTI·브렌트 종가입니다. 페이지를 열 때마다 최신 값을 받아오므로 따로 갱신할 게 없습니다.</p>
+    </div>
+    <p class="stock-note"><span class="trend-live">LIVE</span> — 뉴욕 상품시장 기준이라 국내 날짜로는 전날 종가가 표시될 수 있습니다. 5분마다 자동 갱신되며, 투자 판단의 참고 자료일 뿐이며 매수·매도를 권유하지 않습니다.</p>
+
+    <div class="nfx-card rise">
+      <div class="nfx-head">
+        <div class="nfx-stats" id="nfx-stats"></div>
+        <div class="nfx-ranges" id="nfx-ranges" role="group" aria-label="차트 기간">
+          <button type="button" data-days="30">1개월</button>
+          <button type="button" data-days="90">3개월</button>
+          <button type="button" data-days="365" aria-pressed="true">1년</button>
+        </div>
+      </div>
+      <div class="nfx-chart">
+        <div class="nfx-readout" id="nfx-readout"></div>
+        <div id="nfx-canvas"></div>
+      </div>
+      <p class="nfx-note" id="nfx-updated"></p>
+    </div>
+
+    <div class="section-head nfx-head-sub">
+      <h2>세계 날씨</h2>
+      <p>도시 이름을 넣으면 전 세계 어디든 찾습니다. 아래 칩은 이 일지에 기록된 도시들입니다.</p>
+    </div>
+
+    <div class="nfx-card rise">
+      <div class="nfx-search">
+        <label for="nfx-q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">도시 검색</label>
+        <input id="nfx-q" type="search" placeholder="예: 오사카, Porto, Ushuaia" autocomplete="off">
+        <button type="button" id="nfx-go">찾기</button>
+      </div>
+      <div class="nfx-chips" id="nfx-chips"></div>
+      <ul class="nfx-results" id="nfx-results" hidden></ul>
+      <div id="nfx-weather"><p class="nfx-empty">날씨를 불러오는 중입니다.</p></div>
     </div>
   </section>
 </main>
@@ -1387,5 +1562,535 @@
       link.parentNode.hidden = false;
     })
     .catch(function () { /* 리포트가 아직 없으면 링크를 숨긴 채로 둔다 */ });
+
+  // 미국장 마감 리포트도 같은 방식으로, 있을 때만 노출한다.
+  fetch('./data/latest-us-report.json', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (report) {
+      if (!report || !report.url) return;
+      var link = document.getElementById('latest-us-report-link');
+      if (!link) return;
+      link.href = './' + report.url;
+      link.textContent = (report.date || '') + ' 미국증시 마감 시황 읽기 →';
+      link.parentNode.hidden = false;
+    })
+    .catch(function () { /* 미국 리포트가 아직 없으면 숨긴 채로 둔다 */ });
+})();
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ── 유가 데이터 소스 ────────────────────────────────
+     Stooq 의 일봉 CSV 를 브라우저에서 바로 받아온다.
+     Stooq 가 CORS 를 막으면 아래 프록시로 순서대로 재시도한다.
+     별도 서버·API 키·빌드 과정이 필요 없다.
+     ─────────────────────────────────────────────────── */
+  var SYMBOLS = {
+    wti:   { name: "WTI",    stooq: "cl.f",   unit: "USD/배럴" },
+    brent: { name: "브렌트", stooq: "cb.f",   unit: "USD/배럴" }
+  };
+  var FX_SYMBOL = "usdkrw";
+
+  var WRAPPERS = [
+    function (u) { return u; },
+    function (u) { return "https://api.allorigins.win/raw?url=" + encodeURIComponent(u); },
+    function (u) { return "https://corsproxy.io/?url=" + encodeURIComponent(u); }
+  ];
+
+  /* 자동 갱신 주기 */
+  var REFRESH_MS = 5 * 60 * 1000;   /* 5분마다 */
+  var STALE_MS   = 2 * 60 * 1000;   /* 탭 복귀 시 이만큼 지났으면 즉시 갱신 */
+
+  function stooqUrl(symbol) {
+    return "https://stooq.com/q/d/l/?s=" + symbol + "&i=d";
+  }
+
+  /* 장중 현재가 스냅샷 (일봉 CSV 는 종가만 주므로 이걸로 마지막 점을 덮어쓴다) */
+  function quoteUrl(symbol) {
+    return "https://stooq.com/q/l/?s=" + symbol + "&f=sd2t2ohlcv&h&e=csv";
+  }
+
+  function parseQuote(text) {
+    var lines = String(text).trim().split(/\r?\n/);
+    if (lines.length < 2) return null;
+    var head = lines[0].split(",");
+    var cols = lines[1].split(",");
+    var pick = function (n) { var i = head.indexOf(n); return i < 0 ? "" : cols[i]; };
+
+    var close = parseFloat(pick("Close"));
+    var day = pick("Date");
+    if (!isFinite(close) || !day || day === "N/D") return null;
+    return { d: day, t: pick("Time") || "", c: Math.round(close * 100) / 100 };
+  }
+
+  function parseStooq(text) {
+    var lines = String(text).trim().split(/\r?\n/);
+    if (lines.length < 3) return [];
+    var head = lines[0].split(",");
+    var di = head.indexOf("Date"), ci = head.indexOf("Close");
+    if (di < 0 || ci < 0) return [];
+
+    var out = [];
+    for (var i = 1; i < lines.length; i++) {
+      var cols = lines[i].split(",");
+      var v = parseFloat(cols[ci]);
+      if (!isFinite(v) || !cols[di]) continue;
+      out.push({ d: cols[di], c: Math.round(v * 100) / 100 });
+    }
+    return out.slice(-400);
+  }
+
+  /* 프록시를 순서대로 시도하다 처음 성공하는 것을 쓴다 */
+  function fetchText(url, wrapperIndex) {
+    wrapperIndex = wrapperIndex || 0;
+    if (wrapperIndex >= WRAPPERS.length) return Promise.reject(new Error("all failed"));
+
+    return fetch(WRAPPERS[wrapperIndex](url), { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("http " + r.status);
+        return r.text();
+      })
+      .catch(function () { return fetchText(url, wrapperIndex + 1); });
+  }
+
+  function fetchSeries(symbol) {
+    return fetchText(stooqUrl(symbol))
+      .then(function (text) {
+        var points = parseStooq(text);
+        return points.length >= 5 ? points : null;
+      })
+      .catch(function () { return null; });
+  }
+
+  function fetchQuote(symbol) {
+    return fetchText(quoteUrl(symbol))
+      .then(function (text) { return parseQuote(text); })
+      .catch(function () { return null; });
+  }
+
+  /* 일봉 마지막 점을 현재가로 갱신 */
+  function applyQuote(points, quote) {
+    if (!quote || !points.length) return points;
+    var last = points[points.length - 1];
+    if (quote.d > last.d) points.push({ d: quote.d, c: quote.c });
+    else if (quote.d === last.d) last.c = quote.c;
+    return points;
+  }
+
+  /* ── 유가 ─────────────────────────────────────────── */
+
+  var oilDoc = null, rangeDays = 365;
+  var COLORS = { wti: "var(--nfx-wti)", brent: "var(--nfx-brent)" };
+
+  var statsEl   = document.getElementById("nfx-stats");
+  var canvasEl  = document.getElementById("nfx-canvas");
+  var readoutEl = document.getElementById("nfx-readout");
+  var updatedEl = document.getElementById("nfx-updated");
+
+  function num(v, digits) {
+    return v.toLocaleString("ko-KR", {
+      minimumFractionDigits: digits, maximumFractionDigits: digits
+    });
+  }
+
+  function windowed(points) {
+    if (points.length <= 1) return points.slice();
+    var cutoff = new Date(points[points.length - 1].d);
+    cutoff.setDate(cutoff.getDate() - rangeDays);
+    var out = points.filter(function (p) { return new Date(p.d) >= cutoff; });
+    return out.length > 1 ? out : points.slice(-2);
+  }
+
+  function renderStats() {
+    statsEl.innerHTML = "";
+    Object.keys(oilDoc.series).forEach(function (key) {
+      var s = oilDoc.series[key];
+      var pts = s.points;
+      var last = pts[pts.length - 1];
+      var prev = pts.length > 1 ? pts[pts.length - 2] : last;
+      var diff = last.c - prev.c;
+      var pct = prev.c ? (diff / prev.c) * 100 : 0;
+      var dir = diff > 0.0001 ? "up" : (diff < -0.0001 ? "down" : "flat");
+      var sign = dir === "up" ? "+" : (dir === "down" ? "−" : "");
+
+      var box = document.createElement("div");
+      box.innerHTML =
+        '<div class="nfx-stat-label">' +
+          '<span class="nfx-swatch" style="background:' + (COLORS[key] || "var(--nfx-muted)") + '"></span>' +
+          s.name +
+        '</div>' +
+        '<div class="nfx-price">' + num(last.c, 2) + '<small>' + s.unit + '</small></div>' +
+        '<div class="nfx-delta ' + dir + '">' + sign + num(Math.abs(diff), 2) +
+          ' (' + sign + num(Math.abs(pct), 2) + '%)</div>';
+      statsEl.appendChild(box);
+    });
+
+    if (oilDoc.usdkrw) {
+      var fx = document.createElement("div");
+      fx.innerHTML =
+        '<div class="nfx-stat-label">원/달러</div>' +
+        '<div class="nfx-price">' + num(oilDoc.usdkrw, 1) + '<small>KRW</small></div>' +
+        '<div class="nfx-delta flat">배럴당 환산 참고용</div>';
+      statsEl.appendChild(fx);
+    }
+  }
+
+  function renderChart() {
+    var keys = Object.keys(oilDoc.series);
+    var sets = keys.map(function (k) {
+      return { key: k, name: oilDoc.series[k].name, points: windowed(oilDoc.series[k].points) };
+    });
+
+    /* 날짜 축 = 모든 계열 날짜의 합집합 */
+    var dateSet = {};
+    sets.forEach(function (s) { s.points.forEach(function (p) { dateSet[p.d] = 1; }); });
+    var dates = Object.keys(dateSet).sort();
+    if (dates.length < 2) { canvasEl.innerHTML = ""; return; }
+
+    sets.forEach(function (s) {
+      var map = {};
+      s.points.forEach(function (p) { map[p.d] = p.c; });
+      s.values = dates.map(function (d) { return map.hasOwnProperty(d) ? map[d] : null; });
+    });
+
+    var lo = Infinity, hi = -Infinity;
+    sets.forEach(function (s) {
+      s.values.forEach(function (v) {
+        if (v === null) return;
+        if (v < lo) lo = v;
+        if (v > hi) hi = v;
+      });
+    });
+    var pad = (hi - lo) * 0.12 || 1;
+    lo -= pad; hi += pad;
+
+    var W = 720, H = 260, PT = 16, PR = 62, PB = 26, PL = 8;
+    var plotW = W - PL - PR, plotH = H - PT - PB;
+    var x = function (i) { return PL + (i * plotW) / (dates.length - 1); };
+    var y = function (v) { return PT + ((hi - v) / (hi - lo)) * plotH; };
+
+    var svg = ['<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="유가 추이 차트">'];
+
+    /* 가로 눈금 4줄 */
+    for (var g = 0; g <= 3; g++) {
+      var val = lo + ((hi - lo) * g) / 3;
+      var gy = y(val);
+      svg.push('<line x1="' + PL + '" y1="' + gy.toFixed(1) + '" x2="' + (PL + plotW) +
+               '" y2="' + gy.toFixed(1) + '" stroke="var(--nfx-line)" stroke-width="1"/>');
+      svg.push('<text x="' + (W - PR + 10) + '" y="' + (gy + 4).toFixed(1) +
+               '" fill="var(--nfx-muted)" font-size="11" font-family="inherit">' +
+               num(val, 1) + '</text>');
+    }
+
+    /* 날짜 라벨 5개 */
+    for (var t = 0; t < 5; t++) {
+      var di = Math.round((t * (dates.length - 1)) / 4);
+      var parts = dates[di].split("-");
+      svg.push('<text x="' + x(di).toFixed(1) + '" y="' + (H - 6) +
+               '" fill="var(--nfx-muted)" font-size="11" font-family="inherit" text-anchor="' +
+               (t === 0 ? "start" : t === 4 ? "end" : "middle") + '">' +
+               parts[0].slice(2) + "." + parts[1] + '</text>');
+    }
+
+    /* 계열 라인 */
+    sets.forEach(function (s) {
+      var d = "", open = false;
+      s.values.forEach(function (v, i) {
+        if (v === null) { open = false; return; }
+        d += (open ? "L" : "M") + x(i).toFixed(1) + " " + y(v).toFixed(1) + " ";
+        open = true;
+      });
+      svg.push('<path d="' + d.trim() + '" fill="none" stroke="' + (COLORS[s.key] || "var(--nfx-muted)") +
+               '" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round"/>');
+    });
+
+    /* 호버 표시용 */
+    svg.push('<line id="nfx-cursor" x1="0" y1="' + PT + '" x2="0" y2="' + (PT + plotH) +
+             '" stroke="var(--nfx-muted)" stroke-width="1" stroke-dasharray="3 3" opacity="0"/>');
+    sets.forEach(function (s) {
+      svg.push('<circle class="nfx-dot" data-key="' + s.key + '" r="3.5" fill="' +
+               (COLORS[s.key] || "var(--nfx-muted)") + '" opacity="0"/>');
+    });
+    svg.push('<rect x="0" y="0" width="' + W + '" height="' + H + '" fill="transparent" id="nfx-hit"/>');
+    svg.push('</svg>');
+
+    canvasEl.innerHTML = svg.join("");
+    setReadout(dates.length - 1, dates, sets);
+
+    var svgEl = canvasEl.querySelector("svg");
+    var cursor = canvasEl.querySelector("#nfx-cursor");
+    var dots = Array.prototype.slice.call(canvasEl.querySelectorAll(".nfx-dot"));
+
+    function moveTo(clientX) {
+      var rect = svgEl.getBoundingClientRect();
+      var ratio = (clientX - rect.left) / rect.width;
+      var i = Math.max(0, Math.min(dates.length - 1, Math.round(ratio * (dates.length - 1))));
+      cursor.setAttribute("x1", x(i)); cursor.setAttribute("x2", x(i));
+      cursor.setAttribute("opacity", "1");
+      dots.forEach(function (dot) {
+        var s = sets.filter(function (o) { return o.key === dot.getAttribute("data-key"); })[0];
+        var v = s ? s.values[i] : null;
+        if (v === null || v === undefined) { dot.setAttribute("opacity", "0"); return; }
+        dot.setAttribute("cx", x(i)); dot.setAttribute("cy", y(v));
+        dot.setAttribute("opacity", "1");
+      });
+      setReadout(i, dates, sets);
+    }
+
+    svgEl.addEventListener("pointermove", function (e) { moveTo(e.clientX); });
+    svgEl.addEventListener("pointerdown", function (e) { moveTo(e.clientX); });
+    svgEl.addEventListener("pointerleave", function () {
+      cursor.setAttribute("opacity", "0");
+      dots.forEach(function (d) { d.setAttribute("opacity", "0"); });
+      setReadout(dates.length - 1, dates, sets);
+    });
+  }
+
+  function setReadout(i, dates, sets) {
+    var bits = sets.map(function (s) {
+      var v = s.values[i];
+      return s.name + " <b>" + (v === null || v === undefined ? "—" : num(v, 2)) + "</b>";
+    });
+    readoutEl.innerHTML = dates[i].replace(/-/g, ".") + " · " + bits.join(" · ");
+  }
+
+  function oilEmpty(message) {
+    statsEl.innerHTML = "";
+    readoutEl.textContent = "";
+    canvasEl.innerHTML = '<p class="nfx-empty">' + message + '</p>';
+  }
+
+  document.getElementById("nfx-ranges").addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-days]");
+    if (!btn || !oilDoc) return;
+    rangeDays = parseInt(btn.dataset.days, 10);
+    Array.prototype.forEach.call(this.querySelectorAll("button"), function (b) {
+      b.setAttribute("aria-pressed", String(b === btn));
+    });
+    renderChart();
+  });
+
+  var oilLoadedAt = 0;
+
+  function loadOil() {
+    return Promise.all([
+      fetchSeries(SYMBOLS.wti.stooq),
+      fetchSeries(SYMBOLS.brent.stooq),
+      fetchSeries(FX_SYMBOL),
+      fetchQuote(SYMBOLS.wti.stooq),
+      fetchQuote(SYMBOLS.brent.stooq),
+      fetchQuote(FX_SYMBOL)
+    ]).then(function (res) {
+      var series = {};
+      if (res[0]) {
+        series.wti = { name: SYMBOLS.wti.name, unit: SYMBOLS.wti.unit,
+                       points: applyQuote(res[0], res[3]) };
+      }
+      if (res[1]) {
+        series.brent = { name: SYMBOLS.brent.name, unit: SYMBOLS.brent.unit,
+                         points: applyQuote(res[1], res[4]) };
+      }
+
+      if (!Object.keys(series).length) {
+        if (!oilDoc) oilEmpty("유가 데이터를 불러오지 못했습니다. 곧 다시 시도합니다.");
+        return;
+      }
+
+      var fx = null;
+      if (res[5]) fx = res[5].c;
+      else if (res[2]) fx = res[2][res[2].length - 1].c;
+
+      oilDoc = { series: series, usdkrw: fx };
+      oilLoadedAt = Date.now();
+
+      renderStats();
+      renderChart();
+
+      var newest = "", clock = "";
+      Object.keys(series).forEach(function (k) {
+        var p = series[k].points[series[k].points.length - 1];
+        if (p.d > newest) newest = p.d;
+      });
+      [res[3], res[4]].forEach(function (q) { if (q && q.t) clock = q.t; });
+
+      updatedEl.textContent =
+        newest.replace(/-/g, ".") + (clock ? " " + clock.slice(0, 5) : "") +
+        " 기준 · 자료 Stooq";
+    });
+  }
+
+  loadOil();
+  setInterval(loadOil, REFRESH_MS);
+
+  /* ── 날씨 ─────────────────────────────────────────── */
+
+  var CITIES = [
+    { label: "인천공항", lat: 37.4602, lon: 126.4407 },
+    { label: "리스본",   lat: 38.7223, lon: -9.1393 },
+    { label: "레이캬비크", lat: 64.1466, lon: -21.9426 },
+    { label: "삿포로",   lat: 43.0618, lon: 141.3545 },
+    { label: "트빌리시", lat: 41.7151, lon: 44.8271 },
+    { label: "다낭",     lat: 16.0544, lon: 108.2022 },
+    { label: "쿠스코",   lat: -13.5319, lon: -71.9675 }
+  ];
+
+  var WMO = {
+    0: ["맑음", "☀"], 1: ["대체로 맑음", "☀"], 2: ["구름 조금", "☁"], 3: ["흐림", "☁"],
+    45: ["안개", "≡"], 48: ["서리 안개", "≡"],
+    51: ["약한 이슬비", "☂"], 53: ["이슬비", "☂"], 55: ["짙은 이슬비", "☂"],
+    56: ["어는 이슬비", "☂"], 57: ["짙게 어는 이슬비", "☂"],
+    61: ["약한 비", "☂"], 63: ["비", "☂"], 65: ["강한 비", "☂"],
+    66: ["어는 비", "☂"], 67: ["강하게 어는 비", "☂"],
+    71: ["약한 눈", "❄"], 73: ["눈", "❄"], 75: ["강한 눈", "❄"], 77: ["싸락눈", "❄"],
+    80: ["소나기", "☂"], 81: ["소나기", "☂"], 82: ["강한 소나기", "☂"],
+    85: ["소나기눈", "❄"], 86: ["강한 소나기눈", "❄"],
+    95: ["뇌우", "⚡"], 96: ["우박 동반 뇌우", "⚡"], 99: ["강한 우박 뇌우", "⚡"]
+  };
+  function wmo(code) { return WMO[code] || ["—", "·"]; }
+
+  var qEl = document.getElementById("nfx-q");
+  var resultsEl = document.getElementById("nfx-results");
+  var weatherEl = document.getElementById("nfx-weather");
+  var chipsEl = document.getElementById("nfx-chips");
+
+  CITIES.forEach(function (c, idx) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.textContent = c.label;
+    b.setAttribute("aria-pressed", String(idx === 0));
+    b.addEventListener("click", function () {
+      Array.prototype.forEach.call(chipsEl.querySelectorAll("button"), function (o) {
+        o.setAttribute("aria-pressed", String(o === b));
+      });
+      resultsEl.hidden = true;
+      loadWeather(c.lat, c.lon, c.label);
+    });
+    chipsEl.appendChild(b);
+  });
+
+  function clearChips() {
+    Array.prototype.forEach.call(chipsEl.querySelectorAll("button"), function (o) {
+      o.setAttribute("aria-pressed", "false");
+    });
+  }
+
+  function search() {
+    var q = qEl.value.trim();
+    if (!q) return;
+    resultsEl.hidden = false;
+    resultsEl.innerHTML = '<li style="padding:.6rem .2rem;color:var(--nfx-muted);font-size:.85rem">찾는 중…</li>';
+
+    fetch("https://geocoding-api.open-meteo.com/v1/search?count=6&language=ko&format=json&name=" +
+          encodeURIComponent(q))
+      .then(function (r) { return r.json(); })
+      .then(function (doc) {
+        var list = doc.results || [];
+        if (!list.length) {
+          resultsEl.innerHTML = '<li style="padding:.6rem .2rem;color:var(--nfx-muted);font-size:.85rem">' +
+            '결과가 없습니다. 도시 이름을 영문으로도 넣어보세요.</li>';
+          return;
+        }
+        resultsEl.innerHTML = "";
+        list.forEach(function (p) {
+          var where = [p.admin1, p.country].filter(Boolean).join(", ");
+          var li = document.createElement("li");
+          var b = document.createElement("button");
+          b.type = "button";
+          b.innerHTML = p.name + '<span>' + where + '</span>';
+          b.addEventListener("click", function () {
+            clearChips();
+            resultsEl.hidden = true;
+            loadWeather(p.latitude, p.longitude, p.name + (p.country ? " · " + p.country : ""));
+          });
+          li.appendChild(b);
+          resultsEl.appendChild(li);
+        });
+      })
+      .catch(function () {
+        resultsEl.innerHTML = '<li style="padding:.6rem .2rem;color:var(--nfx-muted);font-size:.85rem">' +
+          '검색에 실패했습니다. 잠시 뒤 다시 시도해 주세요.</li>';
+      });
+  }
+
+  document.getElementById("nfx-go").addEventListener("click", search);
+  qEl.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); search(); } });
+
+  var currentPlace = null, weatherLoadedAt = 0;
+
+  function loadWeather(lat, lon, label, silent) {
+    currentPlace = { lat: lat, lon: lon, label: label };
+    if (!silent) {
+      weatherEl.innerHTML = '<p class="nfx-empty">' + label + ' 날씨를 불러오는 중입니다.</p>';
+    }
+
+    var url = "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lon +
+      "&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m" +
+      "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
+      "&timezone=auto&forecast_days=7";
+
+    fetch(url)
+      .then(function (r) { return r.json(); })
+      .then(function (doc) {
+        var cur = doc.current, daily = doc.daily;
+        var w = wmo(cur.weather_code);
+
+        var days = daily.time.map(function (day, i) {
+          var dw = wmo(daily.weather_code[i]);
+          var name = i === 0 ? "오늘" :
+            ["일", "월", "화", "수", "목", "금", "토"][new Date(day + "T00:00").getDay()];
+          var prob = daily.precipitation_probability_max[i];
+          return '<div class="nfx-day">' +
+            '<div class="nfx-day-name">' + name + '</div>' +
+            '<div class="nfx-glyph">' + dw[1] + '</div>' +
+            '<div class="nfx-day-hi">' + Math.round(daily.temperature_2m_max[i]) + '°</div>' +
+            '<div class="nfx-day-lo">' + Math.round(daily.temperature_2m_min[i]) + '°</div>' +
+            (prob != null ? '<div class="nfx-day-lo">' + prob + '%</div>' : '') +
+          '</div>';
+        }).join("");
+
+        weatherEl.innerHTML =
+          '<div class="nfx-now">' +
+            '<div class="nfx-glyph">' + w[1] + '</div>' +
+            '<div>' +
+              '<div class="nfx-now-city">' + label + '</div>' +
+              '<div class="nfx-now-meta">' + w[0] + ' · 현지 시각 ' + cur.time.slice(11, 16) + '</div>' +
+            '</div>' +
+            '<div style="margin-left:auto;text-align:right">' +
+              '<div class="nfx-now-temp">' + Math.round(cur.temperature_2m) + '°</div>' +
+              '<div class="nfx-now-meta">체감 ' + Math.round(cur.apparent_temperature) + '° · 습도 ' +
+                cur.relative_humidity_2m + '% · 바람 ' + Math.round(cur.wind_speed_10m) + 'km/h</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="nfx-days">' + days + '</div>' +
+          '<p class="nfx-note">기온은 섭씨, 아래 숫자는 최고·최저와 강수확률입니다. ' +
+          '5분마다 자동 갱신 · 자료 Open-Meteo.</p>';
+        weatherLoadedAt = Date.now();
+      })
+      .catch(function () {
+        if (!silent) {
+          weatherEl.innerHTML = '<p class="nfx-empty">날씨를 불러오지 못했습니다. 다른 도시를 골라보세요.</p>';
+        }
+      });
+  }
+
+  loadWeather(CITIES[0].lat, CITIES[0].lon, CITIES[0].label);
+
+  setInterval(function () {
+    if (currentPlace) {
+      loadWeather(currentPlace.lat, currentPlace.lon, currentPlace.label, true);
+    }
+  }, REFRESH_MS);
+
+  /* 다른 탭에 있다 돌아오면 오래된 값을 바로 새로 받는다 */
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState !== "visible") return;
+    var now = Date.now();
+    if (now - oilLoadedAt > STALE_MS) loadOil();
+    if (currentPlace && now - weatherLoadedAt > STALE_MS) {
+      loadWeather(currentPlace.lat, currentPlace.lon, currentPlace.label, true);
+    }
+  });
 })();
 </script>
