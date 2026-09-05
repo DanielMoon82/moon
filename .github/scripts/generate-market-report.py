@@ -423,7 +423,7 @@ def write_homepage_article(date, stocks, slug):
   }}
   *{{box-sizing:border-box;}}
   body{{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);
-    font-weight:300;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;}}
+    font-weight:300;font-size:1rem;line-height:1.75;-webkit-font-smoothing:antialiased;}}
   a{{color:inherit;}}
   img{{max-width:100%;height:auto;}}
   .wrap{{max-width:760px;margin:0 auto;padding-inline:var(--pad);}}

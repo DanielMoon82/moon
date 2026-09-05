@@ -1,0 +1,246 @@
+<meta charset="utf-8">
+<title>영화 비광 — 제목이 이미 다 말하고 있다</title>
+<meta name="description" content="류승룡·하지원·김시아 주연 영화 비광. 제목이 된 화투 비광의 뜻부터 감독·출연진·러닝타임·개봉 성적, 갈리는 평까지 정리했습니다.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://danielmoon82.github.io/moon/posts/bigwang.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="영화 비광 — 제목이 이미 다 말하고 있다">
+<meta property="og:description" content="화투 비광의 뜻부터 출연진과 개봉 성적, 갈리는 평까지. 보러 가기 전 알아둘 것들.">
+<meta property="og:image" content="https://danielmoon82.github.io/moon/posts/images/bigwang-cover.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#E7EBF1;
+    --surface:#F4F6FA;
+    --surface-2:#DCE2EC;
+    --ink:#0F1729;
+    --ink-2:#3D4A63;
+    --ink-3:#6B7891;
+    --line:#C6CEDB;
+    --line-soft:#D6DCE6;
+    --accent:#B06A15;
+    --accent-bright:#C2761A;
+    --accent-soft:rgba(176,106,21,.11);
+
+    --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    --f-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+
+    --pad:clamp(20px,5vw,64px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1120;
+      --surface:#121A2C;
+      --surface-2:#1A2439;
+      --ink:#E9EEF7;
+      --ink-2:#A9B5C9;
+      --ink-3:#72809A;
+      --line:#26314A;
+      --line-soft:#1D2739;
+      --accent:#E8A33D;
+      --accent-bright:#F0B45C;
+      --accent-soft:rgba(232,163,61,.13);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1120;
+    --surface:#121A2C;
+    --surface-2:#1A2439;
+    --ink:#E9EEF7;
+    --ink-2:#A9B5C9;
+    --ink-3:#72809A;
+    --line:#26314A;
+    --line-soft:#1D2739;
+    --accent:#E8A33D;
+    --accent-bright:#F0B45C;
+    --accent-soft:rgba(232,163,61,.13);
+  }
+
+  /* 글자 기준 크기. 홈과 같은 값. */
+  html{font-size:18px;}
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-weight:300;
+    font-size:1rem;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--accent-bright);outline-offset:3px;border-radius:2px;}
+  img{max-width:100%;height:auto;}
+
+  .wrap{max-width:720px;margin:0 auto;padding-inline:var(--pad);}
+
+  .nav{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;}
+  .brand{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1rem;letter-spacing:-.02em;
+    text-decoration:none;color:var(--ink);
+  }
+  .back{
+    font-family:var(--f-mono);
+    font-size:.72rem;letter-spacing:.06em;
+    color:var(--ink-3);text-decoration:none;
+  }
+  .back:hover{color:var(--accent);}
+
+  .article{padding-block:clamp(40px,7vw,72px) clamp(56px,9vw,96px);}
+  .eyebrow{
+    font-family:var(--f-mono);
+    font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 14px;
+  }
+  h1{
+    font-family:var(--f-display);
+    font-weight:800;font-size:clamp(1.7rem,4.6vw,2.5rem);
+    line-height:1.28;letter-spacing:-.03em;
+    margin:0 0 16px;
+  }
+  .lede{margin:0 0 10px;font-size:1rem;color:var(--ink-2);}
+  .byline{
+    font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+    padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:34px;
+  }
+
+  .hero{
+    width:100%;border-radius:4px;border:1px solid var(--line-soft);
+    margin-bottom:38px;display:block;
+  }
+
+  h2{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1.3rem;letter-spacing:-.02em;
+    margin:46px 0 14px;
+  }
+  p{margin:0 0 18px;color:var(--ink-2);}
+  .article strong{color:var(--ink);font-weight:600;}
+
+  .spec{
+    list-style:none;margin:0 0 22px;padding:20px clamp(16px,3vw,24px);
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+  }
+  .spec li{
+    display:flex;gap:14px;padding:7px 0;
+    border-bottom:1px solid var(--line-soft);
+    font-size:.92rem;color:var(--ink-2);
+  }
+  .spec li:last-child{border-bottom:0;}
+  .spec b{
+    flex:0 0 88px;font-weight:500;color:var(--ink-3);
+    font-family:var(--f-mono);font-size:.74rem;letter-spacing:.04em;
+    padding-top:3px;text-transform:uppercase;
+  }
+
+  ul.bullets{margin:0 0 20px;padding-left:20px;color:var(--ink-2);}
+  ul.bullets li{margin-bottom:8px;}
+
+  figure{margin:32px 0;}
+  figure img{border-radius:4px;border:1px solid var(--line-soft);display:block;}
+  figcaption{
+    margin-top:10px;font-family:var(--f-mono);font-size:.7rem;
+    color:var(--ink-3);text-align:center;
+  }
+
+  .callout{
+    margin:30px 0;padding:18px clamp(16px,3vw,22px);
+    border-left:3px solid var(--accent);
+    background:var(--accent-soft);border-radius:0 3px 3px 0;
+  }
+  .callout p{margin:0;font-size:.9rem;color:var(--ink-2);}
+
+  .foot{
+    border-top:1px solid var(--line);background:var(--surface);
+    padding-block:32px 40px;margin-top:20px;
+  }
+  .foot p{margin:0;font-size:.8rem;color:var(--ink-3);}
+  .foot .sig{
+    font-family:var(--f-display);font-weight:600;font-size:1rem;
+    color:var(--ink);letter-spacing:-.02em;margin-bottom:4px;
+  }
+</style>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html">나의 투자 그리고 행복한 여행</a>
+    <a class="back" href="../index.html#life">← 목록으로</a>
+  </div>
+</nav>
+
+<main class="wrap article">
+  <p class="eyebrow">Film</p>
+  <h1>영화 비광 — 제목이 이미 다 말하고 있다</h1>
+  <p class="lede">류승룡·하지원·김시아가 나오는 《비광》. 보러 가기 전에 알아두면 좋은 것들을 정리했습니다.</p>
+  <p class="byline">2026.09.05 · 영화 · 스포일러 없음</p>
+
+  <img class="hero" src="./images/bigwang-cover.png" alt="영화 비광 소개">
+
+  <p>제목부터 짚고 넘어가는 게 좋겠습니다. 이 영화를 이해하는 가장 빠른 길이 거기 있습니다.</p>
+
+  <h2>비광이라는 패</h2>
+  <p>화투에서 비광은 12월 비(雨) 패의 광입니다. 우산을 쓴 인물과 개구리, 버드나무가 그려져 있습니다. 고스톱을 쳐 본 분이라면 이 패의 어정쩡한 위치를 아실 겁니다.</p>
+  <ul class="bullets">
+    <li>그냥 패도 아니고, 그렇다고 온전한 광도 아닙니다.</li>
+    <li>광 세 장을 모으면 3점인데, 그 셋 중에 비광이 끼어 있으면 2점으로 깎입니다.</li>
+    <li>그런데 5광을 완성하려면 비광이 반드시 있어야 합니다.</li>
+  </ul>
+  <p>이지원 감독은 가족들이 둘러앉아 고스톱 치는 모습에서 이 제목을 떠올렸다고 밝혔습니다. 있으면 값이 깎이는데 없으면 완성이 안 되는 패. 가족 안에서 그런 자리에 놓인 사람에 대한 이야기라는 걸, 제목이 이미 말해두고 있는 셈입니다.</p>
+
+  <h2>기본 정보</h2>
+  <ul class="spec">
+    <li><b>감독</b><span>이지원 — 전작 《미쓰백》(2018)</span></li>
+    <li><b>출연</b><span>류승룡(중구) · 하지원(남미) · 김시아(동주)</span></li>
+    <li><b>개봉</b><span>2026년 9월 2일</span></li>
+    <li><b>러닝타임</b><span>109분</span></li>
+    <li><b>등급</b><span>15세이상관람가</span></li>
+  </ul>
+
+  <h2>어떤 이야기인가</h2>
+  <p>톱스타 부부인 중구와 남미 앞에 어느 날 중구의 딸 동주가 나타나면서 두 사람은 파경을 맞습니다. 그로부터 8년 뒤, 동주가 충격적인 사건에 휘말리고, 갈라섰던 두 사람이 진실을 파헤치기 위해 다시 얽힙니다.</p>
+  <p>사건의 구체적인 전개는 적지 않겠습니다. 8년이라는 공백을 사이에 두고 인물들이 어떻게 달라져 있는지가 이 영화가 공들인 지점으로 보이는데, 그건 극장에서 확인하는 편이 낫습니다.</p>
+
+  <h2>배우</h2>
+  <ul class="bullets">
+    <li><strong>류승룡</strong> — 그동안 보여준 것 중 가장 투박하고 거친 쪽의 부성애라는 평이 많습니다.</li>
+    <li><strong>하지원</strong> — 담배를 피우고 욕을 하는, 기존 이미지와 거리가 먼 인물로 나옵니다.</li>
+    <li><strong>김시아</strong> — 이지원 감독의 《미쓰백》에 이어 다시 사연 많은 소녀 역입니다. 베테랑 둘 사이에서도 존재감이 밀리지 않는다는 평이 공통적입니다.</li>
+  </ul>
+  <p>감독과 김시아가 8년 만에 같은 자리에서 다시 만난 셈인데, 공교롭게도 영화 속 시간의 공백도 8년입니다.</p>
+
+  <h2>개봉 성적</h2>
+  <p>개봉 첫날인 9월 2일 1만 6,038명을 모으며 전체 박스오피스 4위, 한국 영화 중에서는 1위로 출발했습니다.</p>
+
+  <h2>평은 갈립니다</h2>
+  <p>호평과 아쉬움이 꽤 선명하게 나뉩니다. 양쪽 다 적어둡니다.</p>
+  <ul class="bullets">
+    <li><strong>좋다는 쪽</strong> — 배우들의 묵직한 연기, 인물과 공간의 질감을 살린 연출. 완성도 자체는 높다는 평가입니다.</li>
+    <li><strong>아쉽다는 쪽</strong> — 사건이 주는 긴장감이나 그것을 풀어내는 통쾌함이 기대만큼 크지 않다는 지적입니다. "좋은 패는 모였는데 부족한 한 방"(텐아시아), "패만 잔뜩 벌여놓고 수습은 못했다"(MTN뉴스)는 표현이 나왔습니다.</li>
+  </ul>
+  <p>공교롭게도 비판하는 쪽도 화투 비유를 쓰고 있습니다. 제목을 잘 지었다는 뜻이기도 하겠습니다.</p>
+
+  <div class="callout">
+    <p>정리하면, 배우의 연기를 보러 가는 영화에 가깝습니다. 촘촘한 스릴러의 쾌감을 기대하고 가면 갈릴 수 있다는 게 지금까지 나온 반응의 공통점입니다. 109분이라 부담은 크지 않습니다.</p>
+  </div>
+
+  <p class="byline">이 글은 개봉 정보와 공개된 평을 정리한 것이고, 직접 본 감상은 아닙니다. 보고 나서 남는 게 있으면 따로 적겠습니다.</p>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="sig">나의 투자 그리고 행복한 여행</p>
+    <p>영화 정보는 확인 시점(2026.09.05) 기준이며, 상영 일정·등급은 예매처 공지를 따릅니다.</p>
+  </div>
+</footer>
