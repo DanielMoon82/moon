@@ -132,7 +132,11 @@ def streak_phrase(label, sign, days):
 
 def analysis_paragraphs(s, m):
     """Two paragraphs per ticker: where the price sits, then what the flow
-    is doing. Interpretation stays inside what the numbers support."""
+    is doing. Interpretation stays inside what the numbers support.
+
+    수급(외국인·기관 순매수)은 거래가 확정된 뒤에야 집계되므로, 장 마감
+    직후에 글을 쓰면 아직 전일 확정치만 있다. 그 경우 언제 것인지 밝히지
+    않으면 전날 수급을 그날 수급으로 읽게 되므로 반드시 날짜를 적는다."""
     close = s["close"]
     direction = "상승" if s["change"] > 0 else ("하락" if s["change"] < 0 else "보합")
 
@@ -147,10 +151,18 @@ def analysis_paragraphs(s, m):
 
     fnv, inv = s.get("foreign_net_volume"), s.get("institution_net_volume")
     if isinstance(fnv, int) and isinstance(inv, int):
+        flow_date = s.get("flow_as_of_date")
+        price_date = s.get("as_of_date")
+        stale = bool(flow_date and price_date and flow_date != price_date)
+        when = f"{flow_date} 확정치 기준으로는 " if stale else "수급에서는 "
         bits = [
-            f"수급에서는 외국인이 {fmt_int(abs(fnv))}주 {flow_word(fnv)}, "
+            f"{when}외국인이 {fmt_int(abs(fnv))}주 {flow_word(fnv)}, "
             f"기관이 {fmt_int(abs(inv))}주 {flow_word(inv)}했습니다."
         ]
+        if stale:
+            bits.append(
+                "당일 수급은 거래 확정 이후에 집계되므로 이 글에는 아직 반영되지 않았습니다."
+            )
         streaks = [
             phrase for phrase in (
                 streak_phrase("외국인", *m["foreign_streak"]),
@@ -587,6 +599,14 @@ def main():
 
     if any(not isinstance(s.get("close"), int) for s in stocks):
         print("incomplete price data, skipping report", file=sys.stderr)
+        return 0
+
+    # 휴장일에는 stocks-kr.json 이 직전 거래일 값을 그대로 들고 있다. 그대로
+    # 돌리면 지난 리포트를 오늘 글인 양 다시 쓰게 되므로, 데이터 날짜가
+    # 오늘이 아니면 아무것도 하지 않는다. --force 로 과거분을 다시 만들 수 있다.
+    today = datetime.now(KST).strftime("%Y-%m-%d")
+    if date != today and "--force" not in sys.argv:
+        print(f"데이터가 {date} 기준이라 오늘({today}) 장이 열리지 않았다고 보고 건너뜁니다.")
         return 0
 
     slug = f"market-{date}"

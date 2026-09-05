@@ -2,9 +2,10 @@ name: Daily market report
 
 on:
   schedule:
-    # 18:30 KST on weekdays - after the 17:00 KST stock fetch has landed
-    # the confirmed investor-flow numbers for the day
-    - cron: "30 9 * * 1-5"
+    # 16:00 KST on weekdays — 장 마감(15:30) 30분 뒤.
+    # 이 시각에는 외국인·기관 수급이 아직 확정 전이라 전일 확정치가 실린다.
+    # 생성기가 그 사실을 글에 밝히므로 전날 수급을 그날 것으로 읽지 않는다.
+    - cron: "0 7 * * 1-5"
   workflow_dispatch:
 
 permissions:

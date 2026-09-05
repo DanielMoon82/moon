@@ -13,7 +13,7 @@ Every number in the prose comes from the JSON; nothing is hard-coded. Run by
 import json
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -710,6 +710,16 @@ def main():
 
     if not indices or len(sectors) < 6 or not date:
         print("incomplete US market data, skipping report", file=sys.stderr)
+        return 0
+
+    # 미국 휴장일에는 us-market.json 이 직전 거래일 값을 그대로 들고 있다.
+    # 그대로 돌리면 지난 리포트를 새 글인 양 다시 쓰게 되므로, 데이터 날짜가
+    # 직전 영업일(한국 시각 기준 어제)이 아니면 건너뛴다.
+    # --force 로 과거분을 다시 만들 수 있다.
+    kst_today = datetime.now(timezone(timedelta(hours=9))).date()
+    if (kst_today - datetime.strptime(date, "%Y-%m-%d").date()).days > 3 \
+            and "--force" not in sys.argv:
+        print(f"데이터가 {date} 기준이라 최근 미국장이 열리지 않았다고 보고 건너뜁니다.")
         return 0
 
     slug = f"us-market-{date}"

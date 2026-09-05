@@ -2,9 +2,9 @@ name: US market report
 
 on:
   schedule:
-    # 23:00 UTC on weekdays — US close is 20:00 UTC (EDT) / 21:00 UTC (EST),
-    # so this clears both and lands at 08:00 KST the next morning.
-    - cron: "0 23 * * 1-5"
+    # 22:00 UTC on weekdays = 다음 날 07:00 KST.
+    # 미국장 마감은 20:00 UTC(서머타임) / 21:00 UTC(표준시)라 둘 다 지난 뒤다.
+    - cron: "0 22 * * 1-5"
   workflow_dispatch:
 
 permissions:
