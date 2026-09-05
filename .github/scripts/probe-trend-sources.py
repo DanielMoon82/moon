@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-"""Probe round 2: find where each portal's keyword list actually lives.
+"""Probe round 3 — narrowed to the three portals still unsolved.
 
-Round 1 showed all four portals answer 200 from a runner, but a head-of-body
-snippet is all boilerplate. This round applies per-site heuristics and prints
-only the matched regions, so the real markup/JSON shape can be read off the
-run log and turned into a parser. Writes nothing.
+Settled so far (round 2):
+  네이트  https://www.nate.com/js/data/jsonLiveKeywordDataV1.js -> JSON 배열
+  구글    trends.google.com RSS -> <title>
 
-Delete once fetch-portal-trends.py is settled.
+Still open: 줌(리스트 마크업), 디시(링크 정규식), 다음(자바스크립트 렌더라 주소 불명).
+Writes nothing. Delete once fetch-portal-trends.py is settled.
 """
-import json
 import re
 import sys
 
@@ -20,122 +19,89 @@ HEADERS = {
         "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
     ),
     "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
+    "Referer": "https://www.daum.net/",
 }
 TIMEOUT = 20
 
 
-def get(url, **kw):
-    r = requests.get(url, headers=HEADERS, timeout=TIMEOUT, **kw)
+def get(url):
+    r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
     r.raise_for_status()
-    return r
-
-
-def show(title, items):
-    print(f"    -> {title}: {items[:12]}")
-
-
-def probe_nate():
-    print("\n### 네이트")
-    for url in ("https://www.nate.com/js/data/jsonLiveKeywordDataV1.js",
-                "https://www.nate.com/js/data/jsonLiveKeywordDataV1.js?v=1"):
-        try:
-            r = get(url)
-            print(f"  [{r.status_code}] {url}  {len(r.text)}자")
-            print(f"    raw: {r.text[:500]!r}")
-        except Exception as exc:  # noqa: BLE001
-            print(f"  [실패] {url}: {exc}")
-    try:
-        html = get("https://www.nate.com/").text
-        # 실검 영역을 감싸는 클래스 후보를 찾는다
-        for pat in (r'class="[^"]*rank[^"]*"', r'class="[^"]*keyword[^"]*"',
-                    r'class="[^"]*issue[^"]*"'):
-            hits = sorted(set(re.findall(pat, html)))[:8]
-            if hits:
-                show(f"nate.com {pat}", hits)
-    except Exception as exc:  # noqa: BLE001
-        print(f"  [실패] nate.com: {exc}")
-
-
-def probe_daum():
-    print("\n### 다음")
-    try:
-        html = get("https://www.daum.net/").text
-    except Exception as exc:  # noqa: BLE001
-        print(f"  [실패] {exc}")
-        return
-    for pat in (r'class="[^"]*(?:rank|keyword|trend|issue)[^"]*"',):
-        hits = sorted(set(re.findall(pat, html)))[:14]
-        show("daum 클래스", hits)
-    # 페이지에 박힌 JSON 후보
-    for m in re.finditer(r'(?:window\.\w+|var\s+\w+)\s*=\s*(\{.{0,200})', html):
-        print(f"    json 후보: {m.group(1)[:200]!r}")
-        break
-    idx = html.find("실시간")
-    if idx != -1:
-        around = re.sub(r"\s+", " ", html[idx - 300:idx + 500])
-        print(f"    '실시간' 주변: {around!r}")
+    return r.text
 
 
 def probe_zum():
-    print("\n### 줌")
+    print("\n### 줌 — issue-word-list 안쪽")
     try:
-        html = get("https://zum.com/").text
+        html = get("https://zum.com/")
     except Exception as exc:  # noqa: BLE001
-        print(f"  [실패] {exc}")
+        print(f"  실패: {exc}")
         return
-    m = re.search(r'id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
-    if m:
-        try:
-            data = json.loads(m.group(1))
-            print(f"    __NEXT_DATA__ 최상위 키: {list(data.keys())}")
-            page = (data.get("props") or {}).get("pageProps") or {}
-            print(f"    pageProps 키: {list(page.keys())[:25]}")
-            # 이슈/키워드로 보이는 가지를 찾아 본다
-            def walk(node, path=""):
-                if isinstance(node, dict):
-                    for k, v in node.items():
-                        if re.search(r"issue|keyword|rank|trend", k, re.I):
-                            print(f"    후보 {path}/{k}: {json.dumps(v, ensure_ascii=False)[:300]}")
-                        walk(v, path + "/" + k)
-                elif isinstance(node, list):
-                    for v in node[:3]:
-                        walk(v, path + "[]")
-            walk(page)
-        except Exception as exc:  # noqa: BLE001
-            print(f"    __NEXT_DATA__ 파싱 실패: {exc}")
-    else:
-        print("    __NEXT_DATA__ 없음")
-        idx = html.find("이슈")
-        if idx != -1:
-            around = re.sub(r"\s+", " ", html[idx - 200:idx + 400])
-            print(f"    '이슈' 주변: {around!r}")
+    i = html.find("issue-word-list")
+    if i == -1:
+        print("  issue-word-list 없음")
+        return
+    chunk = html[i:i + 3000]
+    print(f"  원문 1200자: {chunk[:1200]!r}")
+    # 리스트 항목의 텍스트만 뽑아 본다
+    items = re.findall(r"<li[^>]*>(.*?)</li>", chunk, re.S)[:12]
+    for it in items[:8]:
+        print(f"    li: {re.sub(r'<[^>]+>', ' ', it).strip()[:80]!r}")
 
 
 def probe_dc():
-    print("\n### 디시 실시간 베스트")
+    print("\n### 디시 — 링크 정규식 넓혀서")
     try:
-        html = get("https://gall.dcinside.com/board/lists/?id=dcbest").text
+        html = get("https://gall.dcinside.com/board/lists/?id=dcbest")
     except Exception as exc:  # noqa: BLE001
-        print(f"  [실패] {exc}")
+        print(f"  실패: {exc}")
         return
-    titles = re.findall(r'<a href="/board/view/\?id=dcbest[^"]*"[^>]*>([^<]{2,80})</a>', html)
-    titles = [t.strip() for t in titles if t.strip()]
-    show("글 제목", titles)
-    print(f"    총 {len(titles)}건")
+    print(f"  'board/view' 등장 횟수: {html.count('board/view')}")
+    i = html.find("board/view")
+    if i != -1:
+        print(f"  주변 원문: {html[max(0, i - 400):i + 400]!r}")
+    loose = re.findall(r'<a[^>]+href="[^"]*board/view[^"]*"[^>]*>(.*?)</a>', html, re.S)
+    cleaned = [re.sub(r"<[^>]+>|\s+", " ", t).strip() for t in loose]
+    cleaned = [t for t in cleaned if 2 <= len(t) <= 80][:12]
+    print(f"  -> 제목 후보: {cleaned}")
 
 
-def probe_google():
-    print("\n### 구글 트렌드 RSS")
+def probe_daum():
+    print("\n### 다음 — 실검 주소 찾기")
+    candidates = [
+        "https://tab.search.daum.net/api/trend/realtime",
+        "https://tab.search.daum.net/aa/rt/keyword",
+        "https://www.daum.net/api/trend",
+        "https://search.daum.net/qsearch?w=tot&col=trend",
+        "https://m.daum.net/",
+    ]
+    for url in candidates:
+        try:
+            r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+            body = r.text
+            print(f"  [{r.status_code}] {url}  {len(body)}자  "
+                  f"{r.headers.get('content-type')}")
+            print(f"    raw: {body[:260]!r}")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  [실패] {url}: {exc}")
+
+    # 홈에 박힌 스크립트 주소 중 트렌드/실검 관련이 있는지
     try:
-        xml = get("https://trends.google.com/trending/rss?geo=KR").text
-        titles = re.findall(r"<title>(.*?)</title>", xml, re.S)[1:]
-        show("키워드", [t.strip() for t in titles])
+        html = get("https://www.daum.net/")
+        srcs = re.findall(r'src="([^"]+)"', html)
+        hit = [s for s in srcs if re.search(r"trend|rank|keyword|issue", s, re.I)]
+        print(f"  스크립트 후보: {hit[:10]}")
+        for key in ("실시간", "트렌드", "급상승"):
+            j = html.find(key)
+            if j != -1:
+                around = re.sub(r"\s+", " ", html[max(0, j - 250):j + 350])
+                print(f"  '{key}' 주변: {around!r}")
     except Exception as exc:  # noqa: BLE001
-        print(f"  [실패] {exc}")
+        print(f"  홈 조회 실패: {exc}")
 
 
 def main():
-    for fn in (probe_nate, probe_daum, probe_zum, probe_dc, probe_google):
+    for fn in (probe_zum, probe_dc, probe_daum):
         try:
             fn()
         except Exception as exc:  # noqa: BLE001
