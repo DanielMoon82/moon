@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-"""Probe 5차 — 전체 메뉴(gnb.xml)를 열어 CMA 화면을 찾는다.
+"""Probe 6차 — 메타 파일에서 CMA 서비스와 DTO 를 찾는다.
 
-4차에서 알아낸 것
-  - main.xml 과 main.js 에서 실제 화면 경로 62개를 얻었다. 회사공시(compann)
-    아래에 금리 화면들이 있다: DISCustDpsUseRate(고객예탁금 이용료율),
-    DISCompCdtTrdIntRate(신용거래 이자율), DISCompDpsBndMrtIntRate 등.
-  - 그런데 그 화면들을 직접 받으면 전부 오류로 튕겼다. main.xml 은 같은
-    리퍼러로 열렸으니 리퍼러 문제만은 아니다. 왜 튕기는지부터 본다.
-  - 목록에 /wq/com/gnb.xml 이 있다. 전체 메뉴라 여기에 CMA 화면이 있을 것이다.
+5차에서 알아낸 것 (4차의 판단을 뒤집는다)
+  - /wq/compann/*.xml 은 사실 정상으로 열린다(200 application/xml). 다만
+    1,700자짜리 껍데기고 내용은 자바스크립트가 채운다. 4차에서 '튕겼다'고
+    본 건 내 걸러내기가 잘못된 것이었다.
+  - gnb.xml(27KB)에도 CMA 는 없고 경로도 2개뿐이다. 메뉴는 /js/menu/gnb.js 와
+    /js/menu/service.js 가 만든다.
+  - 화면들이 공통으로 부르는 파일이 보인다:
+      /js/com/callProframe.js   프레임 호출을 만드는 곳
+      /js/meta/disMetaDtoInfo.js, /js/meta/disMeta.js   DTO 메타 정보
+      /js/menu/service.js       메뉴와 서비스 대응
+    서비스 이름과 DTO 모양이 여기 적혀 있을 것이다.
 
 아무것도 쓰지 않는다.
 """
@@ -16,74 +20,71 @@ import sys
 
 import requests
 
-TIMEOUT = 25
+TIMEOUT = 30
 BASE = "https://dis.kofia.or.kr"
-ENTRY = BASE + "/websquare/index.jsp?w2xPath="
 S = requests.Session()
 S.headers.update({
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                    "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"),
     "Accept-Language": "ko-KR,ko;q=0.9",
-    "Referer": ENTRY + "/wq/main/main.xml",
+    "Referer": BASE + "/websquare/index.jsp?w2xPath=/wq/main/main.xml",
 })
 
+FILES = [
+    "/js/menu/service.js",
+    "/js/menu/gnb.js",
+    "/js/meta/disMeta.js",
+    "/js/meta/disMetaDtoInfo.js",
+    "/js/com/callProframe.js",
+]
 
-def get(url, **kw):
+
+def get(path):
     try:
-        r = S.get(url, timeout=TIMEOUT, **kw)
-        return r
+        r = S.get(BASE + path, timeout=TIMEOUT)
     except Exception as exc:  # noqa: BLE001
-        print(f"    실패: {exc}", flush=True)
-        return None
+        print(f"  [{path}] 실패: {exc}")
+        return ""
+    print(f"  [{path}] {r.status_code} {len(r.text)}자")
+    return r.text if r.status_code == 200 else ""
+
+
+def contexts(body, pattern, width=260, limit=8):
+    out = []
+    for m in re.finditer(pattern, body, re.I):
+        s = max(0, m.start() - width)
+        out.append(re.sub(r"\s+", " ", body[s:m.start() + width]))
+        if len(out) >= limit:
+            break
+    return out
 
 
 def main():
-    print("### 1. 하위 화면이 왜 튕기는지 그대로 본다", flush=True)
-    for p in ("/wq/compann/DISCustDpsUseRate.xml",
-              "/wq/compann/DISCompCdtTrdIntRate.xml",
-              "/wq/com/gnb.xml"):
-        r = get(BASE + p)
-        if r is not None:
-            print(f"  [{p}] {r.status_code} {r.headers.get('content-type','?')} "
-                  f"{len(r.text)}자 -> {r.url}", flush=True)
+    print("### 1. 메타·메뉴 파일을 받는다")
+    bodies = {p: get(p) for p in FILES}
 
-    print("\n### 2. index.jsp 를 먼저 거친 뒤 다시 받아 본다", flush=True)
-    for p in ("/wq/compann/DISCustDpsUseRate.xml",):
-        pre = get(ENTRY + p)
-        print(f"  [index.jsp {p}] {pre.status_code if pre else '-'} "
-              f"{len(pre.text) if pre else 0}자", flush=True)
-        S.headers["Referer"] = ENTRY + p
-        r = get(BASE + p)
-        if r is not None:
-            print(f"  [다시 {p}] {r.status_code} {len(r.text)}자 -> {r.url}", flush=True)
-            if r.status_code == 200 and "error" not in r.url:
-                svc = sorted(set(re.findall(r"pfmSvcName[^A-Za-z0-9_]{0,8}([A-Za-z0-9_]{4,})", r.text)))
-                print(f"      서비스={svc}", flush=True)
+    print("\n### 2. 각 파일에서 CMA 가 나오는 자리")
+    for p, body in bodies.items():
+        if not body:
+            continue
+        hits = contexts(body, r"CMA|종합자산관리|씨엠에이")
+        print(f"\n  --- {p} : {len(hits)}건 ---")
+        for h in hits:
+            print(f"    ...{h}")
 
-    print("\n### 3. 전체 메뉴(gnb.xml)", flush=True)
-    S.headers["Referer"] = ENTRY + "/wq/main/main.xml"
-    r = get(BASE + "/wq/com/gnb.xml")
-    if r is None or r.status_code != 200:
-        print("  못 받음", flush=True)
-        return 0
-    body = r.text
-    print(f"  {len(body)}자", flush=True)
-    # 메뉴는 보통 '이름'과 'w2xPath' 가 붙어 다닌다. 둘 다 뽑아 나란히 본다.
-    paths = re.findall(r"(/wq/[A-Za-z0-9_/.\-]+\.xml)", body)
-    print(f"  경로 {len(set(paths))}개", flush=True)
-    for p in sorted(set(paths)):
-        print(f"    {p}", flush=True)
-    print("\n  --- CMA 가 나오는 자리 ---", flush=True)
-    hits = 0
-    for m in re.finditer(r"CMA|씨엠에이|종합자산관리", body):
-        s = max(0, m.start() - 300)
-        print("    ..." + re.sub(r"\s+", " ", body[s:m.start() + 300]), flush=True)
-        hits += 1
-        if hits >= 6:
-            break
-    if not hits:
-        print("    (없음)", flush=True)
-        print(f"\n  앞부분 2000자:\n{body[:2000]}", flush=True)
+    print("\n### 3. 파일에 적힌 서비스 이름 (DIS로 시작하는 것)")
+    for p, body in bodies.items():
+        if not body:
+            continue
+        names = sorted(set(re.findall(r"\b(DIS[A-Za-z0-9_]{4,})\b", body)))
+        cma = [n for n in names if "cma" in n.lower()]
+        print(f"  {p}: 총 {len(names)}개, CMA 관련 {cma}")
+        if p.endswith("service.js") or p.endswith("disMetaDtoInfo.js"):
+            print(f"    앞 40개: {names[:40]}")
+
+    print("\n### 4. 껍데기 화면 하나를 통째로 (구조 파악용)")
+    body = get("/wq/compann/DISCustDpsUseRate.xml")
+    print(body[:1800])
     return 0
 
 
