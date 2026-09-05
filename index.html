@@ -1299,6 +1299,10 @@
     var vals = points.map(function (p) { return p.v; });
     var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
     if (typeof base === 'number') { lo = Math.min(lo, base); hi = Math.max(hi, base); }
+    // 고·저는 15분 표본이 아니라 장중 실제 고저다. 축 범위에 넣지 않으면
+    // 아래에 적힌 고가가 그래프 밖의 값이 되어 버린다.
+    if (typeof idx.high === 'number') hi = Math.max(hi, idx.high);
+    if (typeof idx.low === 'number') lo = Math.min(lo, idx.low);
     var span = (hi - lo) || Math.max(hi * 0.001, 0.1);
     lo -= span * 0.12; hi += span * 0.12;
 
