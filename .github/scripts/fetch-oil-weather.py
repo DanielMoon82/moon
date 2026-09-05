@@ -15,7 +15,6 @@ the instant the page opens, before any network call finishes.
 Run by .github/workflows/fetch-oil-weather.yml. Any failure leaves the last
 known-good file in place and exits 0 — a stale price beats an empty card.
 """
-import io
 import json
 import sys
 from datetime import datetime, timedelta, timezone
@@ -30,17 +29,32 @@ WEATHER_JSON = ROOT / "data" / "weather.json"
 # 페이지의 기간 버튼이 최대 1년이라 그만큼만 담는다.
 KEEP_DAYS = 400
 
-SYMBOLS = [
-    ("wti", "cl.f", "WTI", "USD/배럴"),
-    ("brent", "cb.f", "브렌트", "USD/배럴"),
+# 소스 우선순위: FRED -> Yahoo.
+# Stooq 는 쓰지 않는다. GitHub Actions IP 로 부르면 시세 CSV 대신
+# "this site requires javascript to verify your browser" 봇 검사 페이지를
+# 돌려준다(실행 로그로 확인). 브라우저에서 중계를 거쳐 받던 이유가 이것이고,
+# 그래서 서버에서는 봇 검사가 없는 소스로 바꿨다.
+#   FRED  : 미국 세인트루이스 연준 공개 CSV. 키가 필요 없고 차단하지 않는다.
+#   Yahoo : FRED 가 쉬는 날(공표 지연)을 메우는 예비 소스.
+SERIES = [
+    {"key": "wti", "name": "WTI", "unit": "USD/배럴",
+     "fred": "DCOILWTICO", "yahoo": "CL=F"},
+    {"key": "brent", "name": "브렌트", "unit": "USD/배럴",
+     "fred": "DCOILBRENTEU", "yahoo": "BZ=F"},
 ]
-FX_SYMBOL = "usdkrw"
+FX = {"key": "usdkrw", "name": "USD/KRW", "fred": "DEXKOUS", "yahoo": "KRW=X"}
 
-STOOQ_CSV = "https://stooq.com/q/d/l/?s={sym}&i=d"
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; moon-oil-bot/1.0)"}
+FRED_CSV = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}&cosd={start}"
+YAHOO_CHART = ("https://query1.finance.yahoo.com/v8/finance/chart/{sym}"
+               "?range=2y&interval=1d")
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (compatible; moon-oil-bot/1.0)",
+    "Accept": "text/csv,application/json;q=0.9,*/*;q=0.8",
+}
 TIMEOUT = 20
 
-# 히어로 사진과 무관하게, 이 사이트가 기본으로 보여주는 도시.
+# 사이트가 기본으로 보여 주는 도시.
 DEFAULT_CITY = {"label": "인천공항", "lat": 37.4602, "lon": 126.4407, "tz": "Asia/Seoul"}
 FORECAST_URL = (
     "https://api.open-meteo.com/v1/forecast"
@@ -51,20 +65,20 @@ FORECAST_URL = (
 )
 
 
-def fetch_series(symbol):
-    """Stooq 일봉 CSV -> [{d, c}]. 헤더 이름으로 열을 찾아 순서가 바뀌어도 견딘다."""
-    resp = requests.get(STOOQ_CSV.format(sym=symbol), headers=HEADERS, timeout=TIMEOUT)
+def from_fred(sid):
+    """FRED 공개 CSV. 결측치는 '.' 로 온다. 헤더 이름이 예전엔 DATE,
+    지금은 observation_date 라 둘 다 받는다."""
+    start = (datetime.now(timezone.utc) - timedelta(days=KEEP_DAYS + 30)).strftime("%Y-%m-%d")
+    resp = requests.get(FRED_CSV.format(sid=sid, start=start), headers=HEADERS, timeout=TIMEOUT)
     resp.raise_for_status()
-    text = resp.text.strip()
-    if not text or text.lower().startswith("no data"):
-        raise ValueError(f"빈 응답: {text[:60]!r}")
-
-    lines = text.splitlines()
+    lines = resp.text.strip().splitlines()
+    if len(lines) < 2:
+        raise ValueError(f"행이 없음: {resp.text[:80]!r}")
     head = [h.strip().lower() for h in lines[0].split(",")]
-    try:
-        di, ci = head.index("date"), head.index("close")
-    except ValueError as exc:
-        raise ValueError(f"열 이름을 찾지 못함: {head}") from exc
+    di = next((i for i, h in enumerate(head) if h in ("observation_date", "date")), None)
+    if di is None or len(head) < 2:
+        raise ValueError(f"열 이름을 찾지 못함: {head[:3]}")
+    ci = 1 if di == 0 else 0
 
     points = []
     for line in lines[1:]:
@@ -72,14 +86,60 @@ def fetch_series(symbol):
         if len(cols) <= max(di, ci):
             continue
         try:
-            close = float(cols[ci])
+            points.append({"d": cols[di].strip(), "c": round(float(cols[ci]), 2)})
         except ValueError:
-            continue  # 거래 없는 날은 'N/D' 로 온다
-        points.append({"d": cols[di], "c": round(close, 2)})
-
+            continue  # 휴일은 '.'
     if not points:
-        raise ValueError("쓸 수 있는 행이 없음")
-    return points[-KEEP_DAYS:]
+        raise ValueError("쓸 수 있는 값이 없음")
+    return points
+
+
+def from_yahoo(symbol):
+    """야후 차트 JSON. FRED 가 아직 공표하지 않은 최근 며칠을 메운다."""
+    resp = requests.get(YAHOO_CHART.format(sym=symbol), headers=HEADERS, timeout=TIMEOUT)
+    resp.raise_for_status()
+    payload = resp.json()
+    result = ((payload.get("chart") or {}).get("result") or [None])[0]
+    if not result:
+        raise ValueError("result 없음")
+    stamps = result.get("timestamp") or []
+    closes = (((result.get("indicators") or {}).get("quote") or [{}])[0]).get("close") or []
+    points = []
+    for ts, close in zip(stamps, closes):
+        if close is None:
+            continue
+        day = datetime.fromtimestamp(ts, timezone.utc).strftime("%Y-%m-%d")
+        points.append({"d": day, "c": round(float(close), 2)})
+    if not points:
+        raise ValueError("종가가 비어 있음")
+    return points
+
+
+def merge(primary, extra):
+    """두 소스를 날짜로 합친다. 먼저 온 소스(FRED)의 값을 우선한다."""
+    by_day = {p["d"]: p["c"] for p in (extra or [])}
+    by_day.update({p["d"]: p["c"] for p in (primary or [])})
+    return [{"d": d, "c": by_day[d]} for d in sorted(by_day)][-KEEP_DAYS:]
+
+
+def fetch_series(spec):
+    """소스를 순서대로 시도하고 어디서 받았는지 로그에 남긴다."""
+    got, errors = {}, []
+    for label, fn, arg in (("FRED", from_fred, spec.get("fred")),
+                           ("Yahoo", from_yahoo, spec.get("yahoo"))):
+        if not arg:
+            continue
+        try:
+            got[label] = fn(arg)
+            print(f"  [ok] {spec['name']} <- {label}: {len(got[label])}일, "
+                  f"최근 {got[label][-1]['d']} {got[label][-1]['c']}")
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"{label}: {exc}")
+    if not got:
+        raise ValueError(" | ".join(errors) or "소스 없음")
+    if errors:
+        print(f"  [warn] {spec['name']}: " + " | ".join(errors), file=sys.stderr)
+    return merge(got.get("FRED"), got.get("Yahoo"))
 
 
 def load(path):
@@ -99,32 +159,30 @@ def write(path, payload):
 
 def do_oil():
     series, failures = {}, []
-    for key, sym, name, unit in SYMBOLS:
+    for spec in SERIES:
         try:
-            pts = fetch_series(sym)
-            series[key] = {"name": name, "unit": unit, "points": pts}
-            print(f"  [ok] {name}: {len(pts)}일, 최근 {pts[-1]['d']} {pts[-1]['c']}")
+            pts = fetch_series(spec)
+            series[spec["key"]] = {"name": spec["name"], "unit": spec["unit"], "points": pts}
         except Exception as exc:  # noqa: BLE001
-            failures.append(f"{name}: {exc}")
+            failures.append(f"{spec['name']}: {exc}")
 
     fx = None
     try:
-        fx_pts = fetch_series(FX_SYMBOL)
-        fx = fx_pts[-1]["c"]
-        print(f"  [ok] USD/KRW: {fx}")
+        fx = fetch_series(FX)[-1]["c"]
     except Exception as exc:  # noqa: BLE001
         failures.append(f"USD/KRW: {exc}")
 
     if failures:
         print("  [warn] " + " | ".join(failures), file=sys.stderr)
 
+    old = load(OIL_JSON) or {}
     if not series:
         print("유가: 전부 실패 — 기존 파일 유지", file=sys.stderr)
         return False
 
     # 한 종목만 실패했다면 직전 파일의 값을 살려 카드가 비지 않게 한다.
-    old = load(OIL_JSON) or {}
-    for key in ("wti", "brent"):
+    for spec in SERIES:
+        key = spec["key"]
         if key not in series and (old.get("series") or {}).get(key):
             series[key] = old["series"][key]
             print(f"  [keep] {key}: 이번엔 못 받아 직전 값을 유지")
