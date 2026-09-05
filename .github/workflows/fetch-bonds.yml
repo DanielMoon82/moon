@@ -1,0 +1,43 @@
+name: Fetch bond yields (KR)
+
+on:
+  schedule:
+    # 한국은행 시장금리는 다음 영업일 아침에 확정 공표된다.
+    # 평일 08:40 KST(전일 23:40 UTC)와 16:40 KST(07:40 UTC) 두 번 받는다.
+    - cron: "40 23 * * 0-4"
+    - cron: "40 7 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch bond yields
+        # 키는 없어도 돌아간다(sample 키). 있으면 한 번에 더 많이 받는다.
+        env:
+          ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+        run: python3 .github/scripts/fetch-bonds.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/bonds.json
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update bond yields"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
