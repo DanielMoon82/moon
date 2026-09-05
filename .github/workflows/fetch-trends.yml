@@ -1,4 +1,4 @@
-name: Fetch Google Trends (KR)
+name: Fetch portal trends (KR)
 
 on:
   schedule:
@@ -15,13 +15,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Fetch trends
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch Google Trends
         run: python3 .github/scripts/fetch-google-trends.py
+
+      - name: Fetch portal trends
+        run: python3 .github/scripts/fetch-portal-trends.py
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/trends-kr.json
-          git diff --staged --quiet || git commit -m "chore: update Google Trends KR data"
+          if [ -f data/portal-trends.json ]; then git add data/portal-trends.json; fi
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update portal trends"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
