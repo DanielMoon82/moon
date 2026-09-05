@@ -254,47 +254,6 @@
     display:block;
   }
 
-  /* ---------- stats ---------- */
-  .stats{
-    border-bottom:1px solid var(--line);
-    background:var(--surface);
-  }
-  .stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:1px;
-    background:var(--line-soft);
-    border-inline:1px solid var(--line-soft);
-  }
-  .stat{
-    background:var(--surface);
-    padding:26px 22px 24px;
-    display:flex;flex-direction:column;gap:6px;
-  }
-  .stat dt{
-    font-family:var(--f-mono);
-    font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--ink-3);
-  }
-  .stat dd{
-    margin:0;
-    font-family:var(--f-display);
-    font-weight:600;
-    font-size:clamp(1.7rem,3.6vw,2.5rem);
-    line-height:1;
-    letter-spacing:-.03em;
-    font-variant-numeric:tabular-nums;
-  }
-  .stat dd small{
-    font-family:var(--f-body);
-    font-weight:400;
-    font-size:.8rem;
-    letter-spacing:0;
-    color:var(--ink-3);
-    margin-left:4px;
-  }
-  @media (max-width:760px){ .stats-grid{grid-template-columns:repeat(2,1fr);} }
-
   /* ---------- section frame ---------- */
   .section{padding-block:clamp(60px,9vw,104px);}
   .section-head{
@@ -797,17 +756,6 @@
     </div>
   </div>
 </header>
-
-<section class="stats" aria-label="누적 기록">
-  <div class="wrap">
-    <dl class="stats-grid">
-      <div class="stat"><dt>방문 국가</dt><dd>14<small>개국</small></dd></div>
-      <div class="stat"><dt>도시</dt><dd>38<small>곳</small></dd></div>
-      <div class="stat"><dt>누적 비행</dt><dd>186,420<small>km</small></dd></div>
-      <div class="stat"><dt>여행 일수</dt><dd>271<small>일</small></dd></div>
-    </dl>
-  </div>
-</section>
 
 <main>
   <section class="section wrap" id="gear">
