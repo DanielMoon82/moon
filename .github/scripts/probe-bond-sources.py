@@ -1,107 +1,41 @@
 #!/usr/bin/env python3
-"""Probe candidate sources for Korean benchmark bond yields.
+"""Probe round 2 — read the real ECOS item codes for 시장금리(일별).
 
-Same reason as the portal probe: no documented public feed, and this sandbox
-has no outbound network. Fetch the candidates from a runner and print what
-comes back, so the parser is written against the real response instead of a
-guess. Writes nothing. Delete once fetch-bonds.py is settled.
-
-Looking for: 국고채 만기별, 회사채 등급별(AA-/BBB-), CD·CP 등 단기물.
+Round 1 confirmed ECOS answers with real data (국고채(1년) 3.458 on 2026-09-01)
+and that Naver's daily-quote pages parse. What is still unknown is the exact
+item code for each maturity/grade, and guessing those would silently fetch the
+wrong series. This asks ECOS for the list. Writes nothing.
 """
-import re
+import json
 import sys
 
 import requests
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
-    ),
-    "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
-}
+BASE = "https://ecos.bok.or.kr/api"
+KEY = "sample"
 TIMEOUT = 20
 
 
-def txt(s, n=600):
-    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s))[:n]
-
-
-def probe_naver_marketindex():
-    """네이버 금융 시장지표 — 국내 금리 묶음이 한 페이지에 있다."""
-    print("\n### 네이버 시장지표 (국내금리)")
-    url = "https://finance.naver.com/marketindex/"
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
-        r.encoding = "euc-kr"
-        html = r.text
-    except Exception as exc:  # noqa: BLE001
-        print(f"  실패: {exc}")
-        return
-    print(f"  [{r.status_code}] {len(html)}자")
-    i = html.find("국내금리")
-    if i == -1:
-        i = html.find("interest")
-    if i != -1:
-        print(f"  '국내금리' 주변 원문: {html[i - 200:i + 2200]!r}")
-    else:
-        print("  국내금리 영역을 못 찾음")
-
-
-def probe_naver_daily(code, label):
-    """만기별 일별 시세 페이지."""
-    url = f"https://finance.naver.com/marketindex/interestDailyQuote.naver?marketindexCd={code}"
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
-        r.encoding = "euc-kr"
-        html = r.text
-    except Exception as exc:  # noqa: BLE001
-        print(f"  [실패] {label} ({code}): {exc}")
-        return
-    rows = re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S)[:4]
-    print(f"  [{r.status_code}] {label} ({code}) {len(html)}자")
-    for row in rows:
-        cells = [txt(c, 40).strip() for c in re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)]
-        if cells:
-            print(f"      {cells}")
-
-
-def probe_kofia():
-    """금융투자협회 채권정보센터 — 최종호가수익률의 원본 기관."""
-    print("\n### 금융투자협회 채권정보센터")
-    for url in ("https://www.kofiabond.or.kr/index.html",
-                "https://www.kofiabond.or.kr/websquare/websquare.html?w2xPath=/wq/main/main.xml"):
-        try:
-            r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
-            print(f"  [{r.status_code}] {url}  {len(r.text)}자")
-            print(f"    본문: {txt(r.text, 300)!r}")
-        except Exception as exc:  # noqa: BLE001
-            print(f"  [실패] {url}: {exc}")
-
-
-def probe_ecos():
-    """한국은행 ECOS. 키가 필요하지만 샘플키로 형식만 확인해 본다."""
-    print("\n### 한국은행 ECOS (키 필요 여부 확인)")
-    url = ("https://ecos.bok.or.kr/api/StatisticSearch/sample/json/kr/1/5/"
-           "817Y002/D/20260901/20260905/010190000")
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
-        print(f"  [{r.status_code}] {r.text[:400]!r}")
-    except Exception as exc:  # noqa: BLE001
-        print(f"  [실패] {exc}")
-
-
 def main():
-    probe_naver_marketindex()
-    print("\n### 네이버 만기별 일별 시세")
-    for code, label in (("IRR_GOVT03Y", "국고채 3년"),
-                        ("IRR_GOVT05Y", "국고채 5년"),
-                        ("IRR_CORP03Y", "회사채 3년 AA-"),
-                        ("IRR_CD91", "CD 91일"),
-                        ("IRR_CALL", "콜금리")):
-        probe_naver_daily(code, label)
-    probe_kofia()
-    probe_ecos()
+    # 817Y002 = 1.3.2.1 시장금리(일별)
+    url = f"{BASE}/StatisticItemList/{KEY}/json/kr/1/100/817Y002"
+    try:
+        r = requests.get(url, timeout=TIMEOUT)
+        print(f"[{r.status_code}] {url}")
+        data = r.json()
+    except Exception as exc:  # noqa: BLE001
+        print(f"실패: {exc}")
+        return 1
+
+    rows = (data.get("StatisticItemList") or {}).get("row") or []
+    if not rows:
+        print(f"목록 없음: {json.dumps(data, ensure_ascii=False)[:500]}")
+        return 1
+
+    print(f"항목 {len(rows)}개")
+    for row in rows:
+        print(f"  {row.get('ITEM_CODE'):<12} {row.get('ITEM_NAME'):<28} "
+              f"주기={row.get('CYCLE')} 시작={row.get('START_TIME')} 끝={row.get('END_TIME')}")
     return 0
 
 
