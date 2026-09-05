@@ -92,16 +92,29 @@ def ecos_item_codes():
 
 
 def ecos_series(code):
-    """최근 값들을 [(YYYY-MM-DD, 금리)] 오름차순으로."""
+    """최근 값들을 [(YYYY-MM-DD, 금리)] 오름차순으로.
+
+    ECOS 는 오래된 것부터 돌려주고 한 번에 주는 행 수에 제한이 있다(sample
+    키는 10건). 그래서 1..N 을 그냥 부르면 창의 '앞쪽', 즉 한 달 전 금리가
+    최신인 척 잡힌다. 먼저 총 건수를 물어보고 뒤에서부터 잘라 온다.
+    """
     end = datetime.now(KST)
     start = end - timedelta(days=45)
-    url = (f"{ECOS}/StatisticSearch/{KEY}/json/kr/1/{ROWS}/{STAT}/D/"
-           f"{start:%Y%m%d}/{end:%Y%m%d}/{code}")
-    payload = requests.get(url, headers=HEADERS, timeout=TIMEOUT).json()
-    rows = (payload.get("StatisticSearch") or {}).get("row") or []
-    if not rows:
-        msg = (payload.get("RESULT") or {}).get("MESSAGE", "")
-        raise ValueError(msg[:80] or "값 없음")
+    base = (f"{ECOS}/StatisticSearch/{KEY}/json/kr/{{a}}/{{b}}/{STAT}/D/"
+            f"{start:%Y%m%d}/{end:%Y%m%d}/{code}")
+
+    def call(a, b):
+        payload = requests.get(base.format(a=a, b=b), headers=HEADERS, timeout=TIMEOUT).json()
+        block = payload.get("StatisticSearch") or {}
+        if not block.get("row"):
+            msg = (payload.get("RESULT") or {}).get("MESSAGE", "")
+            raise ValueError(msg[:80] or "값 없음")
+        return block
+
+    total = int(call(1, 1).get("list_total_count") or 0)
+    first = max(1, total - ROWS + 1) if total else 1
+    rows = call(first, first + ROWS - 1).get("row") or []
+
     out = []
     for r in rows:
         t, v = r.get("TIME"), r.get("DATA_VALUE")
