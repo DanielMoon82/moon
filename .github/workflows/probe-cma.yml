@@ -12,4 +12,4 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install requests
-      - run: python3 .github/scripts/probe-cma-sources.py
+      - run: python3 -u .github/scripts/probe-cma-sources.py
