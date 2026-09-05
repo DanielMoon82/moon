@@ -533,6 +533,27 @@
     margin:0;color:var(--ink);
   }
   .trend-card p{margin:0;font-size:.84rem;color:var(--ink-2);}
+  .trend-keys{
+    list-style:none;margin:2px 0 0;padding:0;
+    counter-reset:tk;
+    display:flex;flex-direction:column;gap:5px;
+  }
+  .trend-keys li{
+    counter-increment:tk;
+    display:grid;grid-template-columns:1.15rem 1fr;gap:8px;align-items:baseline;
+    font-size:.82rem;color:var(--ink-2);line-height:1.45;
+  }
+  .trend-keys li::before{
+    content:counter(tk);
+    font-family:var(--f-mono);font-size:.66rem;
+    color:var(--brand);text-align:right;
+  }
+  .trend-keys .trend-loading{color:var(--ink-3);}
+  .trend-keys .trend-loading::before{content:"";}
+  /* 값을 못 받았을 때만 원래 설명 문구를 대신 보여 준다. */
+  .trend-fallback{margin:2px 0 0;font-size:.82rem;color:var(--ink-3);}
+  .trend-card:not(.is-empty) .trend-fallback{display:none;}
+
   .trend-go{
     margin-top:4px;
     font-family:var(--f-mono);
@@ -1350,44 +1371,49 @@
   <section class="section wrap" id="trends">
     <div class="section-head">
       <h2>실시간 이슈</h2>
-      <p>포털별 실시간 트렌드를 한 화면에서 바로 넘어가 볼 수 있게 모았습니다.</p>
+      <p>다섯 포털의 실시간 검색어를 한자리에 모았습니다.</p>
     </div>
-    <p class="trend-note"><span class="trend-live">LIVE</span> — 다섯 포털의 실시간 검색어를 30분마다 받아와 보여줍니다. 카드를 누르면 해당 포털로 넘어갑니다. 순위를 이 페이지 안에 그대로 옮겨오지 않는 건, 포털들이 실시간 데이터를 외부에 심을 수 있는 공식 방법을 제공하지 않아서예요 — 그래서 클릭해서 보는 게 가장 정확합니다.</p>
+    <p class="trend-note"><span class="trend-live">LIVE</span> — 네이트·줌·디시인사이드·구글은 30분마다 실제 순위를 받아와 보여줍니다. 다음은 검색어를 자바스크립트로만 그려서 밖에서 가져올 방법이 없어 링크만 걸어 뒀습니다. 카드를 누르면 해당 포털로 넘어갑니다.</p>
 
     <div class="trend-grid">
-      <a class="trend-card rise" style="--brand:#1968E8" href="https://www.daum.net/" target="_blank" rel="noopener">
+      <a class="trend-card rise" style="--brand:#1968E8" href="https://www.daum.net/" target="_blank" rel="noopener" data-portal="daum">
         <span class="trend-cat">Daum</span>
         <h3>다음 실시간 트렌드</h3>
-        <p>2026년 3월, 6년 만에 부활한 실검. 메인 검색창 옆에 1~10위가 뜬다.</p>
-        <span class="trend-go">daum.net →</span>
+        <ol class="trend-keys" data-field="keywords"><li class="trend-loading">불러오는 중</li></ol>
+        <p class="trend-fallback">2026년 3월, 6년 만에 부활한 실검. 메인 검색창 옆에 1~10위가 뜬다.</p>
+        <span class="trend-go" data-field="time">daum.net →</span>
       </a>
 
-      <a class="trend-card rise" style="--brand:#FF5A36" href="https://www.nate.com/" target="_blank" rel="noopener">
+      <a class="trend-card rise" style="--brand:#FF5A36" href="https://www.nate.com/" target="_blank" rel="noopener" data-portal="nate">
         <span class="trend-cat">Nate</span>
         <h3>네이트 실시간 검색어</h3>
-        <p>다음과 검색엔진을 공유해서 순위가 사실상 같이 움직인다.</p>
-        <span class="trend-go">nate.com →</span>
+        <ol class="trend-keys" data-field="keywords"><li class="trend-loading">불러오는 중</li></ol>
+        <p class="trend-fallback">다음과 검색엔진을 공유해서 순위가 사실상 같이 움직인다.</p>
+        <span class="trend-go" data-field="time">nate.com →</span>
       </a>
 
-      <a class="trend-card rise" style="--brand:#2FAE4E" href="https://zum.com/" target="_blank" rel="noopener">
+      <a class="trend-card rise" style="--brand:#2FAE4E" href="https://zum.com/" target="_blank" rel="noopener" data-portal="zum">
         <span class="trend-cat">Zum</span>
         <h3>줌 AI 이슈 트렌드</h3>
-        <p>뉴스·커뮤니티를 함께 분석해 지금 뜨는 이슈를 보여준다.</p>
-        <span class="trend-go">zum.com →</span>
+        <ol class="trend-keys" data-field="keywords"><li class="trend-loading">불러오는 중</li></ol>
+        <p class="trend-fallback">뉴스·커뮤니티를 함께 분석해 지금 뜨는 이슈를 보여준다.</p>
+        <span class="trend-go" data-field="time">zum.com →</span>
       </a>
 
-      <a class="trend-card rise" style="--brand:#6C5CE7" href="https://gall.dcinside.com/board/lists/?id=dcbest" target="_blank" rel="noopener">
+      <a class="trend-card rise" style="--brand:#6C5CE7" href="https://gall.dcinside.com/board/lists/?id=dcbest" target="_blank" rel="noopener" data-portal="dcinside">
         <span class="trend-cat">DCinside</span>
         <h3>디시인사이드 실시간 베스트</h3>
-        <p>전체 갤러리에서 지금 가장 반응이 뜨거운 글들을 모아 보여준다.</p>
-        <span class="trend-go">dcinside.com →</span>
+        <ol class="trend-keys" data-field="keywords"><li class="trend-loading">불러오는 중</li></ol>
+        <p class="trend-fallback">전체 갤러리에서 지금 가장 반응이 뜨거운 글들을 모아 보여준다.</p>
+        <span class="trend-go" data-field="time">dcinside.com →</span>
       </a>
 
-      <a class="trend-card rise" style="--brand:#4285F4" href="https://trends.google.com/trending?geo=KR" target="_blank" rel="noopener">
+      <a class="trend-card rise" style="--brand:#4285F4" href="https://trends.google.com/trending?geo=KR" target="_blank" rel="noopener" data-portal="google">
         <span class="trend-cat">Google</span>
         <h3>구글 트렌드 (대한민국)</h3>
-        <p id="google-trend-list">대한민국 기준 인기 급상승 검색어를 볼 수 있다.</p>
-        <span class="trend-go" id="google-trend-time">trends.google.com →</span>
+        <ol class="trend-keys" data-field="keywords"><li class="trend-loading">불러오는 중</li></ol>
+        <p class="trend-fallback">대한민국 기준 인기 급상승 검색어.</p>
+        <span class="trend-go" id="google-trend-time" data-field="time">trends.google.com →</span>
       </a>
 
     </div>
@@ -1424,28 +1450,6 @@
 })();
 </script>
 
-<script>
-(function () {
-  var listEl = document.getElementById('google-trend-list');
-  var timeEl = document.getElementById('google-trend-time');
-  if (!listEl || !timeEl) return;
-
-  fetch('./data/trends-kr.json', { cache: 'no-store' })
-    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-    .then(function (data) {
-      if (Array.isArray(data.keywords) && data.keywords.length) {
-        listEl.textContent = data.keywords.slice(0, 6).join(' · ');
-      }
-      if (data.updated_at) {
-        var d = new Date(data.updated_at);
-        var hh = String(d.getHours()).padStart(2, '0');
-        var mm = String(d.getMinutes()).padStart(2, '0');
-        timeEl.textContent = hh + ':' + mm + ' 기준 →';
-      }
-    })
-    .catch(function () { /* data/trends-kr.json이 아직 없거나 fetch 실패 시 기본 문구 유지 */ });
-})();
-</script>
 
 <script>
 (function () {
@@ -1473,6 +1477,55 @@
     el.classList.remove('up', 'down');
     if (cls) el.classList.add(cls);
   }
+
+  // ---------- 포털 실시간 검색어 ----------
+  // 워크플로가 30분마다 다섯 포털에서 받아 둔 파일을 읽는다. 브라우저에서
+  // 직접 부르면 포털들이 CORS 로 막아 아무것도 못 받는다.
+  (function () {
+    var cards = [].slice.call(document.querySelectorAll('.trend-card[data-portal]'));
+    if (!cards.length) return;
+
+    function paint(doc) {
+      var portals = (doc && doc.portals) || {};
+      cards.forEach(function (card) {
+        var p = portals[card.dataset.portal];
+        var list = card.querySelector('[data-field="keywords"]');
+        var timeEl = card.querySelector('[data-field="time"]');
+        if (!p || !p.keywords || !p.keywords.length) {
+          // 값이 없으면 원래 설명 문구를 보여 준다(빈 칸으로 두지 않는다).
+          card.classList.add('is-empty');
+          if (list) list.innerHTML = '';
+          return;
+        }
+        card.classList.remove('is-empty');
+        if (list) {
+          list.innerHTML = p.keywords.slice(0, 5).map(function (k) {
+            var safe = document.createElement('div');
+            safe.textContent = k;
+            return '<li>' + safe.innerHTML + '</li>';
+          }).join('');
+        }
+        if (timeEl && p.updated_at) {
+          var d = new Date(p.updated_at);
+          if (!isNaN(d)) {
+            timeEl.textContent = String(d.getHours()).padStart(2, '0') + ':' +
+              String(d.getMinutes()).padStart(2, '0') + ' 기준 →';
+          }
+        }
+      });
+    }
+
+    function load() {
+      return fetch('./data/portal-trends.json', { cache: 'no-store' })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+        .then(paint)
+        .catch(function () { cards.forEach(function (c) { c.classList.add('is-empty'); }); });
+    }
+
+    load();
+    // 파일은 30분마다 바뀌므로 열어 둔 화면은 5분마다 다시 읽는다.
+    setInterval(function () { if (!document.hidden) load(); }, 5 * 60 * 1000);
+  })();
 
   // ---------- 사이트 안 검색 ----------
   // 서버가 없는 정적 사이트라, 페이지에 이미 있는 제목·글 목록에서 찾는다.
