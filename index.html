@@ -234,26 +234,6 @@
   }
   .chip b{color:#F0A34B;font-weight:500;}
 
-  /* ---------- 전면 사진 띠 ---------- */
-  .band-photo{
-    margin:0;
-    position:relative;
-    height:clamp(200px,30vw,400px);
-    overflow:hidden;
-    border-block:1px solid var(--line);
-    background:var(--surface-2);
-  }
-  .band-photo img{
-    width:100%;height:100%;
-    object-fit:cover;object-position:50% 52%;
-    display:block;
-  }
-
-  /* 홈 상단 세 블록은 훑어보는 곳이라 섹션 기본 여백보다 촘촘하게 둔다. */
-  #today,#cats,#popular{padding-block:clamp(30px,4vw,46px);}
-  #today{padding-top:clamp(34px,5vw,58px);}
-  #cats,#popular{padding-top:0;}
-
   /* ---------- 검색 ---------- */
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
   .nav-search{position:relative;display:block;min-width:0;}
@@ -616,6 +596,26 @@
     font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
     text-align:center;padding:0 12px;
   }
+  /* 장이 닫혀 선을 못 그릴 때 대신 보여 주는 시·고·저·종 */
+  .idx-ohlc{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:1px;background:var(--line-soft);
+    border:1px solid var(--line-soft);border-radius:2px;overflow:hidden;
+  }
+  .idx-ohlc-cell{
+    background:var(--surface);
+    padding:12px 10px;
+    display:flex;flex-direction:column;gap:4px;
+  }
+  .idx-ohlc-cell span{
+    font-family:var(--f-mono);font-size:.62rem;letter-spacing:.08em;color:var(--ink-3);
+  }
+  .idx-ohlc-cell b{
+    font-family:var(--f-mono);font-weight:600;font-size:.9rem;color:var(--ink-2);
+    font-variant-numeric:tabular-nums;
+  }
+  .idx-ohlc-note{margin:9px 0 0;font-size:.72rem;color:var(--ink-3);line-height:1.55;}
+
   .idx-tip{
     position:absolute;top:0;
     transform:translate(-50%,-4px);
@@ -1074,11 +1074,6 @@
       </article>
     </div>
   </section>
-
-  <figure class="band-photo">
-    <img src="./assets/band-pools.jpg" width="1800" height="935" loading="lazy" decoding="async"
-         alt="산 능선을 배경으로 계단처럼 이어진 석회붕 위의 물웅덩이들">
-  </figure>
 
   <section class="section wrap nfx" id="weather">
     <div class="section-head">
@@ -1662,19 +1657,34 @@
         changeEl.textContent = '-';
       }
     }
+    var hasLine = points.length >= 2;
     if (rangeEl) {
-      rangeEl.textContent = (idx && typeof idx.high === 'number')
+      rangeEl.textContent = (hasLine && idx && typeof idx.high === 'number')
         ? '고 ' + fmtIdx(idx.high) + ' · 저 ' + fmtIdx(idx.low) : '';
     }
     if (asofEl) {
       var last = points.length ? points[points.length - 1].t : null;
-      asofEl.textContent = last ? (tradingDate + ' ' + last + ' 기준') : '데이터 준비 중';
+      asofEl.textContent = last ? (tradingDate + ' ' + last + ' 기준')
+        : (typeof idx.value === 'number' ? tradingDate + ' 종가' : '데이터 준비 중');
     }
 
     if (!wrap) return;
     if (points.length < 2) {
-      wrap.innerHTML = '<div class="idx-empty">' +
-        (points.length ? '장 시작 직후입니다' : '장이 열리면 표시됩니다') + '</div>';
+      if (typeof idx.value === 'number') {
+        var rows = [['종가', idx.value], ['시가', idx.open], ['고가', idx.high], ['저가', idx.low]]
+          .filter(function (r) { return typeof r[1] === 'number'; })
+          .map(function (r) {
+            return '<div class="idx-ohlc-cell"><span>' + r[0] + '</span><b>' + fmtIdx(r[1]) + '</b></div>';
+          }).join('');
+        wrap.innerHTML =
+          '<div class="idx-ohlc">' + rows + '</div>' +
+          '<p class="idx-ohlc-note">' +
+          (points.length ? '장 시작 직후라 아직 선을 그릴 만큼 값이 쌓이지 않았습니다.'
+                         : '장이 닫혀 있어 마지막 거래일 값입니다. 09시부터 장중 그래프가 그려집니다.') +
+          '</p>';
+      } else {
+        wrap.innerHTML = '<div class="idx-empty">장이 열리면 표시됩니다</div>';
+      }
       return;
     }
 
@@ -2191,7 +2201,52 @@
 
   var oilLoadedAt = 0;
 
-  function loadOil() {
+  // 브라우저에서 Stooq 를 직접 부르면 CORS 때문에 중계 서비스를 거쳐야 하고,
+  // 그 서비스가 죽으면 유가 카드가 통째로 비어 버린다. 그래서 워크플로가 미리
+  // 받아둔 같은 출처의 파일을 먼저 읽고, 그게 없을 때만 예전 경로로 넘어간다.
+  function applyOilDoc(doc) {
+    if (!doc || !doc.series || !Object.keys(doc.series).length) return false;
+    oilDoc = { series: doc.series, usdkrw: doc.usdkrw || null };
+    oilLoadedAt = Date.now();
+    renderStats();
+    renderChart();
+    publishOilBrief();
+    var newest = "";
+    Object.keys(doc.series).forEach(function (k) {
+      var pts = doc.series[k].points || [];
+      if (pts.length && pts[pts.length - 1].d > newest) newest = pts[pts.length - 1].d;
+    });
+    if (updatedEl) {
+      updatedEl.textContent = (newest ? newest + " 종가 기준 · " : "") +
+        "자료 Stooq · 하루 몇 차례 자동 갱신";
+    }
+    return true;
+  }
+
+  function publishOilBrief() {
+    if (!window.__brief || !oilDoc || !oilDoc.series.wti) return;
+    var wp = oilDoc.series.wti.points || [];
+    if (!wp.length) return;
+    var last = wp[wp.length - 1], prev = wp.length > 1 ? wp[wp.length - 2] : null;
+    var html = 'WTI ' + last.c.toFixed(2) + ' USD/배럴';
+    if (prev && prev.c) {
+      var pct = (last.c - prev.c) / prev.c * 100;
+      var cls = pct > 0 ? 'up' : (pct < 0 ? 'down' : '');
+      html += ' <span class="' + cls + '">' + (pct > 0 ? '▲' : (pct < 0 ? '▼' : '–')) +
+              ' ' + Math.abs(pct).toFixed(2) + '%</span>';
+    }
+    if (oilDoc.usdkrw) html += ' · 환율 ' + Math.round(oilDoc.usdkrw).toLocaleString('ko-KR') + '원';
+    window.__brief.set('life', html);
+  }
+
+  function loadOilFromFile() {
+    return fetch('./data/oil.json', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(applyOilDoc)
+      .catch(function () { return false; });
+  }
+
+  function loadOilLive() {
     return Promise.all([
       fetchSeries(SYMBOLS.wti.stooq),
       fetchSeries(SYMBOLS.brent.stooq),
@@ -2221,20 +2276,7 @@
 
       oilDoc = { series: series, usdkrw: fx };
       oilLoadedAt = Date.now();
-      // 상단 '오늘의 생활정보'는 기름값을 쓴다. 이미 받아온 값을 넘겨준다.
-      if (window.__brief && series.wti && series.wti.points.length) {
-        var wp = series.wti.points;
-        var last = wp[wp.length - 1], prev = wp.length > 1 ? wp[wp.length - 2] : null;
-        var html = 'WTI ' + last.c.toFixed(2) + ' USD/배럴';
-        if (prev && prev.c) {
-          var pct = (last.c - prev.c) / prev.c * 100;
-          var cls = pct > 0 ? 'up' : (pct < 0 ? 'down' : '');
-          html += ' <span class="' + cls + '">' + (pct > 0 ? '▲' : (pct < 0 ? '▼' : '–')) +
-                  ' ' + Math.abs(pct).toFixed(2) + '%</span>';
-        }
-        if (fx) html += ' · 환율 ' + Math.round(fx).toLocaleString('ko-KR') + '원';
-        window.__brief.set('life', html);
-      }
+      publishOilBrief();
 
       renderStats();
       renderChart();
@@ -2252,8 +2294,9 @@
     });
   }
 
-  loadOil();
-  setInterval(loadOil, REFRESH_MS);
+  // 같은 출처 파일이 있으면 그걸로 즉시 그리고, 없을 때만 바깥에서 받아온다.
+  loadOilFromFile().then(function (ok) { if (!ok) loadOilLive(); });
+  setInterval(function () { loadOilFromFile().then(function (ok) { if (!ok) loadOilLive(); }); }, REFRESH_MS);
 
   /* ── 날씨 ─────────────────────────────────────────── */
 
@@ -2350,6 +2393,50 @@
 
   var currentPlace = null, weatherLoadedAt = 0;
 
+  // 저장된 스냅샷과 라이브 응답이 같은 코드로 그려지도록 분리한다.
+  var paintedLabel = null;
+
+  function paintWeather(label, cur, daily, isSnapshot) {
+    paintedLabel = label;
+    var w = wmo(cur.weather_code);
+
+    var days = daily.time.map(function (day, i) {
+      var dw = wmo(daily.weather_code[i]);
+      var name = i === 0 ? "오늘" :
+        ["일", "월", "화", "수", "목", "금", "토"][new Date(day + "T00:00").getDay()];
+      var prob = daily.precipitation_probability_max[i];
+      return '<div class="nfx-day">' +
+        '<div class="nfx-day-name">' + name + '</div>' +
+        '<div class="nfx-glyph">' + dw[1] + '</div>' +
+        '<div class="nfx-day-hi">' + Math.round(daily.temperature_2m_max[i]) + '°</div>' +
+        '<div class="nfx-day-lo">' + Math.round(daily.temperature_2m_min[i]) + '°</div>' +
+        (prob != null ? '<div class="nfx-day-lo">' + prob + '%</div>' : '') +
+      '</div>';
+    }).join("");
+
+    weatherEl.innerHTML =
+      '<div class="nfx-now">' +
+        '<div class="nfx-glyph">' + w[1] + '</div>' +
+        '<div>' +
+          '<div class="nfx-now-city">' + label + '</div>' +
+          '<div class="nfx-now-meta">' + w[0] + ' · 현지 시각 ' + cur.time.slice(11, 16) + '</div>' +
+        '</div>' +
+        '<div style="margin-left:auto;text-align:right">' +
+          '<div class="nfx-now-temp">' + Math.round(cur.temperature_2m) + '°</div>' +
+          '<div class="nfx-now-meta">체감 ' + Math.round(cur.apparent_temperature) + '° · 습도 ' +
+            cur.relative_humidity_2m + '% · 바람 ' + Math.round(cur.wind_speed_10m) + 'km/h</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="nfx-days">' + days + '</div>' +
+      '<p class="nfx-note">기온은 섭씨, 아래 숫자는 최고·최저와 강수확률입니다. ' +
+      (isSnapshot ? '저장된 값 · 최신 값을 받아오는 중입니다.' : '5분마다 자동 갱신') +
+    ' · 자료 Open-Meteo.</p>';
+    if (!isSnapshot) weatherLoadedAt = Date.now();
+    // 상단 '오늘의 여행 정보'는 이 값을 그대로 쓴다. 따로 또 받아오지 않는다.
+    if (window.__brief) {
+      window.__brief.set('travel', label + ' ' + Math.round(cur.temperature_2m) + '° · ' + w[0]);
+    }
+  }
   function loadWeather(lat, lon, label, silent) {
     currentPlace = { lat: lat, lon: lon, label: label };
     if (!silent) {
@@ -2364,51 +2451,27 @@
     fetch(url)
       .then(function (r) { return r.json(); })
       .then(function (doc) {
-        var cur = doc.current, daily = doc.daily;
-        var w = wmo(cur.weather_code);
-
-        var days = daily.time.map(function (day, i) {
-          var dw = wmo(daily.weather_code[i]);
-          var name = i === 0 ? "오늘" :
-            ["일", "월", "화", "수", "목", "금", "토"][new Date(day + "T00:00").getDay()];
-          var prob = daily.precipitation_probability_max[i];
-          return '<div class="nfx-day">' +
-            '<div class="nfx-day-name">' + name + '</div>' +
-            '<div class="nfx-glyph">' + dw[1] + '</div>' +
-            '<div class="nfx-day-hi">' + Math.round(daily.temperature_2m_max[i]) + '°</div>' +
-            '<div class="nfx-day-lo">' + Math.round(daily.temperature_2m_min[i]) + '°</div>' +
-            (prob != null ? '<div class="nfx-day-lo">' + prob + '%</div>' : '') +
-          '</div>';
-        }).join("");
-
-        weatherEl.innerHTML =
-          '<div class="nfx-now">' +
-            '<div class="nfx-glyph">' + w[1] + '</div>' +
-            '<div>' +
-              '<div class="nfx-now-city">' + label + '</div>' +
-              '<div class="nfx-now-meta">' + w[0] + ' · 현지 시각 ' + cur.time.slice(11, 16) + '</div>' +
-            '</div>' +
-            '<div style="margin-left:auto;text-align:right">' +
-              '<div class="nfx-now-temp">' + Math.round(cur.temperature_2m) + '°</div>' +
-              '<div class="nfx-now-meta">체감 ' + Math.round(cur.apparent_temperature) + '° · 습도 ' +
-                cur.relative_humidity_2m + '% · 바람 ' + Math.round(cur.wind_speed_10m) + 'km/h</div>' +
-            '</div>' +
-          '</div>' +
-          '<div class="nfx-days">' + days + '</div>' +
-          '<p class="nfx-note">기온은 섭씨, 아래 숫자는 최고·최저와 강수확률입니다. ' +
-          '5분마다 자동 갱신 · 자료 Open-Meteo.</p>';
-        weatherLoadedAt = Date.now();
-        // 상단 '오늘의 여행 정보'는 이 값을 그대로 쓴다. 따로 또 받아오지 않는다.
-        if (window.__brief) {
-          window.__brief.set('travel', label + ' ' + Math.round(cur.temperature_2m) + '° · ' + w[0]);
-        }
+        paintWeather(label, doc.current, doc.daily, false);
       })
       .catch(function () {
-        if (!silent) {
-          weatherEl.innerHTML = '<p class="nfx-empty">날씨를 불러오지 못했습니다. 다른 도시를 골라보세요.</p>';
-        }
+        // 이미 같은 도시가 그려져 있으면(저장된 스냅샷 등) 지우지 않는다.
+        // 다른 도시를 찾다가 실패한 경우에만 알려 준다.
+        if (silent || paintedLabel === label) return;
+        weatherEl.innerHTML = '<p class="nfx-empty">날씨를 불러오지 못했습니다. 다른 도시를 골라보세요.</p>';
       });
   }
+
+  // Open-Meteo 는 브라우저에서 바로 부를 수 있지만, 응답이 오기 전까지 카드가
+  // 비어 있고 네트워크가 나쁘면 계속 비어 있다. 워크플로가 받아둔 기본 도시
+  // 스냅샷을 먼저 그려 두고, 라이브 값이 오면 그 위에 덮어쓴다.
+  var weatherSnapshot = fetch('./data/weather.json', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (d) {
+      if (!d || !d.current || !d.daily) return;
+      if (weatherLoadedAt) return;              // 라이브가 이미 그렸으면 건드리지 않는다
+      paintWeather(d.label || CITIES[0].label, d.current, d.daily, true);
+    })
+    .catch(function () { /* 저장본이 없으면 아래 라이브 호출만으로 채운다 */ });
 
   loadWeather(CITIES[0].lat, CITIES[0].lon, CITIES[0].label);
 
@@ -2422,7 +2485,9 @@
   document.addEventListener("visibilitychange", function () {
     if (document.visibilityState !== "visible") return;
     var now = Date.now();
-    if (now - oilLoadedAt > STALE_MS) loadOil();
+    if (now - oilLoadedAt > STALE_MS) {
+      loadOilFromFile().then(function (ok) { if (!ok) loadOilLive(); });
+    }
     if (currentPlace && now - weatherLoadedAt > STALE_MS) {
       loadWeather(currentPlace.lat, currentPlace.lon, currentPlace.label, true);
     }

@@ -211,13 +211,7 @@ def main():
     now_kst = datetime.now(KST)
     today = now_kst.strftime("%Y-%m-%d")
     minutes = now_kst.hour * 60 + now_kst.minute
-
-    if now_kst.weekday() >= 5:
-        print(f"주말({today}) — 건너뜀")
-        return 0
-    if not (OPEN_MINUTES <= minutes <= CLOSE_MINUTES):
-        print(f"장 시간 밖({now_kst:%H:%M} KST) — 건너뜀")
-        return 0
+    in_session = now_kst.weekday() < 5 and OPEN_MINUTES <= minutes <= CLOSE_MINUTES
 
     existing = load_existing()
     # 날짜가 바뀌면 새 하루로 시작한다. 전날 선이 오늘 선에 이어지면 안 된다.
@@ -230,8 +224,9 @@ def main():
             prev_bases[idx.get("code")] = idx.get("prev_close")
 
     out_indices = []
-    appended = 0
+    changed = 0
     market_open = False
+    file_date = today
 
     for meta in INDICES:
         code = meta["code"]
@@ -241,25 +236,28 @@ def main():
 
         if value is not None:
             traded_date, stamp = traded_date_and_time(quote, now_kst)
-            if traded_date != today:
-                # 휴장일이거나 아직 첫 체결 전. 전일 값을 오늘 선에 붙이면 안 된다.
-                print(f"  [skip] {code}: 체결일 {traded_date} 이 오늘({today})이 아님")
-                value = None
-            else:
+            if traded_date == today and in_session:
                 # 같은 분에 두 번 돌면 덮어쓴다(크론이 밀려 중복 실행될 수 있다).
                 points = [p for p in points if p.get("t") != stamp]
                 points.append({"t": stamp, "v": round(value, 2)})
                 points.sort(key=lambda p: p["t"])
-                appended += 1
+                changed += 1
                 if str(quote.get("market_status") or "").upper() == "OPEN":
                     market_open = True
+            elif not same_day:
+                # 장이 닫혀 있거나 휴장일. 오늘 쌓인 선이 없으므로 마지막 거래일
+                # 값을 그대로 싣는다. 선은 그리지 않고 숫자만 보여 준다.
+                # (오늘 날짜로 어제 값을 붙이면 가짜 선이 된다.)
+                file_date = traded_date
+                changed += 1
+                print(f"  [close] {code}: 장 마감 · {traded_date} 종가 {value}")
 
-        if not points:
-            continue  # 오늘 쌓인 게 없으면 이 지수는 아예 싣지 않는다
+        base = quote.get("prev_close") or prev_bases.get(code)
+        if not points and value is None:
+            continue  # 쌓인 것도 없고 새로 받은 값도 없으면 싣지 않는다
 
         # 기준선은 하루 동안 고정한다. 새로 못 받으면 이미 저장된 값을 유지한다.
-        base = quote.get("prev_close") or prev_bases.get(code)
-        latest = points[-1]["v"]
+        latest = points[-1]["v"] if points else round(value, 2)
         entry = {
             "code": code,
             "name": meta["name"],
@@ -276,15 +274,15 @@ def main():
             )
         # 고가·저가는 상류의 장중 실제 고저를 쓴다. 15분 표본의 최대·최소는
         # 그 사이에 찍은 고점을 놓치므로 실제보다 좁게 나온다.
-        sampled = [p["v"] for p in points]
+        sampled = [p["v"] for p in points] or [latest]
         entry["high"] = quote.get("high") or max(sampled)
         entry["low"] = quote.get("low") or min(sampled)
         if quote.get("open"):
             entry["open"] = quote["open"]
         out_indices.append(entry)
 
-    if not appended:
-        print("이번 실행에서 새로 담은 값 없음 — 기존 파일 유지", file=sys.stderr)
+    if not changed:
+        print("이번 실행에서 바뀐 값 없음 — 기존 파일 유지")
         return 0
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
@@ -292,7 +290,7 @@ def main():
         json.dumps(
             {
                 "updated_at": datetime.now(timezone.utc).isoformat(),
-                "trading_date": today,
+                "trading_date": file_date,
                 "market_open": market_open,
                 "indices": out_indices,
             },
@@ -303,7 +301,7 @@ def main():
         encoding="utf-8",
     )
     counts = ", ".join(f"{i['code']} {len(i['points'])}점" for i in out_indices)
-    print(f"{OUT_JSON.relative_to(ROOT)} 기록 — {today} ({counts})")
+    print(f"{OUT_JSON.relative_to(ROOT)} 기록 — {file_date} ({counts})")
     return 0
 
 

@@ -1,0 +1,44 @@
+name: Fetch oil & weather
+
+on:
+  schedule:
+    # 유가는 일봉이라 자주 받을 이유가 없다. 뉴욕 마감 반영분과 낮 시간 몇 번.
+    - cron: "20 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-oil-weather
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch oil & weather
+        run: python3 .github/scripts/fetch-oil-weather.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for f in data/oil.json data/weather.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update oil & weather data"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
