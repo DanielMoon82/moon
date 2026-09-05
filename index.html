@@ -379,6 +379,40 @@
   }
   .section-head p{margin:0;font-size:.9rem;color:var(--ink-3);max-width:38ch;}
 
+  /* ---------- 여행 기록 ---------- */
+  .trip{
+    display:grid;
+    grid-template-columns:minmax(0,7px) minmax(0,1fr);
+    border:1px solid var(--line);border-radius:3px;
+    background:var(--surface);
+    overflow:hidden;
+  }
+  /* 왼쪽 띠의 색은 그곳에서 가장 오래 본 하늘에서 가져온다. */
+  .trip-band{background:linear-gradient(180deg,var(--c1) 0%,var(--c2) 55%,var(--c3) 100%);}
+  .trip-body{padding:22px clamp(18px,2.4vw,28px) 24px;}
+  .trip-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .trip-head h3{
+    font-family:var(--f-display);font-weight:600;
+    font-size:clamp(1.15rem,2.4vw,1.4rem);letter-spacing:-.025em;
+    margin:0;color:var(--ink);
+  }
+  .trip-country{
+    font-family:var(--f-mono);font-size:.64rem;letter-spacing:.14em;
+    color:var(--ink-3);
+  }
+  .trip-dates{
+    margin:7px 0 0;
+    font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+    font-variant-numeric:tabular-nums;
+  }
+  .trip-note{margin:14px 0 0;font-size:.94rem;color:var(--ink-2);max-width:58ch;}
+  .trip-tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;margin:16px 0 0;padding:0;}
+  .trip-tags li{
+    font-family:var(--f-mono);font-size:.66rem;letter-spacing:.04em;
+    color:var(--ink-2);background:var(--surface-2);
+    border-radius:999px;padding:4px 10px;
+  }
+
   /* ---------- gear ---------- */
   .disclosure{
     margin:-8px 0 clamp(24px,3.6vw,36px);
@@ -928,7 +962,7 @@
       <a class="cat-card" href="#travel">
         <span class="cat-icon" aria-hidden="true">🌏</span>
         <h3>여행</h3>
-        <ul><li>여행용품 리뷰</li><li>세계 날씨</li></ul>
+        <ul><li>여행 기록 · 여행용품 리뷰</li><li>세계 날씨</li></ul>
       </a>
       <a class="cat-card" href="#invest">
         <span class="cat-icon" aria-hidden="true">📈</span>
@@ -1002,8 +1036,27 @@
   <div class="cat-group" id="travel">
     <div class="wrap cat-band">
       <h2 class="cat-band-title"><span aria-hidden="true">🌏</span> 여행</h2>
-      <p class="cat-band-desc">여행지 날씨와 여러 번 쓰며 남은 여행용품.</p>
+      <p class="cat-band-desc">여행 기록, 여러 번 쓰며 남은 여행용품, 여행지 날씨.</p>
     </div>
+  <section class="section wrap" id="trips">
+    <div class="section-head">
+      <h2>여행 기록</h2>
+      <p>돌아와서 기억나는 것만 남긴 기록입니다.</p>
+    </div>
+    <article class="trip rise">
+      <div class="trip-band" style="--c1:#2A3550;--c2:#7D8DA8;--c3:#DCE4EE" aria-hidden="true"></div>
+      <div class="trip-body">
+        <div class="trip-head">
+          <h3>삿포로 · 오타루</h3>
+          <span class="trip-country mono">JAPAN · CTS · OTA</span>
+        </div>
+        <p class="trip-dates">2024.02.08 – 02.12 · 5일</p>
+        <p class="trip-note">눈이 하루도 그치지 않았다. 스스키노에서 라멘집 줄에 서 있는 동안 어깨에 눈이 쌓였는데, 이번 여행에서 제일 선명하게 남은 장면이 그거다. 오타루 운하는 사진보다 훨씬 작았지만, 겨울에는 그게 맞는 크기 같았다.</p>
+        <ul class="trip-tags"><li>설경</li><li>미소 라멘</li><li>노보리베츠</li></ul>
+      </div>
+    </article>
+  </section>
+
   <section class="section wrap" id="gear">
     <div class="section-head">
       <h2>여행용품 리뷰</h2>
@@ -1299,7 +1352,7 @@
       <h2>실시간 이슈</h2>
       <p>포털별 실시간 트렌드를 한 화면에서 바로 넘어가 볼 수 있게 모았습니다.</p>
     </div>
-    <p class="trend-note"><span class="trend-live">LIVE</span> — 각 카드는 해당 포털의 실시간 페이지로 바로 연결돼요. 순위를 이 페이지 안에 그대로 옮겨오지 않는 건, 포털들이 실시간 데이터를 외부에 심을 수 있는 공식 방법을 제공하지 않아서예요 — 그래서 클릭해서 보는 게 가장 정확합니다.</p>
+    <p class="trend-note"><span class="trend-live">LIVE</span> — 다섯 포털의 실시간 검색어를 30분마다 받아와 보여줍니다. 카드를 누르면 해당 포털로 넘어갑니다. 순위를 이 페이지 안에 그대로 옮겨오지 않는 건, 포털들이 실시간 데이터를 외부에 심을 수 있는 공식 방법을 제공하지 않아서예요 — 그래서 클릭해서 보는 게 가장 정확합니다.</p>
 
     <div class="trend-grid">
       <a class="trend-card rise" style="--brand:#1968E8" href="https://www.daum.net/" target="_blank" rel="noopener">
@@ -1337,11 +1390,6 @@
         <span class="trend-go" id="google-trend-time">trends.google.com →</span>
       </a>
 
-      <div class="trend-card disabled rise">
-        <span class="trend-cat">Naver</span>
-        <h3>네이버 실시간 검색어</h3>
-        <p>2021년 2월 서비스가 폐지됐고, 네이버는 재도입 계획이 없다고 밝혔다. 그래서 링크를 걸지 않았다.</p>
-      </div>
     </div>
   </section>  </div>
 </main>
