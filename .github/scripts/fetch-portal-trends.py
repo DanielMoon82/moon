@@ -11,9 +11,9 @@ What each one turned out to be:
   디시     실시간 베스트 갤러리 목록 HTML -> board/view 링크의 글 제목
            (댓글 수 [12] 같은 배지가 링크로 같이 잡혀 걸러낸다)
   줌       zum.com 홈에 박힌 issue-word-list 마크업
-  다음     자바스크립트로만 그려지고 공개 주소가 없다. PC 홈에는 키워드가
-           아예 없고 트렌드 애니메이션 번들만 있다. 모바일 홈을 한 번 더
-           시도하되, 실패하면 그 포털만 값 없이 두고 나머지는 정상 표시한다.
+  네이버   news.naver.com 많이 본 뉴스 랭킹 -> 기사 제목
+           (원래 이 자리는 다음이었으나, 다음은 검색어를 자바스크립트로만
+            그려 HTML 에 아예 없어 서버에서 가져올 수 없었다. 프로브로 확인.)
 
 한 포털이 실패해도 나머지는 갱신하고, 실패한 포털은 직전 값을 유지한다.
 빈 화면보다 조금 지난 값이 낫고, 없는 값을 지어내지는 않는다.
@@ -107,20 +107,33 @@ def from_zum():
     return dedupe(items)
 
 
-def from_daum():
-    """PC 홈에는 키워드가 없다. 모바일 홈에 서버에서 그려진 목록이 있는지 본다."""
-    html = get("https://m.daum.net/").text
-    for pat in (r'class="[^"]*(?:tit_rank|txt_rank|link_rank|keyword)[^"]*"[^>]*>([^<]{2,40})<',
-                r'<a[^>]+href="[^"]*(?:trend|rank)[^"]*"[^>]*>([^<]{2,40})</a>'):
+def from_naver_news():
+    """네이버 '많이 본 뉴스' 랭킹 페이지에서 기사 제목을 뽑는다.
+
+    다음 자리를 대신한다. 다음은 검색어를 자바스크립트로만 그려 서버에서
+    가져올 수 없었지만, 네이버 랭킹 페이지는 제목이 HTML 에 그대로 들어 있다.
+    마크업이 바뀔 수 있어 후보 패턴을 순서대로 시도하고 어느 것이 맞았는지
+    로그에 남긴다.
+    """
+    html = get("https://news.naver.com/main/ranking/popularDay.naver").text
+    patterns = [
+        (r'class="list_title[^"]*"[^>]*>([^<]{4,80})<', "list_title"),
+        (r'<a[^>]+class="[^"]*list_content[^"]*"[^>]*>\s*([^<]{4,80})\s*<', "list_content"),
+        (r'<div class="list_content">\s*<a[^>]*>\s*([^<]{4,80})\s*<', "div.list_content>a"),
+        (r'<a[^>]+href="[^"]*news\.naver\.com/[^"]*article[^"]*"[^>]*>([^<]{6,80})</a>', "article 링크"),
+    ]
+    for pat, label in patterns:
         hits = dedupe([clean(h) for h in re.findall(pat, html)])
+        hits = [h for h in hits if len(h) >= 6]
         if len(hits) >= 5:
+            print(f"        (네이버: '{label}' 패턴 적중)")
             return hits
-    raise ValueError("모바일 홈에서도 실시간 검색어를 찾지 못함")
+    raise ValueError(f"제목을 찾지 못함 (본문 {len(html)}자)")
 
 
 PORTALS = [
     {"key": "nate", "name": "네이트", "fn": from_nate},
-    {"key": "daum", "name": "다음", "fn": from_daum},
+    {"key": "naver_news", "name": "네이버 뉴스", "fn": from_naver_news},
     {"key": "zum", "name": "줌", "fn": from_zum},
     {"key": "dcinside", "name": "디시인사이드", "fn": from_dcinside},
     {"key": "google", "name": "구글", "fn": from_google},
