@@ -158,6 +158,16 @@ def probe():
         value, prev = fetch(meta["code"])
         if value is not None:
             ok += 1
+        if prev is None:
+            # 전일 종가 키를 못 찾았을 때만 원문을 찍는다. 응답 구조를 직접
+            # 확인할 수 없는 환경에서 키 이름을 알아내기 위한 것.
+            try:
+                raw = requests.get(
+                    POLL_URL.format(code=meta["code"]), headers=HEADERS, timeout=TIMEOUT
+                ).text
+                print(f"  [dump] {meta['code']} polling 원문 (앞 1200자): {raw[:1200]}")
+            except Exception as exc:  # noqa: BLE001
+                print(f"  [dump] {meta['code']} 원문 조회 실패: {exc}")
     print(f"probe 결과: {ok}/{len(INDICES)} 성공")
     return 0 if ok == len(INDICES) else 1
 
