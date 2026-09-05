@@ -2,10 +2,10 @@ name: Fetch bond yields (KR)
 
 on:
   schedule:
-    # 한국은행 시장금리는 다음 영업일 아침에 확정 공표된다.
-    # 평일 08:40 KST(전일 23:40 UTC)와 16:40 KST(07:40 UTC) 두 번 받는다.
-    - cron: "40 23 * * 0-4"
-    - cron: "40 7 * * 1-5"
+    # 금리가 달라졌을 때만 파일을 쓰므로 자주 확인해도 커밋이 쌓이지 않는다.
+    # 평일 08~18시 KST 매시 정각에 본다(UTC 로는 전날 23시부터 당일 09시).
+    - cron: "0 23 * * 0-4"
+    - cron: "0 0-9 * * 1-5"
   workflow_dispatch:
 
 permissions:

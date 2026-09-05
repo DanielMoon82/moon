@@ -210,17 +210,28 @@ def main():
         return 0
 
     as_of = max(i["date"] for g in groups for i in g["items"])
+    n = sum(len(g["items"]) for g in groups)
+
+    # 자주 확인하되 금리가 실제로 달라졌을 때만 파일을 새로 쓴다.
+    # 실행 시각까지 매번 새로 넣으면 값이 그대로여도 파일이 바뀐 것으로
+    # 잡혀 의미 없는 커밋이 쌓인다. 그래서 시각을 뺀 알맹이끼리 비교한다.
+    # updated_at 은 '마지막으로 금리가 달라진 때'라는 뜻이 된다.
+    body = {"as_of": as_of, "source": source, "groups": groups}
+    try:
+        old = json.loads(OUT_JSON.read_text(encoding="utf-8"))
+        same = {k: old.get(k) for k in body} == body
+    except (OSError, ValueError):
+        same = False
+    if same:
+        print(f"금리 그대로 — 파일 두고 넘어간다 ({as_of} 기준 {n}개)")
+        return 0
+
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(
-        json.dumps({
-            "updated_at": datetime.now(timezone.utc).isoformat(),
-            "as_of": as_of,
-            "source": source,
-            "groups": groups,
-        }, ensure_ascii=False, indent=1) + "\n",
+        json.dumps({"updated_at": datetime.now(timezone.utc).isoformat(), **body},
+                   ensure_ascii=False, indent=1) + "\n",
         encoding="utf-8",
     )
-    n = sum(len(g["items"]) for g in groups)
     print(f"{OUT_JSON.relative_to(ROOT)} 기록 — {as_of} 기준 {n}개 ({source})")
     return 0
 
