@@ -61,49 +61,60 @@ def _num(text):
         return None
 
 
-def _walk(obj):
-    """중첩 JSON을 훑어 dict를 모두 내놓는다. 네이버 응답 구조가 바뀌어도
-    키 이름만 맞으면 값을 건질 수 있게 위치가 아니라 키로 찾기 위한 것."""
-    if isinstance(obj, dict):
-        yield obj
-        for v in obj.values():
-            yield from _walk(v)
-    elif isinstance(obj, list):
-        for v in obj:
-            yield from _walk(v)
+def _first(node, *keys):
+    for k in keys:
+        if k in node and node[k] not in (None, ""):
+            return node[k]
+    return None
 
 
 def from_polling(code):
-    """네이버 실시간 폴링 JSON. 키 이름으로만 값을 찾는다."""
+    """네이버 실시간 폴링 JSON.
+
+    응답에는 전일 종가 필드가 따로 없다. 대신 전일 대비 등락폭
+    (compareToPreviousClosePrice)과 방향(compareToPreviousPrice.name = RISING /
+    FALLING)이 오므로 현재가에서 되짚어 계산한다. 콤마가 없는 *Raw 필드를
+    우선 쓴다. 고가·저가는 우리가 15분마다 찍은 표본이 아니라 장중 실제
+    고저이므로 그대로 가져온다.
+    """
     resp = requests.get(POLL_URL.format(code=code), headers=HEADERS, timeout=TIMEOUT)
     resp.raise_for_status()
     payload = resp.json()
 
-    now = prev = None
-    for node in _walk(payload):
-        if now is None:
-            for key in ("closePrice", "nv", "currentValue", "now", "tradePrice"):
-                if key in node:
-                    now = _num(node[key])
-                    break
-        if prev is None:
-            for key in ("previousClose", "pcv", "prevClose", "baseValue"):
-                if key in node:
-                    prev = _num(node[key])
-                    break
-        if now is not None and prev is not None:
-            break
+    rows = payload.get("datas") or []
+    row = next((r for r in rows if r.get("itemCode") == code), rows[0] if rows else None)
+    if not row:
+        raise ValueError("datas 가 비어 있음")
 
-    if now is None:
-        raise ValueError("polling 응답에서 현재가를 찾지 못함")
-    return now, prev
+    value = _num(_first(row, "closePriceRaw", "closePrice"))
+    if value is None:
+        raise ValueError("closePrice 를 읽지 못함")
+
+    diff = _num(_first(row, "compareToPreviousClosePriceRaw", "compareToPreviousClosePrice"))
+    direction = (row.get("compareToPreviousPrice") or {}).get("name") or ""
+    prev_close = None
+    if diff is not None:
+        signed = -abs(diff) if direction == "FALLING" else abs(diff)
+        if direction not in ("RISING", "FALLING"):
+            signed = 0.0 if abs(diff) < 1e-9 else signed
+        prev_close = round(value - signed, 2)
+
+    return {
+        "value": value,
+        "prev_close": prev_close,
+        "change_pct": _num(_first(row, "fluctuationsRatioRaw", "fluctuationsRatio")),
+        "open": _num(_first(row, "openPriceRaw", "openPrice")),
+        "high": _num(_first(row, "highPriceRaw", "highPrice")),
+        "low": _num(_first(row, "lowPriceRaw", "lowPrice")),
+        "market_status": row.get("marketStatus"),
+        "traded_at": row.get("localTradedAt"),
+    }
 
 
 def from_page(code):
-    """지수 페이지 HTML. #now_value는 오래 유지돼 온 마크업이라 최후 수단으로 둔다."""
-    resp = requests.get(
-        PAGE_URL, params={"code": code}, headers=HEADERS, timeout=TIMEOUT
-    )
+    """지수 페이지 HTML. 폴링 API가 죽었을 때만 쓰는 최후 수단이라 현재가와
+    전일 종가만 건진다. #now_value 는 오래 유지돼 온 마크업이다."""
+    resp = requests.get(PAGE_URL, params={"code": code}, headers=HEADERS, timeout=TIMEOUT)
     resp.raise_for_status()
     resp.encoding = "euc-kr"
     html = resp.text
@@ -111,20 +122,20 @@ def from_page(code):
     m = re.search(r'id="now_value"[^>]*>([^<]+)<', html)
     if not m:
         raise ValueError("#now_value 를 찾지 못함")
-    now = _num(m.group(1))
-    if now is None:
+    value = _num(m.group(1))
+    if value is None:
         raise ValueError("#now_value 를 숫자로 읽지 못함")
 
-    prev = None
+    prev_close = None
     m = re.search(r'id="change_value_and_rate"[^>]*>(.*?)</span>\s*</span>', html, re.S)
     if m:
         chunk = re.sub(r"<[^>]+>", " ", m.group(1))
         diff = _num(chunk)
         if diff is not None:
-            # 하락이면 페이지가 '하락'/'down' 표기를 함께 싣는다.
-            falling = ("하락" in chunk) or ("down" in html[m.start() - 400 : m.start()])
-            prev = round(now + diff, 2) if falling else round(now - diff, 2)
-    return now, prev
+            falling = "하락" in chunk
+            prev_close = round(value + abs(diff), 2) if falling else round(value - abs(diff), 2)
+
+    return {"value": value, "prev_close": prev_close}
 
 
 def fetch(code):
@@ -132,13 +143,17 @@ def fetch(code):
     errors = []
     for source in (from_polling, from_page):
         try:
-            now, prev = source(code)
-            print(f"  [ok] {code}: {now} (prev={prev}) via {source.__name__}")
-            return now, prev
+            quote = source(code)
+            print(
+                f"  [ok] {code}: {quote['value']} (prev={quote.get('prev_close')}, "
+                f"status={quote.get('market_status')}, traded_at={quote.get('traded_at')}) "
+                f"via {source.__name__}"
+            )
+            return quote
         except Exception as exc:  # noqa: BLE001 - 소스별 실패는 다음 소스로 넘어간다
             errors.append(f"{source.__name__}: {exc}")
     print(f"  [fail] {code}: " + " | ".join(errors), file=sys.stderr)
-    return None, None
+    return None
 
 
 def load_existing():
@@ -155,21 +170,38 @@ def probe():
     print("probe: 장 시간/요일 검사 없이 소스만 확인합니다 (파일은 쓰지 않음)")
     ok = 0
     for meta in INDICES:
-        value, prev = fetch(meta["code"])
-        if value is not None:
+        quote = fetch(meta["code"])
+        if quote and quote.get("value") is not None and quote.get("prev_close") is not None:
             ok += 1
-        if prev is None:
-            # 전일 종가 키를 못 찾았을 때만 원문을 찍는다. 응답 구조를 직접
-            # 확인할 수 없는 환경에서 키 이름을 알아내기 위한 것.
-            try:
-                raw = requests.get(
-                    POLL_URL.format(code=meta["code"]), headers=HEADERS, timeout=TIMEOUT
-                ).text
-                print(f"  [dump] {meta['code']} polling 원문 (앞 1200자): {raw[:1200]}")
-            except Exception as exc:  # noqa: BLE001
-                print(f"  [dump] {meta['code']} 원문 조회 실패: {exc}")
+            print(
+                f"        open={quote.get('open')} high={quote.get('high')} "
+                f"low={quote.get('low')} pct={quote.get('change_pct')}"
+            )
+            continue
+        # 값이 비면 응답 구조가 바뀐 것이다. 키 이름을 로그에서 확인할 수 있게 원문을 남긴다.
+        try:
+            raw = requests.get(
+                POLL_URL.format(code=meta["code"]), headers=HEADERS, timeout=TIMEOUT
+            ).text
+            print(f"  [dump] {meta['code']} polling 원문 (앞 1200자): {raw[:1200]}")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  [dump] {meta['code']} 원문 조회 실패: {exc}")
     print(f"probe 결과: {ok}/{len(INDICES)} 성공")
     return 0 if ok == len(INDICES) else 1
+
+
+def traded_date_and_time(quote, now_kst):
+    """체결 시각(localTradedAt)이 오면 그걸 쓴다. 크론은 공휴일을 모르기 때문에,
+    벽시계 대신 상류가 알려준 시각을 기준으로 삼아야 휴장일에 전일 종가를
+    오늘 값으로 반복해서 쌓는 사고를 막을 수 있다."""
+    raw = quote.get("traded_at")
+    if raw:
+        try:
+            dt = datetime.fromisoformat(str(raw)).astimezone(KST)
+            return dt.strftime("%Y-%m-%d"), dt.strftime("%H:%M")
+        except ValueError:
+            pass
+    return now_kst.strftime("%Y-%m-%d"), now_kst.strftime("%H:%M")
 
 
 def main():
@@ -197,27 +229,37 @@ def main():
             prev_points[idx.get("code")] = idx.get("points") or []
             prev_bases[idx.get("code")] = idx.get("prev_close")
 
-    stamp = now_kst.strftime("%H:%M")
     out_indices = []
-    got_any = False
+    appended = 0
+    market_open = False
 
     for meta in INDICES:
         code = meta["code"]
-        value, prev_close = fetch(code)
+        quote = fetch(code) or {}
+        value = quote.get("value")
         points = list(prev_points.get(code, []))
 
         if value is not None:
-            got_any = True
-            # 같은 분에 두 번 돌면 덮어쓴다(크론이 밀려 중복 실행될 수 있다).
-            points = [p for p in points if p.get("t") != stamp]
-            points.append({"t": stamp, "v": round(value, 2)})
-            points.sort(key=lambda p: p["t"])
-        elif not points:
-            continue  # 값도 없고 쌓인 것도 없으면 이 지수는 아예 싣지 않는다
+            traded_date, stamp = traded_date_and_time(quote, now_kst)
+            if traded_date != today:
+                # 휴장일이거나 아직 첫 체결 전. 전일 값을 오늘 선에 붙이면 안 된다.
+                print(f"  [skip] {code}: 체결일 {traded_date} 이 오늘({today})이 아님")
+                value = None
+            else:
+                # 같은 분에 두 번 돌면 덮어쓴다(크론이 밀려 중복 실행될 수 있다).
+                points = [p for p in points if p.get("t") != stamp]
+                points.append({"t": stamp, "v": round(value, 2)})
+                points.sort(key=lambda p: p["t"])
+                appended += 1
+                if str(quote.get("market_status") or "").upper() == "OPEN":
+                    market_open = True
+
+        if not points:
+            continue  # 오늘 쌓인 게 없으면 이 지수는 아예 싣지 않는다
 
         # 기준선은 하루 동안 고정한다. 새로 못 받으면 이미 저장된 값을 유지한다.
-        base = prev_close if prev_close else prev_bases.get(code)
-        latest = points[-1]["v"] if points else None
+        base = quote.get("prev_close") or prev_bases.get(code)
+        latest = points[-1]["v"]
         entry = {
             "code": code,
             "name": meta["name"],
@@ -225,17 +267,24 @@ def main():
             "value": latest,
             "points": points,
         }
-        if latest is not None and base:
+        if base:
             entry["change"] = round(latest - base, 2)
-            entry["change_pct"] = round((latest - base) / base * 100, 2)
-        if points:
-            values = [p["v"] for p in points]
-            entry["high"] = max(values)
-            entry["low"] = min(values)
+            entry["change_pct"] = (
+                quote.get("change_pct")
+                if quote.get("change_pct") is not None
+                else round((latest - base) / base * 100, 2)
+            )
+        # 고가·저가는 상류의 장중 실제 고저를 쓴다. 15분 표본의 최대·최소는
+        # 그 사이에 찍은 고점을 놓치므로 실제보다 좁게 나온다.
+        sampled = [p["v"] for p in points]
+        entry["high"] = quote.get("high") or max(sampled)
+        entry["low"] = quote.get("low") or min(sampled)
+        if quote.get("open"):
+            entry["open"] = quote["open"]
         out_indices.append(entry)
 
-    if not got_any:
-        print("모든 소스 실패 — 기존 파일 유지", file=sys.stderr)
+    if not appended:
+        print("이번 실행에서 새로 담은 값 없음 — 기존 파일 유지", file=sys.stderr)
         return 0
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
@@ -244,7 +293,7 @@ def main():
             {
                 "updated_at": datetime.now(timezone.utc).isoformat(),
                 "trading_date": today,
-                "market_open": minutes <= 15 * 60 + 30,
+                "market_open": market_open,
                 "indices": out_indices,
             },
             ensure_ascii=False,
@@ -254,7 +303,7 @@ def main():
         encoding="utf-8",
     )
     counts = ", ".join(f"{i['code']} {len(i['points'])}점" for i in out_indices)
-    print(f"{OUT_JSON.relative_to(ROOT)} 기록 — {today} {stamp} ({counts})")
+    print(f"{OUT_JSON.relative_to(ROOT)} 기록 — {today} ({counts})")
     return 0
 
 
