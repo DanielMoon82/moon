@@ -22,6 +22,15 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # 스텝의 if: 에서 읽어야 해서 job 레벨에 둔다.
+    # (스텝 안에 선언한 env 는 그 스텝의 if: 에서 보이지 않는다)
+    env:
+      TISTORY_KAKAO_ID: ${{ secrets.TISTORY_KAKAO_ID }}
+      TISTORY_KAKAO_PW: ${{ secrets.TISTORY_KAKAO_PW }}
+      TISTORY_BLOG_NAME: ${{ vars.TISTORY_BLOG_NAME }}
+      NAVER_ID: ${{ secrets.NAVER_ID }}
+      NAVER_PW: ${{ secrets.NAVER_PW }}
+      ONLY_SLUG: ${{ github.event.inputs.slug }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,21 +49,16 @@ jobs:
       # 마지막 단계에서 실패 여부를 모아 보고한다.
       - name: Publish to Tistory
         id: tistory
+        # 비밀값이 없으면 건너뛴다. 설정하지 않은 채널 때문에 매번 빨간 실패가
+        # 뜨면 진짜 고장을 알아채지 못한다.
+        if: env.TISTORY_KAKAO_ID != '' && env.TISTORY_KAKAO_PW != ''
         continue-on-error: true
-        env:
-          TISTORY_KAKAO_ID: ${{ secrets.TISTORY_KAKAO_ID }}
-          TISTORY_KAKAO_PW: ${{ secrets.TISTORY_KAKAO_PW }}
-          TISTORY_BLOG_NAME: ${{ vars.TISTORY_BLOG_NAME }}
-          ONLY_SLUG: ${{ github.event.inputs.slug }}
         run: python3 .github/scripts/publish-to-tistory.py
 
       - name: Publish to Naver
         id: naver
+        if: env.NAVER_ID != '' && env.NAVER_PW != ''
         continue-on-error: true
-        env:
-          NAVER_ID: ${{ secrets.NAVER_ID }}
-          NAVER_PW: ${{ secrets.NAVER_PW }}
-          ONLY_SLUG: ${{ github.event.inputs.slug }}
         run: python3 .github/scripts/publish-to-naver.py
 
       # 셀렉터가 안 맞거나 로그인이 막히면 이 스크린샷이 유일한 단서다.
@@ -83,6 +87,11 @@ jobs:
         run: |
           echo "티스토리: ${{ steps.tistory.outcome }}"
           echo "네이버: ${{ steps.naver.outcome }}"
+          if [ "${{ steps.tistory.outcome }}" = "skipped" ] && \
+             [ "${{ steps.naver.outcome }}" = "skipped" ]; then
+            echo "::notice::티스토리·네이버 비밀값이 없어 건너뛰었습니다. blog-exports/ 파일을 복사해 직접 올리세요."
+            exit 0
+          fi
           if [ "${{ steps.tistory.outcome }}" = "failure" ] || \
              [ "${{ steps.naver.outcome }}" = "failure" ]; then
             echo "::warning::자동 발행이 일부 실패했습니다. publish-debug 아티팩트를 확인하세요."

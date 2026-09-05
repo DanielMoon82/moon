@@ -92,7 +92,19 @@ def access_token():
         timeout=TIMEOUT,
     )
     if resp.status_code != 200:
-        raise SystemExit(f"token refresh failed ({resp.status_code}): {resp.text[:300]}")
+        detail = resp.text[:300]
+        hint = ""
+        # OAuth 동의 화면이 '테스트' 상태면 리프레시 토큰이 7일 만에 죽는다.
+        # 구글은 invalid_grant 만 돌려주고 이유를 말해 주지 않아서, 여기서 알려준다.
+        if "invalid_grant" in detail:
+            hint = (
+                "\n\n리프레시 토큰이 만료됐거나 취소된 것으로 보입니다."
+                "\n구글 클라우드 → API 및 서비스 → OAuth 동의 화면 의 게시 상태가"
+                " '테스트' 이면 토큰이 7일 만에 만료됩니다."
+                "\n'프로덕션'(앱 게시)으로 바꾼 뒤 토큰을 다시 발급받으세요."
+                "\n자세한 절차: blogger-posts/README.md"
+            )
+        raise SystemExit(f"token refresh failed ({resp.status_code}): {detail}{hint}")
     return resp.json()["access_token"]
 
 
