@@ -2,10 +2,10 @@ name: Daily market report
 
 on:
   schedule:
-    # 16:00 KST on weekdays — 장 마감(15:30) 30분 뒤.
-    # 이 시각에는 외국인·기관 수급이 아직 확정 전이라 전일 확정치가 실린다.
-    # 생성기가 그 사실을 글에 밝히므로 전날 수급을 그날 것으로 읽지 않는다.
-    - cron: "0 7 * * 1-5"
+    # 18:00 KST on weekdays — 17:00 KST 시세 수집이 그날 확정 수급을
+    # 담고 난 뒤라, 외국인·기관 순매수까지 당일 값으로 실린다.
+    # (수집이 밀려 전일치만 있으면 생성기가 글에 그 날짜를 밝힌다.)
+    - cron: "0 9 * * 1-5"
   workflow_dispatch:
 
 permissions:
