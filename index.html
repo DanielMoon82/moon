@@ -393,6 +393,126 @@
     font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
   }
 
+  /* ---------- 여행 일정 짜기 ---------- */
+  .plan-search{position:relative;margin-bottom:18px;}
+  .plan-field{display:flex;align-items:center;gap:10px;
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+    padding:12px 14px;}
+  .plan-field:focus-within{border-color:var(--accent);}
+  .plan-field .ico{font-size:1rem;line-height:1;color:var(--ink-3);}
+  #plan-q{
+    flex:1;min-width:0;border:0;background:none;color:var(--ink);
+    font:inherit;font-size:1rem;outline:none;
+  }
+  #plan-q::placeholder{color:var(--ink-3);}
+  .plan-regions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .plan-regions button{
+    border:1px solid var(--line);border-radius:999px;background:none;
+    color:var(--ink-2);font:inherit;font-size:.78rem;padding:5px 13px;cursor:pointer;
+  }
+  .plan-regions button[aria-pressed="true"]{
+    border-color:var(--accent);color:var(--accent);
+  }
+  .plan-count{margin:0 0 14px;font-size:.78rem;color:var(--ink-3);}
+
+  .plan-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:12px;
+  }
+  .plan-card{
+    display:flex;flex-direction:column;gap:6px;text-align:left;
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+    padding:16px 16px 14px;cursor:pointer;font:inherit;color:inherit;
+  }
+  .plan-card:hover,.plan-card:focus-visible{border-color:var(--accent);}
+  .plan-card .row{display:flex;align-items:baseline;gap:8px;}
+  .plan-card .city{
+    font-family:var(--f-display);font-weight:600;font-size:1.05rem;
+    letter-spacing:-.02em;color:var(--ink);
+  }
+  .plan-card .country{font-size:.72rem;color:var(--ink-3);}
+  .plan-card .sum{font-size:.8rem;color:var(--ink-2);line-height:1.55;}
+  .plan-card .meta{font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);}
+  .plan-empty{
+    border:1px dashed var(--line);border-radius:2px;padding:28px 16px;
+    text-align:center;font-size:.85rem;color:var(--ink-3);
+  }
+
+  /* 고른 도시의 코스 */
+  .plan-detail{
+    margin-top:22px;border:1px solid var(--line);border-radius:3px;
+    background:var(--surface);padding:clamp(18px,2.5vw,26px);
+  }
+  .plan-back{
+    border:0;background:none;font:inherit;font-size:.78rem;color:var(--ink-3);
+    cursor:pointer;padding:0;margin-bottom:14px;
+  }
+  .plan-back:hover{color:var(--accent);}
+  .plan-title{
+    font-family:var(--f-display);font-weight:700;
+    font-size:clamp(1.3rem,3vw,1.7rem);letter-spacing:-.03em;
+    color:var(--ink);margin:0;
+  }
+  .plan-sub{margin:6px 0 0;font-size:.88rem;color:var(--ink-2);line-height:1.6;}
+  .plan-facts{
+    display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 0;
+    font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+  }
+  .plan-tip{
+    margin:14px 0 0;padding:12px 14px;border-left:2px solid var(--jade);
+    background:color-mix(in srgb, var(--jade) 7%, transparent);
+    font-size:.82rem;color:var(--ink-2);line-height:1.65;border-radius:0 2px 2px 0;
+  }
+  .plan-lens{display:flex;gap:8px;margin:20px 0 0;flex-wrap:wrap;}
+  .plan-lens button{
+    border:1px solid var(--line);border-radius:999px;background:none;
+    color:var(--ink-2);font:inherit;font-size:.82rem;font-weight:600;
+    padding:7px 18px;cursor:pointer;
+  }
+  .plan-lens button[aria-pressed="true"]{
+    background:var(--accent);border-color:var(--accent);color:var(--paper);
+  }
+
+  .plan-days{margin-top:22px;}
+  .plan-day + .plan-day{margin-top:26px;}
+  .plan-day-head{display:flex;align-items:baseline;gap:10px;margin-bottom:2px;}
+  .plan-day-no{
+    font-family:var(--f-mono);font-size:.68rem;font-weight:600;
+    color:var(--paper);background:var(--ink-2);
+    border-radius:999px;padding:3px 9px;flex:none;
+  }
+  .plan-day-title{
+    font-family:var(--f-display);font-weight:600;font-size:1rem;
+    color:var(--ink);margin:0;
+  }
+  /* 장소를 잇는 세로선. 순서가 있다는 걸 눈으로 보여 준다. */
+  .plan-spots{list-style:none;margin:12px 0 0;padding:0 0 0 26px;position:relative;}
+  .plan-spots::before{
+    content:"";position:absolute;left:7px;top:8px;bottom:12px;
+    width:1px;background:var(--line);
+  }
+  .plan-spot{position:relative;padding:0 0 16px;}
+  .plan-spot::before{
+    content:"";position:absolute;left:-23px;top:6px;
+    width:9px;height:9px;border-radius:50%;
+    background:var(--paper);border:2px solid var(--accent);
+  }
+  .plan-spot .name{
+    font-weight:600;font-size:.93rem;color:var(--ink);
+  }
+  .plan-spot .kind{
+    font-family:var(--f-mono);font-size:.66rem;color:var(--ink-3);margin-left:8px;
+  }
+  .plan-spot .note{margin:4px 0 0;font-size:.82rem;color:var(--ink-2);line-height:1.6;}
+  .plan-spot .stay{
+    display:inline-block;margin-top:5px;font-family:var(--f-mono);
+    font-size:.66rem;color:var(--ink-3);
+  }
+
+  @media (max-width:520px){
+    .plan-grid{grid-template-columns:1fr;}
+  }
+
   /* ---------- 오늘의 채권 ---------- */
   .bond-grid{
     display:grid;
@@ -1073,7 +1193,7 @@
       <a class="cat-card" href="#travel">
         <span class="cat-icon" aria-hidden="true">🌏</span>
         <h3>여행</h3>
-        <ul><li>여행 기록 · 여행용품 리뷰</li><li>세계 날씨</li></ul>
+        <ul><li>도시별 1·3·5일 일정</li><li>여행 기록 · 여행용품 · 날씨</li></ul>
       </a>
       <a class="cat-card" href="#invest">
         <span class="cat-icon" aria-hidden="true">📈</span>
@@ -1159,8 +1279,31 @@
   <div class="cat-group" id="travel">
     <div class="wrap cat-band">
       <h2 class="cat-band-title"><span aria-hidden="true">🌏</span> 여행</h2>
-      <p class="cat-band-desc">여행 기록, 여러 번 쓰며 남은 여행용품, 여행지 날씨.</p>
+      <p class="cat-band-desc">도시별 여행 일정, 여행 기록, 여러 번 쓰며 남은 여행용품, 여행지 날씨.</p>
     </div>
+
+  <section class="section wrap" id="plan">
+    <div class="section-head">
+      <h2><span aria-hidden="true">🧭</span> 여행 일정 짜기</h2>
+      <p>도시를 검색하면 1일·3일·5일 코스가 나옵니다.</p>
+    </div>
+    <p class="stock-note">세계 주요 16개 도시, 96일치 코스를 미리 짜 뒀습니다. <strong>검색할 때마다 그 자리에서 새로 만들어 내지는 않습니다</strong> — 정적 사이트라 서버가 없기 때문입니다. 대신 각 코스는 동선과 소요 시간을 따져 직접 짠 것입니다. 운영 시간과 휴무일은 떠나기 전에 다시 확인하세요.</p>
+
+    <div class="plan-search">
+      <div class="plan-field">
+        <span class="ico" aria-hidden="true">🔍</span>
+        <input id="plan-q" type="search" autocomplete="off"
+               placeholder="도시 이름을 넣어보세요 — 도쿄, 파리, 다낭…"
+               aria-label="여행 도시 검색">
+      </div>
+      <div class="plan-regions" id="plan-regions" role="group" aria-label="지역"></div>
+    </div>
+
+    <p class="plan-count" id="plan-count"></p>
+    <div class="plan-grid" id="plan-results"></div>
+    <div class="plan-detail" id="plan-detail" hidden></div>
+  </section>
+
   <section class="section wrap" id="trips">
     <div class="section-head">
       <h2>여행 기록</h2>
@@ -1782,6 +1925,180 @@
     var t; window.addEventListener('resize', function () {
       clearTimeout(t); t = setTimeout(loadTicker, 250);
     });
+  })();
+
+  // ---------- 여행 일정 짜기 ----------
+  // 코스는 data/itineraries.json 에 미리 적어 둔 것을 읽어 온다. 검색은
+  // 그 안에서 찾는 것이지 그 자리에서 일정을 만들어 내는 게 아니다.
+  // 3일치는 Day1~3, 5일치는 Day1~5 를 그대로 쓰고, 1일치만 따로 짠 코스다.
+  (function () {
+    var input = document.getElementById('plan-q');
+    var grid = document.getElementById('plan-results');
+    var detail = document.getElementById('plan-detail');
+    var countEl = document.getElementById('plan-count');
+    var regionEl = document.getElementById('plan-regions');
+    if (!input || !grid || !detail) return;
+
+    var cities = [];
+    var region = '전체';
+    var lens = 3;          // 마지막으로 고른 기간을 도시가 바뀌어도 이어 쓴다
+    var current = null;
+
+    function el(tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text != null) n.textContent = text;
+      return n;
+    }
+
+    function haystack(c) {
+      return [c.name, c.country, c.region, c.summary]
+        .concat(c.alias || []).join(' ').toLowerCase();
+    }
+
+    function matches(q) {
+      var needle = q.trim().toLowerCase();
+      return cities.filter(function (c) {
+        if (region !== '전체' && c.region !== region) return false;
+        return !needle || haystack(c).indexOf(needle) !== -1;
+      });
+    }
+
+    function paintCards() {
+      var found = matches(input.value);
+      grid.textContent = '';
+      if (!found.length) {
+        var none = el('div', 'plan-empty',
+          '찾는 도시가 아직 없습니다. 지금은 ' + cities.length + '개 도시가 있습니다.');
+        grid.appendChild(none);
+        countEl.textContent = '';
+        return;
+      }
+      countEl.textContent = input.value.trim()
+        ? found.length + '개 도시를 찾았습니다.'
+        : cities.length + '개 도시가 있습니다. 눌러서 코스를 보세요.';
+
+      found.forEach(function (c) {
+        var card = el('button', 'plan-card');
+        card.type = 'button';
+        var row = el('div', 'row');
+        row.appendChild(el('span', 'city', c.name));
+        row.appendChild(el('span', 'country', c.country));
+        card.appendChild(row);
+        card.appendChild(el('p', 'sum', c.summary));
+        card.appendChild(el('span', 'meta', c.flight));
+        card.addEventListener('click', function () { open(c); });
+        grid.appendChild(card);
+      });
+    }
+
+    function daysFor(c) {
+      // 1일은 따로 짠 하이라이트 코스, 3·5일은 날 묶음의 앞에서부터 자른다.
+      return lens === 1 ? [c.oneday] : c.days.slice(0, lens);
+    }
+
+    function paintDetail() {
+      var c = current;
+      detail.textContent = '';
+      detail.hidden = false;
+
+      var back = el('button', 'plan-back', '← 도시 목록으로');
+      back.type = 'button';
+      back.addEventListener('click', close);
+      detail.appendChild(back);
+
+      detail.appendChild(el('h3', 'plan-title', c.name + ' ' + lens + '일 코스'));
+      detail.appendChild(el('p', 'plan-sub', c.summary));
+
+      var facts = el('div', 'plan-facts');
+      [c.country, c.flight, '가기 좋은 때 ' + c.best].forEach(function (t) {
+        facts.appendChild(el('span', null, t));
+      });
+      detail.appendChild(facts);
+
+      var lensBox = el('div', 'plan-lens');
+      [1, 3, 5].forEach(function (n) {
+        var b = el('button', null, n + '일');
+        b.type = 'button';
+        b.setAttribute('aria-pressed', n === lens ? 'true' : 'false');
+        b.addEventListener('click', function () { lens = n; paintDetail(); });
+        lensBox.appendChild(b);
+      });
+      detail.appendChild(lensBox);
+
+      var days = el('div', 'plan-days');
+      daysFor(c).forEach(function (day, i) {
+        var block = el('div', 'plan-day');
+        var head = el('div', 'plan-day-head');
+        head.appendChild(el('span', 'plan-day-no', lens === 1 ? '하루' : 'Day ' + (i + 1)));
+        head.appendChild(el('h4', 'plan-day-title', day.title));
+        block.appendChild(head);
+
+        var list = el('ul', 'plan-spots');
+        day.spots.forEach(function (sp) {
+          var li = el('li', 'plan-spot');
+          var line = el('div');
+          line.appendChild(el('span', 'name', sp.name));
+          line.appendChild(el('span', 'kind', sp.kind));
+          li.appendChild(line);
+          li.appendChild(el('p', 'note', sp.note));
+          li.appendChild(el('span', 'stay', '머무는 시간 ' + sp.stay));
+          list.appendChild(li);
+        });
+        block.appendChild(list);
+        days.appendChild(block);
+      });
+      detail.appendChild(days);
+
+      var tip = el('p', 'plan-tip', '알아두면 좋은 것 — ' + c.tip);
+      detail.appendChild(tip);
+    }
+
+    function open(c) {
+      current = c;
+      paintDetail();
+      detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function close() {
+      current = null;
+      detail.hidden = true;
+      detail.textContent = '';
+      document.getElementById('plan').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function paintRegions() {
+      var names = ['전체'];
+      cities.forEach(function (c) {
+        if (names.indexOf(c.region) === -1) names.push(c.region);
+      });
+      regionEl.textContent = '';
+      names.forEach(function (n) {
+        var b = el('button', null, n);
+        b.type = 'button';
+        b.setAttribute('aria-pressed', n === region ? 'true' : 'false');
+        b.addEventListener('click', function () {
+          region = n;
+          paintRegions();
+          paintCards();
+        });
+        regionEl.appendChild(b);
+      });
+    }
+
+    input.addEventListener('input', paintCards);
+
+    fetch('./data/itineraries.json', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (doc) {
+        cities = (doc && doc.cities) || [];
+        if (!cities.length) throw new Error('빈 목록');
+        paintRegions();
+        paintCards();
+      })
+      .catch(function () {
+        grid.innerHTML = '<div class="plan-empty">일정을 불러오지 못했습니다.</div>';
+      });
   })();
 
   // ---------- 오늘의 채권 ----------
