@@ -393,6 +393,24 @@
     font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
   }
 
+  /* ---------- 사진이 있는 여행 기록 카드 ---------- */
+  /* .trip 이 이 규칙보다 아래에 있어 순서로는 못 이긴다. 선택자를 겹쳐 우선순위를 올린다.
+     색띠용 2열 격자를 그대로 두면 사진이 7px 칸에 끼인다. */
+  .trip.trip-link{
+    grid-template-columns:minmax(0,1fr);
+    text-decoration:none;color:inherit;
+    margin-bottom:clamp(16px,2.4vw,22px);
+  }
+  .trip.trip-link:hover{border-color:var(--accent);}
+  .trip-photo{
+    display:block;width:100%;height:clamp(190px,28vw,320px);
+    object-fit:cover;object-position:center 45%;
+  }
+  .trip-more{
+    display:inline-block;margin-top:14px;
+    font-size:.72rem;letter-spacing:.04em;color:var(--accent);
+  }
+
   /* ---------- 여행용품 확인 목록 ---------- */
   .gear-check{
     list-style:none;margin:12px 0 0;padding:0;
@@ -1272,6 +1290,13 @@
     </div>
     <ol class="pop-list">
         <li>
+          <a href="./posts/zugspitze.html">
+            <span class="pop-tag mono">여행</span>
+            <span class="pop-title">추크슈피체와 아이브제 — 오후 두 시엔 눈, 네 시엔 물</span>
+            <span class="pop-desc">독일 최고봉 2,962m에서 두 시간 만에 청록색 호수로</span>
+          </a>
+        </li>
+        <li>
           <a href="./posts/bigwang.html">
             <span class="pop-tag mono">생활·건강</span>
             <span class="pop-title">영화 비광 — 제목이 이미 다 말하고 있다</span>
@@ -1356,6 +1381,21 @@
       <h2>여행 기록</h2>
       <p>돌아와서 기억나는 것만 남긴 기록입니다.</p>
     </div>
+    <a class="trip rise trip-link" href="./posts/zugspitze.html">
+      <img class="trip-photo" src="./posts/images/zugspitze-eibsee-2.jpg"
+           alt="아이브제 호수 건너편의 추크슈피체" loading="lazy">
+      <div class="trip-body">
+        <div class="trip-head">
+          <h3>추크슈피체 · 아이브제</h3>
+          <span class="trip-country mono">GERMANY · 2,962m</span>
+        </div>
+        <p class="trip-dates">2026.05.30 · 하루</p>
+        <p class="trip-note">독일에서 가장 높은 곳에 눈이 남아 있었고, 두 시간 뒤 그 산이 비친 호수에서 사람들이 헤엄치고 있었다. 표고차 2,000m가 하루에 계절 두 개를 만든다.</p>
+        <ul class="trip-tags"><li>알프스</li><li>케이블카</li><li>호수 수영</li></ul>
+        <span class="trip-more mono">기록 읽기 →</span>
+      </div>
+    </a>
+
     <article class="trip rise">
       <div class="trip-band" style="--c1:#2A3550;--c2:#7D8DA8;--c3:#DCE4EE" aria-hidden="true"></div>
       <div class="trip-body">
