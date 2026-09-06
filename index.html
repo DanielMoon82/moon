@@ -393,6 +393,17 @@
     font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
   }
 
+  /* ---------- 푸터 안내 링크 ---------- */
+  .foot-links{
+    display:flex;flex-wrap:wrap;gap:10px 20px;
+    margin-top:20px;padding-top:18px;border-top:1px solid var(--line);
+  }
+  .foot-links a{
+    font-size:.8rem;color:var(--ink-3);text-decoration:none;
+  }
+  .foot-links a:hover{color:var(--accent);}
+  .foot-links strong{font-weight:600;color:var(--ink-2);}
+
   /* ---------- 여행 일정 짜기 ---------- */
   .plan-search{position:relative;margin-bottom:18px;}
   .plan-field{display:flex;align-items:center;gap:10px;
@@ -1759,6 +1770,13 @@
       <p>여행 · 투자 · 생활·건강 · 뉴스를 한자리에 모아둡니다.</p>
     </div>
     <p class="mono">ICN 37.4602°N 126.4407°E</p>
+  </div>
+  <div class="wrap foot-links">
+    <a href="./about.html">소개</a>
+    <a href="./privacy.html"><strong>개인정보처리방침</strong></a>
+    <a href="./terms.html">이용약관</a>
+    <a href="./contact.html">문의</a>
+    <a href="./ads.html">광고·제휴 안내</a>
   </div>
 </footer>
 
