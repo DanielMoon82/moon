@@ -393,6 +393,23 @@
     font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
   }
 
+  /* ---------- 여행용품 확인 목록 ---------- */
+  .gear-check{
+    list-style:none;margin:12px 0 0;padding:0;
+    border-top:1px solid var(--line);
+  }
+  .gear-check li{
+    position:relative;padding:7px 0 7px 16px;
+    font-size:.78rem;line-height:1.6;color:var(--ink-3);
+    border-bottom:1px solid var(--line);
+  }
+  .gear-check li:last-child{border-bottom:0;}
+  .gear-check li::before{
+    content:"";position:absolute;left:0;top:14px;
+    width:4px;height:4px;border-radius:50%;background:var(--accent);
+  }
+  .gear-check strong{color:var(--ink-2);font-weight:600;}
+
   /* ---------- 푸터 안내 링크 ---------- */
   .foot-links{
     display:flex;flex-wrap:wrap;gap:10px 20px;
@@ -1346,6 +1363,12 @@
         <span class="gear-cat">Carry-on</span>
         <h3>기내용 20인치 캐리어</h3>
         <p class="gear-note">기내 반입 규격은 항공사마다 다르다. 대형 항공사는 대체로 세 변 합 115cm에 10kg 안팎이지만, 저비용 항공사는 7kg까지 줄어드는 곳이 있다. 자주 타는 항공사 규정을 먼저 보고 고르는 게 순서다.</p>
+        <ul class="gear-check">
+          <li>세 변 합이 115cm 이내인지 (대형 항공사 기준)</li>
+          <li>빈 무게 — 하드케이스 20인치는 보통 2.5~3.5kg이고, 이게 곧 짐 무게에서 빠진다</li>
+          <li>바퀴가 네 개인지 — 두 개짜리는 끌 때 팔에 무게가 실린다</li>
+          <li>미국 노선을 탄다면 TSA 자물쇠인지</li>
+        </ul>
         <div class="gear-foot">
           <span class="gear-price mono">가격은 링크에서</span>
           <a class="gear-cta" href="https://link.coupang.com/a/gAx5egxhim" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
@@ -1356,6 +1379,11 @@
         <span class="gear-cat">Night flight</span>
         <h3>파우치형 메모리폼 목베개</h3>
         <p class="gear-note">고를 때 보는 건 두 가지다. 접었을 때 부피가 얼마나 줄어드는지, 그리고 졸 때 턱이 앞으로 떨어지지 않게 받쳐 주는 모양인지. 목 뒤만 감싸는 형태는 정작 고개가 앞으로 꺾인다.</p>
+        <ul class="gear-check">
+          <li>접었을 때 크기 — 캐리어 옆주머니에 들어가는지</li>
+          <li>커버를 벗겨 빨 수 있는지</li>
+          <li>목 뒤만 감싸는 U자형인지, 턱까지 받치는 형태인지</li>
+        </ul>
         <div class="gear-foot">
           <span class="gear-price mono">가격은 링크에서</span>
           <a class="gear-cta" href="https://link.coupang.com/a/gAycFdGwp2" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
@@ -1366,6 +1394,11 @@
         <span class="gear-cat">Night flight</span>
         <h3>노이즈캔슬링 무선이어폰</h3>
         <p class="gear-note">비행기 엔진 소리는 낮고 일정한 주파수라 노이즈캔슬링이 특히 잘 듣는다. 반대로 사람 말소리는 덜 지워진다. 기내 소음을 줄이려는 목적이면 값을 크게 올리지 않아도 체감 차이가 난다.</p>
+        <ul class="gear-check">
+          <li>케이스까지 합친 총 재생시간 — 장거리면 30시간 안팎은 되어야 편하다</li>
+          <li>기내 엔터테인먼트에 연결할 유선 어댑터가 필요한지</li>
+          <li>귀가 눌리는 느낌에 민감하면 커널형보다 오픈형이 나을 수 있다</li>
+        </ul>
         <div class="gear-foot">
           <span class="gear-price mono">가격은 링크에서</span>
           <a class="gear-cta" href="https://link.coupang.com/a/gAyrK1FuRU" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
@@ -1376,6 +1409,11 @@
         <span class="gear-cat">Packing</span>
         <h3>여행용 압축 파우치 세트</h3>
         <p class="gear-note">부피는 줄지만 무게는 그대로다. 수하물 무게 제한에는 도움이 되지 않는다. 대신 캐리어 안에서 옷이 흐트러지지 않고, 입은 옷과 안 입은 옷을 나눠 두면 숙소에서 짐을 뒤질 일이 줄어든다.</p>
+        <ul class="gear-check">
+          <li>지퍼로 누르는 방식인지, 펌프가 필요한 진공식인지</li>
+          <li>크기 구성 — 큰 것 하나보다 중간 크기 여러 개가 쓰기 좋다</li>
+          <li>압축하면 옷이 구겨진다. 정장이나 셔츠는 따로 넣는 게 낫다</li>
+        </ul>
         <div class="gear-foot">
           <span class="gear-price mono">가격은 링크에서</span>
           <a class="gear-cta" href="https://link.coupang.com/a/gAyvvBtTgG" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
@@ -1386,6 +1424,11 @@
         <span class="gear-cat">Power</span>
         <h3>20000mAh 보조배터리</h3>
         <p class="gear-note">보조배터리는 <strong>위탁수하물에 넣을 수 없고 기내로만 들고 탄다.</strong> 100Wh 이하여야 하는데 20000mAh는 약 74Wh라 규정 안에 들어온다. 용량 표시가 없거나 100Wh를 넘으면 공항에서 뺏긴다.</p>
+        <ul class="gear-check">
+          <li>겉면에 Wh 또는 mAh가 <strong>인쇄</strong>되어 있는지 — 표시가 없으면 공항에서 막힌다</li>
+          <li>계산법은 mAh × 3.7 ÷ 1000 = Wh. 20000mAh면 74Wh다</li>
+          <li>노트북까지 충전하려면 PD 65W 이상 출력인지</li>
+        </ul>
         <div class="gear-foot">
           <span class="gear-price mono">가격은 링크에서</span>
           <a class="gear-cta" href="https://link.coupang.com/a/gAyxltbhIG" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
@@ -1396,6 +1439,11 @@
         <span class="gear-cat">Adapter</span>
         <h3>멀티 트래블 어댑터</h3>
         <p class="gear-note">어댑터는 <strong>플러그 모양만 바꾸지 전압은 바꾸지 않는다.</strong> 한국 220V, 일본 100V, 미국 120V로 다르다. 기기에 '100–240V'라고 적혀 있으면 어댑터만으로 되고, 아니면 변압기가 따로 필요하다.</p>
+        <ul class="gear-check">
+          <li>가려는 나라의 플러그 모양 — 일본·미국은 A형, 영국은 G형, 유럽은 C/F형</li>
+          <li>기기에 '100–240V'가 적혀 있는지 (없으면 변압기가 따로 필요하다)</li>
+          <li>헤어드라이어 같은 고전력 기기는 대부분의 여행용 어댑터가 못 견딘다</li>
+        </ul>
         <div class="gear-foot">
           <span class="gear-price mono">가격은 링크에서</span>
           <a class="gear-cta" href="https://link.coupang.com/a/gAyDu31F92" target="_blank" rel="nofollow sponsored noopener">쿠팡에서 보기</a>
