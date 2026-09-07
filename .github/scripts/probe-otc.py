@@ -40,9 +40,11 @@ with sync_playwright() as p:
         print("=" * 70)
         print("메뉴:", menu)
         try:
+            # 메뉴는 접혀 있어 눈에 안 보인다. 보일 때까지 기다리면 시간만
+            # 지나므로 요소에 직접 클릭을 걸어 준다.
             link = pg.get_by_text(menu, exact=True).first
-            link.click(timeout=8000)
-            pg.wait_for_timeout(5000)
+            link.evaluate("el => el.click()")
+            pg.wait_for_timeout(6000)
             print("  주소:", pg.url[:130])
             head = pg.evaluate("() => (document.body.innerText||'').replace(/\\s+/g,' ').slice(0,700)")
             print("  본문머리:", head)
