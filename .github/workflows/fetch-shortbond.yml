@@ -1,0 +1,32 @@
+name: Fetch short-term bond yields (KR)
+
+# 평일 오전·오후 두 번. KIS채권평가가 매일 내는 자료다.
+on:
+  schedule:
+    - cron: "0 1 * * 1-5"    # 10:00 KST
+    - cron: "30 7 * * 1-5"   # 16:30 KST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install playwright
+      - run: python3 -m playwright install --with-deps chromium
+      - run: python3 -u .github/scripts/fetch-shortbond.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/shortbond.json
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update short-term bond yields"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
