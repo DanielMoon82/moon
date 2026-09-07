@@ -1,45 +1,69 @@
 #!/usr/bin/env python3
-"""임시 프로브: 증권사 채권 목록 주소를 하나씩 찍어 본다.
+"""임시 프로브: 증권사 채권 목록 주소를 '추측' 말고 '캐낸다'.
 
-왜 클릭을 그만뒀나
-  메뉴를 눌러 들어가는 방식은 못 찾을 때마다 기다리다 작업 제한을 넘겼다.
-  대신 앞 프로브가 알려 준 주소 규칙을 가지고 곧바로 찍어 본다. 안 열리면
-  바로 다음으로 넘어가니 멈출 일이 없다.
+앞 프로브에서 배운 것
+  주소를 지어내 찍는 건 다 빗나갔다. 신한 fbond1001·1003~1007 은 전부
+  '페이지를 찾을 수 없습니다', 키움·한국투자·대신도 오류 화면이었다.
+  KB 의 goods.json 에는 펀드만 있고 채권은 없었다.
 
-앞 프로브가 알려 준 것
-  · 신한 m.shinhansec.com/mweb/fnin/bond/fbond1002 가 열린다. 다만 그 화면은
-    채권 설명이지 목록이 아니다. 번호가 붙어 있으니 이웃 번호를 훑는다.
-  · KB 는 상품 자료를 json 파일로 따로 낸다
-    (m.kbsec.com/ndatatopweb/www/json/main/goods.json). 채권판이 있는지 본다.
-  · 키움 국내채권은 error 페이지로 갔다. 다른 주소를 찾아야 한다.
-  · 삼성·미래에셋은 눌러도 화면이 안 바뀌었다.
+그래서 이번엔 열리는 게 확인된 화면에서 그 화면이 가진 것을 통째로 캔다.
+  · 모든 링크의 href 와 onclick — 하위 메뉴 주소가 거기 적혀 있다
+  · 메뉴를 여는 함수의 본문 — 삼성은 openMenu('M14949...') 로 여는데
+    그 함수가 주소를 어떻게 만드는지 봐야 한다
+  · data- 로 시작하는 속성 — 요즘 화면은 주소를 거기 숨겨 둔다
 
-결과는 로그로 낸다. 파일로 커밋하려다 github-actions[bot] 권한 403 으로
-밀린 적이 있다. 작업이 끝나면 로그는 잘 읽히니 그쪽이 확실하다.
+결과는 로그로 낸다. 커밋은 권한 403 으로 밀린 적이 있다.
 """
 import json
 import re
 import traceback
+
 from playwright.sync_api import sync_playwright
 
-SHINHAN = [(f"신한 fbond{n}", f"https://m.shinhansec.com/mweb/fnin/bond/fbond{n}")
-           for n in (1001, 1003, 1004, 1005, 1006, 1007)]
-OTHERS = [
-    ("KB goods.json", "https://m.kbsec.com/ndatatopweb/www/json/main/goods.json"),
+# 열리는 것이 확인된 화면만 넣는다.
+PAGES = [
+    ("신한 채권", "https://m.shinhansec.com/mweb/fnin/bond/fbond1002"),
     ("KB 채권메뉴", "https://m.kbsec.com/go.able?linkcd=m01010006"),
-    ("삼성 mbw메인", "https://www.samsungpop.com/mbw/main/main.pop"),
-    ("삼성 장외채권", "https://www.samsungpop.com/mbw/bond/bond_main.pop"),
-    ("키움 국내채권", "https://www1.kiwoom.com/m/wm/bond/domesticBondList"),
-    ("한국투자 채권", "https://m.koreainvestment.com/mobile/bond/bondList.jsp"),
-    ("하나 채권", "https://m.hanaw.com/mw/fnnc/bond/main.cmd"),
-    ("대신 채권", "https://m.daishin.com/mweb/product/bond/bondList"),
+    ("삼성 메뉴", "https://www.samsungpop.com/published/main/index_mbw.html"),
+    ("키움 메인", "https://www1.kiwoom.com/m/main"),
+    ("한국투자 메인", "https://m.koreainvestment.com/mobile/index.jsp"),
+    ("하나 메인", "https://www.hanaw.com/"),
+    ("대신 메인", "https://m.daishin.com/"),
 ]
 UA = ("Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 "
       "(KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1")
 
-BONDY = re.compile(r"채권|bond|수익률|ert|yld|만기|rdmp|isnm", re.I)
-DECI = re.compile(r"\d+\.\d{2,3}")
-PCT = re.compile(r"\d+\.\d{1,3} ?%")
+# 링크를 통째로 캔다. 글자에 '채권' 이 없어도 주소에 bond 가 있으면 후보다.
+DIG = """() => {
+  const out = [];
+  document.querySelectorAll('*').forEach(e => {
+    const t = (e.innerText||'').replace(/\\s+/g,' ').trim().slice(0,30);
+    const href = e.getAttribute('href') || '';
+    const onclick = e.getAttribute('onclick') || '';
+    const data = Array.from(e.attributes || [])
+      .filter(a => a.name.startsWith('data-'))
+      .map(a => a.name + '=' + String(a.value).slice(0,60)).join(' ');
+    const blob = href + ' ' + onclick + ' ' + data + ' ' + t;
+    if (!/채권|bond|Bond|BOND/.test(blob)) return;
+    if (t.length > 30) return;
+    out.push({ t, href: href.slice(0,110), onclick: onclick.slice(0,140),
+               data: data.slice(0,140) });
+  });
+  return out;
+}"""
+
+# 메뉴를 여는 함수가 주소를 어떻게 만드는지 본다.
+FUNCS = """() => {
+  const names = ['openMenu','goMenu','goPage','movePage','fnMove','linkPage',
+                 'goLink','fnGoMenu','moveMenu','callMenu','openHp'];
+  const out = {};
+  names.forEach(n => {
+    try { if (typeof window[n] === 'function')
+      out[n] = window[n].toString().slice(0, 700); } catch (e) {}
+  });
+  return out;
+}"""
+
 
 def say(s=""):
     print(s, flush=True)
@@ -52,59 +76,39 @@ with sync_playwright() as p:
                          is_mobile=True, has_touch=True)
     pg = ctx.new_page()
     pg.set_default_timeout(6000)
-    hits = []
 
-    def on_response(resp):
-        try:
-            u = resp.url
-            if re.search(r"\.(png|jpe?g|gif|css|woff2?|svg|ico)(\?|$)", u):
-                return
-            ct = (resp.headers or {}).get("content-type", "")
-            if not any(k in ct for k in ("json", "xml", "text/plain")):
-                return
-            b = resp.text()
-            if len(b) < 200 or not BONDY.search(b) or len(DECI.findall(b)) < 5:
-                return
-            hits.append((u, len(b), b[:900]))
-        except Exception:  # noqa: BLE001
-            pass
-
-    pg.on("response", on_response)
-
-    for name, url in SHINHAN + OTHERS:
+    for name, url in PAGES:
         say("=" * 72)
         say(f"{name}  {url}")
-        hits.clear()
         try:
             pg.goto(url, wait_until="domcontentloaded", timeout=20000)
             pg.wait_for_timeout(5000)
-            body = pg.evaluate(
-                "() => (document.body&&document.body.innerText||'').replace(/\\s+/g,' ')")
             say(f"  도착 {pg.url[:130]}")
-            say(f"  본문 {len(body)}자 · 수익률꼴 {len(PCT.findall(body))}개 "
-                f"{PCT.findall(body)[:12]}")
-            say(f"  {body[:1500]}")
 
-            tabs = pg.evaluate(
-                """() => Array.from(document.querySelectorAll('table')).map(t =>
-                     Array.from(t.querySelectorAll('tr')).slice(0,6).map(r =>
-                       Array.from(r.querySelectorAll('th,td')).map(c =>
-                         (c.innerText||'').replace(/\\s+/g,' ').trim())
-                     ).filter(cs => cs.some(x => x)))""")
-            for i, t in enumerate([x for x in tabs if len(x) > 1][:2]):
-                say(f"  [표{i}]")
-                for r in t[:6]:
-                    say("    " + json.dumps(r, ensure_ascii=False)[:220])
+            found = pg.evaluate(DIG)
+            seen, uniq = set(), []
+            for f in found:
+                key = (f["t"], f["href"], f["onclick"], f["data"])
+                if key in seen:
+                    continue
+                seen.add(key)
+                uniq.append(f)
+            say(f"  채권/bond 가 걸린 것 {len(uniq)}개")
+            for f in uniq[:30]:
+                bits = [f"'{f['t']}'"]
+                if f["href"]:
+                    bits.append(f"href={f['href']}")
+                if f["onclick"]:
+                    bits.append(f"onclick={f['onclick']}")
+                if f["data"]:
+                    bits.append(f"data={f['data']}")
+                say("    · " + "  ".join(bits))
 
-            if hits:
-                say(f"  채권 같은 응답 {len(hits)}개")
-                got = set()
-                for u, n, head in hits:
-                    if u in got:
-                        continue
-                    got.add(u)
-                    say(f"    · {u[:150]}  ({n}바이트)")
-                    say(f"      {head[:700]}")
+            fns = pg.evaluate(FUNCS)
+            if fns:
+                say(f"  메뉴 여는 함수 {list(fns)}")
+                for n, src in fns.items():
+                    say(f"    [{n}] {src}")
         except Exception:
             say("  !! 실패 " + traceback.format_exc().strip().split("\n")[-1][:160])
 
