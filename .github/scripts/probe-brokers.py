@@ -12,6 +12,7 @@ NH 는 목록을 그릴 때 inListData.json 을 부르는데 거기 종목명·�
 결과는 로그가 아니라 파일로 남긴다. 액션 로그가 20~40분씩 늦게 올라온다.
 """
 import json
+import os
 import re
 import traceback
 from pathlib import Path
@@ -61,6 +62,9 @@ with sync_playwright() as p:
                          viewport={"width": 414, "height": 1000},
                          is_mobile=True, has_touch=True)
     pg = ctx.new_page()
+    # 요소를 못 찾으면 기본 30초를 기다린다. 여덟 곳 × 세 번이면 그것만
+    # 12분이라 작업 제한을 넘겼다. 못 찾으면 빨리 포기하게 한다.
+    pg.set_default_timeout(8000)
     hits = []
 
     def on_response(resp):
@@ -80,7 +84,10 @@ with sync_playwright() as p:
 
     pg.on("response", on_response)
 
-    for name, home in BROKERS:
+    half = os.environ.get("HALF", "1")
+todo = BROKERS[:4] if half == "1" else BROKERS[4:]
+say(f"# 이번 차례: {[b[0] for b in todo]}")
+for name, home in todo:
         say("=" * 72)
         say(f"{name}  {home}")
         hits.clear()
@@ -126,6 +133,7 @@ with sync_playwright() as p:
 
     br.close()
 
+OUT = OUT.with_name(f"brokers-{half}.txt")
 OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text("\n".join(lines), encoding="utf-8")
 print(f"{OUT} 에 {len(lines)}줄 적음")
