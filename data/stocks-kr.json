@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-09-05T11:22:54.328851+00:00",
-  "as_of_date": "2026-09-04",
+  "updated_at": "2026-09-07T03:15:38.720860+00:00",
+  "as_of_date": "2026-09-07",
   "stocks": [
     {
       "code": "005930",
-      "close": 255500,
-      "change": 5500,
-      "change_pct": 2.2,
-      "volume": 14031862,
-      "as_of_date": "2026-09-04",
+      "close": 266000,
+      "change": 10500,
+      "change_pct": 4.11,
+      "volume": 7107396,
+      "as_of_date": "2026-09-07",
       "foreign_net_volume": -115377,
       "institution_net_volume": 2489812,
       "flow_as_of_date": "2026-09-04",
@@ -19,13 +19,6 @@
       },
       "chart": "stocks/005930.png",
       "history": [
-        {
-          "date": "2026-08-07",
-          "close": 231000,
-          "volume": 20546010,
-          "foreign": -1737367,
-          "institution": 36604
-        },
         {
           "date": "2026-08-10",
           "close": 230000,
@@ -158,17 +151,24 @@
           "volume": 14031862,
           "foreign": -115377,
           "institution": 2489812
+        },
+        {
+          "date": "2026-09-07",
+          "close": 266000,
+          "volume": 7107396,
+          "foreign": null,
+          "institution": null
         }
       ],
       "name": "삼성전자"
     },
     {
       "code": "000660",
-      "close": 1647000,
-      "change": 51000,
-      "change_pct": 3.2,
-      "volume": 2827725,
-      "as_of_date": "2026-09-04",
+      "close": 1747000,
+      "change": 100000,
+      "change_pct": 6.07,
+      "volume": 1596260,
+      "as_of_date": "2026-09-07",
       "foreign_net_volume": 308833,
       "institution_net_volume": 96776,
       "flow_as_of_date": "2026-09-04",
@@ -179,13 +179,6 @@
       },
       "chart": "stocks/000660.png",
       "history": [
-        {
-          "date": "2026-08-07",
-          "close": 1422000,
-          "volume": 5002539,
-          "foreign": -56357,
-          "institution": 32908
-        },
         {
           "date": "2026-08-10",
           "close": 1420000,
@@ -315,20 +308,27 @@
         {
           "date": "2026-09-04",
           "close": 1647000,
-          "volume": 2827725,
+          "volume": 2827892,
           "foreign": 308833,
           "institution": 96776
+        },
+        {
+          "date": "2026-09-07",
+          "close": 1747000,
+          "volume": 1596260,
+          "foreign": null,
+          "institution": null
         }
       ],
       "name": "SK하이닉스"
     },
     {
       "code": "005380",
-      "close": 383500,
-      "change": 0,
-      "change_pct": 0.0,
-      "volume": 358567,
-      "as_of_date": "2026-09-04",
+      "close": 388500,
+      "change": 5000,
+      "change_pct": 1.3,
+      "volume": 218631,
+      "as_of_date": "2026-09-07",
       "foreign_net_volume": -60899,
       "institution_net_volume": -53849,
       "flow_as_of_date": "2026-09-04",
@@ -339,13 +339,6 @@
       },
       "chart": "stocks/005380.png",
       "history": [
-        {
-          "date": "2026-08-07",
-          "close": 395500,
-          "volume": 415672,
-          "foreign": 885,
-          "institution": -28035
-        },
         {
           "date": "2026-08-10",
           "close": 408000,
@@ -478,6 +471,13 @@
           "volume": 358567,
           "foreign": -60899,
           "institution": -53849
+        },
+        {
+          "date": "2026-09-07",
+          "close": 388500,
+          "volume": 218631,
+          "foreign": null,
+          "institution": null
         }
       ],
       "name": "현대차"
