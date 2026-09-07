@@ -1,6 +1,6 @@
 <meta charset="utf-8">
-<title>2026-09-07 코스피 마감 시황 — 6,995.39, 지수 +4.61%에 상승 종목 47.9% — 야간비행 일지</title>
-<meta name="description" content="2026년 9월 7일 코스피는 4.61% 오른 6995.39로 마감했지만 상승 종목은 47.9%에 그쳤습니다. 오픈AI 아스트라발 반도체 랠리, 개인 6.8조 순매도, 업종별 등락률과 9월 8일 시나리오별 전망을 차트와 함께 정리했습니다.">
+<title>2026-09-07 마감 시황 — 야간비행 일지</title>
+<meta name="description" content="2026-09-07 삼성전자·SK하이닉스·현대차 마감 시황. 종가, 거래량, 외국인·기관 수급을 정리했습니다.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://danielmoon82.github.io/moon/posts/market-2026-09-07.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,17 +25,9 @@
       --line:#26314A;--line-soft:#1D2739;--accent:#E8A33D;--accent-bright:#F0B45C;
     }
   }
-  :root[data-theme="dark"]{
-    --paper:#0B1120;--surface:#121A2C;--surface-2:#1A2439;
-    --ink:#E9EEF7;--ink-2:#A9B5C9;--ink-3:#72809A;
-    --line:#26314A;--line-soft:#1D2739;--accent:#E8A33D;--accent-bright:#F0B45C;
-  }
-  /* 글자 기준 크기. 홈과 같은 값. */
-  html{font-size:18px;}
   *{box-sizing:border-box;}
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);
-    font-weight:300;font-size:1rem;line-height:1.75;-webkit-font-smoothing:antialiased;
-    word-break:keep-all;}
+    font-weight:300;font-size:1rem;line-height:1.75;-webkit-font-smoothing:antialiased;}
   a{color:inherit;}
   img{max-width:100%;height:auto;}
   .wrap{max-width:760px;margin:0 auto;padding-inline:var(--pad);}
@@ -48,17 +40,16 @@
   .eyebrow{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
     color:var(--accent);margin:0 0 14px;}
   h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,4.4vw,2.3rem);
-    line-height:1.3;letter-spacing:-.03em;margin:0 0 16px;text-wrap:balance;}
+    line-height:1.3;letter-spacing:-.03em;margin:0 0 16px;}
   .byline{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
     padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:32px;}
-  .lede{font-size:1.02rem;color:var(--ink-2);margin:0 0 28px;}
   h2{font-family:var(--f-display);font-weight:600;font-size:1.25rem;letter-spacing:-.02em;margin:42px 0 14px;}
   h3{font-family:var(--f-display);font-weight:600;font-size:1.05rem;letter-spacing:-.02em;
     margin:30px 0 10px;padding-top:14px;border-top:1px solid var(--line-soft);}
+  h3 .code{font-family:var(--f-mono);font-size:.7rem;font-weight:400;color:var(--ink-3);margin-left:6px;}
   p{margin:0 0 18px;color:var(--ink-2);}
-  strong{font-weight:600;color:var(--ink);}
   ul.checks{margin:0 0 18px;padding-left:20px;color:var(--ink-2);}
-  ul.checks li{margin-bottom:10px;font-size:.94rem;}
+  ul.checks li{margin-bottom:8px;font-size:.94rem;}
   table{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:8px;}
   th{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;
     color:var(--ink-3);text-align:right;padding:8px 6px;border-bottom:1px solid var(--line);}
@@ -66,63 +57,15 @@
   td{padding:10px 6px;border-bottom:1px solid var(--line-soft);color:var(--ink-2);}
   td.num{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums;}
   td.up{color:var(--up);} td.down{color:var(--down);}
-  tr.emph td{background:var(--surface);font-weight:500;color:var(--ink);}
   .scroll{overflow-x:auto;}
-  .tcap{font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);margin:0 0 26px;line-height:1.6;}
-
-  /* 지표 요약 스트립 */
-  .snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-    border:1px solid var(--line);background:var(--surface);margin:0 0 30px;}
-  .snap div{padding:12px 14px;border-right:1px solid var(--line);}
-  .snap div:last-child{border-right:0;}
-  .snap .k{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--ink-3);display:block;margin-bottom:2px;}
-  .snap .v{font-family:var(--f-mono);font-size:1.12rem;font-weight:500;color:var(--ink);
-    font-variant-numeric:tabular-nums;display:block;line-height:1.35;}
-  .snap .s{font-family:var(--f-mono);font-size:.66rem;color:var(--ink-3);}
-
-  /* 연간 매출 막대 */
-  .bars{margin:22px 0 8px;display:flex;flex-direction:column;gap:7px;}
-  .brow{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:center;}
-  .brow .yr{font-family:var(--f-mono);font-size:.74rem;color:var(--ink-3);font-variant-numeric:tabular-nums;}
-  .btrack{height:26px;background:var(--surface-2);}
-  .bfill{height:100%;background:var(--accent);display:flex;align-items:center;justify-content:flex-end;
-    padding-right:8px;border-radius:0 3px 3px 0;}
-  .bfill.est{background:var(--accent-bright);opacity:.72;}
-  .bfill span{font-family:var(--f-mono);font-size:.72rem;font-weight:500;color:#FFF8EC;
-    font-variant-numeric:tabular-nums;}
-
-  /* 목표주가 밴드 */
-  .band{position:relative;height:3px;background:var(--line);margin:44px 0 76px;}
-  .band i{position:absolute;top:-6px;width:3px;height:15px;background:var(--ink-3);}
-  .band i.now{background:var(--ink);height:24px;top:-10px;}
-  .band i.bull{background:var(--up);height:19px;top:-8px;}
-  .band i.bear{background:var(--down);height:19px;top:-8px;}
-  .band b{position:absolute;top:16px;font-family:var(--f-mono);font-size:.72rem;font-weight:500;
-    font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink-2);}
-  .band b em{display:block;font-style:normal;font-size:.6rem;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--ink-3);}
-
-  .faq{border-top:1px solid var(--line-soft);padding-top:14px;margin-top:6px;}
-  .faq h3{border-top:0;padding-top:0;margin:20px 0 6px;}
+  figure{margin:22px 0;}
+  figure img{display:block;border-radius:3px;background:var(--surface-2);}
+  figcaption{margin-top:8px;font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);text-align:center;}
   .note{margin-top:34px;padding:16px 18px;border-left:3px solid var(--accent);
     background:var(--surface);border-radius:0 3px 3px 0;}
   .note p{margin:0;font-size:.85rem;color:var(--ink-3);}
   .foot{border-top:1px solid var(--line);background:var(--surface);padding-block:30px 38px;}
   .foot p{margin:0;font-size:.8rem;color:var(--ink-3);}
-  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
-</style>
-
-<style>
-  .fig{margin:26px 0 8px;border:1px solid var(--line);background:var(--surface);padding:14px 12px 8px;}
-  .fig svg{display:block;}
-  .lvl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:24px 0 8px;}
-  .lvl div{background:var(--surface);padding:13px 15px;}
-  .lvl .k{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:3px;}
-  .lvl .v{font-family:var(--f-mono);font-size:1.18rem;font-weight:500;display:block;line-height:1.3;font-variant-numeric:tabular-nums;}
-  .lvl .s{font-family:var(--f-mono);font-size:.66rem;color:var(--ink-3);}
-  .warn{border-left:3px solid var(--accent);background:var(--surface);padding:14px 18px;margin:24px 0;}
-  .warn p{margin:0;font-size:.92rem;}
 </style>
 
 <nav class="nav">
@@ -133,214 +76,52 @@
 </nav>
 
 <main class="wrap article">
-  <p class="eyebrow">Market · 2026-09-07</p>
-  <h1>코스피 6,995.39 — 지수는 4.61% 올랐고, 종목의 절반은 내렸습니다</h1>
-  <p class="byline">2026-09-07 (월) 장 마감 기준 · 코스피 +308.18p · 코스닥 +8.69p · 원/달러 1,342.20원</p>
+  <p class="eyebrow">Market</p>
+  <h1>2026-09-07 마감 시황</h1>
+  <p class="byline">삼성전자 · SK하이닉스 · 현대차 · 종가 기준</p>
 
-  <p class="lede">오늘 장을 설명하는 가장 정직한 방법은 두 숫자를 나란히 놓는 것입니다. 코스피 <strong>+4.61%</strong>, 그리고 상승 종목 비율 <strong>47.9%</strong>. 지수는 올해 손에 꼽히는 폭으로 뛰었는데 시장에서 오른 종목은 절반이 되지 않았습니다. 이 두 숫자 사이의 간격이 오늘 시장의 전부이고, 내일을 판단하는 기준이기도 합니다. 아래에서 그 간격이 어디서 생겼는지 하나씩 분해합니다.</p>
+  <p>세 종목이 모두 상승 마감했습니다.</p>
 
-  <div class="snap">
-    <div><span class="k">코스피</span><span class="v">6,995.39</span><span class="s">+308.18 · +4.61%</span></div>
-    <div><span class="k">코스닥</span><span class="v">822.19</span><span class="s">+8.69 · +1.07%</span></div>
-    <div><span class="k">원/달러</span><span class="v">1,342.20</span><span class="s">원 · −7.30</span></div>
-    <div><span class="k">코스피 거래대금</span><span class="v">21.5조</span><span class="s">상승 47.9%</span></div>
-  </div>
+  <h2>총평</h2>
+  <p>3개 종목이 오르고 0개가 내렸습니다. 상대적으로 가장 강했던 종목은 SK하이닉스(+8.26%), 가장 부진했던 종목은 현대차(+2.48%)입니다. 20일 이동평균 위에서 마감한 종목은 삼성전자·SK하이닉스입니다.</p>
 
-  <h2>마감 지표</h2>
-
+  <h2>한눈에 보기</h2>
   <div class="scroll">
     <table>
-      <thead><tr><th>구분</th><th>종가</th><th>전일 대비</th><th>등락률</th><th>거래대금</th></tr></thead>
+      <thead><tr><th>종목</th><th>종가</th><th>등락</th><th>거래량</th><th>외국인</th><th>기관</th></tr></thead>
       <tbody>
-        <tr class="emph"><td>코스피</td><td class="num">6,995.39</td><td class="num up">+308.18</td><td class="num up">+4.61%</td><td class="num">21조 4,696억</td></tr>
-        <tr><td>코스닥</td><td class="num">822.19</td><td class="num up">+8.69</td><td class="num up">+1.07%</td><td class="num">6조 2,885억</td></tr>
-        <tr><td>원/달러</td><td class="num">1,342.20</td><td class="num down">−7.30</td><td class="num down">−0.54%</td><td class="num">—</td></tr>
+<tr><td>삼성전자</td><td class="num">270,000원</td><td class="num up">▲ 14,500 (+5.68%)</td><td class="num">18,277,791주</td><td class="num">+3,246,247주</td><td class="num">+4,568,427주</td></tr>
+<tr><td>SK하이닉스</td><td class="num">1,783,000원</td><td class="num up">▲ 136,000 (+8.26%)</td><td class="num">3,478,577주</td><td class="num">+772,036주</td><td class="num">+365,719주</td></tr>
+<tr><td>현대차</td><td class="num">393,000원</td><td class="num up">▲ 9,500 (+2.48%)</td><td class="num">431,118주</td><td class="num">+21,408주</td><td class="num">+38,701주</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="tcap">코스피 시가 6,910.78 · 고가 6,995.40 · 저가 6,867.91. 코스닥 시가 822.91 · 고가 828.85 · 저가 819.78.</p>
 
-  <p>표에서 먼저 눈에 걸리는 건 코스피의 고가와 종가입니다. <strong>장중 고가 6,995.40, 종가 6,995.39.</strong> 0.01포인트 차이입니다. 4.6% 오른 날 마감 동시호가까지 매수세가 한 번도 밀리지 않았다는 뜻이고, 이런 마감은 다음 날 시초가를 끌어올리는 경향이 있습니다.</p>
-  <p>반면 코스닥은 <strong>시가 822.91보다 낮은 822.19</strong>에 끝났습니다. 같은 날, 두 시장이 정반대 모양으로 마감했습니다. 이 대비가 오늘 자금 흐름의 성격을 그대로 보여줍니다.</p>
+  <h2>종목별 분석</h2>
+  <h3>삼성전자 <span class="code">005930</span></h3>
+  <p>삼성전자는 +5.68% 상승한 270,000원에 거래를 마쳤습니다. 현재가는 20일 이동평균 위로, 20일 이동평균(259,075원) 대비 +4.2%, 5일 이동평균(257,400원) 대비 +4.9% 수준입니다. 최근 20거래일 저점 230,000원과 고점 281,500원이 만든 구간에서는 위쪽으로 78% 지점에 위치해 있습니다. 거래량은 18,277,791주로 20일 평균과 비슷한 수준이었습니다.</p>
+  <p>수급에서는 외국인이 3,246,247주 순매수, 기관이 4,568,427주 순매수했습니다. 기관은 2거래일 연속 순매수 중입니다. 최근 20거래일 가운데 외국인이 순매수한 날은 10일이며, 누적으로는 외국인 +1,850,476주, 기관 -3,284,194주입니다.</p>
+  <h3>SK하이닉스 <span class="code">000660</span></h3>
+  <p>SK하이닉스는 +8.26% 상승한 1,783,000원에 거래를 마쳤습니다. 현재가는 20일 이동평균을 크게 웃도는 자리로, 20일 이동평균(1,629,800원) 대비 +9.4%, 5일 이동평균(1,666,400원) 대비 +7.0% 수준입니다. 최근 20거래일 저점 1,420,000원과 고점 1,783,000원이 만든 구간에서는 위쪽으로 100% 지점에 위치해 있습니다. 거래량은 3,478,577주로 20일 평균과 비슷한 수준이었습니다.</p>
+  <p>수급에서는 외국인이 772,036주 순매수, 기관이 365,719주 순매수했습니다. 외국인은 2거래일 연속 순매수, 기관은 2거래일 연속 순매수 중입니다. 최근 20거래일 가운데 외국인이 순매수한 날은 9일이며, 누적으로는 외국인 -1,629,048주, 기관 -1,565,141주입니다.</p>
+  <h3>현대차 <span class="code">005380</span></h3>
+  <p>현대차는 +2.48% 상승한 393,000원에 거래를 마쳤습니다. 현재가는 20일 이동평균 아래로, 20일 이동평균(407,800원) 대비 -3.6%, 5일 이동평균(387,700원) 대비 +1.4% 수준입니다. 최근 20거래일 저점 378,000원과 고점 453,000원이 만든 구간에서는 위쪽으로 20% 지점에 위치해 있습니다. 거래량은 431,118주로 20일 평균의 73% 수준으로 줄었습니다.</p>
+  <p>수급에서는 외국인이 21,408주 순매수, 기관이 38,701주 순매수했습니다. 최근 20거래일 가운데 외국인이 순매수한 날은 9일이며, 누적으로는 외국인 -519,960주, 기관 -1,284,237주입니다.</p>
 
-  <h2>왜 올랐나 — 오픈AI '아스트라'와 필라델피아 반도체</h2>
-  <p>출발점은 지난 금요일(9월 4일) 뉴욕입니다.</p>
-
-  <div class="scroll">
-    <table>
-      <thead><tr><th>지수</th><th>종가</th><th>등락률</th></tr></thead>
-      <tbody>
-        <tr><td>다우존스</td><td class="num">53,414.25</td><td class="num down">−0.51%</td></tr>
-        <tr><td>S&amp;P 500</td><td class="num">7,718.60</td><td class="num down">−0.38%</td></tr>
-        <tr><td>나스닥 종합</td><td class="num">26,506.99</td><td class="num down">−0.29%</td></tr>
-        <tr class="emph"><td>필라델피아 반도체</td><td class="num">11,735.26</td><td class="num up">+3.38%</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="tcap">2026-09-04 뉴욕 증시 마감 기준.</p>
-
-  <p>3대 지수는 모두 내렸는데 <strong>반도체 지수만 3.38% 올랐습니다.</strong> 이 괴리가 오늘 한국 시장의 성격을 결정했습니다.</p>
-  <p>지수를 누른 건 미국 8월 비농업 부문 고용지표였습니다. 시장 예상을 크게 웃돌면서 금리 인하 기대가 뒤로 밀렸고 경기민감주와 대형 기술주가 눌렸습니다.</p>
-  <p>반대로 반도체를 끌어올린 건 <strong>오픈AI의 차세대 모델 'GPT-6 아스트라' 공개</strong>였습니다. 자율 에이전트 시대를 선언한 모델인데, 시장은 곧바로 '그러면 메모리와 스토리지가 얼마나 더 필요한가'로 반응했습니다. 개별 종목 움직임이 그 해석을 보여줍니다.</p>
-
+  <h2>내일 확인할 지점</h2>
   <ul class="checks">
-    <li><strong>샌디스크 +11.90%</strong> — 스토리지 대장이 가장 크게 올랐습니다.</li>
-    <li><strong>SK하이닉스 ADR +8.14%</strong>, 마이크론 +6.10%</li>
-    <li>AMD +4.69%, 인텔 +4.51%</li>
-    <li><strong>엔비디아 +0.84%</strong> — 정작 GPU는 조용했습니다.</li>
+    <li>삼성전자: 20일선 259,075원이 아래쪽 지지 여부를 가늠할 기준선입니다.</li>
+    <li>SK하이닉스: 20일선 1,629,800원이 아래쪽 지지 여부를 가늠할 기준선입니다.</li>
+    <li>현대차: 20일선 407,800원 회복 여부가 단기 흐름의 분기점입니다.</li>
   </ul>
 
-  <p>엔비디아가 아니라 메모리·스토리지가 앞장섰다는 점이 핵심입니다. AI 투자의 무게중심이 연산에서 저장으로 옮겨가고 있다는 신호이고, 그래서 메모리 비중이 큰 한국 시장이 미국보다 더 크게 반응했습니다. 코스피 야간선물은 이미 3.9% 올라 있었습니다.</p>
-
-  <h2>차트 — 20일선은 넘었고, 60일선은 남았습니다</h2>
-
-  <div class="fig">
-<svg viewBox="0 0 980 560" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="코스피 일봉 차트"><line x1="66" y1="392.4" x2="862" y2="392.4" stroke="var(--line-soft)" stroke-width="1"/><text x="58" y="396.4" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">5,250</text><line x1="66" y1="328.4" x2="862" y2="328.4" stroke="var(--line-soft)" stroke-width="1"/><text x="58" y="332.4" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">6,000</text><line x1="66" y1="264.4" x2="862" y2="264.4" stroke="var(--line-soft)" stroke-width="1"/><text x="58" y="268.4" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">6,750</text><line x1="66" y1="200.4" x2="862" y2="200.4" stroke="var(--line-soft)" stroke-width="1"/><text x="58" y="204.4" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">7,500</text><line x1="66" y1="136.5" x2="862" y2="136.5" stroke="var(--line-soft)" stroke-width="1"/><text x="58" y="140.5" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">8,250</text><line x1="66" y1="72.5" x2="862" y2="72.5" stroke="var(--line-soft)" stroke-width="1"/><text x="58" y="76.5" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">9,000</text><line x1="66" y1="225.0" x2="862" y2="225.0" stroke="#E5484D" stroke-width="1.4" stroke-dasharray="7 4"/><text x="868" y="229.0" font-size="10.5" fill="#E5484D" font-family="monospace" font-weight="600">저항 7,212</text><line x1="66" y1="243.1" x2="862" y2="243.1" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="2 3"/><text x="868" y="247.1" font-size="10.5" fill="var(--accent)" font-family="monospace" font-weight="600">심리 7,000</text><line x1="66" y1="266.3" x2="862" y2="266.3" stroke="#3B82F6" stroke-width="1.4" stroke-dasharray="7 4"/><text x="868" y="270.3" font-size="10.5" fill="#3B82F6" font-family="monospace" font-weight="600">지지 6,728</text><line x1="72.6" y1="120.7" x2="72.6" y2="151.0" stroke="#3B82F6" stroke-width="1"/><rect x="68.5" y="135.3" width="8.2" height="12.0" fill="#3B82F6"/><line x1="85.9" y1="106.3" x2="85.9" y2="119.4" stroke="#E5484D" stroke-width="1"/><rect x="81.8" y="111.2" width="8.2" height="1.7" fill="#E5484D"/><line x1="99.2" y1="93.5" x2="99.2" y2="111.7" stroke="#E5484D" stroke-width="1"/><rect x="95.1" y="95.8" width="8.2" height="2.6" fill="#E5484D"/><line x1="112.4" y1="83.4" x2="112.4" y2="106.1" stroke="#E5484D" stroke-width="1"/><rect x="108.3" y="84.1" width="8.2" height="20.7" fill="#E5484D"/><line x1="125.7" y1="63.4" x2="125.7" y2="83.8" stroke="#E5484D" stroke-width="1"/><rect x="121.6" y="67.1" width="8.2" height="15.3" fill="#E5484D"/><line x1="139.0" y1="39.6" x2="139.0" y2="86.8" stroke="#3B82F6" stroke-width="1"/><rect x="134.9" y="47.9" width="8.2" height="20.2" fill="#3B82F6"/><line x1="152.2" y1="50.9" x2="152.2" y2="81.0" stroke="#E5484D" stroke-width="1"/><rect x="148.1" y="62.7" width="8.2" height="13.7" fill="#E5484D"/><line x1="165.5" y1="57.5" x2="165.5" y2="140.4" stroke="#3B82F6" stroke-width="1"/><rect x="161.4" y="65.4" width="8.2" height="75.0" fill="#3B82F6"/><line x1="178.8" y1="108.5" x2="178.8" y2="150.9" stroke="#E5484D" stroke-width="1"/><rect x="174.7" y="117.6" width="8.2" height="9.7" fill="#E5484D"/><line x1="192.0" y1="68.7" x2="192.0" y2="98.6" stroke="#E5484D" stroke-width="1"/><rect x="187.9" y="78.4" width="8.2" height="19.4" fill="#E5484D"/><line x1="205.3" y1="84.3" x2="205.3" y2="147.0" stroke="#3B82F6" stroke-width="1"/><rect x="201.2" y="88.4" width="8.2" height="34.3" fill="#3B82F6"/><line x1="218.6" y1="113.0" x2="218.6" y2="146.9" stroke="#E5484D" stroke-width="1"/><rect x="214.5" y="124.1" width="8.2" height="5.1" fill="#E5484D"/><line x1="231.8" y1="100.8" x2="231.8" y2="139.0" stroke="#E5484D" stroke-width="1"/><rect x="227.7" y="117.2" width="8.2" height="5.1" fill="#E5484D"/><line x1="245.1" y1="104.9" x2="245.1" y2="145.6" stroke="#3B82F6" stroke-width="1"/><rect x="241.0" y="107.3" width="8.2" height="24.6" fill="#3B82F6"/><line x1="258.4" y1="146.2" x2="258.4" y2="190.5" stroke="#3B82F6" stroke-width="1"/><rect x="254.3" y="163.5" width="8.2" height="24.3" fill="#3B82F6"/><line x1="271.6" y1="146.2" x2="271.6" y2="210.8" stroke="#E5484D" stroke-width="1"/><rect x="267.5" y="150.3" width="8.2" height="29.7" fill="#E5484D"/><line x1="284.9" y1="129.9" x2="284.9" y2="173.5" stroke="#3B82F6" stroke-width="1"/><rect x="280.8" y="141.9" width="8.2" height="11.6" fill="#3B82F6"/><line x1="298.2" y1="161.7" x2="298.2" y2="209.9" stroke="#3B82F6" stroke-width="1"/><rect x="294.1" y="164.7" width="8.2" height="22.4" fill="#3B82F6"/><line x1="311.4" y1="175.6" x2="311.4" y2="227.2" stroke="#3B82F6" stroke-width="1"/><rect x="307.3" y="204.5" width="8.2" height="17.5" fill="#3B82F6"/><line x1="324.7" y1="196.7" x2="324.7" y2="237.6" stroke="#3B82F6" stroke-width="1"/><rect x="320.6" y="201.6" width="8.2" height="16.6" fill="#3B82F6"/><line x1="338.0" y1="183.0" x2="338.0" y2="206.5" stroke="#3B82F6" stroke-width="1"/><rect x="333.9" y="196.0" width="8.2" height="6.5" fill="#3B82F6"/><line x1="351.2" y1="198.0" x2="351.2" y2="261.6" stroke="#3B82F6" stroke-width="1"/><rect x="347.1" y="207.9" width="8.2" height="51.6" fill="#3B82F6"/><line x1="364.5" y1="244.8" x2="364.5" y2="290.1" stroke="#E5484D" stroke-width="1"/><rect x="360.4" y="255.3" width="8.2" height="7.5" fill="#E5484D"/><line x1="377.8" y1="206.9" x2="377.8" y2="236.0" stroke="#E5484D" stroke-width="1"/><rect x="373.7" y="218.8" width="8.2" height="17.2" fill="#E5484D"/><line x1="391.0" y1="243.4" x2="391.0" y2="266.0" stroke="#3B82F6" stroke-width="1"/><rect x="386.9" y="246.5" width="8.2" height="11.9" fill="#3B82F6"/><line x1="404.3" y1="258.9" x2="404.3" y2="288.1" stroke="#3B82F6" stroke-width="1"/><rect x="400.2" y="273.5" width="8.2" height="10.9" fill="#3B82F6"/><line x1="417.6" y1="257.0" x2="417.6" y2="291.8" stroke="#E5484D" stroke-width="1"/><rect x="413.5" y="264.6" width="8.2" height="16.6" fill="#E5484D"/><line x1="430.8" y1="228.9" x2="430.8" y2="260.9" stroke="#3B82F6" stroke-width="1"/><rect x="426.7" y="238.6" width="8.2" height="21.7" fill="#3B82F6"/><line x1="444.1" y1="233.8" x2="444.1" y2="252.2" stroke="#E5484D" stroke-width="1"/><rect x="440.0" y="234.8" width="8.2" height="11.4" fill="#E5484D"/><line x1="457.4" y1="243.0" x2="457.4" y2="272.9" stroke="#3B82F6" stroke-width="1"/><rect x="453.3" y="243.0" width="8.2" height="26.5" fill="#3B82F6"/><line x1="470.6" y1="259.6" x2="470.6" y2="280.8" stroke="#3B82F6" stroke-width="1"/><rect x="466.5" y="259.6" width="8.2" height="4.3" fill="#3B82F6"/><line x1="483.9" y1="293.1" x2="483.9" y2="329.0" stroke="#3B82F6" stroke-width="1"/><rect x="479.8" y="294.2" width="8.2" height="32.1" fill="#3B82F6"/><line x1="497.2" y1="308.9" x2="497.2" y2="391.3" stroke="#3B82F6" stroke-width="1"/><rect x="493.1" y="320.8" width="8.2" height="36.3" fill="#3B82F6"/><line x1="510.4" y1="330.4" x2="510.4" y2="367.0" stroke="#3B82F6" stroke-width="1"/><rect x="506.3" y="355.5" width="8.2" height="7.5" fill="#3B82F6"/><line x1="523.7" y1="274.6" x2="523.7" y2="360.0" stroke="#E5484D" stroke-width="1"/><rect x="519.6" y="277.6" width="8.2" height="80.0" fill="#E5484D"/><line x1="537.0" y1="294.9" x2="537.0" y2="309.3" stroke="#3B82F6" stroke-width="1"/><rect x="532.9" y="297.8" width="8.2" height="8.6" fill="#3B82F6"/><line x1="550.2" y1="295.2" x2="550.2" y2="321.5" stroke="#E5484D" stroke-width="1"/><rect x="546.1" y="297.8" width="8.2" height="1.2" fill="#E5484D"/><line x1="563.5" y1="270.8" x2="563.5" y2="282.3" stroke="#3B82F6" stroke-width="1"/><rect x="559.4" y="276.9" width="8.2" height="1.2" fill="#3B82F6"/><line x1="576.8" y1="281.4" x2="576.8" y2="308.1" stroke="#3B82F6" stroke-width="1"/><rect x="572.7" y="287.5" width="8.2" height="15.6" fill="#3B82F6"/><line x1="590.0" y1="292.9" x2="590.0" y2="314.8" stroke="#3B82F6" stroke-width="1"/><rect x="585.9" y="297.2" width="8.2" height="9.1" fill="#3B82F6"/><line x1="603.3" y1="294.8" x2="603.3" y2="308.6" stroke="#3B82F6" stroke-width="1"/><rect x="599.2" y="302.3" width="8.2" height="1.2" fill="#3B82F6"/><line x1="616.6" y1="293.8" x2="616.6" y2="310.1" stroke="#E5484D" stroke-width="1"/><rect x="612.5" y="298.9" width="8.2" height="9.0" fill="#E5484D"/><line x1="629.8" y1="271.4" x2="629.8" y2="293.1" stroke="#E5484D" stroke-width="1"/><rect x="625.7" y="279.0" width="8.2" height="12.0" fill="#E5484D"/><line x1="643.1" y1="252.0" x2="643.1" y2="264.6" stroke="#E5484D" stroke-width="1"/><rect x="639.0" y="259.0" width="8.2" height="3.4" fill="#E5484D"/><line x1="656.4" y1="242.2" x2="656.4" y2="256.0" stroke="#3B82F6" stroke-width="1"/><rect x="652.3" y="243.5" width="8.2" height="1.5" fill="#3B82F6"/><line x1="669.6" y1="224.6" x2="669.6" y2="261.1" stroke="#3B82F6" stroke-width="1"/><rect x="665.5" y="232.2" width="8.2" height="22.0" fill="#3B82F6"/><line x1="682.9" y1="276.0" x2="682.9" y2="294.2" stroke="#3B82F6" stroke-width="1"/><rect x="678.8" y="283.3" width="8.2" height="4.9" fill="#3B82F6"/><line x1="696.2" y1="251.2" x2="696.2" y2="277.2" stroke="#E5484D" stroke-width="1"/><rect x="692.1" y="255.7" width="8.2" height="14.7" fill="#E5484D"/><line x1="709.4" y1="247.0" x2="709.4" y2="265.1" stroke="#E5484D" stroke-width="1"/><rect x="705.3" y="250.5" width="8.2" height="13.1" fill="#E5484D"/><line x1="722.7" y1="252.9" x2="722.7" y2="272.4" stroke="#3B82F6" stroke-width="1"/><rect x="718.6" y="253.2" width="8.2" height="15.7" fill="#3B82F6"/><line x1="736.0" y1="264.7" x2="736.0" y2="293.5" stroke="#E5484D" stroke-width="1"/><rect x="731.9" y="265.0" width="8.2" height="17.6" fill="#E5484D"/><line x1="749.2" y1="252.7" x2="749.2" y2="268.3" stroke="#E5484D" stroke-width="1"/><rect x="745.1" y="259.4" width="8.2" height="6.9" fill="#E5484D"/><line x1="762.5" y1="243.4" x2="762.5" y2="256.6" stroke="#3B82F6" stroke-width="1"/><rect x="758.4" y="243.4" width="8.2" height="7.1" fill="#3B82F6"/><line x1="775.8" y1="251.5" x2="775.8" y2="261.8" stroke="#3B82F6" stroke-width="1"/><rect x="771.7" y="256.2" width="8.2" height="4.9" fill="#3B82F6"/><line x1="789.0" y1="258.4" x2="789.0" y2="281.7" stroke="#E5484D" stroke-width="1"/><rect x="784.9" y="258.4" width="8.2" height="17.6" fill="#E5484D"/><line x1="802.3" y1="255.3" x2="802.3" y2="265.9" stroke="#E5484D" stroke-width="1"/><rect x="798.2" y="257.1" width="8.2" height="4.4" fill="#E5484D"/><line x1="815.6" y1="269.1" x2="815.6" y2="280.8" stroke="#3B82F6" stroke-width="1"/><rect x="811.5" y="275.0" width="8.2" height="5.4" fill="#3B82F6"/><line x1="828.8" y1="270.1" x2="828.8" y2="290.9" stroke="#3B82F6" stroke-width="1"/><rect x="824.7" y="272.9" width="8.2" height="6.0" fill="#3B82F6"/><line x1="842.1" y1="264.7" x2="842.1" y2="274.4" stroke="#E5484D" stroke-width="1"/><rect x="838.0" y="269.8" width="8.2" height="2.8" fill="#E5484D"/><line x1="855.4" y1="243.5" x2="855.4" y2="254.4" stroke="#E5484D" stroke-width="1"/><rect x="851.3" y="243.5" width="8.2" height="7.2" fill="#E5484D"/><path d="M218.6 212.6 L231.8 208.4 L245.1 204.0 L258.4 200.8 L271.6 197.0 L284.9 193.4 L298.2 190.9 L311.4 188.8 L324.7 186.7 L338.0 184.4 L351.2 183.2 L364.5 182.1 L377.8 180.6 L391.0 179.7 L404.3 179.3 L417.6 178.8 L430.8 178.2 L444.1 177.3 L457.4 177.0 L470.6 176.8 L483.9 177.7 L497.2 179.2 L510.4 180.6 L523.7 181.1 L537.0 182.7 L550.2 184.3 L563.5 185.6 L576.8 187.7 L590.0 189.7 L603.3 191.9 L616.6 194.2 L629.8 195.5 L643.1 196.5 L656.4 197.0 L669.6 197.4 L682.9 199.3 L696.2 200.8 L709.4 202.4 L722.7 204.6 L736.0 206.6 L749.2 209.0 L762.5 211.6 L775.8 214.5 L789.0 217.1 L802.3 219.0 L815.6 220.3 L828.8 222.4 L842.1 223.9 L855.4 225.0" fill="none" stroke="var(--ink-3)" stroke-width="1.3" opacity=".85"/><path d="M72.6 159.2 L85.9 156.8 L99.2 151.6 L112.4 145.8 L125.7 138.2 L139.0 130.3 L152.2 124.8 L165.5 123.3 L178.8 121.4 L192.0 118.5 L205.3 117.5 L218.6 117.8 L231.8 119.2 L245.1 121.3 L258.4 125.5 L271.6 125.8 L284.9 123.4 L298.2 125.3 L311.4 127.4 L324.7 129.4 L338.0 132.1 L351.2 139.5 L364.5 147.5 L377.8 154.3 L391.0 163.8 L404.3 174.6 L417.6 184.7 L430.8 190.7 L444.1 196.6 L457.4 206.1 L470.6 213.2 L483.9 223.3 L497.2 235.3 L510.4 246.9 L523.7 251.4 L537.0 259.2 L550.2 266.4 L563.5 270.9 L576.8 275.0 L590.0 279.4 L603.3 284.4 L616.6 286.3 L629.8 287.5 L643.1 289.5 L656.4 288.9 L669.6 287.4 L682.9 288.5 L696.2 288.3 L709.4 289.1 L722.7 289.1 L736.0 289.1 L749.2 285.8 L762.5 280.4 L775.8 275.3 L789.0 274.4 L802.3 271.9 L815.6 271.1 L828.8 271.1 L842.1 269.5 L855.4 266.3" fill="none" stroke="var(--accent)" stroke-width="1.6"/><path d="M72.6 171.4 L85.9 153.3 L99.2 142.6 L112.4 123.3 L125.7 101.1 L139.0 85.2 L152.2 75.5 L165.5 84.5 L178.8 91.2 L192.0 93.4 L205.3 104.4 L218.6 116.7 L231.8 112.0 L245.1 114.9 L258.4 136.7 L271.6 142.3 L284.9 148.1 L298.2 162.1 L311.4 180.1 L324.7 186.2 L338.0 196.6 L351.2 217.9 L364.5 231.5 L377.8 230.9 L391.0 238.9 L404.3 255.3 L417.6 256.3 L430.8 257.3 L444.1 260.5 L457.4 262.7 L470.6 258.6 L483.9 271.0 L497.2 290.3 L510.4 316.0 L523.7 317.6 L537.0 326.1 L550.2 320.4 L563.5 304.4 L576.8 292.4 L590.0 298.2 L603.3 297.5 L616.6 297.7 L629.8 298.0 L643.1 289.2 L656.4 276.9 L669.6 267.2 L682.9 265.1 L696.2 260.4 L709.4 258.7 L722.7 263.5 L736.0 265.7 L749.2 259.9 L762.5 258.9 L775.8 261.0 L789.0 258.9 L802.3 257.3 L815.6 261.5 L828.8 267.2 L842.1 268.9 L855.4 265.9" fill="none" stroke="#7C3AED" stroke-width="1.3" opacity=".9"/><rect x="68.5" y="428.3" width="8.2" height="75.7" fill="#3B82F6" opacity=".55"/><rect x="81.8" y="424.7" width="8.2" height="79.3" fill="#E5484D" opacity=".55"/><rect x="95.1" y="414.0" width="8.2" height="90.0" fill="#E5484D" opacity=".55"/><rect x="108.3" y="416.3" width="8.2" height="87.7" fill="#E5484D" opacity=".55"/><rect x="121.6" y="425.6" width="8.2" height="78.4" fill="#E5484D" opacity=".55"/><rect x="134.9" y="424.6" width="8.2" height="79.4" fill="#3B82F6" opacity=".55"/><rect x="148.1" y="445.5" width="8.2" height="58.5" fill="#E5484D" opacity=".55"/><rect x="161.4" y="429.0" width="8.2" height="75.0" fill="#3B82F6" opacity=".55"/><rect x="174.7" y="439.8" width="8.2" height="64.2" fill="#E5484D" opacity=".55"/><rect x="187.9" y="433.9" width="8.2" height="70.1" fill="#E5484D" opacity=".55"/><rect x="201.2" y="424.4" width="8.2" height="79.6" fill="#3B82F6" opacity=".55"/><rect x="214.5" y="447.0" width="8.2" height="57.0" fill="#E5484D" opacity=".55"/><rect x="227.7" y="435.0" width="8.2" height="69.0" fill="#E5484D" opacity=".55"/><rect x="241.0" y="432.1" width="8.2" height="71.9" fill="#3B82F6" opacity=".55"/><rect x="254.3" y="426.5" width="8.2" height="77.5" fill="#3B82F6" opacity=".55"/><rect x="267.5" y="432.5" width="8.2" height="71.5" fill="#E5484D" opacity=".55"/><rect x="280.8" y="435.1" width="8.2" height="68.9" fill="#3B82F6" opacity=".55"/><rect x="294.1" y="424.7" width="8.2" height="79.3" fill="#3B82F6" opacity=".55"/><rect x="307.3" y="427.1" width="8.2" height="76.9" fill="#3B82F6" opacity=".55"/><rect x="320.6" y="414.5" width="8.2" height="89.5" fill="#3B82F6" opacity=".55"/><rect x="333.9" y="434.4" width="8.2" height="69.6" fill="#3B82F6" opacity=".55"/><rect x="347.1" y="431.2" width="8.2" height="72.8" fill="#3B82F6" opacity=".55"/><rect x="360.4" y="428.5" width="8.2" height="75.5" fill="#E5484D" opacity=".55"/><rect x="373.7" y="442.9" width="8.2" height="61.1" fill="#E5484D" opacity=".55"/><rect x="386.9" y="438.9" width="8.2" height="65.1" fill="#3B82F6" opacity=".55"/><rect x="400.2" y="450.9" width="8.2" height="53.1" fill="#3B82F6" opacity=".55"/><rect x="413.5" y="444.0" width="8.2" height="60.0" fill="#E5484D" opacity=".55"/><rect x="426.7" y="446.6" width="8.2" height="57.4" fill="#3B82F6" opacity=".55"/><rect x="440.0" y="443.0" width="8.2" height="61.0" fill="#E5484D" opacity=".55"/><rect x="453.3" y="443.0" width="8.2" height="61.0" fill="#3B82F6" opacity=".55"/><rect x="466.5" y="461.7" width="8.2" height="42.3" fill="#3B82F6" opacity=".55"/><rect x="479.8" y="453.2" width="8.2" height="50.8" fill="#3B82F6" opacity=".55"/><rect x="493.1" y="433.8" width="8.2" height="70.2" fill="#3B82F6" opacity=".55"/><rect x="506.3" y="445.8" width="8.2" height="58.2" fill="#3B82F6" opacity=".55"/><rect x="519.6" y="437.3" width="8.2" height="66.7" fill="#E5484D" opacity=".55"/><rect x="532.9" y="462.1" width="8.2" height="41.9" fill="#3B82F6" opacity=".55"/><rect x="546.1" y="456.0" width="8.2" height="48.0" fill="#E5484D" opacity=".55"/><rect x="559.4" y="452.0" width="8.2" height="52.0" fill="#3B82F6" opacity=".55"/><rect x="572.7" y="460.3" width="8.2" height="43.7" fill="#3B82F6" opacity=".55"/><rect x="585.9" y="458.0" width="8.2" height="46.0" fill="#3B82F6" opacity=".55"/><rect x="599.2" y="458.9" width="8.2" height="45.1" fill="#3B82F6" opacity=".55"/><rect x="612.5" y="452.8" width="8.2" height="51.2" fill="#E5484D" opacity=".55"/><rect x="625.7" y="448.6" width="8.2" height="55.4" fill="#E5484D" opacity=".55"/><rect x="639.0" y="439.7" width="8.2" height="64.3" fill="#E5484D" opacity=".55"/><rect x="652.3" y="452.9" width="8.2" height="51.1" fill="#3B82F6" opacity=".55"/><rect x="665.5" y="442.2" width="8.2" height="61.8" fill="#3B82F6" opacity=".55"/><rect x="678.8" y="457.1" width="8.2" height="46.9" fill="#3B82F6" opacity=".55"/><rect x="692.1" y="457.3" width="8.2" height="46.7" fill="#E5484D" opacity=".55"/><rect x="705.3" y="441.4" width="8.2" height="62.6" fill="#E5484D" opacity=".55"/><rect x="718.6" y="462.9" width="8.2" height="41.1" fill="#3B82F6" opacity=".55"/><rect x="731.9" y="460.0" width="8.2" height="44.0" fill="#E5484D" opacity=".55"/><rect x="745.1" y="453.4" width="8.2" height="50.6" fill="#E5484D" opacity=".55"/><rect x="758.4" y="462.8" width="8.2" height="41.2" fill="#3B82F6" opacity=".55"/><rect x="771.7" y="459.1" width="8.2" height="44.9" fill="#3B82F6" opacity=".55"/><rect x="784.9" y="448.1" width="8.2" height="55.9" fill="#E5484D" opacity=".55"/><rect x="798.2" y="462.0" width="8.2" height="42.0" fill="#E5484D" opacity=".55"/><rect x="811.5" y="454.3" width="8.2" height="49.7" fill="#3B82F6" opacity=".55"/><rect x="824.7" y="437.5" width="8.2" height="66.5" fill="#3B82F6" opacity=".55"/><rect x="838.0" y="467.4" width="8.2" height="36.6" fill="#E5484D" opacity=".55"/><rect x="851.3" y="467.5" width="8.2" height="36.5" fill="#E5484D" opacity=".55"/><line x1="66" y1="504" x2="862" y2="504" stroke="var(--line)" stroke-width="1"/><text x="58" y="504" text-anchor="end" font-size="10" fill="var(--ink-3)" font-family="monospace">거래량</text><text x="72.6" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">06/12</text><text x="205.3" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">06/26</text><text x="338.0" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">07/10</text><text x="470.6" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">07/27</text><text x="603.3" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">08/10</text><text x="736.0" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">08/25</text><text x="855.4" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">09/07</text><line x1="72" y1="18" x2="88" y2="18" stroke="#7C3AED" stroke-width="2"/><text x="93" y="22" font-size="10.5" fill="var(--ink-3)" font-family="monospace">MA5</text><line x1="144" y1="18" x2="160" y2="18" stroke="var(--accent)" stroke-width="2"/><text x="165" y="22" font-size="10.5" fill="var(--ink-3)" font-family="monospace">MA20</text><line x1="216" y1="18" x2="232" y2="18" stroke="var(--ink-3)" stroke-width="2"/><text x="237" y="22" font-size="10.5" fill="var(--ink-3)" font-family="monospace">MA60</text><text x="862" y="22" text-anchor="end" font-size="11.5" fill="var(--ink-2)" font-family="monospace">코스피 일봉 · 2026-09-07 종가 6,995.39 (+4.61%)</text></svg>
-  </div>
-  <p class="tcap">코스피 일봉 60거래일 (2026-06-12 ~ 09-07). 이동평균 MA5·MA20·MA60, 하단은 거래량. 파선은 본문에서 설명하는 저항·지지 구간입니다.</p>
-
-  <p><strong>첫째, 이건 신고가 랠리가 아닙니다.</strong> 코스피는 6월 19일 장중 <strong>9,385.59</strong>까지 갔던 지수입니다. 오늘 종가 6,995.39는 그 고점 대비 <strong>−25.5%</strong> 자리입니다. 7월에 8,620에서 5,262까지 무너진 뒤 회복하는 과정의 한 구간으로 보는 편이 정확합니다. 차트 왼쪽의 하락 기울기가 그 흔적입니다.</p>
-  <p><strong>둘째, 20일선을 확실히 넘었습니다.</strong> 20일 이동평균은 6,727.59입니다. 오늘 종가가 이 선을 4% 위로 벌리며 올라섰습니다. 8월 내내 20일선 근처에서 눌려 있던 흐름이 오늘 깨졌습니다.</p>
-  <p><strong>셋째, 그런데 60일선이 아직 위에 있습니다.</strong> 60일 이동평균은 <strong>7,211.87</strong>이고 여전히 아래로 기울어져 있습니다. 게다가 최근 20거래일 고점이 <strong>7,216.62</strong>입니다. 두 저항이 거의 같은 자리에 겹칩니다. 7,210~7,220 구간은 오늘 상승분을 전부 소화해야 넘어설 수 있는 벽입니다.</p>
-
-  <h2>수급 — 개인 6조 8천억 순매도</h2>
-
-  <div class="scroll">
-    <table>
-      <thead><tr><th>투자자</th><th>코스피</th><th>코스닥</th></tr></thead>
-      <tbody>
-        <tr><td>개인</td><td class="num down">−6조 8,374억</td><td class="num up">+1,906억</td></tr>
-        <tr class="emph"><td>외국인</td><td class="num up">+2조 5,525억</td><td class="num down">−710억</td></tr>
-        <tr class="emph"><td>기관</td><td class="num up">+2조 6,497억</td><td class="num down">−1,310억</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="tcap">2026-09-07 잠정치. 나머지 차액은 기타법인·기타외국인 매수분입니다.</p>
-
-  <p>코스피에서 외국인과 기관이 <strong>합계 5조 2,022억 원</strong>을 순매수했고, 개인은 <strong>6조 8,374억 원</strong>을 순매도했습니다. 개인 순매도 규모가 코스피 전체 거래대금 21.5조 원의 <strong>3분의 1</strong>에 육박합니다.</p>
-  <p>단순 차익 실현으로 보기에는 큰 규모입니다. 7월 폭락 구간에서 물린 물량이 <strong>6,900~7,000 회복 구간에서 본전 매물로 나오고 있다</strong>고 보는 편이 자연스럽습니다. 그 물량을 외국인과 기관이 전부 받아냈습니다.</p>
-  <p>코스닥은 정반대입니다. 개인만 사고 외국인·기관은 모두 팔았습니다. 오늘 시장의 돈은 코스닥이나 중소형주가 아니라 <strong>코스피 대형 반도체 한 곳으로만 흘렀습니다.</strong></p>
-
-  <h2>특징 섹터</h2>
-
-  <div class="fig">
-<svg viewBox="0 0 980 628" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="업종별 등락률"><line x1="555" y1="46" x2="555" y2="594" stroke="var(--line)" stroke-width="1"/><line x1="275.6" y1="46" x2="275.6" y2="594" stroke="var(--line-soft)" stroke-width="1"/><text x="275.6" y="40" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">-6%</text><line x1="368.8" y1="46" x2="368.8" y2="594" stroke="var(--line-soft)" stroke-width="1"/><text x="368.8" y="40" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">-4%</text><line x1="461.9" y1="46" x2="461.9" y2="594" stroke="var(--line-soft)" stroke-width="1"/><text x="461.9" y="40" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">-2%</text><line x1="648.1" y1="46" x2="648.1" y2="594" stroke="var(--line-soft)" stroke-width="1"/><text x="648.1" y="40" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">+2%</text><line x1="741.2" y1="46" x2="741.2" y2="594" stroke="var(--line-soft)" stroke-width="1"/><text x="741.2" y="40" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">+4%</text><line x1="834.4" y1="46" x2="834.4" y2="594" stroke="var(--line-soft)" stroke-width="1"/><text x="834.4" y="40" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">+6%</text><rect x="555.0" y="61" width="308.7" height="17" fill="#E5484D" opacity=".9"/><text x="188" y="74" text-anchor="end" font-size="12" fill="var(--ink-2)">반도체와반도체장비</text><text x="870.7" y="74" text-anchor="start" font-size="11.5" fill="#E5484D" font-family="monospace" font-weight="600">+6.63%</text><rect x="555.0" y="91" width="307.8" height="17" fill="#E5484D" opacity=".9"/><text x="188" y="104" text-anchor="end" font-size="12" fill="var(--ink-2)">전기장비</text><text x="869.8" y="104" text-anchor="start" font-size="11.5" fill="#E5484D" font-family="monospace" font-weight="600">+6.61%</text><rect x="555.0" y="121" width="281.7" height="17" fill="#E5484D" opacity=".9"/><text x="188" y="134" text-anchor="end" font-size="12" fill="var(--ink-2)">전자제품</text><text x="843.7" y="134" text-anchor="start" font-size="11.5" fill="#E5484D" font-family="monospace" font-weight="600">+6.05%</text><rect x="555.0" y="151" width="267.7" height="17" fill="#E5484D" opacity=".9"/><text x="188" y="164" text-anchor="end" font-size="12" fill="var(--ink-2)">기계</text><text x="829.7" y="164" text-anchor="start" font-size="11.5" fill="#E5484D" font-family="monospace" font-weight="600">+5.75%</text><rect x="555.0" y="181" width="264.9" height="17" fill="#E5484D" opacity=".9"/><text x="188" y="194" text-anchor="end" font-size="12" fill="var(--ink-2)">건강관리기술</text><text x="826.9" y="194" text-anchor="start" font-size="11.5" fill="#E5484D" font-family="monospace" font-weight="600">+5.69%</text><rect x="555.0" y="211" width="229.1" height="17" fill="#E5484D" opacity=".9"/><text x="188" y="224" text-anchor="end" font-size="12" fill="var(--ink-2)">복합기업</text><text x="791.1" y="224" text-anchor="start" font-size="11.5" fill="#E5484D" font-family="monospace" font-weight="600">+4.92%</text><rect x="555.0" y="241" width="225.8" height="17" fill="#E5484D" opacity=".9"/><text x="188" y="254" text-anchor="end" font-size="12" fill="var(--ink-2)">레저용장비와제품</text><text x="787.8" y="254" text-anchor="start" font-size="11.5" fill="#E5484D" font-family="monospace" font-weight="600">+4.85%</text><rect x="555.0" y="271" width="210.0" height="17" fill="#E5484D" opacity=".9"/><text x="188" y="284" text-anchor="end" font-size="12" fill="var(--ink-2)">건설</text><text x="772.0" y="284" text-anchor="start" font-size="11.5" fill="#E5484D" font-family="monospace" font-weight="600">+4.51%</text><rect x="555.0" y="301" width="210.0" height="17" fill="#E5484D" opacity=".9"/><text x="188" y="314" text-anchor="end" font-size="12" fill="var(--ink-2)">생명보험</text><text x="772.0" y="314" text-anchor="start" font-size="11.5" fill="#E5484D" font-family="monospace" font-weight="600">+4.51%</text><rect x="555.0" y="331" width="185.3" height="17" fill="#E5484D" opacity=".9"/><text x="188" y="344" text-anchor="end" font-size="12" fill="var(--ink-2)">전기유틸리티</text><text x="747.3" y="344" text-anchor="start" font-size="11.5" fill="#E5484D" font-family="monospace" font-weight="600">+3.98%</text><rect x="456.3" y="361" width="98.7" height="17" fill="#3B82F6" opacity=".75"/><text x="188" y="374" text-anchor="end" font-size="12" fill="var(--ink-2)">식품</text><text x="449.3" y="374" text-anchor="end" font-size="11.5" fill="#3B82F6" font-family="monospace" font-weight="600">-2.12%</text><rect x="478.6" y="391" width="76.4" height="17" fill="#3B82F6" opacity=".75"/><text x="188" y="404" text-anchor="end" font-size="12" fill="var(--ink-2)">화장품</text><text x="471.6" y="404" text-anchor="end" font-size="11.5" fill="#3B82F6" font-family="monospace" font-weight="600">-1.64%</text><rect x="481.9" y="421" width="73.1" height="17" fill="#3B82F6" opacity=".75"/><text x="188" y="434" text-anchor="end" font-size="12" fill="var(--ink-2)">인터넷과카탈로그소매</text><text x="474.9" y="434" text-anchor="end" font-size="11.5" fill="#3B82F6" font-family="monospace" font-weight="600">-1.57%</text><rect x="483.8" y="451" width="71.2" height="17" fill="#3B82F6" opacity=".75"/><text x="188" y="464" text-anchor="end" font-size="12" fill="var(--ink-2)">기타금융</text><text x="476.8" y="464" text-anchor="end" font-size="11.5" fill="#3B82F6" font-family="monospace" font-weight="600">-1.53%</text><rect x="495.4" y="481" width="59.6" height="17" fill="#3B82F6" opacity=".75"/><text x="188" y="494" text-anchor="end" font-size="12" fill="var(--ink-2)">담배</text><text x="488.4" y="494" text-anchor="end" font-size="11.5" fill="#3B82F6" font-family="monospace" font-weight="600">-1.28%</text><rect x="500.1" y="511" width="54.9" height="17" fill="#3B82F6" opacity=".75"/><text x="188" y="524" text-anchor="end" font-size="12" fill="var(--ink-2)">가정용기기와용품</text><text x="493.1" y="524" text-anchor="end" font-size="11.5" fill="#3B82F6" font-family="monospace" font-weight="600">-1.18%</text><rect x="501.0" y="541" width="54.0" height="17" fill="#3B82F6" opacity=".75"/><text x="188" y="554" text-anchor="end" font-size="12" fill="var(--ink-2)">교육서비스</text><text x="494.0" y="554" text-anchor="end" font-size="11.5" fill="#3B82F6" font-family="monospace" font-weight="600">-1.16%</text><rect x="504.2" y="571" width="50.8" height="17" fill="#3B82F6" opacity=".75"/><text x="188" y="584" text-anchor="end" font-size="12" fill="var(--ink-2)">도로와철도운송</text><text x="497.2" y="584" text-anchor="end" font-size="11.5" fill="#3B82F6" font-family="monospace" font-weight="600">-1.09%</text><text x="188" y="616" text-anchor="end" font-size="10.5" fill="var(--ink-3)" font-family="monospace">상승 상위 10 / 하락 하위 8</text><text x="910" y="20" text-anchor="end" font-size="11.5" fill="var(--ink-2)" font-family="monospace">업종별 등락률 · 2026-09-07</text></svg>
-  </div>
-  <p class="tcap">2026-09-07 업종별 등락률. 전체 79개 업종 중 상승 51개, 하락 28개. 상승 상위 10개와 하락 하위 8개를 표시했습니다.</p>
-
-  <h3>주도 — 반도체와 그 옆동네</h3>
-
-  <div class="scroll">
-    <table>
-      <thead><tr><th>업종</th><th>등락률</th><th>종목수</th><th>상승</th><th>하락</th></tr></thead>
-      <tbody>
-        <tr class="emph"><td>반도체와반도체장비</td><td class="num up">+6.63%</td><td class="num">171</td><td class="num">120</td><td class="num">42</td></tr>
-        <tr><td>전기장비</td><td class="num up">+6.61%</td><td class="num">35</td><td class="num">28</td><td class="num">6</td></tr>
-        <tr><td>전자제품</td><td class="num up">+6.05%</td><td class="num">16</td><td class="num">8</td><td class="num">6</td></tr>
-        <tr><td>기계</td><td class="num up">+5.75%</td><td class="num">104</td><td class="num">53</td><td class="num">43</td></tr>
-        <tr><td>건강관리기술</td><td class="num up">+5.69%</td><td class="num">13</td><td class="num">5</td><td class="num">8</td></tr>
-        <tr><td>복합기업</td><td class="num up">+4.92%</td><td class="num">24</td><td class="num">19</td><td class="num">4</td></tr>
-        <tr><td>건설</td><td class="num up">+4.51%</td><td class="num">78</td><td class="num">37</td><td class="num">31</td></tr>
-        <tr><td>전기유틸리티</td><td class="num up">+3.98%</td><td class="num">5</td><td class="num">5</td><td class="num">0</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p>반도체가 +6.63%로 1위입니다. 대형주 움직임이 지수를 그대로 설명합니다. SK하이닉스 178만 3,000원 <strong>+8.26%</strong>, 삼성전자 27만 원 <strong>+5.68%</strong>, SK스퀘어 <strong>+8.07%</strong>, 한미반도체 24만 500원 +4.57%입니다.</p>
-  <p>더 눈여겨볼 것은 2위 <strong>전기장비 +6.61%</strong>와 8위 <strong>전기유틸리티 +3.98%</strong>입니다. AI 데이터센터는 반도체만으로 돌아가지 않습니다. 전력 설비와 송배전 장비가 함께 필요합니다. 시장이 이 연결고리를 정확히 짚었습니다. HD현대일렉트릭 76만 3,000원 <strong>+6.86%</strong>, LS ELECTRIC 20만 7,000원 <strong>+5.99%</strong>입니다.</p>
-  <p>전기유틸리티는 <strong>5개 종목이 전부 상승</strong>했습니다. 하락 종목이 하나도 없는 업종은 오늘 여기뿐이었습니다.</p>
-  <p>코스닥 반도체 장비주도 함께 올랐지만 온도차가 있었습니다. 주성엔지니어링 +4.99%, 이오테크닉스 +2.93%, 리노공업 +2.70%, 원익IPS +2.44%, 심텍 +1.61%. 대형주 상승률의 절반 수준입니다.</p>
-
-  <h3>소외 — 내수와 소비</h3>
-
-  <div class="scroll">
-    <table>
-      <thead><tr><th>업종</th><th>등락률</th><th>성격</th></tr></thead>
-      <tbody>
-        <tr class="emph"><td>식품</td><td class="num down">−2.12%</td><td>내수 방어주</td></tr>
-        <tr><td>화장품</td><td class="num down">−1.64%</td><td>소비재</td></tr>
-        <tr><td>인터넷과카탈로그소매</td><td class="num down">−1.57%</td><td>내수 유통</td></tr>
-        <tr><td>기타금융</td><td class="num down">−1.53%</td><td>—</td></tr>
-        <tr><td>담배</td><td class="num down">−1.28%</td><td>경기방어</td></tr>
-        <tr><td>가정용기기와용품</td><td class="num down">−1.18%</td><td>소비재</td></tr>
-        <tr><td>교육서비스</td><td class="num down">−1.16%</td><td>내수</td></tr>
-        <tr><td>도로와철도운송</td><td class="num down">−1.09%</td><td>내수</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p>하락 업종 목록에 공통점이 뚜렷합니다. <strong>전부 내수·소비·경기방어 성격</strong>입니다. 화장품은 65개 종목 중 46개가 내렸고, 식품은 92개 중 50개가 내렸습니다.</p>
-  <p>개별로는 아모레퍼시픽 14만 800원(−1.74%), CJ제일제당 18만 2,800원(−0.33%), LG생활건강 29만 3,000원(−0.34%)이 약했습니다. 바이오도 쉬었습니다. 셀트리온 18만 6,300원(−0.96%), 알테오젠 28만 6,000원(−0.87%)입니다. 방산은 차익 매물이 나와 한화에어로스페이스가 103만 9,000원으로 <strong>−1.52%</strong> 내렸습니다.</p>
-  <p>이건 자금이 새로 들어온 장이 아니라 <strong>있던 자금이 자리를 옮긴 장</strong>이라는 뜻입니다. 방어주를 팔아 반도체를 샀습니다.</p>
-
-  <h2>분석 — 지수는 축포, 시장은 양극화</h2>
-  <p>오늘 장을 한 문장으로 요약하면 <strong>"지수는 4.61% 올랐는데 종목의 52%는 내렸다"</strong>입니다. 숫자 네 개를 겹쳐 보면 성격이 분명해집니다.</p>
-
-  <ul class="checks">
-    <li><strong>지수 +4.61%, 상승 종목 비율 47.9%.</strong> 전체 4,412개 중 상승 2,114개, 하락 1,916개, 보합 382개입니다. 시가총액 상위 몇 종목이 지수를 통째로 끌어올린 전형적인 인덱스 랠리입니다.</li>
-    <li><strong>코스피 +4.61% vs 코스닥 +1.07%.</strong> 4배 이상 차이입니다. 코스닥은 시가보다 낮게 끝났고 외국인·기관이 모두 팔았습니다. 유동성이 대형주에만 몰렸다는 증거입니다.</li>
-    <li><strong>개인 6.8조 순매도.</strong> 반등을 매수 기회가 아니라 탈출 기회로 쓴 사람이 훨씬 많았습니다. 7월 고점권 매물대가 아직 남아 있습니다.</li>
-    <li><strong>6월 고점 대비 −25.5%.</strong> 축하할 자리가 아니라 회복 중간 지점입니다.</li>
-  </ul>
-
-  <p>긍정적으로 볼 근거도 분명히 있습니다. <strong>종가가 장중 고가와 사실상 같습니다.</strong> 4.6% 오른 날 마감까지 차익 매물에 밀리지 않는 경우는 흔치 않습니다. 외국인과 기관이 같은 방향으로 5조 원 넘게 순매수한 것도 하루 이벤트로 끝나기 어려운 규모입니다. 여기에 원/달러가 7.30원 내린 1,342.20원으로 마감해 외국인 매수 환경도 우호적이었습니다.</p>
-  <p>정리하면 <strong>방향은 위, 폭은 좁습니다.</strong> 지수를 따라가려면 반도체와 전력 설비를 들고 있어야 했고, 그 밖의 종목을 들고 있었다면 오늘 지수 상승은 남의 이야기였습니다.</p>
-
-  <h2>내일(9월 8일) 전망</h2>
-
-  <div class="warn">
-    <p><strong>오늘 밤 미국 증시는 노동절(Labor Day)로 휴장합니다.</strong> 9월 첫째 월요일이기 때문입니다. 내일 아침 참고할 뉴욕발 방향성이 없다는 뜻입니다. 코스피는 외부 신호 없이 자체 수급과 오늘 마감 모멘텀만으로 출발합니다. 미국발 재료로 하루를 벌었으니, 그 재료가 하루 더 유효한지를 스스로 증명해야 하는 날입니다.</p>
-  </div>
-
-  <div class="scroll">
-    <table>
-      <thead><tr><th>시나리오</th><th>예상 범위</th><th>확률</th><th>조건</th></tr></thead>
-      <tbody>
-        <tr><td>강세</td><td class="num">7,050 ~ 7,150</td><td class="num">30%</td><td>7,000 안착 후 반도체 추가 상승, 외국인 순매수 지속</td></tr>
-        <tr class="emph"><td><strong>기본</strong></td><td class="num"><strong>6,950 ~ 7,080</strong></td><td class="num"><strong>50%</strong></td><td>갭 상승 출발 후 차익 매물, 7,000선 공방</td></tr>
-        <tr><td>약세</td><td class="num">6,850 ~ 6,950</td><td class="num">20%</td><td>갭 메우기, 오늘 저가 6,868 지지 테스트</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="tcap">시나리오와 확률은 필자 추정치입니다.</p>
-
-  <div class="lvl">
-    <div><span class="k">1차 저항</span><span class="v" style="color:var(--up)">7,000</span><span class="s">심리선 · 4.61p 거리</span></div>
-    <div><span class="k">2차 저항</span><span class="v" style="color:var(--up)">7,212</span><span class="s">60일선 · 20일 고점 7,217</span></div>
-    <div><span class="k">1차 지지</span><span class="v" style="color:var(--down)">6,868</span><span class="s">오늘 저가</span></div>
-    <div><span class="k">2차 지지</span><span class="v" style="color:var(--down)">6,728</span><span class="s">20일선</span></div>
-  </div>
-
-  <p><strong>7,000 돌파 자체는 크게 어렵지 않아 보입니다.</strong> 종가가 장중 고가로 끝났고 남은 거리가 4.61포인트입니다. 개장 직후 넘어설 가능성이 높습니다.</p>
-  <p><strong>문제는 그 위입니다.</strong> 60일선 7,211.87과 최근 20일 고점 7,216.62가 거의 같은 자리에 겹쳐 있습니다. 오늘처럼 하루에 300포인트씩 오르는 흐름이 이어지지 않는 한, 7,210~7,220 구간에서 한 번은 부딪힌다고 보는 게 합리적입니다.</p>
-  <p>지지선은 두 겹입니다. 1차는 오늘 시가이자 저가권인 6,868~6,910, 2차는 20일선 6,728입니다. 6,728이 깨지면 오늘 상승은 하루짜리 이벤트로 정리됩니다.</p>
-
-  <h3>내일 확인할 세 가지</h3>
-  <ul class="checks">
-    <li><strong>SK하이닉스와 삼성전자가 이어서 오르는가.</strong> 오늘 +8.26%, +5.68%였습니다. 내일도 상승하면 추세, 보합이나 하락이면 오늘은 하루짜리 뉴스 반영입니다. 두 종목이 코스피 시가총액에서 차지하는 비중을 감안하면 지수 방향과 직결됩니다.</li>
-    <li><strong>개인 순매도가 줄어드는가.</strong> 오늘 6.8조 원이었습니다. 절반 아래로 줄면 매물 소화가 진행됐다는 신호이고, 비슷하게 유지되면 7,000선 위는 계속 무겁습니다.</li>
-    <li><strong>원/달러가 1,340원을 밑도는가.</strong> 오늘 1,342.20원까지 내려왔습니다. 1,340원 아래로 안착하면 외국인 순매수가 이어질 여건이 만들어집니다. 반대로 1,350원대로 되돌아가면 외국인 수급이 흔들립니다.</li>
-  </ul>
-  <p>세 가지 중 둘 이상이 긍정적이면 강세 시나리오, 둘 이상이 부정적이면 약세 시나리오 쪽으로 무게를 옮기면 됩니다.</p>
-
-  <h2>자주 묻는 질문</h2>
-  <div class="faq">
-    <h3>2026년 9월 7일 코스피 종가는 얼마인가요?</h3>
-    <p>코스피는 전 거래일 대비 308.18포인트(4.61%) 오른 6,995.39로 마감했습니다. 장중 고가가 6,995.40으로 사실상 고가 마감입니다. 코스닥은 8.69포인트(1.07%) 오른 822.19입니다.</p>
-    <h3>코스피가 급등한 이유가 뭔가요?</h3>
-    <p>지난 9월 4일 오픈AI가 차세대 모델 'GPT-6 아스트라'를 공개하면서 메모리·스토리지 수요 기대가 커졌고, 그날 필라델피아 반도체 지수가 3.38% 급등했습니다. SK하이닉스 ADR이 8.14%, 마이크론이 6.10% 오른 흐름이 그대로 국내 반도체주로 이어졌습니다. 원/달러 환율이 7.30원 내린 것도 외국인 매수에 우호적으로 작용했습니다.</p>
-    <h3>오늘 가장 많이 오른 업종은 어디인가요?</h3>
-    <p>반도체와반도체장비가 +6.63%로 1위, 전기장비가 +6.61%로 2위입니다. 전자제품 +6.05%, 기계 +5.75%가 뒤를 이었습니다. AI 데이터센터에 필요한 반도체와 전력 설비가 함께 움직인 하루였습니다. 전기유틸리티는 5개 종목 전부가 올랐습니다.</p>
-    <h3>왜 지수는 올랐는데 제 종목은 안 올랐나요?</h3>
-    <p>오늘 시장 전체 4,412개 종목 중 상승은 2,114개(47.9%)로 절반이 안 됩니다. 시가총액 상위 반도체 종목이 지수를 끌어올린 인덱스 랠리였기 때문입니다. 식품(−2.12%), 화장품(−1.64%) 같은 내수·소비 업종은 오히려 하락했습니다.</p>
-    <h3>내일 코스피 전망은 어떤가요?</h3>
-    <p>오늘 밤 미국 증시가 노동절로 휴장해 외부 방향성이 없습니다. 종가가 장중 고가로 끝나 갭 상승 출발 가능성이 높고, 7,000선 돌파 자체는 무난해 보입니다. 다만 60일선 7,212와 최근 20일 고점 7,217이 겹치는 구간이 저항입니다. 기본 시나리오는 6,950~7,080 사이의 등락입니다.</p>
-    <h3>개인이 6조 8천억을 팔았는데 지수가 오른 이유는?</h3>
-    <p>외국인이 2조 5,525억 원, 기관이 2조 6,497억 원을 순매수해 합계 5조 2,022억 원으로 개인 물량을 받아냈습니다. 나머지는 기타법인 매수분입니다. 7월 폭락 구간에서 물린 개인 물량이 6,900~7,000 회복 구간에서 본전 매물로 나오는 것으로 보입니다.</p>
-  </div>
+  <h2>차트</h2>
+  <figure><img src="../data/stocks/005930.png" alt="삼성전자 최근 60거래일 주가·거래량"><figcaption>삼성전자 · 최근 60거래일</figcaption></figure>
+  <figure><img src="../data/stocks/000660.png" alt="SK하이닉스 최근 60거래일 주가·거래량"><figcaption>SK하이닉스 · 최근 60거래일</figcaption></figure>
+  <figure><img src="../data/stocks/005380.png" alt="현대차 최근 60거래일 주가·거래량"><figcaption>현대차 · 최근 60거래일</figcaption></figure>
 
   <div class="note">
-    <p>지수·수급·업종 수치는 2026년 9월 7일 장 마감 기준 네이버 금융 데이터를 바탕으로 정리했습니다. 투자자별 매매 동향은 잠정치로 확정치와 차이가 있을 수 있습니다. 내일 전망과 시나리오별 확률은 필자의 추정이며 실제 시장과 상당한 차이가 발생할 수 있습니다. 본 글은 참고용 시황 정리이며 특정 종목의 매수·매도를 권유하지 않습니다. 투자 판단의 최종 책임은 투자자 본인에게 있으며 원금 손실이 발생할 수 있습니다.</p>
+    <p>한국거래소·네이버금융 공개 데이터를 바탕으로 매일 자동 생성되는 기록입니다. 투자 판단의 참고 자료일 뿐, 매수·매도를 권유하지 않습니다.</p>
   </div>
 </main>
 
