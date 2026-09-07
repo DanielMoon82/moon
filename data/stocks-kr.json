@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-09-07T03:15:38.720860+00:00",
+  "updated_at": "2026-09-07T08:27:42.131486+00:00",
   "as_of_date": "2026-09-07",
   "stocks": [
     {
       "code": "005930",
-      "close": 266000,
-      "change": 10500,
-      "change_pct": 4.11,
-      "volume": 7107396,
+      "close": 270000,
+      "change": 14500,
+      "change_pct": 5.68,
+      "volume": 18277791,
       "as_of_date": "2026-09-07",
       "foreign_net_volume": -115377,
       "institution_net_volume": 2489812,
@@ -154,8 +154,8 @@
         },
         {
           "date": "2026-09-07",
-          "close": 266000,
-          "volume": 7107396,
+          "close": 270000,
+          "volume": 18277791,
           "foreign": null,
           "institution": null
         }
@@ -164,10 +164,10 @@
     },
     {
       "code": "000660",
-      "close": 1747000,
-      "change": 100000,
-      "change_pct": 6.07,
-      "volume": 1596260,
+      "close": 1783000,
+      "change": 136000,
+      "change_pct": 8.26,
+      "volume": 3478577,
       "as_of_date": "2026-09-07",
       "foreign_net_volume": 308833,
       "institution_net_volume": 96776,
@@ -314,8 +314,8 @@
         },
         {
           "date": "2026-09-07",
-          "close": 1747000,
-          "volume": 1596260,
+          "close": 1783000,
+          "volume": 3478577,
           "foreign": null,
           "institution": null
         }
@@ -324,10 +324,10 @@
     },
     {
       "code": "005380",
-      "close": 388500,
-      "change": 5000,
-      "change_pct": 1.3,
-      "volume": 218631,
+      "close": 393000,
+      "change": 9500,
+      "change_pct": 2.48,
+      "volume": 431118,
       "as_of_date": "2026-09-07",
       "foreign_net_volume": -60899,
       "institution_net_volume": -53849,
@@ -474,8 +474,8 @@
         },
         {
           "date": "2026-09-07",
-          "close": 388500,
-          "volume": 218631,
+          "close": 393000,
+          "volume": 431118,
           "foreign": null,
           "institution": null
         }
