@@ -154,7 +154,9 @@ def parse(tables, body):
         col = rate_col(header)
         ctx_type = classify(ctx)
         ctx_as_of = ""
-        m = AS_OF.search(ctx)
+        # 표 바로 앞 160자 안에 있는 기준일만 이 표의 것으로 본다. 더 멀리서
+        # 주워 오면 무관한 안내문의 날짜가 금리 기준일로 붙는다.
+        m = AS_OF.search(ctx[-160:])
         if m:
             ctx_as_of = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
 
