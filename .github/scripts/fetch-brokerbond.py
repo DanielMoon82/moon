@@ -116,14 +116,14 @@ def main():
             page.goto(LIST_URL, wait_until="domcontentloaded", timeout=40000)
             page.wait_for_timeout(7000)
             for tab in TABS:
+                # 첫 탭도 눌러서 새로 받는다. 안 누르고 넘어가면 화면이 열릴 때
+                # 받아 둔 응답을 비운 뒤라 빈손이 된다(실제로 그랬다).
                 bucket.clear()
-                if tab != TABS[0]:
-                    try:
-                        # 탭은 눌러야 그 갈래를 새로 받아 온다.
-                        page.get_by_text(tab, exact=True).first.evaluate("e => e.click()")
-                    except Exception as exc:  # noqa: BLE001
-                        print(f"  [건너뜀] {tab}: {str(exc)[:70]}", file=sys.stderr)
-                        continue
+                try:
+                    page.get_by_text(tab, exact=True).first.evaluate("e => e.click()")
+                except Exception as exc:  # noqa: BLE001
+                    print(f"  [건너뜀] {tab}: {str(exc)[:70]}", file=sys.stderr)
+                    continue
                 page.wait_for_timeout(6000)
                 rows = []
                 for payload in bucket:

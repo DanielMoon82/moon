@@ -578,6 +578,40 @@
     .plan-grid{grid-template-columns:1fr;}
   }
 
+  /* ---------- 증권사 판매 채권 ---------- */
+  /* 한 줄이 종목 하나다. 이름이 길어 두 단으로 나눈다 —
+     위엔 이름과 종류·등급, 아래엔 만기와 수익률. */
+  .bb-card{
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+    padding:16px clamp(14px,2vw,20px) 8px;margin-bottom:clamp(12px,1.6vw,16px);
+  }
+  .bb-kind{
+    font-family:var(--f-display);font-weight:600;font-size:.95rem;
+    letter-spacing:-.02em;color:var(--ink);margin:0 0 10px;
+  }
+  .bb-row{padding:12px 0;border-top:1px solid var(--line);}
+  .bb-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;}
+  .bb-name{
+    font-size:.86rem;color:var(--ink);word-break:keep-all;line-height:1.45;
+  }
+  .bb-yield{
+    font-family:var(--f-mono);font-size:1.02rem;font-weight:600;color:var(--up);
+    font-variant-numeric:tabular-nums;white-space:nowrap;
+  }
+  .bb-meta{
+    display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:5px;
+    font-family:var(--f-mono);font-size:.66rem;color:var(--ink-3);
+  }
+  .bb-tag{
+    border:1px solid var(--line);border-radius:2px;padding:0 5px;
+    color:var(--ink-2);
+  }
+  .bb-empty{
+    display:flex;align-items:center;justify-content:center;min-height:110px;
+    border:1px dashed var(--line);border-radius:2px;
+    font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+  }
+
   /* ---------- 단기금융증권 만기수익률 ---------- */
   /* 등급 × 만기라 가로로 넓다. 좁은 화면에선 표만 옆으로 밀리게 두고
      본문은 안 밀리게 한다. 등급 칸은 붙여 둬야 어느 줄인지 안 잃는다. */
@@ -1363,7 +1397,7 @@
       <a class="cat-card" href="#invest">
         <span class="cat-icon" aria-hidden="true">📈</span>
         <h3>투자</h3>
-        <ul><li>오늘의 증시 · 오늘의 채권</li><li>CMA 금리 · 단기사채 · 주요 종목</li></ul>
+        <ul><li>오늘의 증시 · 오늘의 채권</li><li>CMA 금리 · 채권 · 단기사채</li></ul>
       </a>
       <a class="cat-card" href="#life">
         <span class="cat-icon" aria-hidden="true">🏠</span>
@@ -1677,7 +1711,7 @@
   <div class="cat-group" id="invest">
     <div class="wrap cat-band">
       <h2 class="cat-band-title"><span aria-hidden="true">📈</span> 투자</h2>
-      <p class="cat-band-desc">코스피·코스닥 장중 지수, 주요 종목, 국제 유가, 채권 금리, 단기사채, 증권사 CMA.</p>
+      <p class="cat-band-desc">코스피·코스닥 장중 지수, 주요 종목, 국제 유가, 채권 금리, 증권사 판매 채권, 단기사채, CMA.</p>
     </div>
   <section class="section wrap" id="stocks">
     <div class="section-head">
@@ -1857,6 +1891,20 @@
       <div class="bond-empty">금리를 불러오는 중입니다</div>
     </div>
     <p class="nfx-note" id="bond-updated"></p>
+  </section>
+
+  <section class="section wrap" id="brokerbond">
+    <div class="section-head">
+      <h2>증권사 판매 채권</h2>
+      <p>지금 사서 만기까지 들고 갈 수 있는 것들입니다.</p>
+    </div>
+    <p class="stock-note"><span class="trend-live">LIVE</span> — <span id="bb-broker">증권사</span>가 파는 장내채권을 수익률 높은 순으로 봅니다. 평일 두 번 받아와 값이 달라졌을 때만 갱신합니다. <strong>표시된 수익률은 마지막으로 거래가 붙은 값(체결수익률)이라 실제로 살 때 받는 수익률과 다릅니다.</strong> 거래소에서 사고파는 장내채권이라, 증권사가 따로 물량을 잡아 파는 장외채권과도 다릅니다. 세전 기준입니다. 투자 판단의 참고 자료일 뿐이며 특정 종목을 권유하지 않습니다.</p>
+
+    <div id="bb-grid">
+      <div class="bb-empty">채권을 불러오는 중입니다</div>
+    </div>
+    <p class="cma-srcs" id="bb-src"></p>
+    <p class="nfx-note" id="bb-updated"></p>
   </section>
 
   <section class="section wrap" id="shortbond">
@@ -2394,6 +2442,115 @@
       })
       .catch(function () {
         grid.innerHTML = '<div class="plan-empty">일정을 불러오지 못했습니다.</div>';
+      });
+  })();
+
+  // ---------- 증권사 판매 채권 ----------
+  // 워크플로가 증권사 모바일웹을 열어 목록 JSON 을 받아 둔 파일을 읽는다.
+  // 증권사 쪽은 CORS 로 막혀 있어 여기서 직접 부를 수 없다.
+  (function () {
+    var grid = document.getElementById('bb-grid');
+    if (!grid) return;
+    var srcEl = document.getElementById('bb-src');
+    var updatedEl = document.getElementById('bb-updated');
+    var brokerEl = document.getElementById('bb-broker');
+
+    function tag(text) {
+      var el = document.createElement('span');
+      el.className = 'bb-tag';
+      el.textContent = text;
+      return el;
+    }
+
+    function paint(doc) {
+      var groups = (doc && doc.groups) || [];
+      if (!groups.length) {
+        grid.innerHTML = '<div class="bb-empty">채권을 불러오지 못했습니다</div>';
+        return;
+      }
+      if (brokerEl && doc.broker) brokerEl.textContent = doc.broker;
+      grid.textContent = '';
+
+      groups.forEach(function (g) {
+        if (!(g.rows || []).length) return;
+        var card = document.createElement('article');
+        card.className = 'bb-card';
+        var h = document.createElement('h3');
+        h.className = 'bb-kind';
+        h.textContent = g.kind;
+        card.appendChild(h);
+
+        g.rows.forEach(function (r) {
+          var row = document.createElement('div');
+          row.className = 'bb-row';
+
+          var top = document.createElement('div');
+          top.className = 'bb-top';
+          var name = document.createElement('span');
+          name.className = 'bb-name';
+          name.textContent = r.name;
+          var y = document.createElement('span');
+          y.className = 'bb-yield';
+          y.textContent = typeof r['yield'] === 'number' ? r['yield'].toFixed(2) + '%' : '—';
+          top.appendChild(name);
+          top.appendChild(y);
+          row.appendChild(top);
+
+          var meta = document.createElement('div');
+          meta.className = 'bb-meta';
+          if (r.kind) meta.appendChild(tag(r.kind));
+          if (r.grade) meta.appendChild(tag(r.grade));
+          var bits = [];
+          if (r.mature) {
+            bits.push('만기 ' + r.mature.replace(/-/g, '.') +
+              (r.left ? ' (' + r.left + ' 남음)' : ''));
+          }
+          if (typeof r.coupon === 'number') bits.push('표면 ' + r.coupon.toFixed(2) + '%');
+          if (typeof r.price === 'number') {
+            bits.push('현재가 ' + r.price.toLocaleString('ko-KR',
+              { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + '원');
+          }
+          bits.forEach(function (b) {
+            var sp = document.createElement('span');
+            sp.textContent = b;
+            meta.appendChild(sp);
+          });
+          row.appendChild(meta);
+          card.appendChild(row);
+        });
+        grid.appendChild(card);
+      });
+
+      if (!grid.children.length) {
+        grid.innerHTML = '<div class="bb-empty">채권을 불러오지 못했습니다</div>';
+        return;
+      }
+
+      if (srcEl && doc.url) {
+        srcEl.textContent = '자료 · ';
+        var a = document.createElement('a');
+        a.href = doc.url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = (doc.broker || '증권사') + ' 채권 목록에서 보기 →';
+        srcEl.appendChild(a);
+      }
+
+      if (updatedEl && doc.updated_at) {
+        var d = new Date(doc.updated_at);
+        if (!isNaN(d)) {
+          updatedEl.textContent = '마지막 변동 ' + d.toLocaleString('ko-KR',
+            { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }) +
+            (doc.note ? ' · ' + doc.note : '');
+        }
+      }
+    }
+
+    fetch('./data/brokerbond.json', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(paint)
+      .catch(function () {
+        grid.innerHTML = '<div class="bb-empty">채권을 불러오지 못했습니다</div>';
       });
   })();
 
