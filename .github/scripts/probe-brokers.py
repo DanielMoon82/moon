@@ -84,10 +84,11 @@ with sync_playwright() as p:
 
     pg.on("response", on_response)
 
+    # 한 번에 여덟 곳은 작업 제한 안에 못 끝낸다. 절반씩 나눠 돌린다.
     half = os.environ.get("HALF", "1")
-todo = BROKERS[:4] if half == "1" else BROKERS[4:]
-say(f"# 이번 차례: {[b[0] for b in todo]}")
-for name, home in todo:
+    todo = BROKERS[:4] if half == "1" else BROKERS[4:]
+    say(f"# 이번 차례: {[b[0] for b in todo]}")
+    for name, home in todo:
         say("=" * 72)
         say(f"{name}  {home}")
         hits.clear()
@@ -133,7 +134,7 @@ for name, home in todo:
 
     br.close()
 
-OUT = OUT.with_name(f"brokers-{half}.txt")
+OUT = OUT.with_name(f"brokers-{os.environ.get('HALF', '1')}.txt")
 OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text("\n".join(lines), encoding="utf-8")
 print(f"{OUT} 에 {len(lines)}줄 적음")
