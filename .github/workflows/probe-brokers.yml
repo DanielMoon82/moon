@@ -1,0 +1,25 @@
+name: Probe brokers (temp)
+on: { workflow_dispatch: {} }
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install playwright
+      - run: python3 -m playwright install --with-deps chromium
+      - run: python3 -u .github/scripts/probe-brokers.py
+      # 로그가 늦게 올라와서 결과를 파일로 커밋한다. 확인하면 지운다.
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A probe-out || true
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: probe output"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
