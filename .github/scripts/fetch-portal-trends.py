@@ -121,8 +121,11 @@ def from_zum():
         raise ValueError("issue-word-list 없음")
     chunk = html[i:i + 8000]
     items = [clean(x) for x in re.findall(r"<li[^>]*>(.*?)</li>", chunk, re.S)]
-    # 순위 숫자가 앞에 붙어 오는 경우가 있어 떼어낸다
+    # 순위 배지가 앞이나 뒤에 붙어 온다. 양쪽 다 떼어낸다.
+    # 검색어로도 쓰는 글자라 숫자가 남으면 엉뚱한 결과가 나온다.
     items = [re.sub(r"^\d{1,2}\s*", "", x) for x in items]
+    items = [re.sub(r"\s*\d{1,2}$", "", x) for x in items]
+    items = [x.strip() for x in items]
     items = [x for x in items if 1 < len(x) <= 40]
     if not items:
         raise ValueError(f"목록이 비어 있음: {chunk[:200]!r}")
