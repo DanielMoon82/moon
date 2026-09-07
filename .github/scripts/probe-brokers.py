@@ -14,16 +14,13 @@
   · 키움 국내채권은 error 페이지로 갔다. 다른 주소를 찾아야 한다.
   · 삼성·미래에셋은 눌러도 화면이 안 바뀌었다.
 
-결과는 로그가 아니라 파일로 남긴다. 액션 로그가 20~40분씩 늦게 올라온다.
+결과는 로그로 낸다. 파일로 커밋하려다 github-actions[bot] 권한 403 으로
+밀린 적이 있다. 작업이 끝나면 로그는 잘 읽히니 그쪽이 확실하다.
 """
 import json
 import re
 import traceback
-from pathlib import Path
-
 from playwright.sync_api import sync_playwright
-
-OUT = Path(__file__).resolve().parent.parent.parent / "probe-out" / "brokers.txt"
 
 SHINHAN = [(f"신한 fbond{n}", f"https://m.shinhansec.com/mweb/fnin/bond/fbond{n}")
            for n in (1001, 1003, 1004, 1005, 1006, 1007)]
@@ -44,11 +41,8 @@ BONDY = re.compile(r"채권|bond|수익률|ert|yld|만기|rdmp|isnm", re.I)
 DECI = re.compile(r"\d+\.\d{2,3}")
 PCT = re.compile(r"\d+\.\d{1,3} ?%")
 
-lines = []
-
-
 def say(s=""):
-    lines.append(str(s))
+    print(s, flush=True)
 
 
 with sync_playwright() as p:
@@ -116,6 +110,4 @@ with sync_playwright() as p:
 
     br.close()
 
-OUT.parent.mkdir(parents=True, exist_ok=True)
-OUT.write_text("\n".join(lines), encoding="utf-8")
-print(f"{OUT} 에 {len(lines)}줄 적음")
+say("# 끝")
