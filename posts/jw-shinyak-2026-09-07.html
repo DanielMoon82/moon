@@ -1,0 +1,312 @@
+<meta charset="utf-8">
+<title>JW신약 주가 전망 — 6거래일 +71%, 목표가와 손절가 계산 — 야간비행 일지</title>
+<meta name="description" content="JW신약(067290)이 탈모 신약 테마로 6거래일 만에 71% 급등했습니다. 20일 이격도 148%, 거래대금 시총 97% 회전, 6월 58% 폭락 이력까지 짚고 목표가 4,200원·손절가 3,050원과 손익비를 계산했습니다.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://danielmoon82.github.io/moon/posts/jw-shinyak-2026-09-07.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#E7EBF1;--surface:#F4F6FA;--surface-2:#DCE2EC;
+    --ink:#0F1729;--ink-2:#3D4A63;--ink-3:#6B7891;
+    --line:#C6CEDB;--line-soft:#D6DCE6;--accent:#B06A15;--accent-bright:#C2761A;
+    --up:#E5484D;--down:#3B82F6;
+    --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    --f-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+    --pad:clamp(20px,5vw,64px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1120;--surface:#121A2C;--surface-2:#1A2439;
+      --ink:#E9EEF7;--ink-2:#A9B5C9;--ink-3:#72809A;
+      --line:#26314A;--line-soft:#1D2739;--accent:#E8A33D;--accent-bright:#F0B45C;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1120;--surface:#121A2C;--surface-2:#1A2439;
+    --ink:#E9EEF7;--ink-2:#A9B5C9;--ink-3:#72809A;
+    --line:#26314A;--line-soft:#1D2739;--accent:#E8A33D;--accent-bright:#F0B45C;
+  }
+  /* 글자 기준 크기. 홈과 같은 값. */
+  html{font-size:18px;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);
+    font-weight:300;font-size:1rem;line-height:1.75;-webkit-font-smoothing:antialiased;
+    word-break:keep-all;}
+  a{color:inherit;}
+  img{max-width:100%;height:auto;}
+  .wrap{max-width:760px;margin:0 auto;padding-inline:var(--pad);}
+  .nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--line);}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .brand{font-family:var(--f-display);font-weight:600;font-size:1rem;letter-spacing:-.02em;text-decoration:none;}
+  .back{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);text-decoration:none;}
+  .article{padding-block:clamp(40px,7vw,72px) clamp(56px,9vw,96px);}
+  .eyebrow{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 14px;}
+  h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,4.4vw,2.3rem);
+    line-height:1.3;letter-spacing:-.03em;margin:0 0 16px;text-wrap:balance;}
+  .byline{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+    padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:32px;}
+  .lede{font-size:1.02rem;color:var(--ink-2);margin:0 0 28px;}
+  h2{font-family:var(--f-display);font-weight:600;font-size:1.25rem;letter-spacing:-.02em;margin:42px 0 14px;}
+  h3{font-family:var(--f-display);font-weight:600;font-size:1.05rem;letter-spacing:-.02em;
+    margin:30px 0 10px;padding-top:14px;border-top:1px solid var(--line-soft);}
+  p{margin:0 0 18px;color:var(--ink-2);}
+  strong{font-weight:600;color:var(--ink);}
+  ul.checks{margin:0 0 18px;padding-left:20px;color:var(--ink-2);}
+  ul.checks li{margin-bottom:10px;font-size:.94rem;}
+  table{width:100%;border-collapse:collapse;font-size:.88rem;margin-bottom:8px;}
+  th{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-3);text-align:right;padding:8px 6px;border-bottom:1px solid var(--line);}
+  th:first-child{text-align:left;}
+  td{padding:10px 6px;border-bottom:1px solid var(--line-soft);color:var(--ink-2);}
+  td.num{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums;}
+  td.up{color:var(--up);} td.down{color:var(--down);}
+  tr.emph td{background:var(--surface);font-weight:500;color:var(--ink);}
+  .scroll{overflow-x:auto;}
+  .tcap{font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);margin:0 0 26px;line-height:1.6;}
+
+  /* 지표 요약 스트립 */
+  .snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    border:1px solid var(--line);background:var(--surface);margin:0 0 30px;}
+  .snap div{padding:12px 14px;border-right:1px solid var(--line);}
+  .snap div:last-child{border-right:0;}
+  .snap .k{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-3);display:block;margin-bottom:2px;}
+  .snap .v{font-family:var(--f-mono);font-size:1.12rem;font-weight:500;color:var(--ink);
+    font-variant-numeric:tabular-nums;display:block;line-height:1.35;}
+  .snap .s{font-family:var(--f-mono);font-size:.66rem;color:var(--ink-3);}
+
+  /* 연간 매출 막대 */
+  .bars{margin:22px 0 8px;display:flex;flex-direction:column;gap:7px;}
+  .brow{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:center;}
+  .brow .yr{font-family:var(--f-mono);font-size:.74rem;color:var(--ink-3);font-variant-numeric:tabular-nums;}
+  .btrack{height:26px;background:var(--surface-2);}
+  .bfill{height:100%;background:var(--accent);display:flex;align-items:center;justify-content:flex-end;
+    padding-right:8px;border-radius:0 3px 3px 0;}
+  .bfill.est{background:var(--accent-bright);opacity:.72;}
+  .bfill span{font-family:var(--f-mono);font-size:.72rem;font-weight:500;color:#FFF8EC;
+    font-variant-numeric:tabular-nums;}
+
+  /* 목표주가 밴드 */
+  .band{position:relative;height:3px;background:var(--line);margin:44px 0 76px;}
+  .band i{position:absolute;top:-6px;width:3px;height:15px;background:var(--ink-3);}
+  .band i.now{background:var(--ink);height:24px;top:-10px;}
+  .band i.bull{background:var(--up);height:19px;top:-8px;}
+  .band i.bear{background:var(--down);height:19px;top:-8px;}
+  .band b{position:absolute;top:16px;font-family:var(--f-mono);font-size:.72rem;font-weight:500;
+    font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink-2);}
+  .band b em{display:block;font-style:normal;font-size:.6rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--ink-3);}
+
+  .faq{border-top:1px solid var(--line-soft);padding-top:14px;margin-top:6px;}
+  .faq h3{border-top:0;padding-top:0;margin:20px 0 6px;}
+  .note{margin-top:34px;padding:16px 18px;border-left:3px solid var(--accent);
+    background:var(--surface);border-radius:0 3px 3px 0;}
+  .note p{margin:0;font-size:.85rem;color:var(--ink-3);}
+  .foot{border-top:1px solid var(--line);background:var(--surface);padding-block:30px 38px;}
+  .foot p{margin:0;font-size:.8rem;color:var(--ink-3);}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+</style>
+
+<style>
+  .fig{margin:26px 0 8px;border:1px solid var(--line);background:var(--surface);padding:14px 12px 8px;}
+  .fig svg{display:block;}
+  .lvl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:24px 0 8px;}
+  .lvl div{background:var(--surface);padding:13px 15px;}
+  .lvl .k{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:3px;}
+  .lvl .v{font-family:var(--f-mono);font-size:1.18rem;font-weight:500;display:block;line-height:1.3;font-variant-numeric:tabular-nums;}
+  .lvl .s{font-family:var(--f-mono);font-size:.66rem;color:var(--ink-3);}
+  .warn{border-left:3px solid var(--up);background:var(--surface);padding:14px 18px;margin:24px 0;}
+  .warn p{margin:0;font-size:.92rem;}
+</style>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html">야간비행 일지</a>
+    <a class="back" href="../index.html#stocks">← 시황으로</a>
+  </div>
+</nav>
+
+<main class="wrap article">
+  <p class="eyebrow">Stock · 067290</p>
+  <h1>JW신약, 6거래일 만에 +71% — 지금 들어가도 되는 자리인가</h1>
+  <p class="byline">2026-09-07 (월) 작성 · 주가 3,585원(09-07 14:34 장중) · 시가총액 2,012억 원 · 코스닥</p>
+
+  <p class="lede">8월 28일 2,100원이던 주식이 오늘 장중 3,900원을 찍었습니다. 6거래일입니다. 재료는 탈모 신약이고, 상승은 진짜입니다. 문제는 <strong>이 상승을 만든 재료의 주인이 JW신약이 아니라는 것</strong>, 그리고 <strong>정확히 같은 일이 석 달 전에도 있었다는 것</strong>입니다. 그때 주가는 고점에서 58% 빠졌습니다. 이 글은 지금 이 가격에서 사는 것이 어떤 베팅인지를 숫자로 정리합니다.</p>
+
+  <div class="snap">
+    <div><span class="k">주가</span><span class="v">3,585</span><span class="s">원 · +9.8% 장중</span></div>
+    <div><span class="k">시가총액</span><span class="v">2,012억</span><span class="s">코스닥</span></div>
+    <div><span class="k">PER</span><span class="v">19.6배</span><span class="s">PBR 4.92배</span></div>
+    <div><span class="k">20일 이격도</span><span class="v">147.8%</span><span class="s">RSI 77.6</span></div>
+  </div>
+
+  <h2>무엇이 이 주식을 끌어올렸나</h2>
+  <p>출발점은 국내가 아니라 월가입니다. 블룸버그가 8월 29일, GLP-1 계열 비만 치료제(위고비·마운자로) 다음 투자 대상으로 <strong>탈모 신약 개발 기업</strong>이 부상하고 있다고 보도했습니다. 시장은 즉각 반응했습니다. 국내에서도 JW신약, 현대약품, 삼익제약, 알리코제약 같은 탈모 관련주가 일제히 움직였습니다.</p>
+  <p>JW그룹의 재료는 구체적입니다. 계열사인 JW중외제약이 개발 중인 <strong>JW0061</strong>은 Wnt 신호전달 경로를 표적으로 하는 이른바 '재생형' 탈모 치료제입니다. 기존 약이 남성호르몬을 억제해 탈모 진행을 막는 '방어형'인 것과 접근 자체가 다릅니다. 회사는 피부 오가노이드 실험에서 <strong>기존 치료제 대비 최대 7.2배의 모낭 생성 효과</strong>를, 안드로겐성 탈모 동물모델에서 <strong>최대 39% 개선된 효능</strong>을 확인했다고 국제피부연구학회(SID)에서 발표했고, 미국 특허도 등록했습니다. 현재 임상 1상 단계입니다.</p>
+  <p>여기까지는 사실입니다. 그리고 주가는 이 사실에 이렇게 반응했습니다.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>날짜</th><th>종가</th><th>등락</th><th>거래량</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>08-28 (금)</td><td class="num">2,100</td><td class="num up">+5.5%</td><td class="num">408만</td><td>—</td></tr>
+        <tr><td>08-31 (월)</td><td class="num">2,300</td><td class="num up">+9.5%</td><td class="num">3,296만</td><td>거래량 폭증</td></tr>
+        <tr class="emph"><td>09-01 (화)</td><td class="num">2,990</td><td class="num up">+30.0%</td><td class="num">3,724만</td><td>상한가</td></tr>
+        <tr><td>09-02 (수)</td><td class="num">3,100</td><td class="num up">+3.7%</td><td class="num">5,580만</td><td>장초 3,470 후 밀림</td></tr>
+        <tr><td>09-03 (목)</td><td class="num">3,430</td><td class="num up">+10.6%</td><td class="num">7,468만</td><td>장중 3,820</td></tr>
+        <tr><td>09-04 (금)</td><td class="num">3,265</td><td class="num down">−4.8%</td><td class="num">2,390만</td><td>거래소 투자주의 지정</td></tr>
+        <tr class="emph"><td>09-07 (월)</td><td class="num">3,585</td><td class="num up">+9.8%</td><td class="num">5,333만</td><td>장중 3,900 · 52주 신고가</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tcap">09-07은 오후 2시 34분 장중 기준입니다. 6거래일 누적 상승률은 종가 기준 +70.7%, 장중 고가 기준 +85.7%입니다.</p>
+
+  <h2>차트가 보여주는 것</h2>
+
+  <div class="fig">
+<svg viewBox="0 0 980 560" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="JW신약 일봉 차트"><line x1="58" y1="345.5" x2="868" y2="345.5" stroke="var(--line-soft)" stroke-width="1"/><text x="50" y="349.5" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">1,650</text><line x1="58" y1="279.1" x2="868" y2="279.1" stroke="var(--line-soft)" stroke-width="1"/><text x="50" y="283.1" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">2,200</text><line x1="58" y1="212.7" x2="868" y2="212.7" stroke="var(--line-soft)" stroke-width="1"/><text x="50" y="216.7" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">2,750</text><line x1="58" y1="146.3" x2="868" y2="146.3" stroke="var(--line-soft)" stroke-width="1"/><text x="50" y="150.3" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">3,300</text><line x1="58" y1="79.9" x2="868" y2="79.9" stroke="var(--line-soft)" stroke-width="1"/><text x="50" y="83.9" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="monospace">3,850</text><line x1="58" y1="126.3" x2="868" y2="126.3" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="2 4" opacity=".8"/><text x="874" y="130.3" font-size="10.5" fill="var(--ink-3)" font-family="monospace">6월고점 3,465</text><line x1="58" y1="37.6" x2="868" y2="37.6" stroke="#E5484D" stroke-width="1.4" stroke-dasharray="7 4"/><text x="874" y="41.6" font-size="10.5" fill="#E5484D" font-family="monospace" font-weight="600">목표 4,200</text><line x1="58" y1="176.4" x2="868" y2="176.4" stroke="#3B82F6" stroke-width="1.4" stroke-dasharray="7 4"/><text x="874" y="180.4" font-size="10.5" fill="#3B82F6" font-family="monospace" font-weight="600">손절 3,050</text><line x1="63.8" y1="357.3" x2="63.8" y2="372.0" stroke="#3B82F6" stroke-width="1"/><rect x="60.2" y="357.3" width="7.2" height="4.5" fill="#3B82F6"/><line x1="75.4" y1="359.5" x2="75.4" y2="373.4" stroke="#3B82F6" stroke-width="1"/><rect x="71.8" y="359.5" width="7.2" height="10.7" fill="#3B82F6"/><line x1="86.9" y1="367.3" x2="86.9" y2="380.8" stroke="#3B82F6" stroke-width="1"/><rect x="83.3" y="370.2" width="7.2" height="7.4" fill="#3B82F6"/><line x1="98.5" y1="378.2" x2="98.5" y2="384.1" stroke="#3B82F6" stroke-width="1"/><rect x="94.9" y="378.3" width="7.2" height="2.9" fill="#3B82F6"/><line x1="110.1" y1="374.4" x2="110.1" y2="382.6" stroke="#E5484D" stroke-width="1"/><rect x="106.5" y="378.8" width="7.2" height="2.1" fill="#E5484D"/><line x1="121.6" y1="367.2" x2="121.6" y2="382.3" stroke="#3B82F6" stroke-width="1"/><rect x="118.1" y="367.2" width="7.2" height="15.0" fill="#3B82F6"/><line x1="133.2" y1="385.3" x2="133.2" y2="394.2" stroke="#3B82F6" stroke-width="1"/><rect x="129.6" y="387.7" width="7.2" height="5.6" fill="#3B82F6"/><line x1="144.8" y1="382.0" x2="144.8" y2="393.8" stroke="#E5484D" stroke-width="1"/><rect x="141.2" y="382.5" width="7.2" height="11.2" fill="#E5484D"/><line x1="156.4" y1="378.7" x2="156.4" y2="388.9" stroke="#E5484D" stroke-width="1"/><rect x="152.8" y="385.9" width="7.2" height="1.2" fill="#E5484D"/><line x1="167.9" y1="382.9" x2="167.9" y2="391.3" stroke="#E5484D" stroke-width="1"/><rect x="164.3" y="387.6" width="7.2" height="1.2" fill="#E5484D"/><line x1="179.5" y1="377.1" x2="179.5" y2="387.6" stroke="#E5484D" stroke-width="1"/><rect x="175.9" y="379.8" width="7.2" height="7.8" fill="#E5484D"/><line x1="191.1" y1="330.4" x2="191.1" y2="330.4" stroke="#E5484D" stroke-width="1"/><rect x="187.5" y="330.4" width="7.2" height="1.2" fill="#E5484D"/><line x1="202.6" y1="271.8" x2="202.6" y2="329.4" stroke="#3B82F6" stroke-width="1"/><rect x="199.1" y="303.2" width="7.2" height="24.4" fill="#3B82F6"/><line x1="214.2" y1="262.8" x2="214.2" y2="326.0" stroke="#E5484D" stroke-width="1"/><rect x="210.6" y="262.8" width="7.2" height="63.0" fill="#E5484D"/><line x1="225.8" y1="231.4" x2="225.8" y2="299.0" stroke="#3B82F6" stroke-width="1"/><rect x="222.2" y="251.9" width="7.2" height="43.5" fill="#3B82F6"/><line x1="237.4" y1="226.5" x2="237.4" y2="294.8" stroke="#E5484D" stroke-width="1"/><rect x="233.8" y="262.8" width="7.2" height="32.0" fill="#E5484D"/><line x1="248.9" y1="190.9" x2="248.9" y2="252.5" stroke="#E5484D" stroke-width="1"/><rect x="245.3" y="215.1" width="7.2" height="30.2" fill="#E5484D"/><line x1="260.5" y1="126.3" x2="260.5" y2="207.8" stroke="#E5484D" stroke-width="1"/><rect x="256.9" y="169.8" width="7.2" height="37.4" fill="#E5484D"/><line x1="272.1" y1="152.3" x2="272.1" y2="233.8" stroke="#3B82F6" stroke-width="1"/><rect x="268.5" y="164.4" width="7.2" height="62.8" fill="#3B82F6"/><line x1="283.6" y1="194.6" x2="283.6" y2="277.3" stroke="#3B82F6" stroke-width="1"/><rect x="280.1" y="236.2" width="7.2" height="31.4" fill="#3B82F6"/><line x1="295.2" y1="236.8" x2="295.2" y2="288.1" stroke="#E5484D" stroke-width="1"/><rect x="291.6" y="253.7" width="7.2" height="6.0" fill="#E5484D"/><line x1="306.8" y1="227.8" x2="306.8" y2="296.6" stroke="#3B82F6" stroke-width="1"/><rect x="303.2" y="253.7" width="7.2" height="32.0" fill="#3B82F6"/><line x1="318.4" y1="295.4" x2="318.4" y2="314.1" stroke="#3B82F6" stroke-width="1"/><rect x="314.8" y="296.0" width="7.2" height="15.8" fill="#3B82F6"/><line x1="329.9" y1="300.8" x2="329.9" y2="333.4" stroke="#3B82F6" stroke-width="1"/><rect x="326.3" y="318.2" width="7.2" height="3.5" fill="#3B82F6"/><line x1="341.5" y1="313.0" x2="341.5" y2="347.9" stroke="#3B82F6" stroke-width="1"/><rect x="337.9" y="321.6" width="7.2" height="22.6" fill="#3B82F6"/><line x1="353.1" y1="340.6" x2="353.1" y2="360.2" stroke="#3B82F6" stroke-width="1"/><rect x="349.5" y="341.6" width="7.2" height="2.3" fill="#3B82F6"/><line x1="364.6" y1="338.8" x2="364.6" y2="366.0" stroke="#3B82F6" stroke-width="1"/><rect x="361.1" y="341.8" width="7.2" height="22.6" fill="#3B82F6"/><line x1="376.2" y1="357.5" x2="376.2" y2="376.9" stroke="#3B82F6" stroke-width="1"/><rect x="372.6" y="369.0" width="7.2" height="1.3" fill="#3B82F6"/><line x1="387.8" y1="334.8" x2="387.8" y2="373.4" stroke="#E5484D" stroke-width="1"/><rect x="384.2" y="368.4" width="7.2" height="1.9" fill="#E5484D"/><line x1="399.4" y1="362.6" x2="399.4" y2="374.4" stroke="#E5484D" stroke-width="1"/><rect x="395.8" y="368.0" width="7.2" height="1.2" fill="#E5484D"/><line x1="410.9" y1="356.5" x2="410.9" y2="366.0" stroke="#E5484D" stroke-width="1"/><rect x="407.3" y="361.0" width="7.2" height="4.9" fill="#E5484D"/><line x1="422.5" y1="358.7" x2="422.5" y2="378.5" stroke="#3B82F6" stroke-width="1"/><rect x="418.9" y="360.9" width="7.2" height="17.6" fill="#3B82F6"/><line x1="434.1" y1="338.2" x2="434.1" y2="385.3" stroke="#E5484D" stroke-width="1"/><rect x="430.5" y="370.9" width="7.2" height="10.7" fill="#E5484D"/><line x1="445.6" y1="318.9" x2="445.6" y2="366.6" stroke="#E5484D" stroke-width="1"/><rect x="442.1" y="318.9" width="7.2" height="47.7" fill="#E5484D"/><line x1="457.2" y1="271.8" x2="457.2" y2="310.1" stroke="#E5484D" stroke-width="1"/><rect x="453.6" y="306.8" width="7.2" height="2.3" fill="#E5484D"/><line x1="468.8" y1="265.2" x2="468.8" y2="327.4" stroke="#E5484D" stroke-width="1"/><rect x="465.2" y="300.8" width="7.2" height="6.8" fill="#E5484D"/><line x1="480.4" y1="261.6" x2="480.4" y2="301.4" stroke="#E5484D" stroke-width="1"/><rect x="476.8" y="285.7" width="7.2" height="15.7" fill="#E5484D"/><line x1="491.9" y1="268.2" x2="491.9" y2="295.4" stroke="#3B82F6" stroke-width="1"/><rect x="488.3" y="280.9" width="7.2" height="10.3" fill="#3B82F6"/><line x1="503.5" y1="288.7" x2="503.5" y2="308.9" stroke="#3B82F6" stroke-width="1"/><rect x="499.9" y="293.6" width="7.2" height="11.8" fill="#3B82F6"/><line x1="515.1" y1="271.8" x2="515.1" y2="313.6" stroke="#3B82F6" stroke-width="1"/><rect x="511.5" y="303.8" width="7.2" height="9.8" fill="#3B82F6"/><line x1="526.6" y1="298.4" x2="526.6" y2="329.2" stroke="#3B82F6" stroke-width="1"/><rect x="523.1" y="316.9" width="7.2" height="9.8" fill="#3B82F6"/><line x1="538.2" y1="311.8" x2="538.2" y2="344.3" stroke="#3B82F6" stroke-width="1"/><rect x="534.6" y="332.9" width="7.2" height="7.6" fill="#3B82F6"/><line x1="549.8" y1="336.0" x2="549.8" y2="366.0" stroke="#3B82F6" stroke-width="1"/><rect x="546.2" y="340.4" width="7.2" height="15.1" fill="#3B82F6"/><line x1="561.4" y1="309.4" x2="561.4" y2="363.6" stroke="#E5484D" stroke-width="1"/><rect x="557.8" y="326.0" width="7.2" height="36.1" fill="#E5484D"/><line x1="572.9" y1="299.6" x2="572.9" y2="329.9" stroke="#E5484D" stroke-width="1"/><rect x="569.3" y="320.4" width="7.2" height="6.3" fill="#E5484D"/><line x1="584.5" y1="290.5" x2="584.5" y2="320.4" stroke="#E5484D" stroke-width="1"/><rect x="580.9" y="310.9" width="7.2" height="8.6" fill="#E5484D"/><line x1="596.1" y1="299.6" x2="596.1" y2="316.7" stroke="#3B82F6" stroke-width="1"/><rect x="592.5" y="310.3" width="7.2" height="1.2" fill="#3B82F6"/><line x1="607.6" y1="291.7" x2="607.6" y2="312.9" stroke="#E5484D" stroke-width="1"/><rect x="604.1" y="302.6" width="7.2" height="7.8" fill="#E5484D"/><line x1="619.2" y1="238.6" x2="619.2" y2="302.6" stroke="#E5484D" stroke-width="1"/><rect x="615.6" y="263.4" width="7.2" height="37.4" fill="#E5484D"/><line x1="630.8" y1="250.7" x2="630.8" y2="292.3" stroke="#3B82F6" stroke-width="1"/><rect x="627.2" y="250.7" width="7.2" height="30.8" fill="#3B82F6"/><line x1="642.4" y1="257.9" x2="642.4" y2="286.9" stroke="#E5484D" stroke-width="1"/><rect x="638.8" y="276.0" width="7.2" height="5.4" fill="#E5484D"/><line x1="653.9" y1="252.5" x2="653.9" y2="277.3" stroke="#E5484D" stroke-width="1"/><rect x="650.3" y="269.4" width="7.2" height="4.2" fill="#E5484D"/><line x1="665.5" y1="249.5" x2="665.5" y2="265.2" stroke="#3B82F6" stroke-width="1"/><rect x="661.9" y="255.5" width="7.2" height="8.5" fill="#3B82F6"/><line x1="677.1" y1="262.8" x2="677.1" y2="286.3" stroke="#3B82F6" stroke-width="1"/><rect x="673.5" y="263.4" width="7.2" height="21.7" fill="#3B82F6"/><line x1="688.6" y1="280.9" x2="688.6" y2="296.6" stroke="#3B82F6" stroke-width="1"/><rect x="685.1" y="282.7" width="7.2" height="8.5" fill="#3B82F6"/><line x1="700.2" y1="261.0" x2="700.2" y2="297.8" stroke="#E5484D" stroke-width="1"/><rect x="696.6" y="277.3" width="7.2" height="13.3" fill="#E5484D"/><line x1="711.8" y1="258.5" x2="711.8" y2="289.3" stroke="#3B82F6" stroke-width="1"/><rect x="708.2" y="273.0" width="7.2" height="12.1" fill="#3B82F6"/><line x1="723.4" y1="254.9" x2="723.4" y2="277.9" stroke="#E5484D" stroke-width="1"/><rect x="719.8" y="267.6" width="7.2" height="10.3" fill="#E5484D"/><line x1="734.9" y1="276.6" x2="734.9" y2="297.2" stroke="#3B82F6" stroke-width="1"/><rect x="731.3" y="276.6" width="7.2" height="20.5" fill="#3B82F6"/><line x1="746.5" y1="282.1" x2="746.5" y2="305.4" stroke="#3B82F6" stroke-width="1"/><rect x="742.9" y="292.9" width="7.2" height="9.7" fill="#3B82F6"/><line x1="758.1" y1="303.2" x2="758.1" y2="314.7" stroke="#3B82F6" stroke-width="1"/><rect x="754.5" y="303.8" width="7.2" height="2.9" fill="#3B82F6"/><line x1="769.6" y1="298.4" x2="769.6" y2="310.9" stroke="#E5484D" stroke-width="1"/><rect x="766.1" y="304.1" width="7.2" height="1.2" fill="#E5484D"/><line x1="781.2" y1="299.6" x2="781.2" y2="308.0" stroke="#E5484D" stroke-width="1"/><rect x="777.6" y="304.4" width="7.2" height="1.9" fill="#E5484D"/><line x1="792.8" y1="283.9" x2="792.8" y2="305.5" stroke="#E5484D" stroke-width="1"/><rect x="789.2" y="291.1" width="7.2" height="13.3" fill="#E5484D"/><line x1="804.4" y1="239.2" x2="804.4" y2="283.3" stroke="#E5484D" stroke-width="1"/><rect x="800.8" y="267.0" width="7.2" height="13.9" fill="#E5484D"/><line x1="815.9" y1="183.7" x2="815.9" y2="261.0" stroke="#E5484D" stroke-width="1"/><rect x="812.3" y="183.7" width="7.2" height="74.2" fill="#E5484D"/><line x1="827.5" y1="125.7" x2="827.5" y2="183.7" stroke="#3B82F6" stroke-width="1"/><rect x="823.9" y="138.4" width="7.2" height="32.0" fill="#3B82F6"/><line x1="839.1" y1="83.5" x2="839.1" y2="172.8" stroke="#E5484D" stroke-width="1"/><rect x="835.5" y="130.6" width="7.2" height="33.8" fill="#E5484D"/><line x1="850.6" y1="128.8" x2="850.6" y2="171.0" stroke="#3B82F6" stroke-width="1"/><rect x="847.1" y="129.4" width="7.2" height="21.1" fill="#3B82F6"/><line x1="862.2" y1="73.8" x2="862.2" y2="160.1" stroke="#E5484D" stroke-width="1"/><rect x="858.6" y="111.9" width="7.2" height="46.5" fill="#E5484D"/><path d="M63.8 311.5 L75.4 313.1 L86.9 314.1 L98.5 315.6 L110.1 317.0 L121.6 318.2 L133.2 319.7 L144.8 321.0 L156.4 322.5 L167.9 324.0 L179.5 325.3 L191.1 325.8 L202.6 326.2 L214.2 325.4 L225.8 325.3 L237.4 324.4 L248.9 322.8 L260.5 320.5 L272.1 319.2 L283.6 318.6 L295.2 317.7 L306.8 317.2 L318.4 317.3 L329.9 317.4 L341.5 318.1 L353.1 318.6 L364.6 319.4 L376.2 320.6 L387.8 321.7 L399.4 322.8 L410.9 323.8 L422.5 325.4 L434.1 326.9 L445.6 327.5 L457.2 327.9 L468.8 328.1 L480.4 327.9 L491.9 327.7 L503.5 327.8 L515.1 328.2 L526.6 328.7 L538.2 329.5 L549.8 330.4 L561.4 330.8 L572.9 331.0 L584.5 331.0 L596.1 330.8 L607.6 330.5 L619.2 329.3 L630.8 328.4 L642.4 327.4 L653.9 326.3 L665.5 325.0 L677.1 324.0 L688.6 323.2 L700.2 321.9 L711.8 320.8 L723.4 319.4 L734.9 318.5 L746.5 317.6 L758.1 316.7 L769.6 315.6 L781.2 314.4 L792.8 312.9 L804.4 311.0 L815.9 307.7 L827.5 304.0 L839.1 299.8 L850.6 295.9 L862.2 291.3" fill="none" stroke="var(--ink-3)" stroke-width="1.3" opacity=".85"/><path d="M63.8 332.7 L75.4 336.4 L86.9 340.4 L98.5 344.3 L110.1 347.9 L121.6 351.3 L133.2 355.0 L144.8 357.9 L156.4 360.6 L167.9 363.2 L179.5 365.3 L191.1 365.2 L202.6 364.5 L214.2 360.4 L225.8 358.0 L237.4 353.4 L248.9 346.5 L260.5 337.7 L272.1 331.4 L283.6 327.0 L295.2 321.6 L306.8 317.3 L318.4 314.0 L329.9 311.1 L341.5 309.3 L353.1 307.4 L364.6 306.0 L376.2 305.4 L387.8 304.5 L399.4 303.5 L410.9 302.6 L422.5 305.0 L434.1 307.2 L445.6 310.0 L457.2 310.5 L468.8 312.4 L480.4 316.0 L491.9 322.0 L503.5 325.9 L515.1 328.2 L526.6 331.9 L538.2 334.6 L549.8 336.8 L561.4 337.0 L572.9 335.8 L584.5 334.2 L596.1 331.5 L607.6 328.1 L619.2 322.9 L630.8 318.5 L642.4 314.3 L653.9 308.8 L665.5 303.5 L677.1 301.8 L688.6 301.0 L700.2 299.8 L711.8 299.8 L723.4 298.6 L734.9 298.2 L746.5 297.7 L758.1 296.7 L769.6 294.8 L781.2 292.3 L792.8 290.6 L804.4 287.9 L815.9 281.5 L827.5 274.5 L839.1 265.9 L850.6 260.3 L862.2 251.8" fill="none" stroke="var(--accent)" stroke-width="1.6"/><path d="M63.8 354.0 L75.4 357.4 L86.9 363.7 L98.5 369.6 L110.1 373.9 L121.6 378.0 L133.2 382.6 L144.8 383.6 L156.4 384.5 L167.9 386.3 L179.5 385.8 L191.1 373.2 L202.6 362.2 L214.2 337.6 L225.8 319.2 L237.4 295.8 L248.9 272.7 L260.5 241.2 L272.1 234.0 L283.6 228.5 L295.2 226.7 L306.8 240.8 L318.4 269.2 L329.9 288.1 L341.5 303.4 L353.1 321.4 L364.6 337.2 L376.2 348.9 L387.8 358.2 L399.4 363.0 L410.9 366.4 L422.5 369.3 L434.1 369.4 L445.6 359.5 L457.2 347.3 L468.8 335.2 L480.4 316.6 L491.9 300.7 L503.5 298.0 L515.1 299.3 L526.6 304.5 L538.2 315.5 L549.8 328.3 L561.4 332.5 L572.9 333.8 L584.5 330.7 L596.1 324.7 L607.6 314.1 L619.2 301.6 L630.8 293.8 L642.4 286.8 L653.9 278.6 L665.5 270.9 L677.1 275.2 L688.6 277.1 L700.2 277.4 L711.8 280.5 L723.4 281.2 L734.9 283.7 L746.5 285.9 L758.1 291.8 L769.6 295.6 L781.2 303.0 L792.8 301.8 L804.4 294.7 L815.9 270.1 L827.5 243.3 L839.1 208.6 L850.6 180.4 L862.2 149.4" fill="none" stroke="#7C3AED" stroke-width="1.3" opacity=".9"/><rect x="60.2" y="503.8" width="7.2" height="0.2" fill="#3B82F6" opacity=".55"/><rect x="71.8" y="503.5" width="7.2" height="0.5" fill="#3B82F6" opacity=".55"/><rect x="83.3" y="503.5" width="7.2" height="0.5" fill="#3B82F6" opacity=".55"/><rect x="94.9" y="503.7" width="7.2" height="0.3" fill="#3B82F6" opacity=".55"/><rect x="106.5" y="503.8" width="7.2" height="0.2" fill="#E5484D" opacity=".55"/><rect x="118.1" y="503.7" width="7.2" height="0.3" fill="#3B82F6" opacity=".55"/><rect x="129.6" y="503.7" width="7.2" height="0.3" fill="#3B82F6" opacity=".55"/><rect x="141.2" y="503.8" width="7.2" height="0.2" fill="#E5484D" opacity=".55"/><rect x="152.8" y="503.8" width="7.2" height="0.2" fill="#E5484D" opacity=".55"/><rect x="164.3" y="503.8" width="7.2" height="0.2" fill="#E5484D" opacity=".55"/><rect x="175.9" y="503.8" width="7.2" height="0.2" fill="#E5484D" opacity=".55"/><rect x="187.5" y="502.3" width="7.2" height="1.7" fill="#E5484D" opacity=".55"/><rect x="199.1" y="457.8" width="7.2" height="46.2" fill="#3B82F6" opacity=".55"/><rect x="210.6" y="451.1" width="7.2" height="52.9" fill="#E5484D" opacity=".55"/><rect x="222.2" y="431.5" width="7.2" height="72.5" fill="#3B82F6" opacity=".55"/><rect x="233.8" y="427.2" width="7.2" height="76.8" fill="#E5484D" opacity=".55"/><rect x="245.3" y="440.7" width="7.2" height="63.3" fill="#E5484D" opacity=".55"/><rect x="256.9" y="421.5" width="7.2" height="82.5" fill="#E5484D" opacity=".55"/><rect x="268.5" y="475.1" width="7.2" height="28.9" fill="#3B82F6" opacity=".55"/><rect x="280.1" y="487.6" width="7.2" height="16.4" fill="#3B82F6" opacity=".55"/><rect x="291.6" y="487.6" width="7.2" height="16.4" fill="#E5484D" opacity=".55"/><rect x="303.2" y="492.3" width="7.2" height="11.7" fill="#3B82F6" opacity=".55"/><rect x="314.8" y="498.6" width="7.2" height="5.4" fill="#3B82F6" opacity=".55"/><rect x="326.3" y="498.2" width="7.2" height="5.8" fill="#3B82F6" opacity=".55"/><rect x="337.9" y="500.6" width="7.2" height="3.4" fill="#3B82F6" opacity=".55"/><rect x="349.5" y="501.9" width="7.2" height="2.1" fill="#3B82F6" opacity=".55"/><rect x="361.1" y="502.1" width="7.2" height="1.9" fill="#3B82F6" opacity=".55"/><rect x="372.6" y="502.5" width="7.2" height="1.5" fill="#3B82F6" opacity=".55"/><rect x="384.2" y="489.7" width="7.2" height="14.3" fill="#E5484D" opacity=".55"/><rect x="395.8" y="501.1" width="7.2" height="2.9" fill="#E5484D" opacity=".55"/><rect x="407.3" y="501.1" width="7.2" height="2.9" fill="#E5484D" opacity=".55"/><rect x="418.9" y="501.6" width="7.2" height="2.4" fill="#3B82F6" opacity=".55"/><rect x="430.5" y="481.0" width="7.2" height="23.0" fill="#E5484D" opacity=".55"/><rect x="442.1" y="468.8" width="7.2" height="35.2" fill="#E5484D" opacity=".55"/><rect x="453.6" y="454.2" width="7.2" height="49.8" fill="#E5484D" opacity=".55"/><rect x="465.2" y="457.2" width="7.2" height="46.8" fill="#E5484D" opacity=".55"/><rect x="476.8" y="475.5" width="7.2" height="28.5" fill="#E5484D" opacity=".55"/><rect x="488.3" y="488.1" width="7.2" height="15.9" fill="#3B82F6" opacity=".55"/><rect x="499.9" y="499.0" width="7.2" height="5.0" fill="#3B82F6" opacity=".55"/><rect x="511.5" y="481.5" width="7.2" height="22.5" fill="#3B82F6" opacity=".55"/><rect x="523.1" y="500.0" width="7.2" height="4.0" fill="#3B82F6" opacity=".55"/><rect x="534.6" y="498.8" width="7.2" height="5.2" fill="#3B82F6" opacity=".55"/><rect x="546.2" y="500.8" width="7.2" height="3.2" fill="#3B82F6" opacity=".55"/><rect x="557.8" y="476.4" width="7.2" height="27.6" fill="#E5484D" opacity=".55"/><rect x="569.3" y="486.0" width="7.2" height="18.0" fill="#E5484D" opacity=".55"/><rect x="580.9" y="483.6" width="7.2" height="20.4" fill="#E5484D" opacity=".55"/><rect x="592.5" y="498.5" width="7.2" height="5.5" fill="#3B82F6" opacity=".55"/><rect x="604.1" y="490.6" width="7.2" height="13.4" fill="#E5484D" opacity=".55"/><rect x="615.6" y="465.3" width="7.2" height="38.7" fill="#E5484D" opacity=".55"/><rect x="627.2" y="494.5" width="7.2" height="9.5" fill="#3B82F6" opacity=".55"/><rect x="638.8" y="492.1" width="7.2" height="11.9" fill="#E5484D" opacity=".55"/><rect x="650.3" y="492.8" width="7.2" height="11.2" fill="#E5484D" opacity=".55"/><rect x="661.9" y="493.5" width="7.2" height="10.5" fill="#3B82F6" opacity=".55"/><rect x="673.5" y="499.3" width="7.2" height="4.7" fill="#3B82F6" opacity=".55"/><rect x="685.1" y="500.6" width="7.2" height="3.4" fill="#3B82F6" opacity=".55"/><rect x="696.6" y="488.0" width="7.2" height="16.0" fill="#E5484D" opacity=".55"/><rect x="708.2" y="494.4" width="7.2" height="9.6" fill="#3B82F6" opacity=".55"/><rect x="719.8" y="492.8" width="7.2" height="11.2" fill="#E5484D" opacity=".55"/><rect x="731.3" y="500.6" width="7.2" height="3.4" fill="#3B82F6" opacity=".55"/><rect x="742.9" y="500.3" width="7.2" height="3.7" fill="#3B82F6" opacity=".55"/><rect x="754.5" y="502.0" width="7.2" height="2.0" fill="#3B82F6" opacity=".55"/><rect x="766.1" y="501.5" width="7.2" height="2.5" fill="#E5484D" opacity=".55"/><rect x="777.6" y="502.6" width="7.2" height="1.4" fill="#E5484D" opacity=".55"/><rect x="789.2" y="499.1" width="7.2" height="4.9" fill="#E5484D" opacity=".55"/><rect x="800.8" y="464.3" width="7.2" height="39.7" fill="#E5484D" opacity=".55"/><rect x="812.3" y="459.1" width="7.2" height="44.9" fill="#E5484D" opacity=".55"/><rect x="823.9" y="436.8" width="7.2" height="67.2" fill="#3B82F6" opacity=".55"/><rect x="835.5" y="414.0" width="7.2" height="90.0" fill="#E5484D" opacity=".55"/><rect x="847.1" y="475.2" width="7.2" height="28.8" fill="#3B82F6" opacity=".55"/><rect x="858.6" y="439.7" width="7.2" height="64.3" fill="#E5484D" opacity=".55"/><line x1="58" y1="504" x2="868" y2="504" stroke="var(--line)" stroke-width="1"/><text x="50" y="424" text-anchor="end" font-size="10" fill="var(--ink-3)" font-family="monospace">7468만</text><text x="50" y="504" text-anchor="end" font-size="10" fill="var(--ink-3)" font-family="monospace">거래량</text><text x="63.8" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">05/28</text><text x="179.5" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">06/12</text><text x="295.2" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">06/26</text><text x="410.9" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">07/10</text><text x="526.6" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">07/27</text><text x="642.4" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">08/10</text><text x="758.1" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">08/25</text><text x="862.2" y="520" text-anchor="middle" font-size="10" fill="var(--ink-3)" font-family="monospace">09/07</text><line x1="64" y1="18" x2="80" y2="18" stroke="#7C3AED" stroke-width="2"/><text x="85" y="22" font-size="10.5" fill="var(--ink-3)" font-family="monospace">MA5</text><line x1="136" y1="18" x2="152" y2="18" stroke="var(--accent)" stroke-width="2"/><text x="157" y="22" font-size="10.5" fill="var(--ink-3)" font-family="monospace">MA20</text><line x1="208" y1="18" x2="224" y2="18" stroke="var(--ink-3)" stroke-width="2"/><text x="229" y="22" font-size="10.5" fill="var(--ink-3)" font-family="monospace">MA60</text><text x="868" y="22" text-anchor="end" font-size="11.5" fill="var(--ink-2)" font-family="monospace">JW신약 067290 · 일봉 · 현재 3,585원</text></svg>
+  </div>
+  <p class="tcap">JW신약(067290) 일봉 70거래일 · 2026-05-28 ~ 09-07. 이동평균 MA5·MA20·MA60, 하단은 거래량. 점선은 6월 고점(3,465원), 파선은 이 글에서 제시하는 목표가·손절가입니다.</p>
+
+  <p>차트에서 세 가지가 동시에 보입니다.</p>
+  <p>첫째, <strong>이동평균선이 완전히 벌어졌습니다.</strong> MA5는 3,274원, MA20은 2,426원, MA60은 2,099원입니다. 현재가와 20일선의 이격도는 <strong>147.8%</strong>입니다. 통상 110~120%면 단기 과열로 보는 지표인데, 그 기준을 한참 넘겼습니다. RSI(14일)도 77.6으로 과매수 구간입니다.</p>
+  <p>둘째, <strong>거래량이 비정상적입니다.</strong> 오늘 하루 거래량은 5,333만 주, 거래대금은 1,947억 원입니다. 시가총액이 2,012억 원인 회사에서 <strong>하루에 시가총액의 97%가 손바뀜</strong>했습니다. 20일 평균 거래량(1,563만 주)의 3.4배입니다. 이 정도 회전율은 기업 가치를 보는 돈이 아니라 단기 매매 자금이 만듭니다.</p>
+  <p>셋째, <strong>차트 왼쪽을 보면 똑같은 모양이 이미 한 번 있었습니다.</strong> 6월입니다. 이 부분은 따로 다루겠습니다.</p>
+
+  <h2>정작 재료의 주인은 오르지 않았습니다</h2>
+  <p>오늘 장중 같은 시각의 JW그룹 3사 주가입니다.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>종목</th><th>주가</th><th>등락률</th><th>JW0061과의 관계</th></tr></thead>
+      <tbody>
+        <tr class="emph"><td>JW신약 (067290)</td><td class="num">3,585</td><td class="num up">+9.8%</td><td>계열사 · 직접 개발 주체 아님</td></tr>
+        <tr><td>JW중외제약 (001060)</td><td class="num">27,200</td><td class="num down">−1.1%</td><td><strong>개발 주체 · 특허 보유</strong></td></tr>
+        <tr><td>JW홀딩스 (096760)</td><td class="num">4,155</td><td class="num down">−0.6%</td><td>지주사 · JW신약 지분 43%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tcap">2026-09-07 오후 2시 30분대 장중 기준.</p>
+
+  <p>이 표가 이 글에서 가장 중요합니다. <strong>JW0061이 성공하면 그 가치는 1차적으로 JW중외제약에 귀속됩니다.</strong> 특허도, 임상도, 향후 기술이전 수익도 그쪽입니다. 그런데 오늘 JW중외제약은 1.1% 하락했고, 지주사인 JW홀딩스도 0.6% 내렸습니다. 계열사인 JW신약만 10% 가까이 올랐습니다.</p>
+  <p>재료를 실제로 보유한 회사는 쉬고, 재료를 공유하지 않는 회사가 급등하는 구조. 이건 펀더멘털이 아니라 <strong>수급이 가격을 만들고 있다는 신호</strong>입니다. 시가총액 2,012억 원짜리 종목이 6,334억 원짜리 종목보다 훨씬 가볍게 움직인다는 사실이 이유의 전부에 가깝습니다.</p>
+
+  <p>공정하게 덧붙이면, JW신약에도 탈모 사업이 없지는 않습니다. 지질나노입자와 마이크로버블 기술을 활용한 <strong>도포형 탈모 치료제</strong>를 개발하고 있고, 탈모 케어 라인과 코스메슈티컬 제품군을 갖고 있습니다. 다만 이건 오늘의 급등을 만든 재료가 아니고, 아직 실적에 유의미하게 잡히는 규모도 아닙니다.</p>
+
+  <h2>실적 — 매출은 3년째 줄고 있습니다</h2>
+  <p>회사의 본업은 항진균제와 비뇨기과용제입니다. 히트라졸, 원플루캅셀 같은 항진균제와 피디정 같은 피부질환 치료제를 클리닉·내과 채널에 공급합니다. 안정적인 사업이지만, 성장하는 사업은 아닙니다.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>구분 (억 원)</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+      <tbody>
+        <tr><td>매출액</td><td class="num">1,042</td><td class="num">930</td><td class="num">810</td></tr>
+        <tr><td>영업이익</td><td class="num">56</td><td class="num">100</td><td class="num">75</td></tr>
+        <tr><td>당기순이익</td><td class="num down">−374</td><td class="num">51</td><td class="num">157</td></tr>
+        <tr class="emph"><td>영업이익률</td><td class="num">5.4%</td><td class="num">10.7%</td><td class="num">9.2%</td></tr>
+        <tr><td>부채비율</td><td class="num">299%</td><td class="num">137%</td><td class="num">43%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tcap">연결 기준. 출처: 네이버 금융 재무제표 요약.</p>
+
+  <p>재무구조는 확실히 좋아졌습니다. 부채비율이 299%에서 43%로 내려왔고 2023년 적자에서 벗어났습니다. 하지만 <strong>매출은 1,042억 → 930억 → 810억으로 3년 연속 감소</strong>했고, 2025년 영업이익도 전년 대비 25% 줄었습니다. 성장주의 실적 곡선이 아닙니다.</p>
+  <p>여기에 현재 밸류에이션을 붙여봅니다. PER 19.6배, PBR 4.92배(2026년 6월 기준)입니다. 매출이 줄고 있는 중소형 제약사에 붙는 배수로는 이미 넉넉합니다. 시가총액 2,012억 원은 2025년 영업이익 75억 원의 <strong>27배</strong>입니다.</p>
+  <p>ROE 46.3%라는 숫자가 눈에 띌 수 있는데, 이건 수익성이 폭발적이어서가 아니라 <strong>자기자본이 작기 때문에 나오는 값</strong>입니다. 유보율이 −96%입니다. 과거 결손의 흔적이 아직 남아 있습니다.</p>
+
+  <h2>데자뷔 — 석 달 전에 똑같은 일이 있었습니다</h2>
+  <p>이 종목의 6월 기록입니다.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>날짜</th><th>주가</th><th>고점 대비</th><th>사건</th></tr></thead>
+      <tbody>
+        <tr><td>06-12</td><td class="num">1,246</td><td class="num">—</td><td>52주 최저</td></tr>
+        <tr class="emph"><td>06-23</td><td class="num">3,465</td><td class="num up">고점</td><td>11일 만에 +178%</td></tr>
+        <tr><td>06-24</td><td class="num">2,630</td><td class="num down">−24%</td><td>거래소 투자경고종목 지정</td></tr>
+        <tr><td>07-06</td><td class="num">1,493</td><td class="num down">−57%</td><td>—</td></tr>
+        <tr><td>07-08</td><td class="num">1,460</td><td class="num down">−58%</td><td>투자경고 해제 → 투자주의 지정</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tcap">고점 대비는 06-23 장중 고가 3,465원 기준. 종가 기준 하락률입니다.</p>
+
+  <p>재료의 성격도, 상승 속도도, 거래량 패턴도 지금과 거의 같았습니다. 그리고 <strong>고점에서 11거래일 만에 58%가 사라졌습니다.</strong> 3,465원에 산 사람은 지금까지도 원금을 회복하지 못했습니다. 오늘 3,900원을 찍었으니 이제야 겨우 그 지점을 넘어선 셈입니다.</p>
+
+  <div class="warn">
+    <p><strong>규제 리스크가 실재합니다.</strong> 거래소는 9월 4일 JW신약을 <strong>투자주의</strong> 종목으로 지정했습니다. 시장경보 체계는 <em>투자주의 → 투자경고 → 투자위험</em> 순으로 올라가고, 투자경고 단계부터는 <strong>신용융자 매수가 제한되고 위탁증거금을 100% 납부</strong>해야 합니다. 투자위험 단계에서는 매매거래가 정지될 수 있습니다. 6월에 이 종목은 실제로 투자경고까지 갔습니다. 신용융자가 막히는 순간 급등을 떠받치던 레버리지 수급이 한 번에 빠집니다.</p>
+  </div>
+
+  <h2>목표가와 손절가</h2>
+  <p>차트상 근거를 갖고 계산하겠습니다. 8월 28일 저점 1,981원에서 9월 3일 고점 3,820원까지가 상승 1파이고, 폭은 1,839원입니다. 이후 9월 4일 3,095원까지 눌렸습니다. 이 3,095원을 기준으로 되돌림 확장을 적용합니다.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>시나리오</th><th>목표가</th><th>현재가 대비</th><th>산출 근거</th></tr></thead>
+      <tbody>
+        <tr><td>강세</td><td class="num">4,900원</td><td class="num up">+37%</td><td>3,095 + 1파 폭 100% 확장. 임상 진전 공시 등 실체 촉매 동반 시</td></tr>
+        <tr class="emph"><td><strong>기본</strong></td><td class="num"><strong>4,200원</strong></td><td class="num up"><strong>+17%</strong></td><td>3,095 + 61.8% 확장. 테마 수급이 1~2주 더 유지되는 경우</td></tr>
+        <tr><td>약세</td><td class="num">2,430원</td><td class="num down">−32%</td><td>20일선 회귀. 6월 패턴 반복 시 60일선 2,100원까지</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tcap">목표가는 기술적 산출치이며 실적이나 자산가치에 근거한 적정주가가 아닙니다. 테마 수급으로 움직이는 종목의 특성상 상하 편차가 매우 큽니다.</p>
+
+  <div class="lvl">
+    <div><span class="k">1차 목표가</span><span class="v" style="color:var(--up)">4,200원</span><span class="s">+17.2%</span></div>
+    <div><span class="k">2차 목표가</span><span class="v" style="color:var(--up)">4,900원</span><span class="s">+36.7%</span></div>
+    <div><span class="k">손절가</span><span class="v" style="color:var(--down)">3,050원</span><span class="s">−14.9%</span></div>
+    <div><span class="k">현재가 손익비</span><span class="v">1.2 : 1</span><span class="s">기본 목표 기준</span></div>
+  </div>
+  <p class="tcap">손절가 3,050원은 9월 4일 장중 저점 3,095원 바로 아래입니다. 이 가격이 깨지면 9월 1일 상한가로 시작된 상승 파동 자체가 무효가 됩니다.</p>
+
+  <h2>그래서 지금 사도 되나</h2>
+  <p>위 표의 마지막 칸이 답입니다. <strong>손익비 1.2 대 1.</strong></p>
+  <p>지금 3,585원에 사면 기본 시나리오 목표까지 17% 벌고, 손절선에 걸리면 15% 잃습니다. 거의 동전 던지기입니다. 그런데 이 종목은 6월에 고점에서 58% 빠진 전력이 있고, 지금 20일 이격도가 148%이며, 오늘 하루에 시가총액의 97%가 손바뀜했습니다. <strong>확률이 5 대 5인 게임에서 손실 쪽 꼬리만 훨씬 두껍습니다.</strong></p>
+  <p>같은 종목을 3,000원 근처에서 사면 계산이 완전히 달라집니다. 목표 4,200원까지 40%, 손절 2,750원까지 8%. 손익비가 <strong>5 대 1</strong>이 됩니다. 종목이 달라져서가 아니라 가격이 달라져서입니다.</p>
+  <p>그래서 정리하면 이렇습니다.</p>
+  <ul class="checks">
+    <li><strong>신규 진입은 지금 가격에서 권하지 않습니다.</strong> 종목이 나빠서가 아니라 손익비가 나쁩니다. 굳이 들어가겠다면 20일선까지 눌리는 <strong>2,900~3,100원 구간에서 분할</strong>로 접근하는 쪽이 계산에 맞습니다.</li>
+    <li><strong>이미 보유 중이라면</strong> 절반은 3,900원대(오늘 고가) 부근에서 정리해 원금을 빼고, 나머지는 손절선을 3,050원으로 두고 끌고 가는 방식이 현실적입니다. 상승분을 지키는 쪽이 우선입니다.</li>
+    <li><strong>비중은 총 투자자산의 5% 이내로</strong> 제한하는 게 맞습니다. 하루 변동폭이 20%를 넘고 매매정지 가능성까지 열려 있는 자산입니다.</li>
+    <li><strong>신용·미수는 쓰지 마세요.</strong> 투자경고종목으로 지정되면 신용융자가 막히고, 그 순간 반대매매가 연쇄적으로 나옵니다. 6월에 실제로 있었던 일입니다.</li>
+  </ul>
+
+  <h2>확인해야 할 세 가지 지표</h2>
+  <ul class="checks">
+    <li><strong>JW중외제약이 같이 움직이는가.</strong> 재료의 주인이 함께 오르기 시작하면 그때부터는 테마가 아니라 그룹 재평가입니다. 반대로 JW신약만 계속 혼자 뛰면 수급 장세이고, 수급은 반드시 끝납니다.</li>
+    <li><strong>일 거래대금이 1,000억 원 아래로 내려가는가.</strong> 오늘 1,947억 원입니다. 이 숫자가 절반 아래로 줄어드는 시점이 매수 에너지 소진 신호입니다. 6월에도 거래대금 급감이 하락의 선행 지표였습니다.</li>
+    <li><strong>투자경고종목으로 지정되는가.</strong> 지정되면 신용융자가 막힙니다. 지정 공시가 뜨는 날은 비중을 줄이는 날로 보는 편이 안전합니다.</li>
+  </ul>
+  <p>이 세 가지 중 두 개가 부정적으로 바뀌면, 목표가를 기다리지 말고 나오는 것이 맞습니다.</p>
+
+  <h2>자주 묻는 질문</h2>
+  <div class="faq">
+    <h3>JW신약 지금 사도 될까요?</h3>
+    <p>현재가 3,585원 기준으로는 권하지 않습니다. 기본 목표가 4,200원까지 상승 여력이 17%인데 손절가 3,050원까지 하락 위험이 15%로, 손익비가 1.2 대 1에 불과합니다. 20일선 부근인 2,900~3,100원까지 조정을 기다린 뒤 분할 매수하면 손익비가 5 대 1로 개선됩니다.</p>
+    <h3>JW신약 목표주가는 얼마인가요?</h3>
+    <p>기술적 산출 기준 1차 목표가 4,200원, 2차 목표가 4,900원입니다. 9월 3일 고점 3,820원과 9월 4일 저점 3,095원을 기준으로 한 파동 확장치이며, 실적 기반 적정주가가 아닙니다. 약세 시나리오에서는 20일선인 2,430원, 더 밀리면 60일선 2,100원까지 열려 있습니다.</p>
+    <h3>손절가는 어디로 잡아야 하나요?</h3>
+    <p>3,050원입니다. 9월 4일 장중 저점 3,095원 바로 아래로, 이 가격이 깨지면 9월 1일 상한가에서 시작된 상승 파동이 무효가 됩니다. 현재가 대비 약 15% 아래입니다.</p>
+    <h3>왜 JW중외제약이 아니라 JW신약이 오르나요?</h3>
+    <p>탈모 신약 JW0061의 개발 주체이자 특허 보유자는 JW중외제약입니다. JW신약은 같은 JW그룹 계열사일 뿐 직접 개발 주체가 아닙니다. 그럼에도 JW신약이 더 크게 오르는 이유는 시가총액이 2,012억 원으로 JW중외제약(6,334억 원)보다 작아 가볍게 움직이기 때문입니다. 오늘도 JW중외제약은 1.1% 하락했습니다.</p>
+    <h3>6월에도 급등했다가 떨어졌다던데 사실인가요?</h3>
+    <p>사실입니다. 6월 12일 1,246원에서 6월 23일 3,465원까지 11거래일 만에 178% 올랐고, 6월 24일 투자경고종목 지정 이후 7월 8일 1,460원까지 고점 대비 58% 하락했습니다. 재료의 성격과 거래량 패턴이 지금과 매우 유사합니다.</p>
+    <h3>투자주의 종목이면 어떤 불이익이 있나요?</h3>
+    <p>투자주의 자체는 예고 성격이라 매매 제한이 없습니다. 다만 다음 단계인 투자경고로 올라가면 신용융자 매수가 제한되고 위탁증거금을 100% 납부해야 하며, 투자위험 단계에서는 매매거래가 정지될 수 있습니다. JW신약은 6월에 실제로 투자경고까지 지정된 이력이 있습니다.</p>
+  </div>
+
+  <div class="note">
+    <p>주가·거래량·재무 수치는 2026년 9월 7일 오후 2시 34분 장중 시점의 네이버 금융 데이터 및 한국거래소 공시를 기준으로 정리했습니다. 장중 기준이므로 종가와 차이가 있을 수 있습니다. 목표가와 손절가는 기술적 분석에 근거한 필자의 추정치이며 실제 주가와 상당한 차이가 발생할 수 있습니다. 본 글은 참고용 분석이며 특정 종목의 매수·매도를 권유하지 않습니다. 투자 판단의 최종 책임은 투자자 본인에게 있으며 원금 손실이 발생할 수 있습니다.</p>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><p>야간비행 일지 · 마감 시황은 장 종료 후 자동 갱신됩니다.</p></div>
+</footer>
