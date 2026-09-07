@@ -578,6 +578,40 @@
     .plan-grid{grid-template-columns:1fr;}
   }
 
+  /* ---------- 단기금융증권 만기수익률 ---------- */
+  /* 등급 × 만기라 가로로 넓다. 좁은 화면에선 표만 옆으로 밀리게 두고
+     본문은 안 밀리게 한다. 등급 칸은 붙여 둬야 어느 줄인지 안 잃는다. */
+  .sb-card{
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+    padding:16px clamp(14px,2vw,20px) 6px;margin-bottom:clamp(12px,1.6vw,16px);
+  }
+  .sb-kind{
+    font-family:var(--f-display);font-weight:600;font-size:.95rem;
+    letter-spacing:-.02em;color:var(--ink);margin:0 0 2px;
+  }
+  .sb-kind-desc{font-family:var(--f-mono);font-size:.64rem;color:var(--ink-3);margin:0 0 10px;}
+  .sb-wrap{overflow-x:auto;}
+  .sb-table{border-collapse:collapse;width:100%;min-width:520px;}
+  .sb-table th,.sb-table td{
+    padding:8px 10px;text-align:right;white-space:nowrap;
+    border-top:1px solid var(--line);
+  }
+  .sb-table thead th{
+    border-top:0;font-family:var(--f-mono);font-size:.64rem;font-weight:400;
+    color:var(--ink-3);letter-spacing:.02em;
+  }
+  .sb-table td{font-family:var(--f-mono);font-size:.82rem;color:var(--ink);
+    font-variant-numeric:tabular-nums;}
+  .sb-table th:first-child,.sb-table td:first-child{
+    position:sticky;left:0;background:var(--surface);
+    text-align:left;font-size:.78rem;color:var(--ink-2);
+  }
+  .sb-empty{
+    display:flex;align-items:center;justify-content:center;min-height:110px;
+    border:1px dashed var(--line);border-radius:2px;
+    font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+  }
+
   /* ---------- 증권사 CMA 금리 ---------- */
   /* 회사가 아니라 상품 유형으로 묶는다. RP형끼리 견줘야 비교가 된다. */
   .cma-grid{
@@ -1329,7 +1363,7 @@
       <a class="cat-card" href="#invest">
         <span class="cat-icon" aria-hidden="true">📈</span>
         <h3>투자</h3>
-        <ul><li>오늘의 증시 · 오늘의 채권</li><li>CMA 금리 · 주요 종목 · 유가</li></ul>
+        <ul><li>오늘의 증시 · 오늘의 채권</li><li>CMA 금리 · 단기사채 · 주요 종목</li></ul>
       </a>
       <a class="cat-card" href="#life">
         <span class="cat-icon" aria-hidden="true">🏠</span>
@@ -1643,7 +1677,7 @@
   <div class="cat-group" id="invest">
     <div class="wrap cat-band">
       <h2 class="cat-band-title"><span aria-hidden="true">📈</span> 투자</h2>
-      <p class="cat-band-desc">코스피·코스닥 장중 지수, 주요 종목, 국제 유가, 채권 금리, 증권사 CMA.</p>
+      <p class="cat-band-desc">코스피·코스닥 장중 지수, 주요 종목, 국제 유가, 채권 금리, 단기사채, 증권사 CMA.</p>
     </div>
   <section class="section wrap" id="stocks">
     <div class="section-head">
@@ -1823,6 +1857,19 @@
       <div class="bond-empty">금리를 불러오는 중입니다</div>
     </div>
     <p class="nfx-note" id="bond-updated"></p>
+  </section>
+
+  <section class="section wrap" id="shortbond">
+    <div class="section-head">
+      <h2>단기사채 금리</h2>
+      <p>신용등급과 남은 만기로 나눠 봅니다.</p>
+    </div>
+    <p class="stock-note"><span class="trend-live">LIVE</span> — 한국예탁결제원 세이브로가 KIS채권평가 자료로 내는 단기금융증권 만기수익률입니다. 평일 두 번 받아와 값이 달라졌을 때만 갱신합니다. <strong>증권사가 파는 장외채권 매물 목록이 아니라 시장 전체 금리입니다</strong> — 증권사별 매물은 여덟 곳 모두 로그인해야 볼 수 있어 여기에 담을 수 없습니다. 실제 매매 금리는 종목과 시점에 따라 다릅니다. 투자 판단의 참고 자료일 뿐이며 특정 상품을 권유하지 않습니다.</p>
+
+    <div id="sb-grid">
+      <div class="sb-empty">금리를 불러오는 중입니다</div>
+    </div>
+    <p class="nfx-note" id="sb-updated"></p>
   </section>
 
   <section class="section wrap" id="cma">
@@ -2347,6 +2394,110 @@
       })
       .catch(function () {
         grid.innerHTML = '<div class="plan-empty">일정을 불러오지 못했습니다.</div>';
+      });
+  })();
+
+  // ---------- 단기사채 금리 ----------
+  // 워크플로가 브라우저로 세이브로를 열어 받아 둔 파일을 읽는다. 세이브로는
+  // 표를 자바스크립트로 나중에 그려서 여기서 직접 부를 수 없다.
+  (function () {
+    var grid = document.getElementById('sb-grid');
+    if (!grid) return;
+    var updatedEl = document.getElementById('sb-updated');
+
+    // 종류 이름만 봐선 뭔지 모르는 사람이 많다. 한 줄로 풀어 준다.
+    var DESC = {
+      'CD': '양도성예금증서 · 은행이 발행',
+      'CP': '기업어음 · 기업이 발행',
+      '전단채': '전자단기사채 · 만기 1년 이내',
+      '단기사채': '전자단기사채 · 만기 1년 이내'
+    };
+
+    function paint(doc) {
+      var terms = (doc && doc.terms) || [];
+      var groups = (doc && doc.groups) || [];
+      if (!terms.length || !groups.length) {
+        grid.innerHTML = '<div class="sb-empty">금리를 불러오지 못했습니다</div>';
+        return;
+      }
+      grid.textContent = '';
+
+      groups.forEach(function (g) {
+        var card = document.createElement('article');
+        card.className = 'sb-card';
+        var h = document.createElement('h3');
+        h.className = 'sb-kind';
+        h.textContent = g.kind;
+        card.appendChild(h);
+        var d = DESC[g.kind];
+        if (d) {
+          var p = document.createElement('p');
+          p.className = 'sb-kind-desc';
+          p.textContent = d;
+          card.appendChild(p);
+        }
+
+        var wrap = document.createElement('div');
+        wrap.className = 'sb-wrap';
+        var table = document.createElement('table');
+        table.className = 'sb-table';
+
+        var thead = document.createElement('thead');
+        var hr = document.createElement('tr');
+        var th0 = document.createElement('th');
+        th0.scope = 'col';
+        th0.textContent = '신용등급';
+        hr.appendChild(th0);
+        terms.forEach(function (t) {
+          var th = document.createElement('th');
+          th.scope = 'col';
+          th.textContent = t;
+          hr.appendChild(th);
+        });
+        thead.appendChild(hr);
+        table.appendChild(thead);
+
+        var tbody = document.createElement('tbody');
+        (g.rows || []).forEach(function (r) {
+          var tr = document.createElement('tr');
+          var th = document.createElement('th');
+          th.scope = 'row';
+          th.textContent = r.grade;
+          tr.appendChild(th);
+          terms.forEach(function (_, i) {
+            var td = document.createElement('td');
+            var v = (r.rates || [])[i];
+            td.textContent = typeof v === 'number' ? v.toFixed(2) : '—';
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        wrap.appendChild(table);
+        card.appendChild(wrap);
+        grid.appendChild(card);
+      });
+
+      if (updatedEl) {
+        var bits = [];
+        if (doc.as_of) bits.push(doc.as_of.replace(/-/g, '.') + ' 기준');
+        if (doc.updated_at) {
+          var dt = new Date(doc.updated_at);
+          if (!isNaN(dt)) {
+            bits.push('마지막 변동 ' + dt.toLocaleString('ko-KR',
+              { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }));
+          }
+        }
+        if (doc.source) bits.push('자료 ' + doc.source);
+        updatedEl.textContent = bits.join(' · ') + ' · 단위 %(연)';
+      }
+    }
+
+    fetch('./data/shortbond.json', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(paint)
+      .catch(function () {
+        grid.innerHTML = '<div class="sb-empty">금리를 불러오지 못했습니다</div>';
       });
   })();
 

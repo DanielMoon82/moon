@@ -44,6 +44,15 @@ TERM = re.compile(r"^\d{1,2}(일|월|년)$")
 NUM = re.compile(r"^\d+(\.\d+)?$")
 
 
+UNIT = {"일": 1, "월": 30, "년": 365}
+
+
+def days(term):
+    """'15일' '3월' '2년' 을 날 수로 바꿔 차례를 매긴다."""
+    m = re.match(r"^(\d{1,2})(일|월|년)$", term)
+    return int(m.group(1)) * UNIT[m.group(2)] if m else 9999
+
+
 def pick_table(tables):
     """만기 머리글이 붙고 줄이 여럿인 표를 고른다. 세이브로 화면에는 메뉴를
     담은 표가 여럿 섞여 있어 모양으로 골라야 한다."""
@@ -81,12 +90,18 @@ def parse(rows):
             continue
         if not groups or groups[-1]["kind"] != kind:
             groups.append({"kind": kind, "rows": []})
-        groups[-1]["rows"].append({"grade": grade, "rates": [float(v) for v in vals]})
+        # 0 은 0% 가 아니라 그 만기에 거래가 없었다는 뜻이다. 단기사채는
+        # 빈 칸이 많아 그대로 두면 '0% 짜리 채권' 으로 읽힌다.
+        groups[-1]["rows"].append({
+            "grade": grade,
+            "rates": [float(v) if float(v) else None for v in vals]})
 
-    # 값이 전부 0 인 열은 자료가 없다는 뜻이다. 0% 로 보이면 안 되니 뺀다.
+    # 어느 줄에도 값이 없는 만기는 열째 뺀다.
     keep = [i for i in range(len(terms))
-            if any(i < len(r["rates"]) and r["rates"][i] != 0
+            if any(i < len(r["rates"]) and r["rates"][i] is not None
                    for g in groups for r in g["rows"])]
+    # 세이브로는 만기 차례가 뒤섞여 있다(15일 다음에 10일). 짧은 것부터 놓는다.
+    keep.sort(key=lambda i: days(terms[i]))
     terms = [terms[i] for i in keep]
     for g in groups:
         for r in g["rows"]:
@@ -115,7 +130,11 @@ def scrape(page):
         if rows:
             body = page.evaluate(
                 "() => (document.body&&document.body.innerText||'').replace(/\\s+/g,' ')")
-            return rows, body, page.url
+            # 기준일은 본문 글이 아니라 날짜 입력칸에 들어 있다.
+            picked = page.evaluate(
+                "() => Array.from(document.querySelectorAll('input'))"
+                ".map(e => e.value).filter(v => /^\\d{4}[.\\-/]?\\d{2}[.\\-/]?\\d{2}$/.test(v||''))")
+            return rows, body, page.url, (picked[0] if picked else "")
         print(f"  · {'곧바로 열기' if url else '메뉴 눌러 들어가기'} — 표를 못 찾음")
     raise ValueError("수익률표를 못 찾음")
 
@@ -130,7 +149,7 @@ def main():
             viewport={"width": 1500, "height": 1200})
         page = ctx.new_page()
         try:
-            rows, body, url = scrape(page)
+            rows, body, url, picked = scrape(page)
         except Exception as exc:  # noqa: BLE001
             print(f"실패 — 기존 파일 유지: {str(exc)[:120]}", file=sys.stderr)
             return 0
@@ -143,7 +162,9 @@ def main():
         return 0
 
     as_of = ""
-    m = re.search(r"기준일[^\d]{0,8}(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})", body)
+    m = re.search(r"(\d{4})[.\-/]?(\d{2})[.\-/]?(\d{2})", picked or "")
+    if not m:
+        m = re.search(r"기준일[^\d]{0,8}(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})", body)
     if m:
         as_of = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
 
