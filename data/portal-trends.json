@@ -1,83 +1,223 @@
 {
- "updated_at": "2026-09-07T06:41:19.285302+00:00",
+ "updated_at": "2026-09-07T08:51:55.171713+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
-    "김병기 의원 구속영장 신청",
-    "장동혁 대표 군사훈련처 방문",
-    "정명석 징역 27년 구형",
-    "에반, 엔하이픈 탈퇴 결정",
-    "삼성 하반기 공채 시작",
-    "강건호 취역 기념식",
-    "수시 원서접수 시작",
-    "서강준·안은진의 연애 경쟁기",
-    "한성숙 총리 기념사",
-    "야구 대표팀 새 유니폼"
+    {
+     "t": "초대 중수청장 후보 김지용 누구?",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B4%88%EB%8C%80%20%EC%A4%91%EC%88%98%EC%B2%AD%EC%9E%A5%20%EA%B9%80%EC%A7%80%EC%9A%A9"
+    },
+    {
+     "t": "장동혁 대표 공군사관학교 방문",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9E%A5%EB%8F%99%ED%98%81%20%EA%B5%AD%EB%AF%BC%EC%9D%98%ED%9E%98%20%EB%8C%80%ED%91%9C"
+    },
+    {
+     "t": "코스피 4.6% 급등 마감",
+     "u": "https://search.nate.com/search/all.html?q=%EC%BD%94%EC%8A%A4%ED%94%BC%20%EA%B8%89%EB%93%B1%20%EB%A7%88%EA%B0%90"
+    },
+    {
+     "t": "김도영, 8월 MVP 수상",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EB%8F%84%EC%98%81%208%EC%9B%94%20MVP"
+    },
+    {
+     "t": "너 말고 다른 연애 가 아닌 서강준과 안은진 으로 바꿔보세요.",
+     "u": "https://search.nate.com/search/all.html?q=%EB%84%88%20%EB%A7%90%EA%B3%A0%20%EB%8B%A4%EB%A5%B8%20%EC%97%B0%EC%95%A0"
+    },
+    {
+     "t": "이란, 한국 파병시 심각한 결과",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EB%9E%80%20%EC%8B%AC%EA%B0%81%ED%95%9C%20%EA%B2%B0%EA%B3%BC"
+    },
+    {
+     "t": "김옥빈, 결혼 10개월 만 임신 준비",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EC%98%A5%EB%B9%88"
+    },
+    {
+     "t": "여신도 성폭행 JMS 27년형",
+     "u": "https://search.nate.com/search/all.html?q=%EC%97%AC%EC%8B%A0%EB%8F%84%20%EC%A7%95%EC%97%AD%2027%EB%85%84"
+    },
+    {
+     "t": "천하람 강신철 아들 부동산 의혹",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B2%9C%ED%95%98%EB%9E%8C%20%EA%B0%95%EC%8B%A0%EC%B2%A0%20%EC%95%84%EB%93%A4"
+    },
+    {
+     "t": "피지컬 AI 현장 방문",
+     "u": "https://search.nate.com/search/all.html?q=%ED%94%BC%EC%A7%80%EC%BB%AC%20AI"
+    }
    ],
-   "updated_at": "2026-09-07T06:41:19.285302+00:00"
+   "updated_at": "2026-09-07T08:51:55.171713+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
-    "[속보]검찰, '신도 성폭행 혐의' JMS 정명석에 징역 27년 구형",
-    "추미애 '12억 대형관사' 논란…더 가까운 '국평 9억대' 존재[뉴스럽다]",
-    "[속보]경찰, 뇌물수수 등 혐의로 김병기 의원 구속영장 신청",
-    "손수호 \"아동 성범죄자 김근식, 벌써 내년 출소…교화 불가능\"[손수호의 몽타주]",
-    "파주 카페 냉동창고서 여성 시신 발견…남성 업주 서울서 검거",
-    "이 와중에 용혜인 남편은... 기본소득당 최고위원 당선",
-    "한동훈 “승원 오빠 말고도 민주당 오빠들 더 나와”…문자 추가 공개",
-    "“삼전닉스 메모리 재고 10일 미만까지 떨어져…내년 물량 고갈 초유 사태 온다”",
-    "이흥구 “사법 3법 입법 과정 충격적…법원, 정치적 사건 몰릴수록 일관성 지켜야”",
-    "1330원대 터치한 환율, 수출기업은 실적 ‘비상’"
+    {
+     "t": "폭력조직원 출신 격투기 선수, 유튜브 방송 중 출연자 목 졸라 기절시킨 후 방치해 경찰 수사",
+     "u": "https://n.news.naver.com/article/087/0001216058?ntype=RANKING"
+    },
+    {
+     "t": "젊은 여신도들에 자신을 ‘메시아’라 세뇌하고 성폭행한 JMS 정명석에 檢, 징역 27년 구형",
+     "u": "https://n.news.naver.com/article/087/0001216158?ntype=RANKING"
+    },
+    {
+     "t": "카페 냉동 컨테이너서 실종 신고된 60대 여성 시신 발견&#8943;경찰, 카페 운영자가 가둔 것으로 추정",
+     "u": "https://n.news.naver.com/article/087/0001216157?ntype=RANKING"
+    },
+    {
+     "t": "[속보] 초대 중수청장 최종 후보에 검찰 출신 김지용 변호사 낙점",
+     "u": "https://n.news.naver.com/article/087/0001216176?ntype=RANKING"
+    },
+    {
+     "t": "홍천 초등학교에서 포탄 무더기 발견",
+     "u": "https://n.news.naver.com/article/087/0001216170?ntype=RANKING"
+    },
+    {
+     "t": "“배우자 대신 왔어요” 계좌 3개 열어준 농협은행…과태료 2600만원 철퇴",
+     "u": "https://n.news.naver.com/article/005/0001871294?ntype=RANKING"
+    },
+    {
+     "t": "“상품권 창고에 있다”…따라간 60대 여성, 냉동창고서 숨진 채 발견",
+     "u": "https://n.news.naver.com/article/005/0001871384?ntype=RANKING"
+    },
+    {
+     "t": "참사 열흘 뒤 공개…中경찰 드론에 담긴 네팔 대홍수",
+     "u": "https://n.news.naver.com/article/005/0001871369?ntype=RANKING"
+    },
+    {
+     "t": "용혜인 남편, 논란 속 최고위원 당선…“가족정당 아냐”",
+     "u": "https://n.news.naver.com/article/005/0001871341?ntype=RANKING"
+    },
+    {
+     "t": "중수청장 최종 후보에 檢출신 김지용 변호사",
+     "u": "https://n.news.naver.com/article/005/0001871395?ntype=RANKING"
+    }
    ],
-   "updated_at": "2026-09-07T06:41:19.285302+00:00"
+   "updated_at": "2026-09-07T08:51:55.171713+00:00"
   },
   "zum": {
    "name": "줌",
    "keywords": [
-    "JMS 정명석 징역 구형",
-    "파주 카페 냉동창고 시신",
-    "정책금융기관 스케일업 펀드",
-    "BNK부산은행 외국인 서포터즈",
-    "KB스타뱅킹 모바일 신분증 1",
-    "종합",
-    "연예",
-    "스포츠"
+    {
+     "t": "JMS 정명석 징역 구형 1",
+     "u": "https://search.zum.com/search.zum?method=uni&query=JMS%20%EC%A0%95%EB%AA%85%EC%84%9D%20%EC%A7%95%EC%97%AD%20%EA%B5%AC%ED%98%95%201"
+    },
+    {
+     "t": "이현중 포틀랜드 계약 1",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%9D%B4%ED%98%84%EC%A4%91%20%ED%8F%AC%ED%8B%80%EB%9E%9C%EB%93%9C%20%EA%B3%84%EC%95%BD%201"
+    },
+    {
+     "t": "SOOP 자사주 소각 4",
+     "u": "https://search.zum.com/search.zum?method=uni&query=SOOP%20%EC%9E%90%EC%82%AC%EC%A3%BC%20%EC%86%8C%EA%B0%81%204"
+    },
+    {
+     "t": "경기교육청 AP Korean 1",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B2%BD%EA%B8%B0%EA%B5%90%EC%9C%A1%EC%B2%AD%20AP%20Korean%201"
+    },
+    {
+     "t": "LH 입찰비리 신고 1",
+     "u": "https://search.zum.com/search.zum?method=uni&query=LH%20%EC%9E%85%EC%B0%B0%EB%B9%84%EB%A6%AC%20%EC%8B%A0%EA%B3%A0%201"
+    },
+    {
+     "t": "종합",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%A2%85%ED%95%A9"
+    },
+    {
+     "t": "연예",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%97%B0%EC%98%88"
+    }
    ],
-   "updated_at": "2026-09-07T06:41:19.285302+00:00"
+   "updated_at": "2026-09-07T08:51:55.171713+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
-    "‘용혜인 배우자’ 박기홍, 기본소득당 논란 질문에 “당에서 하나하나 해명",
-    "서울 국평 125개 단지 분석했더니.. 비강남권 종부세 '56배' 뛴다?",
-    "ㅅㄱㅂㄱ 아니 이봐요 지금 동물원에 동물이있다니까요",
-    "세계불꽃축제 3부-2 (34장)",
-    "불꽃축제서 모의 총기 소지자 검거, 전자발찌 차고 불법촬영한 50대 체포",
-    "절대 중국에서 보면 안돼 '천안문 펀치'",
-    "기저귀 못 뗀 0세도 임대소득…미성년자 3천명 넘었다",
-    "싱글벙글 탁구채2개 14만원에판 문방구",
-    "원본 그림 보고 svg로 재현하는 아스트라",
-    "“집만 봐도 돈 내라?” 또 나온 ‘임장비’ 요구에 부글부글"
+    {
+     "t": "4조원대 피해 추산' KOK 피고 변호인이 중수청장 후보로…피해자들 반발",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460970&_dcbest=1&page=1"
+    },
+    {
+     "t": "싱글벙글 격투기 선수들이 인간병기인 이유",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460969&_dcbest=1&page=1"
+    },
+    {
+     "t": "오픈AI '아스트라', 보안·안전 기능도 막강...7대 기능 살펴보니..",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460966&_dcbest=1&page=1"
+    },
+    {
+     "t": "친구가 울집 왔는데 강아지 물좀준다해서 정수기쓰라했거든 근데",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460964&_dcbest=1&page=1"
+    },
+    {
+     "t": "[속보]이란 \"한국 호르무즈 파병, 심각한 결과 초래할 것\"",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460963&_dcbest=1&page=1"
+    },
+    {
+     "t": "티빙 개인정보 유출 보상 신청하래요",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460961&_dcbest=1&page=1"
+    },
+    {
+     "t": "싱글벙글 이미지와 다르게 의외로 모범 사원이었던 작가",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460960&_dcbest=1&page=1"
+    },
+    {
+     "t": "어느 소상공 아이돌들의 하루..jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460958&_dcbest=1&page=1"
+    },
+    {
+     "t": "독일, 전쟁 원한다…사실상 선전포고 세계대전까지 거론한 상황",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460957&_dcbest=1&page=1"
+    },
+    {
+     "t": "강원도는 참기름 잘 안 써..?",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460955&_dcbest=1&page=1"
+    }
    ],
-   "updated_at": "2026-09-07T06:41:19.285302+00:00"
+   "updated_at": "2026-09-07T08:51:55.171713+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
-    "휘발유",
-    "계엄",
-    "선전포고",
-    "성리",
-    "배구 선수",
-    "조원태",
-    "여론 조사",
-    "법관",
-    "가스 터빈",
-    "삼성 채용"
+    {
+     "t": "산삼",
+     "u": "https://www.google.com/search?q=%EC%82%B0%EC%82%BC"
+    },
+    {
+     "t": "배틀그라운드",
+     "u": "https://www.google.com/search?q=%EB%B0%B0%ED%8B%80%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C"
+    },
+    {
+     "t": "기본소득당",
+     "u": "https://www.google.com/search?q=%EA%B8%B0%EB%B3%B8%EC%86%8C%EB%93%9D%EB%8B%B9"
+    },
+    {
+     "t": "김지용 변호사",
+     "u": "https://www.google.com/search?q=%EA%B9%80%EC%A7%80%EC%9A%A9%20%EB%B3%80%ED%98%B8%EC%82%AC"
+    },
+    {
+     "t": "김용현",
+     "u": "https://www.google.com/search?q=%EA%B9%80%EC%9A%A9%ED%98%84"
+    },
+    {
+     "t": "분당구",
+     "u": "https://www.google.com/search?q=%EB%B6%84%EB%8B%B9%EA%B5%AC"
+    },
+    {
+     "t": "권혁빈",
+     "u": "https://www.google.com/search?q=%EA%B6%8C%ED%98%81%EB%B9%88"
+    },
+    {
+     "t": "하이닉스",
+     "u": "https://www.google.com/search?q=%ED%95%98%EC%9D%B4%EB%8B%89%EC%8A%A4"
+    },
+    {
+     "t": "한국토지주택공사",
+     "u": "https://www.google.com/search?q=%ED%95%9C%EA%B5%AD%ED%86%A0%EC%A7%80%EC%A3%BC%ED%83%9D%EA%B3%B5%EC%82%AC"
+    },
+    {
+     "t": "박병호",
+     "u": "https://www.google.com/search?q=%EB%B0%95%EB%B3%91%ED%98%B8"
+    }
    ],
-   "updated_at": "2026-09-07T06:41:19.285302+00:00"
+   "updated_at": "2026-09-07T08:51:55.171713+00:00"
   }
  }
 }
