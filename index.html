@@ -2423,6 +2423,16 @@
       grid.textContent = '';
 
       groups.forEach(function (g) {
+        // 그 종류에서 아무 등급도 값이 없는 만기는 빼고 그린다. CD·CP 는
+        // 10일물이 통째로 비어 있어, 두면 — 만 늘어선 열이 생긴다.
+        var cols = [];
+        terms.forEach(function (_, i) {
+          if ((g.rows || []).some(function (r) { return typeof (r.rates || [])[i] === 'number'; })) {
+            cols.push(i);
+          }
+        });
+        if (!cols.length) return;
+
         var card = document.createElement('article');
         card.className = 'sb-card';
         var h = document.createElement('h3');
@@ -2448,10 +2458,10 @@
         th0.scope = 'col';
         th0.textContent = '신용등급';
         hr.appendChild(th0);
-        terms.forEach(function (t) {
+        cols.forEach(function (i) {
           var th = document.createElement('th');
           th.scope = 'col';
-          th.textContent = t;
+          th.textContent = terms[i];
           hr.appendChild(th);
         });
         thead.appendChild(hr);
@@ -2464,7 +2474,7 @@
           th.scope = 'row';
           th.textContent = r.grade;
           tr.appendChild(th);
-          terms.forEach(function (_, i) {
+          cols.forEach(function (i) {
             var td = document.createElement('td');
             var v = (r.rates || [])[i];
             td.textContent = typeof v === 'number' ? v.toFixed(2) : '—';
