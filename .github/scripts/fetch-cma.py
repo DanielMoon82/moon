@@ -45,15 +45,6 @@ BROKERS = [
         "https://www.shinhansec.com/siw/wealth-management/cma/info/view.do"]},
     {"id": "koreainvest", "name": "한국투자증권", "urls": [
         "https://securities.koreainvestment.com/main/mall/opencma/CmaInfo.jsp?cmd=TF02bb010000"]},
-    {"id": "mirae", "name": "미래에셋증권", "urls": [
-        "https://securities.miraeasset.com/hks/hks4311/n02.do",
-        "https://securities.miraeasset.com/hks/hks4113/n02.do"]},
-    {"id": "samsung", "name": "삼성증권", "urls": [
-        "https://www.samsungpop.com/mbw/finance/cma.do?cmd=guide",
-        "https://www.samsungpop.com/ux/kor/finance/cma/cma/benefit.do"]},
-    {"id": "nh", "name": "NH투자증권", "urls": [
-        "https://www.nhqv.com/WMDoc.action?viewPage=/finance/cma/introCma.jsp",
-        "https://m.nhsec.com/finance/cma/cma/cmaView?pdCd=CMA030"]},
 ]
 
 TYPES = [
@@ -128,17 +119,27 @@ def read_row(cells, header, col):
     return None, -1, False
 
 
+def clip(text, n=34):
+    """말끝이 잘려 뜻이 끊기지 않게 낱말 경계에서 자른다."""
+    text = (text or "").strip()
+    if len(text) <= n:
+        return text
+    cut = text[:n]
+    sp = cut.rfind(" ")
+    return (cut[:sp] if sp > n // 2 else cut).rstrip(" ,·") + "…"
+
+
 def note_for(cells, header, idx, label):
     """비고를 고른다. 금리 열의 머리글이 '1일 ~ 30일' 처럼 조건을 담고 있으면
     그게 가장 쓸모 있고, 아니면 줄에서 설명처럼 보이는 칸을 쓴다."""
     if 0 <= idx < len(header) and len(cells) == len(header):
         h = header[idx]
         if h and not GENERIC_HEAD.match(h) and "%" not in h:
-            return h[:34]
+            return clip(h)
     for c in reversed(cells):
         if c and c != label and not YEAR_RATE.search(c) and not PURE_RATE.match(c) \
                 and len(c) > 4 and "실적배당" not in c and not FEE.search(c):
-            return c[:34]
+            return clip(c)
     return ""
 
 
@@ -157,6 +158,7 @@ def parse(tables, body):
         if m:
             ctx_as_of = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
 
+        prev_kind = None
         for cells in rows[1:]:
             flat = " ".join(cells)
             # 개인 기준으로 모은다. 법인만 적힌 줄은 건너뛴다.
@@ -165,16 +167,18 @@ def parse(tables, body):
             rate, idx, floating = read_row(cells, header, col)
             if rate is None and not floating:
                 continue
-            kind = classify(" ".join(c for c in cells if not YEAR_RATE.search(c))) or ctx_type
+            kind = classify(" ".join(c for c in cells if not YEAR_RATE.search(c))) \
+                or prev_kind or ctx_type
             if not kind:
                 continue
+            prev_kind = kind
             label = next((c for c in cells if TYPE_PAT.search(c)), "") or TYPE_NAME[kind]
             note = note_for(cells, header, idx, label)
 
             term = next((c for c in cells if TERM.match(c)), "")
             if term and rate is not None:
                 # 기간을 약정하고 맡기는 상품이다. 수시입출금과 나란히 두면 안 된다.
-                item = {"label": f"{label} {term}", "rate": rate,
+                item = {"label": f"{TYPE_NAME[kind]} {term}", "rate": rate,
                         "note": note, "as_of": ctx_as_of}
                 if item not in extra:
                     extra.append(item)
@@ -194,14 +198,10 @@ def parse(tables, body):
         picked["mmf"] = {"rate": None, "text": "실적배당",
                          "note": f"최근 1주일 실적 {span}", "as_of": ""}
 
-    page_as_of = ""
-    m = AS_OF.search(body)
-    if m:
-        page_as_of = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
-    for v in picked.values():
-        if not v["as_of"]:
-            v["as_of"] = page_as_of
-    return picked, extra[:3], page_as_of
+    # 회사 대표 기준일은 유형별 기준일 중 가장 이른 것으로 둔다. 본문에서
+    # 아무 날짜나 주워 오면 무관한 공지 날짜가 금리 기준일로 붙는다.
+    dates = sorted({v["as_of"] for v in picked.values() if v["as_of"]})
+    return picked, extra[:3], dates[0] if dates else ""
 
 
 def scrape(page, b):
