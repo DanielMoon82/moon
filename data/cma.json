@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-07T14:10:32.042947+00:00",
+ "updated_at": "2026-09-07T14:13:32.587418+00:00",
  "types": [
   {
    "key": "cp",
@@ -56,13 +56,13 @@
    },
    "extra": [
     {
-     "label": "RP 90일",
+     "label": "RP형 90일",
      "rate": 2.8,
      "note": "약정기일 전 중도 환매 시 중도환매율 적용 약정기일 자동환매",
      "as_of": "2026-08-31"
     },
     {
-     "label": "MMF형 180일",
+     "label": "RP형 180일",
      "rate": 2.8,
      "note": "",
      "as_of": "2026-08-31"
@@ -100,7 +100,7 @@
      "rate": null,
      "text": "실적배당",
      "note": "",
-     "as_of": "2026-08-31"
+     "as_of": ""
     },
     "cp": {
      "rate": 2.85,
@@ -112,54 +112,6 @@
      "rate": null,
      "text": "실적배당",
      "note": "최근 1주일 실적 연 2.89~3.02%",
-     "as_of": "2026-08-31"
-    }
-   },
-   "extra": []
-  },
-  {
-   "id": "samsung",
-   "name": "삼성증권",
-   "url": "https://www.samsungpop.com/mbw/finance/cma.do?cmd=guide",
-   "as_of": "",
-   "rates": {
-    "rp": {
-     "rate": 2.5,
-     "text": null,
-     "note": "CMA RP형 (환매조건부 채권) 일정기간 후 일정금액으로 환",
-     "as_of": ""
-    },
-    "mmf": {
-     "rate": null,
-     "text": "실적배당",
-     "note": "",
-     "as_of": ""
-    },
-    "mmw": {
-     "rate": null,
-     "text": "실적배당",
-     "note": "",
-     "as_of": ""
-    }
-   },
-   "extra": []
-  },
-  {
-   "id": "nh",
-   "name": "NH투자증권",
-   "url": "https://m.nhsec.com/finance/cma/cma/cmaView?pdCd=CMA030",
-   "as_of": "",
-   "rates": {
-    "mmf": {
-     "rate": null,
-     "text": "실적배당",
-     "note": "수익률 (세전,연)",
-     "as_of": ""
-    },
-    "mmw": {
-     "rate": null,
-     "text": "실적배당",
-     "note": "",
      "as_of": ""
     }
    },
