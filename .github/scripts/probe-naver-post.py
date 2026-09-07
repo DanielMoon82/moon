@@ -76,10 +76,11 @@ def main():
         # 대신 문단·사진 조각을 순서대로 모아 글의 흐름을 그대로 재현한다.
         i = r.text.find("se-main-container")
         chunk = r.text[i:] if i != -1 else r.text
+        # (?is) 는 식 맨 앞에만 올 수 있다. 갈래 중간에 두면 파이썬이 거부한다.
         parts = re.findall(
-            r'(?is)<(p|h[1-6])[^>]*class="[^"]*se-text-paragraph[^"]*"[^>]*>(.*?)</\1>'
-            r'|(?is)(<div[^>]*class="[^"]*se-module-image[^"]*")',
-            chunk)
+            r'<(p|h[1-6])[^>]*class="[^"]*se-text-paragraph[^"]*"[^>]*>(.*?)</\1>'
+            r'|(<div[^>]*class="[^"]*se-module-image[^"]*")',
+            chunk, re.I | re.S)
         lines, imgs = [], 0
         for tag, inner, img in parts:
             if img:
