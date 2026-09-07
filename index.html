@@ -1898,7 +1898,7 @@
       <h2>증권사 판매 채권</h2>
       <p>지금 사서 만기까지 들고 갈 수 있는 것들입니다.</p>
     </div>
-    <p class="stock-note"><span class="trend-live">LIVE</span> — <span id="bb-broker">증권사</span>가 파는 장내채권을 수익률 높은 순으로 봅니다. 평일 두 번 받아와 값이 달라졌을 때만 갱신합니다. <strong>표시된 수익률은 마지막으로 거래가 붙은 값(체결수익률)이라 실제로 살 때 받는 수익률과 다릅니다.</strong> 거래소에서 사고파는 장내채권이라, 증권사가 따로 물량을 잡아 파는 장외채권과도 다릅니다. 세전 기준입니다. 투자 판단의 참고 자료일 뿐이며 특정 종목을 권유하지 않습니다.</p>
+    <p class="stock-note"><span class="trend-live">LIVE</span> — <span id="bb-broker">증권사</span><span id="bb-josa">가</span> 파는 장내채권을 수익률 높은 순으로 봅니다. 평일 두 번 받아와 값이 달라졌을 때만 갱신합니다. <strong>표시된 수익률은 마지막으로 거래가 붙은 값(체결수익률)이라 실제로 살 때 받는 수익률과 다릅니다.</strong> 거래소에서 사고파는 장내채권이라, 증권사가 따로 물량을 잡아 파는 장외채권과도 다릅니다. 세전 기준입니다. 투자 판단의 참고 자료일 뿐이며 특정 종목을 권유하지 않습니다.</p>
 
     <div id="bb-grid">
       <div class="bb-empty">채권을 불러오는 중입니다</div>
@@ -2454,6 +2454,16 @@
     var srcEl = document.getElementById('bb-src');
     var updatedEl = document.getElementById('bb-updated');
     var brokerEl = document.getElementById('bb-broker');
+    var josaEl = document.getElementById('bb-josa');
+
+    // 회사 이름이 자료에서 오니 조사도 이름에 맞춰야 한다. 한글 마지막 글자에
+    // 받침이 있으면 '이', 없으면 '가'. 영문·숫자로 끝나면 '가'로 둔다.
+    function josa(name) {
+      var ch = (name || '').trim().slice(-1);
+      var code = ch.charCodeAt(0);
+      if (code < 0xac00 || code > 0xd7a3) return '가';
+      return (code - 0xac00) % 28 ? '이' : '가';
+    }
 
     function tag(text) {
       var el = document.createElement('span');
@@ -2468,7 +2478,10 @@
         grid.innerHTML = '<div class="bb-empty">채권을 불러오지 못했습니다</div>';
         return;
       }
-      if (brokerEl && doc.broker) brokerEl.textContent = doc.broker;
+      if (brokerEl && doc.broker) {
+        brokerEl.textContent = doc.broker;
+        if (josaEl) josaEl.textContent = josa(doc.broker);
+      }
       grid.textContent = '';
 
       groups.forEach(function (g) {
