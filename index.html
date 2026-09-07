@@ -817,6 +817,19 @@
     display:grid;grid-template-columns:1.15rem 1fr;gap:8px;align-items:baseline;
     font-size:.82rem;color:var(--ink-2);line-height:1.45;
   }
+  /* 항목마다 눌러서 그 기사·검색 결과로 바로 간다. */
+  .trend-keys a{
+    color:inherit;text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .trend-keys a:hover,.trend-keys a:focus-visible{
+    color:var(--brand);border-bottom-color:var(--brand);
+  }
+  .trend-go{
+    display:inline-block;text-decoration:none;
+  }
+  .trend-go:hover{color:var(--brand);}
+
   .trend-keys li::before{
     content:counter(tk);
     font-family:var(--f-mono);font-size:.66rem;
@@ -1867,48 +1880,48 @@
       <h2>실시간 이슈</h2>
       <p>실시간 검색어와 많이 본 뉴스를 한자리에 모았습니다.</p>
     </div>
-    <p class="trend-note"><span class="trend-live">LIVE</span> — 다섯 곳의 실시간 순위를 2시간마다 받아와 보여줍니다. 카드를 누르면 해당 사이트로 넘어갑니다.</p>
+    <p class="trend-note"><span class="trend-live">LIVE</span> — 다섯 곳의 실시간 순위를 2시간마다 받아와 보여줍니다. <strong>항목을 누르면 그 기사나 검색 결과로 바로 갑니다.</strong> 카드 아래 주소를 누르면 해당 사이트로 넘어갑니다.</p>
 
     <div class="trend-grid">
-      <a class="trend-card rise" style="--brand:#03C75A" href="https://news.naver.com/main/ranking/popularDay.naver" target="_blank" rel="noopener" data-portal="naver_news">
+      <div class="trend-card rise" style="--brand:#03C75A" data-portal="naver_news">
         <span class="trend-cat">Naver</span>
         <h3>네이버 뉴스 랭킹</h3>
         <ol class="trend-keys" data-field="keywords"><li class="trend-loading">불러오는 중</li></ol>
         <p class="trend-fallback">오늘 가장 많이 본 기사 순위.</p>
-        <span class="trend-go" data-field="time">news.naver.com →</span>
-      </a>
+        <a class="trend-go" href="https://news.naver.com/main/ranking/popularDay.naver" target="_blank" rel="noopener" data-field="time">news.naver.com →</a>
+      </div>
 
-      <a class="trend-card rise" style="--brand:#FF5A36" href="https://www.nate.com/" target="_blank" rel="noopener" data-portal="nate">
+      <div class="trend-card rise" style="--brand:#FF5A36" data-portal="nate">
         <span class="trend-cat">Nate</span>
         <h3>네이트 실시간 검색어</h3>
         <ol class="trend-keys" data-field="keywords"><li class="trend-loading">불러오는 중</li></ol>
         <p class="trend-fallback">다음과 검색엔진을 공유해서 순위가 사실상 같이 움직인다.</p>
-        <span class="trend-go" data-field="time">nate.com →</span>
-      </a>
+        <a class="trend-go" href="https://www.nate.com/" target="_blank" rel="noopener" data-field="time">nate.com →</a>
+      </div>
 
-      <a class="trend-card rise" style="--brand:#2FAE4E" href="https://zum.com/" target="_blank" rel="noopener" data-portal="zum">
+      <div class="trend-card rise" style="--brand:#2FAE4E" data-portal="zum">
         <span class="trend-cat">Zum</span>
         <h3>줌 AI 이슈 트렌드</h3>
         <ol class="trend-keys" data-field="keywords"><li class="trend-loading">불러오는 중</li></ol>
         <p class="trend-fallback">뉴스·커뮤니티를 함께 분석해 지금 뜨는 이슈를 보여준다.</p>
-        <span class="trend-go" data-field="time">zum.com →</span>
-      </a>
+        <a class="trend-go" href="https://zum.com/" target="_blank" rel="noopener" data-field="time">zum.com →</a>
+      </div>
 
-      <a class="trend-card rise" style="--brand:#6C5CE7" href="https://gall.dcinside.com/board/lists/?id=dcbest" target="_blank" rel="noopener" data-portal="dcinside">
+      <div class="trend-card rise" style="--brand:#6C5CE7" data-portal="dcinside">
         <span class="trend-cat">DCinside</span>
         <h3>디시인사이드 실시간 베스트</h3>
         <ol class="trend-keys" data-field="keywords"><li class="trend-loading">불러오는 중</li></ol>
         <p class="trend-fallback">전체 갤러리에서 지금 가장 반응이 뜨거운 글들을 모아 보여준다.</p>
-        <span class="trend-go" data-field="time">dcinside.com →</span>
-      </a>
+        <a class="trend-go" href="https://gall.dcinside.com/board/lists/?id=dcbest" target="_blank" rel="noopener" data-field="time">dcinside.com →</a>
+      </div>
 
-      <a class="trend-card rise" style="--brand:#4285F4" href="https://trends.google.com/trending?geo=KR" target="_blank" rel="noopener" data-portal="google">
+      <div class="trend-card rise" style="--brand:#4285F4" data-portal="google">
         <span class="trend-cat">Google</span>
         <h3>구글 트렌드 (대한민국)</h3>
         <ol class="trend-keys" data-field="keywords"><li class="trend-loading">불러오는 중</li></ol>
         <p class="trend-fallback">대한민국 기준 인기 급상승 검색어.</p>
-        <span class="trend-go" id="google-trend-time" data-field="time">trends.google.com →</span>
-      </a>
+        <span class="trend-go" id="google-trend-time" data-field="time">trends.google.com →</a>
+      </div>
 
     </div>
   </section>  </div>
@@ -2393,11 +2406,26 @@
         }
         card.classList.remove('is-empty');
         if (list) {
-          list.innerHTML = p.keywords.slice(0, 5).map(function (k) {
-            var safe = document.createElement('div');
-            safe.textContent = k;
-            return '<li>' + safe.innerHTML + '</li>';
-          }).join('');
+          list.textContent = '';
+          p.keywords.slice(0, 5).forEach(function (k) {
+            // 수집기를 고치기 전 파일은 글자만 들어 있다. 둘 다 받는다.
+            var text = (k && k.t) || k;
+            var url = k && k.u;
+            var li = document.createElement('li');
+            var node;
+            if (url) {
+              node = document.createElement('a');
+              node.href = url;
+              node.target = '_blank';
+              node.rel = 'noopener';
+              node.title = text;
+            } else {
+              node = document.createElement('span');
+            }
+            node.textContent = text;
+            li.appendChild(node);
+            list.appendChild(li);
+          });
         }
         if (timeEl && p.updated_at) {
           var d = new Date(p.updated_at);

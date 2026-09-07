@@ -15,6 +15,10 @@ What each one turned out to be:
            (원래 이 자리는 다음이었으나, 다음은 검색어를 자바스크립트로만
             그려 HTML 에 아예 없어 서버에서 가져올 수 없었다. 프로브로 확인.)
 
+각 항목에는 눌러서 갈 주소를 같이 담는다. 기사·게시글은 그 글로 바로 가고,
+검색어는 그 포털의 검색 결과로 보낸다. 목록만 보여 주고 카드 전체를 포털
+첫 화면으로 보내면, 정작 궁금한 그 항목을 다시 찾아야 한다.
+
 한 포털이 실패해도 나머지는 갱신하고, 실패한 포털은 직전 값을 유지한다.
 빈 화면보다 조금 지난 값이 낫고, 없는 값을 지어내지는 않는다.
 """
@@ -22,6 +26,7 @@ import json
 import re
 import sys
 from datetime import datetime, timezone
+from urllib.parse import quote, urljoin
 from pathlib import Path
 
 import requests
@@ -54,41 +59,58 @@ def clean(text):
 
 
 def dedupe(items):
+    """(글, 주소) 짝에서 글이 겹치는 것을 걷어낸다."""
     seen, out = set(), []
-    for it in items:
-        if it and it not in seen:
-            seen.add(it)
-            out.append(it)
+    for text, url in items:
+        if text and text not in seen:
+            seen.add(text)
+            out.append({"t": text, "u": url})
     return out[:KEEP]
+
+
+def q(term):
+    return quote(term, safe="")
+
+
+def anchors(html):
+    """(주소, 글자) 짝을 순서대로 뽑는다. 주소를 알아야 낱개로 누를 수 있다."""
+    for m in re.finditer(r'<a[^>]+href="([^"]+)"[^>]*>(.*?)</a>', html, re.S | re.I):
+        yield m.group(1), clean(m.group(2))
 
 
 def from_nate():
     data = json.loads(get("https://www.nate.com/js/data/jsonLiveKeywordDataV1.js").text)
     # [순위, 표제, 방향, 변동, 키워드] 중 표제를 쓴다. 키워드보다 문장이라 읽기 쉽다.
-    return dedupe([row[1].strip() for row in data if len(row) > 1 and row[1]])
+    # 검색은 마지막 칸의 키워드로 걸어야 결과가 제대로 나온다.
+    out = []
+    for row in data:
+        if len(row) > 1 and row[1]:
+            term = (row[4] if len(row) > 4 and row[4] else row[1]).strip()
+            out.append((row[1].strip(),
+                        f"https://search.nate.com/search/all.html?q={q(term)}"))
+    return dedupe(out)
 
 
 def from_google():
     xml = get("https://trends.google.com/trending/rss?geo=KR").text
     titles = re.findall(r"<title>(.*?)</title>", xml, re.S)[1:]  # 첫 title 은 피드 제목
-    return dedupe([clean(t) for t in titles])
+    return dedupe([(clean(t), f"https://www.google.com/search?q={q(clean(t))}")
+                   for t in titles if clean(t)])
 
 
 def from_dcinside():
     html = get("https://gall.dcinside.com/board/lists/?id=dcbest").text
-    raw = re.findall(r'<a[^>]+href="[^"]*board/view[^"]*"[^>]*>(.*?)</a>', html, re.S)
     out = []
-    for t in raw:
-        t = clean(t)
-        if not t or len(t) > 80:
+    for href, t in anchors(html):
+        if "board/view" not in href or not t or len(t) > 80:
             continue
         if re.fullmatch(r"\[\d+(?:/\d+)?\]", t):   # 댓글 수 배지
             continue
-        if "갤러리 이용 안내" in t:                  # 고정 공지
+        if "갤러리 이용 안내" in t:                    # 고정 공지
             continue
         t = re.sub(r"^\[[^\]]{1,6}\]\s*", "", t)   # 앞머리 [싱갤] 같은 갤 표시 제거
         if t:
-            out.append(t)
+            out.append((t, urljoin("https://gall.dcinside.com/", href)))
     return dedupe(out)
 
 
@@ -104,31 +126,30 @@ def from_zum():
     items = [x for x in items if 1 < len(x) <= 40]
     if not items:
         raise ValueError(f"목록이 비어 있음: {chunk[:200]!r}")
-    return dedupe(items)
+    return dedupe([(x, f"https://search.zum.com/search.zum?method=uni&query={q(x)}")
+                   for x in items])
 
 
 def from_naver_news():
-    """네이버 '많이 본 뉴스' 랭킹 페이지에서 기사 제목을 뽑는다.
+    """네이버 '많이 본 뉴스' 랭킹에서 기사 제목과 그 기사 주소를 뽑는다.
 
     다음 자리를 대신한다. 다음은 검색어를 자바스크립트로만 그려 서버에서
     가져올 수 없었지만, 네이버 랭킹 페이지는 제목이 HTML 에 그대로 들어 있다.
-    마크업이 바뀔 수 있어 후보 패턴을 순서대로 시도하고 어느 것이 맞았는지
-    로그에 남긴다.
+
+    제목만 뽑던 것을 주소까지 함께 뽑도록 바꿨다. 이건 검색어가 아니라
+    기사라서, 검색 결과로 보내면 정작 그 기사를 다시 찾아야 한다.
     """
     html = get("https://news.naver.com/main/ranking/popularDay.naver").text
-    patterns = [
-        (r'class="list_title[^"]*"[^>]*>([^<]{4,80})<', "list_title"),
-        (r'<a[^>]+class="[^"]*list_content[^"]*"[^>]*>\s*([^<]{4,80})\s*<', "list_content"),
-        (r'<div class="list_content">\s*<a[^>]*>\s*([^<]{4,80})\s*<', "div.list_content>a"),
-        (r'<a[^>]+href="[^"]*news\.naver\.com/[^"]*article[^"]*"[^>]*>([^<]{6,80})</a>', "article 링크"),
-    ]
-    for pat, label in patterns:
-        hits = dedupe([clean(h) for h in re.findall(pat, html)])
-        hits = [h for h in hits if len(h) >= 6]
-        if len(hits) >= 5:
-            print(f"        (네이버: '{label}' 패턴 적중)")
-            return hits
-    raise ValueError(f"제목을 찾지 못함 (본문 {len(html)}자)")
+    out = []
+    for href, t in anchors(html):
+        if "article" not in href or not (6 <= len(t) <= 80):
+            continue
+        out.append((t, urljoin("https://news.naver.com/", href)))
+    hits = dedupe(out)
+    if len(hits) >= 5:
+        print(f"        (네이버: 기사 링크 {len(hits)}개)")
+        return hits
+    raise ValueError(f"제목을 찾지 못함 (본문 {len(html)}자, 후보 {len(out)}개)")
 
 
 PORTALS = [
@@ -157,7 +178,7 @@ def main():
                 raise ValueError("빈 목록")
             portals[p["key"]] = {"name": p["name"], "keywords": keywords, "updated_at": now}
             fresh += 1
-            print(f"  [ok] {p['name']}: {len(keywords)}개 — {keywords[:3]}")
+            print(f"  [ok] {p['name']}: {len(keywords)}개 — {[k['t'] for k in keywords[:2]]}")
         except Exception as exc:  # noqa: BLE001
             print(f"  [fail] {p['name']}: {exc}", file=sys.stderr)
             kept = old_portals.get(p["key"])
