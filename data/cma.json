@@ -1,0 +1,69 @@
+{
+ "updated_at": "2026-09-07T11:19:54.300880+00:00",
+ "brokers": {
+  "kb": {
+   "name": "KB증권",
+   "url": "https://www.kbsec.com/go.able?linkcd=m01030002",
+   "as_of": "",
+   "items": [
+    {
+     "label": "RP",
+     "rate": 2.5,
+     "note": "31일단위 재투자"
+    },
+    {
+     "label": "발행어음",
+     "rate": 2.6,
+     "note": "1일단위 재투자(수익금이 매일 다시 원금에 포함되어 재투자)"
+    },
+    {
+     "label": "MMW",
+     "rate": 0.1,
+     "note": "실적배당 (한국증권금융과 사전에 협의된 이자율로 투자)"
+    },
+    {
+     "label": "RP",
+     "rate": 2.8,
+     "note": "약정기일 전 중도 환매 시 중도환매율 적용 약정기일 자동환매"
+    }
+   ]
+  },
+  "koreainvest": {
+   "name": "한국투자증권",
+   "url": "https://securities.koreainvestment.com/main/mall/opencma/CmaInfo.jsp?cmd=TF02bb010000",
+   "as_of": "2026-08-31",
+   "items": [
+    {
+     "label": "당시 CMA 수익률 적용 (개인)",
+     "rate": 2.5,
+     "note": "당시 CMA 수익률 적용"
+    },
+    {
+     "label": "당시 CMA 수익률 적용 (법인)",
+     "rate": 2.5,
+     "note": "당시 CMA 수익률 적용"
+    },
+    {
+     "label": "한국신종개인용MMF3호_C",
+     "rate": 2.9,
+     "note": ""
+    },
+    {
+     "label": "플러스신종개인용MMF2호C",
+     "rate": 3.02,
+     "note": ""
+    },
+    {
+     "label": "DB New해오름신종MMF3C",
+     "rate": 2.89,
+     "note": ""
+    },
+    {
+     "label": "당시 CMA 수익률 적용 (개인)",
+     "rate": 2.85,
+     "note": "당시 CMA 수익률 적용"
+    }
+   ]
+  }
+ }
+}
