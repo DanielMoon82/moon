@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-07T08:51:55.171713+00:00",
+ "updated_at": "2026-09-07T08:54:36.383458+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
@@ -45,7 +45,7 @@
      "u": "https://search.nate.com/search/all.html?q=%ED%94%BC%EC%A7%80%EC%BB%AC%20AI"
     }
    ],
-   "updated_at": "2026-09-07T08:51:55.171713+00:00"
+   "updated_at": "2026-09-07T08:54:36.383458+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
@@ -71,50 +71,50 @@
      "u": "https://n.news.naver.com/article/087/0001216170?ntype=RANKING"
     },
     {
-     "t": "“배우자 대신 왔어요” 계좌 3개 열어준 농협은행…과태료 2600만원 철퇴",
-     "u": "https://n.news.naver.com/article/005/0001871294?ntype=RANKING"
+     "t": "강선영 “야!” 용혜인 “야?”…‘청문회 악연’ 공수 뒤바뀐다",
+     "u": "https://n.news.naver.com/article/025/0003549609?ntype=RANKING"
     },
     {
-     "t": "“상품권 창고에 있다”…따라간 60대 여성, 냉동창고서 숨진 채 발견",
-     "u": "https://n.news.naver.com/article/005/0001871384?ntype=RANKING"
+     "t": "성관계 도중 영상 찍어 담보 삼았다…‘200만원 대출’ 끔찍 그놈",
+     "u": "https://n.news.naver.com/article/025/0003549613?ntype=RANKING"
     },
     {
-     "t": "참사 열흘 뒤 공개…中경찰 드론에 담긴 네팔 대홍수",
-     "u": "https://n.news.naver.com/article/005/0001871369?ntype=RANKING"
+     "t": "대학가 5층 하숙집 돌연 붕괴…‘최소 5명 사망’ 발칵 뒤집힌 이 나라",
+     "u": "https://n.news.naver.com/article/025/0003549566?ntype=RANKING"
     },
     {
-     "t": "용혜인 남편, 논란 속 최고위원 당선…“가족정당 아냐”",
-     "u": "https://n.news.naver.com/article/005/0001871341?ntype=RANKING"
+     "t": "49t 쓰레기 쏟아지고 “굉음에 발작”…100만 몰린 불꽃축제 비명",
+     "u": "https://n.news.naver.com/article/025/0003549593?ntype=RANKING"
     },
     {
-     "t": "중수청장 최종 후보에 檢출신 김지용 변호사",
-     "u": "https://n.news.naver.com/article/005/0001871395?ntype=RANKING"
+     "t": "암 피한 93세 “힘이 펄펄”…16세 연하 여친이 챙겨준 음료",
+     "u": "https://n.news.naver.com/article/025/0003549554?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-09-07T08:51:55.171713+00:00"
+   "updated_at": "2026-09-07T08:54:36.383458+00:00"
   },
   "zum": {
    "name": "줌",
    "keywords": [
     {
-     "t": "JMS 정명석 징역 구형 1",
-     "u": "https://search.zum.com/search.zum?method=uni&query=JMS%20%EC%A0%95%EB%AA%85%EC%84%9D%20%EC%A7%95%EC%97%AD%20%EA%B5%AC%ED%98%95%201"
+     "t": "JMS 정명석 징역 구형",
+     "u": "https://search.zum.com/search.zum?method=uni&query=JMS%20%EC%A0%95%EB%AA%85%EC%84%9D%20%EC%A7%95%EC%97%AD%20%EA%B5%AC%ED%98%95"
     },
     {
-     "t": "이현중 포틀랜드 계약 1",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%9D%B4%ED%98%84%EC%A4%91%20%ED%8F%AC%ED%8B%80%EB%9E%9C%EB%93%9C%20%EA%B3%84%EC%95%BD%201"
+     "t": "이현중 포틀랜드 계약",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%9D%B4%ED%98%84%EC%A4%91%20%ED%8F%AC%ED%8B%80%EB%9E%9C%EB%93%9C%20%EA%B3%84%EC%95%BD"
     },
     {
-     "t": "SOOP 자사주 소각 4",
-     "u": "https://search.zum.com/search.zum?method=uni&query=SOOP%20%EC%9E%90%EC%82%AC%EC%A3%BC%20%EC%86%8C%EA%B0%81%204"
+     "t": "SOOP 자사주 소각",
+     "u": "https://search.zum.com/search.zum?method=uni&query=SOOP%20%EC%9E%90%EC%82%AC%EC%A3%BC%20%EC%86%8C%EA%B0%81"
     },
     {
-     "t": "경기교육청 AP Korean 1",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B2%BD%EA%B8%B0%EA%B5%90%EC%9C%A1%EC%B2%AD%20AP%20Korean%201"
+     "t": "경기교육청 AP Korean",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B2%BD%EA%B8%B0%EA%B5%90%EC%9C%A1%EC%B2%AD%20AP%20Korean"
     },
     {
-     "t": "LH 입찰비리 신고 1",
-     "u": "https://search.zum.com/search.zum?method=uni&query=LH%20%EC%9E%85%EC%B0%B0%EB%B9%84%EB%A6%AC%20%EC%8B%A0%EA%B3%A0%201"
+     "t": "LH 입찰비리 신고",
+     "u": "https://search.zum.com/search.zum?method=uni&query=LH%20%EC%9E%85%EC%B0%B0%EB%B9%84%EB%A6%AC%20%EC%8B%A0%EA%B3%A0"
     },
     {
      "t": "종합",
@@ -125,7 +125,7 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%97%B0%EC%98%88"
     }
    ],
-   "updated_at": "2026-09-07T08:51:55.171713+00:00"
+   "updated_at": "2026-09-07T08:54:36.383458+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -171,7 +171,7 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=460955&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-09-07T08:51:55.171713+00:00"
+   "updated_at": "2026-09-07T08:54:36.383458+00:00"
   },
   "google": {
    "name": "구글",
@@ -217,7 +217,7 @@
      "u": "https://www.google.com/search?q=%EB%B0%95%EB%B3%91%ED%98%B8"
     }
    ],
-   "updated_at": "2026-09-07T08:51:55.171713+00:00"
+   "updated_at": "2026-09-07T08:54:36.383458+00:00"
   }
  }
 }
