@@ -1,0 +1,31 @@
+name: Fetch CMA rates (KR)
+
+on:
+  schedule:
+    # 증권사가 대개 아침에 고친다. 평일 09:30·15:30 KST(00:30·06:30 UTC).
+    - cron: "30 0 * * 1-5"
+    - cron: "30 6 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install playwright
+      - run: python3 -m playwright install --with-deps chromium
+      - run: python3 -u .github/scripts/fetch-cma.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/cma.json
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update CMA rates"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
