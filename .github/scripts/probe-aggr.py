@@ -1,111 +1,104 @@
 #!/usr/bin/env python3
-"""임시 프로브: 거래소가 400 을 주는 이유를 가른다.
+"""임시 프로브: 거래소가 400 을 주며 뭐라고 하는지 읽는다.
 
-bld 후보 열한 개가 전부 400 이었다. 이름이 틀린 건지, 아니면 그냥 POST 로는
-안 받아 주는 건지부터 갈라야 한다. 그래서 이미 되는 걸 아는 이름
-(MDCMAIN00101, 앞 프로브에서 브라우저가 실제로 불렀다)을 같은 방식으로
-던져 본다.
-  · 그것도 400 이면 → 이름이 아니라 방식 문제다. 쿠키가 필요하다.
-  · 그것만 되면 → 이름이 틀린 것이다.
+앞 프로브가 두 가지를 확정했다.
+  · 그냥 POST 로도 된다. 쿠키가 필요 없다(MDCMAIN00101 로 확인).
+  · bld 이름은 내가 맞게 찍었다. 화면 소스에 그대로 박혀 있었다.
+      장외 채권수익률   MDCSTAT11401(전종목) · MDCSTAT11402(개별추이)
+      상장채권 상세검색 MDCSTAT10801
 
-그리고 화면 주소를 곧바로 연다. 메뉴와 jsp 이름이 짝지어 있으니
-MDCSTAT114.jsp 를 열면 그 화면이 무슨 bld 를 부르는지 그대로 보인다.
-지어내는 것보다 확실하다.
+그러면 400 은 딸려 보낼 값이 빠져서다. 그런데 나는 400 의 본문을 안 읽고
+버렸다. 거기 무엇이 빠졌는지 적혀 있을 텐데 그걸 놓쳤다.
+
+이번엔 두 가지를 한다.
+  · 400 이 와도 본문을 읽어 그대로 찍는다.
+  · 화면의 입력칸 이름을 통째로 훑는다. 보낼 값 이름이 거기 있다.
 """
 import json
 import re
-import traceback
 import urllib.parse
 import urllib.request
-
-from playwright.sync_api import sync_playwright
+from datetime import date, timedelta
 
 API = "https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
-JSPS = [
-    ("장외 채권수익률", "https://data.krx.co.kr/contents/MDC/STAT/standard/MDCSTAT114.jsp"),
-    ("상장채권 상세검색", "https://data.krx.co.kr/contents/MDC/STAT/standard/MDCSTAT108.jsp"),
-]
+
+d = date.today()
+while d.weekday() >= 5:
+    d -= timedelta(days=1)
+DD = d.strftime("%Y%m%d")
+PREV = (d - timedelta(days=1 if d.weekday() else 3)).strftime("%Y%m%d")
 
 
 def say(s=""):
     print(s, flush=True)
 
 
-# ── 1. 되는 걸 아는 이름을 같은 방식으로 던져 본다
-say("=" * 72)
-say("되는 걸 아는 이름으로 방식 확인  bld=dbms/MDC/MAIN/MDCMAIN00101")
-try:
-    body = urllib.parse.urlencode({"bld": "dbms/MDC/MAIN/MDCMAIN00101"}).encode()
+def post(params, ref="https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"):
+    body = urllib.parse.urlencode(params).encode()
     req = urllib.request.Request(API, data=body, headers={
-        "User-Agent": UA,
-        "Referer": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd",
+        "User-Agent": UA, "Referer": ref,
         "X-Requested-With": "XMLHttpRequest",
         "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
     })
+    try:
+        with urllib.request.urlopen(req, timeout=25) as r:
+            return r.status, r.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as e:
+        # 여기가 중요하다. 400 의 본문에 뭐가 빠졌는지 적혀 있다.
+        return e.code, e.read().decode("utf-8", "replace")
+
+
+# ── 1. 화면의 입력칸 이름을 훑는다
+say("=" * 72)
+say("장외 채권수익률 화면의 입력칸 이름")
+try:
+    req = urllib.request.Request(
+        "https://data.krx.co.kr/contents/MDC/STAT/standard/MDCSTAT114.jsp",
+        headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=25) as r:
-        raw = r.read().decode("utf-8", "replace")
-    say(f"  ✅ 그냥 POST 로도 된다 — {len(raw)}바이트")
-    say(f"     {raw[:300]}")
-    say("  → 400 은 이름이 틀려서다. 이름만 찾으면 된다.")
+        html = r.read().decode("utf-8", "replace")
+    names = sorted(set(re.findall(r'name=["\']([A-Za-z_][A-Za-z0-9_]{2,30})["\']', html)))
+    ids = sorted(set(re.findall(r'id=["\']([A-Za-z_][A-Za-z0-9_]{2,30})["\']', html)))
+    say(f"  name= {names[:40]}")
+    say(f"  id=   {ids[:40]}")
+    for m in re.findall(r'\{[^{}]*bld[^{}]{0,400}\}', html)[:4]:
+        say(f"  덩어리: {m[:400]}")
 except Exception as exc:  # noqa: BLE001
-    say(f"  ❌ 이것도 막힌다 — {type(exc).__name__}: {str(exc)[:120]}")
-    say("  → 이름이 아니라 방식 문제다. 쿠키를 받아 와야 한다.")
+    say(f"  실패 {type(exc).__name__}: {str(exc)[:140]}")
 
-# ── 2. 화면 주소를 곧바로 열어 무슨 bld 를 부르는지 본다
-with sync_playwright() as p:
-    br = p.chromium.launch()
-    ctx = br.new_context(locale="ko-KR", user_agent=UA,
-                         viewport={"width": 1400, "height": 1000})
-    pg = ctx.new_page()
-    pg.set_default_timeout(8000)
-    calls = []
-
-    def on_response(resp):
+# ── 2. 400 이 뭐라고 하는지 읽는다
+BLD = "dbms/MDC/STAT/standard/MDCSTAT11401"
+TRIES = [
+    ("맨 이름만", {"bld": BLD}),
+    ("+ 조회일자", {"bld": BLD, "trdDd": DD}),
+    ("+ locale", {"bld": BLD, "trdDd": DD, "locale": "ko_KR"}),
+    ("+ 전종목 구분", {"bld": BLD, "trdDd": DD, "locale": "ko_KR",
+                   "inqCondTpCd": "1", "share": "1", "money": "1",
+                   "csvxls_isNo": "false"}),
+    ("basDd 로", {"bld": BLD, "basDd": DD, "locale": "ko_KR"}),
+    ("전일자로", {"bld": BLD, "trdDd": PREV, "locale": "ko_KR"}),
+    ("상장채권 10801", {"bld": "dbms/MDC/STAT/standard/MDCSTAT10801",
+                    "locale": "ko_KR", "share": "1", "money": "1",
+                    "csvxls_isNo": "false"}),
+]
+for name, params in TRIES:
+    say("=" * 72)
+    say(f"{name}  {params}")
+    code, raw = post(params, "https://data.krx.co.kr/contents/MDC/STAT/standard/MDCSTAT114.jsp")
+    say(f"  [{code}] {len(raw)}바이트")
+    say(f"  {raw[:700]}")
+    if code == 200:
         try:
-            if "getJsonData" not in resp.url:
-                return
-            calls.append(((resp.request.post_data or "")[:400],
-                          resp.status, resp.text()[:1500]))
-        except Exception:  # noqa: BLE001
-            pass
-
-    pg.on("response", on_response)
-
-    for name, url in JSPS:
-        say("=" * 72)
-        say(f"{name}  {url}")
-        calls.clear()
-        try:
-            pg.goto(url, wait_until="domcontentloaded", timeout=25000)
-            pg.wait_for_timeout(5000)
-            body = pg.evaluate(
-                "() => (document.body&&document.body.innerText||'').replace(/\\s+/g,' ')")
-            say(f"  본문 {len(body)}자 · {body[:500]}")
-
-            # 화면 안에 bld 가 글자로 박혀 있는 경우가 많다. 통째로 훑는다.
-            html = pg.content()
-            blds = sorted(set(re.findall(r"dbms/[A-Za-z0-9/_]+", html)))
-            say(f"  화면에 박힌 bld {len(blds)}개: {blds[:12]}")
-
-            for sel in ["#jsSearchButton", "a:has-text('조회')",
-                        "button:has-text('조회')", "input[value='조회']"]:
-                try:
-                    pg.locator(sel).first.click(timeout=4000)
-                    say(f"  조회 눌렀다: {sel}")
+            data = json.loads(raw)
+            for k, v in data.items():
+                if isinstance(v, list) and v:
+                    say(f"  ✅ {k} 에 {len(v)}줄 · 칸 {list(v[0])}")
+                    for row in v[:3]:
+                        say("     " + json.dumps(row, ensure_ascii=False)[:280])
                     break
-                except Exception:  # noqa: BLE001
-                    continue
-            pg.wait_for_timeout(8000)
-
-            say(f"  요청 {len(calls)}건")
-            for post, status, head in calls[:5]:
-                say(f"    · [{status}] 보낸 값: {post}")
-                say(f"      받은 값: {head[:900]}")
-        except Exception:
-            say("  !! 실패 " + traceback.format_exc().strip().split("\n")[-1][:170])
-
-    br.close()
+        except ValueError:
+            pass
 
 say("# 끝")
