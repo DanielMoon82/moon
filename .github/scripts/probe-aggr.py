@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
-"""임시 프로브: 여러 증권사 채권을 모아 보여주는 곳이 웹을 여는지 본다.
+"""임시 프로브: 한국거래소 채권 통계 화면에서 자료 API 를 캔다.
 
-증권사 여덟 곳을 직접 확인한 결과 채권 목록을 로그인 없이 웹에 여는 곳은
-NH 하나뿐이었다. 나머지는 앱 안에서만 보여 주거나 로그인을 요구한다.
+앞 프로브가 길을 열어 줬다. 거래소 정보데이터시스템에 이런 메뉴가 있다.
+  · 장외 채권수익률      MDCSTAT114   ← 처음 찾던 바로 그것
+  · 상장채권 상세검색    MDCSTAT108
+  · 상장채권 발행정보    MDCSTAT109
 
-그래서 모아서 보여 주는 쪽을 본다.
-  · 토스증권 — 웹판이 있다. 채권을 다루는지 본다.
-  · 네이버페이 증권 — 국내 증시 자료를 웹으로 넓게 연다.
-  · 한국거래소 정보데이터시스템 — 장내채권 시세를 공식으로 낸다.
-    증권사별은 아니지만 종목별 수익률이 나오면 쓸모가 있다.
+증권사별 매물은 아니지만 거래소가 내는 공식 자료다. 증권사 여덟 곳이
+전부 앱 안에 가둬 둔 것과 달리 여기는 열려 있다.
 
-화면을 긁지 말고 오가는 JSON 을 잡는다. NH 를 뚫은 것도 그 방법이었다.
-결과는 로그로 낸다.
+거래소 화면은 조회 단추를 눌러야 값을 받아 온다(세이브로와 같다).
+그때 오가는 JSON 을 잡으면 그다음부턴 그걸 바로 부르면 된다.
 """
 import json
 import re
@@ -19,18 +18,10 @@ import traceback
 
 from playwright.sync_api import sync_playwright
 
-TARGETS = [
-    ("토스증권", "https://www.tossinvest.com/"),
-    ("네이버페이 증권", "https://m.stock.naver.com/"),
-    ("네이버 시장지표", "https://finance.naver.com/marketindex/"),
-    ("거래소 채권 시세", "http://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd?menuId=MDC0106"),
-    ("거래소 정보데이터", "http://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"),
-]
-UA = ("Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 "
-      "(KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1")
-
-PCT = re.compile(r"\d+\.\d{1,3} ?%")
-BONDY = re.compile(r"채권|bond|수익률|만기|isnm|ert|yld", re.I)
+MAIN = "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
+MENUS = ["장외 채권수익률", "상장채권 상세검색"]
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
 
 
 def say(s=""):
@@ -40,69 +31,76 @@ def say(s=""):
 with sync_playwright() as p:
     br = p.chromium.launch()
     ctx = br.new_context(locale="ko-KR", user_agent=UA,
-                         viewport={"width": 414, "height": 1100},
-                         is_mobile=True, has_touch=True)
+                         viewport={"width": 1400, "height": 1100})
     pg = ctx.new_page()
-    pg.set_default_timeout(6000)
-    hits = []
+    pg.set_default_timeout(8000)
+    calls = []
 
     def on_response(resp):
         try:
             u = resp.url
-            if re.search(r"\.(png|jpe?g|gif|css|woff2?|svg|ico)(\?|$)", u):
-                return
-            ct = (resp.headers or {}).get("content-type", "")
-            if not any(k in ct for k in ("json", "xml", "text/plain")):
+            # 거래소는 자료를 이 한 곳으로 다 받아 온다.
+            if "getJsonData" not in u and "MDCSTAT" not in u:
                 return
             b = resp.text()
-            if len(b) < 200 or not BONDY.search(b):
+            if len(b) < 60:
                 return
-            hits.append((u, len(b), b[:900]))
+            calls.append((u, resp.request.method,
+                          (resp.request.post_data or "")[:600], len(b), b[:1600]))
         except Exception:  # noqa: BLE001
             pass
 
     pg.on("response", on_response)
 
-    for name, url in TARGETS:
+    for menu in MENUS:
         say("=" * 72)
-        say(f"{name}  {url}")
-        hits.clear()
+        say(f"메뉴: {menu}")
+        calls.clear()
         try:
-            pg.goto(url, wait_until="domcontentloaded", timeout=25000)
+            pg.goto(MAIN, wait_until="domcontentloaded", timeout=25000)
+            pg.wait_for_timeout(4000)
+            # 메뉴는 접혀 있을 수 있어 요소에 직접 클릭을 건다.
+            pg.get_by_text(menu, exact=True).first.evaluate("e => e.click()")
             pg.wait_for_timeout(7000)
+            say(f"  도착 {pg.url[:150]}")
+
+            # 조회 단추를 찾아 누른다. 거래소는 이걸 눌러야 값이 온다.
+            pressed = ""
+            for sel in ["#jsSearchButton", "a.btn_hdr:has-text('조회')",
+                        "button:has-text('조회')", "a:has-text('조회')",
+                        "input[value='조회']"]:
+                try:
+                    pg.locator(sel).first.click(timeout=4000)
+                    pressed = sel
+                    break
+                except Exception:  # noqa: BLE001
+                    continue
+            say(f"  누른 단추: {pressed or '(못 찾음)'}")
+            pg.wait_for_timeout(9000)
+
             body = pg.evaluate(
                 "() => (document.body&&document.body.innerText||'').replace(/\\s+/g,' ')")
-            say(f"  도착 {pg.url[:140]}")
-            say(f"  본문 {len(body)}자 · 수익률꼴 {len(PCT.findall(body))}개 {PCT.findall(body)[:12]}")
-            say(f"  {body[:1200]}")
+            say(f"  본문 {len(body)}자")
+            say(f"  {body[:900]}")
+            tabs = pg.evaluate(
+                """() => Array.from(document.querySelectorAll('table')).map(t =>
+                     Array.from(t.querySelectorAll('tr')).slice(0,8).map(r =>
+                       Array.from(r.querySelectorAll('th,td')).map(c =>
+                         (c.innerText||'').replace(/\\s+/g,' ').trim())
+                     ).filter(cs => cs.some(x => x)))""")
+            for i, t in enumerate([x for x in tabs if len(x) > 1][:3]):
+                say(f"  [표{i}]")
+                for r in t[:8]:
+                    say("    " + json.dumps(r, ensure_ascii=False)[:250])
 
-            # '채권' 이 걸린 링크만 따로 본다. 어디로 들어가야 하는지 알아야 한다.
-            links = pg.evaluate(
-                """() => Array.from(document.querySelectorAll('a,button,[onclick]')).map(e => ({
-                     t: (e.innerText||'').replace(/\\s+/g,' ').trim().slice(0,26),
-                     h: (e.getAttribute('href')||'').slice(0,110),
-                     o: (e.getAttribute('onclick')||'').slice(0,110)
-                   })).filter(x => /채권|bond/i.test(x.t + ' ' + x.h + ' ' + x.o))""")
-            seen, uniq = set(), []
-            for l in links:
-                k = (l["t"], l["h"], l["o"])
-                if k not in seen:
-                    seen.add(k)
-                    uniq.append(l)
-            say(f"  채권 걸린 링크 {len(uniq)}개")
-            for l in uniq[:14]:
-                say(f"    · '{l['t']}'  href={l['h']}  onclick={l['o']}")
-
-            say(f"  채권 같은 응답 {len(hits)}개")
-            got = set()
-            for u, n, head in hits:
-                if u in got:
-                    continue
-                got.add(u)
-                say(f"    · {u[:150]}  ({n}바이트)")
-                say(f"      {head[:700]}")
+            say(f"  자료 요청 {len(calls)}건")
+            for u, m, post, n, head in calls[:6]:
+                say(f"    · {m} {u[:140]}  ({n}바이트)")
+                if post:
+                    say(f"      보낸 값: {post}")
+                say(f"      받은 값: {head[:1100]}")
         except Exception:
-            say("  !! 실패 " + traceback.format_exc().strip().split("\n")[-1][:160])
+            say("  !! 실패 " + traceback.format_exc().strip().split("\n")[-1][:170])
 
     br.close()
 
