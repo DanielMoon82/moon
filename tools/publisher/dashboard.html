@@ -151,6 +151,7 @@ function renderChannels() {
         <div class="grow"><div class="name">${esc(c.label)}</div></div>
         ${pill}
         <button ${busy?'disabled':''} onclick="doLogin('${c.id}')">${c.ready?'다시 로그인':'로그인'}</button>
+        ${c.ready && c.kind === 'cookie' ? `<button onclick="copySession('${c.id}')">깃허브용 값 복사</button>` : ''}
         ${c.ready?`<button ${busy?'disabled':''} onclick="doLogout('${c.id}')">해제</button>`:''}
       </div>${extra}
     </div>`;
@@ -227,6 +228,23 @@ async function saveConfig() {
   refresh();
 }
 document.getElementById('cfg-tistory').addEventListener('input', () => configTouched = true);
+
+async function copySession(channel) {
+  const res = await fetch('/api/session-export?channel=' + channel).then(r => r.json());
+  if (res.error) { alert(res.error); return; }
+  try {
+    await navigator.clipboard.writeText(res.value);
+    alert(
+      '복사했습니다.\n\n' +
+      '깃허브 저장소 → Settings → Secrets and variables → Actions →\n' +
+      'New repository secret 에서 이름을 ' + res.secret + ' 로 만들고\n' +
+      '붙여넣으세요.\n\n' +
+      '이 값은 로그인한 상태 그 자체입니다. 가진 사람은 비밀번호 없이도\n' +
+      '계정에 들어갈 수 있으니 다른 곳에 붙여넣지 마세요.');
+  } catch (e) {
+    alert('클립보드에 접근하지 못했습니다. .publish-session/' + channel + '.json 을 직접 여세요.');
+  }
+}
 
 async function doLogin(channel) {
   const body = {channel};

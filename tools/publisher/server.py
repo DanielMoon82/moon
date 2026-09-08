@@ -266,6 +266,18 @@ class Handler(BaseHTTPRequestHandler):
             self._json(build_state())
         elif self.path == "/api/job":
             self._json(JOB.snapshot())
+        elif self.path.startswith("/api/session-export"):
+            # 깃허브 액션에서도 올리려면 이 값을 secret 에 넣어야 한다.
+            # 127.0.0.1 에만 열려 있는 서버라 여기서만 꺼내 준다.
+            from urllib.parse import parse_qs, urlparse
+            channel = (parse_qs(urlparse(self.path).query).get("channel") or [""])[0]
+            path = session_path(channel)
+            if channel not in ("naver", "tistory") or not path.exists():
+                return self._json({"error": "저장된 세션이 없습니다"}, 404)
+            self._json({
+                "secret": f"{channel.upper()}_SESSION_JSON",
+                "value": path.read_text(encoding="utf-8"),
+            })
         else:
             self._send(404, "not found", "text/plain; charset=utf-8")
 

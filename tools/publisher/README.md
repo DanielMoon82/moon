@@ -114,13 +114,19 @@ ONLY_SLUG=ayutthaya python3 .github/scripts/publish-to-blogger.py
 액션에는 브라우저 앞에 앉을 사람이 없으니 로그인을 할 수 없다. 대신 이미
 받아 둔 세션을 넣어 주면 된다.
 
-`.publish-session/naver.json` 의 내용을 통째로 복사해
-`NAVER_SESSION_JSON` secret 에, `tistory.json` 은 `TISTORY_SESSION_JSON` 에 넣는다.
+대시보드의 채널 줄에 있는 **[깃허브용 값 복사]** 버튼을 누르면 세션 내용이
+클립보드에 들어온다. 그걸 저장소 → Settings → Secrets and variables →
+Actions → New repository secret 에 붙여넣는다.
+이름은 각각 `NAVER_SESSION_JSON`, `TISTORY_SESSION_JSON`.
 `blog-exports/**` 가 바뀌어 push 되면 워크플로가 알아서 올린다.
 secret 이 없으면 그 채널만 조용히 건너뛰고, 왜 건너뛰었는지 로그에 적는다.
 
+**이 값은 로그인한 상태 그 자체다.** 가진 사람은 비밀번호 없이도 계정에
+들어갈 수 있다. 저장소가 공개라면 secret 이라도 넣지 않는 편이 낫다.
+그리고 액션 러너는 미국 IP 라서, 네이버가 낯선 접속으로 보고 막을 수 있다.
+
 세션이 만료되면 다시 로그인해서 secret 도 다시 넣어야 한다. 이게 번거로우면
-그냥 내 컴퓨터에서 대시보드를 쓰는 편이 낫다.
+그냥 내 컴퓨터에서 대시보드를 쓰는 편이 낫다 — 그쪽이 원래 설계다.
 
 ## 잘 안 될 때
 
