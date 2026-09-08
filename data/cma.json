@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-07T14:13:32.587418+00:00",
+ "updated_at": "2026-09-08T11:40:14.620123+00:00",
  "types": [
   {
    "key": "cp",
@@ -73,13 +73,13 @@
    "id": "shinhan",
    "name": "신한투자증권",
    "url": "https://www.shinhansec.com/siw/wealth-management/cma/info/view.do",
-   "as_of": "2026-09-07",
+   "as_of": "2026-09-08",
    "rates": {
     "rp": {
      "rate": 2.45,
      "text": null,
      "note": "28일 단위 수익률 재적용",
-     "as_of": "2026-09-07"
+     "as_of": "2026-09-08"
     }
    },
    "extra": []
