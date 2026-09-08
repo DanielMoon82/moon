@@ -264,6 +264,15 @@ async function renderPhotos(slug) {
       <input type="file" accept="image/*" style="max-width:210px;font-size:.78rem;"
              onchange="uploadPhoto('${slug}', ${s.n}, this)">
     </div>`).join('') + `
+    <div class="row" style="margin-top:14px;padding-top:12px;border-top:1px solid var(--line);">
+      <div class="grow">
+        <div class="name" style="font-size:.9rem;">여러 장 한꺼번에</div>
+        <div class="meta">사진을 전부 고르면 이름 순으로 위 자리에 차례대로 들어갑니다.
+          어긋난 자리는 그 자리만 다시 고르면 됩니다.</div>
+      </div>
+      <input type="file" accept="image/*" multiple style="max-width:210px;font-size:.78rem;"
+             onchange="uploadMany('${slug}', this)">
+    </div>
     <div class="row" style="margin-top:14px;">
       <div class="grow meta">사진 ${ready} / ${slots.length} 장 들어왔습니다.
         반영을 누르면 네 벌 본문의 자리 표시가 실제 사진으로 바뀝니다.</div>
@@ -288,6 +297,28 @@ async function uploadPhoto(slug, n, input) {
   input.disabled = false;
   if (res.error) { alert(res.error); return; }
   await renderPhotos(slug);
+}
+
+async function uploadMany(slug, input) {
+  const files = [...(input.files || [])].sort((a, b) => a.name.localeCompare(b.name));
+  if (!files.length) return;
+  const res = await fetch('/api/photos?slug=' + encodeURIComponent(slug)).then(r => r.json());
+  const targets = (res.slots || []);
+  input.disabled = true;
+  for (let i = 0; i < Math.min(files.length, targets.length); i++) {
+    const buf = await files[i].arrayBuffer();
+    const bytes = new Uint8Array(buf);
+    let bin = '';
+    const CHUNK = 0x8000;
+    for (let j = 0; j < bytes.length; j += CHUNK) {
+      bin += String.fromCharCode.apply(null, bytes.subarray(j, j + CHUNK));
+    }
+    const out = await api('/api/photo', {slug, n: targets[i].n, data: btoa(bin)});
+    if (out.error) { alert(out.error); break; }
+    await renderPhotos(slug);
+  }
+  input.disabled = false;
+  input.value = '';
 }
 
 async function applyPhotos(slug) {

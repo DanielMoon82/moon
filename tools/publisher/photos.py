@@ -173,15 +173,50 @@ def apply(slug, log=print):
     return done
 
 
+EXTS = {".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp"}
+
+
+def bulk(slug, folder, log=print):
+    """폴더 안의 사진을 이름 순으로 자리에 하나씩 넣는다.
+
+    휴대폰 사진은 파일 이름이 찍은 순서다. 글의 자리도 대체로 그
+    순서를 따라가므로 이렇게만 해도 대부분 맞는다. 틀린 자리는
+    대시보드에서 그 자리만 다시 고르면 된다."""
+    files = sorted(p for p in Path(folder).iterdir()
+                   if p.suffix.lower() in EXTS)
+    if not files:
+        log(f"{folder} 에서 사진을 찾지 못했습니다.")
+        return 0
+    targets = slots(slug)
+    if len(files) != len(targets):
+        log(f"사진 {len(files)}장, 자리 {len(targets)}개 — 개수가 다릅니다. "
+            f"앞에서부터 짝을 지어 넣고 남는 쪽은 둡니다.")
+    done = 0
+    for f, slot in zip(files, targets):
+        save(slug, slot["n"], f.read_bytes())
+        log(f"  {slot['n']:02d} ← {f.name}   {slot['caption'][:44]}")
+        done += 1
+    log(f"{done}장 넣었습니다. 자리가 어긋난 게 있으면 대시보드에서 그 자리만 다시 고르세요.")
+    return done
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
         return 2
     slug = sys.argv[1]
+    args = sys.argv[2:]
+
+    if "--import" in args:
+        folder = args[args.index("--import") + 1]
+        bulk(slug, folder)
+
     for s in slots(slug):
         mark = "있음" if s["ready"] else "없음"
         print(f"  {s['n']:02d} [{mark}] {s['caption'][:60]}")
-    if len(sys.argv) > 2 and sys.argv[2] == "--apply":
+
+    if "--apply" in args or "--import" in args:
+        print()
         apply(slug)
     return 0
 
