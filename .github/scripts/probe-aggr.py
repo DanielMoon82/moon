@@ -1,26 +1,29 @@
 #!/usr/bin/env python3
-"""임시 프로브: 쿠키를 챙겨 거래소 채권 자료를 받아 본다.
+"""임시 프로브(마지막): menuId 를 캐서 제대로 된 순서로 부른다.
 
-400 의 본문이 답을 줬다 — 'LOGOUT' 이다. 거래소 통계 API 는 화면을 먼저
-들러 세션 쿠키를 받아야 응답한다. 메인 위젯(MDCMAIN00101)은 그게 없어도
-되기에 그것만 되고 나머지는 다 400 이었던 것이다.
+쿠키(JSESSIONID)를 받아도 여전히 LOGOUT 이다. 세션만으로는 부족하고
+메뉴 경로를 거쳐야 그 화면이 세션에 등록되는 구조로 보인다.
+거래소 메인에 이런 글이 있었다(잘려 있었다).
+  gotoMenu('/contents/MDC/STAT/standard/MDCSTAT114.jsp/contents/MDC/MDI/
+            mdiLoader/index.cmd?menuId=MD...')
 
-쿠키만 챙기면 되니 브라우저는 필요 없다. 화면을 한 번 GET 해서 쿠키를
-받고, 같은 쿠키로 POST 한다.
+그 menuId 만 있으면 순서가 완성된다.
+  1. 메인을 들러 쿠키를 받는다
+  2. mdiLoader/index.cmd?menuId=... 를 들러 메뉴를 연다
+  3. 그다음 getJsonData 를 부른다
 
-bld 는 화면 소스에서 캔 것이라 확실하다.
-  장외 채권수익률   dbms/MDC/STAT/standard/MDCSTAT11401
-  상장채권 상세검색 dbms/MDC/STAT/standard/MDCSTAT10801
+한 번에 끝내려고 캐기와 부르기를 같은 실행에 묶었다.
 """
 import http.cookiejar
 import json
+import re
 import urllib.parse
 import urllib.request
 from datetime import date, timedelta
 
-API = "https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd"
-PAGE = "https://data.krx.co.kr/contents/MDC/STAT/standard/MDCSTAT114.jsp"
-HOME = "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
+BASE = "https://data.krx.co.kr"
+API = f"{BASE}/comm/bldAttendant/getJsonData.cmd"
+HOME = f"{BASE}/contents/MDC/MAIN/main/index.cmd"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
 
@@ -35,26 +38,40 @@ def say(s=""):
     print(s, flush=True)
 
 
-# 쿠키를 담아 두는 통을 만든다. 이게 이번 핵심이다.
 jar = http.cookiejar.CookieJar()
 opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
 opener.addheaders = [("User-Agent", UA)]
 
+# ── 1. 메인에서 menuId 를 캔다
 say("=" * 72)
-say("먼저 화면을 들러 쿠키를 받는다")
-for url in (HOME, PAGE):
-    try:
-        with opener.open(url, timeout=25) as r:
-            say(f"  [{r.status}] {url[:80]} — {len(r.read())}바이트")
-    except Exception as exc:  # noqa: BLE001
-        say(f"  실패 {url[:60]} — {type(exc).__name__}: {str(exc)[:100]}")
-say(f"  받은 쿠키: {[c.name for c in jar]}")
+say("메인에서 menuId 캐기")
+html = ""
+try:
+    with opener.open(HOME, timeout=30) as r:
+        html = r.read().decode("utf-8", "replace")
+    say(f"  메인 {len(html)}바이트 · 쿠키 {[c.name for c in jar]}")
+except Exception as exc:  # noqa: BLE001
+    say(f"  실패 {type(exc).__name__}: {str(exc)[:120]}")
+
+# MDCSTAT 이름 옆에 붙은 menuId 를 짝지어 뽑는다.
+pairs = re.findall(r"(MDCSTAT\d{3})\.jsp[^']*?menuId=([A-Za-z0-9]+)", html)
+say(f"  찾은 짝 {len(pairs)}개")
+for stat, menu in pairs[:20]:
+    say(f"    {stat} → menuId={menu}")
+want = {s: m for s, m in pairs}
+say(f"  장외 채권수익률(MDCSTAT114) menuId = {want.get('MDCSTAT114', '(못 찾음)')}")
+say(f"  상장채권 상세검색(MDCSTAT108) menuId = {want.get('MDCSTAT108', '(못 찾음)')}")
+
+# 못 찾으면 menuId 만이라도 통째로 훑어 본다.
+if not pairs:
+    ids = sorted(set(re.findall(r"menuId=([A-Za-z0-9]{8,20})", html)))
+    say(f"  화면에 있는 menuId {len(ids)}개: {ids[:30]}")
 
 
-def post(params):
+def post(params, ref):
     body = urllib.parse.urlencode(params).encode()
     req = urllib.request.Request(API, data=body, headers={
-        "Referer": PAGE,
+        "Referer": ref,
         "X-Requested-With": "XMLHttpRequest",
         "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
     })
@@ -65,39 +82,43 @@ def post(params):
         return e.code, e.read().decode("utf-8", "replace")
 
 
-BLD = "dbms/MDC/STAT/standard/MDCSTAT11401"
-BASE = {"share": "1", "money": "1", "csvxls_isNo": "false", "locale": "ko_KR"}
-TRIES = [
-    ("장외수익률 · 오늘", {"bld": BLD, "trdDd": DD, **BASE}),
-    ("장외수익률 · 전 영업일", {"bld": BLD, "trdDd": PREV, **BASE}),
-    ("장외수익률 · 날짜 없이", {"bld": BLD, **BASE}),
-    ("상장채권 상세검색", {"bld": "dbms/MDC/STAT/standard/MDCSTAT10801",
-                    "bndTpCd": "", "isuCd": "", **BASE}),
-]
-for name, params in TRIES:
+# ── 2. 메뉴를 열고 나서 부른다
+for stat, bld in (("MDCSTAT114", "dbms/MDC/STAT/standard/MDCSTAT11401"),
+                  ("MDCSTAT108", "dbms/MDC/STAT/standard/MDCSTAT10801")):
     say("=" * 72)
-    say(f"{name}")
-    say(f"  보낸 값: {params}")
-    code, raw = post(params)
-    say(f"  [{code}] {len(raw)}바이트")
-    if code != 200:
-        say(f"  {raw[:400]}")
-        continue
-    try:
-        data = json.loads(raw)
-    except ValueError:
-        say(f"  JSON 아님 — {raw[:300]}")
-        continue
-    hit = False
-    for k, v in data.items():
-        if isinstance(v, list) and v:
-            say(f"  ✅ {k} 에 {len(v)}줄")
-            say(f"     칸 이름: {list(v[0])}")
-            for row in v[:5]:
-                say("     " + json.dumps(row, ensure_ascii=False)[:300])
-            hit = True
-            break
-    if not hit:
-        say(f"  빈손 — 열쇠 {list(data)[:8]} · {raw[:300]}")
+    menu = want.get(stat)
+    say(f"{stat}  bld={bld}  menuId={menu or '(없음)'}")
+    ref = HOME
+    if menu:
+        loader = f"{BASE}/contents/MDC/MDI/mdiLoader/index.cmd?menuId={menu}"
+        try:
+            with opener.open(loader, timeout=30) as r:
+                say(f"  메뉴 열기 [{r.status}] {len(r.read())}바이트")
+            ref = loader
+        except Exception as exc:  # noqa: BLE001
+            say(f"  메뉴 열기 실패 {type(exc).__name__}: {str(exc)[:100]}")
+
+    for label, extra in (("오늘", {"trdDd": DD}),
+                         ("전 영업일", {"trdDd": PREV})):
+        params = {"bld": bld, "share": "1", "money": "1",
+                  "csvxls_isNo": "false", "locale": "ko_KR", **extra}
+        code, raw = post(params, ref)
+        say(f"  [{code}] {label} — {len(raw)}바이트")
+        if code != 200:
+            say(f"     {raw[:200]}")
+            continue
+        try:
+            data = json.loads(raw)
+        except ValueError:
+            say(f"     JSON 아님 {raw[:200]}")
+            continue
+        for k, v in data.items():
+            if isinstance(v, list) and v:
+                say(f"     ✅ {k} 에 {len(v)}줄 · 칸 {list(v[0])}")
+                for row in v[:5]:
+                    say("        " + json.dumps(row, ensure_ascii=False)[:300])
+                break
+        else:
+            say(f"     빈손 — {list(data)[:6]} {raw[:200]}")
 
 say("# 끝")
