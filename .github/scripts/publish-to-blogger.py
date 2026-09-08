@@ -32,7 +32,7 @@ STATE_PATH = ROOT / "data" / "blogger-published.json"
 
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 API_BASE = "https://www.googleapis.com/blogger/v3"
-DEFAULT_BLOG_URL = "https://worldtraveler111.blogspot.com"
+TARGETS_PATH = ROOT / "data" / "blog-targets.json"
 TIMEOUT = 30
 
 
@@ -74,6 +74,16 @@ def parse_post(path):
 
 
 SESSION_PATH = ROOT / ".publish-session" / "blogger.json"
+
+
+def _target(key):
+    """data/blog-targets.json 에 적어 둔 주소. 없으면 빈 문자열."""
+    if not TARGETS_PATH.exists():
+        return ""
+    try:
+        return str(json.loads(TARGETS_PATH.read_text(encoding="utf-8")).get(key, "")).strip()
+    except json.JSONDecodeError:
+        return ""
 
 
 def load_local_session():
@@ -137,7 +147,10 @@ def resolve_blog_id(session):
     if blog_id:
         return blog_id
 
-    blog_url = os.environ.get("BLOGGER_BLOG_URL", "").strip() or DEFAULT_BLOG_URL
+    blog_url = os.environ.get("BLOGGER_BLOG_URL", "").strip() or _target("BLOGGER_BLOG_URL")
+    if not blog_url:
+        raise SystemExit("어느 블로그에 올릴지 알 수 없습니다. "
+                         "data/blog-targets.json 의 BLOGGER_BLOG_URL 을 채워 주세요.")
     resp = session.get(f"{API_BASE}/blogs/byurl", params={"url": blog_url}, timeout=TIMEOUT)
     if resp.status_code != 200:
         raise SystemExit(

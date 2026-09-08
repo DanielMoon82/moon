@@ -83,14 +83,16 @@
     <code>.publish-session/</code> 에 저장됩니다. 저장소에는 올라가지 않습니다.
   </div>
 
-  <h2>설정</h2>
+  <h2>어디에 올리나</h2>
   <div class="card">
-    <div class="row">
+    <div id="targets" class="meta" style="line-height:2;"></div>
+    <div class="row" style="margin-top:12px;">
       <div class="grow">
-        <div class="name">티스토리 블로그 주소</div>
-        <div class="meta">주소가 <code>mylog.tistory.com</code> 이면 <code>mylog</code> 만 적으세요.</div>
+        <div class="name" style="font-size:.9rem;">티스토리 블로그 주소만 여기서 바꿉니다</div>
+        <div class="meta">주소가 <code>worldtraveler1.tistory.com</code> 이면 <code>worldtraveler1</code> 만 적으세요.
+          나머지는 <code>data/blog-targets.json</code> 을 고치면 됩니다.</div>
       </div>
-      <input type="text" id="cfg-tistory" placeholder="mylog">
+      <input type="text" id="cfg-tistory" placeholder="worldtraveler1">
       <button onclick="saveConfig()">저장</button>
     </div>
   </div>
@@ -206,6 +208,13 @@ async function refresh() {
   renderChannels();
   renderPosts();
   renderJob();
+  const t = state.config;
+  document.getElementById('targets').innerHTML = [
+    ['홈페이지', 'danielmoon82.github.io/moon'],
+    ['네이버 블로그', t.NAVER_BLOG_ID ? 'blog.naver.com/' + esc(t.NAVER_BLOG_ID) : '로그인한 계정에서 자동으로 찾음'],
+    ['티스토리', t.TISTORY_BLOG_NAME ? esc(t.TISTORY_BLOG_NAME) + '.tistory.com' : '설정 필요'],
+    ['구글 블로거', esc(t.BLOGGER_BLOG_URL || '설정 필요').replace(/^https?:\/\//, '')],
+  ].map(([k, v]) => `<b style="color:var(--ink-2);">${k}</b> · ${v}`).join('<br>');
   if (!configTouched) {
     document.getElementById('cfg-tistory').value = state.config.TISTORY_BLOG_NAME || '';
   }

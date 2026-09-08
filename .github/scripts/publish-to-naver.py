@@ -63,6 +63,12 @@ def whoami(page):
     page.goto("https://blog.naver.com/", wait_until="domcontentloaded")
     if "nid.naver.com" in page.url or "nidlogin" in page.url:
         return None
+
+    # 적어 둔 아이디가 있으면 그걸 쓴다. 주소에서 긁는 건 없을 때만.
+    configured = env("NAVER_BLOG_ID", required=False)
+    if configured:
+        return configured
+
     # 로그인 상태면 내 블로그로 리다이렉트되면서 주소에 아이디가 붙는다.
     match = re.search(r"blog\.naver\.com/(?:PostList\.naver\?blogId=)?([A-Za-z0-9_-]+)",
                       page.url)
@@ -75,7 +81,7 @@ def whoami(page):
             return found.group(1)
     except Exception:
         pass
-    return env("NAVER_BLOG_ID", required=False) or None
+    return None
 
 
 def select_category(page, frame, name):

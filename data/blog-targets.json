@@ -1,0 +1,6 @@
+{
+  "_note": "발행 대상 주소. 로그인 정보가 아니라 주소일 뿐이라 저장소에 둡니다. 비밀값은 .publish-session/ 에 따로 있습니다.",
+  "NAVER_BLOG_ID": "kucoom7",
+  "TISTORY_BLOG_NAME": "worldtraveler1",
+  "BLOGGER_BLOG_URL": "https://worldtraveler111.blogspot.com"
+}

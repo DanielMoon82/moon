@@ -27,7 +27,7 @@ python3 tools/publisher/server.py
 | `.publish-session/naver.json` | 네이버 로그인 쿠키 |
 | `.publish-session/tistory.json` | 티스토리(카카오) 로그인 쿠키 |
 | `.publish-session/blogger.json` | 구글 OAuth 리프레시 토큰 |
-| `.publish-session/config.json` | 티스토리 블로그 주소 같은 설정 |
+| `.publish-session/config.json` | 기본 주소를 이 컴퓨터에서만 바꿀 때 |
 
 이 폴더는 `.gitignore` 에 들어 있다. 계정 그 자체나 마찬가지이므로
 **저장소에 올리면 안 된다.** 파일 권한도 600 으로 둔다.
@@ -41,11 +41,12 @@ python3 tools/publisher/server.py
 없다. `git push` 가 곧 발행이다.
 
 ### 네이버 블로그
-로그인 버튼만 누르면 된다. 블로그 아이디는 로그인한 계정에서 알아낸다.
+로그인 버튼만 누르면 된다. 블로그 아이디는 `data/blog-targets.json` 에
+`kucoom7` 로 적어 두었다. 비워 두면 로그인한 계정에서 알아낸다.
 
 ### 티스토리
-로그인 전에 **블로그 주소**를 설정 칸에 넣어야 한다.
-주소가 `mylog.tistory.com` 이면 `mylog` 만 적는다.
+로그인 버튼만 누르면 된다. 블로그 주소는 `data/blog-targets.json` 에
+`worldtraveler1` 로 적어 두었다. 블로그를 옮기면 그 파일만 고치면 된다.
 
 ### 구글 블로거
 쿠키가 아니라 OAuth 라서 준비물이 하나 더 있다.
@@ -71,6 +72,17 @@ blog-exports/아유타야/
 도입부는 채널마다 조금씩 다르게 쓴다. 같은 글이 네 군데에 똑같이 올라가면
 검색에서 서로를 깎아먹는다.
 
+발행 대상 주소는 `data/blog-targets.json` 에 있다. 로그인 정보가 아니라
+주소일 뿐이라 저장소에 둔다.
+
+```json
+{
+  "NAVER_BLOG_ID": "kucoom7",
+  "TISTORY_BLOG_NAME": "worldtraveler1",
+  "BLOGGER_BLOG_URL": "https://worldtraveler111.blogspot.com"
+}
+```
+
 `meta.json`:
 
 ```json
@@ -93,7 +105,7 @@ python3 tools/publisher/login.py tistory
 python3 tools/publisher/login.py blogger --client-id ... --client-secret ...
 
 ONLY_SLUG=아유타야 python3 .github/scripts/publish-to-naver.py
-ONLY_SLUG=아유타야 TISTORY_BLOG_NAME=mylog python3 .github/scripts/publish-to-tistory.py
+ONLY_SLUG=아유타야 python3 .github/scripts/publish-to-tistory.py
 ONLY_SLUG=ayutthaya python3 .github/scripts/publish-to-blogger.py
 ```
 

@@ -20,14 +20,32 @@ STATE_PATH = ROOT / "data" / "blog-published.json"
 DEBUG_DIR = ROOT / "publish-debug"
 # 브라우저로 직접 로그인해서 받아 둔 쿠키가 여기 쌓인다. 저장소에 올리지 않는다.
 SESSION_DIR = ROOT / ".publish-session"
+# 어느 블로그에 올리는지. 주소일 뿐이라 저장소에 둔다.
+TARGETS_PATH = ROOT / "data" / "blog-targets.json"
 
 NAV_TIMEOUT_MS = 45_000
 
 
+def targets():
+    """data/blog-targets.json 에 적어 둔 발행 대상 주소."""
+    if not TARGETS_PATH.exists():
+        return {}
+    try:
+        data = json.loads(TARGETS_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    return {k: str(v).strip() for k, v in data.items()
+            if not k.startswith("_") and isinstance(v, str)}
+
+
 def env(name, required=True):
-    value = os.environ.get(name, "").strip()
+    """환경변수 → 저장소에 적어 둔 기본값 순으로 찾는다.
+
+    블로그 주소 같은 건 매번 넣어 줄 이유가 없어서 기본값을 둔다.
+    비밀값은 여기 들어오지 않는다 — 그건 .publish-session/ 에만 있다."""
+    value = os.environ.get(name, "").strip() or targets().get(name, "")
     if required and not value:
-        sys.exit(f"missing required secret: {name}")
+        sys.exit(f"missing required setting: {name}")
     return value
 
 
@@ -186,5 +204,5 @@ def blocked_message(service):
         f"{service} 로그인 세션이 없거나 만료됐습니다. 대시보드를 열어 "
         f"'{service} 로그인' 버튼을 누르고 브라우저에서 직접 로그인해 주세요.\n"
         f"    python3 tools/publisher/server.py\n"
-        f"publish-debug/ 에 그 시점의 화면을 남겨 두었습니다."
+        f"(세션은 있는데 막힌 경우라면 publish-debug/ 에 그 시점 화면이 남아 있습니다.)"
     )

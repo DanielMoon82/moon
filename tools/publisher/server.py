@@ -23,7 +23,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 sys.path.insert(0, str(ROOT / ".github" / "scripts"))
 from blog_publish_common import (  # noqa: E402
-    SESSION_DIR, clear_session, has_session, session_path,
+    SESSION_DIR, clear_session, has_session, session_path, targets,
 )
 import login as login_mod  # noqa: E402
 
@@ -44,12 +44,14 @@ EXPORT_FILES = {"naver": "네이버블로그.txt", "tistory": "티스토리.html
 
 # ------------------------------------------------------------------ 설정
 def load_config():
+    """저장소에 적어 둔 기본 주소 위에, 이 컴퓨터에서 바꾼 값을 덮는다."""
+    cfg = dict(targets())
     if CONFIG_PATH.exists():
         try:
-            return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+            cfg.update(json.loads(CONFIG_PATH.read_text(encoding="utf-8")))
         except json.JSONDecodeError:
             pass
-    return {}
+    return cfg
 
 
 def save_config(cfg):
