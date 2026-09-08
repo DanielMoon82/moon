@@ -4,13 +4,13 @@
 네이버는 블로그 글쓰기 공개 API를 제공하지 않는다. 그래서 브라우저로
 로그인해 스마트에디터에 본문을 넣는 방식을 쓴다.
 
-필요한 secret:
-  NAVER_ID, NAVER_PW
+로그인은 이 스크립트가 하지 않는다. 네이버는 캡차·기기 등록·2단계 인증으로
+자동 로그인을 막기 때문에, 사람이 대시보드에서 한 번 직접 로그인하고
+그때 받은 쿠키를 .publish-session/naver.json 에 저장해 두는 방식을 쓴다.
 
-주의: 네이버 로그인은 캡차·기기 등록·2단계 인증으로 자동 로그인을 막는
-경우가 많다. 이 코드는 그걸 우회하지 않으므로, 막히면 실패로 끝나고
-publish-debug/ 에 스크린샷을 남긴다. 그 상태가 계속되면 blog-exports/ 의
-붙여넣기 파일을 쓰는 편이 확실하다.
+    python3 tools/publisher/server.py     # 대시보드에서 '네이버 로그인'
+
+쿠키가 없거나 만료됐으면 여기서 바로 멈춘다. 비밀번호를 다루지 않는다.
 """
 import re
 import sys
@@ -18,8 +18,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from blog_publish_common import (  # noqa: E402
-    EXPORT_DIR, blocked_message, dump_failure, env, load_state, mark_published,
-    new_context, parse_export_header, pending_slugs, save_state,
+    EXPORT_DIR, blocked_message, dump_failure, env, has_session, load_state,
+    mark_published, new_context, parse_export_header, pending_slugs,
+    save_session, save_state,
 )
 
 CHANNEL = "naver"
@@ -54,16 +55,27 @@ def read_export(slug):
     return meta, body
 
 
-def login(page, naver_id, naver_pw):
-    page.goto(LOGIN_URL, wait_until="domcontentloaded")
-    page.fill(ID_INPUT, naver_id)
-    page.fill(PW_INPUT, naver_pw)
-    page.click(LOGIN_BUTTON)
-    page.wait_for_load_state("networkidle")
+def whoami(page):
+    """저장된 쿠키로 로그인이 살아 있는지 보고, 살아 있으면 블로그 아이디를 준다.
 
-    if "nidlogin" in page.url or "deviceConfirm" in page.url:
-        dump_failure(page, "naver-login")
-        sys.exit(blocked_message("네이버"))
+    네이버는 로그인이 풀리면 어느 페이지를 열어도 nid.naver.com 으로 보낸다.
+    그걸 판정에 쓴다."""
+    page.goto("https://blog.naver.com/", wait_until="domcontentloaded")
+    if "nid.naver.com" in page.url or "nidlogin" in page.url:
+        return None
+    # 로그인 상태면 내 블로그로 리다이렉트되면서 주소에 아이디가 붙는다.
+    match = re.search(r"blog\.naver\.com/(?:PostList\.naver\?blogId=)?([A-Za-z0-9_-]+)",
+                      page.url)
+    if match and match.group(1) not in {"", "PostList.naver"}:
+        return match.group(1)
+    try:
+        href = page.locator("a[href*='blog.naver.com/']").first.get_attribute("href")
+        found = re.search(r"blog\.naver\.com/([A-Za-z0-9_-]+)", href or "")
+        if found:
+            return found.group(1)
+    except Exception:
+        pass
+    return env("NAVER_BLOG_ID", required=False) or None
 
 
 def select_category(page, frame, name):
@@ -115,9 +127,11 @@ def write_post(page, blog_id, meta, body):
 
 
 def main():
-    naver_id = env("NAVER_ID")
-    naver_pw = env("NAVER_PW")
     only = env("ONLY_SLUG", required=False)
+
+    if not has_session(CHANNEL):
+        print(blocked_message("네이버"), file=sys.stderr)
+        return 1
 
     slugs = pending_slugs(CHANNEL, EXPORT_FILE, only)
     if not slugs:
@@ -129,14 +143,18 @@ def main():
     state = load_state()
     failures = []
     with sync_playwright() as pw:
-        browser, context = new_context(pw)
+        browser, context = new_context(pw, channel=CHANNEL)
         page = context.new_page()
         try:
-            login(page, naver_id, naver_pw)
+            blog_id = whoami(page)
+            if not blog_id:
+                dump_failure(page, "naver-session")
+                print(blocked_message("네이버"), file=sys.stderr)
+                return 1
             for slug in slugs:
                 meta, body = read_export(slug)
                 try:
-                    url = write_post(page, naver_id, meta, body)
+                    url = write_post(page, blog_id, meta, body)
                     mark_published(state, CHANNEL, slug, url)
                     print(f"네이버 발행 완료: {slug} -> {url}")
                 except Exception as exc:
@@ -144,6 +162,11 @@ def main():
                     failures.append(f"{slug}: {exc}")
         finally:
             save_state(state)
+            # 발행하면서 갱신된 쿠키를 되돌려 놓는다. 안 하면 세션이 빨리 죽는다.
+            try:
+                save_session(CHANNEL, context.storage_state())
+            except Exception:
+                pass
             context.close()
             browser.close()
 

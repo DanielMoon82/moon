@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>발행 대시보드</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --paper:#EEF1F6; --surface:#FFFFFF; --surface-2:#F4F6FA;
+    --ink:#0F1729; --ink-2:#3D4A63; --ink-3:#6B7891;
+    --line:#D3DAE5; --accent:#A8512B; --ok:#1F7A45; --warn:#B4571C;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#0B1120; --surface:#121A2C; --surface-2:#182135;
+      --ink:#E9EEF7; --ink-2:#A9B5C9; --ink-3:#72809A;
+      --line:#26314A; --accent:#E08A5C; --ok:#4ED08A; --warn:#E8A33D;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font:15px/1.7 "Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    word-break:keep-all;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:32px 20px 80px;}
+  h1{font-size:1.5rem;letter-spacing:-.02em;margin:0 0 6px;}
+  .sub{color:var(--ink-3);font-size:.9rem;margin:0 0 28px;}
+  h2{font-size:1.05rem;margin:34px 0 12px;letter-spacing:-.01em;}
+  .card{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:8px;padding:16px 18px;margin-bottom:12px;
+  }
+  .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .grow{flex:1;min-width:180px;}
+  .name{font-weight:600;}
+  .meta{color:var(--ink-3);font-size:.82rem;}
+  .pill{
+    font-size:.74rem;padding:3px 9px;border-radius:999px;
+    border:1px solid var(--line);color:var(--ink-3);white-space:nowrap;
+  }
+  .pill.on{color:var(--ok);border-color:currentColor;}
+  .pill.off{color:var(--warn);border-color:currentColor;}
+  button{
+    font:inherit;font-size:.86rem;padding:7px 14px;border-radius:6px;
+    border:1px solid var(--line);background:var(--surface-2);color:var(--ink);
+    cursor:pointer;
+  }
+  button:hover{border-color:var(--accent);color:var(--accent);}
+  button.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+  button.primary:hover{filter:brightness(1.08);color:#fff;}
+  button:disabled{opacity:.45;cursor:not-allowed;}
+  input[type=text]{
+    font:inherit;font-size:.86rem;padding:7px 10px;border-radius:6px;
+    border:1px solid var(--line);background:var(--surface-2);color:var(--ink);
+    min-width:220px;
+  }
+  label.chk{display:inline-flex;align-items:center;gap:5px;font-size:.85rem;color:var(--ink-2);}
+  label.chk input{accent-color:var(--accent);}
+  .note{color:var(--warn);font-size:.82rem;margin-top:8px;}
+  .done{color:var(--ok);}
+  #log{
+    background:#0C1220;color:#CBD6E8;border-radius:8px;padding:14px 16px;
+    font:12.5px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;
+    white-space:pre-wrap;max-height:340px;overflow:auto;border:1px solid var(--line);
+  }
+  .hidden{display:none;}
+  .banner{
+    background:var(--surface-2);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:0 6px 6px 0;padding:12px 16px;font-size:.86rem;color:var(--ink-2);
+    margin-bottom:24px;line-height:1.8;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>발행 대시보드</h1>
+  <p class="sub">홈페이지 · 네이버 블로그 · 티스토리 · 구글 블로거 — 한 번에 올립니다.</p>
+
+  <div class="banner">
+    비밀번호는 저장하지 않습니다. <b>로그인</b> 버튼을 누르면 진짜 브라우저 창이 뜨고,
+    거기서 직접 로그인하면 그때 받은 세션만 이 컴퓨터의
+    <code>.publish-session/</code> 에 저장됩니다. 저장소에는 올라가지 않습니다.
+  </div>
+
+  <h2>설정</h2>
+  <div class="card">
+    <div class="row">
+      <div class="grow">
+        <div class="name">티스토리 블로그 주소</div>
+        <div class="meta">주소가 <code>mylog.tistory.com</code> 이면 <code>mylog</code> 만 적으세요.</div>
+      </div>
+      <input type="text" id="cfg-tistory" placeholder="mylog">
+      <button onclick="saveConfig()">저장</button>
+    </div>
+  </div>
+
+  <h2>로그인 상태</h2>
+  <div id="channels"></div>
+
+  <h2>글</h2>
+  <div id="posts"></div>
+
+  <h2>진행 상황</h2>
+  <div class="card" style="padding:14px 16px;">
+    <div class="row" style="margin-bottom:10px;">
+      <b id="job-label" class="grow">대기 중</b>
+      <span id="job-status" class="pill"></span>
+    </div>
+    <div id="log">아직 실행한 작업이 없습니다.</div>
+  </div>
+</div>
+
+<script>
+let state = null;
+let configTouched = false;
+
+async function api(path, body) {
+  const opt = body
+    ? {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)}
+    : {};
+  const res = await fetch(path, opt);
+  return res.json();
+}
+
+function esc(s){ return String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+function renderChannels() {
+  const busy = state.job.running;
+  document.getElementById('channels').innerHTML = state.channels.map(c => {
+    if (c.kind === 'git') {
+      return `<div class="card"><div class="row">
+        <div class="grow"><div class="name">${esc(c.label)}</div>
+        <div class="meta">깃허브 페이지. 따로 로그인할 것이 없습니다.</div></div>
+        <span class="pill on">항상 준비됨</span></div></div>`;
+    }
+    const pill = c.ready
+      ? `<span class="pill on">로그인됨${c.saved_at ? ' · ' + esc(c.saved_at) : ''}</span>`
+      : `<span class="pill off">로그인 필요</span>`;
+    const extra = c.id === 'blogger' && !c.ready ? `
+      <div class="row" style="margin-top:10px;">
+        <input type="text" id="bg-id" placeholder="클라이언트 ID">
+        <input type="text" id="bg-secret" placeholder="클라이언트 시크릿">
+        <input type="text" id="bg-url" placeholder="https://내블로그.blogspot.com">
+      </div>
+      <div class="meta" style="margin-top:6px;">구글 클라우드에서 <b>데스크톱 앱</b> 유형으로 만든 OAuth 클라이언트가 필요합니다.</div>` : '';
+    return `<div class="card">
+      <div class="row">
+        <div class="grow"><div class="name">${esc(c.label)}</div></div>
+        ${pill}
+        <button ${busy?'disabled':''} onclick="doLogin('${c.id}')">${c.ready?'다시 로그인':'로그인'}</button>
+        ${c.ready?`<button ${busy?'disabled':''} onclick="doLogout('${c.id}')">해제</button>`:''}
+      </div>${extra}
+    </div>`;
+  }).join('');
+}
+
+function renderPosts() {
+  const busy = state.job.running;
+  const ready = Object.fromEntries(state.channels.map(c => [c.id, c.ready]));
+  document.getElementById('posts').innerHTML = state.posts.map(p => {
+    const boxes = [
+      ['site', '홈페이지', true, false],
+      ['naver', '네이버', p.has.naver, p.published.naver],
+      ['tistory', '티스토리', p.has.tistory, p.published.tistory],
+      ['blogger', '블로거', p.has.blogger, p.published.blogger],
+    ].map(([id, label, exists, done]) => {
+      if (!exists) return `<span class="meta">${label} 원고 없음</span>`;
+      const blocked = !ready[id];
+      const title = blocked ? '로그인이 필요합니다' : (done ? '이미 올린 글입니다' : '');
+      return `<label class="chk" title="${title}">
+        <input type="checkbox" data-slug="${esc(p.slug)}" value="${id}"
+          ${(!done && !blocked) ? 'checked' : ''} ${blocked ? 'disabled' : ''}>
+        ${label}${done ? ' <span class="done">✓</span>' : ''}</label>`;
+    }).join('');
+    return `<div class="card">
+      <div class="row">
+        <div class="grow">
+          <div class="name">${esc(p.title)}</div>
+          <div class="meta">${esc(p.slug)}${p.date ? ' · ' + esc(p.date) : ''}</div>
+        </div>
+        <button class="primary" ${busy?'disabled':''} onclick="doPublish('${esc(p.slug)}')">발행</button>
+      </div>
+      <div class="row" style="margin-top:10px;gap:16px;">${boxes}</div>
+      ${p.note ? `<div class="note">⚠ ${esc(p.note)}</div>` : ''}
+    </div>`;
+  }).join('') || '<div class="card meta">blog-exports/ 에 원고가 없습니다.</div>';
+}
+
+function renderJob() {
+  const j = state.job;
+  document.getElementById('job-label').textContent = j.label || '대기 중';
+  const s = document.getElementById('job-status');
+  s.className = 'pill' + (j.running ? '' : (j.ok === true ? ' on' : (j.ok === false ? ' off' : '')));
+  s.textContent = j.running ? '실행 중' : (j.ok === true ? '완료' : (j.ok === false ? '실패' : ''));
+  const log = document.getElementById('log');
+  if (j.log && j.log.length) {
+    const atBottom = log.scrollTop + log.clientHeight >= log.scrollHeight - 30;
+    log.textContent = j.log.join('\n');
+    if (atBottom) log.scrollTop = log.scrollHeight;
+  }
+}
+
+async function refresh() {
+  state = await api('/api/state');
+  renderChannels();
+  renderPosts();
+  renderJob();
+  if (!configTouched) {
+    document.getElementById('cfg-tistory').value = state.config.TISTORY_BLOG_NAME || '';
+  }
+}
+
+async function saveConfig() {
+  const v = document.getElementById('cfg-tistory').value.trim();
+  await api('/api/config', {TISTORY_BLOG_NAME: v});
+  configTouched = false;
+  refresh();
+}
+document.getElementById('cfg-tistory').addEventListener('input', () => configTouched = true);
+
+async function doLogin(channel) {
+  const body = {channel};
+  if (channel === 'blogger') {
+    body.client_id = (document.getElementById('bg-id')||{}).value || '';
+    body.client_secret = (document.getElementById('bg-secret')||{}).value || '';
+    body.blog_url = (document.getElementById('bg-url')||{}).value || '';
+  }
+  const res = await api('/api/login', body);
+  if (res.error) alert(res.error);
+  refresh();
+}
+
+async function doLogout(channel) {
+  if (!confirm('저장된 로그인 세션을 지울까요?')) return;
+  await api('/api/logout', {channel});
+  refresh();
+}
+
+async function doPublish(slug) {
+  const picked = [...document.querySelectorAll(`input[data-slug="${slug}"]:checked`)]
+    .map(el => el.value);
+  if (!picked.length) { alert('올릴 곳을 하나 이상 골라 주세요.'); return; }
+  const res = await api('/api/publish', {slug, channels: picked});
+  if (res.error) alert(res.error);
+  refresh();
+}
+
+refresh();
+setInterval(refresh, 2000);
+</script>
+</body>
+</html>

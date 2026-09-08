@@ -25,11 +25,12 @@ jobs:
     # 스텝의 if: 에서 읽어야 해서 job 레벨에 둔다.
     # (스텝 안에 선언한 env 는 그 스텝의 if: 에서 보이지 않는다)
     env:
-      TISTORY_KAKAO_ID: ${{ secrets.TISTORY_KAKAO_ID }}
-      TISTORY_KAKAO_PW: ${{ secrets.TISTORY_KAKAO_PW }}
+      # 아이디·비밀번호는 쓰지 않는다. 대시보드에서 직접 로그인해 만든
+      # .publish-session/<채널>.json 을 통째로 secret 에 넣어 두면
+      # CI 에서도 같은 세션으로 올린다. 없으면 해당 채널만 건너뛴다.
+      TISTORY_SESSION_JSON: ${{ secrets.TISTORY_SESSION_JSON }}
       TISTORY_BLOG_NAME: ${{ vars.TISTORY_BLOG_NAME }}
-      NAVER_ID: ${{ secrets.NAVER_ID }}
-      NAVER_PW: ${{ secrets.NAVER_PW }}
+      NAVER_SESSION_JSON: ${{ secrets.NAVER_SESSION_JSON }}
       ONLY_SLUG: ${{ github.event.inputs.slug }}
     steps:
       - name: Checkout
@@ -45,19 +46,33 @@ jobs:
           pip install playwright
           playwright install chromium --with-deps
 
+      # 세션 파일을 복원한다. secret 이 없으면 파일도 안 생기고,
+      # 그러면 아래 스텝이 알아서 건너뛴다.
+      - name: Restore saved logins
+        run: |
+          mkdir -p .publish-session
+          if [ -n "$NAVER_SESSION_JSON" ]; then
+            printf '%s' "$NAVER_SESSION_JSON" > .publish-session/naver.json
+            echo "네이버 세션 복원됨"
+          fi
+          if [ -n "$TISTORY_SESSION_JSON" ]; then
+            printf '%s' "$TISTORY_SESSION_JSON" > .publish-session/tistory.json
+            echo "티스토리 세션 복원됨"
+          fi
+
       # 한쪽이 막혀도 다른 쪽은 올라가야 하므로 continue-on-error 로 둔다.
       # 마지막 단계에서 실패 여부를 모아 보고한다.
       - name: Publish to Tistory
         id: tistory
         # 비밀값이 없으면 건너뛴다. 설정하지 않은 채널 때문에 매번 빨간 실패가
         # 뜨면 진짜 고장을 알아채지 못한다.
-        if: env.TISTORY_KAKAO_ID != '' && env.TISTORY_KAKAO_PW != ''
+        if: env.TISTORY_SESSION_JSON != '' && env.TISTORY_BLOG_NAME != ''
         continue-on-error: true
         run: python3 .github/scripts/publish-to-tistory.py
 
       - name: Publish to Naver
         id: naver
-        if: env.NAVER_ID != '' && env.NAVER_PW != ''
+        if: env.NAVER_SESSION_JSON != ''
         continue-on-error: true
         run: python3 .github/scripts/publish-to-naver.py
 
@@ -71,6 +86,7 @@ jobs:
           retention-days: 7
 
       - name: Commit publish state
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -89,7 +105,10 @@ jobs:
           echo "네이버: ${{ steps.naver.outcome }}"
           if [ "${{ steps.tistory.outcome }}" = "skipped" ] && \
              [ "${{ steps.naver.outcome }}" = "skipped" ]; then
-            echo "::notice::티스토리·네이버 비밀값이 없어 건너뛰었습니다. blog-exports/ 파일을 복사해 직접 올리세요."
+            echo "::warning::저장된 로그인 세션이 없어 두 채널 모두 건너뛰었습니다."
+            echo "내 컴퓨터에서 'python3 tools/publisher/server.py' 를 띄워 로그인한 뒤,"
+            echo ".publish-session/naver.json / tistory.json 내용을"
+            echo "NAVER_SESSION_JSON / TISTORY_SESSION_JSON secret 에 넣으면 여기서도 올라갑니다."
             exit 0
           fi
           if [ "${{ steps.tistory.outcome }}" = "failure" ] || \

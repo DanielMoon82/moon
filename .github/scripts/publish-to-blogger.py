@@ -73,7 +73,29 @@ def parse_post(path):
     return meta, body.strip()
 
 
+SESSION_PATH = ROOT / ".publish-session" / "blogger.json"
+
+
+def load_local_session():
+    """대시보드에서 구글 로그인을 마치면 여기 토큰이 저장된다.
+
+    환경변수가 이미 있으면 그쪽을 우선한다. CI 에서는 secret 으로 들어오고,
+    내 컴퓨터에서는 이 파일로 들어온다. 코드는 한 벌만 둔다."""
+    if not SESSION_PATH.exists():
+        return
+    try:
+        data = json.loads(SESSION_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return
+    for key in ("BLOGGER_CLIENT_ID", "BLOGGER_CLIENT_SECRET",
+                "BLOGGER_REFRESH_TOKEN", "BLOGGER_BLOG_ID", "BLOGGER_BLOG_URL"):
+        value = str(data.get(key, "")).strip()
+        if value and not os.environ.get(key):
+            os.environ[key] = value
+
+
 def missing_credentials():
+    load_local_session()
     return [
         k for k in ("BLOGGER_CLIENT_ID", "BLOGGER_CLIENT_SECRET", "BLOGGER_REFRESH_TOKEN")
         if not os.environ.get(k)

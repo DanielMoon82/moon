@@ -2,11 +2,16 @@
 """blog-exports/<slug>/티스토리.html 을 티스토리에 발행한다.
 
 티스토리 Open API 는 종료되어 공개된 글쓰기 엔드포인트가 없다. 그래서
-브라우저로 로그인해 에디터에 본문을 넣는 방식을 쓴다. 티스토리 로그인은
-카카오계정을 거치므로 카카오 아이디·비밀번호가 필요하다.
+브라우저로 에디터를 몰아서 본문을 넣는다.
 
-필요한 secret:
-  TISTORY_KAKAO_ID, TISTORY_KAKAO_PW, TISTORY_BLOG_NAME
+로그인은 이 스크립트가 하지 않는다. 카카오 로그인은 자동 입력을 막기
+때문에, 사람이 대시보드에서 한 번 직접 로그인하고 그때 받은 쿠키를
+.publish-session/tistory.json 에 저장해 두는 방식을 쓴다.
+
+    python3 tools/publisher/server.py     # 대시보드에서 '티스토리 로그인'
+
+필요한 설정:
+  TISTORY_BLOG_NAME  (블로그 주소의 앞부분)
 
 화면 구조에 의존하는 코드다. 셀렉터가 안 맞으면 publish-debug/ 에 남는
 스크린샷과 HTML을 보고 아래 상수를 고치면 된다.
@@ -16,8 +21,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from blog_publish_common import (  # noqa: E402
-    EXPORT_DIR, blocked_message, dump_failure, env, load_state, mark_published,
-    new_context, parse_export_header, pending_slugs, save_state,
+    EXPORT_DIR, blocked_message, dump_failure, env, has_session, load_state,
+    mark_published, new_context, parse_export_header, pending_slugs,
+    save_session, save_state,
 )
 
 CHANNEL = "tistory"
@@ -51,20 +57,18 @@ def read_export(slug):
     return meta, body
 
 
-def login(page, kakao_id, kakao_pw):
-    page.goto(LOGIN_URL, wait_until="domcontentloaded")
-    page.click(KAKAO_BUTTON)
-    page.wait_for_load_state("domcontentloaded")
+def logged_in(page):
+    """저장된 쿠키로 로그인이 살아 있는지 본다.
 
-    page.fill(KAKAO_ID, kakao_id)
-    page.fill(KAKAO_PW, kakao_pw)
-    page.click(KAKAO_SUBMIT)
-    page.wait_for_load_state("networkidle")
-
-    # 로그인이 됐다면 카카오 도메인을 벗어나 있어야 한다.
-    if "accounts.kakao.com" in page.url or "/auth/login" in page.url:
-        dump_failure(page, "tistory-login")
-        sys.exit(blocked_message("티스토리(카카오)"))
+    티스토리는 로그인이 풀리면 관리 화면에서 로그인 페이지로 돌려보낸다."""
+    page.goto("https://www.tistory.com/", wait_until="domcontentloaded")
+    if "/auth/login" in page.url or "accounts.kakao.com" in page.url:
+        return False
+    try:
+        page.goto("https://www.tistory.com/manage", wait_until="domcontentloaded")
+    except Exception:
+        return False
+    return "/auth/login" not in page.url and "accounts.kakao.com" not in page.url
 
 
 def select_category(page, name):
@@ -115,9 +119,11 @@ def write_post(page, blog, meta, body):
 
 def main():
     blog = env("TISTORY_BLOG_NAME")
-    kakao_id = env("TISTORY_KAKAO_ID")
-    kakao_pw = env("TISTORY_KAKAO_PW")
     only = env("ONLY_SLUG", required=False)
+
+    if not has_session(CHANNEL):
+        print(blocked_message("티스토리"), file=sys.stderr)
+        return 1
 
     slugs = pending_slugs(CHANNEL, EXPORT_FILE, only)
     if not slugs:
@@ -129,10 +135,13 @@ def main():
     state = load_state()
     failures = []
     with sync_playwright() as pw:
-        browser, context = new_context(pw)
+        browser, context = new_context(pw, channel=CHANNEL)
         page = context.new_page()
         try:
-            login(page, kakao_id, kakao_pw)
+            if not logged_in(page):
+                dump_failure(page, "tistory-session")
+                print(blocked_message("티스토리"), file=sys.stderr)
+                return 1
             for slug in slugs:
                 meta, body = read_export(slug)
                 try:
@@ -144,6 +153,10 @@ def main():
                     failures.append(f"{slug}: {exc}")
         finally:
             save_state(state)
+            try:
+                save_session(CHANNEL, context.storage_state())
+            except Exception:
+                pass
             context.close()
             browser.close()
 

@@ -1,0 +1,443 @@
+<meta charset="utf-8">
+<title>아유타야 당일치기 — 방콕에서 버스로, 나무뿌리 속 불상까지</title>
+<meta name="description" content="2026년 3월 24일, 방콕에서 버스로 다녀온 아유타야 당일치기 기록. 왓 마하탓 나무뿌리 속 불상, 머리 없는 불상들, 해질녘 보트까지. 3월 말의 더위를 어떻게 견뎠는지도 적었습니다.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://danielmoon82.github.io/moon/posts/ayutthaya.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="아유타야 당일치기 — 방콕에서 버스로, 나무뿌리 속 불상까지">
+<meta property="og:description" content="3월 말의 아유타야는 그늘이 없습니다. 하루로 충분하지만, 더위는 각오해야 합니다.">
+<meta property="og:image" content="https://danielmoon82.github.io/moon/posts/images/ayutthaya-roots.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+  :root{
+    --paper:#E7EBF1;
+    --surface:#F4F6FA;
+    --surface-2:#DCE2EC;
+    --ink:#0F1729;
+    --ink-2:#3D4A63;
+    --ink-3:#6B7891;
+    --line:#C6CEDB;
+    --line-soft:#D6DCE6;
+    --accent:#A8512B;
+    --accent-bright:#BC5C31;
+    --accent-soft:rgba(168,81,43,.11);
+
+    --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
+    --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    --f-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+
+    --pad:clamp(20px,5vw,64px);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1120;
+      --surface:#121A2C;
+      --surface-2:#1A2439;
+      --ink:#E9EEF7;
+      --ink-2:#A9B5C9;
+      --ink-3:#72809A;
+      --line:#26314A;
+      --line-soft:#1D2739;
+      --accent:#E08A5C;
+      --accent-bright:#EC9E74;
+      --accent-soft:rgba(224,138,92,.13);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1120;
+    --surface:#121A2C;
+    --surface-2:#1A2439;
+    --ink:#E9EEF7;
+    --ink-2:#A9B5C9;
+    --ink-3:#72809A;
+    --line:#26314A;
+    --line-soft:#1D2739;
+    --accent:#E08A5C;
+    --accent-bright:#EC9E74;
+    --accent-soft:rgba(224,138,92,.13);
+  }
+
+  /* 글자 기준 크기. 홈과 같은 값. */
+  html{font-size:18px;}
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-weight:300;
+    font-size:1rem;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--accent-bright);outline-offset:3px;border-radius:2px;}
+  img{max-width:100%;height:auto;}
+
+  .wrap{max-width:720px;margin:0 auto;padding-inline:var(--pad);}
+
+  .nav{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;}
+  .brand{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1rem;letter-spacing:-.02em;
+    text-decoration:none;color:var(--ink);
+  }
+  .back{
+    font-family:var(--f-mono);
+    font-size:.72rem;letter-spacing:.06em;
+    color:var(--ink-3);text-decoration:none;
+  }
+  .back:hover{color:var(--accent);}
+
+  .article{padding-block:clamp(40px,7vw,72px) clamp(56px,9vw,96px);}
+  .eyebrow{
+    font-family:var(--f-mono);
+    font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 14px;
+  }
+  h1{
+    font-family:var(--f-display);
+    font-weight:800;font-size:clamp(1.55rem,4.2vw,2.25rem);
+    line-height:1.32;letter-spacing:-.03em;
+    margin:0 0 16px;
+    /* 한글은 기본 규칙으로 자르면 '당일치/기' 처럼 낱말이 쪼개진다. */
+    word-break:keep-all;
+  }
+  .lede{margin:0 0 10px;font-size:1rem;color:var(--ink-2);}
+  .byline{
+    font-family:var(--f-mono);font-size:.72rem;color:var(--ink-3);
+    padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:34px;
+  }
+
+  .hero{
+    width:100%;border-radius:4px;border:1px solid var(--line-soft);
+    margin-bottom:38px;display:block;
+  }
+
+  h2{
+    font-family:var(--f-display);
+    font-weight:600;font-size:1.3rem;letter-spacing:-.02em;
+    margin:46px 0 14px;
+  }
+  p{margin:0 0 18px;color:var(--ink-2);}
+  .article strong{color:var(--ink);font-weight:600;}
+
+  .spec{
+    list-style:none;margin:0 0 22px;padding:20px clamp(16px,3vw,24px);
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+  }
+  .spec li{
+    display:flex;gap:14px;padding:7px 0;
+    border-bottom:1px solid var(--line-soft);
+    font-size:.92rem;color:var(--ink-2);
+  }
+  .spec li:last-child{border-bottom:0;}
+  .spec b{
+    flex:0 0 88px;font-weight:500;color:var(--ink-3);
+    font-family:var(--f-mono);font-size:.74rem;letter-spacing:.04em;
+    padding-top:3px;text-transform:uppercase;
+  }
+
+  ul.bullets{margin:0 0 20px;padding-left:20px;color:var(--ink-2);}
+  ul.bullets li{margin-bottom:8px;}
+
+  figure{margin:32px 0;}
+  figure img{border-radius:4px;border:1px solid var(--line-soft);display:block;}
+  figcaption{
+    margin-top:10px;font-family:var(--f-mono);font-size:.7rem;
+    color:var(--ink-3);text-align:center;
+  }
+
+  /* 블로그 문체용. 짧은 줄바꿈이 많아 줄 간격을 조금 넓힌다. */
+  .article p{line-height:1.9;}
+  .info{
+    margin:0 0 22px;padding:20px clamp(16px,3vw,24px);
+    border:1px solid var(--line);border-radius:3px;background:var(--surface);
+    font-size:.92rem;line-height:2;color:var(--ink-2);
+  }
+  .info b{color:var(--ink);}
+  .tags{
+    margin-top:34px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:.82rem;color:var(--ink-3);line-height:2;word-break:keep-all;
+  }
+  .callout{
+    margin:30px 0;padding:18px clamp(16px,3vw,22px);
+    border-left:3px solid var(--accent);
+    background:var(--accent-soft);border-radius:0 3px 3px 0;
+  }
+  .callout p{margin:0;font-size:.9rem;color:var(--ink-2);}
+
+  .foot{
+    border-top:1px solid var(--line);background:var(--surface);
+    padding-block:32px 40px;margin-top:20px;
+  }
+  .foot p{margin:0;font-size:.8rem;color:var(--ink-3);}
+  .foot .sig{
+    font-family:var(--f-display);font-weight:600;font-size:1rem;
+    color:var(--ink);letter-spacing:-.02em;margin-bottom:4px;
+  }
+
+  /* 사진이 아직 파일로 들어오지 않은 자리. 깨진 이미지를 띄우는 대신
+     빈 칸이라는 걸 드러내 둔다. 사진이 도착하면 figure 로 바꾼다. */
+  .slot{
+    margin:32px 0;padding:28px 20px;
+    border:1px dashed var(--line);border-radius:4px;
+    background:var(--surface);text-align:center;
+  }
+  .slot b{
+    display:block;font-family:var(--f-mono);font-size:.68rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+    margin-bottom:8px;
+  }
+  .slot span{font-size:.86rem;color:var(--ink-3);line-height:1.7;}
+</style>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html">나의 투자 그리고 행복한 여행</a>
+    <a class="back" href="../index.html#trips">← 목록으로</a>
+  </div>
+</nav>
+
+<main class="wrap article">
+  <p class="eyebrow">Travel · Thailand</p>
+  <h1>아유타야 당일치기<br>방콕에서 버스로, 나무뿌리 속 불상까지</h1>
+  <p class="lede">유적에 그늘이 거의 없습니다. 3월 말의 아유타야에서 제일 먼저 느낀 게 그거였어요.</p>
+  <p class="byline">2026.03.24 · 태국 아유타야 · 방콕 출발 당일치기</p>
+
+  <div class="slot">
+    <b>photo 01</b>
+    <span>해질녘 배 위에서 본 강. 물 건너편에 흰 첨탑이 하나 서 있고,<br>해가 그 옆으로 내려앉는 중입니다.</span>
+  </div>
+
+  <p>방콕에서 아침에 출발해<br>
+  해가 떨어질 때 배 위에 있었어요.<br>
+  이동은 처음부터 끝까지 버스였고,<br>
+  마지막에 석양 보트가 붙어 있는 일정이었습니다.</p>
+
+  <p>하루로 되나 싶었는데<br>
+  되긴 됐어요.<br>
+  대신 <strong>더위는 각오하셔야 합니다.</strong></p>
+
+  <h2>📍 방문 정보 요약</h2>
+  <div class="info">
+    <b>지역</b> 태국 아유타야(Ayutthaya) — 방콕에서 북쪽으로 약 80km<br>
+    <b>방문일</b> 2026년 3월 24일<br>
+    <b>형태</b> 방콕 출발 당일치기 투어 · 이동은 전 구간 버스<br>
+    <b>포함</b> 유적 몇 곳 + 해질녘 보트<br>
+    <b>돌아본 곳</b> 왓 마하탓 · 종 모양 탑이 있는 사원 · 코끼리 타는 곳 · 강<br>
+    <b>날씨</b> 매우 더움. 유적에 그늘이 거의 없음
+  </div>
+
+  <p>요금은 적지 않았습니다.<br>
+  투어 값에 다 들어 있어서<br>
+  개별 입장료가 얼마였는지 제가 모릅니다.<br>
+  모르는 숫자를 지어 적을 수는 없어서요.</p>
+
+  <h2>🌳 나무가 삼킨 불상</h2>
+  <div class="slot">
+    <b>photo 02</b>
+    <span>보리수 뿌리 사이에 불상 머리가 끼어 있습니다.<br>돌은 붉게 삭았고 뿌리는 그 위를 덮듯 자랐습니다.</span>
+  </div>
+
+  <p>왓 마하탓(Wat Mahathat)에 있는<br>
+  그 유명한 나무뿌리 속 불두예요.<br>
+  사진으로만 보던 걸<br>
+  실제로 보니 생각보다 낮게 있었어요.</p>
+
+  <p>여기서 사진 찍을 때<br>
+  <strong>불상 머리보다 내 머리가 위로 올라가면 안 됩니다.</strong><br>
+  현지에서는 예의에 어긋나는 일이라<br>
+  다들 쭈그려 앉아서 찍어요.<br>
+  이건 규칙처럼 안내가 붙어 있습니다.</p>
+
+  <div class="slot">
+    <b>photo 03</b>
+    <span>벽돌로 쌓은 탑(프랑) 앞에 앉은 불상 하나.<br>양옆으로 부러진 기둥 밑동이 줄지어 남아 있습니다.</span>
+  </div>
+
+  <p>같은 사원 안쪽입니다.<br>
+  지붕은 없고 기둥 밑동만 남았어요.<br>
+  원래는 저 기둥들이 지붕을 받치고 있었고<br>
+  그 안이 실내였다는 뜻입니다.</p>
+
+  <h2>🗿 머리 없는 불상들</h2>
+  <div class="slot">
+    <b>photo 04</b>
+    <span>큰 탑 뒤로 해가 걸려 있고, 그 아래로 머리 없는 불상들이<br>가사만 두른 채 나란히 앉아 있습니다. 발치에 영어 표지판이 있습니다.</span>
+  </div>
+
+  <p>아유타야 유적에는<br>
+  머리 없는 불상이 정말 많아요.</p>
+
+  <p>왕조가 무너지면서 파괴된 것도 있고,<br>
+  이후에 사람들이 떼어 간 것도 있습니다.<br>
+  어느 쪽이 얼마나인지는<br>
+  제가 정확히 모릅니다.</p>
+
+  <p>발치에 있던 표지판에는<br>
+  <strong>DO NOT SIT ON OR CLIMB</strong>이라고<br>
+  적혀 있었어요.<br>
+  올라가 앉아서 사진 찍는 사람이<br>
+  그만큼 있다는 얘기겠죠.</p>
+
+  <div class="callout">
+    <p>유적이 낮고 계단처럼 생긴 데가 많아서 무심코 올라서게 됩니다. 여긴 아직도 예불을 드리는
+    <strong>종교 시설</strong>이에요. 올라타지 말라는 표지가 곳곳에 서 있으니 눈에 띄면 그냥 따르시는 게 좋습니다.</p>
+  </div>
+
+  <h2>🔔 종 모양 탑 두 기</h2>
+  <div class="slot">
+    <b>photo 05</b>
+    <span>종을 엎어 놓은 모양의 흰 탑 두 기.<br>그 사이에 주황색 가사를 두른 불상이 앉아 있습니다.</span>
+  </div>
+
+  <p>이쪽은 유적이라기보다<br>
+  아직 살아 있는 절에 가까웠어요.<br>
+  불상에 주황색 천이 새로 둘려 있고<br>
+  향 냄새가 났습니다.</p>
+
+  <p>사원 이름은 왓 야이차이몽콘으로<br>
+  <strong>추정</strong>합니다.<br>
+  투어 중에 이름을 따로 확인하지 않아서<br>
+  단정해서 적지 않겠습니다.</p>
+
+  <div class="slot">
+    <b>photo 06</b>
+    <span>탑 위에서 아래를 내려다본 장면.<br>흰 좌불 한 기와 잘 다듬은 정원수가 보입니다.</span>
+  </div>
+
+  <p>탑에 올라가는 계단이 있는 곳이었어요.<br>
+  계단이 좁고 가팔라서<br>
+  손잡이를 잡고 올라갑니다.<br>
+  내려다보니 아래 배치가 한눈에 들어왔어요.</p>
+
+  <div class="slot">
+    <b>photo 07</b>
+    <span>벽돌 기단 위에 누운 흰 와불.<br>발바닥이 이쪽을 향해 있습니다.</span>
+  </div>
+
+  <p>같은 경내에 있던 와불입니다.<br>
+  발바닥 쪽에서 보게 되는 구조인데,<br>
+  <strong>태국에서는 발을 남에게 향하는 걸 무례하게 봅니다.</strong><br>
+  불상 앞에 앉을 때 다리 뻗지 않는 것도 같은 이유예요.</p>
+
+  <div class="slot">
+    <b>photo 08</b>
+    <span>짙은 붉은색 나무를 깎아 만든 작은 사당.<br>주황색 메리골드 화환이 여러 개 걸려 있습니다.</span>
+  </div>
+
+  <p>메리골드 화환은<br>
+  태국에서 공양할 때 가장 흔히 쓰는 꽃이에요.<br>
+  절 앞에서 팔기도 합니다.</p>
+
+  <h2>🐘 코끼리는 타지 않았습니다</h2>
+  <div class="slot">
+    <b>photo 09</b>
+    <span>빨강·금색 안장을 얹은 코끼리들이 승차대 옆에 서 있습니다.<br>사람이 올라타도록 만든 계단식 단이 붙어 있습니다.</span>
+  </div>
+
+  <p>코스 중간에 코끼리 타는 곳이 있어요.<br>
+  <strong>저는 타지 않고 지나쳤습니다.</strong></p>
+
+  <p>타야 하는지 마는지는<br>
+  제가 정할 문제가 아니라고 생각합니다.<br>
+  다만 이 코스에 그게 있다는 것,<br>
+  그리고 안 타도 일정에 아무 문제가 없다는 것은<br>
+  미리 아시면 좋을 것 같아요.</p>
+
+  <h2>🌡️ 3월 말의 더위</h2>
+  <p>이번 여행에서 제일 크게 남은 게<br>
+  솔직히 유적이 아니라 더위였어요.</p>
+
+  <p>3월 말은 태국이 한 해 중<br>
+  가장 더워지는 구간으로 들어가는 때입니다.<br>
+  거기다 아유타야 유적은<br>
+  <strong>지붕이 없어요.</strong><br>
+  벽돌 바닥이 열을 받아서<br>
+  아래에서도 뜨거운 게 올라옵니다.</p>
+
+  <p>돌아다니는 시간 자체는 길지 않았는데도<br>
+  체력이 훅 빠졌습니다.</p>
+
+  <ul class="bullets">
+    <li><strong>💧 물은 계속</strong> — 한 병 들고 다니다가 비면 바로 다시 삽니다. 아껴 마실 이유가 없어요.</li>
+    <li><strong>🧢 모자나 양산</strong> — 그늘이 없어서 이게 냉방장치 역할을 합니다. 현지분들은 양산을 많이 씁니다.</li>
+    <li><strong>👕 어깨·무릎은 가리게</strong> — 사원이라 민소매나 짧은 하의는 제지당할 수 있어요. 더운데 가려야 하니까
+      <strong>얇고 긴 옷</strong>이 정답입니다. 반팔 티에 얇은 긴바지가 편했어요.</li>
+    <li><strong>👟 벗기 쉬운 신발</strong> — 법당 안에 들어갈 때 신발을 벗습니다. 끈 묶는 신발이면 그때마다 번거로워요.</li>
+    <li><strong>🕶️ 선글라스</strong> — 벽돌이 밝아서 반사가 셉니다.</li>
+  </ul>
+
+  <h2>🚌 버스 이동이라 편했던 점</h2>
+  <p>유적 사이 거리가 걸어 다닐 만한 거리가 아니에요.<br>
+  이번엔 전 구간을 버스로 옮겨 다녔는데,<br>
+  이 더위에 <strong>그게 컸습니다.</strong></p>
+
+  <p>내려서 보고, 다시 타서 에어컨 아래에서 식고,<br>
+  또 내려서 보고 — 이 리듬이 아니었으면<br>
+  중간에 지쳐서 못 봤을 것 같아요.</p>
+
+  <p>개별로 가시는 분들은<br>
+  현지에서 이동 수단을 어떻게 할지<br>
+  먼저 정하고 움직이시는 걸 권합니다.</p>
+
+  <h2>🌅 마지막은 배 위에서</h2>
+  <p>일정 끝에 해질녘 보트가 있었어요.<br>
+  하루 종일 뜨거운 데 있다가<br>
+  물 위로 나오니까 바람이 붑니다.<br>
+  이 순서로 짜인 게 잘 맞았어요.</p>
+
+  <p>배에서 본 건 유적이 아니라<br>
+  강가 마을이었습니다.<br>
+  흰 첨탑 하나가 물 건너편에 서 있었는데<br>
+  그게 어느 건물인지는 확인하지 못했어요.</p>
+
+  <h2>🧭 이 코스, 누구한테 맞을까</h2>
+  <ul class="bullets">
+    <li><strong>방콕 일정에 하루가 남는 분</strong> — 하루면 됩니다. 무리해서 이틀 뺄 필요 없어요.</li>
+    <li><strong>유적을 좋아하는 분</strong> — 벽돌 유적이 한 지역에 몰려 있어서 이동 대비 밀도가 높습니다.</li>
+    <li><strong>더위에 약한 분</strong> — 3월~5월은 다시 생각해 보셔도 됩니다. 같은 코스를 선선한 달에 가면
+      체감이 꽤 다를 거예요.</li>
+  </ul>
+
+  <h2>🌿 마무리하며</h2>
+  <p>제일 기억에 남는 건<br>
+  나무뿌리 속 불상 앞에서<br>
+  다들 쭈그려 앉아 있던 장면이에요.</p>
+
+  <p>사진 잘 찍으려고 앉은 게 아니라<br>
+  그게 여기 규칙이라서 앉은 건데,<br>
+  그러고 나니 다들 눈높이가 같아졌습니다.</p>
+
+  <p>더웠지만<br>
+  하루 내주기엔 아깝지 않았어요.</p>
+
+  <div class="callout">
+    <p><strong>예약이 필요하시면</strong> — 항공권은 [항공권 예약 링크], 방콕 숙소는 [숙소 예약 링크],
+    아유타야 당일 투어는 [현지 투어 예약 링크]에서 보실 수 있습니다.</p>
+  </div>
+
+  <p class="byline">2026년 3월 24일 하루 다녀온 기록입니다. 요금·운영시간처럼 바뀌는 정보와, 제가 확인하지
+  못한 사원 이름은 적지 않았습니다. 코끼리는 타지 않았고, 보트에서 본 첨탑 건물은 확인하지 못했습니다.
+  사진 속 모르는 분들의 얼굴은 가려서 올립니다.</p>
+
+  <p class="tags">#아유타야 #아유타야당일치기 #태국여행 #방콕근교 #방콕여행코스 #왓마하탓
+  #나무뿌리불상 #태국유적 #석양보트 #3월태국</p>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="sig">나의 투자 그리고 행복한 여행</p>
+    <p>여행 · 투자 · 생활·건강 · 뉴스를 한자리에 모아둡니다.</p>
+  </div>
+</footer>

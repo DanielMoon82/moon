@@ -18,6 +18,8 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 EXPORT_DIR = ROOT / "blog-exports"
 STATE_PATH = ROOT / "data" / "blog-published.json"
 DEBUG_DIR = ROOT / "publish-debug"
+# 브라우저로 직접 로그인해서 받아 둔 쿠키가 여기 쌓인다. 저장소에 올리지 않는다.
+SESSION_DIR = ROOT / ".publish-session"
 
 NAV_TIMEOUT_MS = 45_000
 
@@ -113,20 +115,76 @@ def dump_failure(page, label):
         print(f"could not save failure artifacts: {exc}", file=sys.stderr)
 
 
-def new_context(playwright):
-    browser = playwright.chromium.launch(headless=True, args=["--no-sandbox"])
-    context = browser.new_context(
+def session_path(channel):
+    return SESSION_DIR / f"{channel}.json"
+
+
+def has_session(channel):
+    """저장해 둔 로그인 쿠키가 있는지."""
+    path = session_path(channel)
+    if not path.exists():
+        return False
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return False
+    return bool(data.get("cookies") or data.get("origins"))
+
+
+def save_session(channel, storage_state):
+    SESSION_DIR.mkdir(parents=True, exist_ok=True)
+    path = session_path(channel)
+    path.write_text(
+        json.dumps(storage_state, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8")
+    # 쿠키 파일이다. 같은 계정으로 로그인한 것과 같으니 권한을 좁혀 둔다.
+    try:
+        path.chmod(0o600)
+    except OSError:
+        pass
+    return path
+
+
+def clear_session(channel):
+    path = session_path(channel)
+    if path.exists():
+        path.unlink()
+        return True
+    return False
+
+
+# 사람이 직접 로그인할 때 쓰는 값. 봇처럼 보이면 로그인 화면에서 막힌다.
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+
+
+def new_context(playwright, channel=None, headless=True):
+    """브라우저를 띄운다.
+
+    channel 을 주면 그 채널의 저장된 로그인 쿠키를 넣고 시작한다. 그래서
+    비밀번호를 코드에 두지 않고도 발행할 수 있다.
+    """
+    browser = playwright.chromium.launch(
+        headless=headless,
+        args=["--no-sandbox", "--disable-blink-features=AutomationControlled"],
+    )
+    kwargs = dict(
         locale="ko-KR",
         timezone_id="Asia/Seoul",
+        user_agent=UA,
         viewport={"width": 1440, "height": 960},
     )
+    if channel and has_session(channel):
+        kwargs["storage_state"] = str(session_path(channel))
+    context = browser.new_context(**kwargs)
     context.set_default_timeout(NAV_TIMEOUT_MS)
     return browser, context
 
 
 def blocked_message(service):
     return (
-        f"{service} 로그인에 실패했습니다. 캡차·기기 등록·2단계 인증 중 하나에 "
-        f"막혔을 가능성이 큽니다. publish-debug/ 의 스크린샷을 확인하세요. "
-        f"이 경로가 계속 막히면 blog-exports/ 의 붙여넣기 파일을 쓰는 편이 확실합니다."
+        f"{service} 로그인 세션이 없거나 만료됐습니다. 대시보드를 열어 "
+        f"'{service} 로그인' 버튼을 누르고 브라우저에서 직접 로그인해 주세요.\n"
+        f"    python3 tools/publisher/server.py\n"
+        f"publish-debug/ 에 그 시점의 화면을 남겨 두었습니다."
     )

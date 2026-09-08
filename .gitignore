@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 publish-debug/
+
+# 브라우저로 직접 로그인해서 받은 쿠키·토큰. 계정 그 자체나 마찬가지라 올리지 않는다.
+.publish-session/
