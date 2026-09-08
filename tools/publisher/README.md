@@ -57,6 +57,35 @@ python3 tools/publisher/server.py
 4. OAuth 동의 화면을 **프로덕션**으로 게시할 것 —
    '테스트' 상태면 토큰이 7일 만에 만료된다
 
+## 사진 넣기
+
+글에는 사진 자리가 먼저 잡혀 있다. 홈페이지 글은 `<div class="slot">`,
+나머지 세 채널은 `[사진 N]` 이다.
+
+글 카드의 **[사진 넣기]** 를 누르면 자리마다 캡션과 파일 선택 칸이 나온다.
+어느 사진을 넣는 자리인지 캡션으로 알 수 있다. 넣으면 바로 저장된다.
+
+저장할 때 이렇게 손본다.
+
+- **EXIF 를 통째로 떨군다** — 촬영 기기, 시각, GPS 좌표가 다 들어 있다.
+  남의 서버에 올라가는 사진에 남길 이유가 없다.
+- 방향값으로만 돌아가 있는 사진은 **화소를 실제로 돌린다.** 안 그러면
+  브라우저에 따라 누워서 나온다.
+- 가로 1800px 로 줄이고 JPEG 로 다시 굽는다.
+
+다 넣었으면 **[본문에 반영]** 을 누른다. 네 벌 본문의 자리 표시가 실제
+`<img>` 로 바뀐다. 티스토리·블로거는 홈페이지에 올라간 사진을 그대로
+가리키므로, **홈페이지를 먼저 발행해야** 사진이 보인다.
+
+`pip install pillow` 가 필요하다.
+
+### 네이버만 예외
+
+네이버 스마트에디터는 글자를 타이핑해서 넣는 구조라 사진을 코드로 끼워
+넣을 수 없다. 그래서 네이버 원고에는 어느 파일을 어디에 넣어야 하는지만
+적힌다 — `[사진 1 → posts/images/ayutthaya-01.jpg]`. 발행한 뒤 에디터에서
+그 자리에 직접 끌어다 넣으면 된다.
+
 ## 글은 어디에 두나
 
 `blog-exports/<슬러그>/` 안에 채널별 원고를 둔다.
@@ -103,6 +132,9 @@ blog-exports/아유타야/
 python3 tools/publisher/login.py naver
 python3 tools/publisher/login.py tistory
 python3 tools/publisher/login.py blogger --client-id ... --client-secret ...
+
+python3 tools/publisher/photos.py 아유타야            # 자리 목록 보기
+python3 tools/publisher/photos.py 아유타야 --apply    # 본문에 반영
 
 ONLY_SLUG=아유타야 python3 .github/scripts/publish-to-naver.py
 ONLY_SLUG=아유타야 python3 .github/scripts/publish-to-tistory.py

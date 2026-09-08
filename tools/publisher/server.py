@@ -10,6 +10,8 @@
 세션 파일은 저장소에 올라가지 않는다(.gitignore). 비밀번호는 어디에도
 저장하지 않는다.
 """
+import base64
+import binascii
 import json
 import os
 import subprocess
@@ -26,6 +28,7 @@ from blog_publish_common import (  # noqa: E402
     SESSION_DIR, clear_session, has_session, session_path, targets,
 )
 import login as login_mod  # noqa: E402
+import photos as photos_mod  # noqa: E402
 
 PORT = int(os.environ.get("PUBLISHER_PORT", "8765"))
 EXPORT_DIR = ROOT / "blog-exports"
@@ -266,6 +269,22 @@ class Handler(BaseHTTPRequestHandler):
             self._json(build_state())
         elif self.path == "/api/job":
             self._json(JOB.snapshot())
+        elif self.path.startswith("/api/photos"):
+            from urllib.parse import parse_qs, urlparse
+            slug = (parse_qs(urlparse(self.path).query).get("slug") or [""])[0]
+            self._json({"slots": photos_mod.slots(slug)})
+        elif self.path.startswith("/api/photo-file"):
+            from urllib.parse import parse_qs, urlparse
+            q = parse_qs(urlparse(self.path).query)
+            slug = (q.get("slug") or [""])[0]
+            try:
+                n = int((q.get("n") or ["0"])[0])
+            except ValueError:
+                return self._send(400, b"bad n", "text/plain")
+            path = photos_mod.image_path(slug, n)
+            if not path.exists():
+                return self._send(404, b"not found", "text/plain")
+            self._send(200, path.read_bytes(), "image/jpeg")
         elif self.path.startswith("/api/session-export"):
             # 깃허브 액션에서도 올리려면 이 값을 secret 에 넣어야 한다.
             # 127.0.0.1 에만 열려 있는 서버라 여기서만 꺼내 준다.
@@ -321,6 +340,29 @@ class Handler(BaseHTTPRequestHandler):
                     lambda log: login_mod.blogger_login(cid, sec, url, log))
             else:
                 return self._json({"error": f"모르는 채널: {channel}"}, 400)
+            return self._json({"started": started})
+
+        if self.path == "/api/photo":
+            slug = data.get("slug", "")
+            try:
+                n = int(data.get("n", 0))
+                raw = base64.b64decode(data.get("data", ""), validate=True)
+            except (ValueError, binascii.Error):
+                return self._json({"error": "사진을 읽지 못했습니다"}, 400)
+            if not slug or not n or not raw:
+                return self._json({"error": "글·자리 번호·사진이 모두 필요합니다"}, 400)
+            try:
+                path = photos_mod.save(slug, n, raw)
+            except Exception as exc:
+                return self._json({"error": str(exc)}, 400)
+            return self._json({"ok": True, "file": path.name})
+
+        if self.path == "/api/photos-apply":
+            slug = data.get("slug", "")
+            if not slug:
+                return self._json({"error": "글을 골라 주세요"}, 400)
+            started = JOB.start(f"{slug} 사진 반영",
+                                lambda log: photos_mod.apply(slug, log) >= 0)
             return self._json({"started": started})
 
         if self.path == "/api/publish":

@@ -186,6 +186,11 @@ function renderPosts() {
       </div>
       <div class="row" style="margin-top:10px;gap:16px;">${boxes}</div>
       ${p.note ? `<div class="note">⚠ ${esc(p.note)}</div>` : ''}
+      <div style="margin-top:12px;">
+        <button onclick="togglePhotos('${esc(p.slug)}')">사진 넣기</button>
+        <span class="meta" id="ph-count-${esc(p.slug)}"></span>
+      </div>
+      <div id="ph-${esc(p.slug)}" class="hidden" style="margin-top:12px;"></div>
     </div>`;
   }).join('') || '<div class="card meta">blog-exports/ 에 원고가 없습니다.</div>';
 }
@@ -209,6 +214,7 @@ async function refresh() {
   renderChannels();
   renderPosts();
   renderJob();
+  photosOpen.forEach(renderPhotos);
   const t = state.config;
   document.getElementById('targets').innerHTML = [
     ['홈페이지', 'danielmoon82.github.io/moon'],
@@ -228,6 +234,67 @@ async function saveConfig() {
   refresh();
 }
 document.getElementById('cfg-tistory').addEventListener('input', () => configTouched = true);
+
+// ── 사진 ─────────────────────────────────────────────
+// 사진은 본문에 자리가 먼저 잡혀 있다. 그 자리마다 파일을 하나씩 받는다.
+// 캡션을 그대로 보여 줘야 어느 사진을 넣는 자리인지 헷갈리지 않는다.
+const photosOpen = new Set();
+
+async function togglePhotos(slug) {
+  if (photosOpen.has(slug)) { photosOpen.delete(slug); }
+  else { photosOpen.add(slug); }
+  await renderPhotos(slug);
+}
+
+async function renderPhotos(slug) {
+  const box = document.getElementById('ph-' + slug);
+  if (!box) return;
+  if (!photosOpen.has(slug)) { box.className = 'hidden'; return; }
+  box.className = '';
+  const res = await fetch('/api/photos?slug=' + encodeURIComponent(slug)).then(r => r.json());
+  const slots = res.slots || [];
+  if (!slots.length) { box.innerHTML = '<div class="meta">이 글에는 사진 자리가 없습니다.</div>'; return; }
+  const ready = slots.filter(s => s.ready).length;
+  box.innerHTML = slots.map(s => `
+    <div class="row" style="padding:8px 0;border-top:1px solid var(--line);align-items:flex-start;">
+      <span class="pill ${s.ready ? 'on' : 'off'}" style="margin-top:4px;">${String(s.n).padStart(2,'0')}</span>
+      ${s.ready ? `<img src="/api/photo-file?slug=${encodeURIComponent(slug)}&n=${s.n}&t=${Date.now()}"
+           style="width:96px;height:64px;object-fit:cover;border-radius:4px;border:1px solid var(--line);">` : ''}
+      <div class="grow meta" style="line-height:1.6;">${esc(s.caption)}</div>
+      <input type="file" accept="image/*" style="max-width:210px;font-size:.78rem;"
+             onchange="uploadPhoto('${slug}', ${s.n}, this)">
+    </div>`).join('') + `
+    <div class="row" style="margin-top:14px;">
+      <div class="grow meta">사진 ${ready} / ${slots.length} 장 들어왔습니다.
+        반영을 누르면 네 벌 본문의 자리 표시가 실제 사진으로 바뀝니다.</div>
+      <button class="primary" onclick="applyPhotos('${slug}')">본문에 반영</button>
+    </div>`;
+  const count = document.getElementById('ph-count-' + slug);
+  if (count) count.textContent = `${ready} / ${slots.length}`;
+}
+
+async function uploadPhoto(slug, n, input) {
+  const file = input.files && input.files[0];
+  if (!file) return;
+  const buf = await file.arrayBuffer();
+  let bin = '';
+  const bytes = new Uint8Array(buf);
+  const CHUNK = 0x8000;   // 한 번에 다 넘기면 인자 개수 제한에 걸린다
+  for (let i = 0; i < bytes.length; i += CHUNK) {
+    bin += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+  }
+  input.disabled = true;
+  const res = await api('/api/photo', {slug, n, data: btoa(bin)});
+  input.disabled = false;
+  if (res.error) { alert(res.error); return; }
+  await renderPhotos(slug);
+}
+
+async function applyPhotos(slug) {
+  const res = await api('/api/photos-apply', {slug});
+  if (res.error) alert(res.error);
+  refresh();
+}
 
 async function copySession(channel) {
   const res = await fetch('/api/session-export?channel=' + channel).then(r => r.json());
