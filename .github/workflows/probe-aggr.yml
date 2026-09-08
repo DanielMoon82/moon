@@ -4,10 +4,11 @@ on: { workflow_dispatch: {} }
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 7
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
-      # 브라우저가 필요 없다. 그냥 POST 만 던진다.
+      - run: pip install playwright
+      - run: python3 -m playwright install --with-deps chromium
       - run: python3 -u .github/scripts/probe-aggr.py
