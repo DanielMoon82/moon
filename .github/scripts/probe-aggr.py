@@ -1,107 +1,108 @@
 #!/usr/bin/env python3
-"""임시 프로브: 한국거래소 채권 통계 화면에서 자료 API 를 캔다.
+"""임시 프로브: 거래소 채권 자료의 bld 이름을 찾는다.
 
-앞 프로브가 길을 열어 줬다. 거래소 정보데이터시스템에 이런 메뉴가 있다.
-  · 장외 채권수익률      MDCSTAT114   ← 처음 찾던 바로 그것
-  · 상장채권 상세검색    MDCSTAT108
-  · 상장채권 발행정보    MDCSTAT109
+앞 프로브가 API 모양을 확정해 줬다.
+  POST https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd
+  바디  bld=dbms/MDC/MAIN/MDCMAIN00101
+  답    {"output":[...]}
 
-증권사별 매물은 아니지만 거래소가 내는 공식 자료다. 증권사 여덟 곳이
-전부 앱 안에 가둬 둔 것과 달리 여기는 열려 있다.
+메뉴 이름과 jsp 이름이 이렇게 짝지어 있었다.
+  장외 채권수익률   MDCSTAT114.jsp
+  상장채권 상세검색 MDCSTAT108.jsp
+  상장채권 발행정보 MDCSTAT109.jsp
 
-거래소 화면은 조회 단추를 눌러야 값을 받아 온다(세이브로와 같다).
-그때 오가는 JSON 을 잡으면 그다음부턴 그걸 바로 부르면 된다.
+bld 는 보통 jsp 이름 뒤에 두 자리가 더 붙는다(MDCMAIN00101 처럼).
+브라우저가 필요 없으니 후보를 여럿 던져 보고 답이 오는 것을 고른다.
+
+결과는 로그로 낸다.
 """
 import json
-import re
-import traceback
+import urllib.parse
+import urllib.request
+from datetime import date, timedelta
 
-from playwright.sync_api import sync_playwright
+URL = "https://data.krx.co.kr/comm/bldAttendant/getJsonData.cmd"
+REF = ("https://data.krx.co.kr/contents/MDC/MDI/mdiLoader/index.cmd"
+       "?menuId=MDC0201")
 
-MAIN = "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd"
-MENUS = ["장외 채권수익률", "상장채권 상세검색"]
-UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-      "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
+# 직전 영업일을 쓴다. 오늘 자료는 장중엔 아직 없을 수 있다.
+d = date.today()
+while d.weekday() >= 5:
+    d -= timedelta(days=1)
+TODAY = d.strftime("%Y%m%d")
+PREV = (d - timedelta(days=1 if d.weekday() else 3)).strftime("%Y%m%d")
+
+BASE = {"share": "1", "money": "1", "csvxls_isNo": "false"}
+
+CANDIDATES = [
+    # 장외 채권수익률 — 처음 찾던 것
+    ("장외수익률 11401", {"bld": "dbms/MDC/STAT/standard/MDCSTAT11401",
+                        "trdDd": TODAY, **BASE}),
+    ("장외수익률 11401(전일)", {"bld": "dbms/MDC/STAT/standard/MDCSTAT11401",
+                            "trdDd": PREV, **BASE}),
+    ("장외수익률 11402", {"bld": "dbms/MDC/STAT/standard/MDCSTAT11402",
+                        "trdDd": TODAY, **BASE}),
+    ("장외수익률 114", {"bld": "dbms/MDC/STAT/standard/MDCSTAT114",
+                      "trdDd": TODAY, **BASE}),
+    # 상장채권 상세검색
+    ("상장채권 10801", {"bld": "dbms/MDC/STAT/standard/MDCSTAT10801",
+                      "trdDd": TODAY, **BASE}),
+    ("상장채권 10802", {"bld": "dbms/MDC/STAT/standard/MDCSTAT10802",
+                      "trdDd": TODAY, **BASE}),
+    # 상장채권 발행정보
+    ("발행정보 10901", {"bld": "dbms/MDC/STAT/standard/MDCSTAT10901",
+                      "trdDd": TODAY, **BASE}),
+    # 채권 전종목 시세 — 메뉴에 '채권 > 종목시세' 가 있었다
+    ("채권 전종목시세 11001", {"bld": "dbms/MDC/STAT/standard/MDCSTAT11001",
+                          "trdDd": TODAY, **BASE}),
+    ("채권 전종목시세 11101", {"bld": "dbms/MDC/STAT/standard/MDCSTAT11101",
+                          "trdDd": TODAY, **BASE}),
+    ("채권 전종목시세 11201", {"bld": "dbms/MDC/STAT/standard/MDCSTAT11201",
+                          "trdDd": TODAY, **BASE}),
+    ("채권 전종목시세 11301", {"bld": "dbms/MDC/STAT/standard/MDCSTAT11301",
+                          "trdDd": TODAY, **BASE}),
+]
 
 
-def say(s=""):
-    print(s, flush=True)
+def ask(params):
+    body = urllib.parse.urlencode(params).encode()
+    req = urllib.request.Request(URL, data=body, headers={
+        "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                       "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"),
+        "Referer": REF,
+        "X-Requested-With": "XMLHttpRequest",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    })
+    with urllib.request.urlopen(req, timeout=25) as r:
+        return r.read().decode("utf-8", "replace")
 
 
-with sync_playwright() as p:
-    br = p.chromium.launch()
-    ctx = br.new_context(locale="ko-KR", user_agent=UA,
-                         viewport={"width": 1400, "height": 1100})
-    pg = ctx.new_page()
-    pg.set_default_timeout(8000)
-    calls = []
-
-    def on_response(resp):
+print(f"# 기준일 {TODAY} · 그 전 영업일 {PREV}", flush=True)
+for name, params in CANDIDATES:
+    print("=" * 72, flush=True)
+    print(f"{name}  bld={params['bld']}", flush=True)
+    try:
+        raw = ask(params)
         try:
-            u = resp.url
-            # 거래소는 자료를 이 한 곳으로 다 받아 온다.
-            if "getJsonData" not in u and "MDCSTAT" not in u:
-                return
-            b = resp.text()
-            if len(b) < 60:
-                return
-            calls.append((u, resp.request.method,
-                          (resp.request.post_data or "")[:600], len(b), b[:1600]))
-        except Exception:  # noqa: BLE001
-            pass
+            data = json.loads(raw)
+        except ValueError:
+            print(f"  JSON 아님 — {raw[:300]}", flush=True)
+            continue
+        # 자료가 담긴 열쇠를 찾는다. 거래소는 output 말고 다른 이름도 쓴다.
+        rows = None
+        for k, v in data.items():
+            if isinstance(v, list) and v:
+                rows = (k, v)
+                break
+        if not rows:
+            print(f"  빈손 — 열쇠 {list(data)[:8]} · {raw[:250]}", flush=True)
+            continue
+        k, v = rows
+        print(f"  ✅ {k} 에 {len(v)}줄", flush=True)
+        print(f"     칸 이름: {list(v[0])}", flush=True)
+        for row in v[:4]:
+            print("     " + json.dumps(row, ensure_ascii=False)[:300], flush=True)
+    except Exception as exc:  # noqa: BLE001
+        print(f"  실패 {type(exc).__name__}: {str(exc)[:150]}", flush=True)
 
-    pg.on("response", on_response)
-
-    for menu in MENUS:
-        say("=" * 72)
-        say(f"메뉴: {menu}")
-        calls.clear()
-        try:
-            pg.goto(MAIN, wait_until="domcontentloaded", timeout=25000)
-            pg.wait_for_timeout(4000)
-            # 메뉴는 접혀 있을 수 있어 요소에 직접 클릭을 건다.
-            pg.get_by_text(menu, exact=True).first.evaluate("e => e.click()")
-            pg.wait_for_timeout(7000)
-            say(f"  도착 {pg.url[:150]}")
-
-            # 조회 단추를 찾아 누른다. 거래소는 이걸 눌러야 값이 온다.
-            pressed = ""
-            for sel in ["#jsSearchButton", "a.btn_hdr:has-text('조회')",
-                        "button:has-text('조회')", "a:has-text('조회')",
-                        "input[value='조회']"]:
-                try:
-                    pg.locator(sel).first.click(timeout=4000)
-                    pressed = sel
-                    break
-                except Exception:  # noqa: BLE001
-                    continue
-            say(f"  누른 단추: {pressed or '(못 찾음)'}")
-            pg.wait_for_timeout(9000)
-
-            body = pg.evaluate(
-                "() => (document.body&&document.body.innerText||'').replace(/\\s+/g,' ')")
-            say(f"  본문 {len(body)}자")
-            say(f"  {body[:900]}")
-            tabs = pg.evaluate(
-                """() => Array.from(document.querySelectorAll('table')).map(t =>
-                     Array.from(t.querySelectorAll('tr')).slice(0,8).map(r =>
-                       Array.from(r.querySelectorAll('th,td')).map(c =>
-                         (c.innerText||'').replace(/\\s+/g,' ').trim())
-                     ).filter(cs => cs.some(x => x)))""")
-            for i, t in enumerate([x for x in tabs if len(x) > 1][:3]):
-                say(f"  [표{i}]")
-                for r in t[:8]:
-                    say("    " + json.dumps(r, ensure_ascii=False)[:250])
-
-            say(f"  자료 요청 {len(calls)}건")
-            for u, m, post, n, head in calls[:6]:
-                say(f"    · {m} {u[:140]}  ({n}바이트)")
-                if post:
-                    say(f"      보낸 값: {post}")
-                say(f"      받은 값: {head[:1100]}")
-        except Exception:
-            say("  !! 실패 " + traceback.format_exc().strip().split("\n")[-1][:170])
-
-    br.close()
-
-say("# 끝")
+print("# 끝", flush=True)

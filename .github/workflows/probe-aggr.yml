@@ -1,13 +1,13 @@
 name: Probe aggregators (temp)
 on: { workflow_dispatch: {} }
+
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 9
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
-      - run: pip install playwright
-      - run: python3 -m playwright install --with-deps chromium
+      # 브라우저가 필요 없다. 그냥 POST 만 던진다.
       - run: python3 -u .github/scripts/probe-aggr.py
