@@ -1,112 +1,112 @@
 {
- "updated_at": "2026-09-08T17:36:41.439832+00:00",
+ "updated_at": "2026-09-08T20:22:32.488478+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "이재명 무명용사 참배",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EB%AC%B4%EB%AA%85%EC%9A%A9%EC%82%AC%EC%9D%98%20%EB%AC%98"
-    },
-    {
      "t": "국방부 호르무즈 조사단 파견",
      "u": "https://search.nate.com/search/all.html?q=%EA%B5%AD%EB%B0%A9%EB%B6%80%20%ED%98%B8%EB%A5%B4%EB%AC%B4%EC%A6%88%20%ED%8C%8C%EA%B2%AC"
     },
     {
-     "t": "김도영, 40호 홈런!",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EB%8F%84%EC%98%81%2040%ED%98%B8%20%ED%99%88%EB%9F%B0"
-    },
-    {
-     "t": "엘리제궁에서 만난 한-프랑스 정상",
-     "u": "https://search.nate.com/search/all.html?q=%EC%97%98%EB%A6%AC%EC%A0%9C%EA%B6%81%EC%97%90%EC%84%9C%20%EB%A7%8C%EB%82%9C%20%ED%95%9C-%ED%94%84%EB%9E%91%EC%8A%A4%20%EC%A0%95%EC%83%81"
-    },
-    {
-     "t": "백진희 예비신랑 평범한 직장인",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B0%B1%EC%A7%84%ED%9D%AC%20%ED%8F%89%EB%B2%94%ED%95%9C%20%EC%A7%81%EC%9E%A5%EC%9D%B8"
-    },
-    {
-     "t": "김혜경·마크롱 여사 한지 선물",
+     "t": "김혜경·마크롱 여사 한지 행사",
      "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%ED%98%9C%EA%B2%BD%20%EB%A7%88%ED%81%AC%EB%A1%B1%20%EC%97%AC%EC%82%AC"
     },
     {
-     "t": "한성숙 총리, 이시바 면담",
-     "u": "https://search.nate.com/search/all.html?q=%ED%95%9C%EC%84%B1%EC%88%99%20%EC%B4%9D%EB%A6%AC%20%EB%A9%B4%EB%8B%B4"
+     "t": "삼성 KIA 3연승",
+     "u": "https://search.nate.com/search/all.html?q=%EC%82%BC%EC%84%B1%20KIA%203%EC%97%B0%EC%8A%B9"
     },
     {
-     "t": "블랙핑크 지수, 미모와 사랑",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC%20%EC%A7%80%EC%88%98"
+     "t": "공동언론발표 마친 한-프랑스 정상",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B3%B5%EB%8F%99%EC%96%B8%EB%A1%A0%EB%B0%9C%ED%91%9C%20%EB%A7%88%EC%B9%9C%20%ED%95%9C-%ED%94%84%EB%9E%91%EC%8A%A4%20%EC%A0%95%EC%83%81"
     },
     {
-     "t": "양우현 적시타",
-     "u": "https://search.nate.com/search/all.html?q=1%ED%83%80%EC%A0%90%20%EC%A0%81%EC%8B%9C%ED%83%80"
+     "t": "1월 결혼 백진희 예비신랑 헨리",
+     "u": "https://search.nate.com/search/all.html?q=1%EC%9B%94%20%EA%B2%B0%ED%98%BC%20%EB%B0%B1%EC%A7%84%ED%9D%AC"
     },
     {
-     "t": "미스트랄 AI와 반도체 AI 개발",
-     "u": "https://search.nate.com/search/all.html?q=%EB%AF%B8%EC%8A%A4%ED%8A%B8%EB%9E%84%20%EB%B0%98%EB%8F%84%EC%B2%B4%20AI"
+     "t": "이란 항공사 제재",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EB%9E%80%20%EC%A0%9C%EC%9E%AC"
+    },
+    {
+     "t": "안세영 100주 1위 도전",
+     "u": "https://search.nate.com/search/all.html?q=100%EC%A3%BC%201%EC%9C%84%20%EB%8F%84%EC%A0%84"
+    },
+    {
+     "t": "수색 이어가는 한국해외긴급구호대",
+     "u": "https://search.nate.com/search/all.html?q=%EC%88%98%EC%83%89%20%EC%9D%B4%EC%96%B4%EA%B0%80%EB%8A%94%20%ED%95%9C%EA%B5%AD%ED%95%B4%EC%99%B8%EA%B8%B4%EA%B8%89%EA%B5%AC%ED%98%B8%EB%8C%80"
+    },
+    {
+     "t": "안전공업 대표 등 6명 영장 기각",
+     "u": "https://search.nate.com/search/all.html?q=%EC%95%88%EC%A0%84%EA%B3%B5%EC%97%85%20%EB%8C%80%ED%91%9C%20%EB%93%B1%206%EB%AA%85"
+    },
+    {
+     "t": "300회 이상 가면 90% 부담",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B0%80%EB%A9%B4%20%EB%B3%B8%EC%9D%B8%EB%B6%80%EB%8B%B4%2090%25"
     }
    ],
-   "updated_at": "2026-09-08T17:36:41.439832+00:00"
+   "updated_at": "2026-09-08T20:22:32.488478+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "이금희 작사·이선희 작곡·아이키 안무···세계 30만 학생이 부를 한글노래",
-     "u": "https://n.news.naver.com/article/032/0003469134?ntype=RANKING"
+     "t": "유흥주점 운영하다 사업가로…김승원 '후배' 양 씨 누구",
+     "u": "https://n.news.naver.com/article/055/0001386778?ntype=RANKING"
     },
     {
-     "t": "“나이키 말고 호카 주세요”···왕좌 뺏긴 굴욕의 나이키, 옛 영광 고집하다 놓친 것들 [이윤정 기자의 소소월드]",
-     "u": "https://n.news.naver.com/article/032/0003469064?ntype=RANKING"
+     "t": "빠지면 목숨 잃을 수도…\"탈출 불가, '도와달라' 묻힌다\"",
+     "u": "https://n.news.naver.com/article/055/0001386792?ntype=RANKING"
     },
     {
-     "t": "[단독]이러려고 한국 왔나···4년여간 주한외교단 차량 교통법규 위반 ‘총 4117건’ 최다 위반 국가는?",
-     "u": "https://n.news.naver.com/article/032/0003469170?ntype=RANKING"
+     "t": "[단독] 오리걸음 엽기 채용에…한국 왔더니 \"인신매매\"",
+     "u": "https://n.news.naver.com/article/055/0001386790?ntype=RANKING"
     },
     {
-     "t": "‘월세 70만원’ 지원금 챙기려 꼼수?···삼성전자, 일부 직원 조사 ‘발칵’",
-     "u": "https://n.news.naver.com/article/032/0003469189?ntype=RANKING"
+     "t": "딱 걸린 '월세 꼼수'…\"죽고 싶다\" \"무섭다\" 삼전 발칵",
+     "u": "https://n.news.naver.com/article/055/0001386702?ntype=RANKING"
     },
     {
-     "t": "공부 잘하는 한국도 피하지 못했다···전 세계 ‘읽는 힘’ 흔들",
-     "u": "https://n.news.naver.com/article/032/0003469163?ntype=RANKING"
+     "t": "냉동창고 없었는데…시신 발견된 카페 사장 \"감금 목적\"",
+     "u": "https://n.news.naver.com/article/055/0001386787?ntype=RANKING"
     },
     {
-     "t": "“생수 페트병에 쌀·보리차 담아뒀는데”… 개봉 하루 만에 세균 4만 마리 증식 위험 [헬스&라이프]",
-     "u": "https://n.news.naver.com/article/022/0004157170?ntype=RANKING"
+     "t": "트럼프 잇단 경고에도…캐나다, 미국에 '50% 맞불 관세'",
+     "u": "https://n.news.naver.com/article/448/0000638167?ntype=RANKING"
     },
     {
-     "t": "[단독] “트럼프, 한국군을 총알받이로 내몰려 해”… 이란 지도부 핵심 인사 경고",
-     "u": "https://n.news.naver.com/article/022/0004157384?ntype=RANKING"
+     "t": "[단독] 대검, '김승원 기소의견' 꺾고 '기소유예' 주도…\"무죄면 후폭풍\"",
+     "u": "https://n.news.naver.com/article/448/0000638175?ntype=RANKING"
     },
     {
-     "t": "“매달 126만원 냈는데 190만원 내라고요?”…5년 전 ‘3% 영끌’의 역습 [숫자 뒤의 진실]",
-     "u": "https://n.news.naver.com/article/022/0004157214?ntype=RANKING"
+     "t": "당뇨 최대 418만·노인 임플란트 230만 지원…내년 건보료율 7.19% 동결",
+     "u": "https://n.news.naver.com/article/448/0000638189?ntype=RANKING"
     },
     {
-     "t": "“믿고 보냈는데”… ‘중증장애인 228회 폭행’ 발달센터 종사자에 징역 7년 구형",
-     "u": "https://n.news.naver.com/article/022/0004157425?ntype=RANKING"
+     "t": "[단독] 강신철 아들, 가족에게 7억 빌려 상가 매입…\"아파트 분양권 노린 투자\"",
+     "u": "https://n.news.naver.com/article/448/0000638181?ntype=RANKING"
     },
     {
-     "t": "“모래밭에 파묻고 소화기 분사”… 동아리 후배 2년간 학대한 고교 선배들 실형",
-     "u": "https://n.news.naver.com/article/022/0004157451?ntype=RANKING"
+     "t": "\"무슨 성형 받았는지까지\"…'강남언니' 이용자 22만명 민감정보 유출",
+     "u": "https://n.news.naver.com/article/448/0000638188?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-09-08T17:36:41.439832+00:00"
+   "updated_at": "2026-09-08T20:22:32.488478+00:00"
   },
   "zum": {
    "name": "줌",
    "keywords": [
     {
-     "t": "외래진료 본인부담 90%",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%99%B8%EB%9E%98%EC%A7%84%EB%A3%8C%20%EB%B3%B8%EC%9D%B8%EB%B6%80%EB%8B%B4%2090%25"
+     "t": "국방부 호르무즈 조사단",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B5%AD%EB%B0%A9%EB%B6%80%20%ED%98%B8%EB%A5%B4%EB%AC%B4%EC%A6%88%20%EC%A1%B0%EC%82%AC%EB%8B%A8"
     },
     {
      "t": "내년 건강보험료율 동결",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EB%82%B4%EB%85%84%20%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%A3%8C%EC%9C%A8%20%EB%8F%99%EA%B2%B0"
     },
     {
-     "t": "국방부 호르무즈 조사단",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B5%AD%EB%B0%A9%EB%B6%80%20%ED%98%B8%EB%A5%B4%EB%AC%B4%EC%A6%88%20%EC%A1%B0%EC%82%AC%EB%8B%A8"
+     "t": "외래진료 본인부담 90%",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%99%B8%EB%9E%98%EC%A7%84%EB%A3%8C%20%EB%B3%B8%EC%9D%B8%EB%B6%80%EB%8B%B4%2090%25"
     },
     {
      "t": "이천시 건강버스 우수사례",
@@ -129,7 +129,7 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%8F%AC%EC%B8%A0"
     }
    ],
-   "updated_at": "2026-09-08T17:36:41.439832+00:00"
+   "updated_at": "2026-09-08T20:22:32.488478+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -175,11 +175,43 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=461345&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-09-08T17:36:41.439832+00:00"
+   "updated_at": "2026-09-08T20:22:32.488478+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
+    {
+     "t": "real madrid vs inter",
+     "u": "https://www.google.com/search?q=real%20madrid%20vs%20inter"
+    },
+    {
+     "t": "공소기각",
+     "u": "https://www.google.com/search?q=%EA%B3%B5%EC%86%8C%EA%B8%B0%EA%B0%81"
+    },
+    {
+     "t": "레알 마드리드 대 인테르",
+     "u": "https://www.google.com/search?q=%EB%A0%88%EC%95%8C%20%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C%20%EB%8C%80%20%EC%9D%B8%ED%85%8C%EB%A5%B4"
+    },
+    {
+     "t": "포르투 대 맨 시티",
+     "u": "https://www.google.com/search?q=%ED%8F%AC%EB%A5%B4%ED%88%AC%20%EB%8C%80%20%EB%A7%A8%20%EC%8B%9C%ED%8B%B0"
+    },
+    {
+     "t": "sbs",
+     "u": "https://www.google.com/search?q=sbs"
+    },
+    {
+     "t": "club brugge vs aston villa",
+     "u": "https://www.google.com/search?q=club%20brugge%20vs%20aston%20villa"
+    },
+    {
+     "t": "챔스",
+     "u": "https://www.google.com/search?q=%EC%B1%94%EC%8A%A4"
+    },
+    {
+     "t": "인플루언서",
+     "u": "https://www.google.com/search?q=%EC%9D%B8%ED%94%8C%EB%A3%A8%EC%96%B8%EC%84%9C"
+    },
     {
      "t": "풍자",
      "u": "https://www.google.com/search?q=%ED%92%8D%EC%9E%90"
@@ -187,41 +219,9 @@
     {
      "t": "양구",
      "u": "https://www.google.com/search?q=%EC%96%91%EA%B5%AC"
-    },
-    {
-     "t": "메이드인코리아 시즌2",
-     "u": "https://www.google.com/search?q=%EB%A9%94%EC%9D%B4%EB%93%9C%EC%9D%B8%EC%BD%94%EB%A6%AC%EC%95%84%20%EC%8B%9C%EC%A6%8C2"
-    },
-    {
-     "t": "신병",
-     "u": "https://www.google.com/search?q=%EC%8B%A0%EB%B3%91"
-    },
-    {
-     "t": "한화에어로스페이스",
-     "u": "https://www.google.com/search?q=%ED%95%9C%ED%99%94%EC%97%90%EC%96%B4%EB%A1%9C%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4"
-    },
-    {
-     "t": "gta6",
-     "u": "https://www.google.com/search?q=gta6"
-    },
-    {
-     "t": "수시원서접수",
-     "u": "https://www.google.com/search?q=%EC%88%98%EC%8B%9C%EC%9B%90%EC%84%9C%EC%A0%91%EC%88%98"
-    },
-    {
-     "t": "고려대",
-     "u": "https://www.google.com/search?q=%EA%B3%A0%EB%A0%A4%EB%8C%80"
-    },
-    {
-     "t": "챔피언스리그",
-     "u": "https://www.google.com/search?q=%EC%B1%94%ED%94%BC%EC%96%B8%EC%8A%A4%EB%A6%AC%EA%B7%B8"
-    },
-    {
-     "t": "사회복지사",
-     "u": "https://www.google.com/search?q=%EC%82%AC%ED%9A%8C%EB%B3%B5%EC%A7%80%EC%82%AC"
     }
    ],
-   "updated_at": "2026-09-08T17:36:41.439832+00:00"
+   "updated_at": "2026-09-08T20:22:32.488478+00:00"
   }
  }
 }
