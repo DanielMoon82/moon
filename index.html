@@ -301,7 +301,116 @@
   .brief-value .up{color:var(--up);}
   .brief-value .down{color:var(--down);}
 
-  /* ---------- 카테고리 격자 ---------- */
+
+  /* ---------- 카테고리 궤도 (반시계) ----------
+     투명한 카드가 가운데를 돌고, 카드 안쪽은 반대로 돌려 글씨는 늘 바로 선다.
+     좁은 화면과 '모션 줄이기' 설정에서는 아래의 .cat-grid 로 대체된다. */
+  .orbit-wrap{display:block;}
+  .orbit{
+    --r:clamp(148px,30vw,232px);      /* 궤도 반지름 */
+    --cw:clamp(112px,22vw,150px);     /* 카드 너비 */
+    --ch:clamp(78px,15vw,100px);      /* 카드 높이 */
+    --spin:52s;
+    position:relative;width:100%;
+    max-width:calc(var(--r) * 2 + var(--cw) + 16px);
+    aspect-ratio:1;margin:8px auto 0;
+  }
+  /* 궤도선 — 아주 옅게, 장식용 */
+  .orbit::before{
+    content:"";position:absolute;left:50%;top:50%;
+    width:calc(var(--r) * 2);height:calc(var(--r) * 2);
+    margin:calc(var(--r) * -1) 0 0 calc(var(--r) * -1);
+    border:1px solid var(--line-soft);border-radius:50%;
+    opacity:.7;
+  }
+  /* 가운데 은은한 빛 */
+  .orbit::after{
+    content:"";position:absolute;left:50%;top:50%;
+    width:calc(var(--r) * 1.5);height:calc(var(--r) * 1.5);
+    margin:calc(var(--r) * -.75) 0 0 calc(var(--r) * -.75);
+    border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle,var(--accent-soft) 0%,transparent 68%);
+  }
+  .orbit-hub{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    text-align:center;width:min(46%,190px);
+  }
+  .orbit-hub .mark{
+    font-family:var(--f-display);font-weight:800;
+    font-size:clamp(.98rem,2.4vw,1.22rem);letter-spacing:-.03em;
+    line-height:1.35;color:var(--ink);margin:0;
+  }
+  .orbit-hub .sub{
+    font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent);margin:9px 0 0;
+  }
+  .orbit-hub .rule{
+    width:26px;height:1px;background:var(--line);margin:10px auto 0;
+  }
+  .orbit-ring{
+    position:absolute;inset:0;
+    animation:orbit-ccw var(--spin) linear infinite;
+  }
+  .orbit-card{
+    position:absolute;left:50%;top:50%;
+    width:var(--cw);height:var(--ch);
+    margin:calc(var(--ch) / -2) 0 0 calc(var(--cw) / -2);
+    transform:rotate(calc(var(--i) * 360deg / var(--n)))
+              translateY(calc(var(--r) * -1))
+              rotate(calc(var(--i) * -360deg / var(--n)));
+    text-decoration:none;color:inherit;
+  }
+  /* 카드 얼굴은 궤도와 반대로 돌아 글씨가 서 있게 한다 */
+  .orbit-face{
+    width:100%;height:100%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+    padding:8px 6px;box-sizing:border-box;
+    border:1px solid color-mix(in srgb,var(--line) 62%,transparent);
+    border-radius:13px;
+    background:color-mix(in srgb,var(--surface) 46%,transparent);
+    -webkit-backdrop-filter:blur(9px) saturate(150%);
+    backdrop-filter:blur(9px) saturate(150%);
+    box-shadow:0 1px 2px rgba(15,23,41,.05),0 14px 30px -22px rgba(15,23,41,.5);
+    animation:orbit-cw var(--spin) linear infinite;
+    transition:border-color .25s,background .25s,box-shadow .25s;
+  }
+  .orbit-face .ico{font-size:1.18rem;line-height:1;}
+  .orbit-face .nm{
+    font-family:var(--f-display);font-weight:600;
+    font-size:clamp(.82rem,1.9vw,.96rem);letter-spacing:-.02em;
+    color:var(--ink);white-space:nowrap;
+  }
+  .orbit-face .dc{
+    font-size:.63rem;color:var(--ink-3);letter-spacing:-.01em;
+    white-space:nowrap;
+  }
+  .orbit-card:hover .orbit-face,
+  .orbit-card:focus-visible .orbit-face{
+    border-color:var(--accent);
+    background:color-mix(in srgb,var(--surface) 82%,transparent);
+    box-shadow:0 1px 2px rgba(15,23,41,.06),0 18px 34px -20px rgba(176,106,21,.55);
+  }
+  /* 손을 올리거나 키보드로 짚으면 멈춘다 — 읽을 시간을 준다 */
+  .orbit:hover .orbit-ring,.orbit:hover .orbit-face,
+  .orbit:focus-within .orbit-ring,.orbit:focus-within .orbit-face{
+    animation-play-state:paused;
+  }
+  @keyframes orbit-ccw{ from{transform:rotate(0deg);} to{transform:rotate(-360deg);} }
+  @keyframes orbit-cw { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+  /* 궤도를 쓸 때는 격자를 숨긴다 */
+  .orbit-wrap + .cat-grid{display:none;}
+  /* 좁은 화면이나 모션을 줄인 환경에서는 격자로 돌아간다 */
+  @media (max-width:760px){
+    .orbit-wrap{display:none;}
+    .orbit-wrap + .cat-grid{display:grid;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .orbit-wrap{display:none;}
+    .orbit-wrap + .cat-grid{display:grid;}
+  }
+
+  /* ---------- 카테고리 격자 (좁은 화면 대체) ---------- */
   .cat-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -1320,9 +1429,11 @@
     <div class="nav-links">
       <a href="#travel">여행</a>
       <a href="#invest">투자</a>
-      <a href="#life">생활·건강</a>
-      <a href="#news">뉴스</a>
       <a href="#crypto">암호화폐</a>
+      <a href="#realestate">부동산</a>
+      <a href="#life">생활·건강</a>
+      <a href="#ent">연예</a>
+      <a href="#news">뉴스</a>
     </div>
     <search class="nav-search">
       <label class="sr-only" for="site-q">사이트 안에서 찾기</label>
@@ -1388,6 +1499,66 @@
   </section>
 
   <section class="section wrap" id="cats" aria-label="카테고리">
+    <div class="orbit-wrap" aria-hidden="true">
+      <div class="orbit" style="--n:7">
+        <div class="orbit-hub">
+          <p class="mark">나의 투자<br>그리고 행복한 여행</p>
+          <div class="rule"></div>
+          <p class="sub">Categories</p>
+        </div>
+        <div class="orbit-ring">
+        <a class="orbit-card" style="--i:0" href="#travel">
+          <span class="orbit-face">
+            <span class="ico" aria-hidden="true">🌏</span>
+            <span class="nm">여행</span>
+            <span class="dc">일정 · 기록 · 날씨</span>
+          </span>
+        </a>
+        <a class="orbit-card" style="--i:1" href="#invest">
+          <span class="orbit-face">
+            <span class="ico" aria-hidden="true">📈</span>
+            <span class="nm">투자</span>
+            <span class="dc">시황 · 채권 · 금리</span>
+          </span>
+        </a>
+        <a class="orbit-card" style="--i:2" href="#realestate">
+          <span class="orbit-face">
+            <span class="ico" aria-hidden="true">🏘️</span>
+            <span class="nm">부동산</span>
+            <span class="dc">청약 · 시세 · 정책</span>
+          </span>
+        </a>
+        <a class="orbit-card" style="--i:3" href="#crypto">
+          <span class="orbit-face">
+            <span class="ico" aria-hidden="true">🪙</span>
+            <span class="nm">암호화폐</span>
+            <span class="dc">비트코인 · 이더리움</span>
+          </span>
+        </a>
+        <a class="orbit-card" style="--i:4" href="#ent">
+          <span class="orbit-face">
+            <span class="ico" aria-hidden="true">🎬</span>
+            <span class="nm">연예</span>
+            <span class="dc">영화 · 리뷰</span>
+          </span>
+        </a>
+        <a class="orbit-card" style="--i:5" href="#life">
+          <span class="orbit-face">
+            <span class="ico" aria-hidden="true">🏠</span>
+            <span class="nm">생활·건강</span>
+            <span class="dc">건강 · 살림</span>
+          </span>
+        </a>
+        <a class="orbit-card" style="--i:6" href="#news">
+          <span class="orbit-face">
+            <span class="ico" aria-hidden="true">📰</span>
+            <span class="nm">뉴스</span>
+            <span class="dc">실시간 이슈</span>
+          </span>
+        </a>
+        </div>
+      </div>
+    </div>
     <div class="cat-grid">
       <a class="cat-card" href="#travel">
         <span class="cat-icon" aria-hidden="true">🌏</span>
@@ -1399,15 +1570,25 @@
         <h3>투자</h3>
         <ul><li>오늘의 증시 · 오늘의 채권</li><li>CMA 금리 · 채권 · 단기사채</li></ul>
       </a>
-      <a class="cat-card" href="#life">
-        <span class="cat-icon" aria-hidden="true">🏠</span>
-        <h3>생활·건강</h3>
-        <ul><li>영화·리뷰</li><li class="is-soon">건강정보 준비 중</li></ul>
+      <a class="cat-card" href="#realestate">
+        <span class="cat-icon" aria-hidden="true">🏘️</span>
+        <h3>부동산</h3>
+        <ul><li>청약 · 분양 · 시세</li><li>정책과 세금</li></ul>
       </a>
       <a class="cat-card" href="#crypto">
         <span class="cat-icon" aria-hidden="true">🪙</span>
         <h3>암호화폐</h3>
         <ul><li>비트코인 · 이더리움 · 리플</li><li>업비트 원화 시세</li></ul>
+      </a>
+      <a class="cat-card" href="#ent">
+        <span class="cat-icon" aria-hidden="true">🎬</span>
+        <h3>연예</h3>
+        <ul><li>영화·리뷰</li><li>보고 온 것들의 기록</li></ul>
+      </a>
+      <a class="cat-card" href="#life">
+        <span class="cat-icon" aria-hidden="true">🏠</span>
+        <h3>생활·건강</h3>
+        <ul><li>건강 정보</li><li>명절 · 살림 기록</li></ul>
       </a>
       <a class="cat-card" href="#news">
         <span class="cat-icon" aria-hidden="true">📰</span>
@@ -2033,10 +2214,55 @@
 
   </div>
 
+  <div class="cat-group" id="realestate">
+    <div class="wrap cat-band">
+      <h2 class="cat-band-title"><span aria-hidden="true">🏘️</span> 부동산</h2>
+      <p class="cat-band-desc">청약과 분양, 시세와 정책.</p>
+    </div>
+  <section class="section wrap" id="housing">
+    <div class="section-head">
+      <h2>청약 · 분양 · 시세</h2>
+      <p>분양 일정과 시세, 세금과 정책을 정리해 올릴 자리입니다.</p>
+    </div>
+    <ul class="checks"><li class="is-soon">준비 중입니다.</li></ul>
+  </section>  </div>
+
   <div class="cat-group" id="life">
     <div class="wrap cat-band">
       <h2 class="cat-band-title"><span aria-hidden="true">🏠</span> 생활·건강</h2>
-      <p class="cat-band-desc">보고 읽은 것들의 기록.</p>
+      <p class="cat-band-desc">몸과 살림에 관한 기록.</p>
+    </div>
+  <section class="section wrap" id="wellbeing">
+    <div class="section-head">
+      <h2>건강 · 살림</h2>
+      <p>약과 몸에 관한 것, 그리고 해마다 돌아오는 살림의 일들.</p>
+    </div>
+
+    <div class="review-grid">
+      <a class="review-card rise" href="./posts/glp1-muscle-2026-09-07.html">
+        <div class="review-body">
+          <span class="review-cat">Health</span>
+          <h3>위고비로 10kg 뺐는데 그중 4kg이 근육</h3>
+          <p>50대가 비만약을 쓰기 전 알아야 할 것. 빠진 체중의 20~40%는 지방이 아닙니다.</p>
+          <span class="review-go">읽어보기 →</span>
+        </div>
+      </a>
+
+      <a class="review-card rise" href="./posts/chuseok-charye-2026.html">
+        <div class="review-body">
+          <span class="review-cat">Life</span>
+          <h3>2026 추석 차례상 차리는 법</h3>
+          <p>5열 상차림과 성균관 간소화 표준안. 홍동백서·조율이시는 옛 문헌에 없습니다.</p>
+          <span class="review-go">읽어보기 →</span>
+        </div>
+      </a>
+    </div>
+  </section>  </div>
+
+  <div class="cat-group" id="ent">
+    <div class="wrap cat-band">
+      <h2 class="cat-band-title"><span aria-hidden="true">🎬</span> 연예</h2>
+      <p class="cat-band-desc">보고 온 것들의 기록.</p>
     </div>
   <section class="section wrap" id="reviews">
     <div class="section-head">
