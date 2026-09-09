@@ -307,9 +307,9 @@
      좁은 화면과 '모션 줄이기' 설정에서는 아래의 .cat-grid 로 대체된다. */
   .orbit-wrap{display:block;}
   .orbit{
-    --r:clamp(148px,30vw,232px);      /* 궤도 반지름 */
-    --cw:clamp(112px,22vw,150px);     /* 카드 너비 */
-    --ch:clamp(78px,15vw,100px);      /* 카드 높이 */
+    --r:clamp(160px,32vw,254px);      /* 궤도 반지름 */
+    --cw:clamp(134px,26vw,180px);     /* 카드 너비 */
+    --ch:clamp(94px,18vw,120px);      /* 카드 높이 */
     --spin:52s;
     position:relative;width:100%;
     max-width:calc(var(--r) * 2 + var(--cw) + 16px);
@@ -364,9 +364,9 @@
   .orbit-face{
     width:100%;height:100%;
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
-    padding:8px 6px;box-sizing:border-box;
+    padding:10px 8px;box-sizing:border-box;
     border:1px solid color-mix(in srgb,var(--line) 62%,transparent);
-    border-radius:13px;
+    border-radius:15px;
     background:color-mix(in srgb,var(--surface) 46%,transparent);
     -webkit-backdrop-filter:blur(9px) saturate(150%);
     backdrop-filter:blur(9px) saturate(150%);
@@ -374,14 +374,14 @@
     animation:orbit-cw var(--spin) linear infinite;
     transition:border-color .25s,background .25s,box-shadow .25s;
   }
-  .orbit-face .ico{font-size:1.18rem;line-height:1;}
+  .orbit-face .ico{font-size:1.4rem;line-height:1;}
   .orbit-face .nm{
     font-family:var(--f-display);font-weight:600;
-    font-size:clamp(.82rem,1.9vw,.96rem);letter-spacing:-.02em;
+    font-size:clamp(.96rem,2.2vw,1.14rem);letter-spacing:-.02em;
     color:var(--ink);white-space:nowrap;
   }
   .orbit-face .dc{
-    font-size:.63rem;color:var(--ink-3);letter-spacing:-.01em;
+    font-size:.74rem;color:var(--ink-3);letter-spacing:-.01em;
     white-space:nowrap;
   }
   .orbit-card:hover .orbit-face,
@@ -1456,11 +1456,6 @@
     <p class="eyebrow">Investing &amp; Travel journal · ICN base</p>
     <h1>나의 투자 그리고<br><em>행복한 여행</em></h1>
     <p class="hero-lede">장이 열리면 시황을 적고, 장이 닫히면 다음 여행을 고릅니다. 숫자와 풍경을 굳이 나누지 않고 같은 자리에 쌓아둔 개인 기록입니다.</p>
-    <div class="hero-meta">
-      <span class="chip">코스피·코스닥 <b>장중</b></span>
-      <span class="chip">시황 <b>매일</b> 갱신</span>
-      <span class="chip">여행용품 <b>고르기</b></span>
-    </div>
   </div>
 </header>
 
