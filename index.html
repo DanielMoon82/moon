@@ -17,22 +17,22 @@
 
 <style>
   :root{
-    --paper:#E7EBF1;
-    --surface:#F4F6FA;
-    --surface-2:#DCE2EC;
-    --ink:#0F1729;
-    --ink-2:#3D4A63;
-    --ink-3:#6B7891;
-    --line:#C6CEDB;
-    --line-soft:#D6DCE6;
+    --paper:#F2EEE6;
+    --surface:#FAF8F3;
+    --surface-2:#E7E1D5;
+    --ink:#191510;
+    --ink-2:#4A4235;
+    --ink-3:#7D7364;
+    --line:#D6CEBF;
+    --line-soft:#E4DDD0;
     --accent:#B06A15;
     --accent-bright:#C2761A;
     --accent-soft:rgba(176,106,21,.11);
     --jade:#2F6F62;
     --up:#E5484D;
     --down:#3B82F6;
-    --grid-dot:rgba(15,23,41,.13);
-    --shadow:0 1px 2px rgba(15,23,41,.05), 0 12px 28px -18px rgba(15,23,41,.35);
+    --grid-dot:rgba(41,33,23,.13);
+    --shadow:0 1px 2px rgba(41,33,23,.06), 0 12px 28px -18px rgba(41,33,23,.34);
 
     --f-display:"Hahmlet",'Nanum Myeongjo',"Apple SD Gothic Neo",serif;
     --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
@@ -370,7 +370,7 @@
     background:color-mix(in srgb,var(--surface) 46%,transparent);
     -webkit-backdrop-filter:blur(9px) saturate(150%);
     backdrop-filter:blur(9px) saturate(150%);
-    box-shadow:0 1px 2px rgba(15,23,41,.05),0 14px 30px -22px rgba(15,23,41,.5);
+    box-shadow:0 1px 2px rgba(41,33,23,.06),0 14px 30px -22px rgba(41,33,23,.46);
     animation:orbit-cw var(--spin) linear infinite;
     transition:border-color .25s,background .25s,box-shadow .25s;
   }
@@ -388,7 +388,7 @@
   .orbit-card:focus-visible .orbit-face{
     border-color:var(--accent);
     background:color-mix(in srgb,var(--surface) 82%,transparent);
-    box-shadow:0 1px 2px rgba(15,23,41,.06),0 18px 34px -20px rgba(176,106,21,.55);
+    box-shadow:0 1px 2px rgba(41,33,23,.07),0 18px 34px -20px rgba(176,106,21,.55);
   }
   /* 손을 올리거나 키보드로 짚으면 멈춘다 — 읽을 시간을 준다 */
   .orbit:hover .orbit-ring,.orbit:hover .orbit-face,
@@ -1604,13 +1604,6 @@
       <p>최근에 올린 글부터 보여줍니다. 조회수 집계는 아직 붙여두지 않았습니다.</p>
     </div>
     <ol class="pop-list">
-        <li>
-          <a href="./posts/jeonse-supply-2026-09-09.html">
-            <span class="pop-tag mono">부동산</span>
-            <span class="pop-title">9월 입주물량 6년 5개월 만에 최저</span>
-            <span class="pop-desc">전세는 없고 대출은 조여진 2026년 가을, 숫자로 정리했습니다.</span>
-          </a>
-        </li>
         <li>
           <a href="./posts/covered-call-etf-2026-09-09.html">
             <span class="pop-tag mono">투자</span>
