@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-09-10T17:20:20.974974+00:00",
+ "updated_at": "2026-09-10T20:08:20.794768+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "KB금융 챔피언십 1라운드 경기",
+     "t": "KB금융 챔피언십 경기",
      "u": "https://search.nate.com/search/all.html?q=KB%EA%B8%88%EC%9C%B5%20%EC%B1%94%ED%94%BC%EC%96%B8%EC%8B%AD%20%EA%B2%BD%EA%B8%B0"
     },
     {
-     "t": "승리, 특수폭행 피소",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B9%85%EB%B1%85%20%EC%8A%B9%EB%A6%AC%20%ED%8A%B9%EC%88%98%ED%8F%AD%ED%96%89"
+     "t": "ECB, 금리 0.25% 인상",
+     "u": "https://search.nate.com/search/all.html?q=ECB%20%EA%B8%88%EB%A6%AC%20%EC%9D%B8%EC%83%81"
+    },
+    {
+     "t": "크로아티아 천무 18대 수출",
+     "u": "https://search.nate.com/search/all.html?q=%ED%81%AC%EB%A1%9C%EC%95%84%ED%8B%B0%EC%95%84%EC%97%90%20%EC%B2%9C%EB%AC%B4%2018%EB%8C%80"
     },
     {
      "t": "이강철 감독 600승 달성",
      "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EA%B0%95%EC%B2%A0%20%EA%B0%90%EB%8F%85%20600%EC%8A%B9"
     },
     {
-     "t": "송미령 농식품부 장관",
-     "u": "https://search.nate.com/search/all.html?q=%EC%86%A1%EB%AF%B8%EB%A0%B9%20%EB%86%8D%EC%8B%9D%ED%92%88%EB%B6%80%20%EC%9E%A5%EA%B4%80"
-    },
-    {
-     "t": "ECB 두 번째 금리 인상",
-     "u": "https://search.nate.com/search/all.html?q=ECB%20%EA%B8%88%EB%A6%AC%20%EC%9D%B8%EC%83%81"
-    },
-    {
-     "t": "호르무즈 파병 논의",
-     "u": "https://search.nate.com/search/all.html?q=%ED%98%B8%EB%A5%B4%EB%AC%B4%EC%A6%88%20%ED%8C%8C%EB%B3%91"
-    },
-    {
-     "t": "크로아티아에 천무 18대 수출",
-     "u": "https://search.nate.com/search/all.html?q=%ED%81%AC%EB%A1%9C%EC%95%84%ED%8B%B0%EC%95%84%EC%97%90%20%EC%B2%9C%EB%AC%B4%2018%EB%8C%80"
+     "t": "사파리 남편 외도 증거",
+     "u": "https://search.nate.com/search/all.html?q=%EC%82%AC%ED%8C%8C%EB%A6%AC%20%EB%82%A8%ED%8E%B8%20%EC%99%B8%EB%8F%84"
     },
     {
      "t": "WTI 100달러 돌파",
      "u": "https://search.nate.com/search/all.html?q=%EB%B0%B0%EB%9F%B4%EB%8B%B9%20100%EB%8B%AC%EB%9F%AC%20%EB%8F%8C%ED%8C%8C"
     },
     {
-     "t": "한동훈 의원, 야당 의원 사찰 의혹",
-     "u": "https://search.nate.com/search/all.html?q=%ED%95%9C%EB%8F%99%ED%9B%88%20%EC%9D%98%EC%9B%90"
+     "t": "홍진경 뇌 검사 결과",
+     "u": "https://search.nate.com/search/all.html?q=%ED%99%8D%EC%A7%84%EA%B2%BD%20%EB%87%8C%20%EA%B2%80%EC%82%AC"
     },
     {
-     "t": "아시안게임 각오 선수들",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B0%81%EC%98%A4%20%EB%B0%9D%ED%9E%88%EB%8A%94%20%EC%84%A0%EC%88%98"
+     "t": "메이저 우승 기대해주세요",
+     "u": "https://search.nate.com/search/all.html?q=%EB%A9%94%EC%9D%B4%EC%A0%80%20%EC%9A%B0%EC%8A%B9%20%EA%B8%B0%EB%8C%80%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94"
+    },
+    {
+     "t": "남자 배구, 중국 4강 진출",
+     "u": "https://search.nate.com/search/all.html?q=%EC%A4%91%EA%B5%AD%204%EA%B0%95%20%EC%A7%84%EC%B6%9C"
+    },
+    {
+     "t": "칩 인을 노린다",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B9%A9%20%EC%9D%B8%EC%9D%84%20%EB%85%B8%EB%A6%B0%EB%8B%A4"
     }
    ],
-   "updated_at": "2026-09-10T17:20:20.974974+00:00"
+   "updated_at": "2026-09-10T20:08:20.794768+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "마라탕·짬뽕에 꼭 넣어먹었는데…'농약 17배' 이 식품 판매중단",
-     "u": "https://n.news.naver.com/article/008/0005412260?ntype=RANKING"
+     "t": "靑 \"용혜인, 우려 많이 전달돼 상황 주시…회견 하는 줄 몰랐다\"(종합)",
+     "u": "https://n.news.naver.com/article/001/0016303621?ntype=RANKING"
     },
     {
-     "t": "1인당 30만원 준다더니 추석 코앞에 '없던 일'…울진 민심 '부글부글'",
-     "u": "https://n.news.naver.com/article/008/0005412243?ntype=RANKING"
+     "t": "맘스터치, 에버랜드에 340석 규모 브랜드 최대 매장 개장",
+     "u": "https://n.news.naver.com/article/001/0016301777?ntype=RANKING"
     },
     {
-     "t": "제주 온 중국인, 면세점서 직원 휴대전화 슬쩍…붙잡히자 한 말",
-     "u": "https://n.news.naver.com/article/008/0005412264?ntype=RANKING"
+     "t": "그룹 빅뱅 출신 승리, 특수폭행 혐의로 고소당해…강남서 접수",
+     "u": "https://n.news.naver.com/article/001/0016303551?ntype=RANKING"
     },
     {
-     "t": "애플도 결국 '접었다'…삼성 \"우리 거 재탕 끝내면 알려줘\" 직격",
-     "u": "https://n.news.naver.com/article/008/0005412212?ntype=RANKING"
+     "t": "제넨셀 영장기각 판사 아들, 김승원 의원실 근무…金 \"특혜 아냐\"",
+     "u": "https://n.news.naver.com/article/001/0016303660?ntype=RANKING"
     },
     {
-     "t": "美국채 30년물 5.35% 돌파 '18년만 최고'…유가 100달러·물가 쇼크",
-     "u": "https://n.news.naver.com/article/008/0005412274?ntype=RANKING"
+     "t": "한화에어로, 크로아티아에 천무 18대 수출…6천400억원 규모(종합2보)",
+     "u": "https://n.news.naver.com/article/001/0016303684?ntype=RANKING"
     },
     {
-     "t": "“1회 보다 말았다” “12회는 너무 길다” 이런 사람 많다더니…중국 ‘공습’에 국내 OTT 초긴장",
-     "u": "https://n.news.naver.com/article/016/0002695712?ntype=RANKING"
+     "t": "빅뱅 출신 승리, 특수폭행 혐의로 고소 당해...경찰 조사",
+     "u": "https://n.news.naver.com/article/660/0000116957?ntype=RANKING"
     },
     {
-     "t": "시민단체 “김상욱 성매매 의혹” 수사 촉구…울산시장 “선동·억측”",
-     "u": "https://n.news.naver.com/article/016/0002695703?ntype=RANKING"
+     "t": "\"조직 결속하러 군대로?\"…순천시 병영 체험에 일부 공무원 '부글부글'",
+     "u": "https://n.news.naver.com/article/660/0000116947?ntype=RANKING"
     },
     {
-     "t": "‘아이들 볼까 무섭다’ 커피 주문에 하녀복 입고 무대서 춤추는 여성…경찰, 불법영업 2곳 단속 입건[세상&]",
-     "u": "https://n.news.naver.com/article/016/0002695675?ntype=RANKING"
+     "t": "떨어진 경찰 권총 집어든 강도범…순경 향해 '방아쇠'",
+     "u": "https://n.news.naver.com/article/660/0000116902?ntype=RANKING"
     },
     {
-     "t": "휴전 발표 2시간 전 ‘귀신같이’ 팔았다…이란戰 중 에너지주로 59억 벌어들인 트럼프",
-     "u": "https://n.news.naver.com/article/016/0002695144?ntype=RANKING"
+     "t": "'공사 끝나길 기다렸나'...한전, 불법하도급 감사 지연 논란",
+     "u": "https://n.news.naver.com/article/660/0000116960?ntype=RANKING"
     },
     {
-     "t": "“탈모약 먹었더니 가슴 나온다”…이창섭이 밝힌 뜻밖의 부작용",
-     "u": "https://n.news.naver.com/article/016/0002695707?ntype=RANKING"
+     "t": "총리실, '韓사찰' 주장에 \"지나치다 즉흥질의...엄중 경고\"",
+     "u": "https://n.news.naver.com/article/660/0000116972?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-09-10T17:20:20.974974+00:00"
+   "updated_at": "2026-09-10T20:08:20.794768+00:00"
   },
   "zum": {
    "name": "줌",
@@ -101,20 +101,20 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B5%AD%EC%A0%9C%EC%9C%A0%EA%B0%80%20100%EB%8B%AC%EB%9F%AC%20%EB%8F%8C%ED%8C%8C"
     },
     {
-     "t": "손흥민 LAFC 승리",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%86%90%ED%9D%A5%EB%AF%BC%20LAFC%20%EC%8A%B9%EB%A6%AC"
+     "t": "인플루엔자 무료 예방접종",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%9D%B8%ED%94%8C%EB%A3%A8%EC%97%94%EC%9E%90%20%EB%AC%B4%EB%A3%8C%20%EC%98%88%EB%B0%A9%EC%A0%91%EC%A2%85"
     },
     {
-     "t": "포항 로봇 파운드리",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%ED%8F%AC%ED%95%AD%20%EB%A1%9C%EB%B4%87%20%ED%8C%8C%EC%9A%B4%EB%93%9C%EB%A6%AC"
+     "t": "추미애 경기 국비",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%B6%94%EB%AF%B8%EC%95%A0%20%EA%B2%BD%EA%B8%B0%20%EA%B5%AD%EB%B9%84"
     },
     {
-     "t": "경남도 SMR 생산거점",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B2%BD%EB%82%A8%EB%8F%84%20SMR%20%EC%83%9D%EC%82%B0%EA%B1%B0%EC%A0%90"
+     "t": "한국 대미투자 합의 임박",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%ED%95%9C%EA%B5%AD%20%EB%8C%80%EB%AF%B8%ED%88%AC%EC%9E%90%20%ED%95%A9%EC%9D%98%20%EC%9E%84%EB%B0%95"
     },
     {
-     "t": "장윤정 모친 사기 징역",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%9E%A5%EC%9C%A4%EC%A0%95%20%EB%AA%A8%EC%B9%9C%20%EC%82%AC%EA%B8%B0%20%EC%A7%95%EC%97%AD"
+     "t": "트럼프 중간선거 5000달러",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%ED%8A%B8%EB%9F%BC%ED%94%84%20%EC%A4%91%EA%B0%84%EC%84%A0%EA%B1%B0%205000%EB%8B%AC%EB%9F%AC"
     },
     {
      "t": "종합",
@@ -129,7 +129,7 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%8F%AC%EC%B8%A0"
     }
    ],
-   "updated_at": "2026-09-10T17:20:20.974974+00:00"
+   "updated_at": "2026-09-10T20:08:20.794768+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -175,53 +175,53 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=461988&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-09-10T17:20:20.974974+00:00"
+   "updated_at": "2026-09-10T20:08:20.794768+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "ai",
-     "u": "https://www.google.com/search?q=ai"
+     "t": "ios27",
+     "u": "https://www.google.com/search?q=ios27"
     },
     {
-     "t": "먹방",
-     "u": "https://www.google.com/search?q=%EB%A8%B9%EB%B0%A9"
+     "t": "오세훈",
+     "u": "https://www.google.com/search?q=%EC%98%A4%EC%84%B8%ED%9B%88"
     },
     {
-     "t": "채무",
-     "u": "https://www.google.com/search?q=%EC%B1%84%EB%AC%B4"
+     "t": "스포티비",
+     "u": "https://www.google.com/search?q=%EC%8A%A4%ED%8F%AC%ED%8B%B0%EB%B9%84"
     },
     {
-     "t": "유",
-     "u": "https://www.google.com/search?q=%EC%9C%A0"
+     "t": "바이에른 대 보되/글림트",
+     "u": "https://www.google.com/search?q=%EB%B0%94%EC%9D%B4%EC%97%90%EB%A5%B8%20%EB%8C%80%20%EB%B3%B4%EB%90%98%2F%EA%B8%80%EB%A6%BC%ED%8A%B8"
     },
     {
-     "t": "google",
-     "u": "https://www.google.com/search?q=google"
+     "t": "skt",
+     "u": "https://www.google.com/search?q=skt"
     },
     {
-     "t": "구글",
-     "u": "https://www.google.com/search?q=%EA%B5%AC%EA%B8%80"
+     "t": "아스널 fc",
+     "u": "https://www.google.com/search?q=%EC%95%84%EC%8A%A4%EB%84%90%20fc"
     },
     {
-     "t": "유해진",
-     "u": "https://www.google.com/search?q=%EC%9C%A0%ED%95%B4%EC%A7%84"
+     "t": "챔스",
+     "u": "https://www.google.com/search?q=%EC%B1%94%EC%8A%A4"
     },
     {
-     "t": "히 샬리 송",
-     "u": "https://www.google.com/search?q=%ED%9E%88%20%EC%83%AC%EB%A6%AC%20%EC%86%A1"
+     "t": "숲",
+     "u": "https://www.google.com/search?q=%EC%88%B2"
     },
     {
-     "t": "웹툰",
-     "u": "https://www.google.com/search?q=%EC%9B%B9%ED%88%B0"
+     "t": "google usa",
+     "u": "https://www.google.com/search?q=google%20usa"
     },
     {
-     "t": "무신사",
-     "u": "https://www.google.com/search?q=%EB%AC%B4%EC%8B%A0%EC%82%AC"
+     "t": "한우랑 사과랑 축제",
+     "u": "https://www.google.com/search?q=%ED%95%9C%EC%9A%B0%EB%9E%91%20%EC%82%AC%EA%B3%BC%EB%9E%91%20%EC%B6%95%EC%A0%9C"
     }
    ],
-   "updated_at": "2026-09-10T17:20:20.974974+00:00"
+   "updated_at": "2026-09-10T20:08:20.794768+00:00"
   }
  }
 }
