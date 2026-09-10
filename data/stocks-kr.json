@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-09-10T03:25:05.783525+00:00",
+  "updated_at": "2026-09-10T08:20:05.587211+00:00",
   "as_of_date": "2026-09-10",
   "stocks": [
     {
       "code": "005930",
-      "close": 266750,
-      "change": -2750,
-      "change_pct": -1.02,
-      "volume": 7580651,
+      "close": 269000,
+      "change": -500,
+      "change_pct": -0.19,
+      "volume": 21010910,
       "as_of_date": "2026-09-10",
       "foreign_net_volume": -2884161,
       "institution_net_volume": 1740154,
@@ -154,8 +154,8 @@
         },
         {
           "date": "2026-09-10",
-          "close": 266750,
-          "volume": 7580651,
+          "close": 269000,
+          "volume": 21010910,
           "foreign": null,
           "institution": null
         }
@@ -164,10 +164,10 @@
     },
     {
       "code": "000660",
-      "close": 1847000,
-      "change": -9000,
-      "change_pct": -0.48,
-      "volume": 1878266,
+      "close": 1853000,
+      "change": -3000,
+      "change_pct": -0.16,
+      "volume": 4375585,
       "as_of_date": "2026-09-10",
       "foreign_net_volume": 41716,
       "institution_net_volume": 74984,
@@ -314,8 +314,8 @@
         },
         {
           "date": "2026-09-10",
-          "close": 1847000,
-          "volume": 1878266,
+          "close": 1853000,
+          "volume": 4375585,
           "foreign": null,
           "institution": null
         }
@@ -324,10 +324,10 @@
     },
     {
       "code": "005380",
-      "close": 383500,
-      "change": -4500,
-      "change_pct": -1.16,
-      "volume": 210702,
+      "close": 389000,
+      "change": 1000,
+      "change_pct": 0.26,
+      "volume": 600281,
       "as_of_date": "2026-09-10",
       "foreign_net_volume": 36894,
       "institution_net_volume": -22294,
@@ -474,8 +474,8 @@
         },
         {
           "date": "2026-09-10",
-          "close": 383500,
-          "volume": 210702,
+          "close": 389000,
+          "volume": 600281,
           "foreign": null,
           "institution": null
         }
