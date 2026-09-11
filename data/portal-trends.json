@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-09-11T17:22:08.958121+00:00",
+ "updated_at": "2026-09-11T20:07:02.005654+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "美 8월 물가 3.4% 상승",
+     "t": "美 8월 물가 상승 3.4%",
      "u": "https://search.nate.com/search/all.html?q=%E7%BE%8E%208%EC%9B%94%20%EC%83%81%EC%8A%B9"
     },
     {
-     "t": "KB금융 챔피언십 2라운드 경기",
-     "u": "https://search.nate.com/search/all.html?q=%EC%B1%94%ED%94%BC%EC%96%B8%EC%8B%AD%202%EB%9D%BC%EC%9A%B4%EB%93%9C%20%EC%9E%A5%EB%A9%B4"
+     "t": "KT 4연승 선두 수성",
+     "u": "https://search.nate.com/search/all.html?q=KT%20%EC%84%A0%EB%91%90%20%EC%88%98%EC%84%B1"
     },
     {
-     "t": "수시 접수 마감 1시간 연장",
-     "u": "https://search.nate.com/search/all.html?q=%EC%88%98%EC%8B%9C%201%EC%8B%9C%EA%B0%84%20%EC%97%B0%EC%9E%A5"
+     "t": "안현모 이혼 라이머 집 상태 충격",
+     "u": "https://search.nate.com/search/all.html?q=%EC%95%88%ED%98%84%EB%AA%A8%EC%99%80%20%EC%9D%B4%ED%98%BC%20%EB%9D%BC%EC%9D%B4%EB%A8%B8"
     },
     {
-     "t": "브루노 마스, 내한 공연 1회 추가!",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B8%8C%EB%A3%A8%EB%85%B8%20%EB%A7%88%EC%8A%A4%20%EC%B6%94%EA%B0%80"
+     "t": "굽네 신제품 런칭 참석자",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B5%BD%EB%84%A4%20%EC%8B%A0%EC%A0%9C%ED%92%88%20%EB%9F%B0%EC%B9%AD"
     },
     {
-     "t": "김승원 자녀 위장전입 송구",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EC%8A%B9%EC%9B%90%20%EC%9E%90%EB%85%80%20%EC%9C%84%EC%9E%A5%EC%A0%84%EC%9E%85"
+     "t": "한번에 성공시킨다",
+     "u": "https://search.nate.com/search/all.html?q=%ED%95%9C%EB%B2%88%EC%97%90%20%EC%84%B1%EA%B3%B5%EC%8B%9C%ED%82%A8%EB%8B%A4"
     },
     {
-     "t": "장동혁 대표 참배 및 활동",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9E%A5%EB%8F%99%ED%98%81%20%EB%8C%80%ED%91%9C"
+     "t": "경복궁 소리 채집 도전",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B2%BD%EB%B3%B5%EA%B6%81%20%EC%86%8C%EB%A6%AC%20%EC%B1%84%EC%A7%91"
     },
     {
-     "t": "박명수 할명수 복귀",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B0%95%EB%AA%85%EC%88%98%20%ED%95%A0%EB%AA%85%EC%88%98"
+     "t": "2023 수시 경쟁률 현황",
+     "u": "https://search.nate.com/search/all.html?q=%EC%88%98%EC%8B%9C%201"
     },
     {
-     "t": "종로한복축제 개막 퍼레이드",
-     "u": "https://search.nate.com/search/all.html?q=%EC%A2%85%EB%A1%9C%ED%95%9C%EB%B3%B5%EC%B6%95%EC%A0%9C%20%EA%B0%9C%EB%A7%89%20%ED%8D%BC%EB%A0%88%EC%9D%B4%EB%93%9C"
+     "t": "삼성 KT 승차 없는 1, 2위 경쟁",
+     "u": "https://search.nate.com/search/all.html?q=%EC%82%BC%EC%84%B1%20%EC%8A%B9%EC%B0%A8%20%EC%97%86%EB%8A%94"
     },
     {
-     "t": "문도엽, 신한동해오픈 2R 선두",
-     "u": "https://search.nate.com/search/all.html?q=%EB%AC%B8%EB%8F%84%EC%97%BD%20%EC%8B%A0%ED%95%9C%EB%8F%99%ED%95%B4%EC%98%A4%ED%94%88%202R"
+     "t": "2026년 9월 12일 운세",
+     "u": "https://search.nate.com/search/all.html?q=2026%EB%85%84%2012%EC%9D%BC"
     },
     {
-     "t": "신제품 파티 참석",
-     "u": "https://search.nate.com/search/all.html?q=%EC%8B%A0%EC%A0%9C%ED%92%88%20%ED%8C%8C%ED%8B%B0%20%EC%B0%B8%EC%84%9D"
+     "t": "12도 일교차 15도",
+     "u": "https://search.nate.com/search/all.html?q=12%EB%8F%84%20%EC%9D%BC%EA%B5%90%EC%B0%A8%2015%EB%8F%84"
     }
    ],
-   "updated_at": "2026-09-11T17:22:08.958121+00:00"
+   "updated_at": "2026-09-11T20:07:02.005654+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "궁지로 내몰린 김승원…'검사 한동훈' 빛났지만 '팀 한동훈'은 없었다",
-     "u": "https://n.news.naver.com/article/586/0000138031?ntype=RANKING"
+     "t": "남친 체포되자 몸에 매달려 방해하고 경찰관 손가락 깨문 50대",
+     "u": "https://n.news.naver.com/article/001/0016305167?ntype=RANKING"
     },
     {
-     "t": "김승원 의혹 제보자 신상 공개한 박선원…한동훈 \"경악, 명백한 법 위반\"",
-     "u": "https://n.news.naver.com/article/586/0000137992?ntype=RANKING"
+     "t": "'서울대 10개 만들기' 선정 3개大 수시지원 11.6% 증가",
+     "u": "https://n.news.naver.com/article/001/0016305627?ntype=RANKING"
     },
     {
-     "t": "靑도 거리두기? \"용혜인 회견, 협의 없었다…민심 듣고 있어\"",
-     "u": "https://n.news.naver.com/article/586/0000138028?ntype=RANKING"
+     "t": "美 8월 근원소비자물가 상승률 예상 웃돌아…금리인상 관측 커져(종합)",
+     "u": "https://n.news.naver.com/article/001/0016305635?ntype=RANKING"
     },
     {
-     "t": "\"김승원은 잘된 인사\" \"용혜인 엄중히\"…한 명만 지키는 민주당?",
-     "u": "https://n.news.naver.com/article/586/0000138032?ntype=RANKING"
+     "t": "국민의힘 손범규 전 대변인, '강제추행 혐의' 기소",
+     "u": "https://n.news.naver.com/article/001/0016305626?ntype=RANKING"
     },
     {
-     "t": "\"로드킬 당한 동물보다 못하게\"…정재환에 아들 잃은 유가족의 절규",
-     "u": "https://n.news.naver.com/article/586/0000138008?ntype=RANKING"
+     "t": "서울 유일 신규택지 '삐걱'…염창공원 설명회, 주민 반발로 무산(종합)",
+     "u": "https://n.news.naver.com/article/001/0016305640?ntype=RANKING"
     },
     {
-     "t": "‘비행기 지연 민폐 논란’ 박수홍, 2주 만에 홈쇼핑으로 복귀",
-     "u": "https://n.news.naver.com/article/366/0001191819?ntype=RANKING"
+     "t": "\"질식할 위기의 섬\"... 독일 언론이 경고한 '제주 속 중국' [앵커리포트]",
+     "u": "https://n.news.naver.com/article/052/0002405968?ntype=RANKING"
     },
     {
-     "t": "강신철 “‘내일 전작권 회수해도 문제없다’ 공감…북한 정권과 북한군은 우리의 적”",
-     "u": "https://n.news.naver.com/article/366/0001191884?ntype=RANKING"
+     "t": "이 대통령 순방에도 30%대 지지율...기자회견 돌파구 될까",
+     "u": "https://n.news.naver.com/article/052/0002405984?ntype=RANKING"
     },
     {
-     "t": "잘나가는 K뷰티까지… 한국콜마에 36년 만에 첫 노조",
-     "u": "https://n.news.naver.com/article/366/0001191827?ntype=RANKING"
+     "t": "용혜인 \"국민만 믿고 가겠다\"...국민 여론은 싸늘 [앵커리포트]",
+     "u": "https://n.news.naver.com/article/052/0002405934?ntype=RANKING"
     },
     {
-     "t": "손범규 전 국민의힘 대변인, 강제추행 혐의로 기소",
-     "u": "https://n.news.naver.com/article/366/0001191889?ntype=RANKING"
+     "t": "김승원 \"심려 끼쳐 송구\"...'판사 아들 채용' 의혹엔 \"떳떳\"",
+     "u": "https://n.news.naver.com/article/052/0002405947?ntype=RANKING"
     },
     {
-     "t": "반도체 계약학과 수시 지원 역대 최다…서강대 66대 1",
-     "u": "https://n.news.naver.com/article/366/0001191885?ntype=RANKING"
+     "t": "총리실 '한동훈 기자회견 개입' 논란...\"송구\"·\"파면해야\"",
+     "u": "https://n.news.naver.com/article/052/0002405985?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-09-11T17:22:08.958121+00:00"
+   "updated_at": "2026-09-11T20:07:02.005654+00:00"
   },
   "zum": {
    "name": "줌",
@@ -125,7 +125,7 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%97%B0%EC%98%88"
     }
    ],
-   "updated_at": "2026-09-11T17:22:08.958121+00:00"
+   "updated_at": "2026-09-11T20:07:02.005654+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -171,53 +171,53 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=462271&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-09-11T17:22:08.958121+00:00"
+   "updated_at": "2026-09-11T20:07:02.005654+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "코믹월드",
-     "u": "https://www.google.com/search?q=%EC%BD%94%EB%AF%B9%EC%9B%94%EB%93%9C"
+     "t": "혈당",
+     "u": "https://www.google.com/search?q=%ED%98%88%EB%8B%B9"
     },
     {
-     "t": "원자로",
-     "u": "https://www.google.com/search?q=%EC%9B%90%EC%9E%90%EB%A1%9C"
+     "t": "이서진",
+     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%84%9C%EC%A7%84"
     },
     {
-     "t": "네이버웹툰",
-     "u": "https://www.google.com/search?q=%EB%84%A4%EC%9D%B4%EB%B2%84%EC%9B%B9%ED%88%B0"
+     "t": "동남아시아",
+     "u": "https://www.google.com/search?q=%EB%8F%99%EB%82%A8%EC%95%84%EC%8B%9C%EC%95%84"
     },
     {
-     "t": "파이널 테이블",
-     "u": "https://www.google.com/search?q=%ED%8C%8C%EC%9D%B4%EB%84%90%20%ED%85%8C%EC%9D%B4%EB%B8%94"
+     "t": "최저임금",
+     "u": "https://www.google.com/search?q=%EC%B5%9C%EC%A0%80%EC%9E%84%EA%B8%88"
     },
     {
-     "t": "이엘리야",
-     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%97%98%EB%A6%AC%EC%95%BC"
+     "t": "100달러",
+     "u": "https://www.google.com/search?q=100%EB%8B%AC%EB%9F%AC"
     },
     {
-     "t": "더커뮤니티2",
-     "u": "https://www.google.com/search?q=%EB%8D%94%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B02"
+     "t": "x",
+     "u": "https://www.google.com/search?q=x"
     },
     {
-     "t": "옵세션",
-     "u": "https://www.google.com/search?q=%EC%98%B5%EC%84%B8%EC%85%98"
+     "t": "손예진 아들",
+     "u": "https://www.google.com/search?q=%EC%86%90%EC%98%88%EC%A7%84%20%EC%95%84%EB%93%A4"
     },
     {
-     "t": "중앙일보",
-     "u": "https://www.google.com/search?q=%EC%A4%91%EC%95%99%EC%9D%BC%EB%B3%B4"
+     "t": "롤",
+     "u": "https://www.google.com/search?q=%EB%A1%A4"
     },
     {
-     "t": "니콜 키드먼",
-     "u": "https://www.google.com/search?q=%EB%8B%88%EC%BD%9C%20%ED%82%A4%EB%93%9C%EB%A8%BC"
+     "t": "박정희",
+     "u": "https://www.google.com/search?q=%EB%B0%95%EC%A0%95%ED%9D%AC"
     },
     {
-     "t": "공인중개사",
-     "u": "https://www.google.com/search?q=%EA%B3%B5%EC%9D%B8%EC%A4%91%EA%B0%9C%EC%82%AC"
+     "t": "타짜",
+     "u": "https://www.google.com/search?q=%ED%83%80%EC%A7%9C"
     }
    ],
-   "updated_at": "2026-09-11T17:22:08.958121+00:00"
+   "updated_at": "2026-09-11T20:07:02.005654+00:00"
   }
  }
 }
