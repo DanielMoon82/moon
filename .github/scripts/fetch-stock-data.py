@@ -33,6 +33,7 @@ WATCHLIST = [
     {"code": "005930", "name": "삼성전자"},
     {"code": "000660", "name": "SK하이닉스"},
     {"code": "005380", "name": "현대차"},
+    {"code": "010170", "name": "대한광통신"},
 ]
 
 PERIOD_DAYS = 20

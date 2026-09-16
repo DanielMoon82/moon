@@ -55,6 +55,20 @@
       },
       "chart": "stocks/005380.png",
       "name": "현대차"
+    },
+    {
+      "code": "010170",
+      "close": 16230,
+      "change": 1910,
+      "change_pct": 13.34,
+      "volume": 45656543,
+      "as_of_date": "2026-09-16",
+      "foreign_net_volume": null,
+      "institution_net_volume": null,
+      "flow_as_of_date": null,
+      "period": {"days": 0, "foreign_net_volume_sum": null, "institution_net_volume_sum": null},
+      "chart": "stocks/010170.png",
+      "name": "대한광통신"
     }
   ]
 }
