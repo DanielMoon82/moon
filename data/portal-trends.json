@@ -1,101 +1,109 @@
 {
- "updated_at": "2026-09-16T17:46:56.677234+00:00",
+ "updated_at": "2026-09-16T20:30:09.742205+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "1억 공천헌금 구형",
-     "u": "https://search.nate.com/search/all.html?q=1%EC%96%B5%20%EA%B3%B5%EC%B2%9C%ED%97%8C%EA%B8%88%20%EA%B5%AC%ED%98%95"
-    },
-    {
-     "t": "북 리광천 감독의 응원과 아쉬움",
-     "u": "https://search.nate.com/search/all.html?q=%E5%8C%97%20%EB%A6%AC%EA%B4%91%EC%B2%9C%20%EA%B0%90%EB%8F%85"
-    },
-    {
      "t": "이재명 대통령 부부 기념촬영",
      "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EB%8C%80%ED%86%B5%EB%A0%B9%20%EB%B6%80%EB%B6%80"
     },
     {
-     "t": "스윙스 김감전 대마 투약 구속",
-     "u": "https://search.nate.com/search/all.html?q=%EC%8A%A4%EC%9C%99%EC%8A%A4%20%EA%B9%80%EA%B0%90%EC%A0%84%20%EA%B5%AC%EC%86%8D"
+     "t": "두산 삼성 꺾고 5위 확정",
+     "u": "https://search.nate.com/search/all.html?q=%EB%91%90%EC%82%B0%20%EC%82%BC%EC%84%B1%20%EA%BA%BE%EA%B3%A0"
     },
     {
-     "t": "수시 먹통 388건 구제 확정",
-     "u": "https://search.nate.com/search/all.html?q=%EC%88%98%EC%8B%9C%20%EB%A8%B9%ED%86%B5%20388%EA%B1%B4"
+     "t": "기준금리 0.25%P 인상",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B8%B0%EC%A4%80%EA%B8%88%EB%A6%AC%200.25%25P%20%EC%9D%B8%EC%83%81"
+    },
+    {
+     "t": "리센느 미나미 광고 100개 문의",
+     "u": "https://search.nate.com/search/all.html?q=%EB%A6%AC%EC%84%BC%EB%8A%90%20%EB%AF%B8%EB%82%98%EB%AF%B8%20100%EA%B0%9C"
     },
     {
      "t": "후티 반군 사우디 공격",
      "u": "https://search.nate.com/search/all.html?q=%ED%9B%84%ED%8B%B0%20%EB%B0%98%EA%B5%B0%20%EC%82%AC%EC%9A%B0%EB%94%94"
     },
     {
-     "t": "추석 앞두고 준비 중",
-     "u": "https://search.nate.com/search/all.html?q=%EC%B6%94%EC%84%9D%20%EC%95%9E%EB%91%90%EA%B3%A0"
+     "t": "전북, 가시와에 2-1 역전승",
+     "u": "https://search.nate.com/search/all.html?q=%EC%A0%84%EB%B6%81%202-1%20%EC%97%AD%EC%A0%84%EC%8A%B9"
     },
     {
-     "t": "서인영 쥬얼리 행사비 100만원",
-     "u": "https://search.nate.com/search/all.html?q=%EC%84%9C%EC%9D%B8%EC%98%81%20%EC%A5%AC%EC%96%BC%EB%A6%AC%20%EC%8B%9C%EC%A0%88"
+     "t": "이승철, 할아버지 됐다!",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EC%8A%B9%EC%B2%A0%20%ED%95%A0%EC%95%84%EB%B2%84%EC%A7%80%20%EB%90%90%EB%8B%A4"
     },
     {
-     "t": "EU 캐나다에 첫 준회원국",
-     "u": "https://search.nate.com/search/all.html?q=EU%20%EC%BA%90%EB%82%98%EB%8B%A4%EC%97%90%20%EC%B2%AB%20%EC%A4%80%ED%9A%8C%EC%9B%90%EA%B5%AD"
-    },
-    {
-     "t": "美 8월 소매판매 1.2% 증가",
+     "t": "미 8월 소매판매 1.2%",
      "u": "https://search.nate.com/search/all.html?q=8%EC%9B%94%20%EC%86%8C%EB%A7%A4%ED%8C%90%EB%A7%A4%201.2%25"
+    },
+    {
+     "t": "강선우 의원 징역 4년 구형",
+     "u": "https://search.nate.com/search/all.html?q=1%EC%96%B5%20%EA%B0%95%EC%84%A0%EC%9A%B0%20%EA%B5%AC%ED%98%95"
+    },
+    {
+     "t": "수시 먹통 388건 구제 확정",
+     "u": "https://search.nate.com/search/all.html?q=%EC%88%98%EC%8B%9C%20%EB%A8%B9%ED%86%B5%20%EA%B5%AC%EC%A0%9C"
     }
    ],
-   "updated_at": "2026-09-16T17:46:56.677234+00:00"
+   "updated_at": "2026-09-16T20:30:09.742205+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "“한 접시에 18만원” 한우보다 비싼 ‘수상한 고기’, 정체 알고 보니…불법으로 잡는다고? [지구, 뭐래?]",
-     "u": "https://n.news.naver.com/article/016/0002698341?ntype=RANKING"
+     "t": "\"우리 아빠가 입던 건데\"…요즘 MZ 푹 빠지더니, 매출 '껑충' 오른 랄프로렌·빈폴·헤지스",
+     "u": "https://n.news.naver.com/article/277/0005816830?ntype=RANKING"
     },
     {
-     "t": "“자격증 따면 월 500만원 번다”…은퇴족 열광하는 ‘이 자격증’, 뭐길래?",
-     "u": "https://n.news.naver.com/article/016/0002698368?ntype=RANKING"
+     "t": "\"KBS 출연 중인 유명 배우, 가해자 누나\"…'부산 추락사' 유족 호소에 KBS 답은",
+     "u": "https://n.news.naver.com/article/277/0005817418?ntype=RANKING"
     },
     {
-     "t": "“이건 너무 충격적이다” 10억 엄청난 ‘수익’ 시끌벅적하더니…결국 선행매매 혐의?",
-     "u": "https://n.news.naver.com/article/016/0002698365?ntype=RANKING"
+     "t": "\"오늘부터 휴대전화 요금 25% 추가 할인\" 온라인 '들썩'…알고보니",
+     "u": "https://n.news.naver.com/article/277/0005817399?ntype=RANKING"
     },
     {
-     "t": "‘지방대 등록금 0원’ 입시 판도 바꿨다…10명 중 4명 “영향 받았다”[세상&]",
-     "u": "https://n.news.naver.com/article/016/0002698354?ntype=RANKING"
+     "t": "\"제발 좀 벗어줄래\" 기어이 침대까지 오르더니…젊은층부터 달라진다는 美",
+     "u": "https://n.news.naver.com/article/277/0005816956?ntype=RANKING"
     },
     {
-     "t": "부정승차 걸리자 “한국서 인종차별 당했다”…역무원 얼굴까지 공개한 인플루언서 결국",
-     "u": "https://n.news.naver.com/article/016/0002698362?ntype=RANKING"
+     "t": "\"다 먹고 남은 찹쌀떡 포장지가 5만원?\"…중고거래서 벌어진 황당한 꼼수",
+     "u": "https://n.news.naver.com/article/277/0005817426?ntype=RANKING"
     },
     {
-     "t": "한동훈, 국힘 의원들에게 ‘국수’ 돌려…손 편지엔 “함께 힘 모으겠다”",
-     "u": "https://n.news.naver.com/article/028/0002823425?ntype=RANKING"
+     "t": "김승원 “바닷가 간 적 없다…양 씨, 지지자 중 하나”",
+     "u": "https://n.news.naver.com/article/449/0000360992?ntype=RANKING"
     },
     {
-     "t": "아스팔트에 퍼덕 ‘활어 패대기 시위’…‘동물복지기본법’ 만들면 사라질까",
-     "u": "https://n.news.naver.com/article/028/0002823389?ntype=RANKING"
+     "t": "추미애 7700만 원 관용차·12억 관사 수사 착수",
+     "u": "https://n.news.naver.com/article/449/0000360997?ntype=RANKING"
     },
     {
-     "t": "오세훈 2심 새 변수…“오 시장 지시 없었다” 후원자 녹음 파일 증거 채택",
-     "u": "https://n.news.naver.com/article/028/0002823401?ntype=RANKING"
+     "t": "산 뚫은 134km 물길…中, 14조 쏟아부었다",
+     "u": "https://n.news.naver.com/article/449/0000361015?ntype=RANKING"
     },
     {
-     "t": "윤석열의 ‘대왕고래 쇼’…감사원 “140억 배럴 탐사 확률 0.000218%”",
-     "u": "https://n.news.naver.com/article/028/0002823416?ntype=RANKING"
+     "t": "강신철 “북한은 적”…‘주적’ 아닌 이유 물어보니",
+     "u": "https://n.news.naver.com/article/449/0000360995?ntype=RANKING"
     },
     {
-     "t": "당청 ‘김승원 강행’ 기류…야권은 장외 투쟁 예고, 여론도 싸늘",
-     "u": "https://n.news.naver.com/article/028/0002823424?ntype=RANKING"
+     "t": "[단독]‘알박기’ 돗자리 치웠다가…경찰 조사",
+     "u": "https://n.news.naver.com/article/449/0000361005?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-09-16T17:46:56.677234+00:00"
+   "updated_at": "2026-09-16T20:30:09.742205+00:00"
   },
   "zum": {
    "name": "줌",
    "keywords": [
+    {
+     "t": "미 연준 기준금리 인상",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EB%AF%B8%20%EC%97%B0%EC%A4%80%20%EA%B8%B0%EC%A4%80%EA%B8%88%EB%A6%AC%20%EC%9D%B8%EC%83%81"
+    },
+    {
+     "t": "수시 먹통 구제 신청",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%88%98%EC%8B%9C%20%EB%A8%B9%ED%86%B5%20%EA%B5%AC%EC%A0%9C%20%EC%8B%A0%EC%B2%AD"
+    },
     {
      "t": "SK하이닉스 인텔 미국 생산",
      "u": "https://search.zum.com/search.zum?method=uni&query=SK%ED%95%98%EC%9D%B4%EB%8B%89%EC%8A%A4%20%EC%9D%B8%ED%85%94%20%EB%AF%B8%EA%B5%AD%20%EC%83%9D%EC%82%B0"
@@ -107,14 +115,6 @@
     {
      "t": "김포시 이륜차 소음점검",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B9%80%ED%8F%AC%EC%8B%9C%20%EC%9D%B4%EB%A5%9C%EC%B0%A8%20%EC%86%8C%EC%9D%8C%EC%A0%90%EA%B2%80"
-    },
-    {
-     "t": "여수시 국고지원 사업",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%97%AC%EC%88%98%EC%8B%9C%20%EA%B5%AD%EA%B3%A0%EC%A7%80%EC%9B%90%20%EC%82%AC%EC%97%85"
-    },
-    {
-     "t": "고양시 임금체불 점검",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B3%A0%EC%96%91%EC%8B%9C%20%EC%9E%84%EA%B8%88%EC%B2%B4%EB%B6%88%20%EC%A0%90%EA%B2%80"
     },
     {
      "t": "종합",
@@ -129,7 +129,7 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%8F%AC%EC%B8%A0"
     }
    ],
-   "updated_at": "2026-09-16T17:46:56.677234+00:00"
+   "updated_at": "2026-09-16T20:30:09.742205+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -151,10 +151,6 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=463691&_dcbest=1&page=1"
     },
     {
-     "t": "직접 만든 잉클링이랑 베어상회",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=463689&_dcbest=1&page=1"
-    },
-    {
      "t": "발리가 웰니스 천국이라 불리는 이유.JPG",
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=463687&_dcbest=1&page=1"
     },
@@ -173,55 +169,59 @@
     {
      "t": "Eos1n 500T 사진들 봐줘 16pic",
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=463677&_dcbest=1&page=1"
+    },
+    {
+     "t": "멕시코에서 한국인 특수 전혀 못누리는 곽튜브.JPG",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=463675&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-09-16T17:46:56.677234+00:00"
+   "updated_at": "2026-09-16T20:30:09.742205+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "아틀레티코 대 오사수나",
-     "u": "https://www.google.com/search?q=%EC%95%84%ED%8B%80%EB%A0%88%ED%8B%B0%EC%BD%94%20%EB%8C%80%20%EC%98%A4%EC%82%AC%EC%88%98%EB%82%98"
+     "t": "김구라",
+     "u": "https://www.google.com/search?q=%EA%B9%80%EA%B5%AC%EB%9D%BC"
     },
     {
-     "t": "이스라엘",
-     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%8A%A4%EB%9D%BC%EC%97%98"
+     "t": "man utd vs brighton",
+     "u": "https://www.google.com/search?q=man%20utd%20vs%20brighton"
     },
     {
-     "t": "중고",
-     "u": "https://www.google.com/search?q=%EC%A4%91%EA%B3%A0"
+     "t": "로스앤젤레스 fc",
+     "u": "https://www.google.com/search?q=%EB%A1%9C%EC%8A%A4%EC%95%A4%EC%A0%A4%EB%A0%88%EC%8A%A4%20fc"
     },
     {
-     "t": "sk텔레콤",
-     "u": "https://www.google.com/search?q=sk%ED%85%94%EB%A0%88%EC%BD%A4"
+     "t": "man utd đấu với brighton",
+     "u": "https://www.google.com/search?q=man%20utd%20%C4%91%E1%BA%A5u%20v%E1%BB%9Bi%20brighton"
     },
     {
-     "t": "서대구역",
-     "u": "https://www.google.com/search?q=%EC%84%9C%EB%8C%80%EA%B5%AC%EC%97%AD"
+     "t": "카라바오컵",
+     "u": "https://www.google.com/search?q=%EC%B9%B4%EB%9D%BC%EB%B0%94%EC%98%A4%EC%BB%B5"
     },
     {
-     "t": "집단 감염",
-     "u": "https://www.google.com/search?q=%EC%A7%91%EB%8B%A8%20%EA%B0%90%EC%97%BC"
+     "t": "바르셀로나 대 라싱 산탄데르",
+     "u": "https://www.google.com/search?q=%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98%20%EB%8C%80%20%EB%9D%BC%EC%8B%B1%20%EC%82%B0%ED%83%84%EB%8D%B0%EB%A5%B4"
     },
     {
-     "t": "abl바이오",
-     "u": "https://www.google.com/search?q=abl%EB%B0%94%EC%9D%B4%EC%98%A4"
+     "t": "냄비",
+     "u": "https://www.google.com/search?q=%EB%83%84%EB%B9%84"
     },
     {
-     "t": "kbs",
-     "u": "https://www.google.com/search?q=kbs"
+     "t": "돈",
+     "u": "https://www.google.com/search?q=%EB%8F%88"
     },
     {
-     "t": "시어머니",
-     "u": "https://www.google.com/search?q=%EC%8B%9C%EC%96%B4%EB%A8%B8%EB%8B%88"
+     "t": "atlético vs osasuna",
+     "u": "https://www.google.com/search?q=atl%C3%A9tico%20vs%20osasuna"
     },
     {
-     "t": "혈우병",
-     "u": "https://www.google.com/search?q=%ED%98%88%EC%9A%B0%EB%B3%91"
+     "t": "엔씨",
+     "u": "https://www.google.com/search?q=%EC%97%94%EC%94%A8"
     }
    ],
-   "updated_at": "2026-09-16T17:46:56.677234+00:00"
+   "updated_at": "2026-09-16T20:30:09.742205+00:00"
   }
  }
 }
