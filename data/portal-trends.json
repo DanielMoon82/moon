@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-09-19T16:50:44.590175+00:00",
+ "updated_at": "2026-09-19T19:39:00.705876+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "아이치·나고야 아시안게임 개최",
+     "t": "아이치 나고야 아시안게임 개막식",
      "u": "https://search.nate.com/search/all.html?q=%EC%95%84%EC%9D%B4%EC%B9%98%20%EB%82%98%EA%B3%A0%EC%95%BC%20%EC%95%84%EC%8B%9C%EC%95%88%EA%B2%8C%EC%9E%84"
     },
     {
-     "t": "이재명 대통령 기념사",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B8%B0%EB%85%90%EC%82%AC%20%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EB%8C%80%ED%86%B5%EB%A0%B9"
+     "t": "1242회 로또 1등 9명 당첨",
+     "u": "https://search.nate.com/search/all.html?q=1242%ED%9A%8C%20%EB%A1%9C%EB%98%90%201%EB%93%B1"
     },
     {
-     "t": "올해의 아티스트 수상",
-     "u": "https://search.nate.com/search/all.html?q=%EC%98%AC%ED%95%B4%EC%9D%98%20%EC%95%84%ED%8B%B0%EC%8A%A4%ED%8A%B8%20%EC%88%98%EC%83%81"
+     "t": "리야드 공항 연기",
+     "u": "https://search.nate.com/search/all.html?q=%EC%82%AC%EC%9A%B0%EB%94%94%20%EA%B3%B5%ED%95%AD%20%EC%9D%B8%EA%B7%BC"
     },
     {
-     "t": "2026 더팩트뮤직어워즈 참석",
-     "u": "https://search.nate.com/search/all.html?q=2026%20%EB%8D%94%ED%8C%A9%ED%8A%B8%EB%AE%A4%EC%A7%81%EC%96%B4%EC%9B%8C%EC%A6%88%20%EC%B0%B8%EC%84%9D"
+     "t": "최예나 소아암 투병 고백",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B5%9C%EC%98%88%EB%82%98"
     },
     {
-     "t": "하나금융그룹 챔피언십 3라운드",
-     "u": "https://search.nate.com/search/all.html?q=%ED%95%98%EB%82%98%EA%B8%88%EC%9C%B5%EA%B7%B8%EB%A3%B9%20%EC%B1%94%ED%94%BC%EC%96%B8%EC%8B%AD%203%EB%9D%BC%EC%9A%B4%EB%93%9C"
+     "t": "서영은 사랑이 온다 OST 20일 공개",
+     "u": "https://search.nate.com/search/all.html?q=%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%98%A8%EB%8B%A4"
     },
     {
-     "t": "나루히토 일왕 개회 선언",
-     "u": "https://search.nate.com/search/all.html?q=%EB%82%98%EB%A3%A8%ED%9E%88%ED%86%A0%20%EC%9D%BC%EC%99%95"
+     "t": "유영우 리센느 원이 감사 눈물",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9C%A0%EC%98%81%EC%9A%B0%20%EB%A6%AC%EC%84%BC%EB%8A%90%20%EC%9B%90%EC%9D%B4"
     },
     {
-     "t": "날아올라라 나비",
-     "u": "https://search.nate.com/search/all.html?q=%EB%82%A0%EC%95%84%EC%98%AC%EB%9D%BC%EB%9D%BC%20%EB%82%98%EB%B9%84"
+     "t": "데이비스컵 8강 오른 한국",
+     "u": "https://search.nate.com/search/all.html?q=8%EA%B0%95%20%EC%98%A4%EB%A5%B8%20%ED%95%9C%EA%B5%AD%20%EB%8C%80%ED%91%9C%ED%8C%80"
     },
     {
-     "t": "축하 공연, 전통의 하모니",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B0%9C%EB%A7%89%20%EC%B6%95%ED%95%98%20%EA%B3%B5%EC%97%B0"
+     "t": "경주 드론쇼 월정교",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B2%BD%EC%A3%BC%20%EB%93%9C%EB%A1%A0%EC%87%BC"
     },
     {
-     "t": "김승원 사퇴 결정",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EC%8A%B9%EC%9B%90%20%EC%82%AC%ED%87%B4"
+     "t": "토트넘 리그 18위 추락",
+     "u": "https://search.nate.com/search/all.html?q=%ED%86%A0%ED%8A%B8%EB%84%98%202-3%EB%A1%9C%20%EC%B6%94%EB%9D%BD"
     },
     {
-     "t": "사우디 리야드 공항",
-     "u": "https://search.nate.com/search/all.html?q=%EC%82%AC%EC%9A%B0%EB%94%94%20%EB%A6%AC%EC%95%BC%EB%93%9C%20%EA%B3%B5%ED%95%AD"
+     "t": "코르티스 레코드 더 이어 수상",
+     "u": "https://search.nate.com/search/all.html?q=%EC%BD%94%EB%A5%B4%ED%8B%B0%EC%8A%A4%20%EB%A0%88%EC%BD%94%EB%93%9C%20%EB%8D%94%20%EC%9D%B4%EC%96%B4%20%EC%88%98%EC%83%81"
     }
    ],
-   "updated_at": "2026-09-19T16:50:44.590175+00:00"
+   "updated_at": "2026-09-19T19:39:00.705876+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "69만원 한우 세트 사러 백화점 갔다가…'이럴 수가' 화들짝 [류은혁의 유통기한]",
-     "u": "https://n.news.naver.com/article/015/0005334171?ntype=RANKING"
+     "t": "“일본 가면 꼭 사 먹던 건데”…韓 들어온지 반년 만에 100만잔 팔렸다",
+     "u": "https://n.news.naver.com/article/011/0004663593?ntype=RANKING"
     },
     {
-     "t": "잠실서 대박 터진 빽다방…1시간 만에 커피 200잔 동났다 [2026청춘커피페스티벌]",
-     "u": "https://n.news.naver.com/article/015/0005334124?ntype=RANKING"
+     "t": "딱 두 잔 마셨을 뿐인데 “눈이 안 보여”…48명 목숨 앗아간 ‘죽음의 술’ 정체가",
+     "u": "https://n.news.naver.com/article/011/0004663621?ntype=RANKING"
     },
     {
-     "t": "\"성인 60명 중 1명이 감염\"…결국 '국가비상사태' 선포한 나라",
-     "u": "https://n.news.naver.com/article/015/0005334176?ntype=RANKING"
+     "t": "일면식 없던 주부 납치·살해해 ‘트렁크’에 싣고 다닌 남자…주머니선 ‘살생부’ 나왔다 [오늘의 그날]",
+     "u": "https://n.news.naver.com/article/011/0004663623?ntype=RANKING"
     },
     {
-     "t": "\"저한테 왜 소리 질렀어요\"…직장서 벌어진 '초유의 사태' [김대영의 노무스쿨]",
-     "u": "https://n.news.naver.com/article/015/0005334158?ntype=RANKING"
+     "t": "택시기사 남편, 밤마다 화장실 가는 이유 있었다…열에 아홉 ‘이 증상’",
+     "u": "https://n.news.naver.com/article/011/0004663611?ntype=RANKING"
     },
     {
-     "t": "50대 직장인 \"주식 2억 다 팔까요?\"…전문가가 말린 이유",
-     "u": "https://n.news.naver.com/article/015/0005334121?ntype=RANKING"
+     "t": "항생제 먹어도 소용없다…병원에서 조용히 퍼지자 환자 5배 확 늘어난 ‘이 세균’",
+     "u": "https://n.news.naver.com/article/011/0004663600?ntype=RANKING"
     },
     {
-     "t": "'오빠'에 '문과' 발언까지…사퇴 부른 청탁 의혹",
-     "u": "https://n.news.naver.com/article/055/0001389656?ntype=RANKING"
+     "t": "아웃도어 업체 개최 산악 마라톤 대회서 40대 참가자 사망",
+     "u": "https://n.news.naver.com/article/082/0001399063?ntype=RANKING"
     },
     {
-     "t": "[단독] 내야에 선 외야수들…다른 나라는 '주차장 훈련'",
-     "u": "https://n.news.naver.com/article/055/0001389660?ntype=RANKING"
+     "t": "“방어 쫓아 들어왔나”…부산 북항 수로에 이틀 연속 상어 출몰",
+     "u": "https://n.news.naver.com/article/082/0001399047?ntype=RANKING"
     },
     {
-     "t": "\"제트기처럼\" 플리마켓 덮친 트럭…모자 숨져",
-     "u": "https://n.news.naver.com/article/055/0001389658?ntype=RANKING"
+     "t": "'성추행 의혹' 탄원서 보도에 靑 \"확인 어렵다\"·김승원 \"사실과 달라\"",
+     "u": "https://n.news.naver.com/article/082/0001399062?ntype=RANKING"
     },
     {
-     "t": "경주 주택서 불…80대 거주자, 소방관 등 2명 부상",
-     "u": "https://n.news.naver.com/article/055/0001389652?ntype=RANKING"
+     "t": "플리마켓 돌진한 트럭에 모자 참변…운전자 '급발진' 주장",
+     "u": "https://n.news.naver.com/article/082/0001399060?ntype=RANKING"
     },
     {
-     "t": "춤추는 국새, 랩하는 불상…'국중박 분장놀이' 결선 화제",
-     "u": "https://n.news.naver.com/article/055/0001389663?ntype=RANKING"
+     "t": "김승원 자진 사퇴… 靑 “결정 존중”",
+     "u": "https://n.news.naver.com/article/082/0001399044?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-09-19T16:50:44.590175+00:00"
+   "updated_at": "2026-09-19T19:39:00.705876+00:00"
   },
   "zum": {
    "name": "줌",
@@ -129,11 +129,15 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%8F%AC%EC%B8%A0"
     }
    ],
-   "updated_at": "2026-09-19T16:50:44.590175+00:00"
+   "updated_at": "2026-09-19T19:39:00.705876+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
+    {
+     "t": "은퇴 이후의 삶",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464519&_dcbest=1&page=1"
+    },
     {
      "t": "두브로브니크(크로아티아) 사진들",
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464517&_dcbest=1&page=1"
@@ -169,13 +173,9 @@
     {
      "t": "JTBC) 하천서 사금 채취하면서 뒤집고 깨고 파내고",
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464499&_dcbest=1&page=1"
-    },
-    {
-     "t": "아시안게임서 애국가 대신 북한 국가…조직위 공식 사과",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464497&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-09-19T16:50:44.590175+00:00"
+   "updated_at": "2026-09-19T19:39:00.705876+00:00"
   },
   "google": {
    "name": "구글",
@@ -201,6 +201,10 @@
      "u": "https://www.google.com/search?q=pl"
     },
     {
+     "t": "라이엇게임즈",
+     "u": "https://www.google.com/search?q=%EB%9D%BC%EC%9D%B4%EC%97%87%EA%B2%8C%EC%9E%84%EC%A6%88"
+    },
+    {
      "t": "로또번호",
      "u": "https://www.google.com/search?q=%EB%A1%9C%EB%98%90%EB%B2%88%ED%98%B8"
     },
@@ -215,13 +219,9 @@
     {
      "t": "프로야구 순위",
      "u": "https://www.google.com/search?q=%ED%94%84%EB%A1%9C%EC%95%BC%EA%B5%AC%20%EC%88%9C%EC%9C%84"
-    },
-    {
-     "t": "이승기",
-     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%8A%B9%EA%B8%B0"
     }
    ],
-   "updated_at": "2026-09-19T16:50:44.590175+00:00"
+   "updated_at": "2026-09-19T19:39:00.705876+00:00"
   }
  }
 }
