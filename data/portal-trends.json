@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-20T17:03:46.209457+00:00",
+ "updated_at": "2026-09-20T19:52:09.362413+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
@@ -9,47 +9,67 @@
      "u": "https://search.nate.com/search/all.html?q=%EB%82%A8%EC%9E%90%20%EB%86%8D%EA%B5%AC%20%EA%B8%88%EB%A9%94%EB%8B%AC"
     },
     {
-     "t": "발사체 추가 발사",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B0%9C%EC%82%AC%EC%B2%B4%20%EC%B6%94%EA%B0%80%20%EB%B0%9C%EC%82%AC"
-    },
-    {
-     "t": "은메달 김영범",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%80%EB%A9%94%EB%8B%AC%20%EA%B9%80%EC%98%81%EB%B2%94"
-    },
-    {
-     "t": "권성준 윤남노, 시청률 3.8% 삭발 공약",
+     "t": "권성준 윤남노 동반 삭발",
      "u": "https://search.nate.com/search/all.html?q=%EA%B6%8C%EC%84%B1%EC%A4%80%20%EC%9C%A4%EB%82%A8%EB%85%B8%203.8%25"
     },
     {
-     "t": "이준영, 송강 피했다 기억상실 반전",
-     "u": "https://search.nate.com/search/all.html?q=%ED%8F%AC%ED%95%B8%EC%A6%88"
-    },
-    {
-     "t": "송중기 과자 가방 소년미",
-     "u": "https://search.nate.com/search/all.html?q=%EC%86%A1%EC%A4%91%EA%B8%B0%20%EA%B3%BC%EC%9E%90%20%EA%B0%80%EB%B0%A9"
-    },
-    {
-     "t": "김향기, 첫 나비 영업 고군분투 성장기",
-     "u": "https://search.nate.com/search/all.html?q=%EB%82%A0%EC%95%84%EC%98%AC%EB%9D%BC%EB%9D%BC%20%EB%82%98%EB%B9%84"
-    },
-    {
-     "t": "시진핑 건강 이상설 발언",
+     "t": "시진핑 건강 우려, 중국 정부 침묵",
      "u": "https://search.nate.com/search/all.html?q=%EC%8B%9C%EC%A7%84%ED%95%91"
     },
     {
-     "t": "김승원 사퇴 후폭풍",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EC%8A%B9%EC%9B%90%20%EC%82%AC%ED%87%B4"
+     "t": "2026년 9월 21일 운세",
+     "u": "https://search.nate.com/search/all.html?q=2026%EB%85%84%2021%EC%9D%BC%20%EC%9A%B4%EC%84%B8"
     },
     {
-     "t": "제시카, 박명수와 무대 복귀",
-     "u": "https://search.nate.com/search/all.html?q=%EB%AC%B4%EB%8C%80%20%EB%B0%95%EB%AA%85%EC%88%98%EC%99%80%20%EB%A7%8C%EC%97%90"
+     "t": "이강인 마드리드 더비 활약",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EA%B0%95%EC%9D%B8%20%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C%20%EB%8D%94%EB%B9%84"
+    },
+    {
+     "t": "육은영쌤 강승구 발표",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9C%A1%EC%9D%80%EC%98%81%EC%8C%A4%20%EA%B0%95%EC%8A%B9%EA%B5%AC%20%EB%B0%9C%ED%91%9C"
+    },
+    {
+     "t": "사랑이 온다 하석진 가족 보호 나섰다",
+     "u": "https://search.nate.com/search/all.html?q=%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%98%A8%EB%8B%A4"
+    },
+    {
+     "t": "트럼프 개선문 군사화 계획",
+     "u": "https://search.nate.com/search/all.html?q=%ED%8A%B8%EB%9F%BC%ED%94%84%20%EC%9B%8C%EC%8B%B1%ED%84%B4%20%EA%B0%9C%EC%84%A0%EB%AC%B8"
+    },
+    {
+     "t": "포핸즈 반전 열연",
+     "u": "https://search.nate.com/search/all.html?q=%ED%8F%AC%ED%95%B8%EC%A6%88"
+    },
+    {
+     "t": "김승원 성추행 현장 與 의원 사퇴",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EC%8A%B9%EC%9B%90%20%EC%84%B1%EC%B6%94%ED%96%89%20%EC%9E%88%EC%97%88%EB%8B%A4"
     }
    ],
-   "updated_at": "2026-09-20T17:03:46.209457+00:00"
+   "updated_at": "2026-09-20T19:52:09.362413+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
+    {
+     "t": "[단독] “탄원서 몰랐다”던 김승원, 사퇴 전날 전직 보좌진 만나 무마 시도",
+     "u": "https://n.news.naver.com/article/056/0012260746?ntype=RANKING"
+    },
+    {
+     "t": "외계인 쫓는 ‘괴짜 청년’…할리우드까지 홀린 독창성 [우리시대의영화&#12988; 지구를 지켜라]",
+     "u": "https://n.news.naver.com/article/056/0012260762?ntype=RANKING"
+    },
+    {
+     "t": "1년 연구를 20초만에…K폴드 구글에 도전장",
+     "u": "https://n.news.naver.com/article/056/0012260761?ntype=RANKING"
+    },
+    {
+     "t": "책 읽고, 꽃 보고…도심 속 가을 축제 풍성",
+     "u": "https://n.news.naver.com/article/056/0012260760?ntype=RANKING"
+    },
+    {
+     "t": "남자 농구, 일본 꺾고 12년만의 아시안게임 금메달",
+     "u": "https://n.news.naver.com/article/056/0012260750?ntype=RANKING"
+    },
     {
      "t": "이란 \"미, 대이란 2차 확전 결정...동조 국가도 공범\"",
      "u": "https://n.news.naver.com/article/052/0002409506?ntype=RANKING"
@@ -69,29 +89,9 @@
     {
      "t": "추석 밥상에 '개헌'...\"내년 상반기 국민투표 목표\"",
      "u": "https://n.news.naver.com/article/052/0002409490?ntype=RANKING"
-    },
-    {
-     "t": "“죄책감 없이 맘껏 시켜 먹어도 되겠네”…의사도 추천한 ‘다이어트 음식’, 뭐길래 [헬시타임]",
-     "u": "https://n.news.naver.com/article/011/0004663719?ntype=RANKING"
-    },
-    {
-     "t": "사자마자 한 달 만에 -30% “나 어떡해”…외인·기관 던질 때 개미만 800억 ‘줍줍’",
-     "u": "https://n.news.naver.com/article/011/0004663732?ntype=RANKING"
-    },
-    {
-     "t": "“매일 딱 한 그릇이면 충분, 몸이 달라진다”…심혈관 건강에 최고라는 ‘이것’, 뭐길래? [헬시타임]",
-     "u": "https://n.news.naver.com/article/011/0004663684?ntype=RANKING"
-    },
-    {
-     "t": "[단독] 올림픽파크포레온 ‘소변 튀는 변기’ 피해...시공사는 되레 소송",
-     "u": "https://n.news.naver.com/article/011/0004663631?ntype=RANKING"
-    },
-    {
-     "t": "무려 2억을 썼는데 “손가락 욕이냐”…‘흉물 논란’ 난리 난 송도 조형물, 무슨 일?",
-     "u": "https://n.news.naver.com/article/011/0004663681?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-09-20T17:03:46.209457+00:00"
+   "updated_at": "2026-09-20T19:52:09.362413+00:00"
   },
   "zum": {
    "name": "줌",
@@ -99,10 +99,6 @@
     {
      "t": "김영범 황선우 아시안게임",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B9%80%EC%98%81%EB%B2%94%20%ED%99%A9%EC%84%A0%EC%9A%B0%20%EC%95%84%EC%8B%9C%EC%95%88%EA%B2%8C%EC%9E%84"
-    },
-    {
-     "t": "KTX 승차권 예매 확대",
-     "u": "https://search.zum.com/search.zum?method=uni&query=KTX%20%EC%8A%B9%EC%B0%A8%EA%B6%8C%20%EC%98%88%EB%A7%A4%20%ED%99%95%EB%8C%80"
     },
     {
      "t": "이주호 배영 동메달",
@@ -117,6 +113,10 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EB%A7%A8%EC%8B%9C%ED%8B%B0%20%EC%84%A0%EB%8D%9C%EB%9E%9C%EB%93%9C%20%EA%B2%BD%EA%B8%B0"
     },
     {
+     "t": "이준석 테크볼 금메달",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%9D%B4%EC%A4%80%EC%84%9D%20%ED%85%8C%ED%81%AC%EB%B3%BC%20%EA%B8%88%EB%A9%94%EB%8B%AC"
+    },
+    {
      "t": "종합",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%A2%85%ED%95%A9"
     },
@@ -125,7 +125,7 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%97%B0%EC%98%88"
     }
    ],
-   "updated_at": "2026-09-20T17:03:46.209457+00:00"
+   "updated_at": "2026-09-20T19:52:09.362413+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -171,7 +171,7 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464726&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-09-20T17:03:46.209457+00:00"
+   "updated_at": "2026-09-20T19:52:09.362413+00:00"
   },
   "google": {
    "name": "구글",
@@ -181,8 +181,8 @@
      "u": "https://www.google.com/search?q=instagram"
     },
     {
-     "t": "라리가",
-     "u": "https://www.google.com/search?q=%EB%9D%BC%EB%A6%AC%EA%B0%80"
+     "t": "레알마드리드",
+     "u": "https://www.google.com/search?q=%EB%A0%88%EC%95%8C%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C"
     },
     {
      "t": "축구중계",
@@ -217,7 +217,7 @@
      "u": "https://www.google.com/search?q=%EA%B9%80%EC%98%81%EB%B2%94"
     }
    ],
-   "updated_at": "2026-09-20T17:03:46.209457+00:00"
+   "updated_at": "2026-09-20T19:52:09.362413+00:00"
   }
  }
 }
