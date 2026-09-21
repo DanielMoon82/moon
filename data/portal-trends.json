@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-09-20T23:45:27.991133+00:00",
+ "updated_at": "2026-09-21T01:51:51.085659+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "SBS 나고야 아시안게임 농구 1위",
+     "t": "추석 연휴 24시간 안전대책 마련",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B6%94%EC%84%9D%20%EC%97%B0%ED%9C%B4%2024%EC%8B%9C%EA%B0%84"
+    },
+    {
+     "t": "농지 전수조사 당정협의",
+     "u": "https://search.nate.com/search/all.html?q=%EB%86%8D%EC%A7%80%20%EC%A0%84%EC%88%98%EC%A1%B0%EC%82%AC%20%EB%8B%B9%EC%A0%95%ED%98%91%EC%9D%98"
+    },
+    {
+     "t": "발언하는 장동혁 대표",
+     "u": "https://search.nate.com/search/all.html?q=%EB%B0%9C%EC%96%B8%ED%95%98%EB%8A%94%20%EC%9E%A5%EB%8F%99%ED%98%81%20%EB%8C%80%ED%91%9C"
+    },
+    {
+     "t": "핑클 완전체 귀환",
+     "u": "https://search.nate.com/search/all.html?q=%ED%95%91%ED%81%B4%2021%EB%85%84%20%EB%A7%8C%EC%97%90"
+    },
+    {
+     "t": "아시안게임 응원 마케팅",
      "u": "https://search.nate.com/search/all.html?q=%EC%95%84%EC%8B%9C%EC%95%88%EA%B2%8C%EC%9E%84"
     },
     {
-     "t": "트럼프 이란 대통령 만남 가능성",
-     "u": "https://search.nate.com/search/all.html?q=%ED%8A%B8%EB%9F%BC%ED%94%84%20%EB%8C%80%EC%9D%B4%EB%9E%80%20%EC%9D%B4%EB%9E%80"
+     "t": "연기 펼치는 김채영",
+     "u": "https://search.nate.com/search/all.html?q=%EC%97%B0%EA%B8%B0%20%ED%8E%BC%EC%B9%98%EB%8A%94%20%EA%B9%80%EC%B1%84%EC%98%81"
     },
     {
-     "t": "테크볼로 역사를 썼다",
-     "u": "https://search.nate.com/search/all.html?q=%ED%85%8C%ED%81%AC%EB%B3%BC"
+     "t": "코스피 7000선 회복",
+     "u": "https://search.nate.com/search/all.html?q=%EC%BD%94%EC%8A%A4%ED%94%BC%207000%EC%84%A0"
     },
     {
-     "t": "사랑이 온다, 하석진 하니 가족 보호",
-     "u": "https://search.nate.com/search/all.html?q=%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%98%A8%EB%8B%A4"
+     "t": "9월 수출 역대 최대",
+     "u": "https://search.nate.com/search/all.html?q=9%EC%9B%94%20%EC%88%98%EC%B6%9C%20%EC%B5%9C%EB%8C%80"
     },
     {
-     "t": "이강인 태클, 모리뉴 분노",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EA%B0%95%EC%9D%B8%20%ED%83%9C%ED%81%B4%20%EB%AA%A8%EB%A6%AC%EB%89%B4"
+     "t": "신임 김성완 시사평론가",
+     "u": "https://search.nate.com/search/all.html?q=%EC%8B%A0%EC%9E%84%20%EB%8C%80%EB%B3%80%EC%9D%B8%EC%97%90%20%EA%B9%80%EC%84%B1%EC%99%84"
     },
     {
-     "t": "농지 전수조사 추진방향",
-     "u": "https://search.nate.com/search/all.html?q=%EB%86%8D%EC%A7%80%20%EC%A0%84%EC%88%98%EC%A1%B0%EC%82%AC%20%EC%B6%94%EC%A7%84%EB%B0%A9%ED%96%A5"
-    },
-    {
-     "t": "도끼, 이하이와 결혼?",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%ED%95%98%EC%9D%B4"
-    },
-    {
-     "t": "너 말고 다른 연애",
-     "u": "https://search.nate.com/search/all.html?q=%EB%84%88%20%EB%A7%90%EA%B3%A0%20%EB%8B%A4%EB%A5%B8%20%EC%97%B0%EC%95%A0"
-    },
-    {
-     "t": "장애 아동 주차 유튜브 박제",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9E%A5%EC%95%A0%20%EC%9C%A0%ED%8A%9C%EB%B8%8C%20%EB%B0%95%EC%A0%9C"
-    },
-    {
-     "t": "이영자 밥맛 없어",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B0%A5%EB%A7%9B%20%EC%97%86%EC%96%B4%20%EC%9D%B4%EC%98%81%EC%9E%90"
+     "t": "김민석·추미애 만남",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EB%AF%BC%EC%84%9D%20%EC%B6%94%EB%AF%B8%EC%95%A0"
     }
    ],
-   "updated_at": "2026-09-20T23:45:27.991133+00:00"
+   "updated_at": "2026-09-21T01:51:51.085659+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "개미 56조 손실… 증권사 두 달간 수백억 수수료 수익",
-     "u": "https://n.news.naver.com/article/005/0001874165?ntype=RANKING"
+     "t": "이 대통령 지지율 하락세 멈춰 34.8%…민주 40.2%·국힘 38.5%ㅣ리얼미터",
+     "u": "https://n.news.naver.com/article/437/0000512036?ntype=RANKING"
     },
     {
-     "t": "“이거 진짜 하는 거임?”…침착맨·김풍 김치 50분 만에 완판",
-     "u": "https://n.news.naver.com/article/005/0001874216?ntype=RANKING"
+     "t": "\"김승원, 사퇴 전날 '탄원서 제출' 보좌관 만나 무마 시도\"",
+     "u": "https://n.news.naver.com/article/437/0000512010?ntype=RANKING"
     },
     {
-     "t": "[단독] 위험성 알았던 삼전닉스 ETF… 상위 증권사만 불러 밀실 회의",
-     "u": "https://n.news.naver.com/article/005/0001874162?ntype=RANKING"
+     "t": "조희대 업무추진비 첫 공개…고급식당 참석 인원 '부풀리기' 정황",
+     "u": "https://n.news.naver.com/article/437/0000512009?ntype=RANKING"
     },
     {
-     "t": "외풍보다 무서운 내풍… 삼성·포스코 노조 ‘위원장 리스크’",
-     "u": "https://n.news.naver.com/article/005/0001874166?ntype=RANKING"
+     "t": "청와대 신임 대변인에 김성완 시사평론가 임명",
+     "u": "https://n.news.naver.com/article/437/0000512043?ntype=RANKING"
     },
     {
-     "t": "“이란 쓸어버리는 것도 선택지”… 트럼프 고강도 공격 거론",
-     "u": "https://n.news.naver.com/article/005/0001874211?ntype=RANKING"
+     "t": "상어 따라 사람 몰리자…북항 카페 주말 매출 '껑충' [소셜픽]",
+     "u": "https://n.news.naver.com/article/437/0000512040?ntype=RANKING"
     },
     {
-     "t": "\"성인도 벌기 힘든 돈인데\"…'억대 연봉' 받는 미성년 사장 21명",
-     "u": "https://n.news.naver.com/article/001/0016324923?ntype=RANKING"
+     "t": "\"남녀 같이 눕더니\" 시민들 눈살…청계천에 등장한 정체",
+     "u": "https://n.news.naver.com/article/055/0001389896?ntype=RANKING"
     },
     {
-     "t": "[삶] \"애인에겐 사랑한다 매일 말하면서…엄마한텐 평생한번 안하니?\"",
-     "u": "https://n.news.naver.com/article/001/0016324950?ntype=RANKING"
+     "t": "\"도쿄 도착했더니 캐리어 증발\"…인천공항에서 속출, 왜",
+     "u": "https://n.news.naver.com/article/055/0001389854?ntype=RANKING"
     },
     {
-     "t": "트럼프 \"대이란 대응 결정중…이란 대통령 만나는데 열려있다\"",
-     "u": "https://n.news.naver.com/article/001/0016324901?ntype=RANKING"
+     "t": "박지원 \"김민석, 집권여당 대표로서 사과해야…김승원도 한동훈도 수사받아라\" [정치쇼]",
+     "u": "https://n.news.naver.com/article/055/0001389902?ntype=RANKING"
     },
     {
-     "t": "장안동 지하창고서 위조명품 7천여점 적발…정품가 89억원어치",
-     "u": "https://n.news.naver.com/article/001/0016324947?ntype=RANKING"
+     "t": "\"와\" 모습 드러내자 탄성…대포 카메라까지 등장한 핫플",
+     "u": "https://n.news.naver.com/article/055/0001389870?ntype=RANKING"
     },
     {
-     "t": "대미투자협상 '상업적합리성' 막판진통…\"파기 가능성 배제못해\"",
-     "u": "https://n.news.naver.com/article/001/0016324821?ntype=RANKING"
+     "t": "\"운전하는 이 기사님은\"…택시 탔다 함박웃음 부른 편지",
+     "u": "https://n.news.naver.com/article/055/0001389881?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-09-20T23:45:27.991133+00:00"
+   "updated_at": "2026-09-21T01:51:51.085659+00:00"
   },
   "zum": {
    "name": "줌",
@@ -101,20 +101,20 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EB%8C%80%ED%86%B5%EB%A0%B9%20%EC%A7%80%EC%A7%80%EC%9C%A8%20%EB%B0%98%EB%93%B1"
     },
     {
+     "t": "9월 중순 수출 역대 최대",
+     "u": "https://search.zum.com/search.zum?method=uni&query=9%EC%9B%94%20%EC%A4%91%EC%88%9C%20%EC%88%98%EC%B6%9C%20%EC%97%AD%EB%8C%80%20%EC%B5%9C%EB%8C%80"
+    },
+    {
+     "t": "코스피 7000선 탈환",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%BD%94%EC%8A%A4%ED%94%BC%207000%EC%84%A0%20%ED%83%88%ED%99%98"
+    },
+    {
      "t": "4분기 전기요금 동결",
      "u": "https://search.zum.com/search.zum?method=uni&query=4%EB%B6%84%EA%B8%B0%20%EC%A0%84%EA%B8%B0%EC%9A%94%EA%B8%88%20%EB%8F%99%EA%B2%B0"
     },
     {
-     "t": "성남시 개방화장실 지원",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%84%B1%EB%82%A8%EC%8B%9C%20%EA%B0%9C%EB%B0%A9%ED%99%94%EC%9E%A5%EC%8B%A4%20%EC%A7%80%EC%9B%90"
-    },
-    {
-     "t": "용인 수지 보도 재포장",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%9A%A9%EC%9D%B8%20%EC%88%98%EC%A7%80%20%EB%B3%B4%EB%8F%84%20%EC%9E%AC%ED%8F%AC%EC%9E%A5"
-    },
-    {
-     "t": "화성 민주시민교육 모집",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%ED%99%94%EC%84%B1%20%EB%AF%BC%EC%A3%BC%EC%8B%9C%EB%AF%BC%EA%B5%90%EC%9C%A1%20%EB%AA%A8%EC%A7%91"
+     "t": "핑클 21년 완전체 컴백",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%ED%95%91%ED%81%B4%2021%EB%85%84%20%EC%99%84%EC%A0%84%EC%B2%B4%20%EC%BB%B4%EB%B0%B1"
     },
     {
      "t": "종합",
@@ -129,60 +129,80 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%8F%AC%EC%B8%A0"
     }
    ],
-   "updated_at": "2026-09-20T23:45:27.991133+00:00"
+   "updated_at": "2026-09-21T01:51:51.085659+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
     {
-     "t": "재크 한마 후임병 만화.jpg",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464768&_dcbest=1&page=1"
+     "t": "이강인 기점 조선데 추가골...gif",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464794&_dcbest=1&page=1"
     },
     {
-     "t": "싱글벙글 먹으면 이상한 환각이 보이는 독버섯...jpg",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464766&_dcbest=1&page=1"
+     "t": "기차표 싹쓸이..20억 챙긴 암표상 무더기 적발",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464792&_dcbest=1&page=1"
     },
     {
-     "t": "노인은 모르는 요즘 교도소 콩밥,보리밥 사라짐 외관도 식단도 호텔급",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464764&_dcbest=1&page=1"
+     "t": "한국, 아시안게임 첫날 금 3개…쾌조의 출발",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464790&_dcbest=1&page=1"
     },
     {
-     "t": "싱글정글 3일 굶으면 싫어하는 음식도 맛있게 먹을수있다 설",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464762&_dcbest=1&page=1"
+     "t": "스압) 싱글벙글 미국 택시.Ssul",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464788&_dcbest=1&page=1"
     },
     {
-     "t": "도쿄겜쇼 2일차",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464758&_dcbest=1&page=1"
+     "t": "F1의 '르망 참사', 1961년 이탈리아 그랑프리",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464786&_dcbest=1&page=1"
     },
     {
-     "t": "싱글벙글 외국 게임에서 나오는 고려의 모습...jpg",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464757&_dcbest=1&page=1"
+     "t": "[단독] 김승원 '성추행 의혹' 술자리에 김용민·장경태 동석",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464783&_dcbest=1&page=1"
     },
     {
-     "t": "50, 135mm로 새찍 (47장)",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464754&_dcbest=1&page=1"
+     "t": "\"훈련 못해도 승리\"..남자농구 일본 꺾고 금메달",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464781&_dcbest=1&page=1"
     },
     {
-     "t": "싱글벙글 미군이 촬영한 625 전쟁 당시 대한민국의 모습..jpg",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464752&_dcbest=1&page=1"
+     "t": "싱글벙글 실제로 보면 너무 무섭다는 사람.jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464778&_dcbest=1&page=1"
     },
     {
-     "t": "한국인보다 유독 외국인들이 좋아한다는 K-과자",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464750&_dcbest=1&page=1"
+     "t": "흔한 일본의 연예인 유튜브 컨텐츠 수준..jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464776&_dcbest=1&page=1"
     },
     {
-     "t": "싱글벙글... 패션계에 불어닥친 브랜드 라이선스...",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464748&_dcbest=1&page=1"
+     "t": "오버워치) 힐러가 된 솜브라 manhwa",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=464774&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-09-20T23:45:27.991133+00:00"
+   "updated_at": "2026-09-21T01:51:51.085659+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
+     "t": "게임",
+     "u": "https://www.google.com/search?q=%EA%B2%8C%EC%9E%84"
+    },
+    {
+     "t": "기상청",
+     "u": "https://www.google.com/search?q=%EA%B8%B0%EC%83%81%EC%B2%AD"
+    },
+    {
+     "t": "크래프톤 주가",
+     "u": "https://www.google.com/search?q=%ED%81%AC%EB%9E%98%ED%94%84%ED%86%A4%20%EC%A3%BC%EA%B0%80"
+    },
+    {
      "t": "조선일보",
      "u": "https://www.google.com/search?q=%EC%A1%B0%EC%84%A0%EC%9D%BC%EB%B3%B4"
+    },
+    {
+     "t": "달력",
+     "u": "https://www.google.com/search?q=%EB%8B%AC%EB%A0%A5"
+    },
+    {
+     "t": "7",
+     "u": "https://www.google.com/search?q=7"
     },
     {
      "t": "instagram",
@@ -199,29 +219,9 @@
     {
      "t": "리버풀",
      "u": "https://www.google.com/search?q=%EB%A6%AC%EB%B2%84%ED%92%80"
-    },
-    {
-     "t": "맨시티",
-     "u": "https://www.google.com/search?q=%EB%A7%A8%EC%8B%9C%ED%8B%B0"
-    },
-    {
-     "t": "google",
-     "u": "https://www.google.com/search?q=google"
-    },
-    {
-     "t": "sxmb",
-     "u": "https://www.google.com/search?q=sxmb"
-    },
-    {
-     "t": "kbs",
-     "u": "https://www.google.com/search?q=kbs"
-    },
-    {
-     "t": "이현중",
-     "u": "https://www.google.com/search?q=%EC%9D%B4%ED%98%84%EC%A4%91"
     }
    ],
-   "updated_at": "2026-09-20T23:45:27.991133+00:00"
+   "updated_at": "2026-09-21T01:51:51.085659+00:00"
   }
  }
 }
