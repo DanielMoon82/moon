@@ -1,101 +1,105 @@
 {
- "updated_at": "2026-09-24T18:00:57.226865+00:00",
+ "updated_at": "2026-09-24T22:45:23.020594+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "손흥민 모레노 감독 완승",
-     "u": "https://search.nate.com/search/all.html?q=%EC%86%90%ED%9D%A5%EB%AF%BC%20%EB%AA%A8%EB%A0%88%EB%85%B8%20%EA%B0%90%EB%8F%85"
+     "t": "이재명 대통령, 멕시코 방문 추진",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EB%8C%80%ED%86%B5%EB%A0%B9%20%EB%A9%95%EC%8B%9C%EC%BD%94"
     },
     {
-     "t": "여서정 도마 금메달",
-     "u": "https://search.nate.com/search/all.html?q=%EC%97%AC%EC%84%9C%EC%A0%95%20%EB%8F%84%EB%A7%88%20%EA%B8%88%EB%A9%94%EB%8B%AC"
-    },
-    {
-     "t": "이재명, 멕시코 영웅탑 참배",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EB%A9%95%EC%8B%9C%EC%BD%94%20%EC%95%A0%EA%B5%AD%EC%98%81%EC%9B%85%ED%83%91"
-    },
-    {
-     "t": "김정은 방러 일정 조율",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EC%A0%95%EC%9D%80%20%EB%B0%A9%EB%9F%AC%20%EC%B4%88%EC%B2%AD"
-    },
-    {
-     "t": "트럼프 시진핑과 안보 논의",
-     "u": "https://search.nate.com/search/all.html?q=%ED%8A%B8%EB%9F%BC%ED%94%84%20%EC%8B%9C%EC%A7%84%ED%95%91%EA%B3%BC%20%EC%95%88%EB%B3%B4"
-    },
-    {
-     "t": "북한군 포로 한국행 불확실",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B6%81%ED%95%9C%EA%B5%B0%20%ED%8F%AC%EB%A1%9C%20%EA%B4%80%EB%A0%A8"
-    },
-    {
-     "t": "韓 남자 계영 400M 은메달",
-     "u": "https://search.nate.com/search/all.html?q=%EB%82%A8%EC%9E%90%20%EA%B3%84%EC%98%81%20400M"
+     "t": "시진핑 미중 무역합의 도달",
+     "u": "https://search.nate.com/search/all.html?q=%EC%8B%9C%EC%A7%84%ED%95%91%20%EB%AF%B8%EC%A4%91"
     },
     {
      "t": "추석 연휴 즐기기",
      "u": "https://search.nate.com/search/all.html?q=%EC%B6%94%EC%84%9D%20%EC%97%B0%ED%9C%B4"
     },
     {
-     "t": "송환 비공개가 아쉽다",
-     "u": "https://search.nate.com/search/all.html?q=%EC%86%A1%ED%99%98%20%EB%B9%84%EA%B3%B5%EA%B0%9C%EA%B0%80%20%EC%95%84%EC%89%BD%EB%8B%A4"
+     "t": "아시안게임 여자역도 금메달",
+     "u": "https://search.nate.com/search/all.html?q=%EC%95%84%EC%8B%9C%EC%95%88%EA%B2%8C%EC%9E%84"
     },
     {
-     "t": "유시민 발언에 유감",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9C%A0%EC%8B%9C%EB%AF%BC%20%EB%B0%9C%EC%96%B8%EC%97%90%20%EC%9C%A0%EA%B0%90"
+     "t": "공동언론발표 마친 한-멕시코 정상",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B3%B5%EB%8F%99%EC%96%B8%EB%A1%A0%EB%B0%9C%ED%91%9C%20%EB%A7%88%EC%B9%9C%20%ED%95%9C-%EB%A9%95%EC%8B%9C%EC%BD%94%20%EC%A0%95%EC%83%81"
+    },
+    {
+     "t": "북한 포로 송환 비공개",
+     "u": "https://search.nate.com/search/all.html?q=%ED%8F%AC%EB%A1%9C%20%EC%86%A1%ED%99%98%20%EB%B9%84%EA%B3%B5%EA%B0%9C"
+    },
+    {
+     "t": "유시민 법적 대응 검토",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9C%A0%EC%8B%9C%EB%AF%BC%20%EB%8C%80%EC%9D%91%20%EA%B2%80%ED%86%A0%ED%95%98%EB%82%98"
+    },
+    {
+     "t": "홍진경, 최진실 이모 루머 대응",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B5%9C%EC%A7%84%EC%8B%A4%20%EC%9D%B4%EB%AA%A8%20%EB%A3%A8%EB%A8%B8%EC%97%90"
+    },
+    {
+     "t": "강남 집값 하락",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B0%95%EB%82%A8%20%EC%A7%91%EA%B0%92%20%EC%83%81%EC%8A%B9"
+    },
+    {
+     "t": "출생신고 안한 母 실형 15년",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B6%9C%EC%83%9D%EC%8B%A0%EA%B3%A0%2015%EB%85%84%EB%A7%8C%EC%97%90%20%EC%8B%A4%ED%98%95"
     }
    ],
-   "updated_at": "2026-09-24T18:00:57.226865+00:00"
+   "updated_at": "2026-09-24T22:45:23.020594+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "\"한국 가고 싶다\"던 북한군 포로 송환…청와대, 사실상 인정",
-     "u": "https://n.news.naver.com/article/437/0000512688?ntype=RANKING"
+     "t": "李 \"우크라, 北 포로 비공개 합의 어겨\"... 야권 비판엔 \"국익 해치는 사람이 매국노\"",
+     "u": "https://n.news.naver.com/article/469/0000955916?ntype=RANKING"
     },
     {
-     "t": "[단독] 단체장 평가서 '추미애 경기도' 꼴찌…\"소통에 문제있다\"",
-     "u": "https://n.news.naver.com/article/437/0000512690?ntype=RANKING"
+     "t": "중국 수영 영웅 판잔러, 김영범 향해 \"다음 아시아 챔피언은 너\"",
+     "u": "https://n.news.naver.com/article/469/0000955913?ntype=RANKING"
     },
     {
-     "t": "[단독] \"위작이라 언론에 흘리면\" 판결문 속 '범행 은폐' 정황",
-     "u": "https://n.news.naver.com/article/437/0000512691?ntype=RANKING"
+     "t": "한동훈, 국방부 앞 1인 시위 \"지뢰 폭발 사고 즉각 현장조사하라\"",
+     "u": "https://n.news.naver.com/article/469/0000955910?ntype=RANKING"
     },
     {
-     "t": "\"케데헌 속 한국, 직접 왔다\"…추석 도심 관광지 '북적'",
-     "u": "https://n.news.naver.com/article/437/0000512684?ntype=RANKING"
+     "t": "'여서정' 아끼고도 또 金 따낸 여서정... \"아빠의 길 따라가 좋아요\"",
+     "u": "https://n.news.naver.com/article/469/0000955912?ntype=RANKING"
     },
     {
-     "t": "트럼프, 시진핑에 '파격 예우'…공짜 아니다? 숨은 '계산서'",
-     "u": "https://n.news.naver.com/article/437/0000512686?ntype=RANKING"
+     "t": "이 대통령, 멕시코와 정상회담서 한국산 전투기 수출 발판 마련",
+     "u": "https://n.news.naver.com/article/469/0000955921?ntype=RANKING"
     },
     {
-     "t": "\"추석에 조심하세요\"…지난해보다 '70배' 급증",
-     "u": "https://n.news.naver.com/article/055/0001390944?ntype=RANKING"
+     "t": "시진핑 \"미중 새 무역합의 도달\"‥미중 정상, 한반도 문제도 논의",
+     "u": "https://n.news.naver.com/article/214/0001525773?ntype=RANKING"
     },
     {
-     "t": "0.255초 대접전…중국 제치고 '금빛 레이스'",
-     "u": "https://n.news.naver.com/article/055/0001390939?ntype=RANKING"
+     "t": "\"중국집 간판 바꿔라\" 잇단 테러‥이름 뭐기에",
+     "u": "https://n.news.naver.com/article/214/0001525734?ntype=RANKING"
     },
     {
-     "t": "청와대 \"유시민 발언에 유감\"…법적 대응 검토하나",
-     "u": "https://n.news.naver.com/article/055/0001390942?ntype=RANKING"
+     "t": "[단독] 상속세 주식으로 받았는데, 관리 못 해 930억 원 날렸다",
+     "u": "https://n.news.naver.com/article/214/0001525738?ntype=RANKING"
     },
     {
-     "t": "북한 포로 2명 한국으로…\"3~4일 전 도착\"",
-     "u": "https://n.news.naver.com/article/055/0001390936?ntype=RANKING"
+     "t": "\"북한군 포로 한국으로\"‥젤렌스키 '공개'에 정부도 '인정'",
+     "u": "https://n.news.naver.com/article/214/0001525733?ntype=RANKING"
     },
     {
-     "t": "[지식의 발견] \"추미애, 독기를 품고 덤빈다! 그냥 놔둬라\"…김민석 향한 홍준표의 '조언'",
-     "u": "https://n.news.naver.com/article/055/0001390910?ntype=RANKING"
+     "t": "유시민 발언에 청와대 \"근거 없는 비난성 주장‥검찰개혁 의지 왜곡에 유감\"",
+     "u": "https://n.news.naver.com/article/214/0001525725?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-09-24T18:00:57.226865+00:00"
+   "updated_at": "2026-09-24T22:45:23.020594+00:00"
   },
   "zum": {
    "name": "줌",
    "keywords": [
+    {
+     "t": "국제유가 급등",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B5%AD%EC%A0%9C%EC%9C%A0%EA%B0%80%20%EA%B8%89%EB%93%B1"
+    },
     {
      "t": "모레노 에콰도르전 라인업",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EB%AA%A8%EB%A0%88%EB%85%B8%20%EC%97%90%EC%BD%B0%EB%8F%84%EB%A5%B4%EC%A0%84%20%EB%9D%BC%EC%9D%B8%EC%97%85"
@@ -113,10 +117,6 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B9%80%EC%9A%B0%EB%AF%BC%20%EC%95%84%EC%8B%9C%EC%95%88%EA%B2%8C%EC%9E%84%20%EA%B3%84%EC%98%81"
     },
     {
-     "t": "아시안게임 100m 준결승",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%95%84%EC%8B%9C%EC%95%88%EA%B2%8C%EC%9E%84%20100m%20%EC%A4%80%EA%B2%B0%EC%8A%B9"
-    },
-    {
      "t": "종합",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%A2%85%ED%95%A9"
     },
@@ -129,11 +129,31 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%8F%AC%EC%B8%A0"
     }
    ],
-   "updated_at": "2026-09-24T18:00:57.226865+00:00"
+   "updated_at": "2026-09-24T22:45:23.020594+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
+    {
+     "t": "역대 축구선수들의 챔피언스 리그 우승 순간..jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465708&_dcbest=1&page=1"
+    },
+    {
+     "t": "에바그린 주연의 충격적 SF영화.gif",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465706&_dcbest=1&page=1"
+    },
+    {
+     "t": "의외로 요즘 트럭들 매연이 심각하게 나오는 이유",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465705&_dcbest=1&page=1"
+    },
+    {
+     "t": "도쿄게임쇼, 그런데 태풍과 함께",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465703&_dcbest=1&page=1"
+    },
+    {
+     "t": "의문의 도구로, 지붕 위 고양이 구한 친구들.jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465701&_dcbest=1&page=1"
+    },
     {
      "t": "의외로 가난하게 태어났지만 부를 거머진 사업가",
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465699&_dcbest=1&page=1"
@@ -153,75 +173,55 @@
     {
      "t": "동생들에게 떡볶이 사주려 직접 사러간 시각장애인",
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465689&_dcbest=1&page=1"
-    },
-    {
-     "t": "오토바이 무서워하는 강아지 교육하는 만화",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465687&_dcbest=1&page=1"
-    },
-    {
-     "t": "염경엽 일로 와라…gif",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465685&_dcbest=1&page=1"
-    },
-    {
-     "t": "트럼프, 시진핑 주석 환대 위해 공항에서 1시간 기다려",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465683&_dcbest=1&page=1"
-    },
-    {
-     "t": "'50세 미혼' 배우 김현주, 외로움 커 하루종일 뜨개질..jpg",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465681&_dcbest=1&page=1"
-    },
-    {
-     "t": "여서정 금메달 북괴누나 ㅈ된표정",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=465679&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-09-24T18:00:57.226865+00:00"
+   "updated_at": "2026-09-24T22:45:23.020594+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "중추절",
-     "u": "https://www.google.com/search?q=%EC%A4%91%EC%B6%94%EC%A0%88"
+     "t": "날씨",
+     "u": "https://www.google.com/search?q=%EB%82%A0%EC%94%A8"
     },
     {
-     "t": "이창섭",
-     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%B0%BD%EC%84%AD"
+     "t": "погода",
+     "u": "https://www.google.com/search?q=%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0"
     },
     {
-     "t": "박찬호",
-     "u": "https://www.google.com/search?q=%EB%B0%95%EC%B0%AC%ED%98%B8"
+     "t": "schd",
+     "u": "https://www.google.com/search?q=schd"
     },
     {
-     "t": "심형래",
-     "u": "https://www.google.com/search?q=%EC%8B%AC%ED%98%95%EB%9E%98"
+     "t": "골프",
+     "u": "https://www.google.com/search?q=%EA%B3%A8%ED%94%84"
     },
     {
-     "t": "신뢰도",
-     "u": "https://www.google.com/search?q=%EC%8B%A0%EB%A2%B0%EB%8F%84"
+     "t": "크리스티아누 호날두",
+     "u": "https://www.google.com/search?q=%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8B%B0%EC%95%84%EB%88%84%20%ED%98%B8%EB%82%A0%EB%91%90"
     },
     {
-     "t": "피파랭킹",
-     "u": "https://www.google.com/search?q=%ED%94%BC%ED%8C%8C%EB%9E%AD%ED%82%B9"
+     "t": "백진희",
+     "u": "https://www.google.com/search?q=%EB%B0%B1%EC%A7%84%ED%9D%AC"
     },
     {
-     "t": "종합부동산세",
-     "u": "https://www.google.com/search?q=%EC%A2%85%ED%95%A9%EB%B6%80%EB%8F%99%EC%82%B0%EC%84%B8"
+     "t": "สภาพอากาศ",
+     "u": "https://www.google.com/search?q=%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A8"
     },
     {
-     "t": "조인성",
-     "u": "https://www.google.com/search?q=%EC%A1%B0%EC%9D%B8%EC%84%B1"
+     "t": "우서윤",
+     "u": "https://www.google.com/search?q=%EC%9A%B0%EC%84%9C%EC%9C%A4"
     },
     {
-     "t": "엘니뇨",
-     "u": "https://www.google.com/search?q=%EC%97%98%EB%8B%88%EB%87%A8"
+     "t": "통장",
+     "u": "https://www.google.com/search?q=%ED%86%B5%EC%9E%A5"
     },
     {
-     "t": "사고",
-     "u": "https://www.google.com/search?q=%EC%82%AC%EA%B3%A0"
+     "t": "부부",
+     "u": "https://www.google.com/search?q=%EB%B6%80%EB%B6%80"
     }
    ],
-   "updated_at": "2026-09-24T18:00:57.226865+00:00"
+   "updated_at": "2026-09-24T22:45:23.020594+00:00"
   }
  }
 }
