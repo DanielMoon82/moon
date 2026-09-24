@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-23T11:54:07.175650+00:00",
+ "updated_at": "2026-09-24T05:55:56.131872+00:00",
  "broker": "NH투자증권",
  "url": "https://m.nhsec.com/finance/bond/bond/inList",
  "note": "장내채권 체결수익률",
@@ -97,7 +97,7 @@
      "kind": "회사채",
      "grade": "AAA",
      "mature": "2027-06-20",
-     "left": "9개월",
+     "left": "8개월",
      "coupon": 3.487,
      "yield": 4.165,
      "price": 9979.29
@@ -157,7 +157,7 @@
      "kind": "회사채",
      "grade": "AAA",
      "mature": "2027-06-20",
-     "left": "9개월",
+     "left": "8개월",
      "coupon": 3.487,
      "yield": 2.837,
      "price": 10149.9
