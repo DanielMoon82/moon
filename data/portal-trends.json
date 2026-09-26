@@ -1,15 +1,11 @@
 {
- "updated_at": "2026-09-26T17:26:33.324931+00:00",
+ "updated_at": "2026-09-26T20:14:54.587367+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "남자 사브르 4연패 달성",
-     "u": "https://search.nate.com/search/all.html?q=%EB%82%A8%EC%9E%90%20%EC%82%AC%EB%B8%8C%EB%A5%B4%204%EC%97%B0%ED%8C%A8"
-    },
-    {
-     "t": "여자농구 AG 금메달",
+     "t": "여자농구 금메달 순간",
      "u": "https://search.nate.com/search/all.html?q=AG%20%EC%97%AC%EC%9E%90%EB%86%8D%EA%B5%AC%20%EA%B8%88%EB%A9%94%EB%8B%AC"
     },
     {
@@ -17,81 +13,85 @@
      "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EB%8C%80%ED%86%B5%EB%A0%B9%20%EB%B6%80%EB%B6%80"
     },
     {
-     "t": "DMZ 지뢰 폭발 조사 준비",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B5%B0%20%EC%9C%A0%EC%97%94%EC%82%AC%20DMZ"
-    },
-    {
-     "t": "박명수 딸 한예종 합격",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B0%95%EB%AA%85%EC%88%98%20%EB%94%B8%20%ED%95%9C%EC%98%88%EC%A2%85"
+     "t": "환희, 8년 만에 컴백 트로트 활동",
+     "u": "https://search.nate.com/search/all.html?q=%ED%99%98%ED%9D%AC%20%EC%BB%B4%EB%B0%B1%20%ED%8A%B8%EB%A1%9C%ED%8A%B8"
     },
     {
      "t": "화려한 추석 드론-레이저쇼",
      "u": "https://search.nate.com/search/all.html?q=%ED%99%94%EB%A0%A4%ED%95%9C%20%EC%B6%94%EC%84%9D%20%EB%93%9C%EB%A1%A0-%EB%A0%88%EC%9D%B4%EC%A0%80%EC%87%BC"
     },
     {
-     "t": "환희, 8년 만에 트로트 컴백",
-     "u": "https://search.nate.com/search/all.html?q=%ED%99%98%ED%9D%AC%20%EC%BB%B4%EB%B0%B1%20%ED%8A%B8%EB%A1%9C%ED%8A%B8"
+     "t": "송강, 이준영 포핸즈 클래식 서사",
+     "u": "https://search.nate.com/search/all.html?q=%ED%8F%AC%ED%95%B8%EC%A6%88"
     },
     {
-     "t": "1243회 로또 1등 12명 당첨",
+     "t": "왕과 사는 남자",
+     "u": "https://search.nate.com/search/all.html?q=%EC%99%95%EA%B3%BC%20%EC%82%AC%EB%8A%94%20%EB%82%A8%EC%9E%90"
+    },
+    {
+     "t": "박명수 딸 한예종 합격",
+     "u": "https://search.nate.com/search/all.html?q=%EB%B0%95%EB%AA%85%EC%88%98%20%EB%94%B8%20%ED%95%9C%EC%98%88%EC%A2%85"
+    },
+    {
+     "t": "1243회 로또 1등 25억 12명",
      "u": "https://search.nate.com/search/all.html?q=1243%ED%9A%8C%20%EB%A1%9C%EB%98%90%201%EB%93%B1"
     },
     {
-     "t": "박세리 갈치김치 타운하우스 공개",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B0%95%EC%84%B8%EB%A6%AC%20%ED%83%80%EC%9A%B4%ED%95%98%EC%9A%B0%EC%8A%A4%20%EA%B0%88%EC%B9%98%EA%B9%80%EC%B9%98"
+     "t": "암살자들 논란 계속된다",
+     "u": "https://search.nate.com/search/all.html?q=%EC%95%94%EC%82%B4%EC%9E%90%EB%93%A4"
     },
     {
-     "t": "암살자들 논란",
-     "u": "https://search.nate.com/search/all.html?q=%EC%95%94%EC%82%B4%EC%9E%90%EB%93%A4"
+     "t": "박세리 타운하우스 공개",
+     "u": "https://search.nate.com/search/all.html?q=%EB%B0%95%EC%84%B8%EB%A6%AC%20%ED%83%80%EC%9A%B4%ED%95%98%EC%9A%B0%EC%8A%A4%20%EA%B3%B5%EA%B0%9C"
     }
    ],
-   "updated_at": "2026-09-26T17:26:33.324931+00:00"
+   "updated_at": "2026-09-26T20:14:54.587367+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "“대게 2마리 37만원, 꽃게 다리는 1개”…소래포구 ‘바가지 근절’, 이번엔 성공할까",
-     "u": "https://n.news.naver.com/article/009/0005740145?ntype=RANKING"
+     "t": "침대에서 충전?…보조배터리 깔고 자다 ‘저온화상’ [의학:너머]",
+     "u": "https://n.news.naver.com/article/056/0012263563?ntype=RANKING"
     },
     {
-     "t": "“빤히 쳐다보는 남자들, 전부 안경 썼어요”…스마트안경 사생활 논란",
-     "u": "https://n.news.naver.com/article/009/0005740157?ntype=RANKING"
+     "t": "한국형 구축함 KDDX 전투체계 실물 최초 공개…‘미 이지스급’ 성능 목표",
+     "u": "https://n.news.naver.com/article/056/0012263556?ntype=RANKING"
     },
     {
-     "t": "“가장 큰 버팀목이자 전부였던 분”…배우 최수종, 25일 모친상",
-     "u": "https://n.news.naver.com/article/009/0005740090?ntype=RANKING"
+     "t": "군·유엔사, ‘DMZ 폭발’ 현장 조사 착수…여야는 “은폐” “음모론” 설전",
+     "u": "https://n.news.naver.com/article/056/0012263565?ntype=RANKING"
     },
     {
-     "t": "“‘노 제사’라더니 식탁엔 남자만?”…김대호, 추석 인증샷에 ‘갑론을박’",
-     "u": "https://n.news.naver.com/article/009/0005740123?ntype=RANKING"
+     "t": "펜싱 남자 사브르 단체전 극적인 금메달…맏형 오상욱이 해냈다",
+     "u": "https://n.news.naver.com/article/056/0012263552?ntype=RANKING"
     },
     {
-     "t": "“손주 데리고 또 와야죠”…100m 옆에서 미리 자보고 1억원 결제한다는데",
-     "u": "https://n.news.naver.com/article/009/0005740093?ntype=RANKING"
+     "t": "여자 농구, 일본 꺾고 12년 만에 금메달",
+     "u": "https://n.news.naver.com/article/056/0012263550?ntype=RANKING"
     },
     {
-     "t": "[아시안게임] '프로' 한국 야구, 중국 꺾고 결승행…27일 '사회인' 일본과 설욕전",
-     "u": "https://n.news.naver.com/article/660/0000117942?ntype=RANKING"
+     "t": "\"합의 없었다\"는 우크라…박지원 \"정부, 여당에 설명 없다\"",
+     "u": "https://n.news.naver.com/article/437/0000512836?ntype=RANKING"
     },
     {
-     "t": "김현지 청와대 1부속실장 부친상…'부고 없이' 광주서 조용히 가족장",
-     "u": "https://n.news.naver.com/article/660/0000117938?ntype=RANKING"
+     "t": "한동훈 \"유엔사 조사 요청 우리 군이 거절…명명백백히 밝혀야\"",
+     "u": "https://n.news.naver.com/article/437/0000512833?ntype=RANKING"
     },
     {
-     "t": "홍석준 \"이 대통령, 김현지 못 내칠 것...뭘 너무 많이 알아, 최순실 1천 배 실세, 영향력\"[여의도 진검승부]",
-     "u": "https://n.news.naver.com/article/660/0000117931?ntype=RANKING"
+     "t": "[단독] \"발전기금이 관행\"이라며 30% 떼가더니…강의료 '증발'",
+     "u": "https://n.news.naver.com/article/437/0000512838?ntype=RANKING"
     },
     {
-     "t": "이훈기 \"'관심병' 한동훈, 저게 정상일까 싶어...'검찰 캐비닛' 정치, 나쁜 것만 배워, 처벌 필요\"[민방대담]",
-     "u": "https://n.news.naver.com/article/660/0000117915?ntype=RANKING"
+     "t": "[인터뷰] 메달보다 빛난 '금손' 이현중…\"NBA 말고도 꿈 많아\"",
+     "u": "https://n.news.naver.com/article/437/0000512847?ntype=RANKING"
     },
     {
-     "t": "조계원 \"김현지, 이재명의 최순실·김건희?...내가 잘 아는데, 황당 뇌피셜, 비선 실세는 무슨\"[여의도 진검승부]",
-     "u": "https://n.news.naver.com/article/660/0000117922?ntype=RANKING"
+     "t": "'호르무즈→트럼프 해협' 이름 바꾼 트럼프…이란 제안 거절 해석",
+     "u": "https://n.news.naver.com/article/437/0000512850?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-09-26T17:26:33.324931+00:00"
+   "updated_at": "2026-09-26T20:14:54.587367+00:00"
   },
   "zum": {
    "name": "줌",
@@ -133,7 +133,7 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%A2%85%ED%95%A9%EB%9E%AD%ED%82%B9"
     }
    ],
-   "updated_at": "2026-09-26T17:26:33.324931+00:00"
+   "updated_at": "2026-09-26T20:14:54.587367+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -179,11 +179,27 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=466102&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-09-26T17:26:33.324931+00:00"
+   "updated_at": "2026-09-26T20:14:54.587367+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
+    {
+     "t": "종이팩",
+     "u": "https://www.google.com/search?q=%EC%A2%85%EC%9D%B4%ED%8C%A9"
+    },
+    {
+     "t": "한채아",
+     "u": "https://www.google.com/search?q=%ED%95%9C%EC%B1%84%EC%95%84"
+    },
+    {
+     "t": "england vs spain",
+     "u": "https://www.google.com/search?q=england%20vs%20spain"
+    },
+    {
+     "t": "잉글랜드 대 스페인",
+     "u": "https://www.google.com/search?q=%EC%9E%89%EA%B8%80%EB%9E%9C%EB%93%9C%20%EB%8C%80%20%EC%8A%A4%ED%8E%98%EC%9D%B8"
+    },
     {
      "t": "이창섭",
      "u": "https://www.google.com/search?q=%EC%9D%B4%EC%B0%BD%EC%84%AD"
@@ -207,25 +223,9 @@
     {
      "t": "조현아",
      "u": "https://www.google.com/search?q=%EC%A1%B0%ED%98%84%EC%95%84"
-    },
-    {
-     "t": "lotto result 6/45",
-     "u": "https://www.google.com/search?q=lotto%20result%206%2F45"
-    },
-    {
-     "t": "sbs",
-     "u": "https://www.google.com/search?q=sbs"
-    },
-    {
-     "t": "한소희",
-     "u": "https://www.google.com/search?q=%ED%95%9C%EC%86%8C%ED%9D%AC"
-    },
-    {
-     "t": "정시아",
-     "u": "https://www.google.com/search?q=%EC%A0%95%EC%8B%9C%EC%95%84"
     }
    ],
-   "updated_at": "2026-09-26T17:26:33.324931+00:00"
+   "updated_at": "2026-09-26T20:14:54.587367+00:00"
   }
  }
 }
