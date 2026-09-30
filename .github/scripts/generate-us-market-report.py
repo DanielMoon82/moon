@@ -646,7 +646,8 @@ def write_blogger_post(date, indices, sectors, slug):
         f"title: {seo_title(date, indices)}\n"
         f"labels: {', '.join(TAGS[:8])}\n"
         f"search_description: {seo_description(date, indices, sectors)}\n"
-        "status: LIVE\n"
+        # AdSense 심사 중: 템플릿 시황 글이 블로거에 공개 발행되지 않도록 초안으로 둔다.
+        "status: DRAFT\n"
         "---\n"
     )
     body = body_html(date, indices, sectors, f"{SITE}/data/us/")

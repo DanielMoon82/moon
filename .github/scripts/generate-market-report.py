@@ -518,7 +518,8 @@ def write_blogger_post(date, stocks, slug):
         f"title: {date} 마감 시황 — 삼성전자·SK하이닉스·현대차 종가와 수급 정리\n"
         "labels: 주식, 마감시황, 삼성전자, SK하이닉스, 현대차, 증시\n"
         f"search_description: {date} 삼성전자·SK하이닉스·현대차의 종가, 거래량, 외국인·기관 수급을 정리한 마감 시황입니다.\n"
-        "status: LIVE\n"
+        # AdSense 심사 중: 템플릿 시황 글이 블로거에 공개 발행되지 않도록 초안으로 둔다.
+        "status: DRAFT\n"
         "---\n"
     )
     (BLOGGER_DIR / f"{slug}.html").write_text(front + body_html(date, stocks) + "\n", encoding="utf-8")
