@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-02T06:48:08.395126+00:00",
+ "updated_at": "2026-10-05T06:37:42.009984+00:00",
  "broker": "NH투자증권",
  "url": "https://m.nhsec.com/finance/bond/bond/inList",
  "note": "장내채권 체결수익률",
@@ -212,7 +212,7 @@
      "kind": "지방채",
      "grade": "",
      "mature": "2033-09-30",
-     "left": "7년",
+     "left": "6년",
      "coupon": 2.0,
      "yield": 4.514,
      "price": 8400.0
