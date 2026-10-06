@@ -1,120 +1,120 @@
 {
- "updated_at": "2026-10-06T17:28:02.049808+00:00",
+ "updated_at": "2026-10-06T21:55:54.296116+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "손흥민 A매치 최다골!",
+     "t": "선수들과 모레노 인사",
+     "u": "https://search.nate.com/search/all.html?q=%EC%84%A0%EC%88%98%EB%93%A4%EA%B3%BC%20%EB%AA%A8%EB%A0%88%EB%85%B8%20%EA%B0%90%EB%8F%85"
+    },
+    {
+     "t": "조희대 대법원 구성 노력",
+     "u": "https://search.nate.com/search/all.html?q=%EC%A1%B0%ED%9D%AC%EB%8C%80%20%EC%98%A8%EC%A0%84%ED%95%9C%20%EB%85%B8%EB%A0%A5"
+    },
+    {
+     "t": "부국제 고래사냥 주역들",
+     "u": "https://search.nate.com/search/all.html?q=%EB%B6%80%EA%B5%AD%EC%A0%9C%20%EC%B0%BE%EC%9D%80%20%EC%A3%BC%EC%97%AD%EB%93%A4"
+    },
+    {
+     "t": "8월 무역적자 최대",
+     "u": "https://search.nate.com/search/all.html?q=8%EC%9B%94%20%EC%9D%B4%ED%9B%84%20%EC%B5%9C%EB%8C%80"
+    },
+    {
+     "t": "손흥민 A매치 최다골",
      "u": "https://search.nate.com/search/all.html?q=%EC%86%90%ED%9D%A5%EB%AF%BC%20A%EB%A7%A4%EC%B9%98%20%EC%B5%9C%EB%8B%A4%EA%B3%A8"
     },
     {
-     "t": "인사하는 모레노 감독",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B8%EC%82%AC%ED%95%98%EB%8A%94%20%EB%AA%A8%EB%A0%88%EB%85%B8%20%EA%B0%90%EB%8F%85"
+     "t": "문희준 다이어트 40회 실패",
+     "u": "https://search.nate.com/search/all.html?q=%EB%AC%B8%ED%9D%AC%EC%A4%80%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8%20%EC%8B%A4%ED%8C%A8"
     },
     {
-     "t": "北, 1㎜ 침범 시 강력 대응",
-     "u": "https://search.nate.com/search/all.html?q=%EC%98%81%ED%86%A0%201%E3%8E%9C%EB%9D%BC%EB%8F%84%20%EC%B9%A8%EB%B2%94%ED%95%98%EB%A9%B4"
+     "t": "연애박사 첫방 아쉬운 출발",
+     "u": "https://search.nate.com/search/all.html?q=%EC%97%B0%EC%95%A0%EB%B0%95%EC%82%AC"
     },
     {
-     "t": "부국제 레드카펫의 스타들",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B6%80%EA%B5%AD%EC%A0%9C%20%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB%20%EB%B0%9F%EB%8A%94"
+     "t": "2026년 10월 7일 운세",
+     "u": "https://search.nate.com/search/all.html?q=2026%EB%85%84%207%EC%9D%BC"
     },
     {
-     "t": "제31회 부산국제영화제 개막",
-     "u": "https://search.nate.com/search/all.html?q=%EC%A0%9C31%ED%9A%8C%20%EB%B6%80%EC%82%B0%EA%B5%AD%EC%A0%9C%EC%98%81%ED%99%94%EC%A0%9C%20%EA%B0%9C%EB%A7%89"
+     "t": "레드카펫 걷는 스타들",
+     "u": "https://search.nate.com/search/all.html?q=%EB%A0%88%EB%93%9C%EC%B9%B4%ED%8E%AB%20%EA%B1%B7%EB%8A%94"
     },
     {
-     "t": "유해진 신변보호 조치",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B2%BD%EC%B0%B0%20%EC%9C%A0%ED%95%B4%EC%A7%84%20%EC%8B%A0%EB%B3%80%EB%B3%B4%ED%98%B8"
-    },
-    {
-     "t": "누리호 발사 5차 진행",
-     "u": "https://search.nate.com/search/all.html?q=%EB%88%84%EB%A6%AC%ED%98%B8%20%EB%B0%9C%EC%82%AC"
-    },
-    {
-     "t": "노벨물리학상에 관측 프랜시스",
-     "u": "https://search.nate.com/search/all.html?q=%EB%89%B4%ED%8A%B8%EB%A6%AC%EB%85%B8%20%EA%B4%80%EC%B8%A1%20%ED%94%84%EB%9E%9C%EC%8B%9C%EC%8A%A4"
-    },
-    {
-     "t": "칸나바로 감독, 경기력 만족",
-     "u": "https://search.nate.com/search/all.html?q=%EC%B9%B8%EB%82%98%EB%B0%94%EB%A1%9C%20%EA%B0%90%EB%8F%85"
-    },
-    {
-     "t": "조희대 온전한 구성 노력",
-     "u": "https://search.nate.com/search/all.html?q=%EC%A1%B0%ED%9D%AC%EB%8C%80%20%EC%98%A8%EC%A0%84%ED%95%9C%20%EB%85%B8%EB%A0%A5"
+     "t": "주병진, 무죄 사건 고백",
+     "u": "https://search.nate.com/search/all.html?q=%EC%A3%BC%EB%B3%91%EC%A7%84"
     }
    ],
-   "updated_at": "2026-10-06T17:28:02.049808+00:00"
+   "updated_at": "2026-10-06T21:55:54.296116+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "버거킹 앞 몰려가서‥\"광고모델, 유해진 대신 안정권으로!\"",
-     "u": "https://n.news.naver.com/article/214/0001527476?ntype=RANKING"
+     "t": "나주서 결박된 상태로 60대 부부 숨진 채 발견...용의자 추적 중",
+     "u": "https://n.news.naver.com/article/660/0000118553?ntype=RANKING"
     },
     {
-     "t": "[단독] '쿠팡 개인정보 유출' 뉴욕 집단소송 종결",
-     "u": "https://n.news.naver.com/article/214/0001527509?ntype=RANKING"
+     "t": "[국감]박진영 \"월 200만 원 경비 몰랐다\"…李대통령은 \"예우 못해 미안\"",
+     "u": "https://n.news.naver.com/article/660/0000118527?ntype=RANKING"
     },
     {
-     "t": "15살 손 절단, 16살 실명‥\"이게 학교냐\" 프랑스 시위 격화일로",
-     "u": "https://n.news.naver.com/article/214/0001527488?ntype=RANKING"
+     "t": "\"대통령을 비판하는 인물을 비서실장에\"…유시민 파격 기용 제안 [박영환의 시사1번지]",
+     "u": "https://n.news.naver.com/article/660/0000118522?ntype=RANKING"
     },
     {
-     "t": "\"저는 술 한 방울도 안 마셔\"‥업추비로 '와인 구매' 곤혹",
-     "u": "https://n.news.naver.com/article/214/0001527470?ntype=RANKING"
+     "t": "경찰, '암살자(들)' 유해진 신변보호 나서...스마트워치 지급",
+     "u": "https://n.news.naver.com/article/660/0000118537?ntype=RANKING"
     },
     {
-     "t": "이민호·유해진 결국 못 왔다‥아쉬운 시민들",
-     "u": "https://n.news.naver.com/article/214/0001527477?ntype=RANKING"
+     "t": "'암살자(들)' 논란 속 유해진 광고 끝낸 버거킹…\"영화 논란 때문 아니다\"",
+     "u": "https://n.news.naver.com/article/660/0000118518?ntype=RANKING"
     },
     {
-     "t": "미군기지 총기난사범에 총살형…트럼프, 2차대전 후 첫 승인",
-     "u": "https://n.news.naver.com/article/366/0001196455?ntype=RANKING"
+     "t": "“미리 사두길 잘했네”…스페이스X 급등에 미래에셋 ‘선구안’ 다시 주목",
+     "u": "https://n.news.naver.com/article/009/0005744478?ntype=RANKING"
     },
     {
-     "t": "크게 올린 가격 때문인가… 신형 아반떼, 첫 한 달 판매 전작보다 부진",
-     "u": "https://n.news.naver.com/article/366/0001196395?ntype=RANKING"
+     "t": "43만명 프로필 털려놓고도 사실 숨겼다…“보상은 없다”는 플랫폼",
+     "u": "https://n.news.naver.com/article/009/0005744905?ntype=RANKING"
     },
     {
-     "t": "계체 논란 韓 유도대표팀, 이번엔 밥 먹다가 환승 비행기 놓쳐",
-     "u": "https://n.news.naver.com/article/366/0001196449?ntype=RANKING"
+     "t": "“새벽 3시까지 떠드는데 항의해도 무용지물”…가을 야장, 사실상 무법지대?",
+     "u": "https://n.news.naver.com/article/009/0005744852?ntype=RANKING"
     },
     {
-     "t": "경찰, 영화 ‘암살자(들)’ 주연 유해진 신변보호… “소속사 요청”",
-     "u": "https://n.news.naver.com/article/366/0001196423?ntype=RANKING"
+     "t": "“깔끔하게 죽고파”…박미선, 유방암 투병 후 달라진 생각",
+     "u": "https://n.news.naver.com/article/009/0005744899?ntype=RANKING"
     },
     {
-     "t": "[2026 노벨상] ‘빛으로 보던 우주’에 새로운 눈 달았다… 프랜시스 할젠, 노벨 물리학상",
-     "u": "https://n.news.naver.com/article/366/0001196440?ntype=RANKING"
+     "t": "앱 탈퇴하고 “불매하겠다” 항의하고…버거킹, 유해진 신제품 광고 종료",
+     "u": "https://n.news.naver.com/article/009/0005744745?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-10-06T17:28:02.049808+00:00"
+   "updated_at": "2026-10-06T21:55:54.296116+00:00"
   },
   "zum": {
    "name": "줌",
    "keywords": [
     {
-     "t": "기후부 재생에너지 100GW",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B8%B0%ED%9B%84%EB%B6%80%20%EC%9E%AC%EC%83%9D%EC%97%90%EB%84%88%EC%A7%80%20100GW"
+     "t": "뉴욕증시 사상 최고치",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EB%89%B4%EC%9A%95%EC%A6%9D%EC%8B%9C%20%EC%82%AC%EC%83%81%20%EC%B5%9C%EA%B3%A0%EC%B9%98"
     },
     {
-     "t": "시중은행 해킹 시도",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8B%9C%EC%A4%91%EC%9D%80%ED%96%89%20%ED%95%B4%ED%82%B9%20%EC%8B%9C%EB%8F%84"
+     "t": "트럼프 이란전 발언 논란 NEW",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%ED%8A%B8%EB%9F%BC%ED%94%84%20%EC%9D%B4%EB%9E%80%EC%A0%84%20%EB%B0%9C%EC%96%B8%20%EB%85%BC%EB%9E%80%20NEW"
     },
     {
-     "t": "기업 밸류업 공시",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B8%B0%EC%97%85%20%EB%B0%B8%EB%A5%98%EC%97%85%20%EA%B3%B5%EC%8B%9C"
+     "t": "손흥민 A매치 최다골",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%86%90%ED%9D%A5%EB%AF%BC%20A%EB%A7%A4%EC%B9%98%20%EC%B5%9C%EB%8B%A4%EA%B3%A8"
     },
     {
-     "t": "배경훈 LG유플러스 해킹",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EB%B0%B0%EA%B2%BD%ED%9B%88%20LG%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4%20%ED%95%B4%ED%82%B9"
+     "t": "대형교회 해킹",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EB%8C%80%ED%98%95%EA%B5%90%ED%9A%8C%20%ED%95%B4%ED%82%B9"
     },
     {
-     "t": "이재명 CPTPP 재검토",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%9D%B4%EC%9E%AC%EB%AA%85%20CPTPP%20%EC%9E%AC%EA%B2%80%ED%86%A0"
+     "t": "포스코퓨처엠 삼성SDI 계약",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%ED%8F%AC%EC%8A%A4%EC%BD%94%ED%93%A8%EC%B2%98%EC%97%A0%20%EC%82%BC%EC%84%B1SDI%20%EA%B3%84%EC%95%BD"
     },
     {
      "t": "종합",
@@ -123,17 +123,9 @@
     {
      "t": "연예",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%97%B0%EC%98%88"
-    },
-    {
-     "t": "스포츠",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%8F%AC%EC%B8%A0"
-    },
-    {
-     "t": "종합랭킹",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%A2%85%ED%95%A9%EB%9E%AD%ED%82%B9"
     }
    ],
-   "updated_at": "2026-10-06T17:28:02.049808+00:00"
+   "updated_at": "2026-10-06T21:55:54.296116+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -179,53 +171,53 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=468430&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-10-06T17:28:02.049808+00:00"
+   "updated_at": "2026-10-06T21:55:54.296116+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "원현준",
-     "u": "https://www.google.com/search?q=%EC%9B%90%ED%98%84%EC%A4%80"
+     "t": "창신 메모리 테크놀로지",
+     "u": "https://www.google.com/search?q=%EC%B0%BD%EC%8B%A0%20%EB%A9%94%EB%AA%A8%EB%A6%AC%20%ED%85%8C%ED%81%AC%EB%86%80%EB%A1%9C%EC%A7%80"
     },
     {
-     "t": "페스트",
-     "u": "https://www.google.com/search?q=%ED%8E%98%EC%8A%A4%ED%8A%B8"
+     "t": "west indies vs india",
+     "u": "https://www.google.com/search?q=west%20indies%20vs%20india"
     },
     {
-     "t": "서영교",
-     "u": "https://www.google.com/search?q=%EC%84%9C%EC%98%81%EA%B5%90"
+     "t": "해리 케인",
+     "u": "https://www.google.com/search?q=%ED%95%B4%EB%A6%AC%20%EC%BC%80%EC%9D%B8"
     },
     {
-     "t": "홍창기",
-     "u": "https://www.google.com/search?q=%ED%99%8D%EC%B0%BD%EA%B8%B0"
+     "t": "하이록스",
+     "u": "https://www.google.com/search?q=%ED%95%98%EC%9D%B4%EB%A1%9D%EC%8A%A4"
     },
     {
-     "t": "어선",
-     "u": "https://www.google.com/search?q=%EC%96%B4%EC%84%A0"
+     "t": "배구",
+     "u": "https://www.google.com/search?q=%EB%B0%B0%EA%B5%AC"
     },
     {
-     "t": "키드냅게임",
-     "u": "https://www.google.com/search?q=%ED%82%A4%EB%93%9C%EB%83%85%EA%B2%8C%EC%9E%84"
+     "t": "크리스 페덱",
+     "u": "https://www.google.com/search?q=%ED%81%AC%EB%A6%AC%EC%8A%A4%20%ED%8E%98%EB%8D%B1"
     },
     {
-     "t": "장동윤",
-     "u": "https://www.google.com/search?q=%EC%9E%A5%EB%8F%99%EC%9C%A4"
+     "t": "이휘재",
+     "u": "https://www.google.com/search?q=%EC%9D%B4%ED%9C%98%EC%9E%AC"
     },
     {
-     "t": "이정재",
-     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%A0%95%EC%9E%AC"
+     "t": "경비원",
+     "u": "https://www.google.com/search?q=%EA%B2%BD%EB%B9%84%EC%9B%90"
     },
     {
-     "t": "박지선",
-     "u": "https://www.google.com/search?q=%EB%B0%95%EC%A7%80%EC%84%A0"
+     "t": "sk그룹",
+     "u": "https://www.google.com/search?q=sk%EA%B7%B8%EB%A3%B9"
     },
     {
-     "t": "투수",
-     "u": "https://www.google.com/search?q=%ED%88%AC%EC%88%98"
+     "t": "김가영",
+     "u": "https://www.google.com/search?q=%EA%B9%80%EA%B0%80%EC%98%81"
     }
    ],
-   "updated_at": "2026-10-06T17:28:02.049808+00:00"
+   "updated_at": "2026-10-06T21:55:54.296116+00:00"
   }
  }
 }
