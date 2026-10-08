@@ -601,6 +601,8 @@ def write_homepage_article(date, indices, sectors, slug):
 <title>{title} — 야간비행 일지</title>
 <meta name="description" content="{desc}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 매일 같은 틀로 자동 생성되는 시황 글은 검색·애드센스 평가에서 뺀다 -->
+<meta name="robots" content="noindex, follow">
 <link rel="canonical" href="{url}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{title}">
