@@ -1,39 +1,39 @@
 {
-  "as_of_date": "2026-10-08",
-  "updated_at": "2026-10-09T01:36:03.121080+00:00",
+  "as_of_date": "2026-10-09",
+  "updated_at": "2026-10-10T01:25:26.974980+00:00",
   "indices": [
     {
       "name": "S&P 500",
       "short": "S&P",
       "symbol": "^spx",
-      "as_of_date": "2026-10-08",
-      "close": 7765.36,
-      "change": -36.41,
-      "change_pct": -0.47,
-      "change_pct_5d": 1.29,
-      "change_pct_20d": 2.29
+      "as_of_date": "2026-10-09",
+      "close": 7811.54,
+      "change": 46.18,
+      "change_pct": 0.59,
+      "change_pct_5d": 1.15,
+      "change_pct_20d": 2.02
     },
     {
       "name": "나스닥 종합",
       "short": "나스닥",
       "symbol": "^ndq",
-      "as_of_date": "2026-10-08",
-      "close": 27193.34,
-      "change": -345.35,
-      "change_pct": -1.25,
-      "change_pct_5d": 1.2,
-      "change_pct_20d": 4.26
+      "as_of_date": "2026-10-09",
+      "close": 27366.17,
+      "change": 172.83,
+      "change_pct": 0.64,
+      "change_pct_5d": 0.64,
+      "change_pct_20d": 3.92
     },
     {
       "name": "다우존스",
       "short": "다우",
       "symbol": "^dji",
-      "as_of_date": "2026-10-08",
-      "close": 51231.64,
-      "change": 51.77,
-      "change_pct": 0.1,
-      "change_pct_5d": 0.6,
-      "change_pct_20d": -1.6
+      "as_of_date": "2026-10-09",
+      "close": 51654.95,
+      "change": 423.31,
+      "change_pct": 0.83,
+      "change_pct_5d": 0.93,
+      "change_pct_20d": -1.75
     }
   ],
   "sectors": [
