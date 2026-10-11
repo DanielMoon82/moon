@@ -1,116 +1,116 @@
 {
- "updated_at": "2026-10-11T16:50:34.889853+00:00",
+ "updated_at": "2026-10-11T21:07:02.988173+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "장모 살해한 20대 검거",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9E%A5%EB%AA%A8%20%EC%82%B4%ED%95%B4%2020%EB%8C%80"
-    },
-    {
-     "t": "유현조, HJ중공업 우승",
-     "u": "https://search.nate.com/search/all.html?q=HJ%EC%A4%91%EA%B3%B5%EC%97%85%20%EB%8F%99%EB%B6%80%EA%B1%B4%EC%84%A4%20%EC%9A%B0%EC%8A%B9"
+     "t": "에너지 휴전 합의",
+     "u": "https://search.nate.com/search/all.html?q=%EC%97%90%EB%84%88%EC%A7%80%20%ED%9C%B4%EC%A0%84%20%ED%95%A9%EC%9D%98"
     },
     {
      "t": "김용지 깜짝 결혼 소식",
      "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EC%9A%A9%EC%A7%80"
     },
     {
-     "t": "트럼프 러-우크라 에너지 합의 발효",
-     "u": "https://search.nate.com/search/all.html?q=%EC%97%90%EB%84%88%EC%A7%80%20%ED%9C%B4%EC%A0%84%20%ED%95%A9%EC%9D%98"
+     "t": "소이현 셋째 원해도 인교진 반대",
+     "u": "https://search.nate.com/search/all.html?q=%EC%86%8C%EC%9D%B4%ED%98%84%20%EC%85%8B%EC%A7%B8%20%EC%9D%B8%EA%B5%90%EC%A7%84"
     },
     {
-     "t": "추성훈 SNS 중단",
-     "u": "https://search.nate.com/search/all.html?q=%EC%B6%94%EC%84%B1%ED%9B%88%20SNS%20%ED%99%9C%EB%8F%99"
+     "t": "놀면 뭐하니",
+     "u": "https://search.nate.com/search/all.html?q=%EB%86%80%EB%A9%B4%20%EB%AD%90%ED%95%98%EB%8B%88"
     },
     {
-     "t": "생후 2개월 여아 숨져 40대 아버지 체포",
-     "u": "https://search.nate.com/search/all.html?q=%EC%83%9D%ED%9B%84%202%EA%B0%9C%EC%9B%94%2040%EB%8C%80"
+     "t": "김혜성 NLCS 로스터 제외",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%ED%98%9C%EC%84%B1%20NLCS%20%EB%A1%9C%EC%8A%A4%ED%84%B0"
     },
     {
-     "t": "찰리 푸스 내한 공연",
-     "u": "https://search.nate.com/search/all.html?q=%EC%B0%B0%EB%A6%AC%20%ED%91%B8%EC%8A%A4%20%EB%82%B4%ED%95%9C"
+     "t": "51세 솔로 송종호 고깃집 운영 중",
+     "u": "https://search.nate.com/search/all.html?q=%EC%86%A1%EC%A2%85%ED%98%B8"
     },
     {
-     "t": "서울대 6년간 28회 해킹 피해",
-     "u": "https://search.nate.com/search/all.html?q=6%EB%85%84%EA%B0%84%20%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%20%EC%9C%A0%EC%B6%9C"
-    },
-    {
-     "t": "임은정 감찰 논란",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9E%84%EC%9D%80%EC%A0%95%20%EA%B0%90%EC%B0%B0"
-    },
-    {
-     "t": "경찰, 국정원 압수수색 수사",
+     "t": "국정원 압수수색 의혹",
      "u": "https://search.nate.com/search/all.html?q=%EA%B2%BD%EC%B0%B0%20%EA%B5%AD%EC%A0%95%EC%9B%90%20%EC%95%95%EC%88%98%EC%88%98%EC%83%89"
+    },
+    {
+     "t": "사랑이 온다",
+     "u": "https://search.nate.com/search/all.html?q=%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%98%A8%EB%8B%A4"
+    },
+    {
+     "t": "김민종, MC몽 고소 취하",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EB%AF%BC%EC%A2%85%20MC%EB%AA%BD%20%EA%B3%A0%EC%86%8C"
+    },
+    {
+     "t": "W코리아컵 결승 대결",
+     "u": "https://search.nate.com/search/all.html?q=W%EC%BD%94%EB%A6%AC%EC%95%84%EC%BB%B5%20%EA%B2%B0%EC%8A%B9%20%EA%B2%A9%EB%8F%8C"
     }
    ],
-   "updated_at": "2026-10-11T16:50:34.889853+00:00"
+   "updated_at": "2026-10-11T21:07:02.988173+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "\"전날 만든 볶음밥 다시 데워 먹었을 뿐인데\"…간 이식할 뻔한 20대 남성",
-     "u": "https://n.news.naver.com/article/277/0005826832?ntype=RANKING"
+     "t": "[명운 건 IP] 새 주인 맞은 카카오게임즈, '도깨비의세계' 첫 승부",
+     "u": "https://n.news.naver.com/article/293/0000091417?ntype=RANKING"
     },
     {
-     "t": "신랑·신부 \"윤어게인\"에 하객도 환호…결혼식 영상 갑론을박",
-     "u": "https://n.news.naver.com/article/277/0005826833?ntype=RANKING"
+     "t": "[한화의 사람들] 김동관의 기술 성장축, '방산·AX' 경쟁력 보강",
+     "u": "https://n.news.naver.com/article/293/0000091431?ntype=RANKING"
     },
     {
-     "t": "\"알리·테무 살리려고 다이소를 없앤다\" 주장 일파만파…팩트체크해 보니[Why&Next]",
-     "u": "https://n.news.naver.com/article/277/0005826708?ntype=RANKING"
+     "t": "[현대모비스 재편 셈법]④ '자사주 소각' 주주가치·지배력 움직인다",
+     "u": "https://n.news.naver.com/article/293/0000091426?ntype=RANKING"
     },
     {
-     "t": "\"얘 불륜인가봐\" 카톡 대화창 직접 열어 찍은 영상 다른 직원에 퍼뜨렸다면?",
-     "u": "https://n.news.naver.com/article/277/0005826829?ntype=RANKING"
+     "t": "풍산, 방산 부진 메운 '구리 호황' 신용등급 AA- 상향",
+     "u": "https://n.news.naver.com/article/293/0000091429?ntype=RANKING"
     },
     {
-     "t": "\"물고기인 줄 알았는데\" 40초의 기적…물에 빠진 강아지, 심폐소생술로 살린 낚시꾼",
-     "u": "https://n.news.naver.com/article/277/0005826795?ntype=RANKING"
+     "t": "[FSD 온로드] '테슬라 FSD 확대' 국감서 강조...국토부 제자리",
+     "u": "https://n.news.naver.com/article/293/0000091416?ntype=RANKING"
     },
     {
-     "t": "[속보] 트럼프 \"러-우크라, 에너지 휴전에 합의...즉시 효력\"",
-     "u": "https://n.news.naver.com/article/052/0002417358?ntype=RANKING"
+     "t": "로봇용 D램 수요 2030년까지 20배 증가…삼성·SK 새 성장동력으로",
+     "u": "https://n.news.naver.com/article/374/0000537111?ntype=RANKING"
     },
     {
-     "t": "[날씨] 가을볕에 서울 29.6℃...119년 만에 가장 더운 10월 중순",
-     "u": "https://n.news.naver.com/article/052/0002417321?ntype=RANKING"
+     "t": "로또 1등 '10명' 30억원씩 받는다…당첨 번호는?",
+     "u": "https://n.news.naver.com/article/374/0000537091?ntype=RANKING"
     },
     {
-     "t": "국힘 \"붕괴사고 당일 황제골프\"...청 \"현장서 보고받고 신속지시\"",
-     "u": "https://n.news.naver.com/article/052/0002417298?ntype=RANKING"
+     "t": "직장인 70% \"출산·육아휴직 동료 업무 대신했지만 보상 없어\"",
+     "u": "https://n.news.naver.com/article/374/0000537121?ntype=RANKING"
     },
     {
-     "t": "장모 살해하고 별거하던 부인 납치한 20대 남성 체포",
-     "u": "https://n.news.naver.com/article/052/0002417325?ntype=RANKING"
+     "t": "최태원 \"美·中 증설 빨라지면 우리 점유율 줄어…확장 서둘러야\"",
+     "u": "https://n.news.naver.com/article/374/0000537132?ntype=RANKING"
     },
     {
-     "t": "백악관 출입 제한 반발해 취재 거부한 게 '반독점 위반'?",
-     "u": "https://n.news.naver.com/article/052/0002417327?ntype=RANKING"
+     "t": "LH, 공공분양주택 분양가상한제에 최대 9.5% 가산비 신설 검토",
+     "u": "https://n.news.naver.com/article/374/0000537120?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-10-11T16:50:34.889853+00:00"
+   "updated_at": "2026-10-11T21:07:02.988173+00:00"
   },
   "zum": {
    "name": "줌",
    "keywords": [
     {
-     "t": "서울대 해킹 피해",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%84%9C%EC%9A%B8%EB%8C%80%20%ED%95%B4%ED%82%B9%20%ED%94%BC%ED%95%B4"
-    },
-    {
      "t": "국세 체납 116조",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B5%AD%EC%84%B8%20%EC%B2%B4%EB%82%A9%20116%EC%A1%B0"
     },
     {
-     "t": "손흥민 LAFC 무승부",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%86%90%ED%9D%A5%EB%AF%BC%20LAFC%20%EB%AC%B4%EC%8A%B9%EB%B6%80"
+     "t": "서울대 해킹 피해",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%84%9C%EC%9A%B8%EB%8C%80%20%ED%95%B4%ED%82%B9%20%ED%94%BC%ED%95%B4"
     },
     {
      "t": "가계대출 변동금리",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EA%B0%80%EA%B3%84%EB%8C%80%EC%B6%9C%20%EB%B3%80%EB%8F%99%EA%B8%88%EB%A6%AC"
+    },
+    {
+     "t": "손흥민 LAFC 무승부",
+     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%86%90%ED%9D%A5%EB%AF%BC%20LAFC%20%EB%AC%B4%EC%8A%B9%EB%B6%80"
     },
     {
      "t": "이은해 유족연금 환수 0원",
@@ -133,7 +133,7 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%A2%85%ED%95%A9%EB%9E%AD%ED%82%B9"
     }
    ],
-   "updated_at": "2026-10-11T16:50:34.889853+00:00"
+   "updated_at": "2026-10-11T21:07:02.988173+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -179,18 +179,34 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=469622&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-10-11T16:50:34.889853+00:00"
+   "updated_at": "2026-10-11T21:07:02.988173+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "ลิเวอร์พูล พบ แมนซิตี",
-     "u": "https://www.google.com/search?q=%E0%B8%A5%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%9E%E0%B8%B9%E0%B8%A5%20%E0%B8%9E%E0%B8%9A%20%E0%B9%81%E0%B8%A1%E0%B8%99%E0%B8%8B%E0%B8%B4%E0%B8%95%E0%B8%B5"
+     "t": "공무원",
+     "u": "https://www.google.com/search?q=%EA%B3%B5%EB%AC%B4%EC%9B%90"
     },
     {
-     "t": "liverpool đấu với man city",
-     "u": "https://www.google.com/search?q=liverpool%20%C4%91%E1%BA%A5u%20v%E1%BB%9Bi%20man%20city"
+     "t": "칼리아리 대 유벤투스",
+     "u": "https://www.google.com/search?q=%EC%B9%BC%EB%A6%AC%EC%95%84%EB%A6%AC%20%EB%8C%80%20%EC%9C%A0%EB%B2%A4%ED%88%AC%EC%8A%A4"
+    },
+    {
+     "t": "혈당",
+     "u": "https://www.google.com/search?q=%ED%98%88%EB%8B%B9"
+    },
+    {
+     "t": "김지원",
+     "u": "https://www.google.com/search?q=%EA%B9%80%EC%A7%80%EC%9B%90"
+    },
+    {
+     "t": "황희찬",
+     "u": "https://www.google.com/search?q=%ED%99%A9%ED%9D%AC%EC%B0%AC"
+    },
+    {
+     "t": "ลิเวอร์พูล พบ แมนซิตี",
+     "u": "https://www.google.com/search?q=%E0%B8%A5%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%9E%E0%B8%B9%E0%B8%A5%20%E0%B8%9E%E0%B8%9A%20%E0%B9%81%E0%B8%A1%E0%B8%99%E0%B8%8B%E0%B8%B4%E0%B8%95%E0%B8%B5"
     },
     {
      "t": "fotmob",
@@ -201,31 +217,15 @@
      "u": "https://www.google.com/search?q=%EB%A7%A8%EC%8B%9C%ED%8B%B0"
     },
     {
+     "t": "ngoại hạng anh",
+     "u": "https://www.google.com/search?q=ngo%E1%BA%A1i%20h%E1%BA%A1ng%20anh"
+    },
+    {
      "t": "김성한",
      "u": "https://www.google.com/search?q=%EA%B9%80%EC%84%B1%ED%95%9C"
-    },
-    {
-     "t": "liverpool vs man city",
-     "u": "https://www.google.com/search?q=liverpool%20vs%20man%20city"
-    },
-    {
-     "t": "청년",
-     "u": "https://www.google.com/search?q=%EC%B2%AD%EB%85%84"
-    },
-    {
-     "t": "레알 소시에다드 대 데포르티보",
-     "u": "https://www.google.com/search?q=%EB%A0%88%EC%95%8C%20%EC%86%8C%EC%8B%9C%EC%97%90%EB%8B%A4%EB%93%9C%20%EB%8C%80%20%EB%8D%B0%ED%8F%AC%EB%A5%B4%ED%8B%B0%EB%B3%B4"
-    },
-    {
-     "t": "india vs west indies",
-     "u": "https://www.google.com/search?q=india%20vs%20west%20indies"
-    },
-    {
-     "t": "f1",
-     "u": "https://www.google.com/search?q=f1"
     }
    ],
-   "updated_at": "2026-10-11T16:50:34.889853+00:00"
+   "updated_at": "2026-10-11T21:07:02.988173+00:00"
   }
  }
 }
