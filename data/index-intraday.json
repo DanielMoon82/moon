@@ -1,31 +1,41 @@
 {
- "updated_at": "2026-10-13T15:32:17.404054+00:00",
- "trading_date": "2026-10-13",
- "market_open": false,
+ "updated_at": "2026-10-14T03:50:10.014481+00:00",
+ "trading_date": "2026-10-14",
+ "market_open": true,
  "indices": [
   {
    "code": "KOSPI",
    "name": "코스피",
-   "prev_close": 6384.24,
-   "value": 6035.35,
-   "points": [],
-   "change": -348.89,
-   "change_pct": -5.46,
-   "high": 6198.46,
-   "low": 5911.11,
-   "open": 6186.08
+   "prev_close": 6035.35,
+   "value": 6105.56,
+   "points": [
+    {
+     "t": "12:50",
+     "v": 6105.56
+    }
+   ],
+   "change": 70.21,
+   "change_pct": 1.16,
+   "high": 6190.65,
+   "low": 6056.6,
+   "open": 6062.08
   },
   {
    "code": "KOSDAQ",
    "name": "코스닥",
-   "prev_close": 849.19,
-   "value": 837.03,
-   "points": [],
-   "change": -12.16,
-   "change_pct": -1.43,
-   "high": 839.94,
-   "low": 802.91,
-   "open": 823.69
+   "prev_close": 837.03,
+   "value": 835.32,
+   "points": [
+    {
+     "t": "12:50",
+     "v": 835.32
+    }
+   ],
+   "change": -1.71,
+   "change_pct": -0.2,
+   "high": 846.95,
+   "low": 821.28,
+   "open": 835.9
   }
  ]
 }
