@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-10-17T17:59:43.428318+00:00",
+ "updated_at": "2026-10-17T20:10:43.010197+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "부천 화재 소방관 조문",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B6%80%EC%B2%9C%20%ED%99%94%EC%9E%AC%20%EC%A1%B0%EB%AC%B8"
+     "t": "이강인 교체, 아틀레티코 1-0 승리",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EA%B0%95%EC%9D%B8%20%EC%95%84%ED%8B%80%EB%A0%88%ED%8B%B0%EC%BD%94%201-0"
     },
     {
-     "t": "바에나 결승골로 에스파뇰 1-0",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EA%B0%95%EC%9D%B8%20%EC%97%90%EC%8A%A4%ED%8C%8C%EB%87%B0%201-0"
-    },
-    {
-     "t": "현숙, 백혈병 38명 살렸다.",
-     "u": "https://search.nate.com/search/all.html?q=%ED%98%84%EC%88%99%20%EB%B0%B1%ED%98%88%EB%B3%91%2038%EB%AA%85"
-    },
-    {
-     "t": "임찬규 2차전 선발",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9E%84%EC%B0%AC%EA%B7%9C%202%EC%B0%A8%EC%A0%84%20%EC%84%A0%EB%B0%9C"
-    },
-    {
-     "t": "1246회 로또 1등 16명 각 18.8억",
+     "t": "1246회 로또 1등 16명 18억 지급",
      "u": "https://search.nate.com/search/all.html?q=1246%ED%9A%8C%20%EB%A1%9C%EB%98%90%201%EB%93%B1"
     },
     {
-     "t": "바타와 지예은, 사랑 가득한 일상",
+     "t": "현숙, 백혈병 38명 도와 1억 기부",
+     "u": "https://search.nate.com/search/all.html?q=%ED%98%84%EC%88%99%20%EB%B0%B1%ED%98%88%EB%B3%91%2038%EB%AA%85"
+    },
+    {
+     "t": "부천 화재 소방관 조문",
+     "u": "https://search.nate.com/search/all.html?q=%EC%88%9C%EC%A7%81%20%EC%86%8C%EB%B0%A9%EA%B4%80%20%EC%A1%B0%EB%AC%B8"
+    },
+    {
+     "t": "2026년 10월 18일 운세",
+     "u": "https://search.nate.com/search/all.html?q=2026%EB%85%84%2018%EC%9D%BC%20%EC%9A%B4%EC%84%B8"
+    },
+    {
+     "t": "김유정 단발로 변신 시작",
+     "u": "https://search.nate.com/search/all.html?q=100%EC%9D%BC%EC%9D%98%20%EA%B1%B0%EC%A7%93%EB%A7%90"
+    },
+    {
+     "t": "던롭 X-OPEN 열기 느껴지네!",
+     "u": "https://search.nate.com/search/all.html?q=%EB%8D%98%EB%A1%AD%20X-OPEN"
+    },
+    {
+     "t": "젤렌스키 G20 3자 회담",
+     "u": "https://search.nate.com/search/all.html?q=%EC%A0%A4%EB%A0%8C%EC%8A%A4%ED%82%A4%20G20%203%EC%9E%90"
+    },
+    {
+     "t": "바타와 지예은 사랑 가득한 커피차",
      "u": "https://search.nate.com/search/all.html?q=%EB%B0%94%ED%83%80%20%EC%A7%80%EC%98%88%EC%9D%80"
     },
     {
-     "t": "울산, 부천에 2-1 역전승",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9A%B8%EC%82%B0%20%EB%B6%80%EC%B2%9C%EC%97%90%20%EC%97%AD%EC%A0%84%EC%8A%B9"
-    },
-    {
-     "t": "최강희 발언 재조명",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9C%A4%EC%86%8C%ED%9D%AC%20%EB%B0%9C%EC%96%B8%20%EC%9E%AC%EC%A1%B0%EB%AA%85"
-    },
-    {
-     "t": "버디 퍼트 성공!",
+     "t": "버디 퍼트 성공할까?",
      "u": "https://search.nate.com/search/all.html?q=%EB%B2%84%EB%94%94%20%ED%8D%BC%ED%8A%B8"
-    },
-    {
-     "t": "안세영 60승 1패",
-     "u": "https://search.nate.com/search/all.html?q=%EC%8B%9C%EC%A6%8C%20%EC%8A%B9%EB%A5%A0%20%EC%95%88%EC%84%B8%EC%98%81"
     }
    ],
-   "updated_at": "2026-10-17T17:59:43.428318+00:00"
+   "updated_at": "2026-10-17T20:10:43.010197+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "비누 거품 파티가 비극으로…필리핀 초등학교서 어린이 2명 감전사",
-     "u": "https://n.news.naver.com/article/437/0000516174?ntype=RANKING"
+     "t": "1인당 41억이라니…이런 회사 다니고 싶다 어디야?",
+     "u": "https://n.news.naver.com/article/374/0000538288?ntype=RANKING"
     },
     {
-     "t": "'빨대 발언' 나흘 만에 사과…추미애 향해 \"끝까지 오만\"",
-     "u": "https://n.news.naver.com/article/437/0000516206?ntype=RANKING"
+     "t": "코스피 떨어지자…'큰손' 90% 이상 반등 베팅",
+     "u": "https://n.news.naver.com/article/374/0000538317?ntype=RANKING"
     },
     {
-     "t": "부캉이 온 지 벌써 '한 달'…150만 발길에 상권도 '활짝'",
-     "u": "https://n.news.naver.com/article/437/0000516216?ntype=RANKING"
+     "t": "'첫 국민연금'도 부모 찬스?…강남 부모들 먼저 움직였다",
+     "u": "https://n.news.naver.com/article/374/0000538289?ntype=RANKING"
     },
     {
-     "t": "[인터뷰] \"피크아웃 판단 어렵다\" 단호…전문가가 짚은 근본적 문제",
-     "u": "https://n.news.naver.com/article/437/0000516214?ntype=RANKING"
+     "t": "'9분 만에 완충'…파리 흔든 중국 전기차에 韓·EU 맞불",
+     "u": "https://n.news.naver.com/article/374/0000538294?ntype=RANKING"
     },
     {
-     "t": "민주당, 주한미군사령관 '전작권 조건 변화' 발언에 \"조건 충족해 빨리 전환해야 한다는 입장 불변\"",
-     "u": "https://n.news.naver.com/article/437/0000516200?ntype=RANKING"
+     "t": "장원영 광고 키링 여기선 2천원?…다이소 또 난리 뭐길래",
+     "u": "https://n.news.naver.com/article/374/0000538292?ntype=RANKING"
     },
     {
-     "t": "\"주식계좌 보고 흐뭇하면 1번\"…'상전벽해 경제'에 與 '노심초사'",
-     "u": "https://n.news.naver.com/article/586/0000140166?ntype=RANKING"
+     "t": "“도롱뇽 알집인 줄”…북한강서 발견된 징그러운 덩어리 정체",
+     "u": "https://n.news.naver.com/article/025/0003558557?ntype=RANKING"
     },
     {
-     "t": "&#8203;\"윤석열이 '한동훈 패죽이고 싶다' 하더라\"",
-     "u": "https://n.news.naver.com/article/586/0000140170?ntype=RANKING"
+     "t": "“아내에게 미안”…류필립, 17세 연상 미나 두고 미국행 무슨일",
+     "u": "https://n.news.naver.com/article/025/0003558533?ntype=RANKING"
     },
     {
-     "t": "추미애, 순직 소방관 빈소서 고개 숙였다…\"마음 다해 사과\"",
-     "u": "https://n.news.naver.com/article/586/0000140169?ntype=RANKING"
+     "t": "이름까지 바꾸고 한국 또 왔다…‘영구 입국금지’ 뚫은 태국인",
+     "u": "https://n.news.naver.com/article/025/0003558581?ntype=RANKING"
     },
     {
-     "t": "\"참사보다 주식 폭락이 더 쓰리다\"…'내 돈'에 민감한 뇌의 비밀 [김형자의 세상은 지금]",
-     "u": "https://n.news.naver.com/article/586/0000140168?ntype=RANKING"
+     "t": "“순직 소방관 딸 7살” 대답에…李, 먹먹한 표정으로 침묵했다",
+     "u": "https://n.news.naver.com/article/025/0003558572?ntype=RANKING"
     },
     {
-     "t": "김민석이 대신 숙인 '추미애 소방 빨대' 망언…野 \"당사자 숨은 기괴한 촌극\"",
-     "u": "https://n.news.naver.com/article/586/0000140167?ntype=RANKING"
+     "t": "“6시간 일하고 월 350 번다” 퇴직 공무원이 찾은 프리한 직업",
+     "u": "https://n.news.naver.com/article/025/0003558500?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-10-17T17:59:43.428318+00:00"
+   "updated_at": "2026-10-17T20:10:43.010197+00:00"
   },
   "zum": {
    "name": "줌",
@@ -117,7 +117,7 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%83%80%EB%9E%AD%ED%82%B9"
     }
    ],
-   "updated_at": "2026-10-17T17:59:43.428318+00:00"
+   "updated_at": "2026-10-17T20:10:43.010197+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -163,11 +163,39 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471129&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-10-17T17:59:43.428318+00:00"
+   "updated_at": "2026-10-17T20:10:43.010197+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
+    {
+     "t": "김민재",
+     "u": "https://www.google.com/search?q=%EA%B9%80%EB%AF%BC%EC%9E%AC"
+    },
+    {
+     "t": "손아섭",
+     "u": "https://www.google.com/search?q=%EC%86%90%EC%95%84%EC%84%AD"
+    },
+    {
+     "t": "라민 야말",
+     "u": "https://www.google.com/search?q=%EB%9D%BC%EB%AF%BC%20%EC%95%BC%EB%A7%90"
+    },
+    {
+     "t": "la liga",
+     "u": "https://www.google.com/search?q=la%20liga"
+    },
+    {
+     "t": "김정은",
+     "u": "https://www.google.com/search?q=%EA%B9%80%EC%A0%95%EC%9D%80"
+    },
+    {
+     "t": "분데스리가",
+     "u": "https://www.google.com/search?q=%EB%B6%84%EB%8D%B0%EC%8A%A4%EB%A6%AC%EA%B0%80"
+    },
+    {
+     "t": "laliga",
+     "u": "https://www.google.com/search?q=laliga"
+    },
     {
      "t": "psg",
      "u": "https://www.google.com/search?q=psg"
@@ -179,37 +207,9 @@
     {
      "t": "betis vs barcelona",
      "u": "https://www.google.com/search?q=betis%20vs%20barcelona"
-    },
-    {
-     "t": "이재성",
-     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%9E%AC%EC%84%B1"
-    },
-    {
-     "t": "liverpool",
-     "u": "https://www.google.com/search?q=liverpool"
-    },
-    {
-     "t": "레알 베티스 대 바르셀로나",
-     "u": "https://www.google.com/search?q=%EB%A0%88%EC%95%8C%20%EB%B2%A0%ED%8B%B0%EC%8A%A4%20%EB%8C%80%20%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98"
-    },
-    {
-     "t": "바이에른 대 라이프치히",
-     "u": "https://www.google.com/search?q=%EB%B0%94%EC%9D%B4%EC%97%90%EB%A5%B8%20%EB%8C%80%20%EB%9D%BC%EC%9D%B4%ED%94%84%EC%B9%98%ED%9E%88"
-    },
-    {
-     "t": "strasbourg vs psg",
-     "u": "https://www.google.com/search?q=strasbourg%20vs%20psg"
-    },
-    {
-     "t": "황희찬",
-     "u": "https://www.google.com/search?q=%ED%99%A9%ED%9D%AC%EC%B0%AC"
-    },
-    {
-     "t": "조국",
-     "u": "https://www.google.com/search?q=%EC%A1%B0%EA%B5%AD"
     }
    ],
-   "updated_at": "2026-10-17T17:59:43.428318+00:00"
+   "updated_at": "2026-10-17T20:10:43.010197+00:00"
   }
  }
 }
