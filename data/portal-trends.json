@@ -1,58 +1,82 @@
 {
- "updated_at": "2026-10-18T19:44:21.533378+00:00",
+ "updated_at": "2026-10-18T21:57:55.588265+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "순직 소방관 빈소 조문",
-     "u": "https://search.nate.com/search/all.html?q=%EC%88%9C%EC%A7%81%20%EC%86%8C%EB%B0%A9%EA%B4%80%20%EB%B9%88%EC%86%8C"
+     "t": "안세영, 덴마크오픈 2연패!",
+     "u": "https://search.nate.com/search/all.html?q=%EC%95%88%EC%84%B8%EC%98%81%20%EB%8D%B4%EB%A7%88%ED%81%AC%EC%98%A4%ED%94%88%202%EC%97%B0%ED%8C%A8"
+    },
+    {
+     "t": "김유정의 거짓말 시작",
+     "u": "https://search.nate.com/search/all.html?q=100%EC%9D%BC%EC%9D%98%20%EA%B1%B0%EC%A7%93%EB%A7%90"
+    },
+    {
+     "t": "2026년 10월 19일 운세",
+     "u": "https://search.nate.com/search/all.html?q=2026%EB%85%84%2019%EC%9D%BC%20%EC%9A%B4%EC%84%B8"
+    },
+    {
+     "t": "350만원 커피 오마카세",
+     "u": "https://search.nate.com/search/all.html?q=350%EB%A7%8C%EC%9B%90%20%EC%BB%A4%ED%94%BC%20%EC%98%A4%EB%A7%88%EC%B9%B4%EC%84%B8"
     },
     {
      "t": "아이치-나고야 아시안 패러게임",
      "u": "https://search.nate.com/search/all.html?q=%EC%95%84%EC%9D%B4%EC%B9%98-%EB%82%98%EA%B3%A0%EC%95%BC%20%EC%95%84%EC%8B%9C%EC%95%88%20%ED%8C%A8%EB%9F%AC%EA%B2%8C%EC%9E%84"
     },
     {
-     "t": "던롭 엑스오픈 강력 리턴",
-     "u": "https://search.nate.com/search/all.html?q=%EB%8D%98%EB%A1%AD%20%EC%97%91%EC%8A%A4%EC%98%A4%ED%94%88%20%EB%A6%AC%ED%84%B4"
-    },
-    {
-     "t": "김유정 단발 거짓말 시작",
-     "u": "https://search.nate.com/search/all.html?q=100%EC%9D%BC%EC%9D%98%20%EA%B1%B0%EC%A7%93%EB%A7%90"
-    },
-    {
-     "t": "김승수 박혜연 커플 탄생",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EC%8A%B9%EC%88%98%20%EC%B5%9C%EC%A2%85%20%EC%BB%A4%ED%94%8C"
-    },
-    {
-     "t": "중수청 16일 만 첫 대마 밀수 구속",
-     "u": "https://search.nate.com/search/all.html?q=%EC%A4%91%EC%88%98%EC%B2%AD%20%EC%B6%9C%EB%B2%94%20%EB%8C%80%EB%A7%88"
-    },
-    {
-     "t": "안세영 덴마크오픈 2연패!",
-     "u": "https://search.nate.com/search/all.html?q=%EC%95%88%EC%84%B8%EC%98%81%20%EB%8D%B4%EB%A7%88%ED%81%AC%EC%98%A4%ED%94%88%202%EC%97%B0%ED%8C%A8"
-    },
-    {
      "t": "닥터X : 하얀 마피아의 시대",
      "u": "https://search.nate.com/search/all.html?q=%EB%8B%A5%ED%84%B0X%20%3A%20%ED%95%98%EC%96%80%20%EB%A7%88%ED%94%BC%EC%95%84%EC%9D%98%20%EC%8B%9C%EB%8C%80"
     },
     {
-     "t": "2026년 10월 19일 운세",
-     "u": "https://search.nate.com/search/all.html?q=2026%EB%85%84%2019%EC%9D%BC"
+     "t": "트럼프 프랑스 증오 이민자 나라 파괴",
+     "u": "https://search.nate.com/search/all.html?q=%ED%8A%B8%EB%9F%BC%ED%94%84%20%ED%94%84%EB%9E%91%EC%8A%A4%20%EB%82%98%EB%9D%BC"
     },
     {
-     "t": "김범수 커피 오마카세 방문",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EB%B2%94%EC%88%98%20%EC%BB%A4%ED%94%BC%20%EC%98%A4%EB%A7%88%EC%B9%B4%EC%84%B8"
+     "t": "순직 소방관 추모행사 진행",
+     "u": "https://search.nate.com/search/all.html?q=%EC%88%9C%EC%A7%81%20%EC%86%8C%EB%B0%A9%EA%B4%80"
+    },
+    {
+     "t": "김승수 박혜연 최종 커플",
+     "u": "https://search.nate.com/search/all.html?q=%EB%B0%95%ED%98%9C%EC%97%B0"
+    },
+    {
+     "t": "공형진, 차지연 무례 진행",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B3%B5%ED%98%95%EC%A7%84%20%EC%B0%A8%EC%A7%80%EC%97%B0%EC%97%90%20%EC%A7%84%ED%96%89"
     }
    ],
-   "updated_at": "2026-10-18T19:44:21.533378+00:00"
+   "updated_at": "2026-10-18T21:57:55.588265+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
+     "t": "\"노후자금 어쩌나\"‥국민연금, 100일 만에 보유주식 182조 원 손실",
+     "u": "https://n.news.naver.com/article/214/0001529780?ntype=RANKING"
+    },
+    {
+     "t": "풍속 200km/h '슈퍼태풍' 참피‥일제히 '대만행 예측' 초비상",
+     "u": "https://n.news.naver.com/article/214/0001529772?ntype=RANKING"
+    },
+    {
+     "t": "갑자기 무대에 김민석이? '과잉 의전' 논란에 \"죄송\"",
+     "u": "https://n.news.naver.com/article/214/0001529779?ntype=RANKING"
+    },
+    {
+     "t": "\"68만 원 빌렸는데, 수백만 원 갚아라\"‥불법 사채 무효화한다지만‥",
+     "u": "https://n.news.naver.com/article/214/0001529789?ntype=RANKING"
+    },
+    {
+     "t": "[단독] 뭉칫돈에 제설기까지‥대학에 돈 뿌린 이유",
+     "u": "https://n.news.naver.com/article/214/0001529783?ntype=RANKING"
+    },
+    {
      "t": "“죄송해요, 초보운전”…차량에 안내문 덕지덕지 붙인 운전자, 무슨 사연?",
      "u": "https://n.news.naver.com/article/020/0003755702?ntype=RANKING"
+    },
+    {
+     "t": "“월급 188만원 입금 1시간뒤 카드값-이자 줄줄이… 844원 남아”",
+     "u": "https://n.news.naver.com/article/020/0003755809?ntype=RANKING"
     },
     {
      "t": "합의 성관계 뒤 “성폭행 당했다”…20대女 무고로 징역형",
@@ -63,35 +87,11 @@
      "u": "https://n.news.naver.com/article/020/0003755717?ntype=RANKING"
     },
     {
-     "t": "안세영, 야마구치 상대 10연승…덴마크오픈 결승서 2-1 역전승 일구고 시즌 9번째 우승",
-     "u": "https://n.news.naver.com/article/020/0003755770?ntype=RANKING"
-    },
-    {
-     "t": "MZ 달구는 사우나… 유통가도 뜨거워진다",
-     "u": "https://n.news.naver.com/article/020/0003755789?ntype=RANKING"
-    },
-    {
-     "t": "“불닭·신라면도 긴장?” 외국인 난리…매출 1위 찍은 이 라면 정체[먹어보고서]",
-     "u": "https://n.news.naver.com/article/018/0006390571?ntype=RANKING"
-    },
-    {
-     "t": "\"여보, 안 되겠는데\" 서울·경기 마비...맨손으로 배수구 뚫기도",
-     "u": "https://n.news.naver.com/article/018/0006391052?ntype=RANKING"
-    },
-    {
-     "t": "\"빨대 250개 배송 완료\"...추미애 '사과'에도 취소 안 한 이유",
-     "u": "https://n.news.naver.com/article/018/0006391060?ntype=RANKING"
-    },
-    {
-     "t": "\"갑자기 불러서\" 김민석 사과...공연 중단 가수 반응은",
-     "u": "https://n.news.naver.com/article/018/0006391054?ntype=RANKING"
-    },
-    {
-     "t": "술 취해 빌라 주차장에 불 지른 30대 여성, 알고보니",
-     "u": "https://n.news.naver.com/article/018/0006391063?ntype=RANKING"
+     "t": "신차 만들던 르노 공장서, 기름때 찌들었던 엔진도 되살아나",
+     "u": "https://n.news.naver.com/article/020/0003755774?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-10-18T19:44:21.533378+00:00"
+   "updated_at": "2026-10-18T21:57:55.588265+00:00"
   },
   "zum": {
    "name": "줌",
@@ -111,13 +111,9 @@
     {
      "t": "종합랭킹",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%A2%85%ED%95%A9%EB%9E%AD%ED%82%B9"
-    },
-    {
-     "t": "스타랭킹",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%83%80%EB%9E%AD%ED%82%B9"
     }
    ],
-   "updated_at": "2026-10-18T19:44:21.533378+00:00"
+   "updated_at": "2026-10-18T21:57:55.588265+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
@@ -163,53 +159,53 @@
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471357&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-10-18T19:44:21.533378+00:00"
+   "updated_at": "2026-10-18T21:57:55.588265+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "말라가 대 레알 소시에다드",
-     "u": "https://www.google.com/search?q=%EB%A7%90%EB%9D%BC%EA%B0%80%20%EB%8C%80%20%EB%A0%88%EC%95%8C%20%EC%86%8C%EC%8B%9C%EC%97%90%EB%8B%A4%EB%93%9C"
+     "t": "김희재",
+     "u": "https://www.google.com/search?q=%EA%B9%80%ED%9D%AC%EC%9E%AC"
     },
     {
-     "t": "레알 마드리드 대 세비야",
-     "u": "https://www.google.com/search?q=%EB%A0%88%EC%95%8C%20%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C%20%EB%8C%80%20%EC%84%B8%EB%B9%84%EC%95%BC"
+     "t": "신세계 백화점 강남점",
+     "u": "https://www.google.com/search?q=%EC%8B%A0%EC%84%B8%EA%B3%84%20%EB%B0%B1%ED%99%94%EC%A0%90%20%EA%B0%95%EB%82%A8%EC%A0%90"
     },
     {
-     "t": "연휴",
-     "u": "https://www.google.com/search?q=%EC%97%B0%ED%9C%B4"
+     "t": "로스앤젤레스 다저스",
+     "u": "https://www.google.com/search?q=%EB%A1%9C%EC%8A%A4%EC%95%A4%EC%A0%A4%EB%A0%88%EC%8A%A4%20%EB%8B%A4%EC%A0%80%EC%8A%A4"
     },
     {
-     "t": "김건희",
-     "u": "https://www.google.com/search?q=%EA%B9%80%EA%B1%B4%ED%9D%AC"
+     "t": "후티",
+     "u": "https://www.google.com/search?q=%ED%9B%84%ED%8B%B0"
     },
     {
-     "t": "빗썸",
-     "u": "https://www.google.com/search?q=%EB%B9%97%EC%8D%B8"
+     "t": "배정남",
+     "u": "https://www.google.com/search?q=%EB%B0%B0%EC%A0%95%EB%82%A8"
     },
     {
-     "t": "윤여정",
-     "u": "https://www.google.com/search?q=%EC%9C%A4%EC%97%AC%EC%A0%95"
+     "t": "기사",
+     "u": "https://www.google.com/search?q=%EA%B8%B0%EC%82%AC"
     },
     {
-     "t": "구성환",
-     "u": "https://www.google.com/search?q=%EA%B5%AC%EC%84%B1%ED%99%98"
+     "t": "류필립",
+     "u": "https://www.google.com/search?q=%EB%A5%98%ED%95%84%EB%A6%BD"
     },
     {
-     "t": "nottm forest vs arsenal",
-     "u": "https://www.google.com/search?q=nottm%20forest%20vs%20arsenal"
+     "t": "hd현대중공업",
+     "u": "https://www.google.com/search?q=hd%ED%98%84%EB%8C%80%EC%A4%91%EA%B3%B5%EC%97%85"
     },
     {
-     "t": "ngoại hạng anh",
-     "u": "https://www.google.com/search?q=ngo%E1%BA%A1i%20h%E1%BA%A1ng%20anh"
+     "t": "현대제철",
+     "u": "https://www.google.com/search?q=%ED%98%84%EB%8C%80%EC%A0%9C%EC%B2%A0"
     },
     {
-     "t": "pl",
-     "u": "https://www.google.com/search?q=pl"
+     "t": "la liga",
+     "u": "https://www.google.com/search?q=la%20liga"
     }
    ],
-   "updated_at": "2026-10-18T19:44:21.533378+00:00"
+   "updated_at": "2026-10-18T21:57:55.588265+00:00"
   }
  }
 }
