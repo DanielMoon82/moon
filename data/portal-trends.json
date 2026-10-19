@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-10-19T07:15:14.425831+00:00",
+ "updated_at": "2026-10-19T15:03:06.618047+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "질의에 추미애 경기도지사",
-     "u": "https://search.nate.com/search/all.html?q=%EC%A7%88%EC%9D%98%EC%97%90%20%EC%B6%94%EB%AF%B8%EC%95%A0%20%EA%B2%BD%EA%B8%B0%EB%8F%84%EC%A7%80%EC%82%AC"
+     "t": "머스크 스페이스X 주식 기부",
+     "u": "https://search.nate.com/search/all.html?q=%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4X%201%EC%A3%BC%EC%94%A9%20%EB%A8%B8%EC%8A%A4%ED%81%AC"
     },
     {
-     "t": "강릉 ITS 세계총회",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B0%95%EB%A6%89%20ITS%20%EC%84%B8%EA%B3%84%EC%B4%9D%ED%9A%8C"
+     "t": "장모 살해 피의자 공개",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9E%A5%EB%AA%A8%20%ED%94%BC%EC%9D%98%EC%9E%90%20%EA%B3%B5%EA%B0%9C"
     },
     {
-     "t": "국감서 질의하는 의원",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B5%AD%EA%B0%90%EC%84%9C%20%EC%A7%88%EC%9D%98%ED%95%98%EB%8A%94%20%EC%9D%98%EC%9B%90"
+     "t": "김한민 감독, 이소영 결혼",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B0%90%EB%8F%85%20%EB%AA%85%EC%B0%BD%20%EC%9D%B4%EC%86%8C%EC%98%81"
     },
     {
-     "t": "이재명 대통령 기자 간담회",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B8%B0%EC%9E%90%EB%93%A4%EA%B3%BC%20%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EB%8C%80%ED%86%B5%EB%A0%B9"
+     "t": "정명석 징역 33년",
+     "u": "https://search.nate.com/search/all.html?q=JMS%20%EC%A0%95%EB%AA%85%EC%84%9D%20%EC%A7%95%EC%97%AD"
     },
     {
-     "t": "김유정 조선 배후, 시청률 10.6%",
-     "u": "https://search.nate.com/search/all.html?q=100%EC%9D%BC%EC%9D%98%20%EA%B1%B0%EC%A7%93%EB%A7%90"
+     "t": "할리스 개인정보 해킹 유출",
+     "u": "https://search.nate.com/search/all.html?q=%ED%95%A0%EB%A6%AC%EC%8A%A4%20%ED%95%B4%ED%82%B9%20%EC%9C%A0%EC%B6%9C"
     },
     {
-     "t": "정용화, 의리 위해 로코 안 찍어",
-     "u": "https://search.nate.com/search/all.html?q=%EC%A0%95%EC%9A%A9%ED%99%94%20%EB%B0%91%EB%81%9D%EB%84%88%20%EB%A1%9C%EC%BD%94"
+     "t": "KBS 이사 임명 재가",
+     "u": "https://search.nate.com/search/all.html?q=KBS%20%EC%9D%B4%EC%82%AC%20%EC%9E%AC%EA%B0%80"
     },
     {
-     "t": "하이닉스 주가",
-     "u": "https://search.nate.com/search/all.html?q=%ED%95%98%EC%9D%B4%EB%8B%89%EC%8A%A4%20%EC%A3%BC%EA%B0%80"
+     "t": "설인아, 숏컷으로 유죄인간 변신",
+     "u": "https://search.nate.com/search/all.html?q=%EB%82%98%EC%9D%98%20%EC%9C%A0%EC%A3%84%EC%9D%B8%EA%B0%84"
     },
     {
-     "t": "할리스 고객 개인정보 유출",
-     "u": "https://search.nate.com/search/all.html?q=%ED%95%A0%EB%A6%AC%EC%8A%A4%20%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%20%EC%9C%A0%EC%B6%9C"
+     "t": "강화 해안 지뢰 발견",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9C%A0%EC%8B%A4%20%EC%B6%94%EC%A0%95%20%EB%B0%9C%EA%B2%AC"
     },
     {
-     "t": "닥터X : 하얀 마피아의 시대",
-     "u": "https://search.nate.com/search/all.html?q=%EB%8B%A5%ED%84%B0X%20%3A%20%ED%95%98%EC%96%80%20%EB%A7%88%ED%94%BC%EC%95%84%EC%9D%98%20%EC%8B%9C%EB%8C%80"
+     "t": "공형진, 차지연 논란 사과",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B0%A8%EC%A7%80%EC%97%B0%EC%97%90%20%EB%85%BC%EB%9E%80%20%EC%82%AC%EA%B3%BC"
     },
     {
-     "t": "보험업권 시니어 취약계층",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B3%B4%ED%97%98%EC%97%85%EA%B6%8C%20%EC%8B%9C%EB%8B%88%EC%96%B4%20%EC%B7%A8%EC%95%BD%EA%B3%84%EC%B8%B5"
+     "t": "DB, 가스공사 2연패 탈출",
+     "u": "https://search.nate.com/search/all.html?q=DB%20%EA%B0%80%EC%8A%A4%EA%B3%B5%EC%82%AC%20%ED%83%88%EC%B6%9C"
     }
    ],
-   "updated_at": "2026-10-19T07:15:14.425831+00:00"
+   "updated_at": "2026-10-19T15:03:06.618047+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "서울시 비서실장 \"수사의뢰서 전달받아‥오 시장에게 미보고\"",
-     "u": "https://n.news.naver.com/article/214/0001529946?ntype=RANKING"
+     "t": "[속보] 이재명 대통령, KBS 이사 이강덕·장한식 임명 재가",
+     "u": "https://n.news.naver.com/article/052/0002420867?ntype=RANKING"
     },
     {
-     "t": "'김건희 황제조사' 수사하러 공주에서 간 검사‥서울공소청장 \"부적절\"",
-     "u": "https://n.news.naver.com/article/214/0001529936?ntype=RANKING"
+     "t": "북 김여정 \"남부 국경 불안정, 대남 확성기 방송 재개 검토\"",
+     "u": "https://n.news.naver.com/article/052/0002420876?ntype=RANKING"
     },
     {
-     "t": "민주 김민석 탑승 차량, '응급환자 전용구역' 주차 논란",
-     "u": "https://n.news.naver.com/article/214/0001529945?ntype=RANKING"
+     "t": "이 대통령, 기자단과 깜짝 좌담회...\"전작권 반드시 조기 환수\"",
+     "u": "https://n.news.naver.com/article/052/0002420877?ntype=RANKING"
     },
     {
-     "t": "우크라, 트럼프 만류에도 푸틴 고향 인프라 역대급 공습",
-     "u": "https://n.news.naver.com/article/214/0001529896?ntype=RANKING"
+     "t": "\"진정성 의문\" vs \"쭉쭉 빨아먹어\"...국감 한때 중단",
+     "u": "https://n.news.naver.com/article/052/0002420871?ntype=RANKING"
     },
     {
-     "t": "3톤 가마에 '부시장'도 사망‥논란 휩싸인 '日 전통축제'",
-     "u": "https://n.news.naver.com/article/214/0001529949?ntype=RANKING"
+     "t": "주한미군사령관 발언 잇단 파장...정부, 우려 전달",
+     "u": "https://n.news.naver.com/article/052/0002420875?ntype=RANKING"
     },
     {
-     "t": "황현희 \"주식 할 생각 마라\"...3개월 전 예언 적중 '화제'",
-     "u": "https://n.news.naver.com/article/215/0001269600?ntype=RANKING"
+     "t": "“결혼자금 다 날려, 미칠 지경”…코스피 급락에 ‘결혼 포기’ 선언",
+     "u": "https://n.news.naver.com/article/025/0003558926?ntype=RANKING"
     },
     {
-     "t": "8만 원 가던 주식이 2만 원대…추락하는 증권주, 바닥은 어디",
-     "u": "https://n.news.naver.com/article/215/0001269646?ntype=RANKING"
+     "t": "“항암 없이 췌장암 사라졌다”…‘이부진 요리스승’ 매일 먹은 이것",
+     "u": "https://n.news.naver.com/article/025/0003558768?ntype=RANKING"
     },
     {
-     "t": "\"데쳤더니 4분의 1 크기로\"…중국산 냉동 오징어에 무슨 일이",
-     "u": "https://n.news.naver.com/article/215/0001269644?ntype=RANKING"
+     "t": "4시간 숨어있다 범행…‘장모 살해·아내 납치범’은 26세 김성우",
+     "u": "https://n.news.naver.com/article/025/0003558946?ntype=RANKING"
     },
     {
-     "t": "[단독] 한미반도체, AI 반도체 공략…신제품 내년 초 양산",
-     "u": "https://n.news.naver.com/article/215/0001269651?ntype=RANKING"
+     "t": "강남 수상한 원룸 33개…성매매 알선 일당 40일간 5.7억 벌었다",
+     "u": "https://n.news.naver.com/article/025/0003558976?ntype=RANKING"
     },
     {
-     "t": "이찬진 금감원장 \"SK하닉 솔리다임, 중복상장 저촉 판단\"",
-     "u": "https://n.news.naver.com/article/215/0001269638?ntype=RANKING"
+     "t": "“지방대도 광탈” 그 ADHD 학생, 카이스트 뇌과학자 된 비결",
+     "u": "https://n.news.naver.com/article/025/0003558953?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-10-19T07:15:14.425831+00:00"
+   "updated_at": "2026-10-19T15:03:06.618047+00:00"
   },
   "zum": {
    "name": "줌",
@@ -117,99 +117,99 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%83%80%EB%9E%AD%ED%82%B9"
     }
    ],
-   "updated_at": "2026-10-19T07:15:14.425831+00:00"
+   "updated_at": "2026-10-19T15:03:06.618047+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
     {
-     "t": "쏘카 본사도 털렸었네.",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471484&_dcbest=1&page=1"
+     "t": "싱글벙글 현재 유럽에서 제일 으쓱한 나라...jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471599&_dcbest=1&page=1"
     },
     {
-     "t": "지금 주식 시장에 들어가면 안 됩니다.",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471482&_dcbest=1&page=1"
+     "t": "비를 뚫고 출사 다녀왔어 (10장)",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471597&_dcbest=1&page=1"
     },
     {
-     "t": "놀뭐 스핀오프 여행 설계자의 정체",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471480&_dcbest=1&page=1"
+     "t": "송파 장모 살인범 신상공개&amp;범행정황",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471596&_dcbest=1&page=1"
     },
     {
-     "t": "kbs) \"투표로 몰아내자\"...반트럼프 시위 확산",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471476&_dcbest=1&page=1"
+     "t": "일본 여자는 진짜 한국 남자를 좋아 할까?.jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471594&_dcbest=1&page=1"
     },
     {
-     "t": "2026 하겐다즈 10월 뉴신상 리뷰,..,.,....,,..Manhwa",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471474&_dcbest=1&page=1"
+     "t": "콜옵 모던4에서 등장한 의외의 인물.jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471592&_dcbest=1&page=1"
     },
     {
-     "t": "한수원 조직문화에 도전장을 내민 새로운 공기업 등장...",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471472&_dcbest=1&page=1"
+     "t": "싱글벙글 애국보수 치이카와..jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471590&_dcbest=1&page=1"
     },
     {
-     "t": "부캉이 지느러미 상처 ㅜㅠ",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471470&_dcbest=1&page=1"
+     "t": "339조 국부펀드 AI, 중국산 모델로 내부자료 처리",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471588&_dcbest=1&page=1"
     },
     {
-     "t": "의외의외 단순 투표 조작이 아닌 러시아 투표",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471468&_dcbest=1&page=1"
+     "t": "몽골 대초원에 '화르륵', 불법 낚시하려다 불낸 일본인들",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471586&_dcbest=1&page=1"
     },
     {
-     "t": "단독] 집단 성폭행 피의자 부친은 '국악계 거물'… 추가 피해도 '쉬쉬'",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471466&_dcbest=1&page=1"
+     "t": "싱글벙글 중세 중기의 혁신을 알아보자",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471584&_dcbest=1&page=1"
     },
     {
-     "t": "전라인민공화국 2026년에도 염전노예 굴리다 걸림 ㅋㅋㅋ",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471464&_dcbest=1&page=1"
+     "t": "李대통령 “부동산 ‘마지막 폭탄’ 누가 잡을 지 우려돼”",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=471582&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-10-19T07:15:14.425831+00:00"
+   "updated_at": "2026-10-19T15:03:06.618047+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "강원랜드",
-     "u": "https://www.google.com/search?q=%EA%B0%95%EC%9B%90%EB%9E%9C%EB%93%9C"
+     "t": "수영",
+     "u": "https://www.google.com/search?q=%EC%88%98%EC%98%81"
     },
     {
-     "t": "외국인",
-     "u": "https://www.google.com/search?q=%EC%99%B8%EA%B5%AD%EC%9D%B8"
+     "t": "icc cwc league 2",
+     "u": "https://www.google.com/search?q=icc%20cwc%20league%202"
     },
     {
-     "t": "아반떼 n 모노크롬",
-     "u": "https://www.google.com/search?q=%EC%95%84%EB%B0%98%EB%96%BC%20n%20%EB%AA%A8%EB%85%B8%ED%81%AC%EB%A1%AC"
+     "t": "로이킴",
+     "u": "https://www.google.com/search?q=%EB%A1%9C%EC%9D%B4%ED%82%B4"
     },
     {
-     "t": "nep vs oma",
-     "u": "https://www.google.com/search?q=nep%20vs%20oma"
+     "t": "바바라 팔빈",
+     "u": "https://www.google.com/search?q=%EB%B0%94%EB%B0%94%EB%9D%BC%20%ED%8C%94%EB%B9%88"
     },
     {
-     "t": "이강철",
-     "u": "https://www.google.com/search?q=%EC%9D%B4%EA%B0%95%EC%B2%A0"
+     "t": "이종혁",
+     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%A2%85%ED%98%81"
     },
     {
-     "t": "미쓰비시 중공업",
-     "u": "https://www.google.com/search?q=%EB%AF%B8%EC%93%B0%EB%B9%84%EC%8B%9C%20%EC%A4%91%EA%B3%B5%EC%97%85"
+     "t": "중",
+     "u": "https://www.google.com/search?q=%EC%A4%91"
     },
     {
-     "t": "디지털 자산",
-     "u": "https://www.google.com/search?q=%EB%94%94%EC%A7%80%ED%84%B8%20%EC%9E%90%EC%82%B0"
+     "t": "시험",
+     "u": "https://www.google.com/search?q=%EC%8B%9C%ED%97%98"
     },
     {
-     "t": "태극기",
-     "u": "https://www.google.com/search?q=%ED%83%9C%EA%B7%B9%EA%B8%B0"
+     "t": "박평순",
+     "u": "https://www.google.com/search?q=%EB%B0%95%ED%8F%89%EC%88%9C"
     },
     {
-     "t": "농촌",
-     "u": "https://www.google.com/search?q=%EB%86%8D%EC%B4%8C"
+     "t": "문재인",
+     "u": "https://www.google.com/search?q=%EB%AC%B8%EC%9E%AC%EC%9D%B8"
     },
     {
-     "t": "한국투자증권",
-     "u": "https://www.google.com/search?q=%ED%95%9C%EA%B5%AD%ED%88%AC%EC%9E%90%EC%A6%9D%EA%B6%8C"
+     "t": "나의 유죄인간",
+     "u": "https://www.google.com/search?q=%EB%82%98%EC%9D%98%20%EC%9C%A0%EC%A3%84%EC%9D%B8%EA%B0%84"
     }
    ],
-   "updated_at": "2026-10-19T07:15:14.425831+00:00"
+   "updated_at": "2026-10-19T15:03:06.618047+00:00"
   }
  }
 }
