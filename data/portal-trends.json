@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-10-22T02:03:39.809029+00:00",
+ "updated_at": "2026-10-22T08:57:57.668073+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "한은 기준금리 3% 동결",
-     "u": "https://search.nate.com/search/all.html?q=%ED%95%9C%EC%9D%80%20%EA%B8%B0%EC%A4%80%EA%B8%88%EB%A6%AC%20%EB%8F%99%EA%B2%B0"
+     "t": "특별감찰관 청문보고서 채택",
+     "u": "https://search.nate.com/search/all.html?q=%ED%8A%B9%EB%B3%84%EA%B0%90%EC%B0%B0%EA%B4%80%20%EC%B2%AD%EB%AC%B8%EB%B3%B4%EA%B3%A0%EC%84%9C%20%EC%B1%84%ED%83%9D"
     },
     {
-     "t": "이진숙 의원 결정은",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EC%A7%84%EC%88%99%20%EC%9D%98%EC%9B%90%20%EA%B2%B0%EC%A0%95%EC%9D%80"
+     "t": "PHP 취약점 주의 필요",
+     "u": "https://search.nate.com/search/all.html?q=PHP%20%EC%B7%A8%EC%95%BD%EC%A0%90%20%EC%A3%BC%EC%9D%98"
     },
     {
-     "t": "신현송 한국은행 총재",
-     "u": "https://search.nate.com/search/all.html?q=%EC%8B%A0%ED%98%84%EC%86%A1%20%ED%95%9C%EA%B5%AD%EC%9D%80%ED%96%89%20%EC%B4%9D%EC%9E%AC"
+     "t": "안효섭 파이널 테이블 선택 이유는 울림.",
+     "u": "https://search.nate.com/search/all.html?q=%EC%95%88%ED%9A%A8%EC%84%AD%20%ED%8C%8C%EC%9D%B4%EB%84%90%20%ED%85%8C%EC%9D%B4%EB%B8%94"
     },
     {
-     "t": "발언하는 장동혁 대표",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B0%9C%EC%96%B8%ED%95%98%EB%8A%94%20%EC%9E%A5%EB%8F%99%ED%98%81%20%EB%8C%80%ED%91%9C"
+     "t": "코스피 하락 마감",
+     "u": "https://search.nate.com/search/all.html?q=%EC%BD%94%EC%8A%A4%ED%94%BC%20%ED%95%98%EB%9D%BD%20%EB%A7%88%EA%B0%90"
     },
     {
-     "t": "송혜교 공유 12월 11일 공개",
-     "u": "https://search.nate.com/search/all.html?q=%EC%86%A1%ED%98%9C%EA%B5%90%20%EA%B3%B5%EC%9C%A0%2012%EC%9B%94"
+     "t": "BMW 레이디스 챔피언십 요시다 유리 티샷",
+     "u": "https://search.nate.com/search/all.html?q=BMW%20%EB%A0%88%EC%9D%B4%EB%94%94%EC%8A%A4%20%EC%B1%94%ED%94%BC%EC%96%B8%EC%8B%AD"
     },
     {
-     "t": "코스피 하락 출발",
-     "u": "https://search.nate.com/search/all.html?q=%EC%BD%94%EC%8A%A4%ED%94%BC%20%ED%95%98%EB%9D%BD%20%EC%B6%9C%EB%B0%9C"
+     "t": "김민석 대표 유가족협의회",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EB%AF%BC%EC%84%9D%20%EB%8C%80%ED%91%9C%20%EC%9C%A0%EA%B0%80%EC%A1%B1%ED%98%91%EC%9D%98%ED%9A%8C"
     },
     {
-     "t": "2026년 후반기 합동도서방어훈련",
-     "u": "https://search.nate.com/search/all.html?q=2026%EB%85%84%20%ED%9B%84%EB%B0%98%EA%B8%B0%20%ED%95%A9%EB%8F%99%EB%8F%84%EC%84%9C%EB%B0%A9%EC%96%B4%ED%9B%88%EB%A0%A8"
+     "t": "한성숙 총리, 청년 주택 현장 점검",
+     "u": "https://search.nate.com/search/all.html?q=%ED%98%84%EC%9E%A5%20%ED%95%9C%EC%84%B1%EC%88%99%20%EC%B4%9D%EB%A6%AC"
     },
     {
-     "t": "출근하는 조희대 대법원장",
-     "u": "https://search.nate.com/search/all.html?q=%EC%B6%9C%EA%B7%BC%ED%95%98%EB%8A%94%20%EC%A1%B0%ED%9D%AC%EB%8C%80%20%EB%8C%80%EB%B2%95%EC%9B%90%EC%9E%A5"
+     "t": "윤종훈 한은서 결혼 청첩장 받음",
+     "u": "https://search.nate.com/search/all.html?q=%ED%95%9C%EC%9D%80%EC%84%9C"
     },
     {
-     "t": "제네시스 챔피언십 개막",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9B%94%EB%93%9C%ED%88%AC%EC%96%B4%20%EC%B1%94%ED%94%BC%EC%96%B8%EC%8B%AD%20%EA%B0%9C%EB%A7%89"
+     "t": "정점식, 진우스님 예방",
+     "u": "https://search.nate.com/search/all.html?q=%EC%A0%95%EC%A0%90%EC%8B%9D%20%EC%9B%90%EB%82%B4%EB%8C%80%ED%91%9C"
     },
     {
-     "t": "김정은 사망설 확산",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EC%A0%95%EC%9D%80%20%EC%82%AC%EB%A7%9D"
+     "t": "김현중 전 연인 관련 소식",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%ED%98%84%EC%A4%91"
     }
    ],
-   "updated_at": "2026-10-22T02:03:39.809029+00:00"
+   "updated_at": "2026-10-22T08:57:57.668073+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "\"북한이 공개한 김정은 사진은 속임수\"…사망설 진실 공방 이어져",
-     "u": "https://n.news.naver.com/article/277/0005831693?ntype=RANKING"
+     "t": "미성년자에 마약 21차례 투약 후 성관계…영상 찍어 ‘충격 협박’",
+     "u": "https://n.news.naver.com/article/025/0003559637?ntype=RANKING"
     },
     {
-     "t": "낯선 사람들과 잘 잤더니 1900만원 받았다…24세 참가자 수면대회 '우승'",
-     "u": "https://n.news.naver.com/article/277/0005831384?ntype=RANKING"
+     "t": "“손흥민 ‘7번’이라 부르며 비속어”…8년전 라커룸서 국대팀 금 갔다",
+     "u": "https://n.news.naver.com/article/025/0003559779?ntype=RANKING"
     },
     {
-     "t": "'부잣집 딸'인데 오늘은 '꾸안꾸' 내일은 '화려'…2030 열광하는 '백화점 코어'[Why&Next]",
-     "u": "https://n.news.naver.com/article/277/0005831764?ntype=RANKING"
+     "t": "다카이치 다급한 경고, 공격은 이미 시작됐다…日 한밤 무슨 일이",
+     "u": "https://n.news.naver.com/article/025/0003559745?ntype=RANKING"
     },
     {
-     "t": "\"파랗게 질린 계좌, 열어보기도 싫었는데\" 10월 급락장 속 빛난 회사들",
-     "u": "https://n.news.naver.com/article/277/0005831765?ntype=RANKING"
+     "t": "비즈니스석 몰래 앉았다 들키자…“나 법학과야” 난동부린 女",
+     "u": "https://n.news.naver.com/article/025/0003559681?ntype=RANKING"
     },
     {
-     "t": "\"속옷까지 가위로 잘라야\"…'손 느리면 끝' 쓰레기 헌터 등장에 몸살 앓는 中",
-     "u": "https://n.news.naver.com/article/277/0005831518?ntype=RANKING"
+     "t": "北 남침 게임에 “북한군 불쌍”…“암살자들 때와 다른 내로남불” 논란",
+     "u": "https://n.news.naver.com/article/025/0003559796?ntype=RANKING"
     },
     {
-     "t": "갑자기 ‘윤석열·김건희’ 듀엣 영상 올린 김 여사 측근…석방 여론전 나서",
-     "u": "https://n.news.naver.com/article/028/0002828505?ntype=RANKING"
+     "t": "이재용, 구내식당서 밥 먹고 500만원씩 쐈다…중동 깜짝 방문",
+     "u": "https://n.news.naver.com/article/015/0005345394?ntype=RANKING"
     },
     {
-     "t": "[단독] 베트남서 국내 항공사 여행 기록 2480만건 노출…9년 치 승객 여권번호 등",
-     "u": "https://n.news.naver.com/article/028/0002828568?ntype=RANKING"
+     "t": "'간 큰' 개미들, 삼전닉스 던지고 쓸어 담았다…6조 뭉칫돈 대이동",
+     "u": "https://n.news.naver.com/article/015/0005345384?ntype=RANKING"
     },
     {
-     "t": "쓰러진 발작 환자…퇴근길 간호사, 만원 지하철 인파 뚫고 살려내",
-     "u": "https://n.news.naver.com/article/028/0002828564?ntype=RANKING"
+     "t": "\"호감 떨어졌다\"…'나솔' 인기녀 타투 폭로에 호불호 공방",
+     "u": "https://n.news.naver.com/article/015/0005345423?ntype=RANKING"
     },
     {
-     "t": "윤석열 정부도 포기한 ‘주 69시간’ 노동 길 터…‘초광역특구법’ 독소조항 수두룩",
-     "u": "https://n.news.naver.com/article/028/0002828551?ntype=RANKING"
+     "t": "\"순직하면 10억 로또\" 망언에…현직 소방관이 남긴 글",
+     "u": "https://n.news.naver.com/article/015/0005345424?ntype=RANKING"
     },
     {
-     "t": "계부 성폭행 피해 딸, 생모가 공격…오하이오 주지사 선거전 논란",
-     "u": "https://n.news.naver.com/article/028/0002828575?ntype=RANKING"
+     "t": "\"울면서 혼인신고서 썼다\"…'장모 살인' 김성우 아내의 고백",
+     "u": "https://n.news.naver.com/article/015/0005345338?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-10-22T02:03:39.809029+00:00"
+   "updated_at": "2026-10-22T08:57:57.668073+00:00"
   },
   "zum": {
    "name": "줌",
@@ -113,99 +113,99 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%A2%85%ED%95%A9%EB%9E%AD%ED%82%B9"
     }
    ],
-   "updated_at": "2026-10-22T02:03:39.809029+00:00"
+   "updated_at": "2026-10-22T08:57:57.668073+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
     {
-     "t": "박위, 미국강연 후 2박3일간의 초호화 식사(with 좋은친구)",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472283&_dcbest=1&page=1"
+     "t": "싱글벙글 sk하이닉스 레버리지 근황...",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472357&_dcbest=1&page=1"
     },
     {
-     "t": "한국 기업 갈래요... 일본인들 뜻밖의 분위기",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472282&_dcbest=1&page=1"
+     "t": "뭘하려는건지정리되지않은방향성이없는사진모음",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472355&_dcbest=1&page=1"
     },
     {
-     "t": "[단독] 유홍준, '셀프 출품' 애국지사 유족 만나서도 숨겼다…논란 끝에",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472280&_dcbest=1&page=1"
+     "t": "&quot;역전의 기회야!&quot; 하더니 순간‥선 넘는 '엑셀방송' 기승",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472353&_dcbest=1&page=1"
     },
     {
-     "t": "싱글벙글 채식주의자들이 신봉하는 10가지 논리",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472277&_dcbest=1&page=1"
+     "t": "오픈ai 구글과 주요 모델 배포계약 체결",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472351&_dcbest=1&page=1"
     },
     {
-     "t": "(번역) 사회적으로 올바르지 않은 해외 밈 모음",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472275&_dcbest=1&page=1"
+     "t": "모자이크 파괴작 근황",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472349&_dcbest=1&page=1"
     },
     {
-     "t": "초밥 배달 시켰는데 이거 내가 이상한거야??",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472273&_dcbest=1&page=1"
+     "t": "싱글벙글 주인공이 인기투표 1등을 못하는 소년만화",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472345&_dcbest=1&page=1"
     },
     {
-     "t": "의정부 제일시장 간단히 점심 먹방한 쯔양 근황 ㄷㄷㄷ",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472272&_dcbest=1&page=1"
+     "t": "컴백 없는 뉴진스, 어도어 아닌 다니엘과 포착?",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472343&_dcbest=1&page=1"
     },
     {
-     "t": "한국의 음지 (옥상마을과 서울 쪽방촌)",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472270&_dcbest=1&page=1"
+     "t": "JTBC) 트럼프, 우크라 젤렌스키 정권교체 직격",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472341&_dcbest=1&page=1"
     },
     {
-     "t": "싱글벙글 세계 주요 국가들의 최극점 좌표",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472268&_dcbest=1&page=1"
+     "t": "'탈북어민 강제북송' 정의용·서훈 2심서 징역형 집유 선고",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472339&_dcbest=1&page=1"
     },
     {
-     "t": "서울역 동자동 공공주택사업 재개",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472267&_dcbest=1&page=1"
+     "t": "[단독] 북한군 감시카메라 40여 대 추가…북상 배치",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=472337&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-10-22T02:03:39.809029+00:00"
+   "updated_at": "2026-10-22T08:57:57.668073+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "반도체산업",
-     "u": "https://www.google.com/search?q=%EB%B0%98%EB%8F%84%EC%B2%B4%EC%82%B0%EC%97%85"
+     "t": "도경완",
+     "u": "https://www.google.com/search?q=%EB%8F%84%EA%B2%BD%EC%99%84"
     },
     {
-     "t": "금리",
-     "u": "https://www.google.com/search?q=%EA%B8%88%EB%A6%AC"
+     "t": "삼성e&amp;a",
+     "u": "https://www.google.com/search?q=%EC%82%BC%EC%84%B1e%26amp%3Ba"
     },
     {
-     "t": "초코파이",
-     "u": "https://www.google.com/search?q=%EC%B4%88%EC%BD%94%ED%8C%8C%EC%9D%B4"
+     "t": "신지",
+     "u": "https://www.google.com/search?q=%EC%8B%A0%EC%A7%80"
     },
     {
-     "t": "claude duet",
-     "u": "https://www.google.com/search?q=claude%20duet"
+     "t": "대한 광통신",
+     "u": "https://www.google.com/search?q=%EB%8C%80%ED%95%9C%20%EA%B4%91%ED%86%B5%EC%8B%A0"
     },
     {
-     "t": "독도",
-     "u": "https://www.google.com/search?q=%EB%8F%85%EB%8F%84"
+     "t": "new zealand vs india",
+     "u": "https://www.google.com/search?q=new%20zealand%20vs%20india"
     },
     {
-     "t": "레이 아미",
-     "u": "https://www.google.com/search?q=%EB%A0%88%EC%9D%B4%20%EC%95%84%EB%AF%B8"
+     "t": "비료",
+     "u": "https://www.google.com/search?q=%EB%B9%84%EB%A3%8C"
     },
     {
-     "t": "국가보훈부",
-     "u": "https://www.google.com/search?q=%EA%B5%AD%EA%B0%80%EB%B3%B4%ED%9B%88%EB%B6%80"
+     "t": "학생",
+     "u": "https://www.google.com/search?q=%ED%95%99%EC%83%9D"
     },
     {
-     "t": "프랑스 오픈",
-     "u": "https://www.google.com/search?q=%ED%94%84%EB%9E%91%EC%8A%A4%20%EC%98%A4%ED%94%88"
+     "t": "성과급",
+     "u": "https://www.google.com/search?q=%EC%84%B1%EA%B3%BC%EA%B8%89"
     },
     {
-     "t": "크비차 크바라트스켈리아",
-     "u": "https://www.google.com/search?q=%ED%81%AC%EB%B9%84%EC%B0%A8%20%ED%81%AC%EB%B0%94%EB%9D%BC%ED%8A%B8%EC%8A%A4%EC%BC%88%EB%A6%AC%EC%95%84"
+     "t": "이계인",
+     "u": "https://www.google.com/search?q=%EC%9D%B4%EA%B3%84%EC%9D%B8"
     },
     {
-     "t": "버스",
-     "u": "https://www.google.com/search?q=%EB%B2%84%EC%8A%A4"
+     "t": "경마",
+     "u": "https://www.google.com/search?q=%EA%B2%BD%EB%A7%88"
     }
    ],
-   "updated_at": "2026-10-22T02:03:39.809029+00:00"
+   "updated_at": "2026-10-22T08:57:57.668073+00:00"
   }
  }
 }
