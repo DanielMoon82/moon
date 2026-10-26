@@ -1,78 +1,74 @@
 {
- "updated_at": "2026-10-26T01:55:30.735506+00:00",
+ "updated_at": "2026-10-26T07:09:47.482915+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "최길수 특감 질문에 답변",
-     "u": "https://search.nate.com/search/all.html?q=%EC%B7%A8%EC%9E%AC%EC%A7%84%20%EC%B5%9C%EA%B8%B8%EC%88%98%20%ED%8A%B9%EB%B3%84%EA%B0%90%EC%B0%B0%EA%B4%80"
+     "t": "발언하는 이재명 대통령",
+     "u": "https://search.nate.com/search/all.html?q=%EB%B0%9C%EC%96%B8%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EB%8C%80%ED%86%B5%EB%A0%B9"
     },
     {
-     "t": "발언하는 장동혁 대표",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B0%9C%EC%96%B8%ED%95%98%EB%8A%94%20%EA%B9%80%EB%AF%BC%EC%84%9D%20%EB%8C%80%ED%91%9C"
+     "t": "재정운용전략협의회 박홍근 장관",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9E%AC%EC%A0%95%EC%9A%B4%EC%9A%A9%EC%A0%84%EB%9E%B5%ED%98%91%EC%9D%98%ED%9A%8C%20%EB%B0%95%ED%99%8D%EA%B7%BC%20%EC%9E%A5%EA%B4%80"
     },
     {
-     "t": "하이닉스 주가 상승",
+     "t": "아일릿, 체포하겠어!",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B2%B4%ED%8F%AC%ED%95%98%EA%B2%A0%EC%96%B4%20%EC%95%84%EC%9D%BC%EB%A6%BF"
+    },
+    {
+     "t": "오세훈 시장 동행안심벨 점검",
+     "u": "https://search.nate.com/search/all.html?q=%EB%8F%99%ED%96%89%EC%95%88%EC%8B%AC%EB%B2%A8%20%EC%98%A4%EC%84%B8%ED%9B%88%20%EC%8B%9C%EC%9E%A5"
+    },
+    {
+     "t": "박진만 감독 1차전 준비",
+     "u": "https://search.nate.com/search/all.html?q=%EB%B0%95%EC%A7%84%EB%A7%8C%20%EA%B0%90%EB%8F%85%201%EC%B0%A8%EC%A0%84"
+    },
+    {
+     "t": "100일의 거짓말",
+     "u": "https://search.nate.com/search/all.html?q=100%EC%9D%BC%EC%9D%98%20%EA%B1%B0%EC%A7%93%EB%A7%90"
+    },
+    {
+     "t": "홍라희 명예관장 국민훈장",
+     "u": "https://search.nate.com/search/all.html?q=%ED%99%8D%EB%9D%BC%ED%9D%AC%20%EB%AA%85%EC%98%88%EA%B4%80%EC%9E%A5%20%EA%B5%AD%EB%AF%BC%ED%9B%88%EC%9E%A5"
+    },
+    {
+     "t": "김혜경 여사 골프 의혹",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%ED%98%9C%EA%B2%BD%20%EC%97%AC%EC%82%AC%20%EA%B3%A8%ED%94%84"
+    },
+    {
+     "t": "하이닉스 외국인 기관 순매수 증가",
      "u": "https://search.nate.com/search/all.html?q=%ED%95%98%EC%9D%B4%EB%8B%89%EC%8A%A4%20%EC%A3%BC%EA%B0%80"
     },
     {
-     "t": "브라질 룰라 당선",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B8%8C%EB%9D%BC%EC%A7%88%20%EB%A3%B0%EB%9D%BC%20%EB%8B%B9%EC%84%A0"
-    },
-    {
-     "t": "코스피 하락 시작",
-     "u": "https://search.nate.com/search/all.html?q=%EC%BD%94%EC%8A%A4%ED%94%BC%20%ED%95%98%EB%9D%BD%20%EC%B6%9C%EB%B0%9C"
-    },
-    {
-     "t": "감우성 사망과 김유정 오열",
-     "u": "https://search.nate.com/search/all.html?q=100%EC%9D%BC%EC%9D%98%20%EA%B1%B0%EC%A7%93%EB%A7%90%20%EA%B0%90%EC%9A%B0%EC%84%B1"
-    },
-    {
-     "t": "출근하는 조희대 대법원장",
-     "u": "https://search.nate.com/search/all.html?q=%EC%B6%9C%EA%B7%BC%ED%95%98%EB%8A%94%20%EC%A1%B0%ED%9D%AC%EB%8C%80%20%EB%8C%80%EB%B2%95%EC%9B%90%EC%9E%A5"
-    },
-    {
-     "t": "음바페 2골, 레알 승리!",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%8C%EB%B0%94%ED%8E%98%20%EB%A0%88%EC%95%8C%20%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C"
-    },
-    {
-     "t": "올림픽공원 투표지 검증",
-     "u": "https://search.nate.com/search/all.html?q=%EC%84%A0%EA%B4%80%EC%9C%84%20%ED%8A%B9%EA%B2%80%20%ED%88%AC%ED%91%9C%EC%A7%80"
-    },
-    {
-     "t": "인스파이어 아레나, 네이버로 변경",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B8%EC%8A%A4%ED%8C%8C%EC%9D%B4%EC%96%B4%20%EC%95%84%EB%A0%88%EB%82%98%20%EB%84%A4%EC%9D%B4%EB%B2%84"
+     "t": "안중근 유묵 전시",
+     "u": "https://search.nate.com/search/all.html?q=%EC%95%88%EC%A4%91%EA%B7%BC%20%EC%9D%98%EC%82%AC%20%EC%9C%A0%EB%AC%B5"
     }
    ],
-   "updated_at": "2026-10-26T01:55:30.735506+00:00"
+   "updated_at": "2026-10-26T07:09:47.482915+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "차 안에 둔 채 잊고 있었는데…\"기뻐 쓰러질 뻔\" 21억 복권 당첨된 남성",
-     "u": "https://n.news.naver.com/article/277/0005833108?ntype=RANKING"
+     "t": "[단독]세브란스병원 92점, 서울대병원 68점… 권역응급센터 평가서 드러난 병원 간 격차",
+     "u": "https://n.news.naver.com/article/023/0004005939?ntype=RANKING"
     },
     {
-     "t": "\"이 여자를 믿지마세요\" 일주일만에 220억 벌어들인 '투자 사기꾼' 다큐",
-     "u": "https://n.news.naver.com/article/277/0005833067?ntype=RANKING"
+     "t": "국수본부장 “한동훈 딸 노트북 기증, 상식적이진 않아”... 중수청장 “일부 암장처럼 보여”",
+     "u": "https://n.news.naver.com/article/023/0004005964?ntype=RANKING"
     },
     {
-     "t": "\"이게 663억원이라고?\"…천 한 조각 없이 완성한 '역대 최고가'의 정체",
-     "u": "https://n.news.naver.com/article/277/0005833182?ntype=RANKING"
+     "t": "野 주진우 “김혜경, 황제 골프레슨”... 靑 “허위 사실 보도에 책임 묻겠다”",
+     "u": "https://n.news.naver.com/article/023/0004005958?ntype=RANKING"
     },
     {
-     "t": "\"남들은 은퇴한다는데\"…74세까지 일하겠다는 사람들, 무슨 일[연금자산 양극화]①",
-     "u": "https://n.news.naver.com/article/277/0005833170?ntype=RANKING"
+     "t": "“22살에 떠난 조국, 선진국 됐네”… 박정희 고향 찾은 파독 간호사들",
+     "u": "https://n.news.naver.com/article/023/0004005957?ntype=RANKING"
     },
     {
-     "t": "\"차라리 일본 갈래\" 소리 나오겠네…한국 찾은 외국인들 '불만 폭주' 왜?[2026국감]",
-     "u": "https://n.news.naver.com/article/277/0005833078?ntype=RANKING"
-    },
-    {
-     "t": "22년을 도망다녔다…80대 휠체어 백발 노인은 4.8조 마약 운반책이었다 [세상&]",
-     "u": "https://n.news.naver.com/article/016/0002714148?ntype=RANKING"
+     "t": "李 “CPTPP, 제 임기 내에는 타결 안 돼”",
+     "u": "https://n.news.naver.com/article/023/0004005969?ntype=RANKING"
     },
     {
      "t": "“미스터트롯 안 합니다”…연예계 데뷔, 단칼에 거절한 붕어빵 파는 청년",
@@ -83,15 +79,19 @@
      "u": "https://n.news.naver.com/article/016/0002714027?ntype=RANKING"
     },
     {
-     "t": "“30만원→17만원, 절망입니다” 한때 전국민 열풍 난리더니…‘국민 포털’ 급락 무슨 일이",
-     "u": "https://n.news.naver.com/article/016/0002714044?ntype=RANKING"
+     "t": "22년을 도망다녔다…80대 휠체어 백발 노인은 4.8조 마약 운반책이었다 [세상&]",
+     "u": "https://n.news.naver.com/article/016/0002714148?ntype=RANKING"
     },
     {
-     "t": "“짓다 만 아파트, 누가 완공하나요” 지방 곳곳 ‘유령 아파트’ 속출 [부동산360]",
-     "u": "https://n.news.naver.com/article/016/0002714070?ntype=RANKING"
+     "t": "[속보] ‘尹정부 관저이전 의혹’…김오진 前국토차관에 ‘징역 5년’ 구형",
+     "u": "https://n.news.naver.com/article/016/0002714479?ntype=RANKING"
+    },
+    {
+     "t": "김수현, ‘미성년 교제설’ 주장 김세의 이어 故 김새론 모친 공소청 송치",
+     "u": "https://n.news.naver.com/article/016/0002714473?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-10-26T01:55:30.735506+00:00"
+   "updated_at": "2026-10-26T07:09:47.482915+00:00"
   },
   "zum": {
    "name": "줌",
@@ -103,105 +103,101 @@
     {
      "t": "연예",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%97%B0%EC%98%88"
-    },
-    {
-     "t": "스포츠",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%8F%AC%EC%B8%A0"
     }
    ],
-   "updated_at": "2026-10-26T01:55:30.735506+00:00"
+   "updated_at": "2026-10-26T07:09:47.482915+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
     {
-     "t": "싱글벙글 수원 코믹월드",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473229&_dcbest=1&page=1"
+     "t": "10월 26일 시황",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473294&_dcbest=1&page=1"
     },
     {
-     "t": "영화는 영화라더니 게임을 게임으로 보지못하는 사람들",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473227&_dcbest=1&page=1"
+     "t": "정치인이 다문화 옹호하다가 말빨 밀리고 계폭함 ㅋㅋ",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473292&_dcbest=1&page=1"
     },
     {
-     "t": "안싱글벙글 한국에서 \"노인 존경을 잃게 만든\" 희대의 사건",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473225&_dcbest=1&page=1"
+     "t": "싱글벙글 아이폰 듀오 힌지 설계 미스 확인...JPG",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473290&_dcbest=1&page=1"
     },
     {
-     "t": "게임 한국어 더빙 관련 호불호에 관한 연구",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473223&_dcbest=1&page=1"
+     "t": "속보) 보우소나루, 부정 선거 의혹 제기...대선 무효 추진ㅋㅋ",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473288&_dcbest=1&page=1"
     },
     {
-     "t": "WORLDS) GEN VS LYON 후푸평점",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473221&_dcbest=1&page=1"
+     "t": "닥터X 6화 논란의 장면 ㄷㄷㄷㄷ..jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473283&_dcbest=1&page=1"
     },
     {
-     "t": "구마유시 하이라이트...gif",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473218&_dcbest=1&page=1"
+     "t": "펑\" 지뢰 밟아 발 잃은 장교... 국방부 \"북한군 소행 증거 부족\"",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473280&_dcbest=1&page=1"
     },
     {
-     "t": "김정은, 시진핑 안 만나고 귀국…북미대화 수싸움?",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473216&_dcbest=1&page=1"
+     "t": "양홍원 사건 이후 남초와 여초의 반응",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473278&_dcbest=1&page=1"
     },
     {
-     "t": "“모텔서 성매매해요” 10대 남녀 일당, 찾아온 남성들 나체 촬영",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473213&_dcbest=1&page=1"
+     "t": "예전보다 다채롭고 세련된 일본의 거리 근황",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473276&_dcbest=1&page=1"
     },
     {
-     "t": "AI로 인해 미쳐돌아가는 전세계 근황",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473212&_dcbest=1&page=1"
+     "t": "불쾌한 장난만 치는 남편 투명인간 취급이 답일까.blind",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473274&_dcbest=1&page=1"
     },
     {
-     "t": "싱글벙글 아이폰듀오를 샀더니 여성분들이~^^",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473209&_dcbest=1&page=1"
+     "t": "손흥민 오늘 자 LA더비 경기 장면 모음...gif",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=473272&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-10-26T01:55:30.735506+00:00"
+   "updated_at": "2026-10-26T07:09:47.482915+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "카드뉴스",
-     "u": "https://www.google.com/search?q=%EC%B9%B4%EB%93%9C%EB%89%B4%EC%8A%A4"
+     "t": "미래에셋생명",
+     "u": "https://www.google.com/search?q=%EB%AF%B8%EB%9E%98%EC%97%90%EC%85%8B%EC%83%9D%EB%AA%85"
     },
     {
-     "t": "빌 게이츠",
-     "u": "https://www.google.com/search?q=%EB%B9%8C%20%EA%B2%8C%EC%9D%B4%EC%B8%A0"
+     "t": "이창호",
+     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%B0%BD%ED%98%B8"
     },
     {
-     "t": "시내버스",
-     "u": "https://www.google.com/search?q=%EC%8B%9C%EB%82%B4%EB%B2%84%EC%8A%A4"
+     "t": "대전광역시",
+     "u": "https://www.google.com/search?q=%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C"
     },
     {
-     "t": "탈세",
-     "u": "https://www.google.com/search?q=%ED%83%88%EC%84%B8"
+     "t": "코리아 오픈",
+     "u": "https://www.google.com/search?q=%EC%BD%94%EB%A6%AC%EC%95%84%20%EC%98%A4%ED%94%88"
     },
     {
-     "t": "우리은행",
-     "u": "https://www.google.com/search?q=%EC%9A%B0%EB%A6%AC%EC%9D%80%ED%96%89"
+     "t": "임영웅 아임 히어로 더 스타디움",
+     "u": "https://www.google.com/search?q=%EC%9E%84%EC%98%81%EC%9B%85%20%EC%95%84%EC%9E%84%20%ED%9E%88%EC%96%B4%EB%A1%9C%20%EB%8D%94%20%EC%8A%A4%ED%83%80%EB%94%94%EC%9B%80"
     },
     {
-     "t": "엘에이 fc 대 la 갤럭시",
-     "u": "https://www.google.com/search?q=%EC%97%98%EC%97%90%EC%9D%B4%20fc%20%EB%8C%80%20la%20%EA%B0%A4%EB%9F%AD%EC%8B%9C"
+     "t": "왕옌청",
+     "u": "https://www.google.com/search?q=%EC%99%95%EC%98%8C%EC%B2%AD"
     },
     {
-     "t": "국민은행",
-     "u": "https://www.google.com/search?q=%EA%B5%AD%EB%AF%BC%EC%9D%80%ED%96%89"
+     "t": "코스트코 평택점",
+     "u": "https://www.google.com/search?q=%EC%BD%94%EC%8A%A4%ED%8A%B8%EC%BD%94%20%ED%8F%89%ED%83%9D%EC%A0%90"
     },
     {
-     "t": "빅테크",
-     "u": "https://www.google.com/search?q=%EB%B9%85%ED%85%8C%ED%81%AC"
+     "t": "나솔",
+     "u": "https://www.google.com/search?q=%EB%82%98%EC%86%94"
     },
     {
-     "t": "트럭",
-     "u": "https://www.google.com/search?q=%ED%8A%B8%EB%9F%AD"
+     "t": "경매",
+     "u": "https://www.google.com/search?q=%EA%B2%BD%EB%A7%A4"
     },
     {
-     "t": "lula",
-     "u": "https://www.google.com/search?q=lula"
+     "t": "불가리아",
+     "u": "https://www.google.com/search?q=%EB%B6%88%EA%B0%80%EB%A6%AC%EC%95%84"
     }
    ],
-   "updated_at": "2026-10-26T01:55:30.735506+00:00"
+   "updated_at": "2026-10-26T07:09:47.482915+00:00"
   }
  }
 }
