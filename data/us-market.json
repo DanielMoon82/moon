@@ -1,39 +1,39 @@
 {
-  "as_of_date": "2026-10-27",
-  "updated_at": "2026-10-28T00:51:11.512434+00:00",
+  "as_of_date": "2026-10-28",
+  "updated_at": "2026-10-29T01:29:12.649467+00:00",
   "indices": [
     {
       "name": "S&P 500",
       "short": "S&P",
       "symbol": "^spx",
-      "as_of_date": "2026-10-27",
-      "close": 7722.6,
-      "change": 45.83,
-      "change_pct": 0.6,
-      "change_pct_5d": 0.13,
-      "change_pct_20d": 0.67
+      "as_of_date": "2026-10-28",
+      "close": 7743.98,
+      "change": 21.38,
+      "change_pct": 0.28,
+      "change_pct_5d": -0.17,
+      "change_pct_20d": 1.21
     },
     {
       "name": "나스닥 종합",
       "short": "나스닥",
       "symbol": "^ndq",
-      "as_of_date": "2026-10-27",
-      "close": 26477.81,
-      "change": 308.43,
-      "change_pct": 1.18,
-      "change_pct_5d": 0.2,
-      "change_pct_20d": -1.19
+      "as_of_date": "2026-10-28",
+      "close": 26549.85,
+      "change": 72.04,
+      "change_pct": 0.27,
+      "change_pct_5d": -0.57,
+      "change_pct_20d": -1.16
     },
     {
       "name": "다우존스",
       "short": "다우",
       "symbol": "^dji",
-      "as_of_date": "2026-10-27",
-      "close": 52377.57,
-      "change": 15.99,
-      "change_pct": 0.03,
-      "change_pct_5d": -0.23,
-      "change_pct_20d": 2.0
+      "as_of_date": "2026-10-28",
+      "close": 52475.1,
+      "change": 97.53,
+      "change_pct": 0.19,
+      "change_pct_5d": -0.72,
+      "change_pct_20d": 3.08
     }
   ],
   "sectors": [
@@ -41,122 +41,122 @@
       "ticker": "XLK",
       "name": "기술",
       "symbol": "xlk.us",
-      "as_of_date": "2026-10-26",
-      "close": 186.32,
-      "change": 3.09,
-      "change_pct": 1.69,
-      "change_pct_5d": 0.19,
-      "change_pct_20d": -4.22
+      "as_of_date": "2026-10-27",
+      "close": 189.49,
+      "change": 3.17,
+      "change_pct": 1.7,
+      "change_pct_5d": 2.18,
+      "change_pct_20d": -2.58
     },
     {
       "ticker": "XLC",
       "name": "커뮤니케이션",
       "symbol": "xlc.us",
-      "as_of_date": "2026-10-26",
-      "close": 103.85,
-      "change": -1.66,
-      "change_pct": -1.57,
-      "change_pct_5d": -5.67,
-      "change_pct_20d": -6.59
+      "as_of_date": "2026-10-27",
+      "close": 103.58,
+      "change": -0.27,
+      "change_pct": -0.26,
+      "change_pct_5d": -6.0,
+      "change_pct_20d": -7.08
     },
     {
       "ticker": "XLY",
       "name": "경기소비재",
       "symbol": "xly.us",
-      "as_of_date": "2026-10-26",
-      "close": 114.26,
-      "change": 1.16,
-      "change_pct": 1.03,
-      "change_pct_5d": -0.17,
-      "change_pct_20d": 4.83
+      "as_of_date": "2026-10-27",
+      "close": 115.45,
+      "change": 1.19,
+      "change_pct": 1.04,
+      "change_pct_5d": -0.04,
+      "change_pct_20d": 5.77
     },
     {
       "ticker": "XLP",
       "name": "필수소비재",
       "symbol": "xlp.us",
-      "as_of_date": "2026-10-26",
-      "close": 87.96,
-      "change": -0.3,
-      "change_pct": -0.34,
-      "change_pct_5d": 0.86,
-      "change_pct_20d": 6.9
+      "as_of_date": "2026-10-27",
+      "close": 87.15,
+      "change": -0.81,
+      "change_pct": -0.92,
+      "change_pct_5d": -0.68,
+      "change_pct_20d": 6.48
     },
     {
       "ticker": "XLE",
       "name": "에너지",
       "symbol": "xle.us",
-      "as_of_date": "2026-10-26",
-      "close": 69.64,
-      "change": 0.31,
-      "change_pct": 0.45,
-      "change_pct_5d": 2.71,
-      "change_pct_20d": 12.14
+      "as_of_date": "2026-10-27",
+      "close": 68.21,
+      "change": -1.43,
+      "change_pct": -2.05,
+      "change_pct_5d": 0.35,
+      "change_pct_20d": 10.84
     },
     {
       "ticker": "XLF",
       "name": "금융",
       "symbol": "xlf.us",
-      "as_of_date": "2026-10-26",
-      "close": 56.02,
-      "change": 0.12,
-      "change_pct": 0.21,
-      "change_pct_5d": 1.74,
-      "change_pct_20d": 3.38
+      "as_of_date": "2026-10-27",
+      "close": 55.88,
+      "change": -0.14,
+      "change_pct": -0.25,
+      "change_pct_5d": 0.29,
+      "change_pct_20d": 3.46
     },
     {
       "ticker": "XLV",
       "name": "헬스케어",
       "symbol": "xlv.us",
-      "as_of_date": "2026-10-26",
-      "close": 179.28,
-      "change": 0.0,
-      "change_pct": 0.0,
-      "change_pct_5d": 2.07,
-      "change_pct_20d": 4.68
+      "as_of_date": "2026-10-27",
+      "close": 179.18,
+      "change": -0.1,
+      "change_pct": -0.06,
+      "change_pct_5d": -0.36,
+      "change_pct_20d": 4.95
     },
     {
       "ticker": "XLI",
       "name": "산업재",
       "symbol": "xli.us",
-      "as_of_date": "2026-10-26",
-      "close": 166.96,
-      "change": 2.34,
-      "change_pct": 1.42,
-      "change_pct_5d": 0.17,
-      "change_pct_20d": -1.08
+      "as_of_date": "2026-10-27",
+      "close": 167.92,
+      "change": 0.96,
+      "change_pct": 0.57,
+      "change_pct_5d": 0.67,
+      "change_pct_20d": -0.72
     },
     {
       "ticker": "XLB",
       "name": "소재",
       "symbol": "xlb.us",
-      "as_of_date": "2026-10-26",
-      "close": 51.38,
-      "change": 0.07,
-      "change_pct": 0.14,
-      "change_pct_5d": 0.84,
-      "change_pct_20d": 3.86
+      "as_of_date": "2026-10-27",
+      "close": 51.78,
+      "change": 0.4,
+      "change_pct": 0.78,
+      "change_pct_5d": 1.07,
+      "change_pct_20d": 5.46
     },
     {
       "ticker": "XLU",
       "name": "유틸리티",
       "symbol": "xlu.us",
-      "as_of_date": "2026-10-26",
-      "close": 42.55,
-      "change": -0.01,
-      "change_pct": -0.02,
-      "change_pct_5d": 2.88,
-      "change_pct_20d": 8.41
+      "as_of_date": "2026-10-27",
+      "close": 42.85,
+      "change": 0.3,
+      "change_pct": 0.71,
+      "change_pct_5d": 2.32,
+      "change_pct_20d": 7.91
     },
     {
       "ticker": "XLRE",
       "name": "부동산",
       "symbol": "xlre.us",
-      "as_of_date": "2026-10-26",
-      "close": 42.8,
-      "change": 0.23,
-      "change_pct": 0.54,
-      "change_pct_5d": 2.71,
-      "change_pct_20d": 3.51
+      "as_of_date": "2026-10-27",
+      "close": 42.44,
+      "change": -0.36,
+      "change_pct": -0.84,
+      "change_pct_5d": 0.14,
+      "change_pct_20d": 2.66
     }
   ]
 }
