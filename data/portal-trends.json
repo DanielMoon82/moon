@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-11-03T17:23:46.722606+00:00",
+ "updated_at": "2026-11-03T22:37:18.788213+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "KT 한국시리즈 1차전 승리",
-     "u": "https://search.nate.com/search/all.html?q=KT%20%ED%95%9C%EA%B5%AD%EC%8B%9C%EB%A6%AC%EC%A6%88%201%EC%B0%A8%EC%A0%84"
+     "t": "쿠팡 3분기 영업손실 6423억",
+     "u": "https://search.nate.com/search/all.html?q=%EC%BF%A0%ED%8C%A1INC%203%EB%B6%84%EA%B8%B0%20%EC%98%81%EC%97%85%EC%86%90%EC%8B%A4"
     },
     {
-     "t": "이재현 2타점 적시타",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%EC%9E%AC%ED%98%84%202%ED%83%80%EC%A0%90%20%EC%A0%81%EC%8B%9C%ED%83%80"
-    },
-    {
-     "t": "튀르키예 원전 협력 확대",
-     "u": "https://search.nate.com/search/all.html?q=%ED%8A%80%EB%A5%B4%ED%82%A4%EC%98%88%20%EC%9B%90%EC%A0%84%20%ED%98%91%EB%A0%A5"
-    },
-    {
-     "t": "구자욱 투런 홈런",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B5%AC%EC%9E%90%EC%9A%B1%20%ED%88%AC%EB%9F%B0%20%ED%99%88%EB%9F%B0"
-    },
-    {
-     "t": "美 중간선거 시작, 판세와 영향 집중",
-     "u": "https://search.nate.com/search/all.html?q=%E7%BE%8E%20%EC%A4%91%EA%B0%84%EC%84%A0%EA%B1%B0"
-    },
-    {
-     "t": "최수종 하희라, 결혼 33년 싸움 없는 부부",
-     "u": "https://search.nate.com/search/all.html?q=%EC%B5%9C%EC%88%98%EC%A2%85%20%ED%95%98%ED%9D%AC%EB%9D%BC"
-    },
-    {
-     "t": "OECD 가입 30주년 만찬",
-     "u": "https://search.nate.com/search/all.html?q=OECD%20%EA%B0%80%EC%9E%85%2030%EC%A3%BC%EB%85%84"
-    },
-    {
-     "t": "소리새 김광석 별세",
-     "u": "https://search.nate.com/search/all.html?q=%EC%86%8C%EB%A6%AC%EC%83%88%20%EA%B9%80%EA%B4%91%EC%84%9D%20%EB%B3%84%EC%84%B8"
-    },
-    {
-     "t": "추영우 김소현 이별 충격 이유",
-     "u": "https://search.nate.com/search/all.html?q=%EC%97%B0%EC%95%A0%EB%B0%95%EC%82%AC"
+     "t": "KT 이강철 로건 기용 실수 정리",
+     "u": "https://search.nate.com/search/all.html?q=KT%20%EC%9D%B4%EA%B0%95%EC%B2%A0%20%EB%A1%9C%EA%B1%B4"
     },
     {
      "t": "32기 영수 몰카 사과",
      "u": "https://search.nate.com/search/all.html?q=32%EA%B8%B0%20%EC%98%81%EC%88%98%20%EC%82%AC%EA%B3%BC"
+    },
+    {
+     "t": "美 중간선거 결과 주시",
+     "u": "https://search.nate.com/search/all.html?q=%E7%BE%8E%20%EC%A4%91%EA%B0%84%EC%84%A0%EA%B1%B0"
+    },
+    {
+     "t": "추영우, 김소현 이별 이유 공개",
+     "u": "https://search.nate.com/search/all.html?q=%EC%97%B0%EC%95%A0%EB%B0%95%EC%82%AC"
+    },
+    {
+     "t": "최수종 하희라 4번 유산 이야기",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B5%9C%EC%88%98%EC%A2%85%20%ED%95%98%ED%9D%AC%EB%9D%BC%20%EC%9C%A0%EC%82%B0"
+    },
+    {
+     "t": "바이낸스 해킹 사건",
+     "u": "https://search.nate.com/search/all.html?q=%EB%B0%94%EC%9D%B4%EB%82%B8%EC%8A%A4%20%ED%95%B4%ED%82%B9"
+    },
+    {
+     "t": "재혼 황후 출연 소식",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9E%AC%ED%98%BC%20%ED%99%A9%ED%9B%84"
+    },
+    {
+     "t": "10월 외환보유액 26억↑",
+     "u": "https://search.nate.com/search/all.html?q=10%EC%9B%94%20%EC%99%B8%ED%99%98%EB%B3%B4%EC%9C%A0%EC%95%A1"
+    },
+    {
+     "t": "유럽 여객기 폭파 위협",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9C%A0%EB%9F%BD%20%EC%97%AC%EA%B0%9D%EA%B8%B0%20%EC%9C%84%ED%98%91"
     }
    ],
-   "updated_at": "2026-11-03T17:23:46.722606+00:00"
+   "updated_at": "2026-11-03T22:37:18.788213+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "장례식장에 검은 가죽 재킷…고 최불암 조문 김지영 ‘복장 논란’",
-     "u": "https://n.news.naver.com/article/009/0005757938?ntype=RANKING"
+     "t": "삼성 반도체 성과급 7억5000만원의 함정…바로 퇴사하면 얼마 받을까 [숫자 뒤의 진실]",
+     "u": "https://n.news.naver.com/article/022/0004172302?ntype=RANKING"
     },
     {
-     "t": "“몽클레어 패딩 5만원에 사세요” 여배우, 동네 주민에 내놓은 사연",
-     "u": "https://n.news.naver.com/article/009/0005758553?ntype=RANKING"
+     "t": "락스 쓴 욕실에 식초 덧뿌렸다가…염소가스에 폐 손상 위험",
+     "u": "https://n.news.naver.com/article/022/0004172301?ntype=RANKING"
     },
     {
-     "t": "용혜인, 장관 후보자서 피의자 신분으로…공직선거법 위반 혐의 조사 받아",
-     "u": "https://n.news.naver.com/article/009/0005758370?ntype=RANKING"
+     "t": "비싸서 접었나…홀연히 떠난 ‘K-골퍼’ 274만명, 남은 사람은 더 쳤다 [권준영의 머니볼]",
+     "u": "https://n.news.naver.com/article/022/0004172307?ntype=RANKING"
     },
     {
-     "t": "“캐디한테 짜증·반말 무시”…‘학폭 의혹’ 차예련, 폭로 또 터졌다",
-     "u": "https://n.news.naver.com/article/009/0005758549?ntype=RANKING"
+     "t": "이렇게 쉬운 걸 왜 몰랐지? 눌어붙은 얼룩·냄새 잡는 전자레인지 청소법",
+     "u": "https://n.news.naver.com/article/022/0004172310?ntype=RANKING"
     },
     {
-     "t": "“김장 한다더니 배추는 다섯포기만 샀네요”…많이 해서 나눠먹는 시대는 갔다",
-     "u": "https://n.news.naver.com/article/009/0005758556?ntype=RANKING"
+     "t": "[단독] 스마트 안경 커닝 기승에 운전면허 필기시험장에 전파탐지기 도입",
+     "u": "https://n.news.naver.com/article/022/0004172218?ntype=RANKING"
     },
     {
-     "t": "화장실 갈 때마다 ‘이것’ 보인다면 “당장 병원 가라”…췌장암 신호일 수도 [헬시타임]",
-     "u": "https://n.news.naver.com/article/011/0004678368?ntype=RANKING"
+     "t": "한국 배우가 유럽 황제 부부 연기를?…K로판 시험대 신민아·주지훈 '재혼황후'",
+     "u": "https://n.news.naver.com/article/469/0000963468?ntype=RANKING"
     },
     {
-     "t": "“설마 했는데 진짜 30% 올랐다” 코스피 폭락에도 개미들 환호…무슨 종목이길래",
-     "u": "https://n.news.naver.com/article/011/0004678395?ntype=RANKING"
+     "t": "쌍둥이 장애아 둔 서울대 엄마의 고백... 아이를 키운건 8할이 학교였다 [Story]",
+     "u": "https://n.news.naver.com/article/469/0000963465?ntype=RANKING"
     },
     {
-     "t": "집값 ‘22억’ 찍을 때는 좋았는데…심상치 않은 ‘이 동네’ 부동산에 무슨 일이",
-     "u": "https://n.news.naver.com/article/011/0004678400?ntype=RANKING"
+     "t": "\"집값 폭락 걱정\" 대통령 발언, 강남만 맞았다… 경기까지 번진 상승세",
+     "u": "https://n.news.naver.com/article/469/0000963462?ntype=RANKING"
     },
     {
-     "t": "“연봉 4000만원에 칼퇴? 오히려 좋아”...5억 쥐고 떠났던 올드보이들, 은행으로 ‘U턴’",
-     "u": "https://n.news.naver.com/article/011/0004678189?ntype=RANKING"
+     "t": "'눈도장' 의원들로 북새통된 오세훈·한동훈 토론회... 범보수 연대 본격화하나",
+     "u": "https://n.news.naver.com/article/469/0000963470?ntype=RANKING"
     },
     {
-     "t": "132cm·31kg 여성이 무릎 꿇고 “살려달라” 애원했는데…전 국민 분노한 ‘거제 묻지마 살인사건’ [오늘의 그날]",
-     "u": "https://n.news.naver.com/article/011/0004678402?ntype=RANKING"
+     "t": "갑자기 교실 뛰쳐나가는 '금쪽이', 혼내는 대신 이유를 찾았다… 교실 바꾼 3년의 실험",
+     "u": "https://n.news.naver.com/article/469/0000963477?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-11-03T17:23:46.722606+00:00"
+   "updated_at": "2026-11-03T22:37:18.788213+00:00"
   },
   "zum": {
    "name": "줌",
@@ -109,11 +109,23 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%8F%AC%EC%B8%A0"
     }
    ],
-   "updated_at": "2026-11-03T17:23:46.722606+00:00"
+   "updated_at": "2026-11-03T22:37:18.788213+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
+    {
+     "t": "??? : 당신들이 씹덕 만화를 산 돈이 북한에 가서 폭탄이 된다고!",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475366&_dcbest=1&page=1"
+    },
+    {
+     "t": "[스압] 콘탁스 S2b로 찍어 본 캐나다 사진들",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475362&_dcbest=1&page=1"
+    },
+    {
+     "t": "싱글벙글 북한 경제 발전 근황",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475360&_dcbest=1&page=1"
+    },
     {
      "t": "한국와서 기싸움에 밀린 순박한 자전거 일본여자 .",
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475358&_dcbest=1&page=1"
@@ -141,67 +153,55 @@
     {
      "t": "로열 네이비 잔혹사",
      "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475346&_dcbest=1&page=1"
-    },
-    {
-     "t": "신용재가 말하는 실용음악과 출신 특징.jpg",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475344&_dcbest=1&page=1"
-    },
-    {
-     "t": "싱글벙글 2026년 새롭게 발견된 고고학 유적들",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475340&_dcbest=1&page=1"
-    },
-    {
-     "t": "법률 상담 콘텐츠 때문에 잠도 못자고있는 딸바보 유튜브아빠",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=475338&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-11-03T17:23:46.722606+00:00"
+   "updated_at": "2026-11-03T22:37:18.788213+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "종합부동산세",
-     "u": "https://www.google.com/search?q=%EC%A2%85%ED%95%A9%EB%B6%80%EB%8F%99%EC%82%B0%EC%84%B8"
+     "t": "벼",
+     "u": "https://www.google.com/search?q=%EB%B2%BC"
     },
     {
-     "t": "코너 맥그리거",
-     "u": "https://www.google.com/search?q=%EC%BD%94%EB%84%88%20%EB%A7%A5%EA%B7%B8%EB%A6%AC%EA%B1%B0"
+     "t": "atlético vs bayern",
+     "u": "https://www.google.com/search?q=atl%C3%A9tico%20vs%20bayern"
     },
     {
-     "t": "대리기사",
-     "u": "https://www.google.com/search?q=%EB%8C%80%EB%A6%AC%EA%B8%B0%EC%82%AC"
+     "t": "말자쇼",
+     "u": "https://www.google.com/search?q=%EB%A7%90%EC%9E%90%EC%87%BC"
     },
     {
-     "t": "최미나수",
-     "u": "https://www.google.com/search?q=%EC%B5%9C%EB%AF%B8%EB%82%98%EC%88%98"
+     "t": "띠별 운세",
+     "u": "https://www.google.com/search?q=%EB%9D%A0%EB%B3%84%20%EC%9A%B4%EC%84%B8"
     },
     {
-     "t": "midterm elections 2026",
-     "u": "https://www.google.com/search?q=midterm%20elections%202026"
+     "t": "보험",
+     "u": "https://www.google.com/search?q=%EB%B3%B4%ED%97%98"
     },
     {
-     "t": "한국항공우주산업",
-     "u": "https://www.google.com/search?q=%ED%95%9C%EA%B5%AD%ED%95%AD%EA%B3%B5%EC%9A%B0%EC%A3%BC%EC%82%B0%EC%97%85"
+     "t": "노동조합",
+     "u": "https://www.google.com/search?q=%EB%85%B8%EB%8F%99%EC%A1%B0%ED%95%A9"
     },
     {
-     "t": "small business",
-     "u": "https://www.google.com/search?q=small%20business"
+     "t": "보안",
+     "u": "https://www.google.com/search?q=%EB%B3%B4%EC%95%88"
     },
     {
-     "t": "폰지 사기",
-     "u": "https://www.google.com/search?q=%ED%8F%B0%EC%A7%80%20%EC%82%AC%EA%B8%B0"
+     "t": "amd 주가",
+     "u": "https://www.google.com/search?q=amd%20%EC%A3%BC%EA%B0%80"
     },
     {
-     "t": "사토시",
-     "u": "https://www.google.com/search?q=%EC%82%AC%ED%86%A0%EC%8B%9C"
+     "t": "쌍둥이",
+     "u": "https://www.google.com/search?q=%EC%8C%8D%EB%91%A5%EC%9D%B4"
     },
     {
-     "t": "내장산ic",
-     "u": "https://www.google.com/search?q=%EB%82%B4%EC%9E%A5%EC%82%B0ic"
+     "t": "대구백화점 본점",
+     "u": "https://www.google.com/search?q=%EB%8C%80%EA%B5%AC%EB%B0%B1%ED%99%94%EC%A0%90%20%EB%B3%B8%EC%A0%90"
     }
    ],
-   "updated_at": "2026-11-03T17:23:46.722606+00:00"
+   "updated_at": "2026-11-03T22:37:18.788213+00:00"
   }
  }
 }
