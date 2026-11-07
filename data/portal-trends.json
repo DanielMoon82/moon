@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-11-07T17:01:43.505550+00:00",
+ "updated_at": "2026-11-07T21:07:40.615050+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "구속 도망 우려",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B5%AC%EC%86%8D%20%EB%8F%84%EB%A7%9D%20%EC%97%BC%EB%A0%A4"
+     "t": "100일의 거짓말",
+     "u": "https://search.nate.com/search/all.html?q=100%EC%9D%BC%EC%9D%98%20%EA%B1%B0%EC%A7%93%EB%A7%90"
     },
     {
-     "t": "삼성 감독 박진만 우승하겠다",
-     "u": "https://search.nate.com/search/all.html?q=%EC%82%BC%EC%84%B1%20%EB%B0%95%EC%A7%84%EB%A7%8C%20%EA%B0%90%EB%8F%85"
+     "t": "크라쿠프 총기 난사 6명 사망, 15명 부상",
+     "u": "https://search.nate.com/search/all.html?q=%ED%8F%B4%EB%9E%80%EB%93%9C%20%EC%82%AC%EB%A7%9D%20%EB%B6%80%EC%83%81"
     },
     {
-     "t": "베스트 아티스트 수상 소식",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B2%A0%EC%8A%A4%ED%8A%B8%20%EC%95%84%ED%8B%B0%EC%8A%A4%ED%8A%B8%20%EC%88%98%EC%83%81"
+     "t": "버디 퍼트 들어가라!",
+     "u": "https://search.nate.com/search/all.html?q=%EB%93%A4%EC%96%B4%EA%B0%80%EB%9D%BC%20%EB%B2%84%EB%94%94%20%ED%8D%BC%ED%8A%B8"
     },
     {
-     "t": "젠슨 황 딸 방한 취소",
+     "t": "젠슨 황 장녀 방한 취소",
      "u": "https://search.nate.com/search/all.html?q=%EC%A0%A0%EC%8A%A8%20%ED%99%A9%20%EB%B0%A9%ED%95%9C"
     },
     {
-     "t": "부산 밤하늘 불꽃 향연",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B6%80%EC%82%B0%20%EB%B6%88%EA%BD%83"
+     "t": "트럼프 UFC 대변인 제안",
+     "u": "https://search.nate.com/search/all.html?q=%ED%8A%B8%EB%9F%BC%ED%94%84%20%EB%B0%B1%EC%95%85%EA%B4%80%20%EC%A0%9C%EC%95%88"
     },
     {
-     "t": "포스코 잠정합의안 부결",
-     "u": "https://search.nate.com/search/all.html?q=%ED%8F%AC%EC%8A%A4%EC%BD%94%20%EC%9E%A0%EC%A0%95%ED%95%A9%EC%9D%98%EC%95%88%20%EB%B6%80%EA%B2%B0"
+     "t": "숙희, 사랑이 온다 OST 공개",
+     "u": "https://search.nate.com/search/all.html?q=%EC%82%AC%EB%9E%91%EC%9D%B4%20%EC%98%A8%EB%8B%A4"
     },
     {
-     "t": "로또 1등 14명 당첨",
-     "u": "https://search.nate.com/search/all.html?q=%EB%A1%9C%EB%98%90%201%EB%93%B1%2014%EB%AA%85"
+     "t": "김현철 유재석 축의금 환불 원해",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%ED%98%84%EC%B2%A0%20%EC%9C%A0%EC%9E%AC%EC%84%9D%20%EC%B6%95%EC%9D%98%EA%B8%88"
     },
     {
-     "t": "故 전유성, 영원한 스승",
-     "u": "https://search.nate.com/search/all.html?q=%E6%95%85%20%EC%A0%84%EC%9C%A0%EC%84%B1"
+     "t": "후티 사우디 공습 예멘 27명 사망",
+     "u": "https://search.nate.com/search/all.html?q=%ED%9B%84%ED%8B%B0%20%EC%82%AC%EC%9A%B0%EB%94%94%20%EC%82%AC%EB%A7%9D"
     },
     {
-     "t": "닥터X 시청률 위기",
-     "u": "https://search.nate.com/search/all.html?q=%EB%8B%A5%ED%84%B0X"
+     "t": "삼성 1승, KT 출격!",
+     "u": "https://search.nate.com/search/all.html?q=%EC%9A%B0%EC%8A%B9%EA%B9%8C%EC%A7%80%20%EC%82%BC%EC%84%B1%20KT%EB%8A%94"
     },
     {
-     "t": "100일의 거짓말",
-     "u": "https://search.nate.com/search/all.html?q=100%EC%9D%BC%EC%9D%98%20%EA%B1%B0%EC%A7%93%EB%A7%90"
+     "t": "김광진, 영화 역주행과 파격 변신",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EA%B4%91%EC%A7%84"
     }
    ],
-   "updated_at": "2026-11-07T17:01:43.505550+00:00"
+   "updated_at": "2026-11-07T21:07:40.615050+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "“500만원→160만원” 하이닉스보다 심하다…‘반토막’에 노조 파업까지 ‘망연자실’",
-     "u": "https://n.news.naver.com/article/016/0002720285?ntype=RANKING"
+     "t": "간암 투병 끝 27살 자폐아들 곁 떠난 ‘피터팬 아빠’…마지막 소원 이뤄질까 [김수호의 리캐스트]",
+     "u": "https://n.news.naver.com/article/011/0004679681?ntype=RANKING"
     },
     {
-     "t": "“100만→고작 2만대, 완전 망했다” 1억 6000만원에 승차감 ‘최악’…결국 사라진다",
-     "u": "https://n.news.naver.com/article/016/0002720265?ntype=RANKING"
+     "t": "“일주일에 두 번쯤이야” 했는데…‘이것’ 즐겨 먹은 여성들 유방암 위험 높았다 [헬시타임]",
+     "u": "https://n.news.naver.com/article/011/0004679725?ntype=RANKING"
     },
     {
-     "t": "젠슨 황 장녀 매디슨, 방한 돌연 취소…“가족 사유”",
-     "u": "https://n.news.naver.com/article/016/0002720290?ntype=RANKING"
+     "t": "“딸한테 전세금 2억 빌려줬어요”…이자 안 받으면 증여세 걸릴까 [머니 트레이스]",
+     "u": "https://n.news.naver.com/article/011/0004679706?ntype=RANKING"
     },
     {
-     "t": "“은행 2억, 집주인이 20억 빌려줬다” 반포 산 20대 부부, 예산 두 배 만든 반전 비법[부동산360]",
-     "u": "https://n.news.naver.com/article/016/0002720200?ntype=RANKING"
+     "t": "아들 시신 3년간 ‘냉동 보관’한 친부모…범행 후 그들은 치킨을 시켜 먹었다 [오늘의 그날]",
+     "u": "https://n.news.naver.com/article/011/0004679771?ntype=RANKING"
     },
     {
-     "t": "“혜성 충돌로 지구 멸망한다” 믿고 직장도 재산도 버렸는데…그다음 날 벌어진 일 [음덕후:뮤지션으로 읽다]",
-     "u": "https://n.news.naver.com/article/016/0002720281?ntype=RANKING"
+     "t": "젠슨 황 딸 매디슨, 방한 하루 앞두고 취소…“가족 사유”",
+     "u": "https://n.news.naver.com/article/011/0004679770?ntype=RANKING"
     },
     {
-     "t": "“육회 한 접시씩 다 주세요”…발달장애인 회식서 생긴 일 [영상]",
-     "u": "https://n.news.naver.com/article/005/0001883585?ntype=RANKING"
+     "t": "'계좌 박살 났다' 현타 온 개미들…주가 폭락에 몰려든 곳이 [투자톡]",
+     "u": "https://n.news.naver.com/article/015/0005351392?ntype=RANKING"
     },
     {
-     "t": "“빚 대신 갚아라” 아버지 사망 뒤 걸려 온 전화 [빚,청년-청춘으로 갚습니다]",
-     "u": "https://n.news.naver.com/article/005/0001883519?ntype=RANKING"
+     "t": "\"하루 만에 라면 2만 그릇 팔렸다\"…매출 1억7000만원 초대박",
+     "u": "https://n.news.naver.com/article/015/0005351377?ntype=RANKING"
     },
     {
-     "t": "북한, 태권도 유네스코 ‘단독 등재’ 유력…국힘 “정부 뭐하나”",
-     "u": "https://n.news.naver.com/article/005/0001883609?ntype=RANKING"
+     "t": "\"치킨 사온다던 형, 끝내 못 돌아와\"…김영철이 떠올린 그날",
+     "u": "https://n.news.naver.com/article/015/0005351397?ntype=RANKING"
     },
     {
-     "t": "전세사기 당한 청년, 공황장애·우울증 덮쳤다 [빚,청년-청춘으로 갚습니다]",
-     "u": "https://n.news.naver.com/article/005/0001883583?ntype=RANKING"
+     "t": "'삐끼삐끼' 이주은, 대만서 연예인급 인기라더니…깜짝 근황",
+     "u": "https://n.news.naver.com/article/015/0005351403?ntype=RANKING"
     },
     {
-     "t": "아버지에게 배운 심폐소생술로…심정지 소방서장 살린 아들",
-     "u": "https://n.news.naver.com/article/005/0001883616?ntype=RANKING"
+     "t": "\"평생 모은 5억 주식에 몰빵, 4억 넘게 날렸다\"…직장인 절규",
+     "u": "https://n.news.naver.com/article/015/0005351400?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-11-07T17:01:43.505550+00:00"
+   "updated_at": "2026-11-07T21:07:40.615050+00:00"
   },
   "zum": {
    "name": "줌",
@@ -113,99 +113,99 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%A2%85%ED%95%A9%EB%9E%AD%ED%82%B9"
     }
    ],
-   "updated_at": "2026-11-07T17:01:43.505550+00:00"
+   "updated_at": "2026-11-07T21:07:40.615050+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
     {
-     "t": "이번에 또 논란이 된 백종원",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476695&_dcbest=1&page=1"
+     "t": "성범죄자 특징",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476727&_dcbest=1&page=1"
     },
     {
-     "t": "ㅇㅎ)요리여왕 찌룡. 미국이모가 가르쳐주는 칼가는법 야채써는법,",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476694&_dcbest=1&page=1"
+     "t": "중국대사관 근황",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476725&_dcbest=1&page=1"
     },
     {
-     "t": "AI 발달로 방송사 CG도 더 찐 같아짐",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476692&_dcbest=1&page=1"
+     "t": "싱글벙글 ㄹㅇ 개좆밥같아 보이는 군복 1위",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476723&_dcbest=1&page=1"
     },
     {
-     "t": "대한민국 육군 저항군.manhwa - #0 프롤로그",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476690&_dcbest=1&page=1"
+     "t": "싱글벙글 바티스타 근황.jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476722&_dcbest=1&page=1"
     },
     {
-     "t": "싱글벙글 '인샬라' 아메리카",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476688&_dcbest=1&page=1"
+     "t": "살이 많이 빠졌다는 백종원",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476721&_dcbest=1&page=1"
     },
     {
-     "t": "지금 사진 올리면 봐주시렵니까?",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476686&_dcbest=1&page=1"
+     "t": "유리지에 불쾌한 이유 정리",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476720&_dcbest=1&page=1"
     },
     {
-     "t": "진쓰레블을 죽음으로 몰고간 개새끼들",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476684&_dcbest=1&page=1"
+     "t": "\"가장 중요한건 인간성이에요\"",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476719&_dcbest=1&page=1"
     },
     {
-     "t": "ㅇㅎ)십중칠예 일본 vs 중국 어둠의 서비스직 비교. ㄷ",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476682&_dcbest=1&page=1"
+     "t": "상황이 이해가 안되시나본데 지금;ㅅ;",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476717&_dcbest=1&page=1"
     },
     {
-     "t": "젠슨황 중국간첩인거 확정인듯",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476680&_dcbest=1&page=1"
+     "t": "ㅈㅎ당 근황ㅋㅋㅋ",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476715&_dcbest=1&page=1"
     },
     {
-     "t": "33살 여자 딸처럼 키워줄사람?",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476676&_dcbest=1&page=1"
+     "t": "싱글벙글 의외로 여초에서 매우 싫어한다는 것...jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=476713&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-11-07T17:01:43.505550+00:00"
+   "updated_at": "2026-11-07T21:07:40.615050+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "이천수",
-     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%B2%9C%EC%88%98"
+     "t": "이주헌",
+     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%A3%BC%ED%97%8C"
     },
     {
-     "t": "복권",
-     "u": "https://www.google.com/search?q=%EB%B3%B5%EA%B6%8C"
+     "t": "넷플릭스",
+     "u": "https://www.google.com/search?q=%EB%84%B7%ED%94%8C%EB%A6%AD%EC%8A%A4"
     },
     {
-     "t": "mainz vs bayern",
-     "u": "https://www.google.com/search?q=mainz%20vs%20bayern"
+     "t": "2026",
+     "u": "https://www.google.com/search?q=2026"
     },
     {
-     "t": "김성우",
-     "u": "https://www.google.com/search?q=%EA%B9%80%EC%84%B1%EC%9A%B0"
+     "t": "psg 대 트루아",
+     "u": "https://www.google.com/search?q=psg%20%EB%8C%80%20%ED%8A%B8%EB%A3%A8%EC%95%84"
     },
     {
-     "t": "nepal premier league",
-     "u": "https://www.google.com/search?q=nepal%20premier%20league"
+     "t": "박수홍",
+     "u": "https://www.google.com/search?q=%EB%B0%95%EC%88%98%ED%99%8D"
     },
     {
-     "t": "버밍엄 대 스완지 시티",
-     "u": "https://www.google.com/search?q=%EB%B2%84%EB%B0%8D%EC%97%84%20%EB%8C%80%20%EC%8A%A4%EC%99%84%EC%A7%80%20%EC%8B%9C%ED%8B%B0"
+     "t": "엔비디아",
+     "u": "https://www.google.com/search?q=%EC%97%94%EB%B9%84%EB%94%94%EC%95%84"
     },
     {
-     "t": "arsenal vs hull",
-     "u": "https://www.google.com/search?q=arsenal%20vs%20hull"
+     "t": "발렌시아 대 레알 마드리드",
+     "u": "https://www.google.com/search?q=%EB%B0%9C%EB%A0%8C%EC%8B%9C%EC%95%84%20%EB%8C%80%20%EB%A0%88%EC%95%8C%20%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C"
     },
     {
-     "t": "아스널 대 헐 시티",
-     "u": "https://www.google.com/search?q=%EC%95%84%EC%8A%A4%EB%84%90%20%EB%8C%80%20%ED%97%90%20%EC%8B%9C%ED%8B%B0"
+     "t": "배드민턴",
+     "u": "https://www.google.com/search?q=%EB%B0%B0%EB%93%9C%EB%AF%BC%ED%84%B4"
     },
     {
-     "t": "풀럼 대 뉴캐슬",
-     "u": "https://www.google.com/search?q=%ED%92%80%EB%9F%BC%20%EB%8C%80%20%EB%89%B4%EC%BA%90%EC%8A%AC"
+     "t": "맨시티",
+     "u": "https://www.google.com/search?q=%EB%A7%A8%EC%8B%9C%ED%8B%B0"
     },
     {
-     "t": "도르트문트 대 엘버스베르크",
-     "u": "https://www.google.com/search?q=%EB%8F%84%EB%A5%B4%ED%8A%B8%EB%AC%B8%ED%8A%B8%20%EB%8C%80%20%EC%97%98%EB%B2%84%EC%8A%A4%EB%B2%A0%EB%A5%B4%ED%81%AC"
+     "t": "gta6",
+     "u": "https://www.google.com/search?q=gta6"
     }
    ],
-   "updated_at": "2026-11-07T17:01:43.505550+00:00"
+   "updated_at": "2026-11-07T21:07:40.615050+00:00"
   }
  }
 }
