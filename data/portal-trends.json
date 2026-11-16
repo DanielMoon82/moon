@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-11-16T12:08:06.988880+00:00",
+ "updated_at": "2026-11-16T23:05:53.158640+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "이 대통령, 한-메콩 회의 개최",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%B4%20%EB%8C%80%ED%86%B5%EB%A0%B9%20%ED%95%9C-%EB%A9%94%EC%BD%A9%20%EC%A0%95%EC%83%81%ED%9A%8C%EC%9D%98"
+     "t": "트럼프 젠슨 황 복귀 논란",
+     "u": "https://search.nate.com/search/all.html?q=%ED%8A%B8%EB%9F%BC%ED%94%84%20%EC%A0%A0%EC%8A%A8%20%ED%99%A9"
     },
     {
-     "t": "이지영 AI 부정행위 대책",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9D%BC%ED%83%80%EA%B0%95%EC%82%AC%20%EC%9D%B4%EC%A7%80%EC%98%81%20%EB%B6%80%EC%A0%95%ED%96%89%EC%9C%84"
+     "t": "AI 커닝 위험 커져",
+     "u": "https://search.nate.com/search/all.html?q=AI%20%EC%BB%A4%EB%8B%9D"
     },
     {
-     "t": "김유정의 100일 거짓말",
-     "u": "https://search.nate.com/search/all.html?q=100%EC%9D%BC%EC%9D%98%20%EA%B1%B0%EC%A7%93%EB%A7%90"
+     "t": "로버트 패틴슨 007 발탁",
+     "u": "https://search.nate.com/search/all.html?q=%EB%A1%9C%EB%B2%84%ED%8A%B8%20%ED%8C%A8%ED%8B%B4%EC%8A%A8%20%EB%B3%B8%EB%93%9C"
     },
     {
-     "t": "우리은행 김단비의 활약",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9A%B0%EB%A6%AC%EC%9D%80%ED%96%89%20%EA%B9%80%EB%8B%A8%EB%B9%84"
+     "t": "레이미 PGA 오스틴",
+     "u": "https://search.nate.com/search/all.html?q=%EB%A0%88%EC%9D%B4%EB%AF%B8%20PGA%20%EC%98%A4%EC%8A%A4%ED%8B%B4"
     },
     {
-     "t": "경찰관 6명 부상 검거",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B2%BD%EC%B0%B0%EA%B4%80%206%EB%AA%85%20%EA%B2%80%EA%B1%B0"
+     "t": "러 군용기 KADIZ 진입 전투기 출격",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B5%B0%EC%9A%A9%EA%B8%B0%20%EC%A7%84%EC%9E%85%20%EC%A0%84%ED%88%AC%EA%B8%B0"
     },
     {
-     "t": "씨엘, 박봄 건강 언급",
-     "u": "https://search.nate.com/search/all.html?q=%EC%94%A8%EC%97%98%20%EB%B0%95%EB%B4%84%20%EC%96%B8%EA%B8%89"
+     "t": "나의 유죄인간",
+     "u": "https://search.nate.com/search/all.html?q=%EB%82%98%EC%9D%98%20%EC%9C%A0%EC%A3%84%EC%9D%B8%EA%B0%84"
     },
     {
-     "t": "뷔, 월드스타 됐다고 멀어졌다 하지 마라",
-     "u": "https://search.nate.com/search/all.html?q=BTS%20%EB%90%90%EB%8B%A4%EA%B3%A0%20%EB%B6%88%EC%B0%B8"
+     "t": "소신 감독 체제 부정적",
+     "u": "https://search.nate.com/search/all.html?q=%ED%99%A9%EC%9D%B8%EB%B2%94%EC%9D%98%20%EC%86%8C%EC%8B%A0%20%EB%8C%80%ED%91%9C%ED%8C%80%EC%97%90"
     },
     {
-     "t": "블랙핑크 YG 계약 제외 중",
-     "u": "https://search.nate.com/search/all.html?q=%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC%20YG%20%EC%A0%84%EC%86%8D%EA%B3%84%EC%95%BD"
+     "t": "그래미 아이브 도전",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B7%B8%EB%9E%98%EB%AF%B8%20%EC%95%84%EC%9D%B4%EB%B8%8C%20%ED%8C%9D"
     },
     {
-     "t": "가족관계증명서",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B0%80%EC%A1%B1%EA%B4%80%EA%B3%84%EC%A6%9D%EB%AA%85%EC%84%9C"
+     "t": "2026년 11월 17일 운세",
+     "u": "https://search.nate.com/search/all.html?q=2026%EB%85%84%2017%EC%9D%BC"
     },
     {
-     "t": "젠슨 황 복귀 논란 지속",
-     "u": "https://search.nate.com/search/all.html?q=%EC%A0%A0%EC%8A%A8%20%ED%99%A9"
+     "t": "사지장애 티라노 남편 막말 가슴 아프네",
+     "u": "https://search.nate.com/search/all.html?q=%EC%82%AC%EC%A7%80%EC%9E%A5%EC%95%A0%20%ED%8B%B0%EB%9D%BC%EB%85%B8%20%EC%98%A4%EC%9D%80%EC%98%81"
     }
    ],
-   "updated_at": "2026-11-16T12:08:06.988880+00:00"
+   "updated_at": "2026-11-16T23:05:53.158640+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "AI 커닝에 “와이파이 차단”… 우왕좌왕 정부",
-     "u": "https://n.news.naver.com/article/005/0001885475?ntype=RANKING"
+     "t": "“욕심 안부리고 9급 공무원 합격”…세무사 부정행위 자수에 ‘자백’ 속출?",
+     "u": "https://n.news.naver.com/article/009/0005764406?ntype=RANKING"
     },
     {
-     "t": "스카프 아저씨, ‘44세, 딸 둘 아빠’ 였다…“10년간 사람 빼고 다 팔아”",
-     "u": "https://n.news.naver.com/article/005/0001885344?ntype=RANKING"
+     "t": "‘충주맨’ 김선태, AI 안경 쓰고 공무원 시험 봤다…결과는 ‘반전’",
+     "u": "https://n.news.naver.com/article/009/0005764621?ntype=RANKING"
     },
     {
-     "t": "“발문 혼동해 실수”…리트 만점자가 내놓은 해명",
-     "u": "https://n.news.naver.com/article/005/0001885422?ntype=RANKING"
+     "t": "“노후 어쩌나, 퇴직금 잘못 받았다가 1억9000만원 손해”…김부장, 무슨 일",
+     "u": "https://n.news.naver.com/article/009/0005764328?ntype=RANKING"
     },
     {
-     "t": "모레 수능인데… 최교진 “AI 커닝, 완벽하게는 못 잡을 것 같다”",
-     "u": "https://n.news.naver.com/article/005/0001885471?ntype=RANKING"
+     "t": "김구라, 아들 ‘결혼 발표’에 보인 반응이…“준비 안 됐다” 직접 해명",
+     "u": "https://n.news.naver.com/article/009/0005764370?ntype=RANKING"
     },
     {
-     "t": "“귀·코·입 내시경까지 받겠다”…‘리트 만점자’ 수능 공개 검증",
-     "u": "https://n.news.naver.com/article/005/0001885489?ntype=RANKING"
+     "t": "“나 어떡해” 울먹인 10대 알바 숨졌는데…40대 업주 “동의한 성관계” 주장",
+     "u": "https://n.news.naver.com/article/009/0005764627?ntype=RANKING"
     },
     {
-     "t": "\"겨울이 온다\" 외쳤던 모건스탠리…이번에는 \"코스피 1만 시대 온다\"",
-     "u": "https://n.news.naver.com/article/215/0001272957?ntype=RANKING"
+     "t": "[속보] 뉴욕증시, 엔비디아 등 AI주 급락에 일제히 하락…나스닥 2.49%↓",
+     "u": "https://n.news.naver.com/article/421/0009292560?ntype=RANKING"
     },
     {
-     "t": "삼전닉스 개미들 애타는데…9009억달러 약정서 등장 '들썩'",
-     "u": "https://n.news.naver.com/article/215/0001272935?ntype=RANKING"
+     "t": "\"팬티만 입고 시험 보게 하자\"…10년 전 조롱받던 인도 그 현장 '웃픈 현실'",
+     "u": "https://n.news.naver.com/article/421/0009292529?ntype=RANKING"
     },
     {
-     "t": "\"설탕 끊고 만점\" 리트 만점자, 수능 성적표 속 이름이…의혹 계속",
-     "u": "https://n.news.naver.com/article/215/0001272954?ntype=RANKING"
+     "t": "노슬비 \"젠슨 황 불륜 알고 있었다…김정은 2년 내 사망에 1000만원 건다\"",
+     "u": "https://n.news.naver.com/article/421/0009290504?ntype=RANKING"
     },
     {
-     "t": "성범죄 피의자 추격 중 경찰관 6명 부상...실탄 쏴 검거",
-     "u": "https://n.news.naver.com/article/215/0001272959?ntype=RANKING"
+     "t": "[단독]'AI 커닝' 직접 해봤다…문외한 기자도 40분만에 세무사 시험 만점",
+     "u": "https://n.news.naver.com/article/421/0009292580?ntype=RANKING"
     },
     {
-     "t": "지인이 맡긴 반려견으로 '개소주' 만든 70대…\"선물인 줄 알았다\"",
-     "u": "https://n.news.naver.com/article/215/0001272925?ntype=RANKING"
+     "t": "한동훈 장인상에 친한계 집결…오세훈·김문수 등 조문 행렬",
+     "u": "https://n.news.naver.com/article/421/0009292350?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-11-16T12:08:06.988880+00:00"
+   "updated_at": "2026-11-16T23:05:53.158640+00:00"
   },
   "zum": {
    "name": "줌",
@@ -103,105 +103,101 @@
     {
      "t": "연예",
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%97%B0%EC%98%88"
-    },
-    {
-     "t": "스포츠",
-     "u": "https://search.zum.com/search.zum?method=uni&query=%EC%8A%A4%ED%8F%AC%EC%B8%A0"
     }
    ],
-   "updated_at": "2026-11-16T12:08:06.988880+00:00"
+   "updated_at": "2026-11-16T23:05:53.158640+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
     {
-     "t": "인공지능 모델별 선택 가능한 계산기도 등장? 주판학원 싱글벙글",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479251&_dcbest=1&page=1"
+     "t": "히타치 마라톤 리뷰(김)",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479375&_dcbest=1&page=1"
     },
     {
-     "t": "이거 한전냥이임?",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479249&_dcbest=1&page=1"
+     "t": "올해 단풍 출사는 이것으로 끝낸다 (48장)",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479372&_dcbest=1&page=1"
     },
     {
-     "t": "실시간 수능 감독관 근황.jpg",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479247&_dcbest=1&page=1"
+     "t": "진짜 난리났다는 냥이본토 중국산 컨닝용 AI 제품들",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479366&_dcbest=1&page=1"
     },
     {
-     "t": "싱글벙글 리트만점의 메모'33'에 얽힌 이야기",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479243&_dcbest=1&page=1"
+     "t": "현재 심각해지고 있다는 법원직 9급 AI 안경논란",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479363&_dcbest=1&page=1"
     },
     {
-     "t": "중국인 무비자로 풀어준 결과물",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479241&_dcbest=1&page=1"
+     "t": "여성정치연구소 “여성 참여 50% 보장해야”",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479360&_dcbest=1&page=1"
     },
     {
-     "t": "[금주의 신상] 11월 3주차 신제품 먹거리 모음.jpg",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479239&_dcbest=1&page=1"
+     "t": "싱글벙글 김일성이 좋아했던 음식들...jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479357&_dcbest=1&page=1"
     },
     {
-     "t": "Ufc 눈 혐주의",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479238&_dcbest=1&page=1"
+     "t": "젠슨황 용산에서 영업하던 시절 90년대 pc 방 후기 ㄷ,,",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479355&_dcbest=1&page=1"
     },
     {
-     "t": "싱글벙글 오늘자 이대에타 근황",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479235&_dcbest=1&page=1"
+     "t": "대구에서 일어난 어이없는 가스폭☆8 사고",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479352&_dcbest=1&page=1"
     },
     {
-     "t": "200만 구독자 미미미누, 수능 연기 주장..눈물 호소 \"AI 부정행위 막아야\"",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479233&_dcbest=1&page=1"
+     "t": "레트로이드 포켓 듀오 리뷰",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479349&_dcbest=1&page=1"
     },
     {
-     "t": "리트냥이 2024 수능 성적표 위조 정황",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479231&_dcbest=1&page=1"
+     "t": "우주명차 제네시스 근황 ㅋㅋㅋㅋㅋㅋ",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=479346&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-11-16T12:08:06.988880+00:00"
+   "updated_at": "2026-11-16T23:05:53.158640+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "간호",
-     "u": "https://www.google.com/search?q=%EA%B0%84%ED%98%B8"
+     "t": "환승",
+     "u": "https://www.google.com/search?q=%ED%99%98%EC%8A%B9"
     },
     {
-     "t": "두두",
-     "u": "https://www.google.com/search?q=%EB%91%90%EB%91%90"
+     "t": "날씨",
+     "u": "https://www.google.com/search?q=%EB%82%A0%EC%94%A8"
     },
     {
-     "t": "인사청문회",
-     "u": "https://www.google.com/search?q=%EC%9D%B8%EC%82%AC%EC%B2%AD%EB%AC%B8%ED%9A%8C"
+     "t": "부산날씨",
+     "u": "https://www.google.com/search?q=%EB%B6%80%EC%82%B0%EB%82%A0%EC%94%A8"
     },
     {
-     "t": "보안",
-     "u": "https://www.google.com/search?q=%EB%B3%B4%EC%95%88"
+     "t": "weather",
+     "u": "https://www.google.com/search?q=weather"
     },
     {
-     "t": "나솔",
-     "u": "https://www.google.com/search?q=%EB%82%98%EC%86%94"
+     "t": "황보라",
+     "u": "https://www.google.com/search?q=%ED%99%A9%EB%B3%B4%EB%9D%BC"
     },
     {
-     "t": "구글플레이",
-     "u": "https://www.google.com/search?q=%EA%B5%AC%EA%B8%80%ED%94%8C%EB%A0%88%EC%9D%B4"
+     "t": "thời tiết",
+     "u": "https://www.google.com/search?q=th%E1%BB%9Di%20ti%E1%BA%BFt"
     },
     {
-     "t": "김강우",
-     "u": "https://www.google.com/search?q=%EA%B9%80%EA%B0%95%EC%9A%B0"
+     "t": "погода",
+     "u": "https://www.google.com/search?q=%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0"
     },
     {
-     "t": "서울 sk 대 울산 현대모비스",
-     "u": "https://www.google.com/search?q=%EC%84%9C%EC%9A%B8%20sk%20%EB%8C%80%20%EC%9A%B8%EC%82%B0%20%ED%98%84%EB%8C%80%EB%AA%A8%EB%B9%84%EC%8A%A4"
+     "t": "天气",
+     "u": "https://www.google.com/search?q=%E5%A4%A9%E6%B0%94"
     },
     {
-     "t": "결승전",
-     "u": "https://www.google.com/search?q=%EA%B2%B0%EC%8A%B9%EC%A0%84"
+     "t": "germany vs netherlands",
+     "u": "https://www.google.com/search?q=germany%20vs%20netherlands"
     },
     {
-     "t": "빙부상",
-     "u": "https://www.google.com/search?q=%EB%B9%99%EB%B6%80%EC%83%81"
+     "t": "สภาพอากาศ",
+     "u": "https://www.google.com/search?q=%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A8"
     }
    ],
-   "updated_at": "2026-11-16T12:08:06.988880+00:00"
+   "updated_at": "2026-11-16T23:05:53.158640+00:00"
   }
  }
 }
