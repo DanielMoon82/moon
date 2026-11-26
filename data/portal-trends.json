@@ -1,97 +1,97 @@
 {
- "updated_at": "2026-11-26T03:49:05.743681+00:00",
+ "updated_at": "2026-11-26T13:16:24.053352+00:00",
  "portals": {
   "nate": {
    "name": "네이트",
    "keywords": [
     {
-     "t": "한준호 후보자 취재진 속",
-     "u": "https://search.nate.com/search/all.html?q=%ED%95%9C%EC%A4%80%ED%98%B8%20%EC%9E%A5%EA%B4%80%20%ED%9B%84%EB%B3%B4%EC%9E%90"
+     "t": "김세진 감독, 화이팅!",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B9%80%EC%84%B8%EC%A7%84%20%EA%B0%90%EB%8F%85"
     },
     {
-     "t": "대법원, 위증 무죄 확정",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9C%84%EC%A6%9D%20%EB%AC%B4%EC%A3%84%20%ED%99%95%EC%A0%95"
+     "t": "세무사 수석 구속영장 신청",
+     "u": "https://search.nate.com/search/all.html?q=%EC%84%B8%EB%AC%B4%EC%82%AC%20%EA%B5%AC%EC%86%8D%EC%98%81%EC%9E%A5%20%EC%8B%A0%EC%B2%AD"
     },
     {
-     "t": "리트 만점자 수사 착수",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B2%BD%EC%B0%B0%20%EB%A6%AC%ED%8A%B8%20%EB%A7%8C%EC%A0%90%EC%9E%90"
+     "t": "정대세, 셋째 임신 소식",
+     "u": "https://search.nate.com/search/all.html?q=%EC%A0%95%EB%8C%80%EC%84%B8%20%EC%85%8B%EC%A7%B8%20%EC%9E%84%EC%8B%A0"
     },
     {
-     "t": "롯데 레이예스와 재계약",
-     "u": "https://search.nate.com/search/all.html?q=%EB%A1%AF%EB%8D%B0%20%EB%A0%88%EC%9D%B4%EC%98%88%EC%8A%A4%EC%99%80%20%EC%9E%AC%EA%B3%84%EC%95%BD"
+     "t": "무쇠소녀단 3",
+     "u": "https://search.nate.com/search/all.html?q=%EB%AC%B4%EC%87%A0%EC%86%8C%EB%85%80%EB%8B%A8%203"
     },
     {
-     "t": "재혼 황후 이세영 악역 논란",
-     "u": "https://search.nate.com/search/all.html?q=%EC%9E%AC%ED%98%BC%20%ED%99%A9%ED%9B%84%20%EC%9D%B4%EC%84%B8%EC%98%81"
+     "t": "CJ올리브영 개인정보 유출",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B3%A0%EA%B0%9D%20%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%20%EC%9C%A0%EC%B6%9C"
     },
     {
-     "t": "한은 총재 반도체 상황 설명 필요",
-     "u": "https://search.nate.com/search/all.html?q=%ED%95%9C%EC%9D%80%20%EC%B4%9D%EC%9E%AC"
+     "t": "청룡영화제",
+     "u": "https://search.nate.com/search/all.html?q=%EC%B2%AD%EB%A3%A1%EC%98%81%ED%99%94%EC%A0%9C"
     },
     {
-     "t": "김민석 소방병원 방문",
-     "u": "https://search.nate.com/search/all.html?q=%EC%B0%BE%EC%9D%80%20%EA%B9%80%EB%AF%BC%EC%84%9D%20%EB%8C%80%ED%91%9C"
+     "t": "삼성화재 1114일 만에 선두",
+     "u": "https://search.nate.com/search/all.html?q=%EC%82%BC%EC%84%B1%ED%99%94%EC%9E%AC%201114%EC%9D%BC%20%EB%A7%8C%EC%97%90"
     },
     {
-     "t": "젠슨 황 입장과 갈등",
-     "u": "https://search.nate.com/search/all.html?q=%EC%A0%A0%EC%8A%A8%20%ED%99%A9"
+     "t": "혈액제제 폐기 요구 및 개선 사항",
+     "u": "https://search.nate.com/search/all.html?q=%EB%A9%94%EB%94%94%EC%BB%AC%ED%88%AC%EB%8D%B0%EC%9D%B4%20TV"
     },
     {
-     "t": "김창민 감독 사건 쌍방 항소",
-     "u": "https://search.nate.com/search/all.html?q=%EA%B0%90%EB%8F%85%20%EC%8C%8D%EB%B0%A9%20%ED%95%AD%EC%86%8C"
+     "t": "가족관계증명서",
+     "u": "https://search.nate.com/search/all.html?q=%EA%B0%80%EC%A1%B1%EA%B4%80%EA%B3%84%EC%A6%9D%EB%AA%85%EC%84%9C"
     },
     {
-     "t": "LG, 김민식 영입",
-     "u": "https://search.nate.com/search/all.html?q=LG%20%EA%B9%80%EB%AF%BC%EC%8B%9D%20%EC%98%81%EC%9E%85"
+     "t": "이찬원, 황윤성 시골집 방문",
+     "u": "https://search.nate.com/search/all.html?q=%ED%99%A9%EC%9C%A4%EC%84%B1"
     }
    ],
-   "updated_at": "2026-11-26T03:49:05.743681+00:00"
+   "updated_at": "2026-11-26T13:16:24.053352+00:00"
   },
   "naver_news": {
    "name": "네이버 뉴스",
    "keywords": [
     {
-     "t": "'한덕수 재판서 계엄 국무회의 위증 혐의' 윤석열 무죄 확정(종합)",
-     "u": "https://n.news.naver.com/article/001/0016464784?ntype=RANKING"
+     "t": "“육아휴직 내고 공부, 세무사 합격” 30대 女, 결국 신고 당했다",
+     "u": "https://n.news.naver.com/article/016/0002728855?ntype=RANKING"
     },
     {
-     "t": "[팩트체크] 전과자는 개명 안 된다?…'리트냥이' 사례로 본 개명 현주소",
-     "u": "https://n.news.naver.com/article/001/0016464062?ntype=RANKING"
+     "t": "‘해도 해도 너무했다’ 삼전·닉스만 ‘198조’ 팔아치운 외국인…코스피 시총 비중도 붕괴 [투자360]",
+     "u": "https://n.news.naver.com/article/016/0002729150?ntype=RANKING"
     },
     {
-     "t": "음주 측정 거부하고 도주하다 바다 추락한 30대 징역 1년 6개월",
-     "u": "https://n.news.naver.com/article/001/0016464834?ntype=RANKING"
+     "t": "‘코미디언 은퇴’ 맹승지, 내년 9월 ‘결혼’…남자친구는 피부과 의사",
+     "u": "https://n.news.naver.com/article/016/0002729106?ntype=RANKING"
     },
     {
-     "t": "반도체 호황·물가 부담에…한은, 기준금리 3.25%로 인상(종합)",
-     "u": "https://n.news.naver.com/article/001/0016464438?ntype=RANKING"
+     "t": "‘AI 곡’이 멜론 1위, ‘대박’ 날 줄 알았는데…저작권료 0원, 그럼 수익은? [장연주의 아하!]",
+     "u": "https://n.news.naver.com/article/016/0002729152?ntype=RANKING"
     },
     {
-     "t": "[2보] 대법, 윤석열 '한덕수 재판 위증' 무죄 확정",
-     "u": "https://n.news.naver.com/article/001/0016464688?ntype=RANKING"
+     "t": "“이러다 과일 못 먹는다” 하루 만에 ‘떼죽음’ 날벼락…뜻밖의 이유, 알고 보니 [지구, 뭐래?]",
+     "u": "https://n.news.naver.com/article/016/0002729151?ntype=RANKING"
     },
     {
-     "t": "선의로 40번 공짜 밥 줬더니 \"깍두기 맛없고 순대 비려\" 악성리뷰 남긴 손님",
-     "u": "https://n.news.naver.com/article/437/0000522529?ntype=RANKING"
+     "t": "\"이재용, '반도체 장기구매할게' 머스크에 '그럼 뭘 해줄건데'\"",
+     "u": "https://n.news.naver.com/article/001/0016466655?ntype=RANKING"
     },
     {
-     "t": "남편 장례 중 시아버지 묘지 파묘한 며느리…\"자손 잘 되라고\"",
-     "u": "https://n.news.naver.com/article/437/0000522485?ntype=RANKING"
+     "t": "'리트 만점' 이진우 집 등 압수수색…'성명불상 공범' 영장 적시(종합2보)",
+     "u": "https://n.news.naver.com/article/001/0016466299?ntype=RANKING"
     },
     {
-     "t": "\"설마 의사·간호사도 '냥이'가?\"…2년 전 만점 82명, 올해는 581명",
-     "u": "https://n.news.naver.com/article/437/0000522527?ntype=RANKING"
+     "t": "CJ올리브영, 업무시스템 해킹으로 임직원·고객 개인정보 유출",
+     "u": "https://n.news.naver.com/article/001/0016466684?ntype=RANKING"
     },
     {
-     "t": "계엄 전 국무회의 소집 증언, 허위로 보기 어려워…윤석열 '한덕수 재판 위증' 무죄 확정",
-     "u": "https://n.news.naver.com/article/437/0000522535?ntype=RANKING"
+     "t": "미 불법체류자 100만달러 복권 당첨됐는데 체포…추방위기",
+     "u": "https://n.news.naver.com/article/001/0016466677?ntype=RANKING"
     },
     {
-     "t": "수능 직전 과외서 \"그림→글 설명법\" 질문한 이진우",
-     "u": "https://n.news.naver.com/article/437/0000522510?ntype=RANKING"
+     "t": "주택 종부세 73만명에 고지, 19만명↑…1인당 평균세액 200만원",
+     "u": "https://n.news.naver.com/article/001/0016466217?ntype=RANKING"
     }
    ],
-   "updated_at": "2026-11-26T03:49:05.743681+00:00"
+   "updated_at": "2026-11-26T13:16:24.053352+00:00"
   },
   "zum": {
    "name": "줌",
@@ -105,99 +105,99 @@
      "u": "https://search.zum.com/search.zum?method=uni&query=%EC%97%B0%EC%98%88"
     }
    ],
-   "updated_at": "2026-11-26T03:49:05.743681+00:00"
+   "updated_at": "2026-11-26T13:16:24.053352+00:00"
   },
   "dcinside": {
    "name": "디시인사이드",
    "keywords": [
     {
-     "t": "안싱글벙글 김준표 이상의 개씹날먹유튜버",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481762&_dcbest=1&page=1"
+     "t": "싱글벙글 저작권에 대해 알아보자",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481850&_dcbest=1&page=1"
     },
     {
-     "t": "ㅡㅡㅡ[속보] 무죄윤 윤석열 무죄 확정!!ㅡㅡㅡ",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481761&_dcbest=1&page=1"
+     "t": "중갤 지능 레전드......jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481848&_dcbest=1&page=1"
     },
     {
-     "t": "김준표 예상 수익 ㅆㅂㅋㅋㅋㅋㅋ",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481758&_dcbest=1&page=1"
+     "t": "공짜로 40번 얻어먹고 \"맛없다\" 황당 후기…사장님 결국",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481846&_dcbest=1&page=1"
     },
     {
-     "t": "아주르보다 명조 낫다는 애들 꼬라지 ㅋㅋㅋㅋ",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481757&_dcbest=1&page=1"
+     "t": "예비교사도 예외없다, 앞치마 입고 소매걷는 임용시험.jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481844&_dcbest=1&page=1"
     },
     {
-     "t": "로미갤이 얼마나 무서운 곳인지 알려줌",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481756&_dcbest=1&page=1"
+     "t": "남자들아 여자친구 직업이 뭐였으면 좋겠어?",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481842&_dcbest=1&page=1"
     },
     {
-     "t": "국민연금 손실.. 팩트체크..",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481755&_dcbest=1&page=1"
+     "t": "JTBC) 자격박탈 구제역 변호사 수상한 사건개입",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481840&_dcbest=1&page=1"
     },
     {
-     "t": "미국 물리학자 : 수학은 끝장났다.",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481754&_dcbest=1&page=1"
+     "t": "와들와들 과거 김준표...MZ 세대 저격...JPG",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481838&_dcbest=1&page=1"
     },
     {
-     "t": "준트코인 순식간에 하락하는거뭐냐ㅋㅋ",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481752&_dcbest=1&page=1"
+     "t": "근데 요새 애들은 진짜 군적금 메이플 박으면 되는거아님?",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481833&_dcbest=1&page=1"
     },
     {
-     "t": "방금 랄로 시야 레전드....gif",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481749&_dcbest=1&page=1"
+     "t": "내일 학교 비정규직 파업해서 대체급식 준다네.jpg",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481831&_dcbest=1&page=1"
     },
     {
-     "t": "요즘 시장 먹방이 제일 신난다는 쯔양",
-     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481747&_dcbest=1&page=1"
+     "t": "일본가게 라멘속 벌레가 .........",
+     "u": "https://gall.dcinside.com/board/view/?id=dcbest&no=481829&_dcbest=1&page=1"
     }
    ],
-   "updated_at": "2026-11-26T03:49:05.743681+00:00"
+   "updated_at": "2026-11-26T13:16:24.053352+00:00"
   },
   "google": {
    "name": "구글",
    "keywords": [
     {
-     "t": "이정재",
-     "u": "https://www.google.com/search?q=%EC%9D%B4%EC%A0%95%EC%9E%AC"
+     "t": "나인투식스",
+     "u": "https://www.google.com/search?q=%EB%82%98%EC%9D%B8%ED%88%AC%EC%8B%9D%EC%8A%A4"
     },
     {
-     "t": "광고",
-     "u": "https://www.google.com/search?q=%EA%B4%91%EA%B3%A0"
+     "t": "설인아",
+     "u": "https://www.google.com/search?q=%EC%84%A4%EC%9D%B8%EC%95%84"
     },
     {
-     "t": "미스 유니버스",
-     "u": "https://www.google.com/search?q=%EB%AF%B8%EC%8A%A4%20%EC%9C%A0%EB%8B%88%EB%B2%84%EC%8A%A4"
+     "t": "weather tomorrow",
+     "u": "https://www.google.com/search?q=weather%20tomorrow"
     },
     {
-     "t": "불꽃야구",
-     "u": "https://www.google.com/search?q=%EB%B6%88%EA%BD%83%EC%95%BC%EA%B5%AC"
+     "t": "погода завтра",
+     "u": "https://www.google.com/search?q=%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0%20%D0%B7%D0%B0%D0%B2%D1%82%D1%80%D0%B0"
     },
     {
-     "t": "준법투쟁",
-     "u": "https://www.google.com/search?q=%EC%A4%80%EB%B2%95%ED%88%AC%EC%9F%81"
+     "t": "박장범",
+     "u": "https://www.google.com/search?q=%EB%B0%95%EC%9E%A5%EB%B2%94"
     },
     {
-     "t": "문가영",
-     "u": "https://www.google.com/search?q=%EB%AC%B8%EA%B0%80%EC%98%81"
+     "t": "계약금",
+     "u": "https://www.google.com/search?q=%EA%B3%84%EC%95%BD%EA%B8%88"
     },
     {
-     "t": "학교 폭력",
-     "u": "https://www.google.com/search?q=%ED%95%99%EA%B5%90%20%ED%8F%AD%EB%A0%A5"
+     "t": "acl two",
+     "u": "https://www.google.com/search?q=acl%20two"
     },
     {
-     "t": "렛츠런파크 부산경남",
-     "u": "https://www.google.com/search?q=%EB%A0%9B%EC%B8%A0%EB%9F%B0%ED%8C%8C%ED%81%AC%20%EB%B6%80%EC%82%B0%EA%B2%BD%EB%82%A8"
+     "t": "두산타워",
+     "u": "https://www.google.com/search?q=%EB%91%90%EC%82%B0%ED%83%80%EC%9B%8C"
     },
     {
-     "t": "안민석",
-     "u": "https://www.google.com/search?q=%EC%95%88%EB%AF%BC%EC%84%9D"
+     "t": "근로장려금 신청",
+     "u": "https://www.google.com/search?q=%EA%B7%BC%EB%A1%9C%EC%9E%A5%EB%A0%A4%EA%B8%88%20%EC%8B%A0%EC%B2%AD"
     },
     {
-     "t": "에어부산",
-     "u": "https://www.google.com/search?q=%EC%97%90%EC%96%B4%EB%B6%80%EC%82%B0"
+     "t": "슈퍼문",
+     "u": "https://www.google.com/search?q=%EC%8A%88%ED%8D%BC%EB%AC%B8"
     }
    ],
-   "updated_at": "2026-11-26T03:49:05.743681+00:00"
+   "updated_at": "2026-11-26T13:16:24.053352+00:00"
   }
  }
 }
